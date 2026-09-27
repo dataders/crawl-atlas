@@ -12,16 +12,28 @@ STAT_SCOPE_VALUES = {"base", "reported", "equipment", "temporary"}
 
 def validate(path: Path, corpus_path: Path | None = None) -> int:
     data = json.loads(path.read_text(encoding="utf-8"))
-    assert data["book"]["chapterCount"] > 0
+    metadata = data.get("series") or data["book"]
+    assert metadata["chapterCount"] > 0
+    books = data.get("books")
+    book_by_number = {book["number"]: book for book in books} if books else None
+    if books:
+        assert metadata["bookCount"] == len(books)
+        assert metadata["chapterCount"] == sum(book["chapterCount"] for book in books)
+        assert [book["number"] for book in books] == list(range(1, len(books) + 1))
     if "events" in data:
         events = data["events"]
         assert events, "at least one event is required"
-        locations = [(row["chapter"], row["position"]) for row in events]
+        locations = [row.get("progress", (row["chapter"] - 1 + row["position"]) / metadata["chapterCount"]) for row in events]
         assert locations == sorted(locations), "events must be in reading order"
         ids = [row["id"] for row in events]
         assert len(ids) == len(set(ids)), "event ids must be unique"
         for row in events:
-            assert 1 <= row["chapter"] <= data["book"]["chapterCount"]
+            if book_by_number:
+                assert row["book"] in book_by_number
+                assert 1 <= row["chapter"] <= book_by_number[row["book"]]["chapterCount"]
+                assert 0 <= row["progress"] <= 1
+            else:
+                assert 1 <= row["chapter"] <= metadata["chapterCount"]
             assert 0 <= row["position"] <= 1
             assert row["type"] in {"level", "stat", "skill", "item", "party", "story"}
             assert row["confidence"] in CONFIDENCE_VALUES
@@ -48,15 +60,19 @@ def validate(path: Path, corpus_path: Path | None = None) -> int:
 
     if corpus_path is not None:
         corpus = json.loads(corpus_path.read_text(encoding="utf-8"))
-        chapters = corpus["chapters"]
-        chapter_numbers = [chapter["number"] for chapter in chapters]
-        expected = list(range(1, data["book"]["chapterCount"] + 1))
-        assert chapter_numbers == expected, "private corpus chapters must be complete and ordered"
-        anchors = {
-            paragraph["anchor"]: paragraph
-            for chapter in chapters
-            for paragraph in chapter["paragraphs"]
-        }
+        if "books" in corpus:
+            assert len(corpus["books"]) == len(books)
+            anchors = {}
+            for corpus_book, public_book in zip(corpus["books"], books, strict=True):
+                chapter_numbers = [chapter["number"] for chapter in corpus_book["chapters"]]
+                assert chapter_numbers == list(range(1, public_book["chapterCount"] + 1)), "private corpus chapters must be complete and ordered"
+                anchors.update({paragraph["anchor"]: paragraph for chapter in corpus_book["chapters"] for paragraph in chapter["paragraphs"]})
+        else:
+            chapters = corpus["chapters"]
+            chapter_numbers = [chapter["number"] for chapter in chapters]
+            expected = list(range(1, metadata["chapterCount"] + 1))
+            assert chapter_numbers == expected, "private corpus chapters must be complete and ordered"
+            anchors = {paragraph["anchor"]: paragraph for chapter in chapters for paragraph in chapter["paragraphs"]}
         for row in records:
             source = row["source"]
             assert source in anchors, f"record {row['id']} has unknown source anchor {source}"

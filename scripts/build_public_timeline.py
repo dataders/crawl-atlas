@@ -15,8 +15,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CHARACTER_AUDIT = ROOT / "data/private/character-progression.json"
 INVENTORY_AUDIT = ROOT / "data/private/inventory-progression.json"
-OUTPUT = ROOT / "site/dist/data/book-1.json"
+OUTPUT = ROOT / "site/dist/data/series.json"
+LEGACY_OUTPUT = ROOT / "site/dist/data/book-1.json"
 CORPUS = ROOT / "data/private/corpus.json"
+SERIES_CORPUS = ROOT / "data/private/series-corpus.json"
 CHAPTER_COUNT = 47
 ITEM_ALIASES = {
     "Common Fingerless Glove": "Common Fingerless Gloves",
@@ -58,6 +60,61 @@ EQUIPMENT_STAT_SOURCES = {
     "carl-constitution-14-confirmed",
 }
 
+# Explicitly stated progression after Book 1. Each short needle is resolved
+# against the private corpus so every public milestone retains a source anchor.
+SERIES_LEVEL_MILESTONES = (
+    (2, 1, "Princess Donut", 13, "Princess Donut the Level 13"),
+    (2, 2, "Carl", 13, "Dungeon Crawler Carl, the Level 13"),
+    (2, 7, "Carl", 14, "both now level 14"),
+    (2, 7, "Princess Donut", 14, "both now level 14"),
+    (2, 9, "Carl", 15, "gone up to level 15"),
+    (2, 12, "Princess Donut", 15, "risen to level 15"),
+    (2, 12, "Carl", 18, "currently level 18"),
+    (2, 12, "Mongo", 10, "Now that he was level 10"),
+    (2, 14, "Princess Donut", 16, "leveled up to 16"),
+    (2, 14, "Mongo", 11, "Mongo hit level 11"),
+    (2, 18, "Mongo", 12, "gone up to level 12"),
+    (3, 3, "Carl", 27, "Carl – Primal – Compensated Anarchist – Level 27"),
+    (3, 3, "Princess Donut", 26, "Donut – Cat – Former Child Actor – Level 26"),
+    (3, 6, "Mongo", 14, "Mongo managed to hit level 14"),
+    (3, 7, "Mongo", 15, "Mongo hit level 15"),
+    (3, 11, "Carl", 29, "You are now level 29"),
+    (3, 12, "Princess Donut", 28, "I hit level 28"),
+    (3, 15, "Princess Donut", 30, "TWO LEVELS TO LEVEL 30"),
+    (3, 25, "Carl", 34, "Carl – Primal – Compensated Anarchist – Level 34"),
+    (3, 25, "Princess Donut", 32, "Donut – Cat – Former Child Actor – Level 32"),
+    (3, 26, "Mongo", 23, "Mongo had recently risen to level 23"),
+    (4, 2, "Carl", 41, "your level 41"),
+    (4, 4, "Princess Donut", 33, "Donut – Cat – Former Child Actor – Level 33"),
+    (4, 12, "Princess Donut", 34, "Level 34!"),
+    (4, 17, "Carl", 44, "I was now at 44"),
+    (4, 17, "Princess Donut", 37, "Donut was 37"),
+    (4, 17, "Mongo", 33, "hitting level 33"),
+    (4, 28, "Carl", 47, "gone up three levels to 47"),
+    (4, 28, "Princess Donut", 39, "Donut was level 39"),
+    (5, 6, "Carl", 54, "rocketed up to level 54"),
+    (5, 6, "Princess Donut", 41, "few levels to 41"),
+    (5, 51, "Princess Donut", 47, "TWO LEVELS TO 47"),
+    (5, 61, "Carl", 59, "player level up to 59"),
+    (5, 61, "Princess Donut", 50, "her level to 50"),
+    (5, 75, "Carl", 63, "You’re 63!"),
+    (5, 75, "Princess Donut", 55, "I went up to 55"),
+    (6, 22, "Carl", 65, "I hit level 65"),
+    (6, 22, "Princess Donut", 57, "Donut level 57"),
+    (6, 39, "Carl", 68, "I was now level 68"),
+    (6, 39, "Princess Donut", 59, "Donut was level 59"),
+    (6, 39, "Mongo", 40, "Mongo finally hit level 40"),
+    (6, 72, "Carl", 73, "You’re level 73"),
+    (6, 72, "Princess Donut", 63, "I’m 63"),
+)
+
+SERIES_STAT_MILESTONES = (
+    (3, 15, "Princess Donut", "CHA", 100, "base", "MY CHARISMA HIT 100"),
+    (5, 1, "Carl", "INT", 17, "equipment", "intelligence sat at only 17"),
+    (5, 70, "Princess Donut", "CHA", 138, "base", "base charisma currently sat at 138"),
+    (5, 70, "Princess Donut", "CHA", 276, "temporary", "charisma was now a god-like 276"),
+)
+
 
 def confidence(value: str) -> str:
     return {"explicit": "verified", "high": "verified", "verified": "verified"}.get(value, "partial")
@@ -70,6 +127,7 @@ def event_id(*parts: object) -> str:
 def base(source: dict, *, suffix: str, kind: str, subject: str, name: str, summary: str | None = None) -> dict:
     return {
         "id": event_id(source["id"], suffix),
+        "book": source.get("book", 1),
         "chapter": source["chapter"],
         "position": source["position"],
         "type": kind,
@@ -79,6 +137,57 @@ def base(source: dict, *, suffix: str, kind: str, subject: str, name: str, summa
         "source": source.get("anchor"),
         "confidence": confidence(source.get("confidence", "verified")),
     }
+
+
+def find_source(series_corpus: dict, book: int, chapter: int, needle: str) -> dict:
+    book_row = next(row for row in series_corpus["books"] if row["number"] == book)
+    chapter_row = next(row for row in book_row["chapters"] if row["number"] == chapter)
+    matches = [paragraph for paragraph in chapter_row["paragraphs"] if needle.casefold() in paragraph["text"].casefold()]
+    if len(matches) != 1:
+        raise ValueError(f"Expected one source for B{book} C{chapter} {needle!r}; found {len(matches)}")
+    return matches[0]
+
+
+def series_progression_events(series_corpus: dict) -> list[dict]:
+    events = []
+    for book, chapter, subject, level, needle in SERIES_LEVEL_MILESTONES:
+        source = find_source(series_corpus, book, chapter, needle)
+        events.append(
+            {
+                "id": event_id("series", book, chapter, subject, "level", level),
+                "book": book,
+                "chapter": chapter,
+                "position": source["position"],
+                "type": "level",
+                "subject": subject,
+                "name": "Character level",
+                "summary": f"{subject} is explicitly confirmed at level {level}.",
+                "source": source["anchor"],
+                "confidence": "verified",
+                "action": "set",
+                "level": level,
+            }
+        )
+    for book, chapter, subject, stat, value, scope, needle in SERIES_STAT_MILESTONES:
+        source = find_source(series_corpus, book, chapter, needle)
+        events.append(
+            {
+                "id": event_id("series", book, chapter, subject, stat, value, scope),
+                "book": book,
+                "chapter": chapter,
+                "position": source["position"],
+                "type": "stat",
+                "subject": subject,
+                "name": f"{stat} confirmation",
+                "summary": f"{subject}'s {stat} is explicitly reported as {value}.",
+                "source": source["anchor"],
+                "confidence": "verified",
+                "action": "merge",
+                "stats": {stat: value},
+                "statScopes": {stat: scope},
+            }
+        )
+    return events
 
 
 def stat_name(value: str) -> str:
@@ -235,7 +344,8 @@ def inventory_events(audit: dict) -> list[dict]:
 def main() -> None:
     character = json.loads(CHARACTER_AUDIT.read_text(encoding="utf-8"))
     inventory = json.loads(INVENTORY_AUDIT.read_text(encoding="utf-8"))
-    events = character_events(character) + inventory_events(inventory)
+    series_corpus = json.loads(SERIES_CORPUS.read_text(encoding="utf-8"))
+    events = character_events(character) + inventory_events(inventory) + series_progression_events(series_corpus)
     corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
     anchor_positions = {
         paragraph["anchor"]: paragraph["position"]
@@ -245,7 +355,26 @@ def main() -> None:
     for event in events:
         if event.get("source") in anchor_positions:
             event["position"] = anchor_positions[event["source"]]
-    events.sort(key=lambda row: (row["chapter"], row["position"], row["id"]))
+    book_rows = []
+    chapter_offset = 0
+    for row in series_corpus["books"]:
+        book_rows.append(
+            {
+                "id": row["id"],
+                "number": row["number"],
+                "title": row["title"],
+                "chapterCount": row["chapterCount"],
+                "startChapter": chapter_offset + 1,
+                "endChapter": chapter_offset + row["chapterCount"],
+            }
+        )
+        chapter_offset += row["chapterCount"]
+    total_chapters = chapter_offset
+    offsets = {row["number"]: row["startChapter"] - 1 for row in book_rows}
+    for event in events:
+        event["book"] = event.get("book", 1)
+        event["progress"] = round((offsets[event["book"]] + event["chapter"] - 1 + event["position"]) / total_chapters, 8)
+    events.sort(key=lambda row: (row["progress"], row["id"]))
     # A later status screen sometimes repeats the same character level. Keep
     # the first reveal so the chart marks when that level was actually reached.
     deduped_events = []
@@ -259,14 +388,15 @@ def main() -> None:
         deduped_events.append(event)
     events = deduped_events
     payload = {
-        "book": {
-            "id": "dcc-1",
+        "series": {
+            "id": "dcc",
             "title": "Dungeon Crawler Carl",
-            "subtitle": "Book 1",
-            "chapterCount": CHAPTER_COUNT,
-            "dataVersion": "1.1.0",
-            "coverageNote": "Source-anchored audit of named levels, stats, skills, spells, party changes, and inventory events.",
+            "bookCount": len(book_rows),
+            "chapterCount": total_chapters,
+            "dataVersion": "2.0.0",
+            "coverageNote": "Eight-book chapter map with source-anchored explicit progression. Detailed skills and inventory remain most complete for Book 1.",
         },
+        "books": book_rows,
         "characters": [
             {"id": "carl", "name": "Carl", "role": "Royal Bodyguard", "color": "#d8ff3e"},
             {"id": "princess-donut", "name": "Princess Donut", "role": "Party leader", "color": "#4dd9d2"},
@@ -279,7 +409,9 @@ def main() -> None:
             "knownGaps": character.get("audit_gaps", []) + inventory.get("known_gaps", []),
         },
     }
-    OUTPUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    encoded = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
+    OUTPUT.write_text(encoded, encoding="utf-8")
+    LEGACY_OUTPUT.write_text(encoded, encoding="utf-8")
     print(f"Wrote {len(events)} public events to {OUTPUT}")
 
 

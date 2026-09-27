@@ -119,55 +119,87 @@ def classify(text: str, *, bold: bool = False) -> list[str]:
     return kinds
 
 
-def extract(epub: Path, output_dir: Path) -> tuple[Path, Path]:
+def chapter_number(title: str, blocks: list[Block]) -> int | None:
+    """Read chapter numbers from both legacy and recent DCC EPUB layouts."""
+    match = re.fullmatch(r"Chapter\s+(\d+)", title.strip(), re.I)
+    if match:
+        return int(match.group(1))
+    if blocks:
+        match = re.fullmatch(r"\[\s*(\d+)\s*\]", blocks[0].text.strip())
+        if match:
+            return int(match.group(1))
+    return None
+
+
+def extract_book(epub: Path, *, book_number: int = 1) -> tuple[list[dict], list[dict]]:
     chapters: list[dict] = []
     candidates: list[dict] = []
+    chapter_by_number: dict[int, dict] = {}
     with zipfile.ZipFile(epub) as archive:
         package_path = find_package_path(archive)
         for document in ordered_documents(archive, package_path):
             parser = BlockParser()
             parser.feed(archive.read(document).decode("utf-8", errors="replace"))
-            match = re.fullmatch(r"Chapter\s+(\d+)", parser.title.strip(), re.I)
-            if not match:
+            number = chapter_number(parser.title, parser.blocks)
+            if number is None:
                 continue
-            chapter_number = int(match.group(1))
-            count = max(len(parser.blocks), 1)
-            paragraphs = []
-            for index, block in enumerate(parser.blocks, start=1):
+            chapter = chapter_by_number.get(number)
+            if chapter is None:
+                chapter = {
+                    "number": number,
+                    "title": f"Chapter {number}",
+                    "source_documents": [],
+                    "paragraphs": [],
+                }
+                chapter_by_number[number] = chapter
+                chapters.append(chapter)
+            chapter["source_documents"].append(document)
+            # Some editions split one chapter across multiple spine documents.
+            # Anchors remain continuous after the parts are merged.
+            start = len(chapter["paragraphs"])
+            for index, block in enumerate(parser.blocks, start=start + 1):
                 entry = {
-                    "anchor": f"b1-c{chapter_number}-p{index}",
-                    "position": round(index / count, 6),
+                    "anchor": f"b{book_number}-c{number}-p{index}",
+                    "position": 0,
                     "text": block.text,
                     "bold": block.bold,
                 }
-                paragraphs.append(entry)
+                chapter["paragraphs"].append(entry)
                 kinds = classify(block.text, bold=block.bold)
                 if kinds:
                     candidates.append(
                         {
-                            "chapter": chapter_number,
+                            "book": book_number,
+                            "chapter": number,
                             "anchor": entry["anchor"],
-                            "position": entry["position"],
+                            "position": 0,
                             "kinds": kinds,
                             "text": block.text,
                             "bold": block.bold,
                             "status": "unreviewed",
                         }
                     )
-            chapters.append(
-                {
-                    "number": chapter_number,
-                    "title": parser.title.strip(),
-                    "source_document": document,
-                    "paragraphs": paragraphs,
-                }
-            )
+    chapters.sort(key=lambda chapter: chapter["number"])
+    positions = {}
+    for chapter in chapters:
+        count = max(len(chapter["paragraphs"]), 1)
+        for index, paragraph in enumerate(chapter["paragraphs"], start=1):
+            paragraph["position"] = round(index / count, 6)
+            positions[paragraph["anchor"]] = paragraph["position"]
+        chapter["source_document"] = chapter["source_documents"][0]
+    for candidate in candidates:
+        candidate["position"] = positions[candidate["anchor"]]
+    return chapters, candidates
+
+
+def extract(epub: Path, output_dir: Path, *, book_number: int = 1) -> tuple[Path, Path]:
+    chapters, candidates = extract_book(epub, book_number=book_number)
 
     output_dir.mkdir(parents=True, exist_ok=True)
     corpus_path = output_dir / "corpus.json"
     candidates_path = output_dir / "review-candidates.json"
     corpus_path.write_text(
-        json.dumps({"source": epub.name, "chapters": chapters}, indent=2, ensure_ascii=False) + "\n",
+        json.dumps({"source": epub.name, "book": book_number, "chapters": chapters}, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     candidates_path.write_text(json.dumps(candidates, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -178,8 +210,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("epub", type=Path)
     parser.add_argument("--output", type=Path, default=Path("data/private"))
+    parser.add_argument("--book-number", type=int, default=1)
     args = parser.parse_args()
-    corpus, candidates = extract(args.epub, args.output)
+    corpus, candidates = extract(args.epub, args.output, book_number=args.book_number)
     print(f"Wrote private corpus: {corpus}")
     print(f"Wrote review queue: {candidates}")
 

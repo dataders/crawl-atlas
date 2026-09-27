@@ -31,6 +31,10 @@ class ExtractorTests(unittest.TestCase):
     def test_bold_unknown_block_is_kept_for_review(self):
         self.assertEqual(MODULE.classify("Enchanted Oddity", bold=True), ["system"])
 
+    def test_recognizes_recent_bracketed_chapter_heading(self):
+        blocks = [MODULE.Block(text="[ 98 ]", bold=False)]
+        self.assertEqual(MODULE.chapter_number("c6T", blocks), 98)
+
     def test_extracts_spine_chapters_and_review_candidates(self):
         container = """<?xml version="1.0"?>
         <container xmlns="urn:oasis:names:tc:opendocument:xmlns:container">

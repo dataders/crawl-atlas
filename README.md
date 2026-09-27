@@ -2,12 +2,12 @@
 
 A spoiler-safe reading companion for LitRPG books. Move one slider to the point you have reached and see the party's complete known history, levels, stats, skills, and active inventory—never facts first revealed later.
 
-The first dataset targets *Dungeon Crawler Carl* book one. This repository does **not** redistribute the book: EPUB files, extracted prose, and machine-generated review candidates remain local and are ignored by Git.
+The current dataset maps all eight *Dungeon Crawler Carl* books. This repository does **not** redistribute the books: EPUB files, extracted prose, and machine-generated review candidates remain local and are ignored by Git.
 
 ## What works
 
 - EPUB-to-JSON corpus extraction using only Python's standard library
-- one continuous, book-wide progress control with chapter and paragraph anchors
+- one continuous, series-wide progress control with book, chapter, and paragraph anchors
 - candidate detection for levels, stats, skills, items, rewards, and party changes
 - source-anchored character and inventory audits
 - cumulative level and base-stat charts with explicit milestone labels
@@ -16,11 +16,11 @@ The first dataset targets *Dungeon Crawler Carl* book one. This repository does 
 
 ## Local setup
 
-1. Put your legally obtained EPUB in this directory.
-2. Extract the private analysis corpus:
+1. Put your legally obtained EPUBs in this directory using the filenames listed in `scripts/extract_series.py`.
+2. Extract the private eight-book analysis corpus:
 
    ```bash
-   uv run python3 scripts/extract_epub.py "Dungeon Crawler Carl by Matt Dinniman.epub"
+   uv run python3 scripts/extract_series.py
    ```
 
 3. Serve the static site:
@@ -35,12 +35,12 @@ The checked-in public data contains short factual summaries, not book text. To r
 
 ```bash
 uv run python3 scripts/build_public_timeline.py
-uv run python3 scripts/validate_data.py site/dist/data/book-1.json --corpus data/private/corpus.json
+uv run python3 scripts/validate_data.py site/dist/data/series.json --corpus data/private/series-corpus.json
 ```
 
 ## Data model
 
-Each event has a `chapter` and a fractional `position`. The app replays every event at or before the reader's chosen location to reconstruct the current state. Event types include character levels, stats, skills, inventory changes, party changes, and brief story milestones. Entries carry:
+Each event has a `book`, local `chapter`, fractional `position`, and computed series-wide `progress`. The app replays every event at or before the reader's chosen location to reconstruct the current state. Event types include character levels, stats, skills, inventory changes, party changes, and brief story milestones. Entries carry:
 
 - `confidence`: `verified`, `inferred`, or `needs-review`
 - `action`: how the event changes the current state

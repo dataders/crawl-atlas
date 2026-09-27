@@ -63,6 +63,36 @@ class ValidatorTests(unittest.TestCase):
             corpus_path = self.write_json(tmp, "corpus.json", corpus)
             self.assertEqual(MODULE.validate(data_path, corpus_path), 1)
 
+    def test_accepts_series_event_ledger(self):
+        data = {
+            "series": {"bookCount": 2, "chapterCount": 3},
+            "books": [
+                {"number": 1, "chapterCount": 1},
+                {"number": 2, "chapterCount": 2},
+            ],
+            "events": [{
+                "id": "book-two-level",
+                "book": 2,
+                "chapter": 1,
+                "position": 0.5,
+                "progress": 0.5,
+                "source": "b2-c1-p1",
+                "type": "level",
+                "confidence": "verified",
+            }],
+        }
+        corpus = {"books": [
+            {"chapters": [{"number": 1, "paragraphs": [{"anchor": "b1-c1-p1", "position": 0.5}]}]},
+            {"chapters": [
+                {"number": 1, "paragraphs": [{"anchor": "b2-c1-p1", "position": 0.5}]},
+                {"number": 2, "paragraphs": [{"anchor": "b2-c2-p1", "position": 0.5}]},
+            ]},
+        ]}
+        with tempfile.TemporaryDirectory() as tmp:
+            data_path = self.write_json(tmp, "data.json", data)
+            corpus_path = self.write_json(tmp, "corpus.json", corpus)
+            self.assertEqual(MODULE.validate(data_path, corpus_path), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

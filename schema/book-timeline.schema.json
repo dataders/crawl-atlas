@@ -2,8 +2,34 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Crawl Atlas event ledger",
   "type": "object",
-  "required": ["book", "characters", "events"],
+  "required": ["series", "books", "characters", "events"],
   "properties": {
+    "series": {
+      "type": "object",
+      "required": ["id", "title", "bookCount", "chapterCount", "dataVersion"],
+      "properties": {
+        "id": {"type": "string"},
+        "title": {"type": "string"},
+        "bookCount": {"type": "integer", "minimum": 1},
+        "chapterCount": {"type": "integer", "minimum": 1},
+        "dataVersion": {"type": "string"}
+      }
+    },
+    "books": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "number", "title", "chapterCount", "startChapter", "endChapter"],
+        "properties": {
+          "id": {"type": "string"},
+          "number": {"type": "integer", "minimum": 1},
+          "title": {"type": "string"},
+          "chapterCount": {"type": "integer", "minimum": 1},
+          "startChapter": {"type": "integer", "minimum": 1},
+          "endChapter": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
     "book": {
       "type": "object",
       "required": ["id", "title", "chapterCount", "dataVersion"],
@@ -31,11 +57,13 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "chapter", "position", "type", "subject", "name", "source", "confidence"],
+        "required": ["id", "book", "chapter", "position", "progress", "type", "subject", "name", "source", "confidence"],
         "properties": {
           "id": {"type": "string"},
+          "book": {"type": "integer", "minimum": 1},
           "chapter": {"type": "integer", "minimum": 1},
           "position": {"type": "number", "minimum": 0, "maximum": 1},
+          "progress": {"type": "number", "minimum": 0, "maximum": 1},
           "type": {"enum": ["level", "stat", "skill", "item", "party", "story"]},
           "subject": {"type": "string"},
           "name": {"type": "string"},
