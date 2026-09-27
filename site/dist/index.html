@@ -39,11 +39,16 @@
           <div><p class="eyebrow">Cumulative story</p><h2 id="progression-title">How the party got here</h2></div>
           <div class="chart-legend" id="chart-legend"></div>
         </div>
+        <div class="chart-toolbar">
+          <div class="metric-tabs" id="metric-tabs" role="tablist" aria-label="Choose progression metric"></div>
+          <p id="chart-explanation">Every numbered dot is an explicitly confirmed level.</p>
+        </div>
         <div class="chart-frame">
           <svg id="progress-chart" role="img" aria-label="Character levels and discoveries over the selected part of the book"></svg>
           <div class="chart-tooltip" id="chart-tooltip" hidden></div>
         </div>
-        <div class="chart-key"><span><i class="level-key"></i>Level change</span><span><i class="skill-key"></i>Skill or spell</span><span><i class="item-key"></i>Inventory</span><span><i class="party-key"></i>Party</span></div>
+        <div class="chart-key" id="chart-key"></div>
+        <div class="milestone-strip" id="milestone-strip" aria-label="Confirmed chart milestones"></div>
       </section>
 
       <section class="character-section" aria-labelledby="character-title">

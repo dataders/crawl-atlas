@@ -40,7 +40,12 @@
           "subject": {"type": "string"},
           "name": {"type": "string"},
           "source": {"type": "string"},
-          "confidence": {"enum": ["verified", "partial", "inferred", "needs-review"]}
+          "confidence": {"enum": ["verified", "partial", "inferred", "needs-review"]},
+          "stats": {"type": "object", "additionalProperties": {"type": "number"}},
+          "statScopes": {
+            "type": "object",
+            "additionalProperties": {"enum": ["base", "reported", "equipment", "temporary"]}
+          }
         }
       }
     }

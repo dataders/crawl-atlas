@@ -10,7 +10,8 @@ The first dataset targets *Dungeon Crawler Carl* book one. This repository does 
 - one continuous, book-wide progress control with chapter and paragraph anchors
 - candidate detection for levels, stats, skills, items, rewards, and party changes
 - source-anchored character and inventory audits
-- a cumulative progression chart, clickable character dossiers, inventory ledger, and event history
+- cumulative level and base-stat charts with explicit milestone labels
+- clickable character dossiers, inventory ledger, and event history
 - strict location filtering so every view respects the reader's spoiler boundary
 
 ## Local setup

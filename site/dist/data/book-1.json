@@ -4,7 +4,7 @@
     "title": "Dungeon Crawler Carl",
     "subtitle": "Book 1",
     "chapterCount": 47,
-    "dataVersion": "1.0.0",
+    "dataVersion": "1.1.0",
     "coverageNote": "Source-anchored audit of named levels, stats, skills, spells, party changes, and inventory events."
   },
   "characters": [
@@ -242,6 +242,13 @@
         "CON": 5,
         "DEX": 5,
         "CHA": 4
+      },
+      "statScopes": {
+        "STR": "base",
+        "INT": "base",
+        "CON": "base",
+        "DEX": "base",
+        "CHA": "base"
       }
     },
     {
@@ -897,6 +904,9 @@
       "action": "merge",
       "stats": {
         "CON": 9
+      },
+      "statScopes": {
+        "CON": "equipment"
       }
     },
     {
@@ -973,6 +983,9 @@
       "action": "merge",
       "stats": {
         "STR": 9
+      },
+      "statScopes": {
+        "STR": "equipment"
       }
     },
     {
@@ -1121,6 +1134,13 @@
         "CON": 2,
         "DEX": 8,
         "CHA": 25
+      },
+      "statScopes": {
+        "STR": "base",
+        "INT": "base",
+        "CON": "base",
+        "DEX": "base",
+        "CHA": "base"
       }
     },
     {
@@ -1276,6 +1296,9 @@
       "action": "delta",
       "statsDelta": {
         "INT": 5
+      },
+      "statScopes": {
+        "INT": "equipment"
       }
     },
     {
@@ -1465,6 +1488,9 @@
       "action": "merge",
       "stats": {
         "INT": 17
+      },
+      "statScopes": {
+        "INT": "reported"
       }
     },
     {
@@ -1521,6 +1547,9 @@
       "action": "merge",
       "stats": {
         "CON": 10
+      },
+      "statScopes": {
+        "CON": "equipment"
       }
     },
     {
@@ -1633,6 +1662,9 @@
       "action": "delta",
       "statsDelta": {
         "INT": 1
+      },
+      "statScopes": {
+        "INT": "equipment"
       }
     },
     {
@@ -1759,6 +1791,9 @@
       "action": "merge",
       "stats": {
         "STR": 15
+      },
+      "statScopes": {
+        "STR": "base"
       }
     },
     {
@@ -2233,6 +2268,9 @@
       "action": "merge",
       "stats": {
         "CHA": 37
+      },
+      "statScopes": {
+        "CHA": "base"
       }
     },
     {
@@ -2624,6 +2662,9 @@
       "action": "merge",
       "stats": {
         "CHA": 39
+      },
+      "statScopes": {
+        "CHA": "base"
       }
     },
     {
@@ -2789,6 +2830,9 @@
       "action": "merge",
       "stats": {
         "CON": 12
+      },
+      "statScopes": {
+        "CON": "equipment"
       }
     },
     {
@@ -3149,6 +3193,9 @@
       "action": "merge",
       "stats": {
         "INT": 24
+      },
+      "statScopes": {
+        "INT": "reported"
       }
     },
     {
@@ -3164,6 +3211,9 @@
       "action": "merge",
       "stats": {
         "STR": 9
+      },
+      "statScopes": {
+        "STR": "reported"
       }
     },
     {
@@ -3179,6 +3229,9 @@
       "action": "merge",
       "stats": {
         "STR": 18
+      },
+      "statScopes": {
+        "STR": "base"
       }
     },
     {
@@ -3476,6 +3529,9 @@
       "action": "merge",
       "stats": {
         "INT": 3
+      },
+      "statScopes": {
+        "INT": "base"
       }
     },
     {
@@ -3491,6 +3547,9 @@
       "action": "merge",
       "stats": {
         "DEX": 12
+      },
+      "statScopes": {
+        "DEX": "reported"
       }
     },
     {
@@ -3534,6 +3593,9 @@
       "action": "merge",
       "stats": {
         "STR": 18
+      },
+      "statScopes": {
+        "STR": "base"
       }
     },
     {
@@ -3817,6 +3879,10 @@
       "statsDelta": {
         "STR": 3,
         "DEX": 1
+      },
+      "statScopes": {
+        "STR": "equipment",
+        "DEX": "equipment"
       }
     },
     {
@@ -3832,6 +3898,9 @@
       "action": "merge",
       "stats": {
         "CHA": 41
+      },
+      "statScopes": {
+        "CHA": "base"
       }
     },
     {
@@ -4450,6 +4519,9 @@
       "action": "merge",
       "stats": {
         "CHA": 43
+      },
+      "statScopes": {
+        "CHA": "base"
       }
     },
     {
@@ -4918,6 +4990,9 @@
       "action": "merge",
       "stats": {
         "CON": 4
+      },
+      "statScopes": {
+        "CON": "temporary"
       }
     },
     {
@@ -4989,6 +5064,9 @@
       "action": "merge",
       "stats": {
         "CON": 14
+      },
+      "statScopes": {
+        "CON": "equipment"
       }
     },
     {
@@ -5364,6 +5442,9 @@
       "action": "merge",
       "stats": {
         "CON": 14
+      },
+      "statScopes": {
+        "CON": "equipment"
       }
     },
     {

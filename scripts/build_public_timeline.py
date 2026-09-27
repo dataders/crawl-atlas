@@ -31,6 +31,32 @@ INITIAL_BOXES = (
     "Gold Apparel Box",
     "Bronze Weapon Box",
 )
+BASE_STAT_SOURCES = {
+    "carl-initial-stats",
+    "donut-first-stat-display",
+    "donut-strength-15",
+    "donut-charisma-37",
+    "donut-charisma-39",
+    "donut-strength-18-dodge-4",
+    "donut-charisma-41",
+    "donut-charisma-43",
+}
+TEMPORARY_STAT_SOURCES = {
+    "carl-donut-buzzed-stat-modifiers",
+    "donut-temporary-constitution-4",
+}
+EQUIPMENT_STAT_SOURCES = {
+    "carl-constitution-9",
+    "carl-strength-9",
+    "donut-tiara-bonuses",
+    "carl-constitution-10",
+    "donut-light-on-feet-7",
+    "donut-dexterity-plus-2-fae-armor",
+    "carl-constitution-12",
+    "carl-gauntlet-skill-bonuses",
+    "carl-constitution-14-protective-shell-15",
+    "carl-constitution-14-confirmed",
+}
 
 
 def confidence(value: str) -> str:
@@ -59,6 +85,21 @@ def stat_name(value: str) -> str:
     return {"strength": "STR", "intelligence": "INT", "constitution": "CON", "dexterity": "DEX", "charisma": "CHA"}.get(value.lower(), value.upper())
 
 
+def stat_scope(source: dict, character: str, stat: str) -> str:
+    source_id = source["id"]
+    if source_id in BASE_STAT_SOURCES:
+        return "base"
+    if source_id == "carl-donut-strength-9-18" and character == "Princess Donut":
+        return "base"
+    if source_id == "carl-intelligence-3-donut-dexterity-12" and character == "Carl":
+        return "base"
+    if source_id in TEMPORARY_STAT_SOURCES:
+        return "temporary"
+    if source_id in EQUIPMENT_STAT_SOURCES:
+        return "equipment"
+    return "reported"
+
+
 def skill_event(source: dict, character: str, item: dict, suffix: str) -> dict:
     name = item.get("skill") or item.get("spell") or item.get("name") or "Unnamed ability"
     level = item.get("to_level", item.get("to", item.get("level")))
@@ -85,20 +126,27 @@ def character_events(audit: dict) -> list[dict]:
 
         if primary and source.get("stats"):
             event = base(source, suffix="stats", kind="stat", subject=primary, name="Character stats")
-            event.update({"action": "merge", "stats": {stat_name(k): v for k, v in source["stats"].items()}})
+            stats = {stat_name(k): v for k, v in source["stats"].items()}
+            scopes = {stat_name(k): stat_scope(source, primary, k) for k in source["stats"]}
+            event.update({"action": "merge", "stats": stats, "statScopes": scopes})
             output.append(event)
         if primary and source.get("stat") and source.get("to") is not None:
             event = base(source, suffix="stat", kind="stat", subject=primary, name=f"{source['stat'].title()} change")
-            event.update({"action": "merge", "stats": {stat_name(source["stat"]): source["to"]}})
+            name = stat_name(source["stat"])
+            event.update({"action": "merge", "stats": {name: source["to"]}, "statScopes": {name: stat_scope(source, primary, source["stat"])}})
             output.append(event)
         if primary and source.get("stat_changes"):
             event = base(source, suffix="stat-delta", kind="stat", subject=primary, name="Stat change")
-            event.update({"action": "delta", "statsDelta": {stat_name(row["stat"]): row["delta"] for row in source["stat_changes"]}})
+            deltas = {stat_name(row["stat"]): row["delta"] for row in source["stat_changes"]}
+            scopes = {stat_name(row["stat"]): stat_scope(source, primary, row["stat"]) for row in source["stat_changes"]}
+            event.update({"action": "delta", "statsDelta": deltas, "statScopes": scopes})
             output.append(event)
         if source.get("stats_by_character"):
             for character, stats in source["stats_by_character"].items():
                 event = base(source, suffix=f"stats-{character}", kind="stat", subject=character, name="Character stats")
-                event.update({"action": "merge", "stats": {stat_name(k): v for k, v in stats.items()}})
+                normalized = {stat_name(k): v for k, v in stats.items()}
+                scopes = {stat_name(k): stat_scope(source, character, k) for k in stats}
+                event.update({"action": "merge", "stats": normalized, "statScopes": scopes})
                 output.append(event)
 
         if primary and (source.get("skill") or source.get("spell")):
@@ -216,7 +264,7 @@ def main() -> None:
             "title": "Dungeon Crawler Carl",
             "subtitle": "Book 1",
             "chapterCount": CHAPTER_COUNT,
-            "dataVersion": "1.0.0",
+            "dataVersion": "1.1.0",
             "coverageNote": "Source-anchored audit of named levels, stats, skills, spells, party changes, and inventory events.",
         },
         "characters": [

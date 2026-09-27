@@ -65,12 +65,22 @@ h2 { margin-bottom: 0; font-size: clamp(25px,3vw,38px); line-height: 1.05; lette
 .chart-legend { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
 .legend-person { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); font: 11px/1 var(--mono); text-transform: uppercase; }
 .legend-person i { width: 16px; height: 3px; background: var(--person-color); }
-.chart-frame { position: relative; margin-top: 22px; min-height: 290px; border: 1px solid var(--line); background: #080d11; overflow: hidden; }
-#progress-chart { display: block; width: 100%; height: 330px; }
+.chart-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 22px; }
+.metric-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.metric-tab { min-width: 48px; padding: 9px 12px; border: 1px solid var(--line); background: #080d11; color: var(--muted); cursor: pointer; font: 800 12px/1 var(--mono); text-transform: uppercase; }
+.metric-tab[aria-selected="true"],.metric-tab:hover { color: #080b0d; border-color: var(--acid); background: var(--acid); }
+#chart-explanation { max-width: 620px; margin: 0; color: var(--muted); font-size: 13px; text-align: right; }
+.chart-frame { position: relative; margin-top: 14px; min-height: 350px; border: 1px solid var(--line); background: #080d11; overflow-x: auto; overflow-y: hidden; }
+#progress-chart { display: block; width: 100%; min-width: 760px; height: 350px; }
 .chart-grid { stroke: #1b2830; stroke-width: 1; }
 .chart-axis { fill: var(--muted); font: 10px var(--mono); }
 .level-path { fill: none; stroke: var(--series-color); stroke-width: 3; vector-effect: non-scaling-stroke; }
 .level-dot { fill: #080d11; stroke: var(--series-color); stroke-width: 3; cursor: pointer; }
+.level-value { fill: var(--series-color); font: 800 12px var(--mono); paint-order: stroke; stroke: #080d11; stroke-width: 4px; }
+.stat-path { fill: none; stroke: var(--series-color); stroke-width: 3; vector-effect: non-scaling-stroke; }
+.stat-dot { fill: var(--series-color); stroke: #080d11; stroke-width: 2; cursor: pointer; }
+.stat-dot.reported { fill: #080d11; stroke: var(--series-color); stroke-width: 3; }
+.stat-value { fill: var(--series-color); font: 800 12px var(--mono); paint-order: stroke; stroke: #080d11; stroke-width: 4px; }
 .event-dot { cursor: pointer; stroke: #080d11; stroke-width: 2; }
 .selection-line { stroke: var(--acid); stroke-width: 1; stroke-dasharray: 4 4; }
 .chart-tooltip { position: absolute; z-index: 3; max-width: 260px; padding: 10px 12px; border: 1px solid var(--line-strong); background: #111a21; color: var(--text); font-size: 13px; pointer-events: none; box-shadow: 10px 14px 30px rgba(0,0,0,.4); }
@@ -81,6 +91,15 @@ h2 { margin-bottom: 0; font-size: clamp(25px,3vw,38px); line-height: 1.05; lette
 .skill-key { background: var(--cyan); transform: rotate(45deg); }
 .item-key { background: var(--orange); }
 .party-key { background: var(--violet); clip-path: polygon(50% 0,100% 100%,0 100%); }
+.base-key { border-radius: 50%; background: var(--acid); }
+.reported-key { border: 2px solid var(--cyan); border-radius: 50%; background: transparent; }
+.milestone-strip { display: grid; gap: 8px; margin-top: 16px; }
+.milestone-row { display: grid; grid-template-columns: 140px 1fr; gap: 12px; align-items: start; }
+.milestone-person { padding-top: 7px; color: var(--person-color); font: 800 12px/1 var(--mono); text-transform: uppercase; }
+.milestone-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.milestone-pill { padding: 6px 8px; border: 1px solid var(--line); background: #080d11; color: var(--muted); font: 11px/1.2 var(--mono); }
+.milestone-pill strong { color: var(--person-color); }
+.milestone-pill.reported { border-style: dashed; }
 
 .character-workspace { display: grid; grid-template-columns: minmax(220px,.72fr) minmax(0,2fr); gap: 16px; padding-top: 18px; }
 .character-list { display: grid; align-content: start; gap: 8px; }
@@ -103,6 +122,7 @@ h2 { margin-bottom: 0; font-size: clamp(25px,3vw,38px); line-height: 1.05; lette
 .stats { display: grid; grid-template-columns: repeat(5,minmax(48px,1fr)); gap: 6px; }
 .stat { padding: 9px 4px; text-align: center; background: #0a1015; font: 800 15px/1 var(--mono); }
 .stat span { display: block; margin-bottom: 6px; color: var(--muted); font-size: 9px; }
+.stat.modified { color: var(--cyan); border: 1px dashed rgba(77,217,210,.45); }
 .skills-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; }
 .skill-card { padding: 11px 12px; display: grid; grid-template-columns: 1fr auto; gap: 8px; background: #0a1015; }
 .skill-card strong { overflow: hidden; text-overflow: ellipsis; }
@@ -163,6 +183,10 @@ footer a { color: var(--acid); }
   .slider-labels span:nth-child(2) { display: none; }
   .position-actions { grid-template-columns: 1fr 1fr; }
   .spoiler-lock { grid-column: 1 / -1; grid-row: 1; }
+  .chart-toolbar { align-items: flex-start; flex-direction: column; }
+  #chart-explanation { text-align: left; }
+  .chart-frame { margin-inline: -20px; border-inline: 0; }
+  .milestone-row { grid-template-columns: 1fr; gap: 5px; }
   .character-list { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .ledger-toolbar { align-items: stretch; flex-direction: column; }

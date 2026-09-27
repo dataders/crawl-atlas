@@ -7,6 +7,7 @@ from pathlib import Path
 
 
 CONFIDENCE_VALUES = {"verified", "partial", "inferred", "needs-review"}
+STAT_SCOPE_VALUES = {"base", "reported", "equipment", "temporary"}
 
 
 def validate(path: Path, corpus_path: Path | None = None) -> int:
@@ -24,6 +25,10 @@ def validate(path: Path, corpus_path: Path | None = None) -> int:
             assert 0 <= row["position"] <= 1
             assert row["type"] in {"level", "stat", "skill", "item", "party", "story"}
             assert row["confidence"] in CONFIDENCE_VALUES
+            if row["type"] == "stat":
+                stat_names = set(row.get("stats", {})) | set(row.get("statsDelta", {}))
+                assert set(row.get("statScopes", {})) <= stat_names
+                assert set(row.get("statScopes", {}).values()) <= STAT_SCOPE_VALUES
         records = events
     else:
         checkpoints = data["checkpoints"]
