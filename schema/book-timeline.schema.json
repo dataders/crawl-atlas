@@ -1,27 +1,46 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Crawl Atlas book timeline",
+  "title": "Crawl Atlas event ledger",
   "type": "object",
-  "required": ["book", "checkpoints"],
+  "required": ["book", "characters", "events"],
   "properties": {
     "book": {
       "type": "object",
-      "required": ["id", "title", "chapterCount"],
+      "required": ["id", "title", "chapterCount", "dataVersion"],
       "properties": {
         "id": {"type": "string"},
         "title": {"type": "string"},
-        "chapterCount": {"type": "integer", "minimum": 1}
+        "chapterCount": {"type": "integer", "minimum": 1},
+        "dataVersion": {"type": "string"}
       }
     },
-    "checkpoints": {
+    "characters": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "chapter", "position", "party", "inventory", "skills"],
+        "required": ["id", "name"],
         "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "role": {"type": "string"},
+          "color": {"type": "string"}
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "chapter", "position", "type", "subject", "name", "source", "confidence"],
+        "properties": {
+          "id": {"type": "string"},
           "chapter": {"type": "integer", "minimum": 1},
           "position": {"type": "number", "minimum": 0, "maximum": 1},
-          "coverage": {"enum": ["verified", "partial", "draft"]}
+          "type": {"enum": ["level", "stat", "skill", "item", "party", "story"]},
+          "subject": {"type": "string"},
+          "name": {"type": "string"},
+          "source": {"type": "string"},
+          "confidence": {"enum": ["verified", "partial", "inferred", "needs-review"]}
         }
       }
     }

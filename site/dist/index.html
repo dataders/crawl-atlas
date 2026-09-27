@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Spoiler-safe party, level, skill, and inventory snapshots for Dungeon Crawler Carl." />
+    <meta name="description" content="Explore every known level, skill, party, and inventory change in Dungeon Crawler Carl without reading past your place." />
     <title>Crawl Atlas — Dungeon Crawler Carl</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080b10'/%3E%3Cpath d='M7 7h18v5H12v8h13v5H7z' fill='%23d9ff43'/%3E%3Ccircle cx='21.5' cy='16' r='2.5' fill='%23ff5c35'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="styles.css" />
@@ -17,75 +17,85 @@
     </header>
 
     <main id="top">
-      <section class="reader-console" aria-labelledby="location-title">
-        <div class="console-heading">
-          <div>
-            <p class="eyebrow">Reader location</p>
-            <h1 id="location-title">What do you know <em>right now?</em></h1>
-          </div>
-          <div class="spoiler-lock"><span class="lock-dot"></span> Spoiler lock active</div>
+      <section class="reader-position" aria-labelledby="reader-position-title">
+        <div class="position-heading">
+          <div><p class="eyebrow">Spoiler boundary</p><h1 id="reader-position-title">Your place in the crawl</h1></div>
+          <div class="position-readout"><strong id="location-chapter">Chapter 1</strong><span id="location-percent">0% through chapter</span></div>
         </div>
-
-        <div class="location-grid">
-          <label class="chapter-field">Chapter
-            <select id="chapter-select" aria-label="Chapter"></select>
-          </label>
-          <label class="progress-field" for="position-range">
-            <span>Position in chapter</span><output id="position-output">50%</output>
-            <input id="position-range" type="range" min="0" max="100" value="50" step="1" />
-            <span class="range-labels"><span>Start</span><span>End</span></span>
-          </label>
-          <button class="locate-button" id="locate-button" type="button">Reveal snapshot <span>↳</span></button>
+        <div class="master-slider">
+          <input id="book-range" type="range" min="0" max="10000" value="1350" step="1" aria-label="Position in the book" />
+          <div class="chapter-ruler" id="chapter-ruler" aria-hidden="true"></div>
+          <div class="slider-labels"><span>Chapter 1</span><span id="overall-progress">0% of book</span><span id="last-chapter-label">Chapter 47</span></div>
         </div>
-
-        <div class="timeline" id="timeline" aria-label="Book progress"></div>
+        <div class="position-actions">
+          <button id="previous-chapter" type="button">← Previous chapter</button>
+          <div class="spoiler-lock"><span></span>Everything below stops here</div>
+          <button id="next-chapter" type="button">Next chapter →</button>
+        </div>
       </section>
 
-      <section class="snapshot-header" aria-live="polite">
-        <div>
-          <p class="eyebrow" id="snapshot-kicker">Snapshot</p>
-          <h2 id="snapshot-title">Loading…</h2>
-          <p class="snapshot-note" id="snapshot-note"></p>
+      <section class="progression-section" aria-labelledby="progression-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Cumulative story</p><h2 id="progression-title">How the party got here</h2></div>
+          <div class="chart-legend" id="chart-legend"></div>
         </div>
-        <div class="coverage-badge" id="coverage-badge"></div>
+        <div class="chart-frame">
+          <svg id="progress-chart" role="img" aria-label="Character levels and discoveries over the selected part of the book"></svg>
+          <div class="chart-tooltip" id="chart-tooltip" hidden></div>
+        </div>
+        <div class="chart-key"><span><i class="level-key"></i>Level change</span><span><i class="skill-key"></i>Skill or spell</span><span><i class="item-key"></i>Inventory</span><span><i class="party-key"></i>Party</span></div>
       </section>
 
-      <section class="dashboard" id="dashboard" aria-live="polite">
-        <article class="panel party-panel">
-          <header class="panel-header"><div><span class="panel-index">01</span><h3>Party</h3></div><span id="party-count"></span></header>
-          <p class="party-name" id="party-name"></p>
-          <div class="party-list" id="party-list"></div>
-        </article>
+      <section class="character-section" aria-labelledby="character-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Character dossiers</p><h2 id="character-title">Party at this point</h2></div>
+          <span class="section-count" id="party-count"></span>
+        </div>
+        <div class="character-workspace">
+          <div class="character-list" id="character-list" role="tablist" aria-label="Choose a party member"></div>
+          <article class="dossier" id="character-dossier" aria-live="polite"></article>
+        </div>
+      </section>
 
-        <article class="panel inventory-panel">
-          <header class="panel-header"><div><span class="panel-index">02</span><h3>Inventory highlights</h3></div><span id="inventory-count"></span></header>
-          <div class="filter-row" id="inventory-filters" aria-label="Filter inventory"></div>
-          <div class="inventory-list" id="inventory-list"></div>
-        </article>
+      <section class="ledger-section" aria-labelledby="inventory-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Cumulative ledger</p><h2 id="inventory-title">Inventory at this point</h2></div>
+          <span class="section-count" id="inventory-count"></span>
+        </div>
+        <div class="ledger-toolbar">
+          <div id="inventory-owner-filters" class="filter-row" aria-label="Filter inventory by owner"></div>
+          <label class="search-field">Search <input id="inventory-search" type="search" placeholder="Item name or type" /></label>
+        </div>
+        <div class="inventory-table-wrap">
+          <table class="inventory-table">
+            <thead><tr><th>Item</th><th>Owner</th><th>Type</th><th>State</th><th>Acquired</th></tr></thead>
+            <tbody id="inventory-list"></tbody>
+          </table>
+        </div>
+      </section>
 
-        <article class="panel skills-panel">
-          <header class="panel-header"><div><span class="panel-index">03</span><h3>Known skills</h3></div><span id="skills-count"></span></header>
-          <div class="skill-list" id="skill-list"></div>
-        </article>
-
-        <article class="panel changes-panel">
-          <header class="panel-header"><div><span class="panel-index">04</span><h3>Since last checkpoint</h3></div></header>
-          <ol class="change-list" id="change-list"></ol>
-          <div class="source-anchor" id="source-anchor"></div>
-        </article>
+      <section class="history-section" aria-labelledby="history-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Event log</p><h2 id="history-title">Story history to here</h2></div>
+          <span class="section-count" id="history-count"></span>
+        </div>
+        <div class="history-layout">
+          <div class="filter-row vertical" id="history-filters" aria-label="Filter story history"></div>
+          <ol class="history-list" id="history-list"></ol>
+        </div>
       </section>
 
       <aside class="about-panel" id="about-panel" hidden>
         <button id="about-close" type="button" aria-label="Close information">×</button>
-        <p class="eyebrow">How spoiler lock works</p>
-        <h2>Only facts known by your selected location.</h2>
-        <p>The app resolves the latest curated checkpoint at or before your chapter and position. Future entries never appear in the interface.</p>
-        <p>Verified means the book states it directly. Inferred means continuity fills a gap. Needs review marks missing or ambiguous evidence.</p>
-        <p class="legal">Unofficial fan project. No book text or artwork is distributed.</p>
+        <p class="eyebrow">Spoiler lock</p>
+        <h2>The ledger ends exactly where you stop reading.</h2>
+        <p>The single slider sets a book-wide reading boundary. Charts, character dossiers, skills, inventory, and history are reconstructed only from events at or before that point.</p>
+        <p>Entries are factual paraphrases linked to private chapter-and-paragraph anchors. The EPUB and its prose never ship with this site.</p>
+        <p class="legal">Unofficial fan project. Book text and artwork are not distributed.</p>
       </aside>
     </main>
 
-    <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/" id="repo-link">Open source</a></span></footer>
+    <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
     <script src="app.js" defer></script>
   </body>
 </html>

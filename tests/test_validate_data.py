@@ -42,6 +42,27 @@ class ValidatorTests(unittest.TestCase):
             with self.assertRaisesRegex(AssertionError, "appears before its source"):
                 MODULE.validate(data_path, corpus_path)
 
+    def test_accepts_event_ledger(self):
+        data = {
+            "book": {"chapterCount": 1},
+            "events": [{
+                "id": "level-one",
+                "chapter": 1,
+                "position": 0.5,
+                "source": "b1-c1-p1",
+                "type": "level",
+                "confidence": "verified",
+            }],
+        }
+        corpus = {"chapters": [{
+            "number": 1,
+            "paragraphs": [{"anchor": "b1-c1-p1", "position": 0.5}],
+        }]}
+        with tempfile.TemporaryDirectory() as tmp:
+            data_path = self.write_json(tmp, "data.json", data)
+            corpus_path = self.write_json(tmp, "corpus.json", corpus)
+            self.assertEqual(MODULE.validate(data_path, corpus_path), 1)
+
 
 if __name__ == "__main__":
     unittest.main()
