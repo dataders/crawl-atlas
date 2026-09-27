@@ -1,0 +1,15 @@
+# Source books and extracted text are private, local inputs.
+*.epub
+data/private/
+site/dist/data/private/
+
+# Python and editor artifacts.
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+
+# Local preview and Sites runtime state.
+.sites-runtime/
+site/.sites-runtime/
+

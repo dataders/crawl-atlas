@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Crawl Atlas book timeline",
+  "type": "object",
+  "required": ["book", "checkpoints"],
+  "properties": {
+    "book": {
+      "type": "object",
+      "required": ["id", "title", "chapterCount"],
+      "properties": {
+        "id": {"type": "string"},
+        "title": {"type": "string"},
+        "chapterCount": {"type": "integer", "minimum": 1}
+      }
+    },
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "chapter", "position", "party", "inventory", "skills"],
+        "properties": {
+          "chapter": {"type": "integer", "minimum": 1},
+          "position": {"type": "number", "minimum": 0, "maximum": 1},
+          "coverage": {"enum": ["verified", "partial", "draft"]}
+        }
+      }
+    }
+  }
+}

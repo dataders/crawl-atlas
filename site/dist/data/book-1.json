@@ -1,0 +1,312 @@
+{
+  "book": {
+    "id": "dcc-1",
+    "title": "Dungeon Crawler Carl",
+    "subtitle": "Book 1",
+    "chapterCount": 47,
+    "dataVersion": "0.2.0",
+    "coverageNote": "First-pass checkpoints cover selected explicit changes. Inventory lists are highlights, not exhaustive audits."
+  },
+  "checkpoints": [
+    {
+      "id": "c1-opening",
+      "chapter": 1,
+      "position": 0.18,
+      "label": "Outside",
+      "coverage": "verified",
+      "source": "b1-c1-p7",
+      "partyName": "Not formed",
+      "party": [
+        {"name": "Carl", "role": "Human", "level": null, "levelLabel": "Not a crawler", "confidence": "verified", "stats": []},
+        {"name": "Princess Donut", "role": "Cat", "level": null, "levelLabel": "Ordinary cat", "confidence": "verified", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Leather jacket", "owner": "Carl", "kind": "Equipped", "confidence": "verified"},
+        {"name": "Pink Crocs", "owner": "Carl", "kind": "Equipped", "confidence": "verified"},
+        {"name": "Boxers", "owner": "Carl", "kind": "Equipped", "confidence": "verified"}
+      ],
+      "skills": [],
+      "changes": ["Carl is outside with Donut when the world changes."],
+      "note": "Opening snapshot; no game interface yet."
+    },
+    {
+      "id": "c2-entry",
+      "chapter": 2,
+      "position": 0.44,
+      "label": "Dungeon entry",
+      "coverage": "verified",
+      "source": "b1-c2-p53",
+      "partyName": "Companions",
+      "party": [
+        {"name": "Carl", "role": "Human crawler", "level": 1, "confidence": "verified", "stats": []},
+        {"name": "Princess Donut", "role": "Cat crawler", "level": 1, "confidence": "verified", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Loot boxes", "owner": "Carl", "kind": "Locked", "detail": "Several rewards received; inventory access not unlocked", "confidence": "verified"},
+        {"name": "Leather jacket", "owner": "Carl", "kind": "Equipped", "confidence": "verified"}
+      ],
+      "skills": [],
+      "changes": ["Carl and Donut enter at level 1.", "Carl earns several unopened reward boxes."],
+      "note": "Levels are explicit. Detailed character stats have not yet been shown."
+    },
+    {
+      "id": "c5-inventory",
+      "chapter": 5,
+      "position": 0.86,
+      "label": "Inventory online",
+      "coverage": "partial",
+      "source": "b1-c5-p104",
+      "partyName": "Companions",
+      "party": [
+        {"name": "Carl", "role": "Human crawler", "level": 2, "confidence": "verified", "stats": []},
+        {"name": "Princess Donut", "role": "Cat crawler", "level": 1, "confidence": "verified", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Healing potions ×4", "owner": "Carl", "kind": "Consumable", "confidence": "verified"},
+        {"name": "Mana potion ×1", "owner": "Carl", "kind": "Consumable", "confidence": "verified"},
+        {"name": "Common fingerless gloves", "owner": "Carl", "kind": "Equipment", "confidence": "verified"},
+        {"name": "Toad cudgel", "owner": "Carl", "kind": "Weapon", "confidence": "verified"},
+        {"name": "Poker", "owner": "Carl", "kind": "Weapon", "confidence": "verified"},
+        {"name": "Poison antidotes ×2", "owner": "Carl", "kind": "Consumable", "confidence": "verified"},
+        {"name": "Crawler biscuits ×100", "owner": "Carl", "kind": "Consumable", "confidence": "verified"},
+        {"name": "Torches ×20", "owner": "Carl", "kind": "Utility", "confidence": "verified"},
+        {"name": "Dynamite ×5", "owner": "Carl", "kind": "Explosive", "confidence": "verified"},
+        {"name": "Lighter", "owner": "Carl", "kind": "Utility", "confidence": "verified"},
+        {"name": "Scroll of Heal Critter", "owner": "Carl", "kind": "Scroll", "confidence": "verified"},
+        {"name": "Enchanted Nightgaunt Cloak of Stoutness", "owner": "Carl", "kind": "Equipment", "confidence": "verified"},
+        {"name": "Enchanted Trollskin Shirt of Pummeling", "owner": "Carl", "kind": "Equipment", "confidence": "verified"},
+        {"name": "Enchanted Toe Ring of the Splatter Skunk", "owner": "Carl", "kind": "Equipment", "confidence": "verified"},
+        {"name": "Pet biscuits ×510", "owner": "Carl", "kind": "Consumable", "detail": "Includes the legendary-box stack", "confidence": "verified"},
+        {"name": "Enhanced pet biscuit", "owner": "Carl", "kind": "Consumable", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Pugilism", "owner": "Carl", "level": 4, "confidence": "verified"}
+      ],
+      "changes": ["Dimensional inventory unlocked.", "Ten accumulated loot boxes opened.", "Carl reaches level 2."],
+      "note": "Tracks named items confirmed during the box opening; some prizes await deeper review."
+    },
+    {
+      "id": "c7-royal-court",
+      "chapter": 7,
+      "position": 0.94,
+      "label": "Royal Court formed",
+      "coverage": "verified",
+      "source": "b1-c7-p59",
+      "partyName": "The Royal Court of Princess Donut",
+      "party": [
+        {"name": "Princess Donut", "role": "Party leader", "level": 1, "confidence": "verified", "stats": [{"name": "STR", "value": 11}, {"name": "INT", "value": 11}, {"name": "CON", "value": 2}, {"name": "DEX", "value": 8}, {"name": "CHA", "value": 25}]},
+        {"name": "Carl", "role": "Bodyguard", "level": 2, "levelLabel": "2+ last confirmed", "confidence": "inferred", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Enchanted tiara", "owner": "Donut", "kind": "Equipped", "detail": "+5 INT; enhances first impressions", "confidence": "verified"},
+        {"name": "Fingerless gloves", "owner": "Carl", "kind": "Equipment", "confidence": "verified"},
+        {"name": "Healing and mana supplies", "owner": "Party", "kind": "Consumables", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Magic Missile", "owner": "Donut", "level": null, "confidence": "verified"},
+        {"name": "Pugilism", "owner": "Carl", "level": 4, "confidence": "verified"}
+      ],
+      "changes": ["Donut names the party.", "Donut becomes party leader.", "Donut equips the enchanted tiara."],
+      "note": "Carl's level is carried forward from the last explicit display and may be higher here."
+    },
+    {
+      "id": "c17-workshop-haul",
+      "chapter": 17,
+      "position": 0.2,
+      "label": "Workshop haul",
+      "coverage": "partial",
+      "source": "b1-c17-p5",
+      "partyName": "The Royal Court of Princess Donut",
+      "party": [
+        {"name": "Princess Donut", "role": "Party leader", "level": 7, "levelLabel": "7 last confirmed", "confidence": "inferred", "stats": []},
+        {"name": "Carl", "role": "Bodyguard", "level": 7, "levelLabel": "7 last confirmed", "confidence": "inferred", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Goblin chopper", "owner": "Carl", "kind": "Vehicle", "confidence": "verified"},
+        {"name": "Black powder", "owner": "Carl", "kind": "Explosive supply", "detail": "Large workshop stock", "confidence": "verified"},
+        {"name": "Dynamite, bombs, and grenades", "owner": "Carl", "kind": "Explosives", "confidence": "verified"},
+        {"name": "Tools and engineering supplies", "owner": "Carl", "kind": "Crafting", "confidence": "verified"},
+        {"name": "Alchemical liquids", "owner": "Carl", "kind": "Crafting", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Iron Punch", "owner": "Carl", "level": 3, "confidence": "verified"}
+      ],
+      "changes": ["Party clears and inventories much of a goblin workshop.", "Inventory expands into many new categories."],
+      "note": "Inventory is intentionally summarized because the chapter describes bulk materials rather than a complete ledger."
+    },
+    {
+      "id": "c41-sapper-kit",
+      "chapter": 41,
+      "position": 0.88,
+      "label": "Sapper kit",
+      "coverage": "partial",
+      "source": "b1-c41-p84",
+      "partyName": "The Royal Court of Princess Donut",
+      "party": [
+        {"name": "Princess Donut", "role": "Party leader", "level": 10, "levelLabel": "10+; last confirmed", "confidence": "inferred", "stats": []},
+        {"name": "Carl", "role": "Bodyguard", "level": 11, "confidence": "verified", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Sapper’s table", "owner": "Carl", "kind": "Crafting station", "confidence": "verified"},
+        {"name": "Proximity triggers ×10", "owner": "Carl", "kind": "Trap component", "confidence": "verified"},
+        {"name": "Gorgon Marital Aid", "owner": "Carl", "kind": "Crafting tool", "detail": "Hardening and de-hardening tool", "confidence": "verified"},
+        {"name": "Engineering and alchemy tables", "owner": "Carl", "kind": "Crafting stations", "confidence": "verified"},
+        {"name": "Fireball or Custard ticket", "owner": "Carl", "kind": "Valuable oddity", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Bomb-related skills", "owner": "Carl", "level": 9, "confidence": "verified"}
+      ],
+      "changes": ["Carl receives a sapper table and proximity triggers.", "Most bomb-related skills reach level 9."],
+      "note": "Donut's current level is not explicit at this anchor."
+    },
+    {
+      "id": "c43-boots",
+      "chapter": 43,
+      "position": 0.9,
+      "label": "The boot gift",
+      "coverage": "partial",
+      "source": "b1-c43-p90",
+      "partyName": "The Royal Court of Princess Donut",
+      "party": [
+        {"name": "Princess Donut", "role": "Party leader", "level": 10, "levelLabel": "10+; last confirmed", "confidence": "inferred", "stats": []},
+        {"name": "Carl", "role": "Bodyguard", "level": 11, "levelLabel": "11 last confirmed", "confidence": "inferred", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Bates tactical boots", "owner": "Carl", "kind": "Unequipped gift", "detail": "Kept, but conflicts with barefoot bonuses", "confidence": "verified"},
+        {"name": "Socks", "owner": "Carl", "kind": "Unequipped gift", "confidence": "verified"},
+        {"name": "Sapper’s table", "owner": "Carl", "kind": "Crafting station", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Barefoot bonuses", "owner": "Carl", "level": null, "confidence": "verified"}
+      ],
+      "changes": ["Carl receives boots and socks but does not equip them."],
+      "note": "Shows equipment state separately from ownership."
+    },
+    {
+      "id": "c45-level-12",
+      "chapter": 45,
+      "position": 0.4,
+      "label": "Level 12",
+      "coverage": "verified",
+      "source": "b1-c45-p35",
+      "partyName": "The Royal Court of Princess Donut",
+      "party": [
+        {"name": "Princess Donut", "role": "Party leader", "level": 12, "confidence": "verified", "stats": []},
+        {"name": "Carl", "role": "Bodyguard", "level": 12, "confidence": "verified", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Pet biscuits", "owner": "Party", "kind": "Consumable", "detail": "Large remaining supply", "confidence": "verified"},
+        {"name": "Boom jugs", "owner": "Carl", "kind": "Explosive", "confidence": "verified"},
+        {"name": "Mana restoration supplies", "owner": "Donut", "kind": "Consumable", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Second Chance", "owner": "Donut", "level": 5, "confidence": "verified"}
+      ],
+      "changes": ["Carl and Donut both reach level 12."],
+      "note": "Exact stats at this point still need a dedicated audit."
+    },
+    {
+      "id": "c47-training-loot",
+      "chapter": 47,
+      "position": 0.08,
+      "label": "Training and boss loot",
+      "coverage": "verified",
+      "source": "b1-c47-p11",
+      "partyName": "The Royal Court of Princess Donut",
+      "party": [
+        {"name": "Princess Donut", "role": "Party leader", "level": 12, "levelLabel": "12 last confirmed", "confidence": "inferred", "stats": []},
+        {"name": "Carl", "role": "Bodyguard", "level": 12, "levelLabel": "12 last confirmed", "confidence": "inferred", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Heal Critter spell book", "owner": "Donut", "kind": "Spell book", "confidence": "verified"},
+        {"name": "Gold coins ×1,000", "owner": "Carl", "kind": "Currency", "confidence": "verified"},
+        {"name": "Determine Value potion", "owner": "Carl", "kind": "Consumed", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Slingshot", "owner": "Carl", "level": 5, "confidence": "verified"},
+        {"name": "Magic Missile", "owner": "Donut", "level": 8, "confidence": "verified"},
+        {"name": "Second Chance", "owner": "Donut", "level": 5, "confidence": "verified"}
+      ],
+      "changes": ["Carl's Slingshot reaches level 5.", "Donut's Magic Missile reaches level 8.", "Boss loot unlocks more inventory sorting options."],
+      "note": "Mongo is not yet bonded at this checkpoint."
+    },
+    {
+      "id": "c47-level-13",
+      "chapter": 47,
+      "position": 0.57,
+      "label": "Level 13",
+      "coverage": "verified",
+      "source": "b1-c47-p81",
+      "partyName": "The Royal Court of Princess Donut",
+      "party": [
+        {"name": "Princess Donut", "role": "Party leader", "level": 13, "confidence": "verified", "stats": []},
+        {"name": "Carl", "role": "Bodyguard", "level": 13, "confidence": "verified", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Heal Critter spell book", "owner": "Donut", "kind": "Spell book", "confidence": "verified"},
+        {"name": "Gold coins ×1,000", "owner": "Carl", "kind": "Currency", "confidence": "verified"},
+        {"name": "Pet biscuits", "owner": "Party", "kind": "Consumable", "detail": "Used while training Mongo", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Slingshot", "owner": "Carl", "level": 5, "confidence": "verified"},
+        {"name": "Magic Missile", "owner": "Donut", "level": 8, "confidence": "verified"},
+        {"name": "Second Chance", "owner": "Donut", "level": 5, "confidence": "verified"}
+      ],
+      "changes": ["Carl and Donut both reach level 13."],
+      "note": "Mongo is traveling with them but has not joined the party yet."
+    },
+    {
+      "id": "c47-mongo",
+      "chapter": 47,
+      "position": 0.64,
+      "label": "Mongo joins",
+      "coverage": "verified",
+      "source": "b1-c47-p90",
+      "partyName": "The Royal Court of Princess Donut",
+      "party": [
+        {"name": "Princess Donut", "role": "Party leader", "level": 13, "confidence": "verified", "stats": []},
+        {"name": "Carl", "role": "Bodyguard", "level": 13, "confidence": "verified", "stats": []},
+        {"name": "Mongo", "role": "Donut’s bonded pet", "level": 1, "confidence": "verified", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Heal Critter spell book", "owner": "Donut", "kind": "Spell book", "confidence": "verified"},
+        {"name": "Gold coins ×1,000", "owner": "Carl", "kind": "Currency", "confidence": "verified"},
+        {"name": "Pet biscuits", "owner": "Party", "kind": "Consumable", "detail": "Used while bonding Mongo", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Slingshot", "owner": "Carl", "level": 5, "confidence": "verified"},
+        {"name": "Magic Missile", "owner": "Donut", "level": 8, "confidence": "verified"},
+        {"name": "Second Chance", "owner": "Donut", "level": 5, "confidence": "verified"}
+      ],
+      "changes": ["Mongo joins the party as Donut's bonded pet."],
+      "note": "Mongo's party entry explicitly identifies him as level 1."
+    },
+    {
+      "id": "c47-inventory-history",
+      "chapter": 47,
+      "position": 0.8,
+      "label": "Inventory history",
+      "coverage": "partial",
+      "source": "b1-c47-p114",
+      "partyName": "The Royal Court of Princess Donut",
+      "party": [
+        {"name": "Princess Donut", "role": "Party leader", "level": 13, "confidence": "verified", "stats": []},
+        {"name": "Carl", "role": "Bodyguard", "level": 13, "confidence": "verified", "stats": []},
+        {"name": "Mongo", "role": "Donut’s bonded pet", "level": 1, "confidence": "verified", "stats": []}
+      ],
+      "inventory": [
+        {"name": "Heal Critter spell book", "owner": "Donut", "kind": "Spell book", "confidence": "verified"},
+        {"name": "Gold coins ×1,000", "owner": "Carl", "kind": "Currency", "confidence": "verified"},
+        {"name": "Pulse pistol", "owner": "Carl", "kind": "Weapon", "detail": "Discovered among previously collected belongings", "confidence": "verified"},
+        {"name": "Pet biscuits", "owner": "Party", "kind": "Consumable", "confidence": "verified"}
+      ],
+      "skills": [
+        {"name": "Slingshot", "owner": "Carl", "level": 5, "confidence": "verified"},
+        {"name": "Magic Missile", "owner": "Donut", "level": 8, "confidence": "verified"},
+        {"name": "Second Chance", "owner": "Donut", "level": 5, "confidence": "verified"}
+      ],
+      "changes": ["Inventory history and value sorting expose previously collected belongings."],
+      "note": "Only the newly relevant weapon is shown from the longer belongings list."
+    }
+  ]
+}
