@@ -1,0 +1,147 @@
+series_progress,book,chapter,chapter_position,character,metric,value,scope,summary,source
+0.267275,1,2,26.15,Carl,Level,1,confirmed,System assigns Carl the Human race and shows him at character level 1.,b1-c2-p34
+0.443243,1,3,9.21,Mordecai,Level,50,confirmed,Mordecai is explicitly confirmed at level 50.,b1-c3-p7
+0.695649,1,4,28.35,Carl,STR,6,base,Carl opens his player-stat menu for the first complete five-stat display.,b1-c4-p36
+0.695649,1,4,28.35,Carl,INT,3,base,Carl opens his player-stat menu for the first complete five-stat display.,b1-c4-p36
+0.695649,1,4,28.35,Carl,CON,5,base,Carl opens his player-stat menu for the first complete five-stat display.,b1-c4-p36
+0.695649,1,4,28.35,Carl,DEX,5,base,Carl opens his player-stat menu for the first complete five-stat display.,b1-c4-p36
+0.695649,1,4,28.35,Carl,CHA,4,base,Carl opens his player-stat menu for the first complete five-stat display.,b1-c4-p36
+0.936024,1,5,41.8,Carl,Level,2,confirmed,System raises Carl to character level 2 and awards three banked stat points.,b1-c5-p51
+1.155165,1,6,45.24,Carl,CON,9,equipment,Carl equips the cloak and his Constitution rises from 5 to 9.,b1-c6-p19
+1.200565,1,6,66.67,Carl,STR,9,equipment,The ring explicitly grants +3 Strength and Carl equips it; narration describes a fifty-percent rise.,b1-c6-p28
+1.29809,1,7,12.7,Princess Donut,STR,11,base,Carl opens Donut's party stats for her first complete five-stat display.,b1-c7-p8
+1.29809,1,7,12.7,Princess Donut,INT,11,base,Carl opens Donut's party stats for her first complete five-stat display.,b1-c7-p8
+1.29809,1,7,12.7,Princess Donut,CON,2,base,Carl opens Donut's party stats for her first complete five-stat display.,b1-c7-p8
+1.29809,1,7,12.7,Princess Donut,DEX,8,base,Carl opens Donut's party stats for her first complete five-stat display.,b1-c7-p8
+1.29809,1,7,12.7,Princess Donut,CHA,25,base,Carl opens Donut's party stats for her first complete five-stat display.,b1-c7-p8
+1.654385,1,8,80.87,Princess Donut,Level,2,confirmed,Narration confirms Donut reached character level 2 after the llama fight.,b1-c8-p93
+1.661754,1,8,84.35,Princess Donut,INT,17,reported,Magic Missile rises to level 3; Carl's partial stat view shows Donut at 17 Intelligence.,b1-c8-p97
+1.663596,1,8,85.22,Carl,Level,3,confirmed,Carl reaches character level 3 and gains Foot Soldier plus Smush; Smush is displayed at level 3.,b1-c8-p98
+1.818878,1,9,58.51,Carl,CON,10,equipment,"Carl equips a +1 Constitution ring, bringing the displayed score to 10.",b1-c9-p55
+2.037801,1,10,61.84,Carl,Level,5,confirmed,Narration confirms both Carl and Donut are character level 5; level 4 is not separately shown.,b1-c10-p47
+2.037801,1,10,61.84,Princess Donut,Level,5,confirmed,Narration confirms both Carl and Donut are character level 5; level 4 is not separately shown.,b1-c10-p47
+2.043376,1,10,64.47,Princess Donut,STR,15,base,Narration reports Donut's Strength at 15.,b1-c10-p49
+2.984727,1,15,8.79,Carl,Level,7,confirmed,Narration confirms both characters have reached level 7; level 6 is not separately shown.,b1-c15-p8
+2.984727,1,15,8.79,Princess Donut,Level,7,confirmed,Narration confirms both characters have reached level 7; level 6 is not separately shown.,b1-c15-p8
+3.049916,1,15,39.56,Princess Donut,CHA,37,base,Donut states her current Charisma is 37.,b1-c15-p36
+3.667903,1,18,31.25,Carl,Level,8,confirmed,Donut reports that both she and Carl are now level 8.,b1-c18-p5
+3.667903,1,18,31.25,Princess Donut,Level,8,confirmed,Donut reports that both she and Carl are now level 8.,b1-c18-p5
+3.787076,1,18,87.5,Princess Donut,CHA,39,base,Narration states Enhanced Growth raised Donut's Charisma to 39 at level 8.,b1-c18-p14
+3.993056,1,19,84.72,Carl,CON,12,equipment,"Carl equips another Constitution ring, bringing the displayed score to 12.",b1-c19-p61
+4.689265,1,23,13.33,Imani C.,Level,10,confirmed,Imani C. is explicitly confirmed at level 10.,b1-c23-p6
+4.774011,1,23,53.33,Princess Donut,INT,24,reported,Magic Missile reaches level 5; narration again shows Donut at 24 Intelligence.,b1-c23-p24
+4.816384,1,23,73.33,Carl,STR,9,reported,Carl directly compares his Strength 9 with Donut's Strength 18.,b1-c23-p33
+4.816384,1,23,73.33,Princess Donut,STR,18,base,Carl directly compares his Strength 9 with Donut's Strength 18.,b1-c23-p33
+5.098503,1,25,6.49,Carl,Level,9,confirmed,The borough-boss experience raises both Carl and Donut to level 9.,b1-c25-p5
+5.098503,1,25,6.49,Princess Donut,Level,9,confirmed,The borough-boss experience raises both Carl and Donut to level 9.,b1-c25-p5
+5.115012,1,25,14.29,Carl,INT,3,base,Carl's Intelligence remains 3; Donut equips a +2 Dexterity bracelet and narration says her displayed Dexterity becomes 12.,b1-c25-p11
+5.115012,1,25,14.29,Princess Donut,DEX,12,reported,Carl's Intelligence remains 3; Donut equips a +2 Dexterity bracelet and narration says her displayed Dexterity becomes 12.,b1-c25-p11
+5.150781,1,25,31.17,Princess Donut,STR,18,base,Mordecai's fight review confirms Donut had Strength 18 and Dodge level 4.,b1-c25-p24
+5.307569,1,26,5.17,Princess Donut,CHA,41,base,Narration reports Donut's current Charisma as 41.,b1-c26-p6
+5.534595,1,27,12.33,Carl,Level,10,confirmed,Narration confirms both Carl and Donut are now level 10.,b1-c27-p9
+5.534595,1,27,12.33,Princess Donut,Level,10,confirmed,Narration confirms both Carl and Donut are now level 10.,b1-c27-p9
+6.816042,1,33,17.17,Princess Donut,CHA,43,base,Narration reports Donut's Charisma at 43.,b1-c33-p17
+6.901644,1,33,57.58,Carl,Level,11,confirmed,Carl says he has just reached character level 11.,b1-c33-p57
+7.318614,1,35,54.39,Princess Donut,CON,4,temporary,"The activated grooming buff adds two Constitution for 30 hours, producing Constitution 4.",b1-c35-p62
+7.389236,1,35,87.72,Carl,CON,14,equipment,Equipping the boxers adds two Constitution to Carl's last displayed 12 and grants item-bound access to level-15 Protective Shell.,b1-c35-p100
+7.759853,1,37,62.65,Imani C.,Level,11,confirmed,Imani C. is explicitly confirmed at level 11.,b1-c37-p52
+8.759269,1,42,34.38,Carl,CON,14,equipment,"Narration says Zhang's Constitution 15 is one point above Carl's, confirming Carl at 14.",b1-c42-p44
+9.331556,1,45,4.49,Carl,Level,12,confirmed,Narration confirms both Carl and Donut reach level 12; Donut's level 11 is not separately shown.,b1-c45-p4
+9.331556,1,45,4.49,Princess Donut,Level,12,confirmed,Narration confirms both Carl and Donut reach level 12; Donut's level 11 is not separately shown.,b1-c45-p4
+9.711591,1,46,83.87,Mongo,Level,1,confirmed,The Mongoliensis later named Mongo is first examined at level 1.,b1-c46-p52
+9.86577,1,47,56.64,Carl,Level,13,confirmed,Continued grinding raises both Carl and Donut to level 13.,b1-c47-p81
+9.86577,1,47,56.64,Princess Donut,Level,13,confirmed,Continued grinding raises both Carl and Donut to level 13.,b1-c47-p81
+10.362288,2,2,91.0,Carl,STR,10,base,Carl's STR is explicitly reported as 10.,b2-c2-p182
+10.362288,2,2,91.0,Carl,STR,16,equipment,Carl's STR is explicitly reported as 16.,b2-c2-p182
+10.363347,2,2,91.5,Carl,INT,5,base,Carl's INT is explicitly reported as 5.,b2-c2-p183
+10.364407,2,2,92.0,Carl,CON,10,base,Carl's CON is explicitly reported as 10.,b2-c2-p184
+10.364407,2,2,92.0,Carl,CON,19,equipment,Carl's CON is explicitly reported as 19.,b2-c2-p184
+10.365466,2,2,92.5,Carl,DEX,10,base,Carl's DEX is explicitly reported as 10.,b2-c2-p185
+10.365466,2,2,92.5,Carl,DEX,11,equipment,Carl's DEX is explicitly reported as 11.,b2-c2-p185
+10.366525,2,2,93.0,Carl,CHA,25,base,Carl's CHA is explicitly reported as 25.,b2-c2-p186
+11.290722,2,7,29.22,Carl,Level,14,confirmed,Carl is explicitly confirmed at level 14.,b2-c7-p45
+11.290722,2,7,29.22,Princess Donut,Level,14,confirmed,Princess Donut is explicitly confirmed at level 14.,b2-c7-p45
+11.738223,2,9,40.44,Carl,Level,15,confirmed,Carl is explicitly confirmed at level 15.,b2-c9-p55
+12.371529,2,12,39.36,Princess Donut,Level,15,confirmed,Princess Donut is explicitly confirmed at level 15.,b2-c12-p37
+12.466192,2,12,84.04,Mongo,Level,10,confirmed,Mongo is explicitly confirmed at level 10.,b2-c12-p79
+12.484223,2,12,92.55,Carl,Level,18,confirmed,Carl is explicitly confirmed at level 18.,b2-c12-p87
+12.882986,2,14,80.77,Mongo,Level,11,confirmed,Mongo is explicitly confirmed at level 11.,b2-c14-p105
+12.882986,2,14,80.77,Princess Donut,Level,16,confirmed,Princess Donut is explicitly confirmed at level 16.,b2-c14-p105
+13.73326,2,18,82.1,Mongo,Level,12,confirmed,Mongo is explicitly confirmed at level 12.,b2-c18-p133
+14.231607,2,21,17.32,Katia Grim,Level,9,confirmed,Katia Grim is explicitly confirmed at level 9.,b2-c21-p31
+15.297073,3,1,20.22,Katia Grim,CON,102,temporary,Katia Grim's CON is explicitly reported as 102.,b3-c1-p37
+15.402427,3,1,69.95,Katia Grim,STR,11,reported,Katia Grim's STR is explicitly reported as 11.,b3-c1-p128
+15.612215,3,2,68.97,Carl,STR,41,reported,Carl's STR is explicitly reported as 41.,b3-c2-p180
+15.613027,3,2,69.35,Carl,INT,15,reported,Carl's INT is explicitly reported as 15.,b3-c2-p181
+15.613839,3,2,69.73,Carl,CON,34,reported,Carl's CON is explicitly reported as 34.,b3-c2-p182
+15.61465,3,2,70.11,Carl,DEX,23,reported,Carl's DEX is explicitly reported as 23.,b3-c2-p183
+15.615462,3,2,70.5,Carl,CHA,25,reported,Carl's CHA is explicitly reported as 25.,b3-c2-p184
+15.814042,3,3,64.23,Prepotente,Level,27,confirmed,Prepotente is explicitly confirmed at level 27.,b3-c3-p79
+15.819209,3,3,66.67,Carl,Level,27,confirmed,Carl is explicitly confirmed at level 27.,b3-c3-p82
+15.820932,3,3,67.48,Princess Donut,Level,26,confirmed,Princess Donut is explicitly confirmed at level 26.,b3-c3-p83
+15.826099,3,3,69.92,Elle McGib,Level,17,confirmed,Elle McGib is explicitly confirmed at level 17.,b3-c3-p86
+16.421394,3,6,50.9,Katia Grim,Level,22,confirmed,Katia Grim is explicitly confirmed at level 22.,b3-c6-p85
+16.421394,3,6,50.9,Mongo,Level,14,confirmed,Mongo is explicitly confirmed at level 14.,b3-c6-p85
+16.537076,3,7,5.5,Mongo,Level,15,confirmed,Mongo is explicitly confirmed at level 15.,b3-c7-p11
+17.378646,3,11,2.72,Carl,Level,29,confirmed,Carl is explicitly confirmed at level 29.,b3-c11-p4
+17.588621,3,12,1.83,Princess Donut,Level,28,confirmed,Princess Donut is explicitly confirmed at level 28.,b3-c12-p3
+17.619626,3,12,16.46,Katia Grim,Level,24,confirmed,Katia Grim is explicitly confirmed at level 24.,b3-c12-p27
+17.879843,3,13,39.29,Katia Grim,STR,49,equipment,Katia Grim's STR is explicitly reported as 49.,b3-c13-p66
+18.195942,3,14,88.48,Carl,Level,32,confirmed,Carl is explicitly confirmed at level 32.,b3-c14-p146
+18.318366,3,15,46.27,Princess Donut,CHA,100,base,Princess Donut's CHA is explicitly reported as 100.,b3-c15-p62
+18.318366,3,15,46.27,Princess Donut,Level,30,confirmed,Princess Donut is explicitly confirmed at level 30.,b3-c15-p62
+20.123195,3,23,98.15,Katia Grim,Level,37,confirmed,Katia Grim is explicitly confirmed at level 37.,b3-c23-p53
+20.482942,3,25,67.95,Prepotente,Level,34,confirmed,Prepotente is explicitly confirmed at level 34.,b3-c25-p106
+20.4843,3,25,68.59,Carl,Level,34,confirmed,Carl is explicitly confirmed at level 34.,b3-c25-p107
+20.485658,3,25,69.23,Princess Donut,Level,32,confirmed,Princess Donut is explicitly confirmed at level 32.,b3-c25-p108
+20.678477,3,26,60.24,Mongo,Level,23,confirmed,Mongo is explicitly confirmed at level 23.,b3-c26-p100
+20.873555,3,27,52.32,Carl,Level,35,confirmed,Carl is explicitly confirmed at level 35.,b3-c27-p79
+22.377866,3,34,62.35,Carl,Level,41,confirmed,Carl is explicitly confirmed at level 41.,b3-c34-p53
+22.9318,4,3,23.81,Louis Santiago,Level,22,confirmed,Louis Santiago is explicitly confirmed at level 22.,b4-c3-p45
+23.282596,4,4,89.39,Prepotente,Level,35,confirmed,Prepotente is explicitly confirmed at level 35.,b4-c4-p160
+23.28378,4,4,89.94,Princess Donut,Level,33,confirmed,Princess Donut is explicitly confirmed at level 33.,b4-c4-p161
+23.288514,4,4,92.18,Elle McGib,Level,33,confirmed,Elle McGib is explicitly confirmed at level 33.,b4-c4-p165
+23.646957,4,6,61.36,Louis Santiago,Level,24,confirmed,Louis Santiago is explicitly confirmed at level 24.,b4-c6-p108
+24.858174,4,12,33.06,Princess Donut,Level,34,confirmed,Princess Donut is explicitly confirmed at level 34.,b4-c12-p40
+25.882768,4,17,16.67,Carl,Level,44,confirmed,Carl is explicitly confirmed at level 44.,b4-c17-p26
+25.882768,4,17,16.67,Mongo,Level,33,confirmed,Mongo is explicitly confirmed at level 33.,b4-c17-p26
+25.882768,4,17,16.67,Princess Donut,Level,37,confirmed,Princess Donut is explicitly confirmed at level 37.,b4-c17-p26
+25.991417,4,17,67.95,Prepotente,Level,38,confirmed,Prepotente is explicitly confirmed at level 38.,b4-c17-p106
+25.998207,4,17,71.15,Elle McGib,Level,35,confirmed,Elle McGib is explicitly confirmed at level 35.,b4-c17-p111
+26.460351,4,19,89.29,Katia Grim,Level,41,confirmed,Katia Grim is explicitly confirmed at level 41.,b4-c19-p100
+26.509756,4,20,12.61,Louis Santiago,Level,30,confirmed,Louis Santiago is explicitly confirmed at level 30.,b4-c20-p15
+28.200483,4,28,10.63,Carl,Level,47,confirmed,Carl is explicitly confirmed at level 47.,b4-c28-p22
+28.200483,4,28,10.63,Katia Grim,Level,44,confirmed,Katia Grim is explicitly confirmed at level 44.,b4-c28-p22
+28.200483,4,28,10.63,Princess Donut,Level,39,confirmed,Princess Donut is explicitly confirmed at level 39.,b4-c28-p22
+29.420714,4,33,86.58,Prepotente,Level,55,confirmed,Prepotente is explicitly confirmed at level 55.,b4-c33-p129
+29.86812,5,1,97.75,Carl,INT,17,equipment,Carl's INT is explicitly reported as 17.,b5-c1-p174
+30.252776,5,3,79.31,Katia Grim,Level,52,confirmed,Katia Grim is explicitly confirmed at level 52.,b5-c3-p69
+30.809185,5,6,41.94,Carl,Level,54,confirmed,Carl is explicitly confirmed at level 54.,b5-c6-p65
+30.809185,5,6,41.94,Princess Donut,Level,41,confirmed,Princess Donut is explicitly confirmed at level 41.,b5-c6-p65
+37.737434,5,39,12.07,Carl,Level,56,confirmed,Carl is explicitly confirmed at level 56.,b5-c39-p7
+40.022301,5,49,90.53,Prepotente,Level,57,confirmed,Prepotente is explicitly confirmed at level 57.,b5-c49-p86
+40.316949,5,51,29.6,Princess Donut,Level,47,confirmed,Princess Donut is explicitly confirmed at level 47.,b5-c51-p37
+41.647908,5,57,57.81,Prepotente,Level,70,confirmed,Prepotente is explicitly confirmed at level 70.,b5-c57-p37
+42.392524,5,61,9.27,Carl,Level,59,confirmed,Carl is explicitly confirmed at level 59.,b5-c61-p14
+42.392524,5,61,9.27,Princess Donut,Level,50,confirmed,Princess Donut is explicitly confirmed at level 50.,b5-c61-p14
+43.273305,5,65,25.0,Katia Grim,Level,55,confirmed,Katia Grim is explicitly confirmed at level 55.,b5-c65-p27
+44.351641,5,70,33.97,Princess Donut,CHA,138,base,Princess Donut's CHA is explicitly reported as 138.,b5-c70-p53
+44.351641,5,70,33.97,Princess Donut,CHA,276,temporary,Princess Donut's CHA is explicitly reported as 276.,b5-c70-p53
+45.378622,5,75,18.71,Carl,Level,63,confirmed,Carl is explicitly confirmed at level 63.,b5-c75-p29
+45.378622,5,75,18.71,Katia Grim,Level,60,confirmed,Katia Grim is explicitly confirmed at level 60.,b5-c75-p29
+45.378622,5,75,18.71,Prepotente,Level,71,confirmed,Prepotente is explicitly confirmed at level 71.,b5-c75-p29
+45.378622,5,75,18.71,Princess Donut,Level,55,confirmed,Princess Donut is explicitly confirmed at level 55.,b5-c75-p29
+50.083863,6,22,39.58,Carl,Level,65,confirmed,Carl is explicitly confirmed at level 65.,b6-c22-p57
+50.083863,6,22,39.58,Princess Donut,Level,57,confirmed,Princess Donut is explicitly confirmed at level 57.,b6-c22-p57
+53.612846,6,39,5.26,Carl,Level,68,confirmed,Carl is explicitly confirmed at level 68.,b6-c39-p5
+53.612846,6,39,5.26,Mongo,Level,40,confirmed,Mongo is explicitly confirmed at level 40.,b6-c39-p5
+53.612846,6,39,5.26,Princess Donut,Level,59,confirmed,Princess Donut is explicitly confirmed at level 59.,b6-c39-p5
+59.20297,6,65,43.8,Elle McGib,Level,72,confirmed,Elle McGib is explicitly confirmed at level 72.,b6-c65-p53
+60.616125,6,72,10.81,Carl,Level,73,confirmed,Carl is explicitly confirmed at level 73.,b6-c72-p20
+60.616125,6,72,10.81,Princess Donut,Level,63,confirmed,Princess Donut is explicitly confirmed at level 63.,b6-c72-p20
+70.773305,7,48,5.0,Prepotente,Level,99,confirmed,Prepotente is explicitly confirmed at level 99.,b7-c48-p3
+71.402265,7,51,1.87,Carl,Level,75,confirmed,Carl is explicitly confirmed at level 75.,b7-c51-p2
+72.607328,7,56,70.66,Li Na,Level,84,confirmed,Li Na is explicitly confirmed at level 84.,b7-c56-p118
+76.977401,7,77,33.33,Carl,Level,81,confirmed,Carl is explicitly confirmed at level 81.,b7-c77-p27
+77.011404,7,77,49.38,Prepotente,Level,100,confirmed,Prepotente is explicitly confirmed at level 100.,b7-c77-p40
+77.488849,7,79,74.74,Elle McGib,Level,135,confirmed,Elle McGib is explicitly confirmed at level 135.,b7-c79-p71

@@ -13,6 +13,7 @@ The current dataset maps all eight *Dungeon Crawler Carl* books. This repository
 - cumulative level and base-stat charts with explicit milestone labels
 - filterable dossiers for the core party, support characters, and major recurring allies
 - inventory ledger and event history
+- dbt Charts dashboard with character, metric, and through-book selectors
 - strict location filtering so every view respects the reader's spoiler boundary
 
 ## Local setup
@@ -37,6 +38,26 @@ The checked-in public data contains short factual summaries, not book text. To r
 ```bash
 uv run python3 scripts/build_public_timeline.py
 uv run python3 scripts/validate_data.py site/dist/data/series.json --corpus data/private/series-corpus.json
+uv run python scripts/build_charts_data.py
+dct validate charts/crawl-atlas.yml --strict
+```
+
+## dbt Charts dashboard
+
+The dashboard reads checked-in CSV extracts under `charts/data/`; it needs no
+warehouse credentials. Install the pinned CLI and start the interactive board:
+
+```bash
+uv tool install "dbt-charts==0.8.0"
+dct serve
+```
+
+`dct serve` provides the working character multiselect, metric selector, book
+slider, tabs, and URL-persisted filter state. A static HTML export is useful as
+a snapshot, but its variable controls are not interactive:
+
+```bash
+dct render charts/crawl-atlas.yml --format html --output renders/crawl-atlas.html
 ```
 
 Community references may seed audit candidates, but a value is published only after it is independently confirmed against the local EPUB and classified as a base value, equipment-modified total, temporary effect, or reported total.

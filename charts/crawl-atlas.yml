@@ -1,0 +1,213 @@
+title: Crawl Atlas — Character Progression
+notes: >
+  Source-anchored, spoiler-conscious analysis of explicit levels, reported
+  stats, named skills, inventory events, and recurring-cast relationships.
+
+variables:
+  characters:
+    input: multiselect
+    options:
+      static:
+        - Carl
+        - Princess Donut
+        - Mongo
+        - Katia Grim
+        - Mordecai
+        - Samantha
+        - Prepotente
+        - Imani C.
+        - Elle McGib
+        - Li Na
+        - Louis Santiago
+    default: [Carl, Princess Donut, Katia Grim, Prepotente]
+  metric:
+    input: select
+    options:
+      static: [Level, STR, INT, CON, DEX, CHA]
+    default: Level
+  through_book:
+    input: slider
+    label: Through book
+    min: 1
+    max: 8
+    step: 1
+    default: 8
+
+queries:
+  selected_roster:
+    source: ./data/roster.csv
+    sql: |
+      SELECT
+        character,
+        group_name AS roster_group,
+        relationship,
+        role,
+        latest_confirmed_level
+      FROM roster
+      WHERE {{ filter('character', characters) }}
+      ORDER BY character
+
+  headline:
+    source: ./data/metrics.csv
+    sql: |
+      SELECT
+        COUNT(*) AS confirmed_points,
+        COUNT(DISTINCT character) AS represented_characters,
+        MAX(book) AS latest_book
+      FROM metrics
+      WHERE {{ filter('character', characters) }}
+        AND metric = {{ metric }}
+        AND book <= {{ through_book }}
+
+  metric_progression:
+    source: ./data/metrics.csv
+    sql: |
+      SELECT
+        series_progress,
+        book,
+        chapter,
+        character,
+        CASE
+          WHEN metric = 'Level' THEN character
+          ELSE character || ' · ' || scope
+        END AS series,
+        value,
+        scope,
+        summary
+      FROM metrics
+      WHERE {{ filter('character', characters) }}
+        AND metric = {{ metric }}
+        AND book <= {{ through_book }}
+      ORDER BY series_progress, character
+
+  selected_skills:
+    source: ./data/skills.csv
+    sql: |
+      SELECT
+        character,
+        skill,
+        level,
+        'Book ' || book || ', Ch. ' || chapter AS confirmed_at,
+        detail
+      FROM skills
+      WHERE {{ filter('character', characters) }}
+        AND book <= {{ through_book }}
+      ORDER BY character, skill, book, chapter
+
+  selected_inventory:
+    source: ./data/inventory.csv
+    sql: |
+      SELECT
+        character,
+        item,
+        action,
+        state,
+        quantity,
+        'Book ' || book || ', Ch. ' || chapter AS event_at
+      FROM inventory
+      WHERE {{ filter('character', characters) }}
+        AND book <= {{ through_book }}
+      ORDER BY book DESC, chapter DESC, chapter_position DESC
+
+  selected_relationships:
+    source: ./data/relationships.csv
+    sql: |
+      SELECT
+        character,
+        relationship,
+        'Book ' || book || ', Ch. ' || chapter AS changed_at,
+        summary
+      FROM relationships
+      WHERE {{ filter('character', characters) }}
+        AND book <= {{ through_book }}
+      ORDER BY book, chapter, chapter_position
+
+charts:
+  points_kpi:
+    type: kpi
+    query: headline
+    label: Confirmed points
+    value: confirmed_points
+    style:
+      value:
+        format: integer
+
+  characters_kpi:
+    type: kpi
+    query: headline
+    label: Characters represented
+    value: represented_characters
+    style:
+      value:
+        format: integer
+
+  book_kpi:
+    type: kpi
+    query: headline
+    label: Latest book in view
+    value: latest_book
+    style:
+      value:
+        format: integer
+
+  progression:
+    type: line
+    query: metric_progression
+    title: Explicit progression milestones
+    subtitle: Gaps stay visible; missing levels and stats are never interpolated as facts.
+    x: series_progress
+    y: value
+    color: series
+
+  roster:
+    type: table
+    query: selected_roster
+    title: Selected cast
+    style:
+      columns:
+        group_name:
+          label: Group
+        latest_confirmed_level:
+          label: Latest confirmed level
+          format: integer
+
+  skills:
+    type: table
+    query: selected_skills
+    title: Named skills and spells
+    subtitle: Latest and repeated confirmations remain visible as separate sourced rows.
+    style:
+      columns:
+        level:
+          format: integer
+
+  inventory:
+    type: table
+    query: selected_inventory
+    title: Inventory event log
+    subtitle: Acquisitions, uses, equipment changes, and removals—not a guessed current balance.
+    style:
+      columns:
+        quantity:
+          format: integer
+
+  relationships:
+    type: table
+    query: selected_relationships
+    title: Party and alliance history
+
+tabs:
+  items:
+    - title: Progression
+      rows:
+        - text: |
+            Showing **{{ metric }}** for selected characters through **Book {{ through_book }}**.
+            Every plotted value is explicitly stated in the books; source gaps stay gaps.
+        - cols: [points_kpi, characters_kpi, book_kpi]
+        - progression
+        - roster
+        - relationships
+    - title: Skills
+      rows: [skills]
+    - title: Inventory
+      rows: [inventory]

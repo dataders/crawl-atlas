@@ -12,4 +12,4 @@ __pycache__/
 # Local preview and Sites runtime state.
 .sites-runtime/
 site/.sites-runtime/
-
+renders/

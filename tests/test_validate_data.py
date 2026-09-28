@@ -1,3 +1,4 @@
+import csv
 import importlib.util
 import json
 import sys
@@ -109,6 +110,14 @@ class ValidatorTests(unittest.TestCase):
             if event["subject"] == "Katia Grim" and event["type"] == "party" and event.get("relationship")
         ]
         self.assertEqual(katia_relationships, ["Temporary party member", "Core party member", "Allied team leader"])
+
+    def test_charts_extract_covers_major_character_metrics(self):
+        with Path("charts/data/metrics.csv").open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        points = {(row["character"], row["metric"], row["value"]) for row in rows}
+        self.assertIn(("Katia Grim", "Level", "60"), points)
+        self.assertIn(("Prepotente", "Level", "100"), points)
+        self.assertIn(("Carl", "CHA", "25"), points)
 
 
 if __name__ == "__main__":

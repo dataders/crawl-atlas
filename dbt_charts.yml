@@ -1,0 +1,2 @@
+# dbt Charts project configuration.
+# Boards use checked-in public CSV extracts and require no warehouse credentials.

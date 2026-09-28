@@ -1,0 +1,5 @@
+theme: neon
+
+style:
+  frame:
+    max_width: 1480
