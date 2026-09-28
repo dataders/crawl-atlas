@@ -49,6 +49,7 @@
           "id": {"type": "string"},
           "name": {"type": "string"},
           "role": {"type": "string"},
+          "group": {"enum": ["core", "support", "ally"]},
           "color": {"type": "string"}
         }
       }
@@ -69,6 +70,7 @@
           "name": {"type": "string"},
           "source": {"type": "string"},
           "confidence": {"enum": ["verified", "partial", "inferred", "needs-review"]},
+          "relationship": {"type": "string"},
           "stats": {"type": "object", "additionalProperties": {"type": "number"}},
           "statScopes": {
             "type": "object",

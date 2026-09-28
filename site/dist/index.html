@@ -41,7 +41,7 @@
 
       <section class="progression-section" aria-labelledby="progression-title">
         <div class="section-heading">
-          <div><p class="eyebrow">Cumulative story</p><h2 id="progression-title">How the party got here</h2></div>
+          <div><p class="eyebrow">Cumulative story</p><h2 id="progression-title">How the cast got here</h2></div>
           <div class="chart-legend" id="chart-legend"></div>
         </div>
         <div class="chart-toolbar">
@@ -58,11 +58,14 @@
 
       <section class="character-section" aria-labelledby="character-title">
         <div class="section-heading compact">
-          <div><p class="eyebrow">Character dossiers</p><h2 id="character-title">Party at this point</h2></div>
+          <div><p class="eyebrow">Character dossiers</p><h2 id="character-title">Party &amp; allies known here</h2></div>
           <span class="section-count" id="party-count"></span>
         </div>
         <div class="character-workspace">
-          <div class="character-list" id="character-list" role="tablist" aria-label="Choose a party member"></div>
+          <div class="character-sidebar">
+            <div class="filter-row roster-filters" id="roster-filters" aria-label="Filter characters by relationship"></div>
+            <div class="character-list" id="character-list" role="tablist" aria-label="Choose a known character"></div>
+          </div>
           <article class="dossier" id="character-dossier" aria-live="polite"></article>
         </div>
       </section>

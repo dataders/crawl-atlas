@@ -1,6 +1,6 @@
 const SERIES = { Carl: "#d8ff3e", "Princess Donut": "#4dd9d2", Donut: "#4dd9d2", Mongo: "#ff6441" };
 const EVENT_COLORS = { level: "#d8ff3e", skill: "#4dd9d2", item: "#ff6441", party: "#ad8cff", stat: "#f5ca5c", story: "#8e9ba5" };
-const state = { data: null, progress: 0.135, chartMetric: "level", selectedCharacter: null, inventoryOwner: "All", inventorySearch: "", historyFilter: "All" };
+const state = { data: null, progress: 0.135, chartMetric: "level", selectedCharacter: null, rosterFilter: "All", inventoryOwner: "All", inventorySearch: "", historyFilter: "All" };
 const $ = (selector) => document.querySelector(selector);
 const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[c]));
 const slug = (value) => String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -84,7 +84,8 @@ function characterState(character, events) {
     });
     Object.entries(event.statsDelta ?? {}).forEach(([name, delta]) => { stats[name] = (stats[name] ?? 0) + delta; });
   });
-  return { character, level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => a.name.localeCompare(b.name)), events: mine };
+  const relationship = mine.filter((event) => event.type === "party" && event.relationship).at(-1)?.relationship ?? character.relationship ?? character.role ?? "Known character";
+  return { character, relationship, level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => a.name.localeCompare(b.name)), events: mine };
 }
 
 function inventoryAt(events) {
@@ -228,17 +229,24 @@ function renderChart(events, party) {
   });
 }
 
-function renderCharacters(events, party) {
-  if (!party.length) {
-    $("#party-count").textContent = "No party yet";
+function renderCharacters(events, roster) {
+  if (!roster.length) {
+    $("#party-count").textContent = "No characters known yet";
+    $("#roster-filters").innerHTML = "";
     $("#character-list").innerHTML = "";
-    $("#character-dossier").innerHTML = '<div class="empty">No party members are known at this point.</div>';
+    $("#character-dossier").innerHTML = '<div class="empty">No recurring characters are known at this point.</div>';
     return;
   }
-  if (!party.some((character) => character.name === state.selectedCharacter)) state.selectedCharacter = party[0].name;
-  const states = party.map((character) => characterState(character, events));
-  $("#party-count").textContent = `${states.length} ${states.length === 1 ? "member" : "members"}`;
-  $("#character-list").innerHTML = states.map(({ character, level, skills }) => `<button class="character-tab ${character.name === state.selectedCharacter ? "active" : ""}" role="tab" aria-selected="${character.name === state.selectedCharacter}" data-character="${esc(character.name)}" style="--person-color:${character.color ?? SERIES[character.name]}"><span><strong>${esc(character.name)}</strong><span>${esc(character.role ?? "Party member")} · ${skills.length} skills</span></span><span class="mini-level"><small>Level</small>${level ?? "—"}</span></button>`).join("");
+  const filters = [{ id: "All", label: "All" }, { id: "core", label: "Core" }, { id: "support", label: "Support" }, { id: "ally", label: "Allies" }];
+  const availableFilters = filters.filter((filter) => filter.id === "All" || roster.some((character) => character.group === filter.id));
+  if (!availableFilters.some((filter) => filter.id === state.rosterFilter)) state.rosterFilter = "All";
+  $("#roster-filters").innerHTML = availableFilters.map((filter) => `<button type="button" class="filter-button ${filter.id === state.rosterFilter ? "active" : ""}" data-roster-filter="${filter.id}">${filter.label}</button>`).join("");
+  $("#roster-filters").querySelectorAll("[data-roster-filter]").forEach((button) => button.addEventListener("click", () => { state.rosterFilter = button.dataset.rosterFilter; renderCharacters(events, roster); }));
+  const allStates = roster.map((character) => characterState(character, events));
+  const states = allStates.filter(({ character }) => state.rosterFilter === "All" || character.group === state.rosterFilter);
+  if (!states.some(({ character }) => character.name === state.selectedCharacter)) state.selectedCharacter = states[0].character.name;
+  $("#party-count").textContent = `${allStates.length} known ${allStates.length === 1 ? "character" : "characters"}`;
+  $("#character-list").innerHTML = states.map(({ character, relationship, level, skills }) => `<button class="character-tab ${character.name === state.selectedCharacter ? "active" : ""}" role="tab" aria-selected="${character.name === state.selectedCharacter}" data-character="${esc(character.name)}" style="--person-color:${character.color ?? SERIES[character.name]}"><span><strong>${esc(character.name)}</strong><span>${esc(relationship)} · ${skills.length} ${skills.length === 1 ? "skill" : "skills"}</span></span><span class="mini-level"><small>Level</small>${level ?? "—"}</span></button>`).join("");
   $("#character-list").querySelectorAll("[data-character]").forEach((button) => button.addEventListener("click", () => { state.selectedCharacter = button.dataset.character; renderAll(); }));
   const selected = states.find(({ character }) => character.name === state.selectedCharacter);
   const color = selected.character.color ?? SERIES[selected.character.name];
@@ -247,7 +255,7 @@ function renderCharacters(events, party) {
   const levelHistory = selected.levels.map((event) => `<span>B${event.book} Ch. ${event.chapter}: ${event.level}</span>`).join(" → ");
   $("#character-dossier").style.setProperty("--person-color", color);
   $("#character-dossier").innerHTML = `
-    <header class="dossier-head"><div><p class="eyebrow">Selected character</p><h3>${esc(selected.character.name)}</h3><span class="dossier-role">${esc(selected.character.role ?? "Party member")}</span></div><div class="dossier-level"><small>CURRENT LEVEL</small>${selected.level ?? "—"}</div></header>
+    <header class="dossier-head"><div><p class="eyebrow">Selected character</p><h3>${esc(selected.character.name)}</h3><span class="dossier-role">${esc(selected.relationship)}${selected.character.role && selected.character.role !== selected.relationship ? ` · ${esc(selected.character.role)}` : ""}</span></div><div class="dossier-level"><small>LATEST CONFIRMED</small>${selected.level ?? "—"}</div></header>
     <div class="dossier-grid">
       <div class="dossier-block"><h4>Confirmed base stats</h4>${baseStatEntries.length ? `<div class="stats">${baseStatEntries.map(([name,value]) => `<div class="stat"><span>${esc(name)}</span>${esc(value)}</div>`).join("")}</div><div class="skill-meta">Latest explicitly unmodified values; unreported growth is not guessed.</div>` : '<div class="empty">No unmodified stat display yet.</div>'}${reportedEntries.length ? `<h4 style="margin-top:20px">Reported with modifiers</h4><div class="stats">${reportedEntries.map(([name,value]) => `<div class="stat modified"><span>${esc(name)}</span>${esc(value)}</div>`).join("")}</div>` : ""}<h4 style="margin-top:20px">Level history</h4><div class="skill-meta">${levelHistory || "No explicit level shown yet."}</div></div>
       <div class="dossier-block"><h4>All known skills & spells</h4>${selected.skills.length ? `<div class="skills-grid">${selected.skills.map((skill) => `<div class="skill-card"><strong>${esc(skill.name)}</strong><span>${skill.level !== null ? `L${esc(skill.level)}` : "KNOWN"}</span><div class="skill-meta">Confirmed by Book ${skill.book ?? 1}, Ch. ${skill.chapter}${skill.detail ? ` · ${esc(skill.detail)}` : ""}</div></div>`).join("")}</div>` : '<div class="empty">No named skills revealed yet.</div>'}</div>
@@ -290,7 +298,7 @@ function renderAll() {
 }
 
 async function start() {
-  const response = await fetch("data/series.json?v=2.1.0", { cache: "no-store" });
+  const response = await fetch("data/series.json?v=2.2.0", { cache: "no-store" });
   if (!response.ok) throw new Error(`Could not load dataset (${response.status})`);
   state.data = normalizeData(await response.json());
   state.data.characters ??= [];

@@ -4,8 +4,8 @@
     "title": "Dungeon Crawler Carl",
     "bookCount": 8,
     "chapterCount": 472,
-    "dataVersion": "2.1.0",
-    "coverageNote": "Eight-book chapter map with source-anchored explicit progression. Detailed skills and inventory remain most complete for Book 1."
+    "dataVersion": "2.2.0",
+    "coverageNote": "Eight-book chapter map with source-anchored progression for the core party and major recurring allies. Skills and inventory appear only when explicitly confirmed."
   },
   "books": [
     {
@@ -78,19 +78,78 @@
       "id": "carl",
       "name": "Carl",
       "role": "Royal Bodyguard",
+      "group": "core",
       "color": "#d8ff3e"
     },
     {
       "id": "princess-donut",
       "name": "Princess Donut",
       "role": "Party leader",
+      "group": "core",
       "color": "#4dd9d2"
     },
     {
       "id": "mongo",
       "name": "Mongo",
       "role": "Donut's bonded pet",
+      "group": "core",
       "color": "#ff6441"
+    },
+    {
+      "id": "katia-grim",
+      "name": "Katia Grim",
+      "role": "Doppelganger tank",
+      "group": "core",
+      "color": "#ff9f43"
+    },
+    {
+      "id": "mordecai",
+      "name": "Mordecai",
+      "role": "Guide, manager, and alchemist",
+      "group": "support",
+      "color": "#f28c67"
+    },
+    {
+      "id": "samantha",
+      "name": "Samantha",
+      "role": "Disembodied minor deity",
+      "group": "support",
+      "color": "#ff78c4"
+    },
+    {
+      "id": "prepotente",
+      "name": "Prepotente",
+      "role": "Caprid support specialist",
+      "group": "ally",
+      "color": "#c9a66b"
+    },
+    {
+      "id": "imani-c",
+      "name": "Imani C.",
+      "role": "Healer and battlefield coordinator",
+      "group": "ally",
+      "color": "#b388ff"
+    },
+    {
+      "id": "elle-mcgib",
+      "name": "Elle McGib",
+      "role": "Frost mage",
+      "group": "ally",
+      "color": "#73a7ff"
+    },
+    {
+      "id": "li-na",
+      "name": "Li Na",
+      "role": "Dread fighter",
+      "group": "ally",
+      "color": "#e45f9d"
+    },
+    {
+      "id": "louis-santiago",
+      "name": "Louis Santiago",
+      "role": "Pest Exterminator and pilot",
+      "group": "ally",
+      "color": "#ffd166"
     }
   ],
   "events": [
@@ -314,6 +373,36 @@
       "source": "b1-c2-p53",
       "confidence": "verified",
       "progress": 0.0029824
+    },
+    {
+      "id": "series-1-2-mordecai-roster-registered-game-guide",
+      "book": 1,
+      "chapter": 2,
+      "position": 0.784615,
+      "type": "party",
+      "subject": "Mordecai",
+      "name": "Roster relationship",
+      "summary": "Carl meets Mordecai, who becomes the party's registered guide.",
+      "source": "b1-c2-p102",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Registered game guide",
+      "progress": 0.00378096
+    },
+    {
+      "id": "series-1-3-mordecai-level-50",
+      "book": 1,
+      "chapter": 3,
+      "position": 0.092105,
+      "type": "level",
+      "subject": "Mordecai",
+      "name": "Character level",
+      "summary": "Mordecai is explicitly confirmed at level 50.",
+      "source": "b1-c3-p7",
+      "confidence": "verified",
+      "action": "set",
+      "level": 50,
+      "progress": 0.00443243
     },
     {
       "id": "carl-initial-stats-stats",
@@ -3629,6 +3718,36 @@
       "progress": 0.04290254
     },
     {
+      "id": "series-1-22-imani-c-roster-meadow-lark-ally",
+      "book": 1,
+      "chapter": 22,
+      "position": 0.27451,
+      "type": "party",
+      "subject": "Imani C.",
+      "name": "Roster relationship",
+      "summary": "Imani becomes known as a capable allied crawler from Meadow Lark.",
+      "source": "b1-c22-p28",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Meadow Lark ally",
+      "progress": 0.04507311
+    },
+    {
+      "id": "series-1-23-imani-c-level-10",
+      "book": 1,
+      "chapter": 23,
+      "position": 0.133333,
+      "type": "level",
+      "subject": "Imani C.",
+      "name": "Character level",
+      "summary": "Imani C. is explicitly confirmed at level 10.",
+      "source": "b1-c23-p6",
+      "confidence": "verified",
+      "action": "set",
+      "level": 10,
+      "progress": 0.04689265
+    },
+    {
       "id": "donut-magic-missile-5-intelligence-24-ability",
       "book": 1,
       "chapter": 23,
@@ -4968,6 +5087,21 @@
       "progress": 0.06343284
     },
     {
+      "id": "series-1-31-elle-mcgib-roster-meadow-lark-ally",
+      "book": 1,
+      "chapter": 31,
+      "position": 0.059701,
+      "type": "party",
+      "subject": "Elle McGib",
+      "name": "Roster relationship",
+      "summary": "Elle becomes known as a surviving Meadow Lark crawler.",
+      "source": "b1-c31-p4",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Meadow Lark ally",
+      "progress": 0.06368581
+    },
+    {
       "id": "carl-slingshot-3-ability",
       "book": 1,
       "chapter": 32,
@@ -5936,6 +6070,21 @@
       "progress": 0.07392953
     },
     {
+      "id": "series-1-37-imani-c-level-11",
+      "book": 1,
+      "chapter": 37,
+      "position": 0.626506,
+      "type": "level",
+      "subject": "Imani C.",
+      "name": "Character level",
+      "summary": "Imani C. is explicitly confirmed at level 11.",
+      "source": "b1-c37-p52",
+      "confidence": "verified",
+      "action": "set",
+      "level": 11,
+      "progress": 0.07759853
+    },
+    {
       "id": "inv-040b-lucky-bastard-tickets-item-0-0",
       "book": 1,
       "chapter": 39,
@@ -6194,6 +6343,21 @@
         "CON": "equipment"
       },
       "progress": 0.08759269
+    },
+    {
+      "id": "series-1-42-li-na-roster-allied-crawler",
+      "book": 1,
+      "chapter": 42,
+      "position": 0.359375,
+      "type": "party",
+      "subject": "Li Na",
+      "name": "Roster relationship",
+      "summary": "Li Na becomes known through the surviving crawler network.",
+      "source": "b1-c42-p46",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Allied crawler",
+      "progress": 0.08762579
     },
     {
       "id": "inv-043-maestro-gift-item-0-0",
@@ -6865,6 +7029,21 @@
       "progress": 0.09904291
     },
     {
+      "id": "series-2-1-mordecai-roster-party-manager",
+      "book": 2,
+      "chapter": 1,
+      "position": 0.91875,
+      "type": "party",
+      "subject": "Mordecai",
+      "name": "Roster relationship",
+      "summary": "Mordecai becomes Donut's manager and permanent support specialist.",
+      "source": "b2-c1-p147",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Party manager",
+      "progress": 0.10152278
+    },
+    {
       "id": "series-2-2-carl-str-10-base",
       "book": 2,
       "chapter": 2,
@@ -7160,6 +7339,108 @@
       "progress": 0.1373326
     },
     {
+      "id": "series-2-21-katia-grim-level-9",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.173184,
+      "type": "level",
+      "subject": "Katia Grim",
+      "name": "Character level",
+      "summary": "Katia Grim is explicitly confirmed at level 9.",
+      "source": "b2-c21-p31",
+      "confidence": "verified",
+      "action": "set",
+      "level": 9,
+      "progress": 0.14231607
+    },
+    {
+      "id": "series-2-21-katia-grim-roster-temporary-party-member",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.424581,
+      "type": "party",
+      "subject": "Katia Grim",
+      "name": "Roster relationship",
+      "summary": "Katia temporarily joins Donut's party to train and share experience.",
+      "source": "b2-c21-p76",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Temporary party member",
+      "progress": 0.14284869
+    },
+    {
+      "id": "series-2-25-katia-grim-skill-rush-none",
+      "book": 2,
+      "chapter": 25,
+      "position": 0.638655,
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "Rush",
+      "summary": "Katia Grim's Rush is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 2, Chapter 25.",
+      "source": "b2-c25-p76",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.15177681
+    },
+    {
+      "id": "series-3-1-katia-grim-con-102-temporary",
+      "book": 3,
+      "chapter": 1,
+      "position": 0.202186,
+      "type": "stat",
+      "subject": "Katia Grim",
+      "name": "CON confirmation",
+      "summary": "Katia Grim's CON is explicitly reported as 102.",
+      "source": "b3-c1-p37",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "CON": 102
+      },
+      "statScopes": {
+        "CON": "temporary"
+      },
+      "progress": 0.15297073
+    },
+    {
+      "id": "series-3-1-katia-grim-skill-pathfinder-none",
+      "book": 3,
+      "chapter": 1,
+      "position": 0.327869,
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "Pathfinder",
+      "summary": "Katia Grim's Pathfinder is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 3, Chapter 1.",
+      "source": "b3-c1-p60",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.15323701
+    },
+    {
+      "id": "series-3-1-katia-grim-str-11-reported",
+      "book": 3,
+      "chapter": 1,
+      "position": 0.699454,
+      "type": "stat",
+      "subject": "Katia Grim",
+      "name": "STR confirmation",
+      "summary": "Katia Grim's STR is explicitly reported as 11.",
+      "source": "b3-c1-p128",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "STR": 11
+      },
+      "statScopes": {
+        "STR": "reported"
+      },
+      "progress": 0.15402427
+    },
+    {
       "id": "series-3-2-carl-str-41-reported",
       "book": 3,
       "chapter": 2,
@@ -7260,6 +7541,52 @@
       "progress": 0.15615462
     },
     {
+      "id": "series-3-3-katia-grim-skill-catcher-none",
+      "book": 3,
+      "chapter": 3,
+      "position": 0.430894,
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "Catcher",
+      "summary": "Katia Grim's Catcher is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 3, Chapter 3.",
+      "source": "b3-c3-p53",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.15769257
+    },
+    {
+      "id": "series-3-3-prepotente-roster-independent-allied-crawler",
+      "book": 3,
+      "chapter": 3,
+      "position": 0.593496,
+      "type": "party",
+      "subject": "Prepotente",
+      "name": "Roster relationship",
+      "summary": "Prepotente becomes known as a powerful independent crawler allied with Miriam Dom.",
+      "source": "b3-c3-p73",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Independent allied crawler",
+      "progress": 0.15803707
+    },
+    {
+      "id": "series-3-3-prepotente-level-27",
+      "book": 3,
+      "chapter": 3,
+      "position": 0.642276,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 27.",
+      "source": "b3-c3-p79",
+      "confidence": "verified",
+      "action": "set",
+      "level": 27,
+      "progress": 0.15814042
+    },
+    {
       "id": "series-3-3-carl-level-27",
       "book": 3,
       "chapter": 3,
@@ -7288,6 +7615,36 @@
       "action": "set",
       "level": 26,
       "progress": 0.15820932
+    },
+    {
+      "id": "series-3-3-elle-mcgib-level-17",
+      "book": 3,
+      "chapter": 3,
+      "position": 0.699187,
+      "type": "level",
+      "subject": "Elle McGib",
+      "name": "Character level",
+      "summary": "Elle McGib is explicitly confirmed at level 17.",
+      "source": "b3-c3-p86",
+      "confidence": "verified",
+      "action": "set",
+      "level": 17,
+      "progress": 0.15826099
+    },
+    {
+      "id": "series-3-6-katia-grim-level-22",
+      "book": 3,
+      "chapter": 6,
+      "position": 0.508982,
+      "type": "level",
+      "subject": "Katia Grim",
+      "name": "Character level",
+      "summary": "Katia Grim is explicitly confirmed at level 22.",
+      "source": "b3-c6-p85",
+      "confidence": "verified",
+      "action": "set",
+      "level": 22,
+      "progress": 0.16421394
     },
     {
       "id": "series-3-6-mongo-level-14",
@@ -7350,6 +7707,41 @@
       "progress": 0.17588621
     },
     {
+      "id": "series-3-12-katia-grim-level-24",
+      "book": 3,
+      "chapter": 12,
+      "position": 0.164634,
+      "type": "level",
+      "subject": "Katia Grim",
+      "name": "Character level",
+      "summary": "Katia Grim is explicitly confirmed at level 24.",
+      "source": "b3-c12-p27",
+      "confidence": "verified",
+      "action": "set",
+      "level": 24,
+      "progress": 0.17619626
+    },
+    {
+      "id": "series-3-13-katia-grim-str-49-equipment",
+      "book": 3,
+      "chapter": 13,
+      "position": 0.392857,
+      "type": "stat",
+      "subject": "Katia Grim",
+      "name": "STR confirmation",
+      "summary": "Katia Grim's STR is explicitly reported as 49.",
+      "source": "b3-c13-p66",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "STR": 49
+      },
+      "statScopes": {
+        "STR": "equipment"
+      },
+      "progress": 0.17879843
+    },
+    {
       "id": "series-3-14-carl-level-32",
       "book": 3,
       "chapter": 14,
@@ -7398,6 +7790,67 @@
       "action": "set",
       "level": 30,
       "progress": 0.18318366
+    },
+    {
+      "id": "series-3-23-katia-grim-level-37",
+      "book": 3,
+      "chapter": 23,
+      "position": 0.981481,
+      "type": "level",
+      "subject": "Katia Grim",
+      "name": "Character level",
+      "summary": "Katia Grim is explicitly confirmed at level 37.",
+      "source": "b3-c23-p53",
+      "confidence": "verified",
+      "action": "set",
+      "level": 37,
+      "progress": 0.20123195
+    },
+    {
+      "id": "series-3-25-katia-grim-roster-core-party-member",
+      "book": 3,
+      "chapter": 25,
+      "position": 0.294872,
+      "type": "party",
+      "subject": "Katia Grim",
+      "name": "Roster relationship",
+      "summary": "Katia is accepted as a permanent member of Carl and Donut's core team.",
+      "source": "b3-c25-p46",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Core party member",
+      "progress": 0.20401456
+    },
+    {
+      "id": "series-3-25-katia-grim-skill-find-crawler-3",
+      "book": 3,
+      "chapter": 25,
+      "position": 0.403846,
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "Find Crawler",
+      "summary": "Katia Grim's Find Crawler is explicitly confirmed at level 3.",
+      "detail": "Explicitly confirmed in Book 3, Chapter 25.",
+      "source": "b3-c25-p63",
+      "confidence": "verified",
+      "action": "set",
+      "level": 3,
+      "progress": 0.20424544
+    },
+    {
+      "id": "series-3-25-prepotente-level-34",
+      "book": 3,
+      "chapter": 25,
+      "position": 0.679487,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 34.",
+      "source": "b3-c25-p106",
+      "confidence": "verified",
+      "action": "set",
+      "level": 34,
+      "progress": 0.20482942
     },
     {
       "id": "series-3-25-carl-level-34",
@@ -7460,6 +7913,22 @@
       "progress": 0.20873555
     },
     {
+      "id": "series-3-29-katia-grim-skill-crowd-blast-none",
+      "book": 3,
+      "chapter": 29,
+      "position": 0.455882,
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "Crowd Blast",
+      "summary": "Katia Grim's Crowd Blast is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 3, Chapter 29.",
+      "source": "b3-c29-p62",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.21283026
+    },
+    {
       "id": "series-3-34-carl-level-41",
       "book": 3,
       "chapter": 34,
@@ -7475,6 +7944,67 @@
       "progress": 0.22377866
     },
     {
+      "id": "series-4-2-katia-grim-skill-catcher-11",
+      "book": 4,
+      "chapter": 2,
+      "position": 0.383495,
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "Catcher",
+      "summary": "Katia Grim's Catcher is explicitly confirmed at level 11.",
+      "detail": "Explicitly confirmed in Book 4, Chapter 2.",
+      "source": "b4-c2-p79",
+      "confidence": "verified",
+      "action": "set",
+      "level": 11,
+      "progress": 0.2275074
+    },
+    {
+      "id": "series-4-3-louis-santiago-level-22",
+      "book": 4,
+      "chapter": 3,
+      "position": 0.238095,
+      "type": "level",
+      "subject": "Louis Santiago",
+      "name": "Character level",
+      "summary": "Louis Santiago is explicitly confirmed at level 22.",
+      "source": "b4-c3-p45",
+      "confidence": "verified",
+      "action": "set",
+      "level": 22,
+      "progress": 0.229318
+    },
+    {
+      "id": "series-4-3-louis-santiago-roster-allied-crawler-and-pilot",
+      "book": 4,
+      "chapter": 3,
+      "position": 0.238095,
+      "type": "party",
+      "subject": "Louis Santiago",
+      "name": "Roster relationship",
+      "summary": "Louis becomes known as an allied crawler and vehicle specialist.",
+      "source": "b4-c3-p45",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Allied crawler and pilot",
+      "progress": 0.229318
+    },
+    {
+      "id": "series-4-4-prepotente-level-35",
+      "book": 4,
+      "chapter": 4,
+      "position": 0.893855,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 35.",
+      "source": "b4-c4-p160",
+      "confidence": "verified",
+      "action": "set",
+      "level": 35,
+      "progress": 0.23282596
+    },
+    {
       "id": "series-4-4-princess-donut-level-33",
       "book": 4,
       "chapter": 4,
@@ -7488,6 +8018,52 @@
       "action": "set",
       "level": 33,
       "progress": 0.2328378
+    },
+    {
+      "id": "series-4-4-elle-mcgib-level-33",
+      "book": 4,
+      "chapter": 4,
+      "position": 0.921788,
+      "type": "level",
+      "subject": "Elle McGib",
+      "name": "Character level",
+      "summary": "Elle McGib is explicitly confirmed at level 33.",
+      "source": "b4-c4-p165",
+      "confidence": "verified",
+      "action": "set",
+      "level": 33,
+      "progress": 0.23288514
+    },
+    {
+      "id": "series-4-5-louis-santiago-skill-cloud-of-exhaust-11",
+      "book": 4,
+      "chapter": 5,
+      "position": 0.756303,
+      "type": "skill",
+      "subject": "Louis Santiago",
+      "name": "Cloud of Exhaust",
+      "summary": "Louis Santiago's Cloud of Exhaust is explicitly confirmed at level 11.",
+      "detail": "Explicitly confirmed in Book 4, Chapter 5.",
+      "source": "b4-c5-p90",
+      "confidence": "verified",
+      "action": "set",
+      "level": 11,
+      "progress": 0.23465318
+    },
+    {
+      "id": "series-4-6-louis-santiago-level-24",
+      "book": 4,
+      "chapter": 6,
+      "position": 0.613636,
+      "type": "level",
+      "subject": "Louis Santiago",
+      "name": "Character level",
+      "summary": "Louis Santiago is explicitly confirmed at level 24.",
+      "source": "b4-c6-p108",
+      "confidence": "verified",
+      "action": "set",
+      "level": 24,
+      "progress": 0.23646957
     },
     {
       "id": "series-4-12-princess-donut-level-34",
@@ -7550,6 +8126,81 @@
       "progress": 0.25882768
     },
     {
+      "id": "series-4-17-prepotente-level-38",
+      "book": 4,
+      "chapter": 17,
+      "position": 0.679487,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 38.",
+      "source": "b4-c17-p106",
+      "confidence": "verified",
+      "action": "set",
+      "level": 38,
+      "progress": 0.25991417
+    },
+    {
+      "id": "series-4-17-elle-mcgib-level-35",
+      "book": 4,
+      "chapter": 17,
+      "position": 0.711538,
+      "type": "level",
+      "subject": "Elle McGib",
+      "name": "Character level",
+      "summary": "Elle McGib is explicitly confirmed at level 35.",
+      "source": "b4-c17-p111",
+      "confidence": "verified",
+      "action": "set",
+      "level": 35,
+      "progress": 0.25998207
+    },
+    {
+      "id": "series-4-19-katia-grim-level-41",
+      "book": 4,
+      "chapter": 19,
+      "position": 0.892857,
+      "type": "level",
+      "subject": "Katia Grim",
+      "name": "Character level",
+      "summary": "Katia Grim is explicitly confirmed at level 41.",
+      "source": "b4-c19-p100",
+      "confidence": "verified",
+      "action": "set",
+      "level": 41,
+      "progress": 0.26460351
+    },
+    {
+      "id": "series-4-20-louis-santiago-level-30",
+      "book": 4,
+      "chapter": 20,
+      "position": 0.12605,
+      "type": "level",
+      "subject": "Louis Santiago",
+      "name": "Character level",
+      "summary": "Louis Santiago is explicitly confirmed at level 30.",
+      "source": "b4-c20-p15",
+      "confidence": "verified",
+      "action": "set",
+      "level": 30,
+      "progress": 0.26509756
+    },
+    {
+      "id": "series-4-24-samantha-roster-companion",
+      "book": 4,
+      "chapter": 24,
+      "position": 0.1875,
+      "type": "party",
+      "subject": "Samantha",
+      "name": "Roster relationship",
+      "summary": "Samantha becomes known to the group as a dangerous but recurring companion.",
+      "source": "b4-c24-p27",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Companion",
+      "progress": 0.27370233
+    },
+    {
       "id": "series-4-28-carl-level-47",
       "book": 4,
       "chapter": 28,
@@ -7562,6 +8213,21 @@
       "confidence": "verified",
       "action": "set",
       "level": 47,
+      "progress": 0.28200483
+    },
+    {
+      "id": "series-4-28-katia-grim-level-44",
+      "book": 4,
+      "chapter": 28,
+      "position": 0.10628,
+      "type": "level",
+      "subject": "Katia Grim",
+      "name": "Character level",
+      "summary": "Katia Grim is explicitly confirmed at level 44.",
+      "source": "b4-c28-p22",
+      "confidence": "verified",
+      "action": "set",
+      "level": 44,
       "progress": 0.28200483
     },
     {
@@ -7578,6 +8244,52 @@
       "action": "set",
       "level": 39,
       "progress": 0.28200483
+    },
+    {
+      "id": "series-4-32-katia-grim-skill-hanzo-none",
+      "book": 4,
+      "chapter": 32,
+      "position": 0.798969,
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "Hanzo",
+      "summary": "Katia Grim's Hanzo is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 4, Chapter 32.",
+      "source": "b4-c32-p155",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.29194697
+    },
+    {
+      "id": "series-4-33-prepotente-level-55",
+      "book": 4,
+      "chapter": 33,
+      "position": 0.865772,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 55.",
+      "source": "b4-c33-p129",
+      "confidence": "verified",
+      "action": "set",
+      "level": 55,
+      "progress": 0.29420714
+    },
+    {
+      "id": "series-5-1-katia-grim-roster-allied-team-leader",
+      "book": 5,
+      "chapter": 1,
+      "position": 0.910112,
+      "type": "party",
+      "subject": "Katia Grim",
+      "name": "Roster relationship",
+      "summary": "Katia leaves the formal party while remaining a close ally and team leader.",
+      "source": "b5-c1-p162",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Allied team leader",
+      "progress": 0.29853837
     },
     {
       "id": "series-5-1-carl-int-17-equipment",
@@ -7598,6 +8310,21 @@
         "INT": "equipment"
       },
       "progress": 0.2986812
+    },
+    {
+      "id": "series-5-3-katia-grim-level-52",
+      "book": 5,
+      "chapter": 3,
+      "position": 0.793103,
+      "type": "level",
+      "subject": "Katia Grim",
+      "name": "Character level",
+      "summary": "Katia Grim is explicitly confirmed at level 52.",
+      "source": "b5-c3-p69",
+      "confidence": "verified",
+      "action": "set",
+      "level": 52,
+      "progress": 0.30252776
     },
     {
       "id": "series-5-6-carl-level-54",
@@ -7630,6 +8357,21 @@
       "progress": 0.30809185
     },
     {
+      "id": "series-5-20-imani-c-roster-princess-posse-guildmaster",
+      "book": 5,
+      "chapter": 20,
+      "position": 0.836735,
+      "type": "party",
+      "subject": "Imani C.",
+      "name": "Roster relationship",
+      "summary": "Imani becomes guildmaster of the broader allied crawler network.",
+      "source": "b5-c20-p41",
+      "confidence": "verified",
+      "action": "join",
+      "relationship": "Princess Posse guildmaster",
+      "progress": 0.33863715
+    },
+    {
       "id": "series-5-39-carl-level-56",
       "book": 5,
       "chapter": 39,
@@ -7645,6 +8387,37 @@
       "progress": 0.37737434
     },
     {
+      "id": "series-5-47-prepotente-skill-community-pool-none",
+      "book": 5,
+      "chapter": 47,
+      "position": 0.576,
+      "type": "skill",
+      "subject": "Prepotente",
+      "name": "Community Pool",
+      "summary": "Prepotente's Community Pool is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 5, Chapter 47.",
+      "source": "b5-c47-p72",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.39528814
+    },
+    {
+      "id": "series-5-49-prepotente-level-57",
+      "book": 5,
+      "chapter": 49,
+      "position": 0.905263,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 57.",
+      "source": "b5-c49-p86",
+      "confidence": "verified",
+      "action": "set",
+      "level": 57,
+      "progress": 0.40022301
+    },
+    {
       "id": "series-5-51-princess-donut-level-47",
       "book": 5,
       "chapter": 51,
@@ -7658,6 +8431,37 @@
       "action": "set",
       "level": 47,
       "progress": 0.40316949
+    },
+    {
+      "id": "series-5-55-imani-c-skill-smart-juice-none",
+      "book": 5,
+      "chapter": 55,
+      "position": 0.681818,
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Smart Juice",
+      "summary": "Imani C.'s Smart Juice is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 5, Chapter 55.",
+      "source": "b5-c55-p60",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.41246148
+    },
+    {
+      "id": "series-5-57-prepotente-level-70",
+      "book": 5,
+      "chapter": 57,
+      "position": 0.578125,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 70.",
+      "source": "b5-c57-p37",
+      "confidence": "verified",
+      "action": "set",
+      "level": 70,
+      "progress": 0.41647908
     },
     {
       "id": "series-5-61-carl-level-59",
@@ -7688,6 +8492,37 @@
       "action": "set",
       "level": 50,
       "progress": 0.42392524
+    },
+    {
+      "id": "series-5-62-katia-grim-skill-i-need-my-personal-space-none",
+      "book": 5,
+      "chapter": 62,
+      "position": 0.486111,
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "I Need My Personal Space",
+      "summary": "Katia Grim's I Need My Personal Space is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 5, Chapter 62.",
+      "source": "b5-c62-p35",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.42687735
+    },
+    {
+      "id": "series-5-65-katia-grim-level-55",
+      "book": 5,
+      "chapter": 65,
+      "position": 0.25,
+      "type": "level",
+      "subject": "Katia Grim",
+      "name": "Character level",
+      "summary": "Katia Grim is explicitly confirmed at level 55.",
+      "source": "b5-c65-p27",
+      "confidence": "verified",
+      "action": "set",
+      "level": 55,
+      "progress": 0.43273305
     },
     {
       "id": "series-5-70-princess-donut-cha-138-base",
@@ -7742,6 +8577,36 @@
       "confidence": "verified",
       "action": "set",
       "level": 63,
+      "progress": 0.45378622
+    },
+    {
+      "id": "series-5-75-katia-grim-level-60",
+      "book": 5,
+      "chapter": 75,
+      "position": 0.187097,
+      "type": "level",
+      "subject": "Katia Grim",
+      "name": "Character level",
+      "summary": "Katia Grim is explicitly confirmed at level 60.",
+      "source": "b5-c75-p29",
+      "confidence": "verified",
+      "action": "set",
+      "level": 60,
+      "progress": 0.45378622
+    },
+    {
+      "id": "series-5-75-prepotente-level-71",
+      "book": 5,
+      "chapter": 75,
+      "position": 0.187097,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 71.",
+      "source": "b5-c75-p29",
+      "confidence": "verified",
+      "action": "set",
+      "level": 71,
       "progress": 0.45378622
     },
     {
@@ -7835,6 +8700,21 @@
       "progress": 0.53612846
     },
     {
+      "id": "series-6-65-elle-mcgib-level-72",
+      "book": 6,
+      "chapter": 65,
+      "position": 0.438017,
+      "type": "level",
+      "subject": "Elle McGib",
+      "name": "Character level",
+      "summary": "Elle McGib is explicitly confirmed at level 72.",
+      "source": "b6-c65-p53",
+      "confidence": "verified",
+      "action": "set",
+      "level": 72,
+      "progress": 0.5920297
+    },
+    {
       "id": "series-6-72-carl-level-73",
       "book": 6,
       "chapter": 72,
@@ -7865,6 +8745,21 @@
       "progress": 0.60616125
     },
     {
+      "id": "series-7-48-prepotente-level-99",
+      "book": 7,
+      "chapter": 48,
+      "position": 0.05,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 99.",
+      "source": "b7-c48-p3",
+      "confidence": "verified",
+      "action": "set",
+      "level": 99,
+      "progress": 0.70773305
+    },
+    {
       "id": "series-7-51-carl-level-75",
       "book": 7,
       "chapter": 51,
@@ -7880,6 +8775,85 @@
       "progress": 0.71402265
     },
     {
+      "id": "series-7-51-li-na-skill-dark-purpose-15",
+      "book": 7,
+      "chapter": 51,
+      "position": 0.971963,
+      "type": "skill",
+      "subject": "Li Na",
+      "name": "Dark Purpose",
+      "summary": "Li Na's Dark Purpose is explicitly confirmed at level 15.",
+      "detail": "Explicitly confirmed in Book 7, Chapter 51.",
+      "source": "b7-c51-p104",
+      "confidence": "verified",
+      "action": "set",
+      "level": 15,
+      "progress": 0.71604229
+    },
+    {
+      "id": "series-7-52-li-na-skill-blood-horror-15",
+      "book": 7,
+      "chapter": 52,
+      "position": 0.63,
+      "type": "skill",
+      "subject": "Li Na",
+      "name": "Blood Horror",
+      "summary": "Li Na's Blood Horror is explicitly confirmed at level 15.",
+      "detail": "Explicitly confirmed in Book 7, Chapter 52.",
+      "source": "b7-c52-p63",
+      "confidence": "verified",
+      "action": "set",
+      "level": 15,
+      "progress": 0.71743644
+    },
+    {
+      "id": "series-7-56-li-na-level-84",
+      "book": 7,
+      "chapter": 56,
+      "position": 0.706587,
+      "type": "level",
+      "subject": "Li Na",
+      "name": "Character level",
+      "summary": "Li Na is explicitly confirmed at level 84.",
+      "source": "b7-c56-p118",
+      "confidence": "verified",
+      "action": "set",
+      "level": 84,
+      "progress": 0.72607328
+    },
+    {
+      "id": "series-7-56-prepotente-skill-iron-stomach-none",
+      "book": 7,
+      "chapter": 56,
+      "position": 0.784431,
+      "type": "skill",
+      "subject": "Prepotente",
+      "name": "Iron Stomach",
+      "summary": "Prepotente's Iron Stomach is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 7, Chapter 56.",
+      "source": "b7-c56-p131",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.7262382
+    },
+    {
+      "id": "series-7-64-prepotente-skill-group-psionic-protection-none",
+      "book": 7,
+      "chapter": 64,
+      "position": 0.672414,
+      "type": "skill",
+      "subject": "Prepotente",
+      "name": "Group psionic protection",
+      "summary": "Prepotente's Group psionic protection is explicitly confirmed.",
+      "detail": "Explicitly confirmed in Book 7, Chapter 64.",
+      "source": "b7-c64-p39",
+      "confidence": "verified",
+      "action": "set",
+      "level": null,
+      "progress": 0.74295003
+    },
+    {
       "id": "series-7-77-carl-level-81",
       "book": 7,
       "chapter": 77,
@@ -7893,6 +8867,36 @@
       "action": "set",
       "level": 81,
       "progress": 0.76977401
+    },
+    {
+      "id": "series-7-77-prepotente-level-100",
+      "book": 7,
+      "chapter": 77,
+      "position": 0.493827,
+      "type": "level",
+      "subject": "Prepotente",
+      "name": "Character level",
+      "summary": "Prepotente is explicitly confirmed at level 100.",
+      "source": "b7-c77-p40",
+      "confidence": "verified",
+      "action": "set",
+      "level": 100,
+      "progress": 0.77011404
+    },
+    {
+      "id": "series-7-79-elle-mcgib-level-135",
+      "book": 7,
+      "chapter": 79,
+      "position": 0.747368,
+      "type": "level",
+      "subject": "Elle McGib",
+      "name": "Character level",
+      "summary": "Elle McGib is explicitly confirmed at level 135.",
+      "source": "b7-c79-p71",
+      "confidence": "verified",
+      "action": "set",
+      "level": 135,
+      "progress": 0.77488849
     }
   ],
   "audit": {

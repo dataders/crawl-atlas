@@ -11,7 +11,8 @@ The current dataset maps all eight *Dungeon Crawler Carl* books. This repository
 - candidate detection for levels, stats, skills, items, rewards, and party changes
 - source-anchored character and inventory audits
 - cumulative level and base-stat charts with explicit milestone labels
-- clickable character dossiers, inventory ledger, and event history
+- filterable dossiers for the core party, support characters, and major recurring allies
+- inventory ledger and event history
 - strict location filtering so every view respects the reader's spoiler boundary
 
 ## Local setup

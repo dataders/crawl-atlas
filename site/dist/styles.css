@@ -111,6 +111,8 @@ h2 { margin-bottom: 0; font-size: clamp(25px,3vw,38px); line-height: 1.05; lette
 .milestone-pill.reported { border-style: dashed; }
 
 .character-workspace { display: grid; grid-template-columns: minmax(220px,.72fr) minmax(0,2fr); gap: 16px; padding-top: 18px; }
+.character-sidebar { min-width: 0; }
+.roster-filters { margin-bottom: 10px; }
 .character-list { display: grid; align-content: start; gap: 8px; }
 .character-tab { width: 100%; padding: 16px; display: grid; grid-template-columns: 1fr auto; gap: 10px; text-align: left; border: 1px solid var(--line); background: #0a1015; cursor: pointer; }
 .character-tab.active { border-color: var(--person-color); background: var(--surface-2); box-shadow: inset 3px 0 0 var(--person-color); }

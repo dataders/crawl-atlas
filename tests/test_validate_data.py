@@ -93,6 +93,23 @@ class ValidatorTests(unittest.TestCase):
             corpus_path = self.write_json(tmp, "corpus.json", corpus)
             self.assertEqual(MODULE.validate(data_path, corpus_path), 1)
 
+    def test_generated_roster_includes_major_allies(self):
+        data = json.loads(Path("site/dist/data/series.json").read_text(encoding="utf-8"))
+        names = {character["name"] for character in data["characters"]}
+        self.assertTrue({"Katia Grim", "Prepotente", "Imani C.", "Elle McGib", "Li Na", "Louis Santiago", "Samantha", "Mordecai"} <= names)
+        levels = {(event["subject"], event.get("level")) for event in data["events"] if event["type"] == "level"}
+        self.assertIn(("Katia Grim", 60), levels)
+        self.assertIn(("Prepotente", 100), levels)
+
+    def test_roster_relationship_changes_are_source_anchored(self):
+        data = json.loads(Path("site/dist/data/series.json").read_text(encoding="utf-8"))
+        katia_relationships = [
+            event["relationship"]
+            for event in data["events"]
+            if event["subject"] == "Katia Grim" and event["type"] == "party" and event.get("relationship")
+        ]
+        self.assertEqual(katia_relationships, ["Temporary party member", "Core party member", "Allied team leader"])
+
 
 if __name__ == "__main__":
     unittest.main()
