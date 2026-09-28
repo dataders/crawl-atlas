@@ -79,11 +79,14 @@ SERIES_LEVEL_MILESTONES = (
     (3, 6, "Mongo", 14, "Mongo managed to hit level 14"),
     (3, 7, "Mongo", 15, "Mongo hit level 15"),
     (3, 11, "Carl", 29, "You are now level 29"),
+    (3, 14, "Carl", 32, "I was now level 32"),
     (3, 12, "Princess Donut", 28, "I hit level 28"),
     (3, 15, "Princess Donut", 30, "TWO LEVELS TO LEVEL 30"),
     (3, 25, "Carl", 34, "Carl – Primal – Compensated Anarchist – Level 34"),
     (3, 25, "Princess Donut", 32, "Donut – Cat – Former Child Actor – Level 32"),
     (3, 26, "Mongo", 23, "Mongo had recently risen to level 23"),
+    (3, 27, "Carl", 35, "I hit level 35"),
+    (3, 34, "Carl", 41, "I just hit 41"),
     (4, 2, "Carl", 41, "your level 41"),
     (4, 4, "Princess Donut", 33, "Donut – Cat – Former Child Actor – Level 33"),
     (4, 12, "Princess Donut", 34, "Level 34!"),
@@ -95,6 +98,7 @@ SERIES_LEVEL_MILESTONES = (
     (5, 6, "Carl", 54, "rocketed up to level 54"),
     (5, 6, "Princess Donut", 41, "few levels to 41"),
     (5, 51, "Princess Donut", 47, "TWO LEVELS TO 47"),
+    (5, 39, "Carl", 56, "I remained at 56"),
     (5, 61, "Carl", 59, "player level up to 59"),
     (5, 61, "Princess Donut", 50, "her level to 50"),
     (5, 75, "Carl", 63, "You’re 63!"),
@@ -106,9 +110,29 @@ SERIES_LEVEL_MILESTONES = (
     (6, 39, "Mongo", 40, "Mongo finally hit level 40"),
     (6, 72, "Carl", 73, "You’re level 73"),
     (6, 72, "Princess Donut", 63, "I’m 63"),
+    (7, 51, "Carl", 75, "I was only level 75"),
+    (7, 77, "Carl", 81, "up to level 81"),
 )
 
 SERIES_STAT_MILESTONES = (
+    # The Book 2 selection screen explicitly separates Carl's unmodified
+    # values from equipment arithmetic, so both series can be plotted without
+    # treating an item-enhanced total as a base stat.
+    (2, 2, "Carl", "STR", 10, "base", "Strength: 10 + 3"),
+    (2, 2, "Carl", "STR", 16, "equipment", "Strength: 10 + 3"),
+    (2, 2, "Carl", "INT", 5, "base", "Intelligence: 5"),
+    (2, 2, "Carl", "CON", 10, "base", "Constitution: 10 + 4"),
+    (2, 2, "Carl", "CON", 19, "equipment", "Constitution: 10 + 4"),
+    (2, 2, "Carl", "DEX", 10, "base", "Dexterity: 10 + 1"),
+    (2, 2, "Carl", "DEX", 11, "equipment", "Dexterity: 10 + 1"),
+    (2, 2, "Carl", "CHA", 25, "base", "Charisma: 25"),
+    # The later Book 3 display is explicit, but not every number is cleanly
+    # separable from persistent gear, so it remains a reported total.
+    (3, 2, "Carl", "STR", 41, "reported", "Strength: 41 +3"),
+    (3, 2, "Carl", "INT", 15, "reported", "Intelligence: 15"),
+    (3, 2, "Carl", "CON", 34, "reported", "Constitution: 34"),
+    (3, 2, "Carl", "DEX", 23, "reported", "Dexterity: 23"),
+    (3, 2, "Carl", "CHA", 25, "reported", "Charisma: 25"),
     (3, 15, "Princess Donut", "CHA", 100, "base", "MY CHARISMA HIT 100"),
     (5, 1, "Carl", "INT", 17, "equipment", "intelligence sat at only 17"),
     (5, 70, "Princess Donut", "CHA", 138, "base", "base charisma currently sat at 138"),
@@ -393,7 +417,7 @@ def main() -> None:
             "title": "Dungeon Crawler Carl",
             "bookCount": len(book_rows),
             "chapterCount": total_chapters,
-            "dataVersion": "2.0.0",
+            "dataVersion": "2.1.0",
             "coverageNote": "Eight-book chapter map with source-anchored explicit progression. Detailed skills and inventory remain most complete for Book 1.",
         },
         "books": book_rows,

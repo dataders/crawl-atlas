@@ -290,7 +290,7 @@ function renderAll() {
 }
 
 async function start() {
-  const response = await fetch("data/series.json?v=2.0.0", { cache: "no-store" });
+  const response = await fetch("data/series.json?v=2.1.0", { cache: "no-store" });
   if (!response.ok) throw new Error(`Could not load dataset (${response.status})`);
   state.data = normalizeData(await response.json());
   state.data.characters ??= [];

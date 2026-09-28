@@ -38,6 +38,8 @@ uv run python3 scripts/build_public_timeline.py
 uv run python3 scripts/validate_data.py site/dist/data/series.json --corpus data/private/series-corpus.json
 ```
 
+Community references may seed audit candidates, but a value is published only after it is independently confirmed against the local EPUB and classified as a base value, equipment-modified total, temporary effect, or reported total.
+
 ## Data model
 
 Each event has a `book`, local `chapter`, fractional `position`, and computed series-wide `progress`. The app replays every event at or before the reader's chosen location to reconstruct the current state. Event types include character levels, stats, skills, inventory changes, party changes, and brief story milestones. Entries carry:

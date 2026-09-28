@@ -4,7 +4,7 @@
     "title": "Dungeon Crawler Carl",
     "bookCount": 8,
     "chapterCount": 472,
-    "dataVersion": "2.0.0",
+    "dataVersion": "2.1.0",
     "coverageNote": "Eight-book chapter map with source-anchored explicit progression. Detailed skills and inventory remain most complete for Book 1."
   },
   "books": [
@@ -6865,6 +6865,166 @@
       "progress": 0.09904291
     },
     {
+      "id": "series-2-2-carl-str-10-base",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.91,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "STR confirmation",
+      "summary": "Carl's STR is explicitly reported as 10.",
+      "source": "b2-c2-p182",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "STR": 10
+      },
+      "statScopes": {
+        "STR": "base"
+      },
+      "progress": 0.10362288
+    },
+    {
+      "id": "series-2-2-carl-str-16-equipment",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.91,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "STR confirmation",
+      "summary": "Carl's STR is explicitly reported as 16.",
+      "source": "b2-c2-p182",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "STR": 16
+      },
+      "statScopes": {
+        "STR": "equipment"
+      },
+      "progress": 0.10362288
+    },
+    {
+      "id": "series-2-2-carl-int-5-base",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.915,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "INT confirmation",
+      "summary": "Carl's INT is explicitly reported as 5.",
+      "source": "b2-c2-p183",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "INT": 5
+      },
+      "statScopes": {
+        "INT": "base"
+      },
+      "progress": 0.10363347
+    },
+    {
+      "id": "series-2-2-carl-con-10-base",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.92,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "CON confirmation",
+      "summary": "Carl's CON is explicitly reported as 10.",
+      "source": "b2-c2-p184",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "CON": 10
+      },
+      "statScopes": {
+        "CON": "base"
+      },
+      "progress": 0.10364407
+    },
+    {
+      "id": "series-2-2-carl-con-19-equipment",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.92,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "CON confirmation",
+      "summary": "Carl's CON is explicitly reported as 19.",
+      "source": "b2-c2-p184",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "CON": 19
+      },
+      "statScopes": {
+        "CON": "equipment"
+      },
+      "progress": 0.10364407
+    },
+    {
+      "id": "series-2-2-carl-dex-10-base",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.925,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "DEX confirmation",
+      "summary": "Carl's DEX is explicitly reported as 10.",
+      "source": "b2-c2-p185",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "DEX": 10
+      },
+      "statScopes": {
+        "DEX": "base"
+      },
+      "progress": 0.10365466
+    },
+    {
+      "id": "series-2-2-carl-dex-11-equipment",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.925,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "DEX confirmation",
+      "summary": "Carl's DEX is explicitly reported as 11.",
+      "source": "b2-c2-p185",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "DEX": 11
+      },
+      "statScopes": {
+        "DEX": "equipment"
+      },
+      "progress": 0.10365466
+    },
+    {
+      "id": "series-2-2-carl-cha-25-base",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.93,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "CHA confirmation",
+      "summary": "Carl's CHA is explicitly reported as 25.",
+      "source": "b2-c2-p186",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "CHA": 25
+      },
+      "statScopes": {
+        "CHA": "base"
+      },
+      "progress": 0.10366525
+    },
+    {
       "id": "series-2-7-carl-level-14",
       "book": 2,
       "chapter": 7,
@@ -7000,6 +7160,106 @@
       "progress": 0.1373326
     },
     {
+      "id": "series-3-2-carl-str-41-reported",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.689655,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "STR confirmation",
+      "summary": "Carl's STR is explicitly reported as 41.",
+      "source": "b3-c2-p180",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "STR": 41
+      },
+      "statScopes": {
+        "STR": "reported"
+      },
+      "progress": 0.15612215
+    },
+    {
+      "id": "series-3-2-carl-int-15-reported",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.693487,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "INT confirmation",
+      "summary": "Carl's INT is explicitly reported as 15.",
+      "source": "b3-c2-p181",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "INT": 15
+      },
+      "statScopes": {
+        "INT": "reported"
+      },
+      "progress": 0.15613027
+    },
+    {
+      "id": "series-3-2-carl-con-34-reported",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.697318,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "CON confirmation",
+      "summary": "Carl's CON is explicitly reported as 34.",
+      "source": "b3-c2-p182",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "CON": 34
+      },
+      "statScopes": {
+        "CON": "reported"
+      },
+      "progress": 0.15613839
+    },
+    {
+      "id": "series-3-2-carl-dex-23-reported",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.701149,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "DEX confirmation",
+      "summary": "Carl's DEX is explicitly reported as 23.",
+      "source": "b3-c2-p183",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "DEX": 23
+      },
+      "statScopes": {
+        "DEX": "reported"
+      },
+      "progress": 0.1561465
+    },
+    {
+      "id": "series-3-2-carl-cha-25-reported",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.704981,
+      "type": "stat",
+      "subject": "Carl",
+      "name": "CHA confirmation",
+      "summary": "Carl's CHA is explicitly reported as 25.",
+      "source": "b3-c2-p184",
+      "confidence": "verified",
+      "action": "merge",
+      "stats": {
+        "CHA": 25
+      },
+      "statScopes": {
+        "CHA": "reported"
+      },
+      "progress": 0.15615462
+    },
+    {
       "id": "series-3-3-carl-level-27",
       "book": 3,
       "chapter": 3,
@@ -7090,6 +7350,21 @@
       "progress": 0.17588621
     },
     {
+      "id": "series-3-14-carl-level-32",
+      "book": 3,
+      "chapter": 14,
+      "position": 0.884848,
+      "type": "level",
+      "subject": "Carl",
+      "name": "Character level",
+      "summary": "Carl is explicitly confirmed at level 32.",
+      "source": "b3-c14-p146",
+      "confidence": "verified",
+      "action": "set",
+      "level": 32,
+      "progress": 0.18195942
+    },
+    {
       "id": "series-3-15-princess-donut-cha-100-base",
       "book": 3,
       "chapter": 15,
@@ -7170,19 +7445,34 @@
       "progress": 0.20678477
     },
     {
-      "id": "series-4-2-carl-level-41",
-      "book": 4,
-      "chapter": 2,
-      "position": 0.699029,
+      "id": "series-3-27-carl-level-35",
+      "book": 3,
+      "chapter": 27,
+      "position": 0.523179,
+      "type": "level",
+      "subject": "Carl",
+      "name": "Character level",
+      "summary": "Carl is explicitly confirmed at level 35.",
+      "source": "b3-c27-p79",
+      "confidence": "verified",
+      "action": "set",
+      "level": 35,
+      "progress": 0.20873555
+    },
+    {
+      "id": "series-3-34-carl-level-41",
+      "book": 3,
+      "chapter": 34,
+      "position": 0.623529,
       "type": "level",
       "subject": "Carl",
       "name": "Character level",
       "summary": "Carl is explicitly confirmed at level 41.",
-      "source": "b4-c2-p144",
+      "source": "b3-c34-p53",
       "confidence": "verified",
       "action": "set",
       "level": 41,
-      "progress": 0.22817591
+      "progress": 0.22377866
     },
     {
       "id": "series-4-4-princess-donut-level-33",
@@ -7338,6 +7628,21 @@
       "action": "set",
       "level": 41,
       "progress": 0.30809185
+    },
+    {
+      "id": "series-5-39-carl-level-56",
+      "book": 5,
+      "chapter": 39,
+      "position": 0.12069,
+      "type": "level",
+      "subject": "Carl",
+      "name": "Character level",
+      "summary": "Carl is explicitly confirmed at level 56.",
+      "source": "b5-c39-p7",
+      "confidence": "verified",
+      "action": "set",
+      "level": 56,
+      "progress": 0.37737434
     },
     {
       "id": "series-5-51-princess-donut-level-47",
@@ -7558,6 +7863,36 @@
       "action": "set",
       "level": 63,
       "progress": 0.60616125
+    },
+    {
+      "id": "series-7-51-carl-level-75",
+      "book": 7,
+      "chapter": 51,
+      "position": 0.018692,
+      "type": "level",
+      "subject": "Carl",
+      "name": "Character level",
+      "summary": "Carl is explicitly confirmed at level 75.",
+      "source": "b7-c51-p2",
+      "confidence": "verified",
+      "action": "set",
+      "level": 75,
+      "progress": 0.71402265
+    },
+    {
+      "id": "series-7-77-carl-level-81",
+      "book": 7,
+      "chapter": 77,
+      "position": 0.333333,
+      "type": "level",
+      "subject": "Carl",
+      "name": "Character level",
+      "summary": "Carl is explicitly confirmed at level 81.",
+      "source": "b7-c77-p27",
+      "confidence": "verified",
+      "action": "set",
+      "level": 81,
+      "progress": 0.76977401
     }
   ],
   "audit": {
