@@ -63,6 +63,16 @@ h2 { margin-bottom: 0; font-size: clamp(25px,3vw,38px); line-height: 1.05; lette
 .spoiler-lock { color: var(--muted); font: 700 11px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .09em; }
 .spoiler-lock span { display: inline-block; width: 7px; height: 7px; margin-right: 7px; background: var(--acid); }
 
+.topbar-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+.dashboard-jump { padding: 10px 13px; border: 1px solid var(--line); color: var(--acid); font: 800 11px/1 var(--mono); letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+.dashboard-jump:hover { border-color: var(--acid); background: rgba(216,255,62,.06); }
+.dbt-dashboard-section { margin-top: 16px; padding: clamp(20px,2.7vw,32px); scroll-margin-top: 82px; }
+.dbt-dashboard-heading { align-items: end; }
+.dbt-dashboard-badge { padding: 7px 9px; border: 1px solid rgba(77,217,210,.4); color: var(--cyan); font: 700 10px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.dbt-dashboard-note { max-width: 76ch; margin: 16px 0; color: var(--muted); }
+.dbt-dashboard-shell { border: 1px solid var(--line); background: #161616; overflow: hidden; }
+.dbt-dashboard-frame { display: block; width: 100%; height: min(1180px,82vh); min-height: 760px; border: 0; background: #161616; }
+
 .progression-section,.character-section,.ledger-section,.history-section { margin-top: 16px; padding: clamp(20px,2.7vw,32px); }
 .section-heading { align-items: end; }
 .section-heading.compact { padding-bottom: 18px; border-bottom: 1px solid var(--line); }
@@ -190,6 +200,9 @@ footer a { color: var(--acid); }
 @media (max-width: 620px) {
   main { padding-top: 16px; }
   .position-heading,.section-heading { display: block; }
+  .dashboard-jump { display: none; }
+  .dbt-dashboard-badge { display: inline-block; margin-top: 12px; }
+  .dbt-dashboard-frame { min-height: 680px; height: 78vh; }
   .position-readout { margin-top: 20px; padding-left: 14px; text-align: left; }
   .position-slicers { grid-template-columns: 1fr; }
   .slider-labels span:nth-child(2) { display: none; }

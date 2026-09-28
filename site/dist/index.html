@@ -13,7 +13,10 @@
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Crawl Atlas home"><span class="brand-mark">CA</span><span>Crawl Atlas</span></a>
       <div class="book-id"><span class="status-light"></span><span id="book-title">Loading book…</span></div>
-      <button class="icon-button" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">?</button>
+      <div class="topbar-actions">
+        <a class="dashboard-jump" href="#dbt-dashboard">dbt Charts</a>
+        <button class="icon-button" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">?</button>
+      </div>
     </header>
 
     <main id="top">
@@ -36,6 +39,20 @@
           <button id="previous-chapter" type="button">← Previous chapter</button>
           <div class="spoiler-lock"><span></span>Everything below stops here</div>
           <button id="next-chapter" type="button">Next chapter →</button>
+        </div>
+      </section>
+
+      <section class="dbt-dashboard-section" id="dbt-dashboard" aria-labelledby="dbt-dashboard-title">
+        <div class="section-heading dbt-dashboard-heading">
+          <div>
+            <p class="eyebrow">Native dbt Charts</p>
+            <h2 id="dbt-dashboard-title">Character progression dashboard</h2>
+          </div>
+          <span class="dbt-dashboard-badge">Generated from charts/crawl-atlas.yml</span>
+        </div>
+        <p class="dbt-dashboard-note">This dbt Charts export shows confirmed progression across all eight books. Live character, metric, book, skills, and inventory controls will replace this snapshot after the Cloud connection is approved.</p>
+        <div class="dbt-dashboard-shell">
+          <iframe class="dbt-dashboard-frame" src="dbt-charts.html" title="Crawl Atlas dbt Charts dashboard"></iframe>
         </div>
       </section>
 
