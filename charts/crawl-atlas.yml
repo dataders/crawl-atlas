@@ -5,122 +5,158 @@ notes: >
 
 variables:
   characters:
-    input: multiselect
     options:
-      static:
-        - Carl
-        - Princess Donut
-        - Mongo
-        - Katia Grim
-        - Mordecai
-        - Samantha
-        - Prepotente
-        - Imani C.
-        - Elle McGib
-        - Li Na
-        - Louis Santiago
-    default: [Carl, Princess Donut, Katia Grim, Prepotente]
+      query: character_options
+      column: character
+    default: [Carl]
   metric:
-    input: select
     options:
       static: [Level, STR, INT, CON, DEX, CHA]
     default: Level
   through_book:
-    input: slider
-    label: Through book
     min: 1
     max: 8
     step: 1
-    default: 8
+    default: 1
+  through_chapter:
+    min: 1
+    max: 98
+    step: 1
+    default: 1
 
 queries:
-  selected_roster:
-    source: ./data/roster.csv
+  character_options:
+    source: crawl_atlas
     sql: |
-      SELECT
-        character,
-        group_name AS roster_group,
-        relationship,
-        role,
-        latest_confirmed_level
-      FROM roster
-      WHERE {{ filter('character', characters) }}
+      SELECT DISTINCT character
+      FROM events
+      WHERE character IS NOT NULL
+        AND (book < {{ through_book }} OR
+          (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
       ORDER BY character
 
+  selected_roster:
+    source: crawl_atlas
+    sql: |
+      WITH tracked_characters AS (
+        SELECT DISTINCT character
+        FROM progression
+        WHERE character IS NOT NULL
+          AND (book < {{ through_book }} OR
+            (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
+      )
+      SELECT
+        tracked.character,
+        'Tracked cast' AS roster_group,
+        COALESCE((
+          SELECT action
+          FROM events
+          WHERE kind = 'party'
+            AND character = tracked.character
+            AND (book < {{ through_book }} OR
+              (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
+          ORDER BY progress DESC
+          LIMIT 1
+        ), 'observed') AS relationship,
+        'Tracked character' AS role,
+        (
+          SELECT CAST(value AS INTEGER)
+          FROM progression
+          WHERE kind = 'level'
+            AND character = tracked.character
+            AND value IS NOT NULL
+            AND (book < {{ through_book }} OR
+              (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
+          ORDER BY progress DESC
+          LIMIT 1
+        ) AS latest_confirmed_level
+      FROM tracked_characters AS tracked
+      WHERE {{ filter('tracked.character', characters) }}
+      ORDER BY tracked.character
+
   headline:
-    source: ./data/metrics.csv
+    source: crawl_atlas
     sql: |
       SELECT
         COUNT(*) AS confirmed_points,
         COUNT(DISTINCT character) AS represented_characters,
         MAX(book) AS latest_book
-      FROM metrics
+      FROM progression
       WHERE {{ filter('character', characters) }}
-        AND metric = {{ metric }}
-        AND book <= {{ through_book }}
+        AND CASE WHEN kind = 'level' THEN 'Level' ELSE metric END = {{ metric }}
+        AND (book < {{ through_book }} OR
+          (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
 
   metric_progression:
-    source: ./data/metrics.csv
+    source: crawl_atlas
     sql: |
       SELECT
-        series_progress,
+        progress * 100 AS series_progress,
         book,
         chapter,
         character,
         CASE
-          WHEN metric = 'Level' THEN character
-          ELSE character || ' · ' || scope
+          WHEN kind = 'level' THEN character
+          ELSE character || ' · ' || COALESCE(scope, 'reported')
         END AS series,
         value,
         scope,
         summary
-      FROM metrics
+      FROM progression
       WHERE {{ filter('character', characters) }}
-        AND metric = {{ metric }}
-        AND book <= {{ through_book }}
-      ORDER BY series_progress, character
+        AND CASE WHEN kind = 'level' THEN 'Level' ELSE metric END = {{ metric }}
+        AND value IS NOT NULL
+        AND (book < {{ through_book }} OR
+          (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
+      ORDER BY progress, character
 
   selected_skills:
-    source: ./data/skills.csv
+    source: crawl_atlas
     sql: |
       SELECT
         character,
-        skill,
-        level,
+        metric AS skill,
+        CAST(value AS INTEGER) AS level,
         'Book ' || book || ', Ch. ' || chapter AS confirmed_at,
-        detail
-      FROM skills
+        summary AS detail
+      FROM progression
       WHERE {{ filter('character', characters) }}
-        AND book <= {{ through_book }}
-      ORDER BY character, skill, book, chapter
+        AND kind = 'skill'
+        AND (book < {{ through_book }} OR
+          (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
+      ORDER BY character, metric, progress
 
   selected_inventory:
-    source: ./data/inventory.csv
+    source: crawl_atlas
     sql: |
       SELECT
         character,
-        item,
+        name AS item,
         action,
-        state,
-        quantity,
+        json_extract(payload, '$.state') AS state,
+        CAST(json_extract(payload, '$.quantity') AS INTEGER) AS quantity,
         'Book ' || book || ', Ch. ' || chapter AS event_at
-      FROM inventory
+      FROM events
       WHERE {{ filter('character', characters) }}
-        AND book <= {{ through_book }}
-      ORDER BY book DESC, chapter DESC, chapter_position DESC
+        AND kind = 'item'
+        AND (book < {{ through_book }} OR
+          (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
+      ORDER BY progress DESC
 
   selected_relationships:
-    source: ./data/relationships.csv
+    source: crawl_atlas
     sql: |
       SELECT
         character,
-        relationship,
+        action AS relationship,
         'Book ' || book || ', Ch. ' || chapter AS changed_at,
         summary
-      FROM relationships
+      FROM events
       WHERE {{ filter('character', characters) }}
-        AND book <= {{ through_book }}
-      ORDER BY book, chapter, chapter_position
+        AND kind = 'party'
+        AND (book < {{ through_book }} OR
+          (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
+      ORDER BY progress
 
 charts:
   points_kpi:
@@ -153,6 +189,7 @@ charts:
   progression:
     type: line
     query: metric_progression
+    warnings_ignore: [WARN-QUERY-RETURNED-ZERO-ROWS]
     title: Explicit progression milestones
     subtitle: Gaps stay visible; missing levels and stats are never interpolated as facts.
     x: series_progress
@@ -162,18 +199,19 @@ charts:
   roster:
     type: table
     query: selected_roster
+    warnings_ignore: [WARN-QUERY-RETURNED-ZERO-ROWS]
     title: Selected cast
     style:
       columns:
-        group_name:
+        roster_group:
           label: Group
         latest_confirmed_level:
-          label: Latest confirmed level
           format: integer
 
   skills:
     type: table
     query: selected_skills
+    warnings_ignore: [WARN-QUERY-RETURNED-ZERO-ROWS]
     title: Named skills and spells
     subtitle: Latest and repeated confirmations remain visible as separate sourced rows.
     style:
@@ -194,6 +232,7 @@ charts:
   relationships:
     type: table
     query: selected_relationships
+    warnings_ignore: [WARN-QUERY-RETURNED-ZERO-ROWS]
     title: Party and alliance history
 
 tabs:
@@ -201,7 +240,8 @@ tabs:
     - title: Progression
       rows:
         - text: |
-            Showing **{{ metric }}** for selected characters through **Book {{ through_book }}**.
+            Showing **{{ metric }}** for selected characters through
+            **Book {{ through_book }}, Chapter {{ through_chapter }}**.
             Every plotted value is explicitly stated in the books; source gaps stay gaps.
         - cols: [points_kpi, characters_kpi, book_kpi]
         - progression

@@ -14,7 +14,7 @@
       <a class="brand" href="#top" aria-label="Crawl Atlas home"><span class="brand-mark">CA</span><span>Crawl Atlas</span></a>
       <div class="book-id"><span class="status-light"></span><span id="book-title">Loading book…</span></div>
       <div class="topbar-actions">
-        <a class="dashboard-jump" href="#dbt-dashboard">dbt Charts</a>
+        <span class="archive-label">A reader’s field guide</span>
         <button class="icon-button" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">?</button>
       </div>
     </header>
@@ -22,7 +22,7 @@
     <main id="top">
       <section class="reader-position" aria-labelledby="reader-position-title">
         <div class="position-heading">
-          <div><p class="eyebrow">Spoiler boundary</p><h1 id="reader-position-title">Your place in the crawl</h1></div>
+          <div><p class="eyebrow">Spoiler boundary</p><h1 id="reader-position-title">Where are you reading?</h1></div>
           <div class="position-readout"><strong id="location-chapter">Book 1 · Chapter 1</strong><span id="location-percent">0% through chapter</span></div>
         </div>
         <div class="position-slicers" aria-label="Choose book and chapter">
@@ -33,7 +33,7 @@
           <input id="book-range" type="range" min="0" max="10000" value="0" step="1" aria-label="Position in the series" />
           <div class="chapter-ruler" id="chapter-ruler" aria-hidden="true"></div>
           <div class="slider-labels"><span>Book 1 · Chapter 1</span><span id="overall-progress">0% of series</span><span id="last-chapter-label">Book 8 · Chapter 98</span></div>
-          <p class="coverage-note">All eight books are mapped. Level and stat milestones appear only when the text states them directly; the detailed skills and inventory audit currently extends through Book 1.</p>
+          <p class="coverage-note">All eight books are mapped. Level and stat milestones appear only when the text states them directly; Book 8 now includes an audit of explicit levels, named skills, class changes, and selected equipment. Imani has a targeted audit across Books 1–8. Other characters in Books 2–7 still have selective coverage. Missing observations are not current values.</p>
         </div>
         <div class="position-actions">
           <button id="previous-chapter" type="button">← Previous chapter</button>
@@ -42,18 +42,36 @@
         </div>
       </section>
 
-      <section class="dbt-dashboard-section" id="dbt-dashboard" aria-labelledby="dbt-dashboard-title">
-        <div class="section-heading dbt-dashboard-heading">
-          <div>
-            <p class="eyebrow">Native dbt Charts</p>
-            <h2 id="dbt-dashboard-title">Character progression dashboard</h2>
-          </div>
-          <span class="dbt-dashboard-badge">Generated from charts/crawl-atlas.yml</span>
+      <section class="cast-selector" aria-labelledby="cast-selector-title">
+        <div class="cast-heading"><div><p class="eyebrow">Your cast</p><h2 id="cast-selector-title">Follow the characters you care about</h2></div><div class="cast-actions"><button type="button" id="cast-all">All known</button><button type="button" id="cast-core">Core party</button><button type="button" id="cast-none">Clear</button></div></div>
+        <div id="cast-options" class="cast-options" aria-label="Characters included in every view"></div>
+        <p id="cast-status" class="query-footnote" role="status"></p>
+      </section>
+
+      <nav class="workspace-nav" aria-label="Explore the archive">
+        <button type="button" data-view="explorer" aria-pressed="true">Progression ledger</button>
+        <button type="button" data-view="progression" aria-pressed="false">Charts</button>
+        <button type="button" data-view="character" aria-pressed="false">Characters</button>
+        <button type="button" data-view="ledger" aria-pressed="false">Inventory</button>
+        <button type="button" data-view="rewards" aria-pressed="false">Boxes &amp; rewards</button><button type="button" data-view="history" aria-pressed="false">History</button>
+      </nav>
+      <section class="explorer-section" aria-labelledby="explorer-title">
+        <div class="section-heading"><div><p class="eyebrow">The progression archive</p><h2 id="explorer-title">Every increase. In context.</h2></div><button type="button" id="export-results">Export results ↓</button></div>
+        <p class="explorer-intro">Find a level, trace a skill, or compare stat observations. Only discoveries up to your reading position appear.</p>
+        <div class="query-presets" aria-label="Quick queries"><button type="button" data-preset="all">All observations</button><button type="button" data-preset="level">Level increases</button><button type="button" data-preset="skill">Skills & spells</button><button type="button" data-preset="stat">Base stats</button></div>
+        <div class="query-controls">
+          <label class="query-search">Search<input id="query-search" type="search" placeholder="Try Magic Missile or Constitution…"></label>
+          <label>Character<select id="query-character"><option value="">Everyone</option></select></label>
+          <label>Book<select id="query-book"><option value="">All known books</option></select></label>
+          <label>Type<select id="query-kind"><option value="">All types</option><option value="level">Level</option><option value="skill">Skill / spell</option><option value="stat">Stat</option></select></label>
+          <label>Scope<select id="query-scope"><option value="">All scopes</option></select></label>
+          <label>Show<select id="query-change"><option value="">All observations</option><option value="increase">Increases only</option><option value="first">First observations</option></select></label>
+          <label>Order<select id="query-sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="largest">Largest increase</option></select></label>
         </div>
-        <p class="dbt-dashboard-note">This dbt Charts export shows confirmed progression across all eight books. Live character, metric, book, skills, and inventory controls will replace this snapshot after the Cloud connection is approved.</p>
-        <div class="dbt-dashboard-shell">
-          <iframe class="dbt-dashboard-frame" src="dbt-charts.html" title="Crawl Atlas dbt Charts dashboard"></iframe>
-        </div>
+        <div class="result-bar"><span id="query-count" role="status"></span><button id="query-reset" type="button">Reset filters</button></div>
+        <div class="inventory-table-wrap"><table class="inventory-table query-table"><thead><tr><th>Character / discovery</th><th>Before → after</th><th>Change</th><th>Scope</th><th>Location</th><th>Evidence</th></tr></thead><tbody id="query-results"></tbody></table></div>
+        <div class="query-pagination"><button id="query-prev" type="button">← Previous</button><span id="query-page"></span><button id="query-next" type="button">Next →</button></div>
+        <p class="query-footnote">Changes compare known observations of the same scope and confidence. A dash means no comparable earlier value, not zero. Gaps may span unreported increases. Skill scopes distinguish trained, equipment, class, granted, and effective casting levels. Older reported skill values may include gear effects. Modifier-only entries show the stated change without inventing a total.</p>
       </section>
 
       <section class="progression-section" aria-labelledby="progression-title">
@@ -65,12 +83,27 @@
           <div class="metric-tabs" id="metric-tabs" role="tablist" aria-label="Choose progression metric"></div>
           <p id="chart-explanation">Every numbered dot is an explicitly confirmed level.</p>
         </div>
+        <div id="level-uncertainty" class="level-uncertainty" hidden></div>
         <div class="chart-frame">
           <svg id="progress-chart" role="img" aria-label="Character levels and discoveries over the selected part of the book"></svg>
           <div class="chart-tooltip" id="chart-tooltip" hidden></div>
         </div>
         <div class="chart-key" id="chart-key"></div>
         <div class="milestone-strip" id="milestone-strip" aria-label="Confirmed chart milestones"></div>
+      </section>
+
+
+      <section class="rewards-section" hidden aria-labelledby="rewards-title">
+        <div class="section-heading"><div><p class="eyebrow">Reward provenance</p><h2 id="rewards-title">Where the loot came from</h2></div><span id="reward-count" class="section-count"></span></div>
+        <p class="explorer-intro">Follow the cause → box awarded → box opened → reward received. Location means when the text reveals it. Initial coverage includes Book 1 opening batches and selected explicit lineages in Books 1, 5, and 8.</p>
+        <div class="query-controls">
+          <label>Search<input id="reward-search" type="search" placeholder="Item, box, boss, sponsor…"></label>
+          <label>Stage<select id="reward-stage"><option value="">All stages</option><option value="awarded">Boxes awarded</option><option value="opened">Boxes opened</option><option value="received">Rewards received</option><option value="identified">Later details</option><option value="trigger">Reward causes</option><option value="applied">Effects applied</option></select></label>
+          <label>Box tier<select id="reward-tier"><option value="">All tiers</option></select></label>
+          <label>Box type<select id="reward-kind"><option value="">All types</option></select></label>
+        </div>
+        <div class="table-scroll"><table><thead><tr><th>Recipient / reward</th><th>Stage</th><th>Box tier / type</th><th>Source chain</th><th>Revealed</th></tr></thead><tbody id="reward-results"></tbody></table></div>
+        <p class="query-footnote">Unknown tiers and causes stay unknown. Batch attribution does not identify a specific box. Recipients describe who received each reward, not who owns it now.</p>
       </section>
 
       <section class="character-section" aria-labelledby="character-title">
@@ -126,6 +159,8 @@
     </main>
 
     <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
+    <script src="rewards.js" defer></script>
+  <script src="explorer.js" defer></script>
     <script src="app.js?v=2.2.1" defer></script>
   </body>
 </html>

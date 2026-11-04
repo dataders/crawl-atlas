@@ -19,4 +19,12 @@ jobs:
       - name: Run tests
         run: uv run python3 -m unittest discover -s tests
       - name: Check browser JavaScript
-        run: node --check site/dist/app.js
+        run: |
+          node --check site/dist/app.js
+          node --check site/dist/explorer.js
+          node --check site/dist/rewards.js
+      - name: Check explorer filtering
+        run: |
+          node tests/test_explorer.mjs
+          node tests/test_progression.mjs
+          node tests/test_rewards.mjs

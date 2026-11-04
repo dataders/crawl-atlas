@@ -1,0 +1,789 @@
+{
+  "scope": "Initial source-backed box lineages plus existing Book1 opening batches. This is not a complete eight-book box audit. Observation locations are reveal times; retrospective reports are not backdated.",
+  "events": [
+    {
+      "id": "reward-entry-0",
+      "subject": "Carl",
+      "name": "Crazy Cat Lady",
+      "source": "b1-c2-p36",
+      "summary": "Crazy Cat Lady",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Crazy Cat Lady"
+      }
+    },
+    {
+      "id": "inv-002-entry-box-awards-item-0-0",
+      "subject": "Carl",
+      "name": "Bronze Pet Box",
+      "source": "b1-c2-p38",
+      "summary": "Bronze Pet Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-0"
+        ],
+        "boxId": "carl-entry-box-0",
+        "boxTier": "Bronze",
+        "boxKind": "Pet",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-0",
+      "subject": "Carl",
+      "name": "Bronze Pet Box",
+      "source": "b1-c5-p65",
+      "summary": "Bronze Pet Box",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-002-entry-box-awards-item-0-0"
+        ],
+        "boxId": "carl-entry-box-0",
+        "boxTier": "Bronze",
+        "boxKind": "Pet",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "reward-entry-1",
+      "subject": "Carl",
+      "name": "Trailblazing Crazy Cat Lady",
+      "source": "b1-c2-p39",
+      "summary": "Trailblazing Crazy Cat Lady",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Trailblazing Crazy Cat Lady"
+      }
+    },
+    {
+      "id": "inv-002-entry-box-awards-item-1-0",
+      "subject": "Carl",
+      "name": "Legendary Pet Box",
+      "source": "b1-c2-p41",
+      "summary": "Legendary Pet Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-1"
+        ],
+        "boxId": "carl-entry-box-1",
+        "boxTier": "Legendary",
+        "boxKind": "Pet",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-1",
+      "subject": "Carl",
+      "name": "Legendary Pet Box",
+      "source": "b1-c5-p102",
+      "summary": "Legendary Pet Box",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-002-entry-box-awards-item-1-0"
+        ],
+        "boxId": "carl-entry-box-1",
+        "boxTier": "Legendary",
+        "boxKind": "Pet",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "reward-entry-2",
+      "subject": "Carl",
+      "name": "Early Adopter",
+      "source": "b1-c2-p42",
+      "summary": "Early Adopter",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Early Adopter"
+      }
+    },
+    {
+      "id": "inv-002-entry-box-awards-item-2-0",
+      "subject": "Carl",
+      "name": "Silver Adventurer Box",
+      "source": "b1-c2-p44",
+      "summary": "Silver Adventurer Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-2"
+        ],
+        "boxId": "carl-entry-box-2",
+        "boxTier": "Silver",
+        "boxKind": "Adventurer",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-2",
+      "subject": "Carl",
+      "name": "Silver Adventurer Box",
+      "source": "b1-c5-p83",
+      "summary": "Silver Adventurer Box",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-002-entry-box-awards-item-2-0"
+        ],
+        "boxId": "carl-entry-box-2",
+        "boxTier": "Silver",
+        "boxKind": "Adventurer",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "reward-entry-3",
+      "subject": "Carl",
+      "name": "Empty pockets",
+      "source": "b1-c2-p45",
+      "summary": "Empty pockets",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Empty pockets"
+      }
+    },
+    {
+      "id": "inv-002-entry-box-awards-item-3-0",
+      "subject": "Carl",
+      "name": "Bronze Adventurer Box",
+      "source": "b1-c2-p47",
+      "summary": "Bronze Adventurer Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-3"
+        ],
+        "boxId": "carl-entry-box-3",
+        "boxTier": "Bronze",
+        "boxKind": "Adventurer",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "reward-entry-4",
+      "subject": "Carl",
+      "name": "Why aren’t you wearing pants?",
+      "source": "b1-c2-p48",
+      "summary": "Why aren’t you wearing pants?",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Why aren’t you wearing pants?"
+      }
+    },
+    {
+      "id": "inv-002-entry-box-awards-item-4-0",
+      "subject": "Carl",
+      "name": "Gold Apparel Box",
+      "source": "b1-c2-p50",
+      "summary": "Gold Apparel Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-4"
+        ],
+        "boxId": "carl-entry-box-4",
+        "boxTier": "Gold",
+        "boxKind": "Apparel",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-4",
+      "subject": "Carl",
+      "name": "Gold Apparel Box",
+      "source": "b1-c5-p94",
+      "summary": "Gold Apparel Box",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-002-entry-box-awards-item-4-0"
+        ],
+        "boxId": "carl-entry-box-4",
+        "boxTier": "Gold",
+        "boxKind": "Apparel",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "reward-entry-5",
+      "subject": "Carl",
+      "name": "Unarmed combat",
+      "source": "b1-c2-p51",
+      "summary": "Unarmed combat",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Unarmed combat"
+      }
+    },
+    {
+      "id": "inv-002-entry-box-awards-item-5-0",
+      "subject": "Carl",
+      "name": "Bronze Weapon Box",
+      "source": "b1-c2-p53",
+      "summary": "Bronze Weapon Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-5"
+        ],
+        "boxId": "carl-entry-box-5",
+        "boxTier": "Bronze",
+        "boxKind": "Weapon",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-0-0",
+      "subject": "Carl",
+      "name": "Scroll of Heal Critter",
+      "source": "b1-c5-p66",
+      "summary": "Scroll of Heal Critter",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-0"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-2-0",
+      "subject": "Carl",
+      "name": "Enhanced Pet Biscuit",
+      "source": "b1-c5-p104",
+      "summary": "Enhanced Pet Biscuit",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-1"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-8-0",
+      "subject": "Carl",
+      "name": "Poison Antidote",
+      "source": "b1-c5-p84",
+      "summary": "Poison Antidote",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-2"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-9-0",
+      "subject": "Carl",
+      "name": "Crawler Biscuit",
+      "source": "b1-c5-p85",
+      "summary": "Crawler Biscuit",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-2"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-10-0",
+      "subject": "Carl",
+      "name": "Torch",
+      "source": "b1-c5-p86",
+      "summary": "Torch",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-2"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-13-0",
+      "subject": "Carl",
+      "name": "Enchanted Nightgaunt Cloak of Stoutness",
+      "source": "b1-c5-p95",
+      "summary": "Enchanted Nightgaunt Cloak of Stoutness",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-4"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-14-0",
+      "subject": "Carl",
+      "name": "Enchanted Trollskin Shirt of Pummeling",
+      "source": "b1-c5-p96",
+      "summary": "Enchanted Trollskin Shirt of Pummeling",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-4"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "id": "reward-donut-first-cat",
+      "subject": "Princess Donut",
+      "name": "First cat to enter the dungeon",
+      "source": "b1-c7-p27",
+      "summary": "First cat to enter the dungeon",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "First cat to enter the dungeon"
+      }
+    },
+    {
+      "id": "reward-donut-legendary-award",
+      "subject": "Princess Donut",
+      "name": "Legendary Quadruped Box",
+      "source": "b1-c7-p27",
+      "summary": "Legendary Quadruped Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-donut-first-cat"
+        ],
+        "boxId": "donut-first-quadruped",
+        "boxTier": "Legendary",
+        "boxKind": "Quadruped",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "reward-donut-legendary-open",
+      "subject": "Princess Donut",
+      "name": "Legendary Quadruped Box opened",
+      "source": "b1-c7-p30",
+      "summary": "Legendary Quadruped Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-legendary-award"
+        ],
+        "boxId": "donut-first-quadruped",
+        "boxTier": "Legendary",
+        "boxKind": "Quadruped",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "inv-007-donut-opens-first-boxes-item-4-0",
+      "subject": "Princess Donut",
+      "name": "Enchanted Crown of the Sepsis Whore",
+      "source": "b1-c7-p33",
+      "summary": "Enchanted Crown of the Sepsis Whore",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-legendary-open"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "id": "reward-hoarder-victory",
+      "subject": "Party",
+      "name": "Hoarder boss victory",
+      "source": "b1-c11-p89",
+      "summary": "Hoarder boss victory",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "boss_victory",
+        "parentEventIds": [],
+        "reasonType": "boss_victory",
+        "reasonDetail": "Defeat of the Hoarder"
+      },
+      "evidence": [
+        "b1-c11-p86",
+        "b1-c11-p88"
+      ]
+    },
+    {
+      "id": "reward-hoarder-carl-award",
+      "subject": "Carl",
+      "name": "Bronze Boss Box",
+      "source": "b1-c12-p21",
+      "summary": "Boss victory awards a Bronze Boss Box; the associated achievement name is unstated.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "boss_victory",
+        "parentEventIds": [
+          "reward-hoarder-victory"
+        ],
+        "boxId": "hoarder-carl",
+        "boxTier": "Bronze",
+        "boxKind": "Boss",
+        "quantity": 1
+      },
+      "evidence": [
+        "b1-c12-p15",
+        "b1-c12-p17"
+      ]
+    },
+    {
+      "id": "reward-hoarder-carl-open",
+      "subject": "Carl",
+      "name": "Bronze Boss Box opened",
+      "source": "b1-c12-p39",
+      "summary": "Bronze Boss Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-hoarder-carl-award"
+        ],
+        "boxId": "hoarder-carl",
+        "boxTier": "Bronze",
+        "boxKind": "Boss",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "inv-014-second-major-opening-item-1-0",
+      "subject": "Carl",
+      "name": "Tome of Wisp Armor",
+      "source": "b1-c12-p40",
+      "summary": "Tome of Wisp Armor",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-hoarder-carl-open"
+        ],
+        "outcomeType": "item"
+      },
+      "evidence": [
+        "b1-c12-p39"
+      ]
+    },
+    {
+      "id": "reward-hoarder-donut-award",
+      "subject": "Princess Donut",
+      "name": "Bronze Boss Box",
+      "source": "b1-c12-p17",
+      "summary": "Boss victory awards a Bronze Boss Box; the associated achievement name is unstated.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "boss_victory",
+        "parentEventIds": [
+          "reward-hoarder-victory"
+        ],
+        "boxId": "hoarder-donut",
+        "boxTier": "Bronze",
+        "boxKind": "Boss",
+        "quantity": 1
+      },
+      "evidence": [
+        "b1-c12-p15",
+        "b1-c12-p17"
+      ]
+    },
+    {
+      "id": "reward-hoarder-donut-open",
+      "subject": "Princess Donut",
+      "name": "Bronze Boss Box opened",
+      "source": "b1-c12-p24",
+      "summary": "Bronze Boss Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-hoarder-donut-award"
+        ],
+        "boxId": "hoarder-donut",
+        "boxTier": "Bronze",
+        "boxKind": "Boss",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "inv-014-second-major-opening-item-0-0",
+      "subject": "Princess Donut",
+      "name": "Tome of Torch",
+      "source": "b1-c12-p30",
+      "summary": "Tome of Torch",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-hoarder-donut-open"
+        ],
+        "outcomeType": "item"
+      },
+      "evidence": [
+        "b1-c12-p24"
+      ]
+    },
+    {
+      "id": "reward-imani-sponsor",
+      "subject": "Imani C.",
+      "name": "Apothecary sponsorship gift",
+      "source": "b5-c57-p62",
+      "summary": "Apothecary sponsorship gift",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "sponsorship",
+        "parentEventIds": [],
+        "reasonType": "sponsorship",
+        "reasonDetail": "The Apothecary; gift intended for Donut"
+      }
+    },
+    {
+      "id": "reward-imani-award",
+      "subject": "Imani C.",
+      "name": "Benefactor Box",
+      "source": "b5-c57-p62",
+      "summary": "Benefactor Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "sponsorship",
+        "parentEventIds": [
+          "reward-imani-sponsor"
+        ],
+        "boxId": "imani-apothecary-hammer",
+        "boxKind": "Benefactor",
+        "quantity": 1,
+        "occurrenceDetail": "Receipt and opening reported together; exact earlier moments unstated."
+      }
+    },
+    {
+      "id": "reward-imani-open",
+      "subject": "Imani C.",
+      "name": "Benefactor Box opened",
+      "source": "b5-c57-p62",
+      "summary": "Benefactor Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-imani-award"
+        ],
+        "boxId": "imani-apothecary-hammer",
+        "boxKind": "Benefactor",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "imani-audit-b5-c62-p42-imani-c-item-enchanted-hammer-of-fast-forward",
+      "subject": "Imani C.",
+      "name": "Enchanted Hammer of Fast Forward",
+      "source": "b5-c62-p42",
+      "summary": "Imani received this sponsor gift, intended to be passed to Donut; continuing ownership is not asserted.",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-imani-open"
+        ],
+        "outcomeType": "item",
+        "occurrenceDetail": "Previously received, now identified; intended for Donut, transfer time unstated."
+      }
+    },
+    {
+      "id": "reward-imani-tier",
+      "subject": "Imani C.",
+      "name": "Silver Benefactor Box identified",
+      "source": "b5-c62-p44",
+      "summary": "Silver Benefactor Box identified",
+      "acquisition": {
+        "stage": "identified",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-imani-open"
+        ],
+        "boxId": "imani-apothecary-hammer",
+        "boxKind": "Benefactor",
+        "boxTier": "Silver"
+      }
+    },
+    {
+      "id": "reward-donut-war-crime",
+      "subject": "Princess Donut",
+      "name": "War Crime reward cause disclosed",
+      "source": "b8-c8-p34",
+      "summary": "War Crime reward cause disclosed",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "combat_achievement",
+        "reasonDetail": "War Crime spell attack",
+        "occurrenceDetail": "Retrospective award report; this is the reveal location."
+      }
+    },
+    {
+      "id": "reward-donut-slap-chop-award",
+      "subject": "Princess Donut",
+      "name": "Celestial Slap-Chop Box",
+      "source": "b8-c8-p34",
+      "summary": "Celestial Slap-Chop Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-donut-war-crime"
+        ],
+        "boxId": "donut-celestial-slap-chop",
+        "boxTier": "Celestial",
+        "boxKind": "Slap-Chop",
+        "quantity": 1,
+        "occurrenceDetail": "Awarded earlier; reported here."
+      }
+    },
+    {
+      "id": "reward-donut-slap-chop-open",
+      "subject": "Princess Donut",
+      "name": "Celestial Slap-Chop Box opened",
+      "source": "b8-c8-p57",
+      "summary": "Celestial Slap-Chop Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-slap-chop-award"
+        ],
+        "boxId": "donut-celestial-slap-chop",
+        "boxTier": "Celestial",
+        "boxKind": "Slap-Chop",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "reward-donut-godslayer-award",
+      "subject": "Princess Donut",
+      "name": "Celestial Godslayer Box",
+      "source": "b8-c8-p34",
+      "summary": "Celestial Godslayer Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-donut-war-crime"
+        ],
+        "boxId": "donut-celestial-godslayer",
+        "boxTier": "Celestial",
+        "boxKind": "Godslayer",
+        "quantity": 1,
+        "occurrenceDetail": "Awarded earlier; reported here."
+      }
+    },
+    {
+      "id": "reward-donut-godslayer-open",
+      "subject": "Princess Donut",
+      "name": "Celestial Godslayer Box opened",
+      "source": "b8-c8-p61",
+      "summary": "Celestial Godslayer Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-godslayer-award"
+        ],
+        "boxId": "donut-celestial-godslayer",
+        "boxTier": "Celestial",
+        "boxKind": "Godslayer",
+        "quantity": 1
+      }
+    },
+    {
+      "id": "reward-donut-celestial-boon",
+      "subject": "Princess Donut",
+      "name": "Permanent celestial claw boon",
+      "source": "b8-c9-p5",
+      "summary": "Godslayer box grants a permanent bodily boon affecting four claws; this is not a physical item.",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-godslayer-open"
+        ],
+        "outcomeType": "boon"
+      }
+    },
+    {
+      "id": "b8-audit-b8-c9-p16-princess-donut-skill-claw-boon",
+      "subject": "Princess Donut",
+      "name": "Claw",
+      "source": "b8-c9-p16",
+      "summary": "Donut reports Claw at level 17 after receiving the celestial claw boon.",
+      "acquisition": {
+        "stage": "applied",
+        "sourceType": "boon",
+        "parentEventIds": [
+          "reward-donut-celestial-boon"
+        ],
+        "outcomeType": "skill_modifier"
+      }
+    },
+    {
+      "id": "b8-audit-b8-c9-p54-princess-donut-item-the-crupper-of-the-benevolent-champion",
+      "subject": "Princess Donut",
+      "name": "The Crupper of the Benevolent Champion",
+      "source": "b8-c9-p54",
+      "summary": "The Crupper of the Benevolent Champion",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-slap-chop-open"
+        ],
+        "outcomeType": "item"
+      }
+    }
+  ]
+}

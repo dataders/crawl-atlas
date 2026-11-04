@@ -65,7 +65,10 @@ EQUIPMENT_STAT_SOURCES = {
 SERIES_LEVEL_MILESTONES = (
     (1, 3, "Mordecai", 50, "Mordecai – Rat Hooligan. Level 50"),
     (1, 23, "Imani C.", 10, "She was level 10"),
+    (1, 27, "Imani C.", 11, "Imani was level 11 now"),
     (1, 37, "Imani C.", 11, "Imani was still level 11"),
+    (3, 8, "Imani C.", 24, "anchor:b3-c8-p96"),
+    (3, 32, "Li Na", 30, "anchor:b3-c32-p22"),
     (2, 21, "Katia Grim", 9, "anchor:b2-c21-p31"),
     (2, 1, "Princess Donut", 13, "Princess Donut the Level 13"),
     (2, 2, "Carl", 13, "Dungeon Crawler Carl, the Level 13"),
@@ -142,7 +145,7 @@ SERIES_LEVEL_MILESTONES = (
     (7, 51, "Carl", 75, "I was only level 75"),
     (7, 77, "Carl", 81, "up to level 81"),
     (7, 77, "Prepotente", 100, "Prepotente at level 100"),
-    (7, 79, "Elle McGib", 135, "now level 135"),
+    (7, 79, "Princess Donut", 135, "now level 135"),
 )
 
 SERIES_STAT_MILESTONES = (
@@ -318,6 +321,23 @@ def series_progression_events(series_corpus: dict) -> list[dict]:
                 "level": level,
             }
         )
+    # Identity changes are dated discoveries, never timeless roster metadata.
+    for book, chapter, subject, field, value, anchor in (
+        (3, 8, "Imani C.", "race", "Obsidian Butterfly", "b3-c8-p97"),
+        (3, 8, "Imani C.", "class", "Fire Spiritualist", "b3-c8-p98"),
+        (3, 3, "Elle McGib", "class", "Blizzardmancer", "b3-c3-p86"),
+        (5, 8, "Elle McGib", "class", "Tundra Princess", "b5-c8-p90"),
+        (5, 8, "Prepotente", "class", "Profane Vitiate", "b5-c8-p89"),
+    ):
+        source = find_source(series_corpus, book, chapter, "anchor:" + anchor)
+        events.append({
+            "id": event_id("series", book, chapter, subject, field, value),
+            "book": book, "chapter": chapter, "position": source["position"],
+            "type": "story", "subject": subject, "name": field.title() + " revealed",
+            "summary": f"{subject}'s {field} is confirmed as {value}.",
+            "source": source["anchor"], "confidence": "verified", "action": "note",
+            "profile": {field: value},
+        })
     return events
 
 
@@ -466,9 +486,35 @@ def inventory_events(audit: dict) -> list[dict]:
                         "historyOnly": history_only,
                     }
                 )
+                if source["action"] == "open_boxes":
+                    event["acquisition"] = {"stage": "received", "sourceType": "opening_batch",
+                        "parentEventIds": [event_id(source["id"], "summary")], "attribution": "batch"}
                 output.append(event)
         # One readable history row summarizes each inventory operation.
-        output.append(base(source, suffix="summary", kind="story", subject=source["actor"], name=source["action"].replace("_", " ").title()))
+        opening = base(source, suffix="summary", kind="story", subject=source["actor"], name=source["action"].replace("_", " ").title())
+        if source["action"] == "open_boxes":
+            opening["acquisition"] = {"stage": "opened", "sourceType": "opening_batch",
+                                      "quantity": source.get("boxes_opened"), "attribution": "batch"}
+        output.append(opening)
+    return output
+
+
+def curated_audit_events(series_corpus: dict, filename: str, prefix: str) -> list[dict]:
+    audit = json.loads((ROOT / "data/public" / filename).read_text())
+    output = []
+    for row in audit["events"]:
+        book, chapter, _ = map(int, re.fullmatch(r"b(\d+)-c(\d+)-p(\d+)", row["source"]).groups())
+        source = find_source(series_corpus, book, chapter, "anchor:" + row["source"])
+        for anchor in row.get("evidence", []):
+            evidence_book, evidence_chapter, _ = map(int, re.fullmatch(r"b(\d+)-c(\d+)-p(\d+)", anchor).groups())
+            evidence = find_source(series_corpus, evidence_book, evidence_chapter, "anchor:" + anchor)
+            assert (evidence_book, evidence_chapter, evidence["position"]) <= (book, chapter, source["position"]), "Evidence must already be revealed"
+        output.append({
+            **row,
+            "id": event_id(prefix, row["source"], row["subject"], row["type"], row["name"], row.get("skillScope", "")),
+            "book": book, "chapter": chapter, "position": source["position"],
+            "confidence": row.get("confidence", "verified"),
+        })
     return output
 
 
@@ -476,7 +522,11 @@ def main() -> None:
     character = json.loads(CHARACTER_AUDIT.read_text(encoding="utf-8"))
     inventory = json.loads(INVENTORY_AUDIT.read_text(encoding="utf-8"))
     series_corpus = json.loads(SERIES_CORPUS.read_text(encoding="utf-8"))
-    events = character_events(character) + inventory_events(inventory) + series_progression_events(series_corpus)
+    events = (character_events(character) + inventory_events(inventory) + series_progression_events(series_corpus)
+              + curated_audit_events(series_corpus, "book-8-audit.json", "b8-audit")
+              + curated_audit_events(series_corpus, "imani-audit.json", "imani-audit"))
+    from reward_provenance import apply_reward_audit
+    events = apply_reward_audit(events, series_corpus)
     corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
     anchor_positions = {
         paragraph["anchor"]: paragraph["position"]
@@ -506,29 +556,23 @@ def main() -> None:
         event["book"] = event.get("book", 1)
         event["progress"] = round((offsets[event["book"]] + event["chapter"] - 1 + event["position"]) / total_chapters, 8)
     events.sort(key=lambda row: (row["progress"], row["id"]))
-    # A later status screen sometimes repeats the same character level. Keep
-    # the first reveal so the chart marks when that level was actually reached.
-    deduped_events = []
-    seen_levels = set()
-    for event in events:
-        if event["type"] == "level":
-            level_key = (event["subject"], event.get("level"))
-            if level_key in seen_levels:
-                continue
-            seen_levels.add(level_key)
-        deduped_events.append(event)
-    events = deduped_events
+    # Retain distinct source observations, including repeated levels: their
+    # confirmation dates matter. Only duplicate identity/source rows are removed.
+    events = list({event["id"]: event for event in events}.values())
     payload = {
         "series": {
             "id": "dcc",
             "title": "Dungeon Crawler Carl",
             "bookCount": len(book_rows),
             "chapterCount": total_chapters,
-            "dataVersion": "2.2.0",
+            "dataVersion": "2.6.0",
             "coverageNote": "Eight-book chapter map with source-anchored progression for the core party and major recurring allies. Skills and inventory appear only when explicitly confirmed.",
         },
         "books": book_rows,
         "characters": [
+            {"id": "osvaldo", "name": "Osvaldo", "group": "ally", "color": "#df9a72"},
+            {"id": "penelope", "name": "Penelope", "group": "ally", "color": "#e8a9cb"},
+            {"id": "sexy-scolopendra", "name": "Sexy Scolopendra", "group": "ally", "color": "#c5b5e8"},
             {"id": "carl", "name": "Carl", "role": "Royal Bodyguard", "group": "core", "color": "#d8ff3e"},
             {"id": "princess-donut", "name": "Princess Donut", "role": "Party leader", "group": "core", "color": "#4dd9d2"},
             {"id": "mongo", "name": "Mongo", "role": "Donut's bonded pet", "group": "core", "color": "#ff6441"},

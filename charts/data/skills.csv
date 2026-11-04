@@ -73,15 +73,89 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 15.177681,2,25,63.87,Katia Grim,Rush,,"Explicitly confirmed in Book 2, Chapter 25.",Katia Grim's Rush is explicitly confirmed.,b2-c25-p76
 15.323701,3,1,32.79,Katia Grim,Pathfinder,,"Explicitly confirmed in Book 3, Chapter 1.",Katia Grim's Pathfinder is explicitly confirmed.,b3-c1-p60
 15.769257,3,3,43.09,Katia Grim,Catcher,,"Explicitly confirmed in Book 3, Chapter 3.",Katia Grim's Catcher is explicitly confirmed.,b3-c3-p53
+16.983377,3,9,16.15,Imani C.,Juiced,,Observed effect name; ability level unstated.,Imani’s wing contact applies a temporary 10% Strength buff.,b3-c9-p21
+16.985007,3,9,16.92,Imani C.,Shrouded,,Observed effect name; ability level unstated.,Imani’s wing contact applies temporary 10% damage reduction.,b3-c9-p22
+16.986636,3,9,17.69,Imani C.,Trolled,,Observed effect name; ability level unstated.,Imani’s wing contact accelerates healing by 25% temporarily.,b3-c9-p23
 20.424544,3,25,40.38,Katia Grim,Find Crawler,3,"Explicitly confirmed in Book 3, Chapter 25.",Katia Grim's Find Crawler is explicitly confirmed at level 3.,b3-c25-p63
 21.283026,3,29,45.59,Katia Grim,Crowd Blast,,"Explicitly confirmed in Book 3, Chapter 29.",Katia Grim's Crowd Blast is explicitly confirmed.,b3-c29-p62
+21.640436,3,31,14.29,Imani C.,Wing-contact constitution buff,,Descriptive label; formal ability name unknown.,Imani’s wings grant a non-stacking Constitution buff lasting ten minutes; its magnitude is unstated.,b3-c31-p20
+21.784201,3,31,82.14,Imani C.,Acid neutralization,,Descriptive label; formal ability name unknown.,Imani casts an unnamed effect that negates acid affecting nearby allies.,b3-c31-p115
 22.75074,4,2,38.35,Katia Grim,Catcher,11,"Explicitly confirmed in Book 4, Chapter 2.",Katia Grim's Catcher is explicitly confirmed at level 11.,b4-c2-p79
 23.465318,4,5,75.63,Louis Santiago,Cloud of Exhaust,11,"Explicitly confirmed in Book 4, Chapter 5.",Louis Santiago's Cloud of Exhaust is explicitly confirmed at level 11.,b4-c5-p90
 29.194697,4,32,79.9,Katia Grim,Hanzo,,"Explicitly confirmed in Book 4, Chapter 32.",Katia Grim's Hanzo is explicitly confirmed.,b4-c32-p155
+33.916801,5,21,8.73,Imani C.,Glamor counterspell,,Descriptive label; formal ability name unknown.,Imani removes Eva’s glamor from the NPCs with a counterspell.,b5-c21-p11
 39.528814,5,47,57.6,Prepotente,Community Pool,,"Explicitly confirmed in Book 5, Chapter 47.",Prepotente's Community Pool is explicitly confirmed.,b5-c47-p72
 41.246148,5,55,68.18,Imani C.,Smart Juice,,"Explicitly confirmed in Book 5, Chapter 55.",Imani C.'s Smart Juice is explicitly confirmed.,b5-c55-p60
+42.349709,5,60,89.06,Imani C.,Dread,,Reported ability in a plan; level unstated.,Carl assigns Imani to cast Dread during the planned attack; this passage states the plan rather than confirming the cast.,b5-c60-p57
 42.687735,5,62,48.61,Katia Grim,I Need My Personal Space,,"Explicitly confirmed in Book 5, Chapter 62.",Katia Grim's I Need My Personal Space is explicitly confirmed.,b5-c62-p35
+45.448332,5,75,51.61,Imani C.,Healing wings,,Descriptive label; formal ability name unknown.,Imani heals Carl by wrapping him in her wings.,b5-c75-p80
+65.556456,7,23,42.65,Imani C.,Total Ear Protection,,,Imani casts Total Ear Protection on Donut and Mongo.,b7-c23-p29
+70.698396,7,47,69.64,Imani C.,Tripper,,Temporary tattoo grant; exact level not stated.,Imani confirms using Carl’s Tripper through Katia’s tattoo; her exact spell level is unstated.,b7-c47-p39
+70.736229,7,47,87.5,Imani C.,Tripper,,Temporary and fading over four days; later expiry time is not recorded.,The tattoo-granted Tripper loses potency as Carl’s source spell recovers over four days. It can later be recharged with another potion.,b7-c47-p49
 71.604229,7,51,97.2,Li Na,Dark Purpose,15,"Explicitly confirmed in Book 7, Chapter 51.",Li Na's Dark Purpose is explicitly confirmed at level 15.,b7-c51-p104
 71.743644,7,52,63.0,Li Na,Blood Horror,15,"Explicitly confirmed in Book 7, Chapter 52.",Li Na's Blood Horror is explicitly confirmed at level 15.,b7-c52-p63
 72.62382,7,56,78.44,Prepotente,Iron Stomach,,"Explicitly confirmed in Book 7, Chapter 56.",Prepotente's Iron Stomach is explicitly confirmed.,b7-c56-p131
 74.295003,7,64,67.24,Prepotente,Group psionic protection,,"Explicitly confirmed in Book 7, Chapter 64.",Prepotente's Group psionic protection is explicitly confirmed.,b7-c64-p39
+77.710099,7,80,79.17,Imani C.,Group shield,,Descriptive label; formal ability name unknown.,"Imani protects Elle, Holger, and others with a shield unfamiliar to Carl.",b7-c80-p76
+79.401591,8,1,77.55,Princess Donut,Heal Critter,15,,Donut reports Heal Critter at level 15; her cloak supplies this spell level.,b8-c1-p76
+79.401591,8,1,77.55,Princess Donut,Twinkle Toes,,,Princess Donut is confirmed to have Twinkle Toes.,b8-c1-p76
+80.11634,8,5,14.91,Princess Donut,Sniper,,,Princess Donut is confirmed to have Sniper.,b8-c5-p17
+80.701754,8,7,91.23,Princess Donut,Smoke Form,,,Princess Donut is confirmed to have Smoke Form.,b8-c7-p52
+80.712905,8,7,96.49,Princess Donut,Healer’s Grasp,,,Donut confirms a new healing aura from her assassin class; no numeric level is given.,b8-c7-p55
+80.720339,8,7,100.0,Carl,Oozy Form,,,Carl consumes the Oozy Form book and learns the spell. Its actual starting level is not stated.,b8-c7-p57
+80.986878,8,9,25.81,Princess Donut,Claw,17,,Donut reports Claw at level 17 after receiving the celestial claw boon.,b8-c9-p16
+81.120148,8,9,88.71,Princess Donut,Find Weakened,10,,The newly equipped matched crupper set raises Find Weakened to level 10.,b8-c9-p55
+81.133816,8,9,95.16,Princess Donut,Bad Attitude,15,,Donut confirms Bad Attitude has been raised to level 15 by her cloak.,b8-c9-p59
+81.133816,8,9,95.16,Princess Donut,Heal Critter,15,,Donut confirms Heal Critter has been raised to level 15 by her cloak.,b8-c9-p59
+81.133816,8,9,95.16,Princess Donut,Puddle Jumper,15,,Donut confirms Puddle Jumper has been raised to level 15 by her cloak.,b8-c9-p59
+81.133816,8,9,95.16,Princess Donut,Wall of Fire,15,,Donut confirms Wall of Fire has been raised to level 15 by her cloak.,b8-c9-p59
+81.137233,8,9,96.77,Princess Donut,Bad Attitude,16,,Brain Trust makes the level-15 Bad Attitude cast at effective level 16; this is not base training.,b8-c9-p60
+81.137233,8,9,96.77,Princess Donut,Brain Trust,,,Brain Trust adds one effective casting level to Donut’s spells; its own numeric skill level is not given.,b8-c9-p60
+81.137233,8,9,96.77,Princess Donut,Heal Critter,16,,Brain Trust makes the level-15 Heal Critter cast at effective level 16; this is not base training.,b8-c9-p60
+81.137233,8,9,96.77,Princess Donut,Puddle Jumper,16,,Brain Trust makes the level-15 Puddle Jumper cast at effective level 16; this is not base training.,b8-c9-p60
+81.137233,8,9,96.77,Princess Donut,Wall of Fire,16,,Brain Trust makes the level-15 Wall of Fire cast at effective level 16; this is not base training.,b8-c9-p60
+81.140651,8,9,98.39,Princess Donut,Puddle Jumper,17,,The chosen level-16 Puddle Jumper casts at 17 with the explicitly confirmed Brain Trust modifier.,b8-c9-p61
+81.140651,8,9,98.39,Princess Donut,Puddle Jumper,16,,Donut chooses Puddle Jumper for the matched-set upgrade and confirms level 16.,b8-c9-p61
+81.902145,8,13,57.81,Carl,Mind Balance,,,Carl is confirmed to have Mind Balance.,b8-c13-p37
+81.902145,8,13,57.81,Princess Donut,Love Vampire,,,Princess Donut is confirmed to have Love Vampire.,b8-c13-p37
+83.071618,8,19,9.8,Princess Donut,Shield,,,Princess Donut is confirmed to have Shield.,b8-c19-p5
+83.582972,8,21,51.16,Carl,Jump,10,,The currently worn kangaroo costume grants Jump at level 10; it is not a permanent trained skill.,b8-c21-p66
+83.584614,8,21,51.94,Carl,Lotion Application,,,The worn kangaroo costume adds five Lotion Application levels; the resulting total is not stated.,b8-c21-p67
+83.70806,8,22,10.2,Carl,Costume skill,6,,Carl is confirmed to have Costume skill at level 6.,b8-c22-p5
+84.103479,8,23,96.84,Carl,Escape Plan,,,Carl is confirmed to have Escape Plan.,b8-c23-p92
+84.362875,8,25,19.28,Carl,Fursona,8,,Carl’s costume skill is named Fursona and the system confirms level 8. The earlier level-5 reference is retrospective.,b8-c25-p16
+84.365428,8,25,20.48,Carl,Yiffing,,,The Fursona level-8 notification unlocks Yiffing; no numeric level is given.,b8-c25-p17
+84.510925,8,25,89.16,Carl,Contingency,,,"Carl drinks the Platinum Hotlist Expansion potion and unlocks Contingency, with 25 hotlist slots and up to ten automations.",b8-c25-p74
+84.51603,8,25,91.57,Carl,Heart Balance,,,Carl is confirmed to have Heart Balance.,b8-c25-p76
+85.546413,8,30,77.91,Princess Donut,Laundry Day,,,Princess Donut is confirmed to have Laundry Day.,b8-c30-p67
+85.876406,8,32,33.66,Princess Donut,Temporary Macaroni,15,,Donut’s level-14 Temporary Macaroni is explicitly enhanced to effective level 15.,b8-c32-p34
+85.876406,8,32,33.66,Princess Donut,Temporary Macaroni,14,,"Donut has acquired and cast Temporary Macaroni; its supplied casting level is 14, before enhancement.",b8-c32-p34
+86.239678,8,34,5.13,Carl,Jump,,,The costume-granted Jump skill ends when the costume is gone.,b8-c34-p2
+86.239678,8,34,5.13,Carl,Lotion Application,,,The costume-granted five-level bonus ends; no permanent trained total is inferred.,b8-c34-p2
+88.19175,8,43,26.51,Princess Donut,Astral Paw,,,Princess Donut is confirmed to have Astral Paw.,b8-c43-p22
+88.359564,8,44,5.71,Princess Donut,Fresh into Salt,,,"Donut uses Fresh into Salt, granted by her Champion of Nekhebit title.",b8-c44-p4
+88.513922,8,44,78.57,Princess Donut,Hover,,,Princess Donut is confirmed to have Hover.,b8-c44-p55
+88.914707,8,46,67.74,Princess Donut,All Eyes on Me,,,Donut’s high charisma allows All Eyes on Me to work with speech instead of singing; no stat total is given.,b8-c46-p21
+89.225182,8,48,14.29,Princess Donut,Second Chance,11,,Second Chance is explicitly level 11 before Brain Trust.,b8-c48-p7
+89.225182,8,48,14.29,Princess Donut,Second Chance,12,,Brain Trust increases Second Chance from 11 to an effective casting level of 12.,b8-c48-p7
+89.69774,8,50,37.33,Carl,Gutter Bumper,9,,Carl has consumed the page granting Gutter Bumper. The page identifies its casting level as 9.,b8-c50-p28
+89.70904,8,50,42.67,Princess Donut,Ice Slick,,,"Donut casts Ice Slick. The earlier book listed a starting level of 5, but the level of this cast is not stated.",b8-c50-p32
+89.748587,8,50,61.33,Princess Donut,"Summon Ye, Vermin",,,"Princess Donut is confirmed to have Summon Ye, Vermin.",b8-c50-p46
+91.57906,8,59,25.32,Princess Donut,Hole,,,Princess Donut is confirmed to have Hole.,b8-c59-p20
+91.640742,8,59,54.43,Imani C.,Sluggish,,Planned cast only; the scene later prevents it.,"The plan assigns Imani a Sluggish debuff. This records a reported ability, not a completed cast.",b8-c59-p43
+92.457084,8,63,39.74,Princess Donut,Big-Ass Magnet,14,,Donut has consumed the page granting Big-Ass Magnet; the page gives casting level 14.,b8-c63-p31
+92.689265,8,64,49.33,Princess Donut,Puddle Jumper,17,,A cast of Puddle Jumper is explicitly described at effective level 17.,b8-c64-p37
+94.063473,8,70,97.96,Carl,Cockroach,,,Carl is confirmed to have Cockroach.,b8-c70-p48
+94.921139,8,75,2.78,Carl,Find Traps,,,Carl is confirmed to have Find Traps.,b8-c75-p2
+95.151471,8,76,11.49,Imani C.,Confuzzled,,,"Imani reports casting Confuzzled on the room, stunning the bugs; no spell level is stated.",b8-c76-p10
+96.043208,8,80,32.39,Osvaldo,Deflector,,,Osvaldo is confirmed to have Deflector.,b8-c80-p23
+96.043208,8,80,32.39,Osvaldo,Jump,15,,Osvaldo is confirmed to have Jump at level 15.,b8-c80-p23
+96.049176,8,80,35.21,Osvaldo,Launch,14,,Osvaldo is confirmed to have Launch at level 14.,b8-c80-p25
+96.049176,8,80,35.21,Osvaldo,Puddle Jump,8,,Osvaldo is confirmed to have Puddle Jump at level 8.,b8-c80-p25
+96.049176,8,80,35.21,Osvaldo,Super Speedster,,,Osvaldo is confirmed to have Super Speedster.,b8-c80-p25
+97.011597,8,84,89.47,Imani C.,Slugpox cure,,Descriptive label; formal ability name unknown.,Imani casts a spell and the system confirms that Carl is cured of Slugpox.,b8-c84-p51
+97.142618,8,85,51.32,Carl,Examine Portal,,,Carl is confirmed to have Examine Portal.,b8-c85-p78
+97.367854,8,86,57.63,Imani C.,Stupefying blast,,Descriptive label; formal ability name unknown.,"Imani casts a stupefying blast across the room. Its name is not stated, so it is not assumed to be Confuzzled.",b8-c86-p34
+97.781552,8,88,52.89,Princess Donut,Cockroach,15,,Donut selects the Gurkha class whose stated benefits include boosting Cockroach to level 15.,b8-c88-p64
+98.146186,8,90,25.0,Princess Donut,Sprout Forest,,,Princess Donut is confirmed to have Sprout Forest.,b8-c90-p11
+99.161889,8,95,4.41,Carl,Gloom Wraith Phase,13,,Carl activates Gloom Wraith Phase and its level is explicitly given as 13.,b8-c95-p6

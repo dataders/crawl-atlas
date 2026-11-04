@@ -1,2 +1,6 @@
 # dbt Charts project configuration.
-# Boards use checked-in public CSV extracts and require no warehouse credentials.
+# Board reads same public SQLite snapshot as site; no warehouse credentials needed.
+sources:
+  crawl_atlas:
+    type: sqlite
+    path: site/dist/data/crawl-atlas.sqlite

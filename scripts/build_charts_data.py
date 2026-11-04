@@ -20,7 +20,7 @@ OUTPUT = ROOT / "charts" / "data"
 def write_csv(name: str, fieldnames: list[str], rows: list[dict]) -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
     with (OUTPUT / name).open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -48,8 +48,11 @@ def main() -> None:
             "source": event["source"],
         }
         if event["type"] == "level":
-            latest_level[event["subject"]] = event["level"]
-            metrics.append({**common, "metric": "Level", "value": event["level"], "scope": "confirmed"})
+            if event.get("level") is not None:
+                latest_level[event["subject"]] = event["level"]
+                metrics.append({**common, "metric": "Level", "value": event["level"], "scope": "confirmed"})
+            else:
+                latest_level.pop(event["subject"], None)
         elif event["type"] == "stat":
             for metric, value in event.get("stats", {}).items():
                 metrics.append(
@@ -90,8 +93,8 @@ def main() -> None:
             {
                 "character": name,
                 "group_name": character["group"],
-                "role": character["role"],
-                "relationship": latest_relationship.get(name, character["role"]),
+                "role": character.get("role", "Known character"),
+                "relationship": latest_relationship.get(name, character.get("role", "Known character")),
                 "latest_confirmed_level": latest_level.get(name, ""),
             }
         )

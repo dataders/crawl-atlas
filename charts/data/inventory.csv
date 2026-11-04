@@ -2,34 +2,34 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 0.018538,1,1,8.75,Carl,Boxers,equip,equipped,1,Inventory,"Carl enters the surface crisis wearing only boxers, a leather jacket, and borrowed Crocs.",b1-c1-p7
 0.018538,1,1,8.75,Carl,Leather jacket,equip,equipped,1,Inventory,"Carl enters the surface crisis wearing only boxers, a leather jacket, and borrowed Crocs.",b1-c1-p7
 0.018538,1,1,8.75,Carl,Pink Crocs,equip,equipped,1,Inventory,"Carl enters the surface crisis wearing only boxers, a leather jacket, and borrowed Crocs.",b1-c1-p7
-0.29824,1,2,40.77,Carl,Bronze Pet Box,add,unopened,1,Inventory,Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.,b1-c2-p53
-0.29824,1,2,40.77,Carl,Legendary Pet Box,add,unopened,1,Inventory,Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.,b1-c2-p53
-0.29824,1,2,40.77,Carl,Silver Adventurer Box,add,unopened,1,Inventory,Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.,b1-c2-p53
-0.29824,1,2,40.77,Carl,Bronze Adventurer Box,add,unopened,1,Inventory,Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.,b1-c2-p53
-0.29824,1,2,40.77,Carl,Gold Apparel Box,add,unopened,1,Inventory,Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.,b1-c2-p53
-0.29824,1,2,40.77,Carl,Bronze Weapon Box,add,unopened,1,Inventory,Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.,b1-c2-p53
+0.273794,1,2,29.23,Carl,Bronze Pet Box,add,unopened,1,Inventory,Bronze Pet Box,b1-c2-p38
+0.278683,1,2,31.54,Carl,Legendary Pet Box,add,unopened,1,Inventory,Legendary Pet Box,b1-c2-p41
+0.283572,1,2,33.85,Carl,Silver Adventurer Box,add,unopened,1,Inventory,Silver Adventurer Box,b1-c2-p44
+0.288461,1,2,36.15,Carl,Bronze Adventurer Box,add,unopened,1,Inventory,Bronze Adventurer Box,b1-c2-p47
+0.293351,1,2,38.46,Carl,Gold Apparel Box,add,unopened,1,Inventory,Gold Apparel Box,b1-c2-p50
+0.29824,1,2,40.77,Carl,Bronze Weapon Box,add,unopened,1,Inventory,Bronze Weapon Box,b1-c2-p53
 0.870033,1,5,10.66,Carl,Standard Healing Potion,add,hotlist,1,Inventory,Mordecai gives Carl a healing potion while activating and teaching the dimensional inventory.,b1-c5-p13
-1.028063,1,5,85.25,Carl,Scroll of Heal Critter,add,carried,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
+0.960336,1,5,53.28,Carl,Bronze Pet Box,remove,opened,1,Reward box,Bronze Pet Box,b1-c5-p65
+0.962073,1,5,54.1,Carl,Scroll of Heal Critter,add,carried,1,Inventory,Scroll of Heal Critter,b1-c5-p66
+0.991595,1,5,68.03,Carl,Silver Adventurer Box,remove,opened,1,Reward box,Silver Adventurer Box,b1-c5-p83
+0.993332,1,5,68.85,Carl,Poison Antidote,add,carried,2,Inventory,Poison Antidote,b1-c5-p84
+0.995068,1,5,69.67,Carl,Crawler Biscuit,add,carried,100,Inventory,Crawler Biscuit,b1-c5-p85
+0.996805,1,5,70.49,Carl,Torch,add,carried,20,Inventory,Torch,b1-c5-p86
+1.010697,1,5,77.05,Carl,Gold Apparel Box,remove,opened,1,Reward box,Gold Apparel Box,b1-c5-p94
+1.012434,1,5,77.87,Carl,Enchanted Nightgaunt Cloak of Stoutness,add,carried,1,Inventory,Enchanted Nightgaunt Cloak of Stoutness,b1-c5-p95
+1.014171,1,5,78.69,Carl,Enchanted Trollskin Shirt of Pummeling,add,carried,1,Inventory,Enchanted Trollskin Shirt of Pummeling,b1-c5-p96
+1.02459,1,5,83.61,Carl,Legendary Pet Box,remove,opened,1,Reward box,Legendary Pet Box,b1-c5-p102
 1.028063,1,5,85.25,Carl,Pet Biscuit,add,carried,510,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Torch,add,carried,20,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.028063,1,5,85.25,Carl,Dynamite,add,carried,5,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.028063,1,5,85.25,Carl,Goblin Pass,add,bound,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Enchanted Nightgaunt Cloak of Stoutness,add,carried,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Enchanted Trollskin Shirt of Pummeling,add,carried,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.028063,1,5,85.25,Carl,Enchanted Toe Ring of the Splatter Skunk,add,carried,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Enhanced Pet Biscuit,add,carried,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
+1.028063,1,5,85.25,Carl,Enhanced Pet Biscuit,add,carried,1,Inventory,Enhanced Pet Biscuit,b1-c5-p104
 1.028063,1,5,85.25,Carl,Potion of Healing,add,carried,3,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.028063,1,5,85.25,Carl,Potion of Mana,add,carried,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.028063,1,5,85.25,Carl,Common Fingerless Gloves,add,carried,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.028063,1,5,85.25,Carl,Toad Cudgel,add,carried,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.028063,1,5,85.25,Carl,Poker,add,carried,1,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Poison Antidote,add,carried,2,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Crawler Biscuit,add,carried,100,Inventory,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Bronze Pet Box,remove,opened,1,Reward box,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Legendary Pet Box,remove,opened,1,Reward box,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Silver Adventurer Box,remove,opened,1,Reward box,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.028063,1,5,85.25,Carl,Bronze Adventurer Box,remove,opened,1,Reward box,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
-1.028063,1,5,85.25,Carl,Gold Apparel Box,remove,opened,1,Reward box,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.028063,1,5,85.25,Carl,Bronze Weapon Box,remove,opened,1,Reward box,"Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",b1-c5-p104
 1.03501,1,5,88.52,Princess Donut,Enhanced Pet Biscuit,remove,carried,1,Inventory,"Carl feeds the enhanced biscuit to Donut, triggering her transformation into a sapient crawler.",b1-c5-p108
 1.190476,1,6,61.9,Carl,Torch,add,carried,1,Inventory,"Carl's first magical-gear achievement box adds a torch and two healing potions, bringing his stated healing-potion total to six.",b1-c6-p26
@@ -43,7 +43,7 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 1.382163,1,7,52.38,Princess Donut,Torches,add,carried,,Inventory,"Donut opens her initial boxes, learns Magic Missile immediately, and equips the unique fleeting crown.",b1-c7-p33
 1.382163,1,7,52.38,Princess Donut,Pet Biscuits,add,carried,,Inventory,"Donut opens her initial boxes, learns Magic Missile immediately, and equips the unique fleeting crown.",b1-c7-p33
 1.382163,1,7,52.38,Princess Donut,Tome of Magic Missile,remove,consumed to learn spell,1,Inventory,"Donut opens her initial boxes, learns Magic Missile immediately, and equips the unique fleeting crown.",b1-c7-p33
-1.382163,1,7,52.38,Princess Donut,Enchanted Crown of the Sepsis Whore,add,equipped; fleeting,1,Inventory,"Donut opens her initial boxes, learns Magic Missile immediately, and equips the unique fleeting crown.",b1-c7-p33
+1.382163,1,7,52.38,Princess Donut,Enchanted Crown of the Sepsis Whore,add,equipped; fleeting,1,Inventory,Enchanted Crown of the Sepsis Whore,b1-c7-p33
 1.542004,1,8,27.83,Carl,Marlboro Reds,add,carried,0.5,Inventory,Carl confirms the cigarette pack and Zippo survived in his jacket pocket; he also has a separate goblin-box lighter.,b1-c8-p32
 1.542004,1,8,27.83,Carl,Zippo lighter,add,carried,1,Inventory,Carl confirms the cigarette pack and Zippo survived in his jacket pocket; he also has a separate goblin-box lighter.,b1-c8-p32
 1.628593,1,8,68.7,Princess Donut,Poor Llama Skin,add,carried,1,Inventory,Donut takes the hide and one steak; Carl takes the remaining steak and both drug baggies.,b1-c8-p79
@@ -59,8 +59,8 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 2.30226,1,11,86.67,Carl,Metal dog leash chain,remove,carried,1,Inventory,Improvised chain weapon breaks during the Hoarder battle; remnants remain wrapped around Carl's fist afterward.,b1-c11-p78
 2.339588,1,12,4.29,Carl,Neighborhood Map,add,applied to minimap,1,Inventory,Hoarder drops a persistent map copy for each party member; each copy populates the nearby minimap.,b1-c12-p3
 2.339588,1,12,4.29,Princess Donut,Neighborhood Map,add,applied to minimap,1,Inventory,Hoarder drops a persistent map copy for each party member; each copy populates the nearby minimap.,b1-c12-p3
-2.475787,1,12,68.57,Princess Donut,Tome of Torch,remove,consumed to learn spell,1,Inventory,"Boss and achievement boxes yield Donut's Torch spell and Carl's first major explosive, defensive, and armor bundle.",b1-c12-p48
-2.475787,1,12,68.57,Carl,Tome of Wisp Armor,add,carried,1,Inventory,"Boss and achievement boxes yield Donut's Torch spell and Carl's first major explosive, defensive, and armor bundle.",b1-c12-p48
+2.421307,1,12,42.86,Princess Donut,Tome of Torch,remove,consumed to learn spell,1,Inventory,Tome of Torch,b1-c12-p30
+2.451574,1,12,57.14,Carl,Tome of Wisp Armor,add,carried,1,Inventory,Tome of Wisp Armor,b1-c12-p40
 2.475787,1,12,68.57,Carl,Dynamite,add,carried,5,Inventory,"Boss and achievement boxes yield Donut's Torch spell and Carl's first major explosive, defensive, and armor bundle.",b1-c12-p48
 2.475787,1,12,68.57,Carl,Lighter,add,carried,1,Inventory,"Boss and achievement boxes yield Donut's Torch spell and Carl's first major explosive, defensive, and armor bundle.",b1-c12-p48
 2.475787,1,12,68.57,Carl,Satchel of Gunpowder,add,carried,1,Inventory,"Boss and achievement boxes yield Donut's Torch spell and Carl's first major explosive, defensive, and armor bundle.",b1-c12-p48
@@ -103,6 +103,8 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 4.152542,1,20,60.0,Carl,Bloodstained khaki pants,add,carried,1,Inventory,Frank tosses Carl undersized women's khaki pants; Carl inventories them during the safe-room attack.,b1-c20-p84
 4.196429,1,20,80.71,Carl,Goblin Smoke Bomb,remove,lit,1,Inventory,Carl hides a smoke bomb and two unstable dynamite sticks in a rat corpse as a trap for Frank and Maggie.,b1-c20-p113
 4.196429,1,20,80.71,Carl,Goblin Dynamite,remove,"one lit, one unstable unlit",2,Inventory,Carl hides a smoke bomb and two unstable dynamite sticks in a rat corpse as a trap for Frank and Maggie.,b1-c20-p113
+4.507311,1,22,27.45,Imani C.,Longsword,note,equipped,,,Imani carries a longsword at her introduction.,b1-c22-p28
+4.507311,1,22,27.45,Imani C.,Magical cloak,note,equipped,,,Imani wears a magical cloak at her introduction.,b1-c22-p28
 5.051922,1,24,84.51,Carl,Scroll of Confusing Fog,remove,carried,3,Inventory,"The Juicer battle consumes all three Fog scrolls, one invalid Heal Critter scroll, several healing potions, and a Donut mana potion.",b1-c24-p60
 5.051922,1,24,84.51,Carl,Scroll of Heal Critter,remove,wasted; invalid target,1,Inventory,"The Juicer battle consumes all three Fog scrolls, one invalid Heal Critter scroll, several healing potions, and a Donut mana potion.",b1-c24-p60
 5.051922,1,24,84.51,Carl,Potion of Healing,remove,carried,3,Inventory,"The Juicer battle consumes all three Fog scrolls, one invalid Heal Critter scroll, several healing potions, and a Donut mana potion.",b1-c24-p60
@@ -171,6 +173,8 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 7.392953,1,35,89.47,Princess Donut,Scroll of Confusing Fog,add,carried,2,Inventory,"Krakaren rewards give Donut a nightly Constitution brush and Carl self-sizing enchanted boxers with Protective Shell, plus generic consumables and explosives.",b1-c35-p102
 7.392953,1,35,89.47,Carl,Enchanted BigBoi Boxers,equip,equipped,1,Inventory,"Krakaren rewards give Donut a nightly Constitution brush and Carl self-sizing enchanted boxers with Protective Shell, plus generic consumables and explosives.",b1-c35-p102
 7.392953,1,35,89.47,Carl,Boxers,remove,carried,1,Inventory,Carl's original scorched boxers fall apart when he changes into the enchanted pair.,b1-c35-p102
+7.734327,1,37,50.6,Imani C.,Pig harness,note,equipped,,,Imani wears a pig harness while hauling the residents.,b1-c37-p42
+7.74709,1,37,56.63,Imani C.,Yog’s Special Chain scroll,note,,,,"Imani has used a scroll to create a temporary, lightweight chain; the speaker is uncertain of its exact name.",b1-c37-p47
 8.147393,1,39,45.57,Princess Donut,Dungeon Gold Rush ticket,add,carried,1,Inventory,Their Platinum Lucky Bastard boxes yield limited-use scratch tickets with randomized beneficial or harmful combat effects.,b1-c39-p36
 8.147393,1,39,45.57,Carl,Fireball or Custard ticket,add,carried,1,Inventory,Their Platinum Lucky Bastard boxes yield limited-use scratch tickets with randomized beneficial or harmful combat effects.,b1-c39-p36
 8.490025,1,41,7.29,Party,Goblin chopper with detachable sidecar,remove,carried,1,Inventory,Carl confirms the chopper was destroyed during the rage-elemental escape.,b1-c41-p7
@@ -199,3 +203,21 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 9.904291,1,47,74.83,Carl,Trans Tunnel 7C Orator Relay by Valtay Corp.,remove,no longer held,1,Inventory,Determine Value history reveals three high-value Valtay devices that briefly entered Carl's inventory inside Agatha's cart and were returned with it.,b1-c47-p107
 9.904291,1,47,74.83,Carl,Valtay Perso-Shield Platinum Edition,remove,no longer held,1,Inventory,Determine Value history reveals three high-value Valtay devices that briefly entered Carl's inventory inside Agatha's cart and were returned with it.,b1-c47-p107
 9.904291,1,47,74.83,Carl,Mag 3040 Valtay Corp Pulse Pistol,remove,no longer held,1,Inventory,Determine Value history reveals three high-value Valtay devices that briefly entered Carl's inventory inside Agatha's cart and were returned with it.,b1-c47-p107
+21.638922,3,31,13.57,Imani C.,Chain-making scrolls,note,,,,Imani still has several chain-making scrolls and uses them for the crane.,b3-c31-p19
+42.708333,5,62,58.33,Imani C.,Enchanted Hammer of Fast Forward,note,,,,"Imani received this sponsor gift, intended to be passed to Donut; continuing ownership is not asserted.",b5-c62-p42
+43.174807,5,64,78.51,Imani C.,Robe,note,,,,Imani gives Ren a robe to cover herself after removing her flamethrower.,b5-c64-p179
+51.759483,6,30,30.48,Imani C.,Addiction cures,note,,,,Imani purchases two addiction cures and has administered the first to Katia.,b6-c30-p32
+51.78975,6,30,44.76,Imani C.,Blitz treatment patch,note,,,,Imani has the patch ready for Katia’s next treatment; the passage describes planned administration.,b6-c30-p47
+56.499767,6,52,67.89,Imani C.,Amhuluk totem,note,,,,"Imani’s Amhuluk totem casts a poison cloud. This is the totem’s attack, not a native spell attributed to Imani.",b6-c52-p74
+59.537014,6,67,1.47,Imani C.,Card deck,note,,15,,Imani’s deck contains 15 cards; its first six are highlighted as totems.,b6-c67-p2
+80.757185,8,8,17.39,Princess Donut,The Assassin’s Veil,equip,equipped,,Equipment,Equipped veil provides +10% dexterity; the final dexterity total is unstated.,b8-c8-p12
+81.007381,8,9,35.48,Princess Donut,Celestial claw caps,equip,equipped,,Equipment,Donut equips removable caps to cover the destructive celestial claws.,b8-c9-p22
+81.02105,8,9,41.94,Princess Donut,Ice Slick spell book,add,carried,,Spell book,Special-edition Ice Slick book starts at level 5 and trains faster; learning is not yet shown.,b8-c9-p26
+81.027884,8,9,45.16,Princess Donut,Enchanted Fae Scale Quadruped Crupper of the Fleet,remove,carried,,Equipment,"Donut removes her old crupper, which had provided +2 dexterity.",b8-c9-p28
+81.116731,8,9,87.1,Princess Donut,The Crupper of the Benevolent Champion,equip,equipped,,Equipment,The Crupper of the Benevolent Champion,b8-c9-p54
+83.520562,8,21,21.71,Imani C.,Emergency Gremlin scroll,note,,,,Imani has already used an Emergency Gremlin scroll; the exact time of use is not given.,b8-c21-p28
+83.584614,8,21,51.94,Carl,Enchanted Juvenile Macropus Dominus Skin,equip,equipped,,Costume,Carl is wearing a timed kangaroo costume granting Jump 10 and a five-level Lotion Application bonus.,b8-c21-p67
+86.239678,8,34,5.13,Carl,Enchanted Juvenile Macropus Dominus Skin,remove,,,Costume,The timed kangaroo costume is gone; Carl can resume his foot routine.,b8-c34-p2
+97.944915,8,89,30.0,Princess Donut,Tome of Gatekeeper,add,carried,,Spell book,Donut has the Gatekeeper book but has not read it; its spell cannot be used until floor 12.,b8-c89-p21
+98.126926,8,90,15.91,Mongo,Kukri claw caps,equip,equipped,,Equipment,Mongo receives foot claw caps that improve slicing; no numeric skill value is stated.,b8-c90-p7
+98.141371,8,90,22.73,Samantha,Gurkha hat,equip,equipped,,Equipment,The worn hat increases several unnamed melee skills by three levels; their individual totals are unstated.,b8-c90-p10

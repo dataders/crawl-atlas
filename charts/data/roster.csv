@@ -1,12 +1,15 @@
 character,group_name,role,relationship,latest_confirmed_level
-Carl,core,Royal Bodyguard,Royal Bodyguard,81
-Princess Donut,core,Party leader,Party leader,63
+Osvaldo,ally,Known character,Recurring crawler,72
+Penelope,ally,Known character,Party member,10
+Sexy Scolopendra,ally,Known character,Party member,1
+Carl,core,Royal Bodyguard,Royal Bodyguard,84
+Princess Donut,core,Party leader,Party leader,135
 Mongo,core,Donut's bonded pet,Donut's bonded pet,40
 Katia Grim,core,Doppelganger tank,Allied team leader,60
 Mordecai,support,"Guide, manager, and alchemist",Party manager,50
 Samantha,support,Disembodied minor deity,Companion,
 Prepotente,ally,Caprid support specialist,Independent allied crawler,100
-Imani C.,ally,Healer and battlefield coordinator,Princess Posse guildmaster,11
-Elle McGib,ally,Frost mage,Meadow Lark ally,135
+Imani C.,ally,Healer and battlefield coordinator,Princess Posse guildmaster,
+Elle McGib,ally,Frost mage,Meadow Lark ally,72
 Li Na,ally,Dread fighter,Allied crawler,84
 Louis Santiago,ally,Pest Exterminator and pilot,Allied crawler and pilot,30

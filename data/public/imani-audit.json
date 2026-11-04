@@ -1,0 +1,704 @@
+{
+  "character": "Imani C.",
+  "booksReviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "scope": "Targeted audit of character levels, abilities, equipment and related progression. Full name and race/class alias searches with surrounding context and independent numeric review. Repeated routine casts are not separate acquisitions. No later exact numeric level found; Book 5 explicitly confirms additional growth.",
+  "events": [
+    {
+      "source": "b1-c22-p33",
+      "type": "level",
+      "subject": "Imani C.",
+      "name": "Character level",
+      "summary": "Imani is level 10 at her first introduction.",
+      "action": "note",
+      "level": 10,
+      "evidence": [
+        "b1-c22-p28"
+      ],
+      "evidenceSentences": {
+        "b1-c22-p33": [
+          1
+        ],
+        "b1-c22-p28": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "source": "b1-c22-p28",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Longsword",
+      "summary": "Imani carries a longsword at her introduction.",
+      "action": "note",
+      "state": "equipped",
+      "evidenceSentences": {
+        "b1-c22-p28": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "historyOnly": true
+    },
+    {
+      "source": "b1-c22-p28",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Magical cloak",
+      "summary": "Imani wears a magical cloak at her introduction.",
+      "action": "note",
+      "state": "equipped",
+      "evidenceSentences": {
+        "b1-c22-p28": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "historyOnly": true
+    },
+    {
+      "source": "b1-c26-p70",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Strength-boosting equipment",
+      "summary": "Imani has received strength-boosting items; their names and numeric bonuses are unstated.",
+      "action": "note",
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b1-c37-p42",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Pig harness",
+      "summary": "Imani wears a pig harness while hauling the residents.",
+      "action": "note",
+      "state": "equipped",
+      "evidenceSentences": {
+        "b1-c37-p42": [
+          1,
+          2
+        ]
+      },
+      "historyOnly": true
+    },
+    {
+      "source": "b1-c37-p47",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Yog’s Special Chain scroll",
+      "summary": "Imani has used a scroll to create a temporary, lightweight chain; the speaker is uncertain of its exact name.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {
+        "b1-c37-p47": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source": "b3-c9-p21",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Juiced",
+      "summary": "Imani’s wing contact applies a temporary 10% Strength buff.",
+      "action": "note",
+      "evidence": [
+        "b3-c9-p20"
+      ],
+      "detail": "Observed effect name; ability level unstated.",
+      "evidenceSentences": {
+        "b3-c9-p21": [
+          1,
+          2
+        ],
+        "b3-c9-p20": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "source": "b3-c9-p22",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Shrouded",
+      "summary": "Imani’s wing contact applies temporary 10% damage reduction.",
+      "action": "note",
+      "evidence": [
+        "b3-c9-p20"
+      ],
+      "detail": "Observed effect name; ability level unstated.",
+      "evidenceSentences": {
+        "b3-c9-p22": [
+          1,
+          2
+        ],
+        "b3-c9-p20": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "source": "b3-c9-p23",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Trolled",
+      "summary": "Imani’s wing contact accelerates healing by 25% temporarily.",
+      "action": "note",
+      "evidence": [
+        "b3-c9-p20"
+      ],
+      "detail": "Observed effect name; ability level unstated.",
+      "evidenceSentences": {
+        "b3-c9-p23": [
+          1,
+          2
+        ],
+        "b3-c9-p20": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "source": "b3-c18-p109",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Player-killer coupons discarded",
+      "summary": "Imani reports discarding the first-floor coupon book; this is a retrospective disclosure, not a new acquisition.",
+      "action": "note",
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b3-c31-p19",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Chain-making scrolls",
+      "summary": "Imani still has several chain-making scrolls and uses them for the crane.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {
+        "b3-c31-p19": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source": "b3-c31-p20",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Wing-contact constitution buff",
+      "summary": "Imani’s wings grant a non-stacking Constitution buff lasting ten minutes; its magnitude is unstated.",
+      "action": "note",
+      "evidence": [
+        "b3-c31-p19"
+      ],
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b3-c31-p20": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "b3-c31-p19": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source": "b3-c31-p115",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Acid neutralization",
+      "summary": "Imani casts an unnamed effect that negates acid affecting nearby allies.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b3-c31-p115": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "source": "b5-c21-p11",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Glamor counterspell",
+      "summary": "Imani removes Eva’s glamor from the NPCs with a counterspell.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b5-c21-p11": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "source": "b5-c21-p12",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Changed wings",
+      "summary": "Imani’s wings look more solid and radiate wisps of fire; no new class name or level is given.",
+      "action": "note",
+      "evidenceSentences": {
+        "b5-c21-p12": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "source": "b5-c36-p14",
+      "type": "level",
+      "subject": "Imani C.",
+      "name": "Level increased; total unknown",
+      "summary": "Imani is among the named group whose members have all gained several levels. Her exact total and increment are unstated.",
+      "action": "increase",
+      "level": null,
+      "evidence": [
+        "b5-c36-p12"
+      ],
+      "evidenceSentences": {
+        "b5-c36-p14": [
+          1,
+          2,
+          3
+        ],
+        "b5-c36-p12": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "source": "b5-c60-p57",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Dread",
+      "summary": "Carl assigns Imani to cast Dread during the planned attack; this passage states the plan rather than confirming the cast.",
+      "action": "note",
+      "confidence": "partial",
+      "detail": "Reported ability in a plan; level unstated.",
+      "evidenceSentences": {
+        "b5-c60-p57": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source": "b5-c62-p42",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Enchanted Hammer of Fast Forward",
+      "summary": "Imani received this sponsor gift, intended to be passed to Donut; continuing ownership is not asserted.",
+      "action": "note",
+      "evidence": [
+        "b5-c62-p34",
+        "b5-c62-p41"
+      ],
+      "historyOnly": true,
+      "evidenceSentences": {
+        "b5-c62-p42": [
+          1
+        ]
+      }
+    },
+    {
+      "source": "b5-c64-p179",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Robe",
+      "summary": "Imani gives Ren a robe to cover herself after removing her flamethrower.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b5-c75-p80",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Healing wings",
+      "summary": "Imani heals Carl by wrapping him in her wings.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b5-c75-p80": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "source": "b6-c30-p32",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Addiction cures",
+      "summary": "Imani purchases two addiction cures and has administered the first to Katia.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b6-c30-p47",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Blitz treatment patch",
+      "summary": "Imani has the patch ready for Katia’s next treatment; the passage describes planned administration.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b6-c52-p74",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Amhuluk totem",
+      "summary": "Imani’s Amhuluk totem casts a poison cloud. This is the totem’s attack, not a native spell attributed to Imani.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b6-c54-p20",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Trap disarming",
+      "summary": "Imani successfully disables nail traps and a silent-alarm trap; no skill name or level is stated.",
+      "action": "note",
+      "evidenceSentences": {
+        "b6-c54-p20": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "source": "b6-c67-p2",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Card deck",
+      "summary": "Imani’s deck contains 15 cards; its first six are highlighted as totems.",
+      "action": "note",
+      "quantity": 15,
+      "unit": "cards",
+      "historyOnly": true,
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b7-c12-p9",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Battlefield enhancement training",
+      "summary": "Imani trains battlefield enhancements with Mistress Tiatha in her upgraded magic room; no named spell acquisition is established.",
+      "action": "note",
+      "evidenceSentences": {
+        "b7-c12-p9": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "source": "b7-c23-p29",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Total Ear Protection",
+      "summary": "Imani casts Total Ear Protection on Donut and Mongo.",
+      "action": "note",
+      "evidence": [
+        "b7-c23-p27",
+        "b7-c23-p28"
+      ],
+      "evidenceSentences": {
+        "b7-c23-p29": [
+          1
+        ],
+        "b7-c23-p28": [
+          1
+        ]
+      }
+    },
+    {
+      "source": "b7-c47-p39",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Tripper",
+      "summary": "Imani confirms using Carl’s Tripper through Katia’s tattoo; her exact spell level is unstated.",
+      "action": "note",
+      "skillScope": "granted",
+      "evidence": [
+        "b7-c47-p38"
+      ],
+      "detail": "Temporary tattoo grant; exact level not stated.",
+      "evidenceSentences": {
+        "b7-c47-p39": [
+          1,
+          2,
+          3
+        ],
+        "b7-c47-p38": [
+          1
+        ]
+      }
+    },
+    {
+      "source": "b7-c47-p49",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Tripper",
+      "summary": "The tattoo-granted Tripper loses potency as Carl’s source spell recovers over four days. It can later be recharged with another potion.",
+      "action": "note",
+      "skillScope": "granted",
+      "evidence": [
+        "b7-c47-p48"
+      ],
+      "detail": "Temporary and fading over four days; later expiry time is not recorded.",
+      "evidenceSentences": {
+        "b7-c47-p48": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "source": "b7-c50-p33",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Persistent auras and Blessings",
+      "summary": "Imani has persistent wing-contact auras and toggleable healing/protection Blessings that consume mana while active.",
+      "action": "note",
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b7-c64-p37",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Psionic protection limitation",
+      "summary": "Carl explicitly states that Imani lacks meaningful psionic protection.",
+      "action": "note",
+      "evidenceSentences": {
+        "b7-c64-p37": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "source": "b7-c80-p76",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Group shield",
+      "summary": "Imani protects Elle, Holger, and others with a shield unfamiliar to Carl.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b8-c21-p28",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Emergency Gremlin scroll",
+      "summary": "Imani has already used an Emergency Gremlin scroll; the exact time of use is not given.",
+      "action": "note",
+      "evidence": [
+        "b8-c21-p15"
+      ],
+      "historyOnly": true,
+      "evidenceSentences": {
+        "b8-c21-p28": [
+          1,
+          2
+        ],
+        "b8-c21-p15": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "source": "b8-c59-p43",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Sluggish",
+      "summary": "The plan assigns Imani a Sluggish debuff. This records a reported ability, not a completed cast.",
+      "action": "note",
+      "confidence": "partial",
+      "detail": "Planned cast only; the scene later prevents it.",
+      "evidenceSentences": {}
+    },
+    {
+      "source": "b8-c71-p51",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Heat protection observed",
+      "summary": "Imani can stand against Chris despite his heat. The narrator cannot tell whether the protection comes from a skill, charm, or item.",
+      "action": "note",
+      "evidenceSentences": {
+        "b8-c71-p51": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "source": "b8-c76-p10",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Confuzzled",
+      "summary": "Imani reports casting Confuzzled on the room, stunning the bugs; no spell level is stated.",
+      "action": "note",
+      "evidenceSentences": {
+        "b8-c76-p10": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "source": "b8-c84-p51",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Slugpox cure",
+      "summary": "Imani casts a spell and the system confirms that Carl is cured of Slugpox.",
+      "action": "note",
+      "evidence": [
+        "b8-c84-p50"
+      ],
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b8-c84-p51": [
+          1
+        ],
+        "b8-c84-p50": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "source": "b8-c86-p34",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Stupefying blast",
+      "summary": "Imani casts a stupefying blast across the room. Its name is not stated, so it is not assumed to be Confuzzled.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b8-c86-p34": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "source": "b8-c97-p12",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Temporary inventory swap",
+      "summary": "Imani and Elle report their inventories have been swapped: Imani receives candies and loses access to her scrolls.",
+      "action": "note",
+      "evidence": [
+        "b8-c97-p4",
+        "b8-c97-p11"
+      ],
+      "evidenceSentences": {
+        "b8-c97-p12": [
+          1,
+          2
+        ],
+        "b8-c97-p4": [
+          1
+        ],
+        "b8-c97-p11": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "source": "b3-c8-p105",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Flight not yet available",
+      "action": "note",
+      "summary": "Imani says she cannot yet fly. A future path choice could unlock flight; no unlock is assumed here.",
+      "evidence": [
+        "b3-c8-p104"
+      ]
+    },
+    {
+      "source": "b6-c64-p41",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Floating observed",
+      "action": "note",
+      "summary": "Imani is explicitly seen floating. This records the observation, not the unknown time of acquisition."
+    }
+  ]
+}

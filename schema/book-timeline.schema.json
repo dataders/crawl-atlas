@@ -2,55 +2,132 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Crawl Atlas event ledger",
   "type": "object",
-  "required": ["series", "books", "characters", "events"],
+  "required": [
+    "series",
+    "books",
+    "characters",
+    "events"
+  ],
   "properties": {
     "series": {
       "type": "object",
-      "required": ["id", "title", "bookCount", "chapterCount", "dataVersion"],
+      "required": [
+        "id",
+        "title",
+        "bookCount",
+        "chapterCount",
+        "dataVersion"
+      ],
       "properties": {
-        "id": {"type": "string"},
-        "title": {"type": "string"},
-        "bookCount": {"type": "integer", "minimum": 1},
-        "chapterCount": {"type": "integer", "minimum": 1},
-        "dataVersion": {"type": "string"}
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "bookCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "chapterCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "dataVersion": {
+          "type": "string"
+        }
       }
     },
     "books": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "number", "title", "chapterCount", "startChapter", "endChapter"],
+        "required": [
+          "id",
+          "number",
+          "title",
+          "chapterCount",
+          "startChapter",
+          "endChapter"
+        ],
         "properties": {
-          "id": {"type": "string"},
-          "number": {"type": "integer", "minimum": 1},
-          "title": {"type": "string"},
-          "chapterCount": {"type": "integer", "minimum": 1},
-          "startChapter": {"type": "integer", "minimum": 1},
-          "endChapter": {"type": "integer", "minimum": 1}
+          "id": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "title": {
+            "type": "string"
+          },
+          "chapterCount": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "startChapter": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "endChapter": {
+            "type": "integer",
+            "minimum": 1
+          }
         }
       }
     },
     "book": {
       "type": "object",
-      "required": ["id", "title", "chapterCount", "dataVersion"],
+      "required": [
+        "id",
+        "title",
+        "chapterCount",
+        "dataVersion"
+      ],
       "properties": {
-        "id": {"type": "string"},
-        "title": {"type": "string"},
-        "chapterCount": {"type": "integer", "minimum": 1},
-        "dataVersion": {"type": "string"}
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "chapterCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "dataVersion": {
+          "type": "string"
+        }
       }
     },
     "characters": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name"],
+        "required": [
+          "id",
+          "name"
+        ],
         "properties": {
-          "id": {"type": "string"},
-          "name": {"type": "string"},
-          "role": {"type": "string"},
-          "group": {"enum": ["core", "support", "ally"]},
-          "color": {"type": "string"}
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "group": {
+            "enum": [
+              "core",
+              "support",
+              "ally"
+            ]
+          },
+          "color": {
+            "type": "string"
+          }
         }
       }
     },
@@ -58,23 +135,179 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "book", "chapter", "position", "progress", "type", "subject", "name", "source", "confidence"],
+        "required": [
+          "id",
+          "book",
+          "chapter",
+          "position",
+          "progress",
+          "type",
+          "subject",
+          "name",
+          "source",
+          "confidence"
+        ],
         "properties": {
-          "id": {"type": "string"},
-          "book": {"type": "integer", "minimum": 1},
-          "chapter": {"type": "integer", "minimum": 1},
-          "position": {"type": "number", "minimum": 0, "maximum": 1},
-          "progress": {"type": "number", "minimum": 0, "maximum": 1},
-          "type": {"enum": ["level", "stat", "skill", "item", "party", "story"]},
-          "subject": {"type": "string"},
-          "name": {"type": "string"},
-          "source": {"type": "string"},
-          "confidence": {"enum": ["verified", "partial", "inferred", "needs-review"]},
-          "relationship": {"type": "string"},
-          "stats": {"type": "object", "additionalProperties": {"type": "number"}},
+          "id": {
+            "type": "string"
+          },
+          "book": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "chapter": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "position": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "progress": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "type": {
+            "enum": [
+              "level",
+              "stat",
+              "skill",
+              "item",
+              "party",
+              "story"
+            ]
+          },
+          "subject": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "verified",
+              "partial",
+              "inferred",
+              "needs-review"
+            ]
+          },
+          "relationship": {
+            "type": "string"
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
           "statScopes": {
             "type": "object",
-            "additionalProperties": {"enum": ["base", "reported", "equipment", "temporary"]}
+            "additionalProperties": {
+              "enum": [
+                "base",
+                "reported",
+                "equipment",
+                "temporary"
+              ]
+            }
+          },
+          "skillScope": {
+            "enum": [
+              "reported",
+              "base",
+              "equipment",
+              "effective",
+              "class",
+              "boon",
+              "granted",
+              "unlock"
+            ]
+          },
+          "skillId": {
+            "type": "string"
+          },
+          "levelDelta": {
+            "type": "number"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "level": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "evidenceSentences": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "acquisition": {
+            "type": "object",
+            "required": [
+              "stage",
+              "sourceType"
+            ],
+            "properties": {
+              "stage": {
+                "enum": [
+                  "trigger",
+                  "awarded",
+                  "opened",
+                  "received",
+                  "identified",
+                  "applied",
+                  "transferred",
+                  "consumed"
+                ]
+              },
+              "sourceType": {
+                "type": "string"
+              },
+              "parentEventIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "boxId": {
+                "type": "string"
+              },
+              "boxTier": {
+                "enum": [
+                  "Bronze",
+                  "Silver",
+                  "Gold",
+                  "Platinum",
+                  "Legendary",
+                  "Celestial"
+                ]
+              },
+              "boxKind": {
+                "type": "string"
+              },
+              "attribution": {
+                "enum": [
+                  "explicit",
+                  "batch",
+                  "inferred"
+                ]
+              }
+            }
           }
         }
       }

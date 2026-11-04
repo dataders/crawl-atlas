@@ -1,6 +1,6 @@
 const SERIES = { Carl: "#d8ff3e", "Princess Donut": "#4dd9d2", Donut: "#4dd9d2", Mongo: "#ff6441" };
 const EVENT_COLORS = { level: "#d8ff3e", skill: "#4dd9d2", item: "#ff6441", party: "#ad8cff", stat: "#f5ca5c", story: "#8e9ba5" };
-const state = { data: null, progress: 0, chartMetric: "level", selectedCharacter: null, rosterFilter: "All", inventoryOwner: "All", inventorySearch: "", historyFilter: "All" };
+const state = { data: null, progress: 0, chartMetric: "level", selectedCharacter: null, rosterFilter: "All", inventoryOwner: "All", inventorySearch: "", historyFilter: "All", followedCharacters: null };
 const $ = (selector) => document.querySelector(selector);
 const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[c]));
 const slug = (value) => String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -59,6 +59,27 @@ function progressFor(bookNumber, chapter, position = 0) {
 
 function visibleEvents() { return state.data.events.filter((event) => event.progress <= state.progress + 1e-8); }
 
+function followedEvents(events = visibleEvents()) {
+  return state.followedCharacters === null ? events : events.filter(event => state.followedCharacters.includes(event.subject));
+}
+function renderCast(events) {
+  const names = new Set(events.map(event => event.subject));
+  const known = state.data.characters.filter(character => names.has(character.name));
+  $('#cast-options').innerHTML = known.map(character => `<label class="cast-chip"><input type="checkbox" value="${esc(character.name)}" ${state.followedCharacters === null || state.followedCharacters.includes(character.name) ? 'checked' : ''}><span style="--person-color:${character.color}">${esc(character.name)}</span></label>`).join('') || '<span class="empty">Character choices appear as you meet them.</span>';
+  const selected = known.filter(character => state.followedCharacters === null || state.followedCharacters.includes(character.name));
+  $('#cast-status').textContent = `${selected.length} of ${known.length} known characters selected · Applies to every view and export. Saved on this device.`;
+  $('#cast-options').querySelectorAll('input').forEach(input => input.addEventListener('change', () => {
+    const selection = new Set(state.followedCharacters ?? known.map(character => character.name));
+    input.checked ? selection.add(input.value) : selection.delete(input.value);
+    saveCast([...selection]);
+  }));
+}
+function saveCast(selection) {
+  state.followedCharacters = selection;
+  try { localStorage.setItem('crawl-atlas-cast', JSON.stringify(selection)); } catch {}
+  renderAll();
+}
+
 function partyAt(events) {
   const membership = new Map();
   events.filter((event) => event.type === "party" && ["join", "leave"].includes(event.action)).forEach((event) => membership.set(event.subject, event.action !== "leave"));
@@ -67,13 +88,13 @@ function partyAt(events) {
 
 function characterState(character, events) {
   const mine = events.filter((event) => event.subject === character.name || (character.name === "Princess Donut" && event.subject === "Donut"));
-  const levels = mine.filter((event) => event.type === "level" && Number.isFinite(event.level));
+  const levels = mine.filter((event) => event.type === "level");
   const statEvents = mine.filter((event) => event.type === "stat" && (event.stats || event.statsDelta));
   const skills = new Map();
   mine.filter((event) => event.type === "skill").forEach((event) => {
-    const key = event.name.toLowerCase();
+    const key = `${event.skillId ?? event.name.toLowerCase()}|${event.skillScope ?? "reported"}`;
     if (event.action === "remove") skills.delete(key);
-    else skills.set(key, { name: event.name, level: event.level ?? skills.get(key)?.level ?? null, book: event.book ?? 1, chapter: event.chapter, detail: event.detail, source: event.source });
+    else skills.set(key, { name: event.name, scope: event.skillScope ?? "reported", level: event.level ?? skills.get(key)?.level ?? null, book: event.book ?? 1, chapter: event.chapter, detail: event.detail, source: event.source });
   });
   const stats = {};
   const baseStats = {};
@@ -85,7 +106,8 @@ function characterState(character, events) {
     Object.entries(event.statsDelta ?? {}).forEach(([name, delta]) => { stats[name] = (stats[name] ?? 0) + delta; });
   });
   const relationship = mine.filter((event) => event.type === "party" && event.relationship).at(-1)?.relationship ?? character.relationship ?? character.role ?? "Known character";
-  return { character, relationship, level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => a.name.localeCompare(b.name)), events: mine };
+  const profile = Object.assign({}, ...mine.map(event => event.profile ?? {}));
+  return { character, relationship, profile, levelEvent: levels.at(-1), level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => a.name.localeCompare(b.name)), events: mine };
 }
 
 function inventoryAt(events) {
@@ -130,12 +152,14 @@ function renderPosition() {
 
 function renderChart(events, party) {
   const svg = $("#progress-chart");
-  const width = 1600, height = 380, left = 64, right = 28, top = 54, bottom = 52;
-  const x = (progress) => left + progress * (width - left - right);
+  const width = 1100, height = 380, left = 64, right = 28, top = 54, bottom = 52;
+  const horizon = Math.max(state.progress, 1 / state.data.series.chapterCount);
+  const x = (progress) => left + progress / horizon * (width - left - right);
   const parts = [];
   state.data.books.forEach((book, index) => {
     const start = (book.startChapter - 1) / state.data.series.chapterCount;
-    const end = book.endChapter / state.data.series.chapterCount;
+    if (start > state.progress) return;
+    const end = Math.min(horizon, book.endChapter / state.data.series.chapterCount);
     parts.push(`<rect class="book-band ${index % 2 ? "alternate" : ""}" x="${x(start)}" y="${top - 30}" width="${x(end) - x(start)}" height="${height - top - bottom + 43}"/>`);
     parts.push(`<line class="book-boundary" x1="${x(start)}" y1="${top - 30}" x2="${x(start)}" y2="${height - bottom + 13}"/>`);
     parts.push(`<text class="book-axis" x="${x((start + end) / 2)}" y="${top - 38}" text-anchor="middle">BOOK ${book.number}</text>`);
@@ -144,10 +168,22 @@ function renderChart(events, party) {
   $("#metric-tabs").innerHTML = metrics.map((metric) => `<button class="metric-tab" type="button" role="tab" aria-selected="${state.chartMetric === metric.id}" data-metric="${metric.id}">${metric.label}</button>`).join("");
   $("#metric-tabs").querySelectorAll("[data-metric]").forEach((button) => button.addEventListener("click", () => { state.chartMetric = button.dataset.metric; renderChart(events, party); }));
 
+  $("#level-uncertainty").hidden = true;
+  $("#level-uncertainty").innerHTML = "";
   let chartCharacters = [];
   let milestoneRows = [];
   if (state.chartMetric === "level") {
     const levelEvents = events.filter((event) => event.type === "level" && Number.isFinite(event.level));
+    const uncertain = state.data.characters.map(character => ({character, levels: events.filter(e => e.subject === character.name && e.type === "level")})).filter(({levels}) => levels.at(-1)?.action === "increase" && levels.at(-1).level == null);
+    $("#level-uncertainty").hidden = !uncertain.length;
+    $("#level-uncertainty").innerHTML = uncertain.map(({character, levels}) => {
+      const latest = levels.at(-1), exact = levels.filter(e => Number.isFinite(e.level)).at(-1);
+      return `<p><strong>${esc(character.name)} leveled up again · exact total unknown</strong><br>Confirmed in Book ${latest.book}, Chapter ${latest.chapter}.${exact ? ` Level ${exact.level} was recorded in Book ${exact.book}, Chapter ${exact.chapter}; it is not a maximum or a current level.` : ""}</p>`;
+    }).join("");
+    uncertain.forEach(({character, levels}) => {
+      const event = levels.at(-1), markerX = x(event.progress);
+      parts.push(`<line class="unknown-level-marker chart-event" data-event="${esc(event.id)}" x1="${markerX}" x2="${markerX}" y1="${top}" y2="${height-bottom}"/><text class="unknown-level-label" x="${Math.min(markerX+9,width-240)}" y="${top+18}">↑ Level increased · total unknown</text>`);
+    });
     const maxKnown = Math.max(15, ...levelEvents.map((event) => event.level));
     const y = (value) => top + (maxKnown - value) / maxKnown * (height - top - bottom);
     const levelStep = maxKnown <= 20 ? 5 : 10;
@@ -157,14 +193,13 @@ function renderChart(events, party) {
       const levels = levelEvents.filter((event) => event.subject === character.name);
       const color = character.color ?? SERIES[character.name] ?? "#f5ca5c";
       let path = `M ${x(levels[0].progress)} ${y(levels[0].level)}`;
-      levels.slice(1).forEach((event) => { path += ` H ${x(event.progress)} V ${y(event.level)}`; });
-      path += ` H ${x(state.progress)}`;
-      parts.push(`<path class="level-path" style="--series-color:${color}" d="${path}"/>`);
+      levels.slice(1).forEach((event) => { path += ` L ${x(event.progress)} ${y(event.level)}`; });
+      parts.push(`<path class="level-path" stroke-dasharray="4 6" style="--series-color:${color}" d="${path}"/>`);
       levels.forEach((event) => {
         const labelY = y(event.level) - 10 - (characterIndex * 2);
         parts.push(`<circle class="level-dot chart-event" style="--series-color:${color}" cx="${x(event.progress)}" cy="${y(event.level)}" r="6" data-event="${esc(event.id)}"/><text class="level-value" style="--series-color:${color}" x="${x(event.progress)}" y="${labelY}" text-anchor="middle">${event.level}</text>`);
       });
-      milestoneRows.push({ character, points: levels.map((event) => ({ event, label: `B${event.book} C${event.chapter} · L${event.level}`, scope: "base" })) });
+      milestoneRows.push({ character, points: events.filter(event => event.subject === character.name && event.type === "level").map((event) => ({ event, label: `B${event.book} C${event.chapter} · ${event.level == null ? "Increased · total unknown" : `L${event.level}`}`, scope: "base" })) });
     });
     const eventRows = { skill: height - 41, item: height - 27, party: height - 13 };
     events.filter((event) => eventRows[event.type]).forEach((event) => {
@@ -173,7 +208,7 @@ function renderChart(events, party) {
         : `<rect class="event-dot chart-event" fill="${EVENT_COLORS[event.type]}" x="${x(event.progress)-4}" y="${eventRows[event.type]-4}" width="8" height="8" transform="${event.type === "skill" ? `rotate(45 ${x(event.progress)} ${eventRows[event.type]})` : ""}" data-event="${esc(event.id)}"/>`;
       parts.push(shape);
     });
-    $("#chart-explanation").textContent = "Eight-book timeline. Every numbered dot is explicitly confirmed; missing levels are never guessed.";
+    $("#chart-explanation").textContent = "Dots mark exact observations. Dashed lines only connect them; growth between observations and after the last dot is unknown.";
     $("#chart-key").innerHTML = '<span><i class="level-key"></i>Confirmed level</span><span><i class="skill-key"></i>Skill or spell</span><span><i class="item-key"></i>Inventory</span><span><i class="party-key"></i>Party</span>';
     svg.setAttribute("aria-label", "Explicitly confirmed character levels through the selected point in the series");
   } else {
@@ -191,9 +226,8 @@ function renderChart(events, party) {
       const color = character.color ?? SERIES[character.name] ?? "#f5ca5c";
       if (basePoints.length) {
         let path = `M ${x(basePoints[0].progress)} ${y(basePoints[0].stats[metric])}`;
-        basePoints.slice(1).forEach((event) => { path += ` H ${x(event.progress)} V ${y(event.stats[metric])}`; });
-        path += ` H ${x(state.progress)}`;
-        parts.push(`<path class="stat-path" style="--series-color:${color}" d="${path}"/>`);
+        basePoints.slice(1).forEach((event) => { path += ` L ${x(event.progress)} ${y(event.stats[metric])}`; });
+        parts.push(`<path class="stat-path" stroke-dasharray="4 6" style="--series-color:${color}" d="${path}"/>`);
       }
       points.forEach((event) => {
         const scope = event.statScopes?.[metric] ?? "reported";
@@ -202,7 +236,7 @@ function renderChart(events, party) {
       });
       milestoneRows.push({ character, points: points.map((event) => ({ event, label: `B${event.book} C${event.chapter} · ${event.stats[metric]}`, scope: event.statScopes?.[metric] ?? "reported" })) });
     });
-    $("#chart-explanation").textContent = `Solid ${metric} lines use explicit base or unmodified values. Hollow points are reported totals affected by gear or temporary effects; unknown growth is not guessed.`;
+    $("#chart-explanation").textContent = `${metric} dots mark observations. Dashed guides connect base values, without estimating growth between them. Hollow points include modifiers.`;
     $("#chart-key").innerHTML = '<span><i class="base-key"></i>Base / unmodified</span><span><i class="reported-key"></i>Reported with modifier</span>';
     svg.setAttribute("aria-label", `${metric} stat history through the selected point in the series`);
   }
@@ -234,7 +268,7 @@ function renderCharacters(events, roster) {
     $("#party-count").textContent = "No characters known yet";
     $("#roster-filters").innerHTML = "";
     $("#character-list").innerHTML = "";
-    $("#character-dossier").innerHTML = '<div class="empty">No recurring characters are known at this point.</div>';
+    $("#character-dossier").innerHTML = '<div class="empty">No selected characters are known at this point. Adjust Your cast or the reading position.</div>';
     return;
   }
   const filters = [{ id: "All", label: "All" }, { id: "core", label: "Core" }, { id: "support", label: "Support" }, { id: "ally", label: "Allies" }];
@@ -246,19 +280,20 @@ function renderCharacters(events, roster) {
   const states = allStates.filter(({ character }) => state.rosterFilter === "All" || character.group === state.rosterFilter);
   if (!states.some(({ character }) => character.name === state.selectedCharacter)) state.selectedCharacter = states[0].character.name;
   $("#party-count").textContent = `${allStates.length} known ${allStates.length === 1 ? "character" : "characters"}`;
-  $("#character-list").innerHTML = states.map(({ character, relationship, level, skills }) => `<button class="character-tab ${character.name === state.selectedCharacter ? "active" : ""}" role="tab" aria-selected="${character.name === state.selectedCharacter}" data-character="${esc(character.name)}" style="--person-color:${character.color ?? SERIES[character.name]}"><span><strong>${esc(character.name)}</strong><span>${esc(relationship)} · ${skills.length} ${skills.length === 1 ? "skill" : "skills"}</span></span><span class="mini-level"><small>Level</small>${level ?? "—"}</span></button>`).join("");
+  $("#character-list").innerHTML = states.map(({ character, relationship, level, skills }) => `<button class="character-tab ${character.name === state.selectedCharacter ? "active" : ""}" role="tab" aria-selected="${character.name === state.selectedCharacter}" data-character="${esc(character.name)}" style="--person-color:${character.color ?? SERIES[character.name]}"><span><strong>${esc(character.name)}</strong><span>${esc(relationship)} · ${skills.length} ${skills.length === 1 ? "skill" : "skills"}</span></span><span class="mini-level"><small>Observed</small>${level ?? "—"}</span></button>`).join("");
   $("#character-list").querySelectorAll("[data-character]").forEach((button) => button.addEventListener("click", () => { state.selectedCharacter = button.dataset.character; renderAll(); }));
   const selected = states.find(({ character }) => character.name === state.selectedCharacter);
   const color = selected.character.color ?? SERIES[selected.character.name];
   const baseStatEntries = Object.entries(selected.baseStats);
   const reportedEntries = Object.entries(selected.stats).filter(([name, value]) => selected.baseStats[name] !== value);
-  const levelHistory = selected.levels.map((event) => `<span>B${event.book} Ch. ${event.chapter}: ${event.level}</span>`).join(" → ");
+  const levelHistory = selected.levels.map((event) => `<span>B${event.book} Ch. ${event.chapter}: ${event.level ?? "Increased; total unknown"}</span>`).join(" → ");
   $("#character-dossier").style.setProperty("--person-color", color);
   $("#character-dossier").innerHTML = `
-    <header class="dossier-head"><div><p class="eyebrow">Selected character</p><h3>${esc(selected.character.name)}</h3><span class="dossier-role">${esc(selected.relationship)}${selected.character.role && selected.character.role !== selected.relationship ? ` · ${esc(selected.character.role)}` : ""}</span></div><div class="dossier-level"><small>LATEST CONFIRMED</small>${selected.level ?? "—"}</div></header>
+    <header class="dossier-head"><div><p class="eyebrow">Selected character</p><h3>${esc(selected.character.name)}</h3><span class="dossier-role">${esc(selected.relationship)}${Object.keys(selected.profile).length ? ` · ${esc(Object.values(selected.profile).join(" · "))}` : ""}</span></div><div class="dossier-level"><small>LAST OBSERVED</small>${selected.level ?? "Unknown"}<small>${selected.levelEvent ? `Book ${selected.levelEvent.book} · Ch. ${selected.levelEvent.chapter}` : "No level recorded"}</small></div></header>
+    <p class="observation-note">${selected.levelEvent?.action === "increase" ? `Later level gains are confirmed in Book ${selected.levelEvent.book}, Chapter ${selected.levelEvent.chapter}, but the exact total is unstated. ${esc(selected.levelEvent.summary)}` : selected.levelEvent ? `Level last observed in Book ${selected.levelEvent.book}, Chapter ${selected.levelEvent.chapter}. Later growth may not be recorded; this is not a claim about their current level.` : "No explicit level recorded for this character yet."}</p>
     <div class="dossier-grid">
       <div class="dossier-block"><h4>Confirmed base stats</h4>${baseStatEntries.length ? `<div class="stats">${baseStatEntries.map(([name,value]) => `<div class="stat"><span>${esc(name)}</span>${esc(value)}</div>`).join("")}</div><div class="skill-meta">Latest explicitly unmodified values; unreported growth is not guessed.</div>` : '<div class="empty">No unmodified stat display yet.</div>'}${reportedEntries.length ? `<h4 style="margin-top:20px">Reported with modifiers</h4><div class="stats">${reportedEntries.map(([name,value]) => `<div class="stat modified"><span>${esc(name)}</span>${esc(value)}</div>`).join("")}</div>` : ""}<h4 style="margin-top:20px">Level history</h4><div class="skill-meta">${levelHistory || "No explicit level shown yet."}</div></div>
-      <div class="dossier-block"><h4>All known skills & spells</h4>${selected.skills.length ? `<div class="skills-grid">${selected.skills.map((skill) => `<div class="skill-card"><strong>${esc(skill.name)}</strong><span>${skill.level !== null ? `L${esc(skill.level)}` : "KNOWN"}</span><div class="skill-meta">Confirmed by Book ${skill.book ?? 1}, Ch. ${skill.chapter}${skill.detail ? ` · ${esc(skill.detail)}` : ""}</div></div>`).join("")}</div>` : '<div class="empty">No named skills revealed yet.</div>'}</div>
+      <div class="dossier-block"><h4>All known skills & spells</h4>${selected.skills.length ? `<div class="skills-grid">${selected.skills.map((skill) => `<div class="skill-card"><strong>${esc(skill.name)}</strong><span>${skill.level !== null ? `L${esc(skill.level)}` : "KNOWN"}</span><div class="skill-meta">${esc(skill.scope)} · Confirmed by Book ${skill.book ?? 1}, Ch. ${skill.chapter}${skill.detail ? ` · ${esc(skill.detail)}` : ""}</div></div>`).join("")}</div>` : '<div class="empty">No named skills revealed yet.</div>'}</div>
     </div>`;
 }
 
@@ -284,13 +319,17 @@ function renderHistory(events) {
 }
 
 function renderAll() {
-  const events = visibleEvents();
+  const allEvents = visibleEvents();
+  renderCast(allEvents);
+  const events = followedEvents(allEvents);
   const party = partyAt(events);
   renderPosition();
   renderChart(events, party);
   renderCharacters(events, party);
   renderInventory(events);
   renderHistory(events);
+  renderExplorer();
+  renderRewards(events);
   const url = new URL(window.location);
   ["book", "chapter", "position"].forEach(key => url.searchParams.delete(key));
   url.searchParams.delete("progress");
@@ -299,25 +338,40 @@ function renderAll() {
 }
 
 async function start() {
-  const response = await fetch("data/series.json?v=2.2.0", { cache: "no-store" });
+  const response = await fetch("data/series.json?v=2.6.0", { cache: "no-store" });
   if (!response.ok) throw new Error(`Could not load dataset (${response.status})`);
   state.data = normalizeData(await response.json());
   state.data.characters ??= [];
+  const facts = await fetch("data/progression.json", { cache: "no-store" });
+  if (!facts.ok) throw new Error("Could not load progression archive");
+  state.facts = await facts.json();
+  try {
+    const saved = JSON.parse(localStorage.getItem('crawl-atlas-cast'));
+    if (saved === null || (Array.isArray(saved) && saved.every(name => typeof name === 'string'))) state.followedCharacters = saved;
+  } catch {}
   const params = new URLSearchParams(window.location.search);
-  if (params.has("progress")) state.progress = Math.min(1, Math.max(0, Number(params.get("progress")) / 10000));
+  if (params.has("progress") && Number.isFinite(Number(params.get("progress")))) state.progress = Math.min(1, Math.max(0, Number(params.get("progress")) / 10000));
   else if (params.has("chapter")) state.progress = progressFor(Number(params.get("book")) || 1, Number(params.get("chapter")) || 1, (Number(params.get("position")) || 0) / 100);
   $("#book-title").textContent = `${state.data.series.title} · ${state.data.series.bookCount} books`;
   $("#data-version").textContent = state.data.series.dataVersion;
   $("#last-chapter-label").textContent = `Book ${state.data.books.at(-1).number} · Chapter ${state.data.books.at(-1).chapterCount}`;
   renderAll();
+  const view = params.get("view");
+  if (["explorer", "progression", "character", "ledger", "history", "rewards"].includes(view)) document.querySelector(`[data-view="${view}"]`).click();
 }
 
+$('#cast-all').addEventListener('click', () => saveCast(null));
+$('#cast-none').addEventListener('click', () => saveCast([]));
+$('#cast-core').addEventListener('click', () => {
+  const known = new Set(visibleEvents().map(event => event.subject));
+  saveCast(state.data.characters.filter(character => character.group === 'core' && known.has(character.name)).map(character => character.name));
+});
 $("#book-range").addEventListener("input", (event) => { state.progress = Number(event.target.value) / 10000; renderAll(); });
 $("#book-select").addEventListener("change", (event) => { state.progress = progressFor(event.target.value, 1); renderAll(); });
 $("#chapter-select").addEventListener("change", (event) => { state.progress = progressFor($("#book-select").value, event.target.value); renderAll(); });
 $("#previous-chapter").addEventListener("click", () => { const { globalChapter } = currentLocation(); state.progress = Math.max(0, (globalChapter - 2) / state.data.series.chapterCount); renderAll(); });
 $("#next-chapter").addEventListener("click", () => { const { globalChapter } = currentLocation(); state.progress = Math.min(1, globalChapter / state.data.series.chapterCount); renderAll(); });
-$("#inventory-search").addEventListener("input", (event) => { state.inventorySearch = event.target.value; renderInventory(visibleEvents()); });
+$("#inventory-search").addEventListener("input", (event) => { state.inventorySearch = event.target.value; renderInventory(followedEvents()); });
 $("#about-button").addEventListener("click", () => { $("#about-panel").hidden = false; $("#about-button").setAttribute("aria-expanded", "true"); $("#about-close").focus(); });
 $("#about-close").addEventListener("click", () => { $("#about-panel").hidden = true; $("#about-button").setAttribute("aria-expanded", "false"); $("#about-button").focus(); });
 document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !$("#about-panel").hidden) $("#about-close").click(); });

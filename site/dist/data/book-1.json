@@ -4,7 +4,7 @@
     "title": "Dungeon Crawler Carl",
     "bookCount": 8,
     "chapterCount": 472,
-    "dataVersion": "2.2.0",
+    "dataVersion": "2.6.0",
     "coverageNote": "Eight-book chapter map with source-anchored progression for the core party and major recurring allies. Skills and inventory appear only when explicitly confirmed."
   },
   "books": [
@@ -74,6 +74,24 @@
     }
   ],
   "characters": [
+    {
+      "id": "osvaldo",
+      "name": "Osvaldo",
+      "group": "ally",
+      "color": "#df9a72"
+    },
+    {
+      "id": "penelope",
+      "name": "Penelope",
+      "group": "ally",
+      "color": "#e8a9cb"
+    },
+    {
+      "id": "sexy-scolopendra",
+      "name": "Sexy Scolopendra",
+      "group": "ally",
+      "color": "#c5b5e8"
+    },
     {
       "id": "carl",
       "name": "Carl",
@@ -242,15 +260,36 @@
       "progress": 0.00267275
     },
     {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-entry-0",
+      "subject": "Carl",
+      "name": "Crazy Cat Lady",
+      "source": "b1-c2-p36",
+      "summary": "Crazy Cat Lady",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Crazy Cat Lady"
+      },
+      "book": 1,
+      "chapter": 2,
+      "position": 0.276923,
+      "progress": 0.00270535
+    },
+    {
       "id": "inv-002-entry-box-awards-item-0-0",
       "book": 1,
       "chapter": 2,
-      "position": 0.407692,
+      "position": 0.292308,
       "type": "item",
       "subject": "Carl",
       "name": "Bronze Pet Box",
-      "summary": "Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.",
-      "source": "b1-c2-p53",
+      "summary": "Bronze Pet Box",
+      "source": "b1-c2-p38",
       "confidence": "verified",
       "action": "add",
       "quantity": 1,
@@ -259,18 +298,50 @@
       "state": "unopened",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.0029824
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-0"
+        ],
+        "boxId": "carl-entry-box-0",
+        "boxTier": "Bronze",
+        "boxKind": "Pet",
+        "quantity": 1
+      },
+      "progress": 0.00273794
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-entry-1",
+      "subject": "Carl",
+      "name": "Trailblazing Crazy Cat Lady",
+      "source": "b1-c2-p39",
+      "summary": "Trailblazing Crazy Cat Lady",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Trailblazing Crazy Cat Lady"
+      },
+      "book": 1,
+      "chapter": 2,
+      "position": 0.3,
+      "progress": 0.00275424
     },
     {
       "id": "inv-002-entry-box-awards-item-1-0",
       "book": 1,
       "chapter": 2,
-      "position": 0.407692,
+      "position": 0.315385,
       "type": "item",
       "subject": "Carl",
       "name": "Legendary Pet Box",
-      "summary": "Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.",
-      "source": "b1-c2-p53",
+      "summary": "Legendary Pet Box",
+      "source": "b1-c2-p41",
       "confidence": "verified",
       "action": "add",
       "quantity": 1,
@@ -279,18 +350,50 @@
       "state": "unopened",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.0029824
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-1"
+        ],
+        "boxId": "carl-entry-box-1",
+        "boxTier": "Legendary",
+        "boxKind": "Pet",
+        "quantity": 1
+      },
+      "progress": 0.00278683
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-entry-2",
+      "subject": "Carl",
+      "name": "Early Adopter",
+      "source": "b1-c2-p42",
+      "summary": "Early Adopter",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Early Adopter"
+      },
+      "book": 1,
+      "chapter": 2,
+      "position": 0.323077,
+      "progress": 0.00280313
     },
     {
       "id": "inv-002-entry-box-awards-item-2-0",
       "book": 1,
       "chapter": 2,
-      "position": 0.407692,
+      "position": 0.338462,
       "type": "item",
       "subject": "Carl",
       "name": "Silver Adventurer Box",
-      "summary": "Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.",
-      "source": "b1-c2-p53",
+      "summary": "Silver Adventurer Box",
+      "source": "b1-c2-p44",
       "confidence": "verified",
       "action": "add",
       "quantity": 1,
@@ -299,18 +402,50 @@
       "state": "unopened",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.0029824
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-2"
+        ],
+        "boxId": "carl-entry-box-2",
+        "boxTier": "Silver",
+        "boxKind": "Adventurer",
+        "quantity": 1
+      },
+      "progress": 0.00283572
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-entry-3",
+      "subject": "Carl",
+      "name": "Empty pockets",
+      "source": "b1-c2-p45",
+      "summary": "Empty pockets",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Empty pockets"
+      },
+      "book": 1,
+      "chapter": 2,
+      "position": 0.346154,
+      "progress": 0.00285202
     },
     {
       "id": "inv-002-entry-box-awards-item-3-0",
       "book": 1,
       "chapter": 2,
-      "position": 0.407692,
+      "position": 0.361538,
       "type": "item",
       "subject": "Carl",
       "name": "Bronze Adventurer Box",
-      "summary": "Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.",
-      "source": "b1-c2-p53",
+      "summary": "Bronze Adventurer Box",
+      "source": "b1-c2-p47",
       "confidence": "verified",
       "action": "add",
       "quantity": 1,
@@ -319,18 +454,50 @@
       "state": "unopened",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.0029824
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-3"
+        ],
+        "boxId": "carl-entry-box-3",
+        "boxTier": "Bronze",
+        "boxKind": "Adventurer",
+        "quantity": 1
+      },
+      "progress": 0.00288461
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-entry-4",
+      "subject": "Carl",
+      "name": "Why aren’t you wearing pants?",
+      "source": "b1-c2-p48",
+      "summary": "Why aren’t you wearing pants?",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Why aren’t you wearing pants?"
+      },
+      "book": 1,
+      "chapter": 2,
+      "position": 0.369231,
+      "progress": 0.00290091
     },
     {
       "id": "inv-002-entry-box-awards-item-4-0",
       "book": 1,
       "chapter": 2,
-      "position": 0.407692,
+      "position": 0.384615,
       "type": "item",
       "subject": "Carl",
       "name": "Gold Apparel Box",
-      "summary": "Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.",
-      "source": "b1-c2-p53",
+      "summary": "Gold Apparel Box",
+      "source": "b1-c2-p50",
       "confidence": "verified",
       "action": "add",
       "quantity": 1,
@@ -339,7 +506,39 @@
       "state": "unopened",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.0029824
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-4"
+        ],
+        "boxId": "carl-entry-box-4",
+        "boxTier": "Gold",
+        "boxKind": "Apparel",
+        "quantity": 1
+      },
+      "progress": 0.00293351
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-entry-5",
+      "subject": "Carl",
+      "name": "Unarmed combat",
+      "source": "b1-c2-p51",
+      "summary": "Unarmed combat",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Unarmed combat"
+      },
+      "book": 1,
+      "chapter": 2,
+      "position": 0.392308,
+      "progress": 0.00294981
     },
     {
       "id": "inv-002-entry-box-awards-item-5-0",
@@ -349,7 +548,7 @@
       "type": "item",
       "subject": "Carl",
       "name": "Bronze Weapon Box",
-      "summary": "Entry achievements award Carl six initial boxes; later combat adds four more before the first opening.",
+      "summary": "Bronze Weapon Box",
       "source": "b1-c2-p53",
       "confidence": "verified",
       "action": "add",
@@ -359,6 +558,17 @@
       "state": "unopened",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-entry-5"
+        ],
+        "boxId": "carl-entry-box-5",
+        "boxTier": "Bronze",
+        "boxKind": "Weapon",
+        "quantity": 1
+      },
       "progress": 0.0029824
     },
     {
@@ -671,15 +881,43 @@
       "progress": 0.00939497
     },
     {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-0",
+      "book": 1,
+      "chapter": 5,
+      "position": 0.532787,
+      "type": "item",
+      "subject": "Carl",
+      "name": "Bronze Pet Box",
+      "summary": "Bronze Pet Box",
+      "source": "b1-c5-p65",
+      "confidence": "verified",
+      "action": "remove",
+      "quantity": 1,
+      "category": "Reward box",
+      "state": "opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-002-entry-box-awards-item-0-0"
+        ],
+        "boxId": "carl-entry-box-0",
+        "boxTier": "Bronze",
+        "boxKind": "Pet",
+        "quantity": 1
+      },
+      "progress": 0.00960336
+    },
+    {
       "id": "inv-004-first-ten-boxes-opened-item-0-0",
       "book": 1,
       "chapter": 5,
-      "position": 0.852459,
+      "position": 0.540984,
       "type": "item",
       "subject": "Carl",
       "name": "Scroll of Heal Critter",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
+      "summary": "Scroll of Heal Critter",
+      "source": "b1-c5-p66",
       "confidence": "verified",
       "action": "add",
       "quantity": 1,
@@ -688,7 +926,239 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.01028063
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-0"
+        ],
+        "outcomeType": "item"
+      },
+      "progress": 0.00962073
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-2",
+      "book": 1,
+      "chapter": 5,
+      "position": 0.680328,
+      "type": "item",
+      "subject": "Carl",
+      "name": "Silver Adventurer Box",
+      "summary": "Silver Adventurer Box",
+      "source": "b1-c5-p83",
+      "confidence": "verified",
+      "action": "remove",
+      "quantity": 1,
+      "category": "Reward box",
+      "state": "opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-002-entry-box-awards-item-2-0"
+        ],
+        "boxId": "carl-entry-box-2",
+        "boxTier": "Silver",
+        "boxKind": "Adventurer",
+        "quantity": 1
+      },
+      "progress": 0.00991595
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-8-0",
+      "book": 1,
+      "chapter": 5,
+      "position": 0.688525,
+      "type": "item",
+      "subject": "Carl",
+      "name": "Poison Antidote",
+      "summary": "Poison Antidote",
+      "source": "b1-c5-p84",
+      "confidence": "verified",
+      "action": "add",
+      "quantity": 2,
+      "unit": null,
+      "category": "Inventory",
+      "state": "carried",
+      "detail": null,
+      "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-2"
+        ],
+        "outcomeType": "item"
+      },
+      "progress": 0.00993332
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-9-0",
+      "book": 1,
+      "chapter": 5,
+      "position": 0.696721,
+      "type": "item",
+      "subject": "Carl",
+      "name": "Crawler Biscuit",
+      "summary": "Crawler Biscuit",
+      "source": "b1-c5-p85",
+      "confidence": "verified",
+      "action": "add",
+      "quantity": 100,
+      "unit": null,
+      "category": "Inventory",
+      "state": "carried",
+      "detail": null,
+      "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-2"
+        ],
+        "outcomeType": "item"
+      },
+      "progress": 0.00995068
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-10-0",
+      "book": 1,
+      "chapter": 5,
+      "position": 0.704918,
+      "type": "item",
+      "subject": "Carl",
+      "name": "Torch",
+      "summary": "Torch",
+      "source": "b1-c5-p86",
+      "confidence": "verified",
+      "action": "add",
+      "quantity": 20,
+      "unit": null,
+      "category": "Inventory",
+      "state": "carried",
+      "detail": null,
+      "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-2"
+        ],
+        "outcomeType": "item"
+      },
+      "progress": 0.00996805
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-4",
+      "book": 1,
+      "chapter": 5,
+      "position": 0.770492,
+      "type": "item",
+      "subject": "Carl",
+      "name": "Gold Apparel Box",
+      "summary": "Gold Apparel Box",
+      "source": "b1-c5-p94",
+      "confidence": "verified",
+      "action": "remove",
+      "quantity": 1,
+      "category": "Reward box",
+      "state": "opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-002-entry-box-awards-item-4-0"
+        ],
+        "boxId": "carl-entry-box-4",
+        "boxTier": "Gold",
+        "boxKind": "Apparel",
+        "quantity": 1
+      },
+      "progress": 0.01010697
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-13-0",
+      "book": 1,
+      "chapter": 5,
+      "position": 0.778689,
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Nightgaunt Cloak of Stoutness",
+      "summary": "Enchanted Nightgaunt Cloak of Stoutness",
+      "source": "b1-c5-p95",
+      "confidence": "verified",
+      "action": "add",
+      "quantity": 1,
+      "unit": null,
+      "category": "Inventory",
+      "state": "carried",
+      "detail": null,
+      "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-4"
+        ],
+        "outcomeType": "item"
+      },
+      "progress": 0.01012434
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-14-0",
+      "book": 1,
+      "chapter": 5,
+      "position": 0.786885,
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Trollskin Shirt of Pummeling",
+      "summary": "Enchanted Trollskin Shirt of Pummeling",
+      "source": "b1-c5-p96",
+      "confidence": "verified",
+      "action": "add",
+      "quantity": 1,
+      "unit": null,
+      "category": "Inventory",
+      "state": "carried",
+      "detail": null,
+      "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-4"
+        ],
+        "outcomeType": "item"
+      },
+      "progress": 0.01014171
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-1",
+      "book": 1,
+      "chapter": 5,
+      "position": 0.836066,
+      "type": "item",
+      "subject": "Carl",
+      "name": "Legendary Pet Box",
+      "summary": "Legendary Pet Box",
+      "source": "b1-c5-p102",
+      "confidence": "verified",
+      "action": "remove",
+      "quantity": 1,
+      "category": "Reward box",
+      "state": "opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-002-entry-box-awards-item-1-0"
+        ],
+        "boxId": "carl-entry-box-1",
+        "boxTier": "Legendary",
+        "boxKind": "Pet",
+        "quantity": 1
+      },
+      "progress": 0.0102459
     },
     {
       "id": "inv-004-first-ten-boxes-opened-item-1-0",
@@ -708,26 +1178,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.01028063
-    },
-    {
-      "id": "inv-004-first-ten-boxes-opened-item-10-0",
-      "book": 1,
-      "chapter": 5,
-      "position": 0.852459,
-      "type": "item",
-      "subject": "Carl",
-      "name": "Torch",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
-      "confidence": "verified",
-      "action": "add",
-      "quantity": 20,
-      "unit": null,
-      "category": "Inventory",
-      "state": "carried",
-      "detail": null,
-      "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -748,6 +1206,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -768,46 +1234,14 @@
       "state": "bound",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.01028063
-    },
-    {
-      "id": "inv-004-first-ten-boxes-opened-item-13-0",
-      "book": 1,
-      "chapter": 5,
-      "position": 0.852459,
-      "type": "item",
-      "subject": "Carl",
-      "name": "Enchanted Nightgaunt Cloak of Stoutness",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
-      "confidence": "verified",
-      "action": "add",
-      "quantity": 1,
-      "unit": null,
-      "category": "Inventory",
-      "state": "carried",
-      "detail": null,
-      "historyOnly": false,
-      "progress": 0.01028063
-    },
-    {
-      "id": "inv-004-first-ten-boxes-opened-item-14-0",
-      "book": 1,
-      "chapter": 5,
-      "position": 0.852459,
-      "type": "item",
-      "subject": "Carl",
-      "name": "Enchanted Trollskin Shirt of Pummeling",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
-      "confidence": "verified",
-      "action": "add",
-      "quantity": 1,
-      "unit": null,
-      "category": "Inventory",
-      "state": "carried",
-      "detail": null,
-      "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -828,6 +1262,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -838,7 +1280,7 @@
       "type": "item",
       "subject": "Carl",
       "name": "Enhanced Pet Biscuit",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
+      "summary": "Enhanced Pet Biscuit",
       "source": "b1-c5-p104",
       "confidence": "verified",
       "action": "add",
@@ -848,6 +1290,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-1"
+        ],
+        "outcomeType": "item"
+      },
       "progress": 0.01028063
     },
     {
@@ -868,6 +1318,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -888,6 +1346,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -908,6 +1374,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -928,6 +1402,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -948,97 +1430,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.01028063
-    },
-    {
-      "id": "inv-004-first-ten-boxes-opened-item-8-0",
-      "book": 1,
-      "chapter": 5,
-      "position": 0.852459,
-      "type": "item",
-      "subject": "Carl",
-      "name": "Poison Antidote",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
-      "confidence": "verified",
-      "action": "add",
-      "quantity": 2,
-      "unit": null,
-      "category": "Inventory",
-      "state": "carried",
-      "detail": null,
-      "historyOnly": false,
-      "progress": 0.01028063
-    },
-    {
-      "id": "inv-004-first-ten-boxes-opened-item-9-0",
-      "book": 1,
-      "chapter": 5,
-      "position": 0.852459,
-      "type": "item",
-      "subject": "Carl",
-      "name": "Crawler Biscuit",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
-      "confidence": "verified",
-      "action": "add",
-      "quantity": 100,
-      "unit": null,
-      "category": "Inventory",
-      "state": "carried",
-      "detail": null,
-      "historyOnly": false,
-      "progress": 0.01028063
-    },
-    {
-      "id": "inv-004-first-ten-boxes-opened-opened-box-0",
-      "book": 1,
-      "chapter": 5,
-      "position": 0.852459,
-      "type": "item",
-      "subject": "Carl",
-      "name": "Bronze Pet Box",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
-      "confidence": "verified",
-      "action": "remove",
-      "quantity": 1,
-      "category": "Reward box",
-      "state": "opened",
-      "progress": 0.01028063
-    },
-    {
-      "id": "inv-004-first-ten-boxes-opened-opened-box-1",
-      "book": 1,
-      "chapter": 5,
-      "position": 0.852459,
-      "type": "item",
-      "subject": "Carl",
-      "name": "Legendary Pet Box",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
-      "confidence": "verified",
-      "action": "remove",
-      "quantity": 1,
-      "category": "Reward box",
-      "state": "opened",
-      "progress": 0.01028063
-    },
-    {
-      "id": "inv-004-first-ten-boxes-opened-opened-box-2",
-      "book": 1,
-      "chapter": 5,
-      "position": 0.852459,
-      "type": "item",
-      "subject": "Carl",
-      "name": "Silver Adventurer Box",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
-      "confidence": "verified",
-      "action": "remove",
-      "quantity": 1,
-      "category": "Reward box",
-      "state": "opened",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -1049,23 +1448,6 @@
       "type": "item",
       "subject": "Carl",
       "name": "Bronze Adventurer Box",
-      "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
-      "source": "b1-c5-p104",
-      "confidence": "verified",
-      "action": "remove",
-      "quantity": 1,
-      "category": "Reward box",
-      "state": "opened",
-      "progress": 0.01028063
-    },
-    {
-      "id": "inv-004-first-ten-boxes-opened-opened-box-4",
-      "book": 1,
-      "chapter": 5,
-      "position": 0.852459,
-      "type": "item",
-      "subject": "Carl",
-      "name": "Gold Apparel Box",
       "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
       "source": "b1-c5-p104",
       "confidence": "verified",
@@ -1103,6 +1485,12 @@
       "summary": "Carl opens all ten accumulated boxes. This is the first exact, comprehensive inventory haul.",
       "source": "b1-c5-p104",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": 10,
+        "attribution": "batch"
+      },
       "progress": 0.01028063
     },
     {
@@ -1192,6 +1580,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-006b-first-magic-gear-box-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01190476
     },
     {
@@ -1212,6 +1608,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-006b-first-magic-gear-box-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01190476
     },
     {
@@ -1225,6 +1629,12 @@
       "summary": "Carl's first magical-gear achievement box adds a torch and two healing potions, bringing his stated healing-potion total to six.",
       "source": "b1-c6-p26",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.01190476
     },
     {
@@ -1450,6 +1860,77 @@
       "progress": 0.01331719
     },
     {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-donut-first-cat",
+      "subject": "Princess Donut",
+      "name": "First cat to enter the dungeon",
+      "source": "b1-c7-p27",
+      "summary": "First cat to enter the dungeon",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "First cat to enter the dungeon"
+      },
+      "book": 1,
+      "chapter": 7,
+      "position": 0.428571,
+      "progress": 0.01361985
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-donut-legendary-award",
+      "subject": "Princess Donut",
+      "name": "Legendary Quadruped Box",
+      "source": "b1-c7-p27",
+      "summary": "Legendary Quadruped Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-donut-first-cat"
+        ],
+        "boxId": "donut-first-quadruped",
+        "boxTier": "Legendary",
+        "boxKind": "Quadruped",
+        "quantity": 1
+      },
+      "book": 1,
+      "chapter": 7,
+      "position": 0.428571,
+      "progress": 0.01361985
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-donut-legendary-open",
+      "subject": "Princess Donut",
+      "name": "Legendary Quadruped Box opened",
+      "source": "b1-c7-p30",
+      "summary": "Legendary Quadruped Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-legendary-award"
+        ],
+        "boxId": "donut-first-quadruped",
+        "boxTier": "Legendary",
+        "boxKind": "Quadruped",
+        "quantity": 1
+      },
+      "book": 1,
+      "chapter": 7,
+      "position": 0.47619,
+      "progress": 0.01372074
+    },
+    {
       "id": "inv-007-donut-opens-first-boxes-item-0-0",
       "book": 1,
       "chapter": 7,
@@ -1467,6 +1948,14 @@
       "state": "carried",
       "detail": "several",
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-007-donut-opens-first-boxes-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01382163
     },
     {
@@ -1487,6 +1976,14 @@
       "state": "carried",
       "detail": "several",
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-007-donut-opens-first-boxes-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01382163
     },
     {
@@ -1507,6 +2004,14 @@
       "state": "carried",
       "detail": "pile",
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-007-donut-opens-first-boxes-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01382163
     },
     {
@@ -1527,6 +2032,14 @@
       "state": "consumed to learn spell",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-007-donut-opens-first-boxes-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01382163
     },
     {
@@ -1537,7 +2050,7 @@
       "type": "item",
       "subject": "Princess Donut",
       "name": "Enchanted Crown of the Sepsis Whore",
-      "summary": "Donut opens her initial boxes, learns Magic Missile immediately, and equips the unique fleeting crown.",
+      "summary": "Enchanted Crown of the Sepsis Whore",
       "source": "b1-c7-p33",
       "confidence": "verified",
       "action": "add",
@@ -1547,6 +2060,14 @@
       "state": "equipped; fleeting",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-legendary-open"
+        ],
+        "outcomeType": "item"
+      },
       "progress": 0.01382163
     },
     {
@@ -1560,6 +2081,12 @@
       "summary": "Donut opens her initial boxes, learns Magic Missile immediately, and equips the unique fleeting crown.",
       "source": "b1-c7-p33",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": 5,
+        "attribution": "batch"
+      },
       "progress": 0.01382163
     },
     {
@@ -1915,6 +2442,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-009-safe-room-boxes-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01823386
     },
     {
@@ -1935,6 +2470,14 @@
       "state": "equipped",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-009-safe-room-boxes-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01823386
     },
     {
@@ -1955,6 +2498,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-009-safe-room-boxes-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01823386
     },
     {
@@ -1975,6 +2526,14 @@
       "state": "equipped on collar",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-009-safe-room-boxes-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.01823386
     },
     {
@@ -1988,6 +2547,12 @@
       "summary": "First safe-room openings add bandages and Carl's +1 Constitution ring; Donut receives 25 mana potions and equips the butterfly talisman.",
       "source": "b1-c9-p57",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.01823386
     },
     {
@@ -2320,6 +2885,31 @@
       "progress": 0.0230226
     },
     {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-hoarder-victory",
+      "subject": "Party",
+      "name": "Hoarder boss victory",
+      "source": "b1-c11-p89",
+      "summary": "Hoarder boss victory",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "boss_victory",
+        "parentEventIds": [],
+        "reasonType": "boss_victory",
+        "reasonDetail": "Defeat of the Hoarder"
+      },
+      "evidence": [
+        "b1-c11-p86",
+        "b1-c11-p88"
+      ],
+      "book": 1,
+      "chapter": 11,
+      "position": 0.988889,
+      "progress": 0.02328154
+    },
+    {
       "id": "inv-013-neighborhood-map-item-0-0",
       "book": 1,
       "chapter": 12,
@@ -2373,6 +2963,64 @@
       "progress": 0.02339588
     },
     {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-hoarder-donut-award",
+      "subject": "Princess Donut",
+      "name": "Bronze Boss Box",
+      "source": "b1-c12-p17",
+      "summary": "Boss victory awards a Bronze Boss Box; the associated achievement name is unstated.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "boss_victory",
+        "parentEventIds": [
+          "reward-hoarder-victory"
+        ],
+        "boxId": "hoarder-donut",
+        "boxTier": "Bronze",
+        "boxKind": "Boss",
+        "quantity": 1
+      },
+      "evidence": [
+        "b1-c12-p15",
+        "b1-c12-p17"
+      ],
+      "book": 1,
+      "chapter": 12,
+      "position": 0.242857,
+      "progress": 0.02381961
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-hoarder-carl-award",
+      "subject": "Carl",
+      "name": "Bronze Boss Box",
+      "source": "b1-c12-p21",
+      "summary": "Boss victory awards a Bronze Boss Box; the associated achievement name is unstated.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "boss_victory",
+        "parentEventIds": [
+          "reward-hoarder-victory"
+        ],
+        "boxId": "hoarder-carl",
+        "boxTier": "Bronze",
+        "boxKind": "Boss",
+        "quantity": 1
+      },
+      "evidence": [
+        "b1-c12-p15",
+        "b1-c12-p17"
+      ],
+      "book": 1,
+      "chapter": 12,
+      "position": 0.3,
+      "progress": 0.02394068
+    },
+    {
       "id": "donut-torch-acquired-ability",
       "book": 1,
       "chapter": 12,
@@ -2387,6 +3035,62 @@
       "level": null,
       "detail": "Donut immediately reads a boss-box spellbook; Mordecai identifies the learned spell as Torch.",
       "progress": 0.02403148
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-hoarder-donut-open",
+      "subject": "Princess Donut",
+      "name": "Bronze Boss Box opened",
+      "source": "b1-c12-p24",
+      "summary": "Bronze Boss Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-hoarder-donut-award"
+        ],
+        "boxId": "hoarder-donut",
+        "boxTier": "Bronze",
+        "boxKind": "Boss",
+        "quantity": 1
+      },
+      "book": 1,
+      "chapter": 12,
+      "position": 0.342857,
+      "progress": 0.02403148
+    },
+    {
+      "id": "inv-014-second-major-opening-item-0-0",
+      "book": 1,
+      "chapter": 12,
+      "position": 0.428571,
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Tome of Torch",
+      "summary": "Tome of Torch",
+      "source": "b1-c12-p30",
+      "confidence": "verified",
+      "action": "remove",
+      "quantity": 1,
+      "unit": null,
+      "category": "Inventory",
+      "state": "consumed to learn spell",
+      "detail": null,
+      "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-hoarder-donut-open"
+        ],
+        "outcomeType": "item"
+      },
+      "evidence": [
+        "b1-c12-p24"
+      ],
+      "progress": 0.02421307
     },
     {
       "id": "carl-misc-and-iron-punch-upgrades-skill-0",
@@ -2437,35 +3141,40 @@
       "progress": 0.02427361
     },
     {
-      "id": "inv-014-second-major-opening-item-0-0",
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-hoarder-carl-open",
+      "subject": "Carl",
+      "name": "Bronze Boss Box opened",
+      "source": "b1-c12-p39",
+      "summary": "Bronze Boss Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-hoarder-carl-award"
+        ],
+        "boxId": "hoarder-carl",
+        "boxTier": "Bronze",
+        "boxKind": "Boss",
+        "quantity": 1
+      },
       "book": 1,
       "chapter": 12,
-      "position": 0.685714,
-      "type": "item",
-      "subject": "Princess Donut",
-      "name": "Tome of Torch",
-      "summary": "Boss and achievement boxes yield Donut's Torch spell and Carl's first major explosive, defensive, and armor bundle.",
-      "source": "b1-c12-p48",
-      "confidence": "verified",
-      "action": "remove",
-      "quantity": 1,
-      "unit": null,
-      "category": "Inventory",
-      "state": "consumed to learn spell",
-      "detail": null,
-      "historyOnly": false,
-      "progress": 0.02475787
+      "position": 0.557143,
+      "progress": 0.02448547
     },
     {
       "id": "inv-014-second-major-opening-item-1-0",
       "book": 1,
       "chapter": 12,
-      "position": 0.685714,
+      "position": 0.571429,
       "type": "item",
       "subject": "Carl",
       "name": "Tome of Wisp Armor",
-      "summary": "Boss and achievement boxes yield Donut's Torch spell and Carl's first major explosive, defensive, and armor bundle.",
-      "source": "b1-c12-p48",
+      "summary": "Tome of Wisp Armor",
+      "source": "b1-c12-p40",
       "confidence": "verified",
       "action": "add",
       "quantity": 1,
@@ -2474,7 +3183,18 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
-      "progress": 0.02475787
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-hoarder-carl-open"
+        ],
+        "outcomeType": "item"
+      },
+      "evidence": [
+        "b1-c12-p39"
+      ],
+      "progress": 0.02451574
     },
     {
       "id": "inv-014-second-major-opening-item-2-0",
@@ -2494,6 +3214,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-014-second-major-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.02475787
     },
     {
@@ -2514,6 +3242,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-014-second-major-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.02475787
     },
     {
@@ -2534,6 +3270,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-014-second-major-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.02475787
     },
     {
@@ -2554,6 +3298,14 @@
       "state": "equipped",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-014-second-major-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.02475787
     },
     {
@@ -2574,6 +3326,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-014-second-major-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.02475787
     },
     {
@@ -2594,6 +3354,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-014-second-major-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.02475787
     },
     {
@@ -2607,6 +3375,12 @@
       "summary": "Boss and achievement boxes yield Donut's Torch spell and Carl's first major explosive, defensive, and armor bundle.",
       "source": "b1-c12-p48",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.02475787
     },
     {
@@ -3380,6 +4154,14 @@
       "state": "equipped",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3400,6 +4182,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3420,6 +4210,14 @@
       "state": "bound tattoo",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3440,6 +4238,14 @@
       "state": "bound tattoo",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3460,6 +4266,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3480,6 +4294,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3500,6 +4322,14 @@
       "state": "carried",
       "detail": "usual low-tier pile",
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3520,6 +4350,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3540,6 +4378,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3560,6 +4406,14 @@
       "state": "carried",
       "detail": "a couple more",
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3580,6 +4434,14 @@
       "state": "equipped",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3600,6 +4462,14 @@
       "state": "consumed",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-021-goblin-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3613,6 +4483,12 @@
       "summary": "Goblin-boss and achievement openings give Donut armor and Minion Army, both crawlers Desperado passes and weapon oil, and Carl a second Constitution ring plus his first Determine Value potion.",
       "source": "b1-c19-p65",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.04004826
     },
     {
@@ -3718,6 +4594,56 @@
       "progress": 0.04290254
     },
     {
+      "source": "b1-c22-p28",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Longsword",
+      "summary": "Imani carries a longsword at her introduction.",
+      "action": "note",
+      "state": "equipped",
+      "evidenceSentences": {
+        "b1-c22-p28": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "historyOnly": true,
+      "id": "imani-audit-b1-c22-p28-imani-c-item-longsword",
+      "book": 1,
+      "chapter": 22,
+      "position": 0.27451,
+      "confidence": "verified",
+      "progress": 0.04507311
+    },
+    {
+      "source": "b1-c22-p28",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Magical cloak",
+      "summary": "Imani wears a magical cloak at her introduction.",
+      "action": "note",
+      "state": "equipped",
+      "evidenceSentences": {
+        "b1-c22-p28": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "historyOnly": true,
+      "id": "imani-audit-b1-c22-p28-imani-c-item-magical-cloak",
+      "book": 1,
+      "chapter": 22,
+      "position": 0.27451,
+      "confidence": "verified",
+      "progress": 0.04507311
+    },
+    {
       "id": "series-1-22-imani-c-roster-meadow-lark-ally",
       "book": 1,
       "chapter": 22,
@@ -3731,6 +4657,36 @@
       "action": "join",
       "relationship": "Meadow Lark ally",
       "progress": 0.04507311
+    },
+    {
+      "source": "b1-c22-p33",
+      "type": "level",
+      "subject": "Imani C.",
+      "name": "Character level",
+      "summary": "Imani is level 10 at her first introduction.",
+      "action": "note",
+      "level": 10,
+      "evidence": [
+        "b1-c22-p28"
+      ],
+      "evidenceSentences": {
+        "b1-c22-p33": [
+          1
+        ],
+        "b1-c22-p28": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "id": "imani-audit-b1-c22-p33-imani-c-level-character-level",
+      "book": 1,
+      "chapter": 22,
+      "position": 0.323529,
+      "confidence": "verified",
+      "progress": 0.04517697
     },
     {
       "id": "series-1-23-imani-c-level-10",
@@ -4345,6 +5301,14 @@
       "state": "equipped",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-026-juicer-box-openings-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.05244332
     },
     {
@@ -4365,6 +5329,14 @@
       "state": "consumed to learn spell",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-026-juicer-box-openings-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.05244332
     },
     {
@@ -4385,6 +5357,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-026-juicer-box-openings-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.05244332
     },
     {
@@ -4405,6 +5385,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-026-juicer-box-openings-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.05244332
     },
     {
@@ -4425,6 +5413,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-026-juicer-box-openings-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.05244332
     },
     {
@@ -4445,6 +5441,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-026-juicer-box-openings-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.05244332
     },
     {
@@ -4465,6 +5469,14 @@
       "state": "consumed",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-026-juicer-box-openings-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.05244332
     },
     {
@@ -4485,6 +5497,14 @@
       "state": "equipped on right wrist",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-026-juicer-box-openings-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.05244332
     },
     {
@@ -4498,6 +5518,12 @@
       "summary": "Juicer openings give Donut Dexterity jewelry and 12 Heal scrolls; Carl receives Heal scrolls, shuriken, a second Determine Value potion, and his signature war gauntlet.",
       "source": "b1-c25-p58",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.05244332
     },
     {
@@ -4606,6 +5632,21 @@
       "source": "b1-c26-p63",
       "confidence": "verified",
       "progress": 0.05411674
+    },
+    {
+      "source": "b1-c26-p70",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Strength-boosting equipment",
+      "summary": "Imani has received strength-boosting items; their names and numeric bonuses are unstated.",
+      "action": "note",
+      "evidenceSentences": {},
+      "id": "imani-audit-b1-c26-p70-imani-c-story-strength-boosting-equipment",
+      "book": 1,
+      "chapter": 26,
+      "position": 0.603448,
+      "confidence": "verified",
+      "progress": 0.05424459
     },
     {
       "id": "inv-027-redoubt-construction-item-0-0",
@@ -4721,6 +5762,21 @@
       "confidence": "verified",
       "action": "set",
       "level": 10,
+      "progress": 0.05534595
+    },
+    {
+      "id": "series-1-27-imani-c-level-11",
+      "book": 1,
+      "chapter": 27,
+      "position": 0.123288,
+      "type": "level",
+      "subject": "Imani C.",
+      "name": "Character level",
+      "summary": "Imani C. is explicitly confirmed at level 11.",
+      "source": "b1-c27-p9",
+      "confidence": "verified",
+      "action": "set",
+      "level": 11,
       "progress": 0.05534595
     },
     {
@@ -4906,6 +5962,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-031-borough-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.06330635
     },
     {
@@ -4926,6 +5990,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-031-borough-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.06330635
     },
     {
@@ -4946,6 +6018,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-031-borough-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.06330635
     },
     {
@@ -4966,6 +6046,14 @@
       "state": "consumed immediately",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-031-borough-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.06330635
     },
     {
@@ -4986,6 +6074,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-031-borough-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.06330635
     },
     {
@@ -4999,6 +6095,12 @@
       "summary": "Ball of Swine and achievement boxes add currency, drink tickets, a workbench shaping tool, a temporary skill potion, and the pedicure kit.",
       "source": "b1-c30-p118",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.06330635
     },
     {
@@ -5921,6 +7023,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-038-krakaren-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.07392953
     },
     {
@@ -5941,6 +7051,14 @@
       "state": "carried",
       "detail": "couple hundred; party total passes 1,000",
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-038-krakaren-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.07392953
     },
     {
@@ -5961,6 +7079,14 @@
       "state": "carried",
       "detail": "large usual bundle",
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-038-krakaren-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.07392953
     },
     {
@@ -5981,6 +7107,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-038-krakaren-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.07392953
     },
     {
@@ -6001,6 +7135,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-038-krakaren-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.07392953
     },
     {
@@ -6021,6 +7163,14 @@
       "state": "equipped",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-038-krakaren-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.07392953
     },
     {
@@ -6034,6 +7184,12 @@
       "summary": "Krakaren rewards give Donut a nightly Constitution brush and Carl self-sizing enchanted boxers with Protective Shell, plus generic consumables and explosives.",
       "source": "b1-c35-p102",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.07392953
     },
     {
@@ -6070,6 +7226,53 @@
       "progress": 0.07392953
     },
     {
+      "source": "b1-c37-p42",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Pig harness",
+      "summary": "Imani wears a pig harness while hauling the residents.",
+      "action": "note",
+      "state": "equipped",
+      "evidenceSentences": {
+        "b1-c37-p42": [
+          1,
+          2
+        ]
+      },
+      "historyOnly": true,
+      "id": "imani-audit-b1-c37-p42-imani-c-item-pig-harness",
+      "book": 1,
+      "chapter": 37,
+      "position": 0.506024,
+      "confidence": "verified",
+      "progress": 0.07734327
+    },
+    {
+      "source": "b1-c37-p47",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Yog’s Special Chain scroll",
+      "summary": "Imani has used a scroll to create a temporary, lightweight chain; the speaker is uncertain of its exact name.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {
+        "b1-c37-p47": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "id": "imani-audit-b1-c37-p47-imani-c-item-yog-s-special-chain-scroll",
+      "book": 1,
+      "chapter": 37,
+      "position": 0.566265,
+      "confidence": "verified",
+      "progress": 0.0774709
+    },
+    {
       "id": "series-1-37-imani-c-level-11",
       "book": 1,
       "chapter": 37,
@@ -6102,6 +7305,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-040b-lucky-bastard-tickets-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.08147393
     },
     {
@@ -6122,6 +7333,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-040b-lucky-bastard-tickets-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.08147393
     },
     {
@@ -6135,6 +7354,12 @@
       "summary": "Their Platinum Lucky Bastard boxes yield limited-use scratch tickets with randomized beneficial or harmful combat effects.",
       "source": "b1-c39-p36",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.08147393
     },
     {
@@ -6269,6 +7494,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-042-sapper-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.08657751
     },
     {
@@ -6289,6 +7522,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-042-sapper-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.08657751
     },
     {
@@ -6309,6 +7550,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-042-sapper-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.08657751
     },
     {
@@ -6322,6 +7571,12 @@
       "summary": "Mechanic and Sapper boxes add a hardening tool, safe explosive workbench, and ten configurable proximity triggers.",
       "source": "b1-c41-p83",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.08657751
     },
     {
@@ -6430,6 +7685,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-044-donut-trap-modules-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.09121832
     },
     {
@@ -6450,6 +7713,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-044-donut-trap-modules-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.09121832
     },
     {
@@ -6463,6 +7734,12 @@
       "summary": "Donut's Gold Sapper Box yields two ready-made trap modules.",
       "source": "b1-c44-p6",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.09121832
     },
     {
@@ -6851,6 +8128,14 @@
       "state": "consumed to learn spell",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-048-final-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.0976206
     },
     {
@@ -6871,6 +8156,14 @@
       "state": "consumed",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-048-final-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.0976206
     },
     {
@@ -6891,6 +8184,14 @@
       "state": "carried",
       "detail": null,
       "historyOnly": false,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "opening_batch",
+        "parentEventIds": [
+          "inv-048-final-boss-opening-summary"
+        ],
+        "attribution": "batch"
+      },
       "progress": 0.0976206
     },
     {
@@ -6904,7 +8205,28 @@
       "summary": "Final second-floor boss boxes teach Donut Heal Critter and give Carl his third Determine Value potion plus 1,000 gold.",
       "source": "b1-c47-p11",
       "confidence": "verified",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "opening_batch",
+        "quantity": null,
+        "attribution": "batch"
+      },
       "progress": 0.0976206
+    },
+    {
+      "id": "mongo-still-level-1-level",
+      "book": 1,
+      "chapter": 47,
+      "position": 0.454545,
+      "type": "level",
+      "subject": "Mongo",
+      "name": "Character level",
+      "summary": "After killing multiple grubs, Mongo explicitly remains level 1 because he is not yet bonded.",
+      "source": "b1-c47-p65",
+      "confidence": "verified",
+      "action": "set",
+      "level": 1,
+      "progress": 0.09842065
     },
     {
       "id": "carl-donut-level-13-level-carl",
@@ -6935,6 +8257,21 @@
       "action": "set",
       "level": 13,
       "progress": 0.0986577
+    },
+    {
+      "id": "mongo-party-level-1-level",
+      "book": 1,
+      "chapter": 47,
+      "position": 0.629371,
+      "type": "level",
+      "subject": "Mongo",
+      "name": "Character level",
+      "summary": "System confirms bonded Mongo joins the party at level 1. No post-bond level-up occurs before Book 1 ends.",
+      "source": "b1-c47-p90",
+      "confidence": "verified",
+      "action": "set",
+      "level": 1,
+      "progress": 0.09879104
     },
     {
       "id": "party-03-mongo-joins-join",
@@ -7042,6 +8379,21 @@
       "action": "join",
       "relationship": "Party manager",
       "progress": 0.10152278
+    },
+    {
+      "id": "series-2-1-princess-donut-level-13",
+      "book": 2,
+      "chapter": 1,
+      "position": 0.9875,
+      "type": "level",
+      "subject": "Princess Donut",
+      "name": "Character level",
+      "summary": "Princess Donut is explicitly confirmed at level 13.",
+      "source": "b2-c1-p158",
+      "confidence": "verified",
+      "action": "set",
+      "level": 13,
+      "progress": 0.10166843
     },
     {
       "id": "series-2-2-carl-str-10-base",
@@ -7202,6 +8554,21 @@
         "CHA": "base"
       },
       "progress": 0.10366525
+    },
+    {
+      "id": "series-2-2-carl-level-13",
+      "book": 2,
+      "chapter": 2,
+      "position": 1.0,
+      "type": "level",
+      "subject": "Carl",
+      "name": "Character level",
+      "summary": "Carl is explicitly confirmed at level 13.",
+      "source": "b2-c2-p200",
+      "confidence": "verified",
+      "action": "set",
+      "level": 13,
+      "progress": 0.10381356
     },
     {
       "id": "series-2-7-carl-level-14",
@@ -7617,6 +8984,23 @@
       "progress": 0.15820932
     },
     {
+      "id": "series-3-3-elle-mcgib-class-blizzardmancer",
+      "book": 3,
+      "chapter": 3,
+      "position": 0.699187,
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Class revealed",
+      "summary": "Elle McGib's class is confirmed as Blizzardmancer.",
+      "source": "b3-c3-p86",
+      "confidence": "verified",
+      "action": "note",
+      "profile": {
+        "class": "Blizzardmancer"
+      },
+      "progress": 0.15826099
+    },
+    {
       "id": "series-3-3-elle-mcgib-level-17",
       "book": 3,
       "chapter": 3,
@@ -7675,6 +9059,156 @@
       "action": "set",
       "level": 15,
       "progress": 0.16537076
+    },
+    {
+      "id": "series-3-8-imani-c-level-24",
+      "book": 3,
+      "chapter": 8,
+      "position": 0.780488,
+      "type": "level",
+      "subject": "Imani C.",
+      "name": "Character level",
+      "summary": "Imani C. is explicitly confirmed at level 24.",
+      "source": "b3-c8-p96",
+      "confidence": "verified",
+      "action": "set",
+      "level": 24,
+      "progress": 0.16902646
+    },
+    {
+      "id": "series-3-8-imani-c-race-obsidian-butterfly",
+      "book": 3,
+      "chapter": 8,
+      "position": 0.788618,
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Race revealed",
+      "summary": "Imani C.'s race is confirmed as Obsidian Butterfly.",
+      "source": "b3-c8-p97",
+      "confidence": "verified",
+      "action": "note",
+      "profile": {
+        "race": "Obsidian Butterfly"
+      },
+      "progress": 0.16904368
+    },
+    {
+      "id": "series-3-8-imani-c-class-fire-spiritualist",
+      "book": 3,
+      "chapter": 8,
+      "position": 0.796748,
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Class revealed",
+      "summary": "Imani C.'s class is confirmed as Fire Spiritualist.",
+      "source": "b3-c8-p98",
+      "confidence": "verified",
+      "action": "note",
+      "profile": {
+        "class": "Fire Spiritualist"
+      },
+      "progress": 0.16906091
+    },
+    {
+      "source": "b3-c8-p105",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Flight not yet available",
+      "action": "note",
+      "summary": "Imani says she cannot yet fly. A future path choice could unlock flight; no unlock is assumed here.",
+      "evidence": [
+        "b3-c8-p104"
+      ],
+      "id": "imani-audit-b3-c8-p105-imani-c-story-flight-not-yet-available",
+      "book": 3,
+      "chapter": 8,
+      "position": 0.853659,
+      "confidence": "verified",
+      "progress": 0.16918148
+    },
+    {
+      "source": "b3-c9-p21",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Juiced",
+      "summary": "Imani’s wing contact applies a temporary 10% Strength buff.",
+      "action": "note",
+      "evidence": [
+        "b3-c9-p20"
+      ],
+      "detail": "Observed effect name; ability level unstated.",
+      "evidenceSentences": {
+        "b3-c9-p21": [
+          1,
+          2
+        ],
+        "b3-c9-p20": [
+          1,
+          2
+        ]
+      },
+      "id": "imani-audit-b3-c9-p21-imani-c-skill-juiced",
+      "book": 3,
+      "chapter": 9,
+      "position": 0.161538,
+      "confidence": "verified",
+      "progress": 0.16983377
+    },
+    {
+      "source": "b3-c9-p22",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Shrouded",
+      "summary": "Imani’s wing contact applies temporary 10% damage reduction.",
+      "action": "note",
+      "evidence": [
+        "b3-c9-p20"
+      ],
+      "detail": "Observed effect name; ability level unstated.",
+      "evidenceSentences": {
+        "b3-c9-p22": [
+          1,
+          2
+        ],
+        "b3-c9-p20": [
+          1,
+          2
+        ]
+      },
+      "id": "imani-audit-b3-c9-p22-imani-c-skill-shrouded",
+      "book": 3,
+      "chapter": 9,
+      "position": 0.169231,
+      "confidence": "verified",
+      "progress": 0.16985007
+    },
+    {
+      "source": "b3-c9-p23",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Trolled",
+      "summary": "Imani’s wing contact accelerates healing by 25% temporarily.",
+      "action": "note",
+      "evidence": [
+        "b3-c9-p20"
+      ],
+      "detail": "Observed effect name; ability level unstated.",
+      "evidenceSentences": {
+        "b3-c9-p23": [
+          1,
+          2
+        ],
+        "b3-c9-p20": [
+          1,
+          2
+        ]
+      },
+      "id": "imani-audit-b3-c9-p23-imani-c-skill-trolled",
+      "book": 3,
+      "chapter": 9,
+      "position": 0.176923,
+      "confidence": "verified",
+      "progress": 0.16986636
     },
     {
       "id": "series-3-11-carl-level-29",
@@ -7790,6 +9324,21 @@
       "action": "set",
       "level": 30,
       "progress": 0.18318366
+    },
+    {
+      "source": "b3-c18-p109",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Player-killer coupons discarded",
+      "summary": "Imani reports discarding the first-floor coupon book; this is a retrospective disclosure, not a new acquisition.",
+      "action": "note",
+      "evidenceSentences": {},
+      "id": "imani-audit-b3-c18-p109-imani-c-story-player-killer-coupons-discarded",
+      "book": 3,
+      "chapter": 18,
+      "position": 0.698718,
+      "confidence": "verified",
+      "progress": 0.19003966
     },
     {
       "id": "series-3-23-katia-grim-level-37",
@@ -7929,6 +9478,104 @@
       "progress": 0.21283026
     },
     {
+      "source": "b3-c31-p19",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Chain-making scrolls",
+      "summary": "Imani still has several chain-making scrolls and uses them for the crane.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {
+        "b3-c31-p19": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "id": "imani-audit-b3-c31-p19-imani-c-item-chain-making-scrolls",
+      "book": 3,
+      "chapter": 31,
+      "position": 0.135714,
+      "confidence": "verified",
+      "progress": 0.21638922
+    },
+    {
+      "source": "b3-c31-p20",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Wing-contact constitution buff",
+      "summary": "Imani’s wings grant a non-stacking Constitution buff lasting ten minutes; its magnitude is unstated.",
+      "action": "note",
+      "evidence": [
+        "b3-c31-p19"
+      ],
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b3-c31-p20": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "b3-c31-p19": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "id": "imani-audit-b3-c31-p20-imani-c-skill-wing-contact-constitution-buff",
+      "book": 3,
+      "chapter": 31,
+      "position": 0.142857,
+      "confidence": "verified",
+      "progress": 0.21640436
+    },
+    {
+      "source": "b3-c31-p115",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Acid neutralization",
+      "summary": "Imani casts an unnamed effect that negates acid affecting nearby allies.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b3-c31-p115": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": "imani-audit-b3-c31-p115-imani-c-skill-acid-neutralization",
+      "book": 3,
+      "chapter": 31,
+      "position": 0.821429,
+      "confidence": "verified",
+      "progress": 0.21784201
+    },
+    {
+      "id": "series-3-32-li-na-level-30",
+      "book": 3,
+      "chapter": 32,
+      "position": 0.11828,
+      "type": "level",
+      "subject": "Li Na",
+      "name": "Character level",
+      "summary": "Li Na is explicitly confirmed at level 30.",
+      "source": "b3-c32-p22",
+      "confidence": "verified",
+      "action": "set",
+      "level": 30,
+      "progress": 0.21847093
+    },
+    {
       "id": "series-3-34-carl-level-41",
       "book": 3,
       "chapter": 34,
@@ -7958,6 +9605,21 @@
       "action": "set",
       "level": 11,
       "progress": 0.2275074
+    },
+    {
+      "id": "series-4-2-carl-level-41",
+      "book": 4,
+      "chapter": 2,
+      "position": 0.699029,
+      "type": "level",
+      "subject": "Carl",
+      "name": "Character level",
+      "summary": "Carl is explicitly confirmed at level 41.",
+      "source": "b4-c2-p144",
+      "confidence": "verified",
+      "action": "set",
+      "level": 41,
+      "progress": 0.22817591
     },
     {
       "id": "series-4-3-louis-santiago-level-22",
@@ -8357,6 +10019,40 @@
       "progress": 0.30809185
     },
     {
+      "id": "series-5-8-prepotente-class-profane-vitiate",
+      "book": 5,
+      "chapter": 8,
+      "position": 0.597315,
+      "type": "story",
+      "subject": "Prepotente",
+      "name": "Class revealed",
+      "summary": "Prepotente's class is confirmed as Profane Vitiate.",
+      "source": "b5-c8-p89",
+      "confidence": "verified",
+      "action": "note",
+      "profile": {
+        "class": "Profane Vitiate"
+      },
+      "progress": 0.31270618
+    },
+    {
+      "id": "series-5-8-elle-mcgib-class-tundra-princess",
+      "book": 5,
+      "chapter": 8,
+      "position": 0.604027,
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Class revealed",
+      "summary": "Elle McGib's class is confirmed as Tundra Princess.",
+      "source": "b5-c8-p90",
+      "confidence": "verified",
+      "action": "note",
+      "profile": {
+        "class": "Tundra Princess"
+      },
+      "progress": 0.3127204
+    },
+    {
       "id": "series-5-20-imani-c-roster-princess-posse-guildmaster",
       "book": 5,
       "chapter": 20,
@@ -8370,6 +10066,80 @@
       "action": "join",
       "relationship": "Princess Posse guildmaster",
       "progress": 0.33863715
+    },
+    {
+      "source": "b5-c21-p11",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Glamor counterspell",
+      "summary": "Imani removes Eva’s glamor from the NPCs with a counterspell.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b5-c21-p11": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": "imani-audit-b5-c21-p11-imani-c-skill-glamor-counterspell",
+      "book": 5,
+      "chapter": 21,
+      "position": 0.087302,
+      "confidence": "verified",
+      "progress": 0.33916801
+    },
+    {
+      "source": "b5-c21-p12",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Changed wings",
+      "summary": "Imani’s wings look more solid and radiate wisps of fire; no new class name or level is given.",
+      "action": "note",
+      "evidenceSentences": {
+        "b5-c21-p12": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": "imani-audit-b5-c21-p12-imani-c-story-changed-wings",
+      "book": 5,
+      "chapter": 21,
+      "position": 0.095238,
+      "confidence": "verified",
+      "progress": 0.33918483
+    },
+    {
+      "source": "b5-c36-p14",
+      "type": "level",
+      "subject": "Imani C.",
+      "name": "Level increased; total unknown",
+      "summary": "Imani is among the named group whose members have all gained several levels. Her exact total and increment are unstated.",
+      "action": "increase",
+      "level": null,
+      "evidence": [
+        "b5-c36-p12"
+      ],
+      "evidenceSentences": {
+        "b5-c36-p14": [
+          1,
+          2,
+          3
+        ],
+        "b5-c36-p12": [
+          1,
+          2
+        ]
+      },
+      "id": "imani-audit-b5-c36-p14-imani-c-level-level-increased-total-unknown",
+      "book": 5,
+      "chapter": 36,
+      "position": 0.069307,
+      "confidence": "verified",
+      "progress": 0.37090955
     },
     {
       "id": "series-5-39-carl-level-56",
@@ -8464,6 +10234,101 @@
       "progress": 0.41647908
     },
     {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-imani-award",
+      "subject": "Imani C.",
+      "name": "Benefactor Box",
+      "source": "b5-c57-p62",
+      "summary": "Benefactor Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "sponsorship",
+        "parentEventIds": [
+          "reward-imani-sponsor"
+        ],
+        "boxId": "imani-apothecary-hammer",
+        "boxKind": "Benefactor",
+        "quantity": 1,
+        "occurrenceDetail": "Receipt and opening reported together; exact earlier moments unstated."
+      },
+      "book": 5,
+      "chapter": 57,
+      "position": 0.96875,
+      "progress": 0.41730667
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-imani-open",
+      "subject": "Imani C.",
+      "name": "Benefactor Box opened",
+      "source": "b5-c57-p62",
+      "summary": "Benefactor Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-imani-award"
+        ],
+        "boxId": "imani-apothecary-hammer",
+        "boxKind": "Benefactor",
+        "quantity": 1
+      },
+      "book": 5,
+      "chapter": 57,
+      "position": 0.96875,
+      "progress": 0.41730667
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-imani-sponsor",
+      "subject": "Imani C.",
+      "name": "Apothecary sponsorship gift",
+      "source": "b5-c57-p62",
+      "summary": "Apothecary sponsorship gift",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "sponsorship",
+        "parentEventIds": [],
+        "reasonType": "sponsorship",
+        "reasonDetail": "The Apothecary; gift intended for Donut"
+      },
+      "book": 5,
+      "chapter": 57,
+      "position": 0.96875,
+      "progress": 0.41730667
+    },
+    {
+      "source": "b5-c60-p57",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Dread",
+      "summary": "Carl assigns Imani to cast Dread during the planned attack; this passage states the plan rather than confirming the cast.",
+      "action": "note",
+      "confidence": "partial",
+      "detail": "Reported ability in a plan; level unstated.",
+      "evidenceSentences": {
+        "b5-c60-p57": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "id": "imani-audit-b5-c60-p57-imani-c-skill-dread",
+      "book": 5,
+      "chapter": 60,
+      "position": 0.890625,
+      "progress": 0.42349709
+    },
+    {
       "id": "series-5-61-carl-level-59",
       "book": 5,
       "chapter": 61,
@@ -8508,6 +10373,79 @@
       "action": "set",
       "level": null,
       "progress": 0.42687735
+    },
+    {
+      "source": "b5-c62-p42",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Enchanted Hammer of Fast Forward",
+      "summary": "Imani received this sponsor gift, intended to be passed to Donut; continuing ownership is not asserted.",
+      "action": "note",
+      "evidence": [
+        "b5-c62-p34",
+        "b5-c62-p41"
+      ],
+      "historyOnly": true,
+      "evidenceSentences": {
+        "b5-c62-p42": [
+          1
+        ]
+      },
+      "id": "imani-audit-b5-c62-p42-imani-c-item-enchanted-hammer-of-fast-forward",
+      "book": 5,
+      "chapter": 62,
+      "position": 0.583333,
+      "confidence": "verified",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-imani-open"
+        ],
+        "outcomeType": "item",
+        "occurrenceDetail": "Previously received, now identified; intended for Donut, transfer time unstated."
+      },
+      "progress": 0.42708333
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-imani-tier",
+      "subject": "Imani C.",
+      "name": "Silver Benefactor Box identified",
+      "source": "b5-c62-p44",
+      "summary": "Silver Benefactor Box identified",
+      "acquisition": {
+        "stage": "identified",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-imani-open"
+        ],
+        "boxId": "imani-apothecary-hammer",
+        "boxKind": "Benefactor",
+        "boxTier": "Silver"
+      },
+      "book": 5,
+      "chapter": 62,
+      "position": 0.611111,
+      "progress": 0.42714218
+    },
+    {
+      "source": "b5-c64-p179",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Robe",
+      "summary": "Imani gives Ren a robe to cover herself after removing her flamethrower.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {},
+      "id": "imani-audit-b5-c64-p179-imani-c-item-robe",
+      "book": 5,
+      "chapter": 64,
+      "position": 0.785088,
+      "confidence": "verified",
+      "progress": 0.43174807
     },
     {
       "id": "series-5-65-katia-grim-level-55",
@@ -8625,6 +10563,29 @@
       "progress": 0.45378622
     },
     {
+      "source": "b5-c75-p80",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Healing wings",
+      "summary": "Imani heals Carl by wrapping him in her wings.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b5-c75-p80": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": "imani-audit-b5-c75-p80-imani-c-skill-healing-wings",
+      "book": 5,
+      "chapter": 75,
+      "position": 0.516129,
+      "confidence": "verified",
+      "progress": 0.45448332
+    },
+    {
       "id": "series-6-22-carl-level-65",
       "book": 6,
       "chapter": 22,
@@ -8653,6 +10614,38 @@
       "action": "set",
       "level": 57,
       "progress": 0.50083863
+    },
+    {
+      "source": "b6-c30-p32",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Addiction cures",
+      "summary": "Imani purchases two addiction cures and has administered the first to Katia.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {},
+      "id": "imani-audit-b6-c30-p32-imani-c-item-addiction-cures",
+      "book": 6,
+      "chapter": 30,
+      "position": 0.304762,
+      "confidence": "verified",
+      "progress": 0.51759483
+    },
+    {
+      "source": "b6-c30-p47",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Blitz treatment patch",
+      "summary": "Imani has the patch ready for Katia’s next treatment; the passage describes planned administration.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {},
+      "id": "imani-audit-b6-c30-p47-imani-c-item-blitz-treatment-patch",
+      "book": 6,
+      "chapter": 30,
+      "position": 0.447619,
+      "confidence": "verified",
+      "progress": 0.5178975
     },
     {
       "id": "series-6-39-carl-level-68",
@@ -8700,6 +10693,56 @@
       "progress": 0.53612846
     },
     {
+      "source": "b6-c52-p74",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Amhuluk totem",
+      "summary": "Imani’s Amhuluk totem casts a poison cloud. This is the totem’s attack, not a native spell attributed to Imani.",
+      "action": "note",
+      "historyOnly": true,
+      "evidenceSentences": {},
+      "id": "imani-audit-b6-c52-p74-imani-c-item-amhuluk-totem",
+      "book": 6,
+      "chapter": 52,
+      "position": 0.678899,
+      "confidence": "verified",
+      "progress": 0.56499767
+    },
+    {
+      "source": "b6-c54-p20",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Trap disarming",
+      "summary": "Imani successfully disables nail traps and a silent-alarm trap; no skill name or level is stated.",
+      "action": "note",
+      "evidenceSentences": {
+        "b6-c54-p20": [
+          1,
+          2
+        ]
+      },
+      "id": "imani-audit-b6-c54-p20-imani-c-story-trap-disarming",
+      "book": 6,
+      "chapter": 54,
+      "position": 0.168067,
+      "confidence": "verified",
+      "progress": 0.56815268
+    },
+    {
+      "source": "b6-c64-p41",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Floating observed",
+      "action": "note",
+      "summary": "Imani is explicitly seen floating. This records the observation, not the unknown time of acquisition.",
+      "id": "imani-audit-b6-c64-p41-imani-c-story-floating-observed",
+      "book": 6,
+      "chapter": 64,
+      "position": 0.336066,
+      "confidence": "verified",
+      "progress": 0.58969506
+    },
+    {
       "id": "series-6-65-elle-mcgib-level-72",
       "book": 6,
       "chapter": 65,
@@ -8713,6 +10756,24 @@
       "action": "set",
       "level": 72,
       "progress": 0.5920297
+    },
+    {
+      "source": "b6-c67-p2",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Card deck",
+      "summary": "Imani’s deck contains 15 cards; its first six are highlighted as totems.",
+      "action": "note",
+      "quantity": 15,
+      "unit": "cards",
+      "historyOnly": true,
+      "evidenceSentences": {},
+      "id": "imani-audit-b6-c67-p2-imani-c-item-card-deck",
+      "book": 6,
+      "chapter": 67,
+      "position": 0.014706,
+      "confidence": "verified",
+      "progress": 0.59537014
     },
     {
       "id": "series-6-72-carl-level-73",
@@ -8745,6 +10806,111 @@
       "progress": 0.60616125
     },
     {
+      "source": "b7-c12-p9",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Battlefield enhancement training",
+      "summary": "Imani trains battlefield enhancements with Mistress Tiatha in her upgraded magic room; no named spell acquisition is established.",
+      "action": "note",
+      "evidenceSentences": {
+        "b7-c12-p9": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": "imani-audit-b7-c12-p9-imani-c-story-battlefield-enhancement-training",
+      "book": 7,
+      "chapter": 12,
+      "position": 0.125,
+      "confidence": "verified",
+      "progress": 0.63162076
+    },
+    {
+      "source": "b7-c23-p29",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Total Ear Protection",
+      "summary": "Imani casts Total Ear Protection on Donut and Mongo.",
+      "action": "note",
+      "evidence": [
+        "b7-c23-p27",
+        "b7-c23-p28"
+      ],
+      "evidenceSentences": {
+        "b7-c23-p29": [
+          1
+        ],
+        "b7-c23-p28": [
+          1
+        ]
+      },
+      "id": "imani-audit-b7-c23-p29-imani-c-skill-total-ear-protection",
+      "book": 7,
+      "chapter": 23,
+      "position": 0.426471,
+      "confidence": "verified",
+      "progress": 0.65556456
+    },
+    {
+      "source": "b7-c47-p39",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Tripper",
+      "summary": "Imani confirms using Carl’s Tripper through Katia’s tattoo; her exact spell level is unstated.",
+      "action": "note",
+      "skillScope": "granted",
+      "evidence": [
+        "b7-c47-p38"
+      ],
+      "detail": "Temporary tattoo grant; exact level not stated.",
+      "evidenceSentences": {
+        "b7-c47-p39": [
+          1,
+          2,
+          3
+        ],
+        "b7-c47-p38": [
+          1
+        ]
+      },
+      "id": "imani-audit-b7-c47-p39-imani-c-skill-tripper-granted",
+      "book": 7,
+      "chapter": 47,
+      "position": 0.696429,
+      "confidence": "verified",
+      "progress": 0.70698396
+    },
+    {
+      "source": "b7-c47-p49",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Tripper",
+      "summary": "The tattoo-granted Tripper loses potency as Carl’s source spell recovers over four days. It can later be recharged with another potion.",
+      "action": "note",
+      "skillScope": "granted",
+      "evidence": [
+        "b7-c47-p48"
+      ],
+      "detail": "Temporary and fading over four days; later expiry time is not recorded.",
+      "evidenceSentences": {
+        "b7-c47-p48": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "id": "imani-audit-b7-c47-p49-imani-c-skill-tripper-granted",
+      "book": 7,
+      "chapter": 47,
+      "position": 0.875,
+      "confidence": "verified",
+      "progress": 0.70736229
+    },
+    {
       "id": "series-7-48-prepotente-level-99",
       "book": 7,
       "chapter": 48,
@@ -8758,6 +10924,21 @@
       "action": "set",
       "level": 99,
       "progress": 0.70773305
+    },
+    {
+      "source": "b7-c50-p33",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Persistent auras and Blessings",
+      "summary": "Imani has persistent wing-contact auras and toggleable healing/protection Blessings that consume mana while active.",
+      "action": "note",
+      "evidenceSentences": {},
+      "id": "imani-audit-b7-c50-p33-imani-c-story-persistent-auras-and-blessings",
+      "book": 7,
+      "chapter": 50,
+      "position": 0.39759,
+      "confidence": "verified",
+      "progress": 0.71270676
     },
     {
       "id": "series-7-51-carl-level-75",
@@ -8838,6 +11019,30 @@
       "progress": 0.7262382
     },
     {
+      "source": "b7-c64-p37",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Psionic protection limitation",
+      "summary": "Carl explicitly states that Imani lacks meaningful psionic protection.",
+      "action": "note",
+      "evidenceSentences": {
+        "b7-c64-p37": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "id": "imani-audit-b7-c64-p37-imani-c-story-psionic-protection-limitation",
+      "book": 7,
+      "chapter": 64,
+      "position": 0.637931,
+      "confidence": "verified",
+      "progress": 0.74287697
+    },
+    {
       "id": "series-7-64-prepotente-skill-group-psionic-protection-none",
       "book": 7,
       "chapter": 64,
@@ -8884,19 +11089,1819 @@
       "progress": 0.77011404
     },
     {
-      "id": "series-7-79-elle-mcgib-level-135",
+      "id": "series-7-79-princess-donut-level-135",
       "book": 7,
       "chapter": 79,
       "position": 0.747368,
       "type": "level",
-      "subject": "Elle McGib",
+      "subject": "Princess Donut",
       "name": "Character level",
-      "summary": "Elle McGib is explicitly confirmed at level 135.",
+      "summary": "Princess Donut is explicitly confirmed at level 135.",
       "source": "b7-c79-p71",
       "confidence": "verified",
       "action": "set",
       "level": 135,
       "progress": 0.77488849
+    },
+    {
+      "source": "b7-c80-p76",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Group shield",
+      "summary": "Imani protects Elle, Holger, and others with a shield unfamiliar to Carl.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {},
+      "id": "imani-audit-b7-c80-p76-imani-c-skill-group-shield",
+      "book": 7,
+      "chapter": 80,
+      "position": 0.791667,
+      "confidence": "verified",
+      "progress": 0.77710099
+    },
+    {
+      "source": "b8-c1-p76",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Heal Critter",
+      "summary": "Donut reports Heal Critter at level 15; her cloak supplies this spell level.",
+      "level": 15,
+      "skillScope": "equipment",
+      "action": "set",
+      "id": "b8-audit-b8-c1-p76-princess-donut-skill-heal-critter-equipment",
+      "book": 8,
+      "chapter": 1,
+      "position": 0.77551,
+      "confidence": "verified",
+      "progress": 0.79401591
+    },
+    {
+      "source": "b8-c1-p76",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Twinkle Toes",
+      "summary": "Princess Donut is confirmed to have Twinkle Toes.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c1-p76-princess-donut-skill-twinkle-toes-reported",
+      "book": 8,
+      "chapter": 1,
+      "position": 0.77551,
+      "confidence": "verified",
+      "progress": 0.79401591
+    },
+    {
+      "source": "b8-c4-p6",
+      "type": "level",
+      "subject": "Princess Donut",
+      "name": "Character level",
+      "summary": "Princess Donut is explicitly observed at level 135.",
+      "level": 135,
+      "action": "set",
+      "id": "b8-audit-b8-c4-p6-princess-donut-level-character-level",
+      "book": 8,
+      "chapter": 4,
+      "position": 0.074074,
+      "confidence": "verified",
+      "progress": 0.79888575
+    },
+    {
+      "source": "b8-c5-p17",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Sniper",
+      "summary": "Princess Donut is confirmed to have Sniper.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c5-p17-princess-donut-skill-sniper-reported",
+      "book": 8,
+      "chapter": 5,
+      "position": 0.149123,
+      "confidence": "verified",
+      "progress": 0.8011634
+    },
+    {
+      "source": "b8-c7-p8",
+      "type": "level",
+      "subject": "Mordecai",
+      "name": "Character level",
+      "summary": "Mordecai is explicitly observed at level 50.",
+      "level": 50,
+      "action": "set",
+      "id": "b8-audit-b8-c7-p8-mordecai-level-character-level",
+      "book": 8,
+      "chapter": 7,
+      "position": 0.140351,
+      "confidence": "verified",
+      "progress": 0.8053821
+    },
+    {
+      "source": "b8-c7-p26",
+      "type": "story",
+      "subject": "Mordecai",
+      "name": "Identity update",
+      "summary": "Mordecai: form — Shadow mimic in Moon Reaper form.",
+      "action": "note",
+      "profile": {
+        "form": "Shadow mimic in Moon Reaper form"
+      },
+      "id": "b8-audit-b8-c7-p26-mordecai-story-identity-update",
+      "book": 8,
+      "chapter": 7,
+      "position": 0.45614,
+      "confidence": "verified",
+      "progress": 0.80605114
+    },
+    {
+      "source": "b8-c7-p52",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Smoke Form",
+      "summary": "Princess Donut is confirmed to have Smoke Form.",
+      "level": null,
+      "skillScope": "class",
+      "action": "set",
+      "id": "b8-audit-b8-c7-p52-princess-donut-skill-smoke-form-class",
+      "book": 8,
+      "chapter": 7,
+      "position": 0.912281,
+      "confidence": "verified",
+      "progress": 0.80701754
+    },
+    {
+      "source": "b8-c7-p52",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Identity update",
+      "summary": "Princess Donut: class — Assassin of Sekhmet.",
+      "action": "note",
+      "profile": {
+        "class": "Assassin of Sekhmet"
+      },
+      "id": "b8-audit-b8-c7-p52-princess-donut-story-identity-update",
+      "book": 8,
+      "chapter": 7,
+      "position": 0.912281,
+      "confidence": "verified",
+      "progress": 0.80701754
+    },
+    {
+      "source": "b8-c7-p55",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Healer’s Grasp",
+      "summary": "Donut confirms a new healing aura from her assassin class; no numeric level is given.",
+      "level": null,
+      "skillScope": "class",
+      "action": "set",
+      "id": "b8-audit-b8-c7-p55-princess-donut-skill-healer-s-grasp-class",
+      "book": 8,
+      "chapter": 7,
+      "position": 0.964912,
+      "confidence": "verified",
+      "progress": 0.80712905
+    },
+    {
+      "source": "b8-c7-p57",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Oozy Form",
+      "summary": "Carl consumes the Oozy Form book and learns the spell. Its actual starting level is not stated.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c7-p57-carl-skill-oozy-form-reported",
+      "book": 8,
+      "chapter": 7,
+      "position": 1.0,
+      "confidence": "verified",
+      "progress": 0.80720339
+    },
+    {
+      "source": "b8-c8-p12",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "The Assassin’s Veil",
+      "summary": "Equipped veil provides +10% dexterity; the final dexterity total is unstated.",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "detail": "Equipped veil provides +10% dexterity; the final dexterity total is unstated.",
+      "id": "b8-audit-b8-c8-p12-princess-donut-item-the-assassin-s-veil",
+      "book": 8,
+      "chapter": 8,
+      "position": 0.173913,
+      "confidence": "verified",
+      "progress": 0.80757185
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-donut-godslayer-award",
+      "subject": "Princess Donut",
+      "name": "Celestial Godslayer Box",
+      "source": "b8-c8-p34",
+      "summary": "Celestial Godslayer Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-donut-war-crime"
+        ],
+        "boxId": "donut-celestial-godslayer",
+        "boxTier": "Celestial",
+        "boxKind": "Godslayer",
+        "quantity": 1,
+        "occurrenceDetail": "Awarded earlier; reported here."
+      },
+      "book": 8,
+      "chapter": 8,
+      "position": 0.492754,
+      "progress": 0.80824736
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-donut-slap-chop-award",
+      "subject": "Princess Donut",
+      "name": "Celestial Slap-Chop Box",
+      "source": "b8-c8-p34",
+      "summary": "Celestial Slap-Chop Box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "reward-donut-war-crime"
+        ],
+        "boxId": "donut-celestial-slap-chop",
+        "boxTier": "Celestial",
+        "boxKind": "Slap-Chop",
+        "quantity": 1,
+        "occurrenceDetail": "Awarded earlier; reported here."
+      },
+      "book": 8,
+      "chapter": 8,
+      "position": 0.492754,
+      "progress": 0.80824736
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-donut-war-crime",
+      "subject": "Princess Donut",
+      "name": "War Crime reward cause disclosed",
+      "source": "b8-c8-p34",
+      "summary": "War Crime reward cause disclosed",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "combat_achievement",
+        "reasonDetail": "War Crime spell attack",
+        "occurrenceDetail": "Retrospective award report; this is the reveal location."
+      },
+      "book": 8,
+      "chapter": 8,
+      "position": 0.492754,
+      "progress": 0.80824736
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-donut-slap-chop-open",
+      "subject": "Princess Donut",
+      "name": "Celestial Slap-Chop Box opened",
+      "source": "b8-c8-p57",
+      "summary": "Celestial Slap-Chop Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-slap-chop-award"
+        ],
+        "boxId": "donut-celestial-slap-chop",
+        "boxTier": "Celestial",
+        "boxKind": "Slap-Chop",
+        "quantity": 1
+      },
+      "book": 8,
+      "chapter": 8,
+      "position": 0.826087,
+      "progress": 0.80895357
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-donut-godslayer-open",
+      "subject": "Princess Donut",
+      "name": "Celestial Godslayer Box opened",
+      "source": "b8-c8-p61",
+      "summary": "Celestial Godslayer Box opened",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-godslayer-award"
+        ],
+        "boxId": "donut-celestial-godslayer",
+        "boxTier": "Celestial",
+        "boxKind": "Godslayer",
+        "quantity": 1
+      },
+      "book": 8,
+      "chapter": 8,
+      "position": 0.884058,
+      "progress": 0.80907639
+    },
+    {
+      "confidence": "verified",
+      "action": "note",
+      "type": "story",
+      "id": "reward-donut-celestial-boon",
+      "subject": "Princess Donut",
+      "name": "Permanent celestial claw boon",
+      "source": "b8-c9-p5",
+      "summary": "Godslayer box grants a permanent bodily boon affecting four claws; this is not a physical item.",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-godslayer-open"
+        ],
+        "outcomeType": "boon"
+      },
+      "book": 8,
+      "chapter": 9,
+      "position": 0.080645,
+      "progress": 0.80949289
+    },
+    {
+      "source": "b8-c9-p16",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Claw",
+      "summary": "Donut reports Claw at level 17 after receiving the celestial claw boon.",
+      "level": 17,
+      "skillScope": "boon",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p16-princess-donut-skill-claw-boon",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.258065,
+      "confidence": "verified",
+      "acquisition": {
+        "stage": "applied",
+        "sourceType": "boon",
+        "parentEventIds": [
+          "reward-donut-celestial-boon"
+        ],
+        "outcomeType": "skill_modifier"
+      },
+      "progress": 0.80986878
+    },
+    {
+      "source": "b8-c9-p22",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Celestial claw caps",
+      "summary": "Donut equips removable caps to cover the destructive celestial claws.",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "detail": "Donut equips removable caps to cover the destructive celestial claws.",
+      "id": "b8-audit-b8-c9-p22-princess-donut-item-celestial-claw-caps",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.354839,
+      "confidence": "verified",
+      "progress": 0.81007381
+    },
+    {
+      "source": "b8-c9-p26",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Ice Slick spell book",
+      "summary": "Special-edition Ice Slick book starts at level 5 and trains faster; learning is not yet shown.",
+      "action": "add",
+      "state": "carried",
+      "category": "Spell book",
+      "detail": "Special-edition Ice Slick book starts at level 5 and trains faster; learning is not yet shown.",
+      "id": "b8-audit-b8-c9-p26-princess-donut-item-ice-slick-spell-book",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.419355,
+      "confidence": "verified",
+      "progress": 0.8102105
+    },
+    {
+      "source": "b8-c9-p28",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Fae Scale Quadruped Crupper of the Fleet",
+      "summary": "Donut removes her old crupper, which had provided +2 dexterity.",
+      "action": "remove",
+      "state": "carried",
+      "category": "Equipment",
+      "detail": "Donut removes her old crupper, which had provided +2 dexterity.",
+      "id": "b8-audit-b8-c9-p28-princess-donut-item-enchanted-fae-scale-quadruped-crupper-of-the-fleet",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.451613,
+      "confidence": "verified",
+      "progress": 0.81027884
+    },
+    {
+      "source": "b8-c9-p54",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "The Crupper of the Benevolent Champion",
+      "summary": "The Crupper of the Benevolent Champion",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "detail": "Equipped matched set adds another 20% Constitution buff; no absolute Constitution total is stated.",
+      "id": "b8-audit-b8-c9-p54-princess-donut-item-the-crupper-of-the-benevolent-champion",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.870968,
+      "confidence": "verified",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "reward-donut-slap-chop-open"
+        ],
+        "outcomeType": "item"
+      },
+      "progress": 0.81116731
+    },
+    {
+      "source": "b8-c9-p55",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Find Weakened",
+      "summary": "The newly equipped matched crupper set raises Find Weakened to level 10.",
+      "level": 10,
+      "skillScope": "equipment",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p55-princess-donut-skill-find-weakened-equipment",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.887097,
+      "confidence": "verified",
+      "progress": 0.81120148
+    },
+    {
+      "source": "b8-c9-p59",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Bad Attitude",
+      "summary": "Donut confirms Bad Attitude has been raised to level 15 by her cloak.",
+      "level": 15,
+      "skillScope": "equipment",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p59-princess-donut-skill-bad-attitude-equipment",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.951613,
+      "confidence": "verified",
+      "progress": 0.81133816
+    },
+    {
+      "source": "b8-c9-p59",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Heal Critter",
+      "summary": "Donut confirms Heal Critter has been raised to level 15 by her cloak.",
+      "level": 15,
+      "skillScope": "equipment",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p59-princess-donut-skill-heal-critter-equipment",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.951613,
+      "confidence": "verified",
+      "progress": 0.81133816
+    },
+    {
+      "source": "b8-c9-p59",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Puddle Jumper",
+      "summary": "Donut confirms Puddle Jumper has been raised to level 15 by her cloak.",
+      "level": 15,
+      "skillScope": "equipment",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p59-princess-donut-skill-puddle-jumper-equipment",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.951613,
+      "confidence": "verified",
+      "progress": 0.81133816
+    },
+    {
+      "source": "b8-c9-p59",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Wall of Fire",
+      "summary": "Donut confirms Wall of Fire has been raised to level 15 by her cloak.",
+      "level": 15,
+      "skillScope": "equipment",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p59-princess-donut-skill-wall-of-fire-equipment",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.951613,
+      "confidence": "verified",
+      "progress": 0.81133816
+    },
+    {
+      "source": "b8-c9-p60",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Bad Attitude",
+      "summary": "Brain Trust makes the level-15 Bad Attitude cast at effective level 16; this is not base training.",
+      "level": 16,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p60-princess-donut-skill-bad-attitude-effective",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.967742,
+      "confidence": "verified",
+      "progress": 0.81137233
+    },
+    {
+      "source": "b8-c9-p60",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Brain Trust",
+      "summary": "Brain Trust adds one effective casting level to Donut’s spells; its own numeric skill level is not given.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p60-princess-donut-skill-brain-trust-reported",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.967742,
+      "confidence": "verified",
+      "progress": 0.81137233
+    },
+    {
+      "source": "b8-c9-p60",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Heal Critter",
+      "summary": "Brain Trust makes the level-15 Heal Critter cast at effective level 16; this is not base training.",
+      "level": 16,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p60-princess-donut-skill-heal-critter-effective",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.967742,
+      "confidence": "verified",
+      "progress": 0.81137233
+    },
+    {
+      "source": "b8-c9-p60",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Puddle Jumper",
+      "summary": "Brain Trust makes the level-15 Puddle Jumper cast at effective level 16; this is not base training.",
+      "level": 16,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p60-princess-donut-skill-puddle-jumper-effective",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.967742,
+      "confidence": "verified",
+      "progress": 0.81137233
+    },
+    {
+      "source": "b8-c9-p60",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Wall of Fire",
+      "summary": "Brain Trust makes the level-15 Wall of Fire cast at effective level 16; this is not base training.",
+      "level": 16,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p60-princess-donut-skill-wall-of-fire-effective",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.967742,
+      "confidence": "verified",
+      "progress": 0.81137233
+    },
+    {
+      "source": "b8-c9-p61",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Puddle Jumper",
+      "summary": "The chosen level-16 Puddle Jumper casts at 17 with the explicitly confirmed Brain Trust modifier.",
+      "level": 17,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p61-princess-donut-skill-puddle-jumper-effective",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.983871,
+      "confidence": "verified",
+      "progress": 0.81140651
+    },
+    {
+      "source": "b8-c9-p61",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Puddle Jumper",
+      "summary": "Donut chooses Puddle Jumper for the matched-set upgrade and confirms level 16.",
+      "level": 16,
+      "skillScope": "equipment",
+      "action": "set",
+      "id": "b8-audit-b8-c9-p61-princess-donut-skill-puddle-jumper-equipment",
+      "book": 8,
+      "chapter": 9,
+      "position": 0.983871,
+      "confidence": "verified",
+      "progress": 0.81140651
+    },
+    {
+      "source": "b8-c13-p37",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Mind Balance",
+      "summary": "Carl is confirmed to have Mind Balance.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c13-p37-carl-skill-mind-balance-reported",
+      "book": 8,
+      "chapter": 13,
+      "position": 0.578125,
+      "confidence": "verified",
+      "progress": 0.81902145
+    },
+    {
+      "source": "b8-c13-p37",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Love Vampire",
+      "summary": "Princess Donut is confirmed to have Love Vampire.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c13-p37-princess-donut-skill-love-vampire-reported",
+      "book": 8,
+      "chapter": 13,
+      "position": 0.578125,
+      "confidence": "verified",
+      "progress": 0.81902145
+    },
+    {
+      "source": "b8-c19-p5",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Shield",
+      "summary": "Princess Donut is confirmed to have Shield.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c19-p5-princess-donut-skill-shield-reported",
+      "book": 8,
+      "chapter": 19,
+      "position": 0.098039,
+      "confidence": "verified",
+      "progress": 0.83071618
+    },
+    {
+      "source": "b8-c19-p33",
+      "type": "level",
+      "subject": "Penelope",
+      "name": "Character level",
+      "summary": "Penelope is explicitly observed at level 5.",
+      "level": 5,
+      "action": "set",
+      "id": "b8-audit-b8-c19-p33-penelope-level-character-level",
+      "book": 8,
+      "chapter": 19,
+      "position": 0.647059,
+      "confidence": "verified",
+      "progress": 0.83187936
+    },
+    {
+      "source": "b8-c19-p33",
+      "type": "party",
+      "subject": "Penelope",
+      "name": "Roster relationship",
+      "summary": "Penelope is known as known racing mount.",
+      "action": "join",
+      "relationship": "Known racing mount",
+      "id": "b8-audit-b8-c19-p33-penelope-party-roster-relationship",
+      "book": 8,
+      "chapter": 19,
+      "position": 0.647059,
+      "confidence": "verified",
+      "progress": 0.83187936
+    },
+    {
+      "source": "b8-c21-p28",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Emergency Gremlin scroll",
+      "summary": "Imani has already used an Emergency Gremlin scroll; the exact time of use is not given.",
+      "action": "note",
+      "evidence": [
+        "b8-c21-p15"
+      ],
+      "historyOnly": true,
+      "evidenceSentences": {
+        "b8-c21-p28": [
+          1,
+          2
+        ],
+        "b8-c21-p15": [
+          1,
+          2,
+          3
+        ]
+      },
+      "id": "imani-audit-b8-c21-p28-imani-c-item-emergency-gremlin-scroll",
+      "book": 8,
+      "chapter": 21,
+      "position": 0.217054,
+      "confidence": "verified",
+      "progress": 0.83520562
+    },
+    {
+      "source": "b8-c21-p66",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Jump",
+      "summary": "The currently worn kangaroo costume grants Jump at level 10; it is not a permanent trained skill.",
+      "level": 10,
+      "skillScope": "equipment",
+      "action": "set",
+      "id": "b8-audit-b8-c21-p66-carl-skill-jump-equipment",
+      "book": 8,
+      "chapter": 21,
+      "position": 0.511628,
+      "confidence": "verified",
+      "progress": 0.83582972
+    },
+    {
+      "source": "b8-c21-p67",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Juvenile Macropus Dominus Skin",
+      "summary": "Carl is wearing a timed kangaroo costume granting Jump 10 and a five-level Lotion Application bonus.",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Costume",
+      "id": "b8-audit-b8-c21-p67-carl-item-enchanted-juvenile-macropus-dominus-skin",
+      "book": 8,
+      "chapter": 21,
+      "position": 0.51938,
+      "confidence": "verified",
+      "progress": 0.83584614
+    },
+    {
+      "source": "b8-c21-p67",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Lotion Application",
+      "summary": "The worn kangaroo costume adds five Lotion Application levels; the resulting total is not stated.",
+      "skillScope": "equipment",
+      "level": null,
+      "levelDelta": 5,
+      "action": "delta",
+      "id": "b8-audit-b8-c21-p67-carl-skill-lotion-application-equipment",
+      "book": 8,
+      "chapter": 21,
+      "position": 0.51938,
+      "confidence": "verified",
+      "progress": 0.83584614
+    },
+    {
+      "source": "b8-c22-p5",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Costume skill",
+      "summary": "Carl is confirmed to have Costume skill at level 6.",
+      "level": 6,
+      "skillScope": "reported",
+      "action": "set",
+      "skillId": "carl-costume",
+      "id": "b8-audit-b8-c22-p5-carl-skill-costume-skill-reported",
+      "book": 8,
+      "chapter": 22,
+      "position": 0.102041,
+      "confidence": "verified",
+      "progress": 0.8370806
+    },
+    {
+      "source": "b8-c22-p11",
+      "type": "level",
+      "subject": "Carl",
+      "name": "Character level",
+      "summary": "Carl is explicitly observed at level 84.",
+      "level": 84,
+      "action": "set",
+      "id": "b8-audit-b8-c22-p11-carl-level-character-level",
+      "book": 8,
+      "chapter": 22,
+      "position": 0.22449,
+      "confidence": "verified",
+      "progress": 0.83734002
+    },
+    {
+      "source": "b8-c23-p92",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Escape Plan",
+      "summary": "Carl is confirmed to have Escape Plan.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c23-p92-carl-skill-escape-plan-reported",
+      "book": 8,
+      "chapter": 23,
+      "position": 0.968421,
+      "confidence": "verified",
+      "progress": 0.84103479
+    },
+    {
+      "source": "b8-c25-p16",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Fursona",
+      "summary": "Carl’s costume skill is named Fursona and the system confirms level 8. The earlier level-5 reference is retrospective.",
+      "level": 8,
+      "skillScope": "reported",
+      "action": "set",
+      "skillId": "carl-costume",
+      "id": "b8-audit-b8-c25-p16-carl-skill-fursona-reported",
+      "book": 8,
+      "chapter": 25,
+      "position": 0.192771,
+      "confidence": "verified",
+      "progress": 0.84362875
+    },
+    {
+      "source": "b8-c25-p17",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Yiffing",
+      "summary": "The Fursona level-8 notification unlocks Yiffing; no numeric level is given.",
+      "level": null,
+      "skillScope": "unlock",
+      "action": "set",
+      "id": "b8-audit-b8-c25-p17-carl-skill-yiffing-unlock",
+      "book": 8,
+      "chapter": 25,
+      "position": 0.204819,
+      "confidence": "verified",
+      "progress": 0.84365428
+    },
+    {
+      "source": "b8-c25-p52",
+      "type": "story",
+      "subject": "Carl",
+      "name": "Temporary class",
+      "summary": "Carl gains the Fursuiter class only while wearing corpse suits; its benefits expire when the suit is removed.",
+      "action": "note",
+      "id": "b8-audit-b8-c25-p52-carl-story-temporary-class",
+      "book": 8,
+      "chapter": 25,
+      "position": 0.626506,
+      "confidence": "verified",
+      "progress": 0.84454768
+    },
+    {
+      "source": "b8-c25-p74",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Contingency",
+      "summary": "Carl drinks the Platinum Hotlist Expansion potion and unlocks Contingency, with 25 hotlist slots and up to ten automations.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c25-p74-carl-skill-contingency-reported",
+      "book": 8,
+      "chapter": 25,
+      "position": 0.891566,
+      "confidence": "verified",
+      "progress": 0.84510925
+    },
+    {
+      "source": "b8-c25-p76",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Heart Balance",
+      "summary": "Carl is confirmed to have Heart Balance.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c25-p76-carl-skill-heart-balance-reported",
+      "book": 8,
+      "chapter": 25,
+      "position": 0.915663,
+      "confidence": "verified",
+      "progress": 0.8451603
+    },
+    {
+      "source": "b8-c30-p67",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Laundry Day",
+      "summary": "Princess Donut is confirmed to have Laundry Day.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c30-p67-princess-donut-skill-laundry-day-reported",
+      "book": 8,
+      "chapter": 30,
+      "position": 0.77907,
+      "confidence": "verified",
+      "progress": 0.85546413
+    },
+    {
+      "source": "b8-c32-p34",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Temporary Macaroni",
+      "summary": "Donut’s level-14 Temporary Macaroni is explicitly enhanced to effective level 15.",
+      "level": 15,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "b8-audit-b8-c32-p34-princess-donut-skill-temporary-macaroni-effective",
+      "book": 8,
+      "chapter": 32,
+      "position": 0.336634,
+      "confidence": "verified",
+      "progress": 0.85876406
+    },
+    {
+      "source": "b8-c32-p34",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Temporary Macaroni",
+      "summary": "Donut has acquired and cast Temporary Macaroni; its supplied casting level is 14, before enhancement.",
+      "level": 14,
+      "skillScope": "granted",
+      "action": "set",
+      "id": "b8-audit-b8-c32-p34-princess-donut-skill-temporary-macaroni-granted",
+      "book": 8,
+      "chapter": 32,
+      "position": 0.336634,
+      "confidence": "verified",
+      "progress": 0.85876406
+    },
+    {
+      "source": "b8-c34-p2",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Juvenile Macropus Dominus Skin",
+      "summary": "The timed kangaroo costume is gone; Carl can resume his foot routine.",
+      "action": "remove",
+      "category": "Costume",
+      "id": "b8-audit-b8-c34-p2-carl-item-enchanted-juvenile-macropus-dominus-skin",
+      "book": 8,
+      "chapter": 34,
+      "position": 0.051282,
+      "confidence": "verified",
+      "progress": 0.86239678
+    },
+    {
+      "source": "b8-c34-p2",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Jump",
+      "summary": "The costume-granted Jump skill ends when the costume is gone.",
+      "action": "remove",
+      "skillScope": "equipment",
+      "level": null,
+      "id": "b8-audit-b8-c34-p2-carl-skill-jump-equipment",
+      "book": 8,
+      "chapter": 34,
+      "position": 0.051282,
+      "confidence": "verified",
+      "progress": 0.86239678
+    },
+    {
+      "source": "b8-c34-p2",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Lotion Application",
+      "summary": "The costume-granted five-level bonus ends; no permanent trained total is inferred.",
+      "action": "remove",
+      "skillScope": "equipment",
+      "level": null,
+      "id": "b8-audit-b8-c34-p2-carl-skill-lotion-application-equipment",
+      "book": 8,
+      "chapter": 34,
+      "position": 0.051282,
+      "confidence": "verified",
+      "progress": 0.86239678
+    },
+    {
+      "source": "b8-c37-p68",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Anti-magic protection",
+      "summary": "Imani is directed to cast an anti-magic shield during the interrogation; no formal spell name or level is stated.",
+      "action": "note",
+      "id": "b8-audit-b8-c37-p68-imani-c-story-anti-magic-protection",
+      "book": 8,
+      "chapter": 37,
+      "position": 0.918919,
+      "confidence": "verified",
+      "progress": 0.87059093
+    },
+    {
+      "source": "b8-c40-p44",
+      "type": "level",
+      "subject": "Osvaldo",
+      "name": "Character level",
+      "summary": "Osvaldo is explicitly observed at level 72.",
+      "level": 72,
+      "action": "set",
+      "id": "b8-audit-b8-c40-p44-osvaldo-level-character-level",
+      "book": 8,
+      "chapter": 40,
+      "position": 0.698413,
+      "confidence": "verified",
+      "progress": 0.87647969
+    },
+    {
+      "source": "b8-c40-p44",
+      "type": "party",
+      "subject": "Osvaldo",
+      "name": "Roster relationship",
+      "summary": "Osvaldo is known as recurring crawler.",
+      "action": "join",
+      "relationship": "Recurring crawler",
+      "id": "b8-audit-b8-c40-p44-osvaldo-party-roster-relationship",
+      "book": 8,
+      "chapter": 40,
+      "position": 0.698413,
+      "confidence": "verified",
+      "progress": 0.87647969
+    },
+    {
+      "source": "b8-c43-p22",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Astral Paw",
+      "summary": "Princess Donut is confirmed to have Astral Paw.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c43-p22-princess-donut-skill-astral-paw-reported",
+      "book": 8,
+      "chapter": 43,
+      "position": 0.26506,
+      "confidence": "verified",
+      "progress": 0.8819175
+    },
+    {
+      "source": "b8-c44-p4",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Fresh into Salt",
+      "summary": "Donut uses Fresh into Salt, granted by her Champion of Nekhebit title.",
+      "level": null,
+      "skillScope": "class",
+      "action": "set",
+      "id": "b8-audit-b8-c44-p4-princess-donut-skill-fresh-into-salt-class",
+      "book": 8,
+      "chapter": 44,
+      "position": 0.057143,
+      "confidence": "verified",
+      "progress": 0.88359564
+    },
+    {
+      "source": "b8-c44-p55",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Hover",
+      "summary": "Princess Donut is confirmed to have Hover.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c44-p55-princess-donut-skill-hover-reported",
+      "book": 8,
+      "chapter": 44,
+      "position": 0.785714,
+      "confidence": "verified",
+      "progress": 0.88513922
+    },
+    {
+      "source": "b8-c46-p21",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "All Eyes on Me",
+      "summary": "Donut’s high charisma allows All Eyes on Me to work with speech instead of singing; no stat total is given.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c46-p21-princess-donut-skill-all-eyes-on-me-reported",
+      "book": 8,
+      "chapter": 46,
+      "position": 0.677419,
+      "confidence": "verified",
+      "progress": 0.88914707
+    },
+    {
+      "source": "b8-c48-p7",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Second Chance",
+      "summary": "Second Chance is explicitly level 11 before Brain Trust.",
+      "level": 11,
+      "skillScope": "base",
+      "action": "set",
+      "id": "b8-audit-b8-c48-p7-princess-donut-skill-second-chance-base",
+      "book": 8,
+      "chapter": 48,
+      "position": 0.142857,
+      "confidence": "verified",
+      "progress": 0.89225182
+    },
+    {
+      "source": "b8-c48-p7",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Second Chance",
+      "summary": "Brain Trust increases Second Chance from 11 to an effective casting level of 12.",
+      "level": 12,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "b8-audit-b8-c48-p7-princess-donut-skill-second-chance-effective",
+      "book": 8,
+      "chapter": 48,
+      "position": 0.142857,
+      "confidence": "verified",
+      "progress": 0.89225182
+    },
+    {
+      "source": "b8-c50-p28",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Gutter Bumper",
+      "summary": "Carl has consumed the page granting Gutter Bumper. The page identifies its casting level as 9.",
+      "level": 9,
+      "skillScope": "granted",
+      "action": "set",
+      "evidence": [
+        "b8-c49-p14",
+        "b8-c50-p28"
+      ],
+      "id": "b8-audit-b8-c50-p28-carl-skill-gutter-bumper-granted",
+      "book": 8,
+      "chapter": 50,
+      "position": 0.373333,
+      "confidence": "verified",
+      "progress": 0.8969774
+    },
+    {
+      "source": "b8-c50-p32",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Ice Slick",
+      "summary": "Donut casts Ice Slick. The earlier book listed a starting level of 5, but the level of this cast is not stated.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b8-c9-p26",
+        "b8-c50-p32"
+      ],
+      "id": "b8-audit-b8-c50-p32-princess-donut-skill-ice-slick-reported",
+      "book": 8,
+      "chapter": 50,
+      "position": 0.426667,
+      "confidence": "verified",
+      "progress": 0.8970904
+    },
+    {
+      "source": "b8-c50-p46",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Summon Ye, Vermin",
+      "summary": "Princess Donut is confirmed to have Summon Ye, Vermin.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c50-p46-princess-donut-skill-summon-ye-vermin-reported",
+      "book": 8,
+      "chapter": 50,
+      "position": 0.613333,
+      "confidence": "verified",
+      "progress": 0.89748587
+    },
+    {
+      "source": "b8-c58-p48",
+      "type": "story",
+      "subject": "Carl",
+      "name": "Razzmatazz training offer",
+      "summary": "Porky offers several free Razzmatazz skill levels. Neither completion nor a resulting level is shown, so no increase is assigned.",
+      "action": "note",
+      "id": "b8-audit-b8-c58-p48-carl-story-razzmatazz-training-offer",
+      "book": 8,
+      "chapter": 58,
+      "position": 0.666667,
+      "confidence": "verified",
+      "progress": 0.91454802
+    },
+    {
+      "source": "b8-c59-p20",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Hole",
+      "summary": "Princess Donut is confirmed to have Hole.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c59-p20-princess-donut-skill-hole-reported",
+      "book": 8,
+      "chapter": 59,
+      "position": 0.253165,
+      "confidence": "verified",
+      "progress": 0.9157906
+    },
+    {
+      "source": "b8-c59-p43",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Sluggish",
+      "summary": "The plan assigns Imani a Sluggish debuff. This records a reported ability, not a completed cast.",
+      "action": "note",
+      "confidence": "partial",
+      "detail": "Planned cast only; the scene later prevents it.",
+      "evidenceSentences": {},
+      "id": "imani-audit-b8-c59-p43-imani-c-skill-sluggish",
+      "book": 8,
+      "chapter": 59,
+      "position": 0.544304,
+      "progress": 0.91640742
+    },
+    {
+      "source": "b8-c63-p31",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Big-Ass Magnet",
+      "summary": "Donut has consumed the page granting Big-Ass Magnet; the page gives casting level 14.",
+      "level": 14,
+      "skillScope": "granted",
+      "action": "set",
+      "evidence": [
+        "b8-c62-p22",
+        "b8-c63-p31"
+      ],
+      "id": "b8-audit-b8-c63-p31-princess-donut-skill-big-ass-magnet-granted",
+      "book": 8,
+      "chapter": 63,
+      "position": 0.397436,
+      "confidence": "verified",
+      "progress": 0.92457084
+    },
+    {
+      "source": "b8-c64-p37",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Puddle Jumper",
+      "summary": "A cast of Puddle Jumper is explicitly described at effective level 17.",
+      "level": 17,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "b8-audit-b8-c64-p37-princess-donut-skill-puddle-jumper-effective",
+      "book": 8,
+      "chapter": 64,
+      "position": 0.493333,
+      "confidence": "verified",
+      "progress": 0.92689265
+    },
+    {
+      "source": "b8-c70-p48",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Cockroach",
+      "summary": "Carl is confirmed to have Cockroach.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c70-p48-carl-skill-cockroach-reported",
+      "book": 8,
+      "chapter": 70,
+      "position": 0.979592,
+      "confidence": "verified",
+      "progress": 0.94063473
+    },
+    {
+      "source": "b8-c71-p51",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Heat protection observed",
+      "summary": "Imani can stand against Chris despite his heat. The narrator cannot tell whether the protection comes from a skill, charm, or item.",
+      "action": "note",
+      "evidenceSentences": {
+        "b8-c71-p51": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "id": "imani-audit-b8-c71-p51-imani-c-story-heat-protection-observed",
+      "book": 8,
+      "chapter": 71,
+      "position": 0.708333,
+      "confidence": "verified",
+      "progress": 0.94217867
+    },
+    {
+      "source": "b8-c75-p2",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Find Traps",
+      "summary": "Carl is confirmed to have Find Traps.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c75-p2-carl-skill-find-traps-reported",
+      "book": 8,
+      "chapter": 75,
+      "position": 0.027778,
+      "confidence": "verified",
+      "progress": 0.94921139
+    },
+    {
+      "source": "b8-c76-p10",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Confuzzled",
+      "summary": "Imani reports casting Confuzzled on the room, stunning the bugs; no spell level is stated.",
+      "action": "note",
+      "evidenceSentences": {
+        "b8-c76-p10": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "id": "imani-audit-b8-c76-p10-imani-c-skill-confuzzled",
+      "book": 8,
+      "chapter": 76,
+      "position": 0.114943,
+      "confidence": "verified",
+      "progress": 0.95151471
+    },
+    {
+      "source": "b8-c80-p23",
+      "type": "skill",
+      "subject": "Osvaldo",
+      "name": "Deflector",
+      "summary": "Osvaldo is confirmed to have Deflector.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c80-p23-osvaldo-skill-deflector-reported",
+      "book": 8,
+      "chapter": 80,
+      "position": 0.323944,
+      "confidence": "verified",
+      "progress": 0.96043208
+    },
+    {
+      "source": "b8-c80-p23",
+      "type": "skill",
+      "subject": "Osvaldo",
+      "name": "Jump",
+      "summary": "Osvaldo is confirmed to have Jump at level 15.",
+      "level": 15,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c80-p23-osvaldo-skill-jump-reported",
+      "book": 8,
+      "chapter": 80,
+      "position": 0.323944,
+      "confidence": "verified",
+      "progress": 0.96043208
+    },
+    {
+      "source": "b8-c80-p23",
+      "type": "stat",
+      "subject": "Osvaldo",
+      "name": "DEX observation",
+      "summary": "Osvaldo’s displayed dexterity is 285 with active buffs; this is not an unmodified base stat.",
+      "stats": {
+        "DEX": 285
+      },
+      "statScopes": {
+        "DEX": "temporary"
+      },
+      "action": "merge",
+      "id": "b8-audit-b8-c80-p23-osvaldo-stat-dex-observation",
+      "book": 8,
+      "chapter": 80,
+      "position": 0.323944,
+      "confidence": "verified",
+      "progress": 0.96043208
+    },
+    {
+      "source": "b8-c80-p25",
+      "type": "skill",
+      "subject": "Osvaldo",
+      "name": "Launch",
+      "summary": "Osvaldo is confirmed to have Launch at level 14.",
+      "level": 14,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c80-p25-osvaldo-skill-launch-reported",
+      "book": 8,
+      "chapter": 80,
+      "position": 0.352113,
+      "confidence": "verified",
+      "progress": 0.96049176
+    },
+    {
+      "source": "b8-c80-p25",
+      "type": "skill",
+      "subject": "Osvaldo",
+      "name": "Puddle Jump",
+      "summary": "Osvaldo is confirmed to have Puddle Jump at level 8.",
+      "level": 8,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c80-p25-osvaldo-skill-puddle-jump-reported",
+      "book": 8,
+      "chapter": 80,
+      "position": 0.352113,
+      "confidence": "verified",
+      "progress": 0.96049176
+    },
+    {
+      "source": "b8-c80-p25",
+      "type": "skill",
+      "subject": "Osvaldo",
+      "name": "Super Speedster",
+      "summary": "Osvaldo is confirmed to have Super Speedster.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c80-p25-osvaldo-skill-super-speedster-reported",
+      "book": 8,
+      "chapter": 80,
+      "position": 0.352113,
+      "confidence": "verified",
+      "progress": 0.96049176
+    },
+    {
+      "source": "b8-c84-p51",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Slugpox cure",
+      "summary": "Imani casts a spell and the system confirms that Carl is cured of Slugpox.",
+      "action": "note",
+      "evidence": [
+        "b8-c84-p50"
+      ],
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b8-c84-p51": [
+          1
+        ],
+        "b8-c84-p50": [
+          1,
+          2
+        ]
+      },
+      "id": "imani-audit-b8-c84-p51-imani-c-skill-slugpox-cure",
+      "book": 8,
+      "chapter": 84,
+      "position": 0.894737,
+      "confidence": "verified",
+      "progress": 0.97011597
+    },
+    {
+      "source": "b8-c85-p78",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Examine Portal",
+      "summary": "Carl is confirmed to have Examine Portal.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c85-p78-carl-skill-examine-portal-reported",
+      "book": 8,
+      "chapter": 85,
+      "position": 0.513158,
+      "confidence": "verified",
+      "progress": 0.97142618
+    },
+    {
+      "source": "b8-c86-p34",
+      "type": "skill",
+      "subject": "Imani C.",
+      "name": "Stupefying blast",
+      "summary": "Imani casts a stupefying blast across the room. Its name is not stated, so it is not assumed to be Confuzzled.",
+      "action": "note",
+      "detail": "Descriptive label; formal ability name unknown.",
+      "evidenceSentences": {
+        "b8-c86-p34": [
+          1,
+          2
+        ]
+      },
+      "id": "imani-audit-b8-c86-p34-imani-c-skill-stupefying-blast",
+      "book": 8,
+      "chapter": 86,
+      "position": 0.576271,
+      "confidence": "verified",
+      "progress": 0.97367854
+    },
+    {
+      "source": "b8-c88-p64",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Cockroach",
+      "summary": "Donut selects the Gurkha class whose stated benefits include boosting Cockroach to level 15.",
+      "level": 15,
+      "skillScope": "class",
+      "action": "set",
+      "evidence": [
+        "b8-c88-p56",
+        "b8-c88-p64"
+      ],
+      "id": "b8-audit-b8-c88-p64-princess-donut-skill-cockroach-class",
+      "book": 8,
+      "chapter": 88,
+      "position": 0.528926,
+      "confidence": "verified",
+      "progress": 0.97781552
+    },
+    {
+      "source": "b8-c88-p64",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Identity update",
+      "summary": "Princess Donut: class — Elite Gurkha Warrior, subclass — Perpetual Tank.",
+      "action": "note",
+      "profile": {
+        "class": "Elite Gurkha Warrior",
+        "subclass": "Perpetual Tank"
+      },
+      "id": "b8-audit-b8-c88-p64-princess-donut-story-identity-update",
+      "book": 8,
+      "chapter": 88,
+      "position": 0.528926,
+      "confidence": "verified",
+      "progress": 0.97781552
+    },
+    {
+      "source": "b8-c89-p21",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Tome of Gatekeeper",
+      "summary": "Donut has the Gatekeeper book but has not read it; its spell cannot be used until floor 12.",
+      "action": "add",
+      "state": "carried",
+      "category": "Spell book",
+      "detail": "Donut has the Gatekeeper book but has not read it; its spell cannot be used until floor 12.",
+      "id": "b8-audit-b8-c89-p21-princess-donut-item-tome-of-gatekeeper",
+      "book": 8,
+      "chapter": 89,
+      "position": 0.3,
+      "confidence": "verified",
+      "progress": 0.97944915
+    },
+    {
+      "source": "b8-c90-p7",
+      "type": "item",
+      "subject": "Mongo",
+      "name": "Kukri claw caps",
+      "summary": "Mongo receives foot claw caps that improve slicing; no numeric skill value is stated.",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "detail": "Mongo receives foot claw caps that improve slicing; no numeric skill value is stated.",
+      "id": "b8-audit-b8-c90-p7-mongo-item-kukri-claw-caps",
+      "book": 8,
+      "chapter": 90,
+      "position": 0.159091,
+      "confidence": "verified",
+      "progress": 0.98126926
+    },
+    {
+      "source": "b8-c90-p10",
+      "type": "item",
+      "subject": "Samantha",
+      "name": "Gurkha hat",
+      "summary": "The worn hat increases several unnamed melee skills by three levels; their individual totals are unstated.",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "detail": "The worn hat increases several unnamed melee skills by three levels; their individual totals are unstated.",
+      "id": "b8-audit-b8-c90-p10-samantha-item-gurkha-hat",
+      "book": 8,
+      "chapter": 90,
+      "position": 0.227273,
+      "confidence": "verified",
+      "progress": 0.98141371
+    },
+    {
+      "source": "b8-c90-p11",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Sprout Forest",
+      "summary": "Princess Donut is confirmed to have Sprout Forest.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c90-p11-princess-donut-skill-sprout-forest-reported",
+      "book": 8,
+      "chapter": 90,
+      "position": 0.25,
+      "confidence": "verified",
+      "progress": 0.98146186
+    },
+    {
+      "source": "b8-c94-p59",
+      "type": "level",
+      "subject": "Penelope",
+      "name": "Character level",
+      "summary": "Penelope is explicitly observed at level 10.",
+      "level": 10,
+      "action": "set",
+      "id": "b8-audit-b8-c94-p59-penelope-level-character-level",
+      "book": 8,
+      "chapter": 94,
+      "position": 0.728395,
+      "confidence": "verified",
+      "progress": 0.99094999
+    },
+    {
+      "source": "b8-c94-p61",
+      "type": "story",
+      "subject": "Penelope",
+      "name": "Identity update",
+      "summary": "Penelope: race — Yorkshire Pig, class — Not yet assigned.",
+      "action": "note",
+      "profile": {
+        "race": "Yorkshire Pig",
+        "class": "Not yet assigned"
+      },
+      "id": "b8-audit-b8-c94-p61-penelope-story-identity-update",
+      "book": 8,
+      "chapter": 94,
+      "position": 0.753086,
+      "confidence": "verified",
+      "progress": 0.9910023
+    },
+    {
+      "source": "b8-c94-p62",
+      "type": "party",
+      "subject": "Penelope",
+      "name": "Roster relationship",
+      "summary": "Penelope is known as party member.",
+      "action": "join",
+      "relationship": "Party member",
+      "id": "b8-audit-b8-c94-p62-penelope-party-roster-relationship",
+      "book": 8,
+      "chapter": 94,
+      "position": 0.765432,
+      "confidence": "verified",
+      "progress": 0.99102846
+    },
+    {
+      "source": "b8-c95-p6",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Gloom Wraith Phase",
+      "summary": "Carl activates Gloom Wraith Phase and its level is explicitly given as 13.",
+      "level": 13,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "b8-audit-b8-c95-p6-carl-skill-gloom-wraith-phase-reported",
+      "book": 8,
+      "chapter": 95,
+      "position": 0.044118,
+      "confidence": "verified",
+      "progress": 0.99161889
+    },
+    {
+      "source": "b8-c95-p39",
+      "type": "story",
+      "subject": "Carl",
+      "name": "Lightning spell consumables",
+      "summary": "Carl has consumed ten lightning spell pages; individual spell names and levels are not stated.",
+      "action": "note",
+      "id": "b8-audit-b8-c95-p39-carl-story-lightning-spell-consumables",
+      "book": 8,
+      "chapter": 95,
+      "position": 0.286765,
+      "confidence": "verified",
+      "progress": 0.99213298
+    },
+    {
+      "source": "b8-c95-p39",
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Lightning spell consumables",
+      "summary": "Elle also uses lightning spell pages; individual spell names, counts, and levels are not explicitly enumerated.",
+      "action": "note",
+      "id": "b8-audit-b8-c95-p39-elle-mcgib-story-lightning-spell-consumables",
+      "book": 8,
+      "chapter": 95,
+      "position": 0.286765,
+      "confidence": "verified",
+      "progress": 0.99213298
+    },
+    {
+      "source": "b8-c95-p39",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Lightning spell consumables",
+      "summary": "Donut has consumed twelve lightning spell pages; individual spell names and levels are not stated.",
+      "action": "note",
+      "id": "b8-audit-b8-c95-p39-princess-donut-story-lightning-spell-consumables",
+      "book": 8,
+      "chapter": 95,
+      "position": 0.286765,
+      "confidence": "verified",
+      "progress": 0.99213298
+    },
+    {
+      "source": "b8-c97-p12",
+      "type": "story",
+      "subject": "Imani C.",
+      "name": "Temporary inventory swap",
+      "summary": "Imani and Elle report their inventories have been swapped: Imani receives candies and loses access to her scrolls.",
+      "action": "note",
+      "evidence": [
+        "b8-c97-p4",
+        "b8-c97-p11"
+      ],
+      "evidenceSentences": {
+        "b8-c97-p12": [
+          1,
+          2
+        ],
+        "b8-c97-p4": [
+          1
+        ],
+        "b8-c97-p11": [
+          1,
+          2
+        ]
+      },
+      "id": "imani-audit-b8-c97-p12-imani-c-story-temporary-inventory-swap",
+      "book": 8,
+      "chapter": 97,
+      "position": 0.153846,
+      "confidence": "verified",
+      "progress": 0.99608866
+    },
+    {
+      "source": "b8-c98-p106",
+      "type": "level",
+      "subject": "Sexy Scolopendra",
+      "name": "Character level",
+      "summary": "Sexy Scolopendra is explicitly observed at level 1.",
+      "level": 1,
+      "action": "set",
+      "id": "b8-audit-b8-c98-p106-sexy-scolopendra-level-character-level",
+      "book": 8,
+      "chapter": 98,
+      "position": 0.921739,
+      "confidence": "verified",
+      "progress": 0.99983419
+    },
+    {
+      "source": "b8-c98-p106",
+      "type": "party",
+      "subject": "Sexy Scolopendra",
+      "name": "Roster relationship",
+      "summary": "Sexy Scolopendra is known as party member.",
+      "action": "join",
+      "relationship": "Party member",
+      "id": "b8-audit-b8-c98-p106-sexy-scolopendra-party-roster-relationship",
+      "book": 8,
+      "chapter": 98,
+      "position": 0.921739,
+      "confidence": "verified",
+      "progress": 0.99983419
     }
   ],
   "audit": {
