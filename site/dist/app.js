@@ -1,6 +1,6 @@
 const SERIES = { Carl: "#d8ff3e", "Princess Donut": "#4dd9d2", Donut: "#4dd9d2", Mongo: "#ff6441" };
 const EVENT_COLORS = { level: "#d8ff3e", skill: "#4dd9d2", item: "#ff6441", party: "#ad8cff", stat: "#f5ca5c", story: "#8e9ba5" };
-const state = { data: null, progress: 0.135, chartMetric: "level", selectedCharacter: null, rosterFilter: "All", inventoryOwner: "All", inventorySearch: "", historyFilter: "All" };
+const state = { data: null, progress: 0, chartMetric: "level", selectedCharacter: null, rosterFilter: "All", inventoryOwner: "All", inventorySearch: "", historyFilter: "All" };
 const $ = (selector) => document.querySelector(selector);
 const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[c]));
 const slug = (value) => String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -292,8 +292,9 @@ function renderAll() {
   renderInventory(events);
   renderHistory(events);
   const url = new URL(window.location);
-  url.search = "";
-  url.searchParams.set("progress", Math.round(state.progress * 10000));
+  ["book", "chapter", "position"].forEach(key => url.searchParams.delete(key));
+  url.searchParams.delete("progress");
+  if (state.progress > 0) url.searchParams.set("progress", Math.round(state.progress * 10000));
   history.replaceState(null, "", url);
 }
 
