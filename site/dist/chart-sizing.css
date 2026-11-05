@@ -1,5 +1,6 @@
-/* Grow across wide desktops, retaining a pixel component for browser zoom. */
-.dbt-charts-board > svg { width: max(1360px, calc(76% + 250px)); margin-inline: auto; }
-@media (max-width: 1150px) {
-  .dbt-charts-board > svg { width: 100%; }
+/* Scale with wide windows and browser zoom, up to the available board width. */
+.dbt-charts-board > svg {
+  width: max(1360px, calc(76% + 250px));
+  max-width: 100%;
+  margin-inline: auto;
 }

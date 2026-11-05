@@ -105,7 +105,8 @@ function updateBoardDetails() {
   details.querySelector('[data-field="search"]').value = state.inventorySearch;
   const query = state.inventorySearch.toLowerCase().trim();
   const items = allItems.filter(i => i.subject === state.selectedCharacter &&
-    [i.name,i.category,i.detail].join(' ').toLowerCase().includes(query));
+    [i.name,i.category,i.detail].join(' ').toLowerCase().includes(query))
+    .sort((a,b) => b.acquiredProgress - a.acquiredProgress || a.name.localeCompare(b.name));
   details.querySelector('[data-items]').innerHTML = items.length ?
     detailTable('inventory', items.map(inventoryRecord), items.map(i=>i.detail)) : '<p>No matching items at this position.</p>';
   const rewards = rewardRows(events, visibleEvents());

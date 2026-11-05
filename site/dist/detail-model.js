@@ -19,7 +19,7 @@ function characterState(character, events) {
   });
   const relationship = mine.filter((event) => event.type === "party" && event.relationship).at(-1)?.relationship ?? character.relationship ?? character.role ?? "Known character";
   const profile = Object.assign({}, ...mine.map(event => event.profile ?? {}));
-  return { character, relationship, profile, levelEvent: levels.at(-1), level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => a.name.localeCompare(b.name)), events: mine };
+  return { character, relationship, profile, levelEvent: levels.at(-1), level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => (b.level ?? -Infinity) - (a.level ?? -Infinity) || a.name.localeCompare(b.name)), events: mine };
 }
 
 function inventoryAt(events) {
@@ -35,7 +35,7 @@ function inventoryAt(events) {
       else inventory.delete(key);
     } else {
       const quantity = typeof event.quantity === "number" && typeof previous.quantity === "number" && event.action === "add" ? previous.quantity + event.quantity : event.quantity ?? previous.quantity;
-      inventory.set(key, { ...previous, ...event, quantity, acquiredBook: previous.acquiredBook ?? event.book, acquiredChapter: previous.acquiredChapter ?? event.chapter, state: event.action === "equip" || event.state === "equipped" ? "equipped" : event.action === "unequip" ? "carried" : event.state ?? previous.state ?? "carried" });
+      inventory.set(key, { ...previous, ...event, quantity, acquiredProgress: previous.acquiredProgress ?? event.progress, acquiredBook: previous.acquiredBook ?? event.book, acquiredChapter: previous.acquiredChapter ?? event.chapter, state: event.action === "equip" || event.state === "equipped" ? "equipped" : event.action === "unequip" ? "carried" : event.state ?? previous.state ?? "carried" });
     }
   });
   return [...inventory.values()].sort((a, b) => a.subject.localeCompare(b.subject) || a.name.localeCompare(b.name));

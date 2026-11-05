@@ -8,7 +8,7 @@
     "site/dist/data/crawl-atlas.sqlite": "c0b4ac20bacfe56b218b3d8a9bc8fa4102efb34ac3537557309aef33fb8302d9",
     "scripts/detail_rows.cjs": "73e0d9811ef2dc50ff60875ffbeb017fccea250164f92252d8c8089aaa9a0951",
     "scripts/render_detail_tables.py": "a6b7d11cfb55917abf07830b35e801552e52983df373598e497b980f433db6b3",
-    "site/dist/detail-model.js": "2728daee3e382ee3f8d869cedc3dee69c24d8571474bc2eed4be4f1349fd8948",
+    "site/dist/detail-model.js": "ac740ae8a173eb3b8ef2a2d1efaa74858076717a2bb188e23751a873461fa1b8",
     "site/dist/rewards.js": "1c09e2cca52ae172862c65622c6036b13dcaf53d7747cef827040b28119124c3"
   },
   "detail_tables": "52b7c3967b7325fd210887aad94b5b48a727dc95e5e78ac279b3a379c7b049e3",
