@@ -160,7 +160,8 @@ function renderChart() {
     frame.removeAttribute("src");
     return;
   }
-  const path = `charts/${encodeURIComponent(checkpoint.event_id)}.html`;
+  const layout = window.matchMedia("(max-width: 820px)").matches ? "compact/" : "";
+  const path = `charts/${layout}${encodeURIComponent(checkpoint.event_id)}.html`;
   if (frame.getAttribute("src") !== path) frame.setAttribute("src", path);
 }
 
@@ -262,6 +263,9 @@ async function start() {
 }
 
 $('#cast-all').addEventListener('click', () => saveCast(null));
+window.matchMedia("(max-width: 820px)").addEventListener("change", () => {
+  if (state.facts) renderChart();
+});
 $("#reader-board").addEventListener("load", event => {
   const frame = event.target;
   const body = frame.contentDocument?.body;

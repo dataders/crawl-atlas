@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "site/dist"
 out = DIST / "charts"
 out.mkdir(exist_ok=True)
+compact = out / "compact"
+compact.mkdir(exist_ok=True)
 rows = json.loads((DIST / "data/progression.json").read_text())
 with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
     boards = {}
@@ -35,8 +37,18 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
                      "height": 240, "layers": [{"type": "scatter", "y": "value", "color": "crawler"}]}
             spec["charts"][metric] = chart
             spec["rows"].append(metric)
-        board = Path(scratch) / f'{row["event_id"]}.yml'
-        board.write_text(json.dumps(spec))
-        boards[row["event_id"]] = str(board)
-    subprocess.run(["dct", "render", *boards.values(), "--no-cache", "--project-dir", str(ROOT),
-                    "--format", "html", "--output", str(out / "{stem}.html")], check=True)
+        boards[row["event_id"]] = spec
+    for columns, width, destination in [(1, 440, compact), (3, 1360, out)]:
+        paths = []
+        for event_id, spec in boards.items():
+            items = spec["rows"]
+            layout = items if columns == 1 else [{"cols": items[i:i+3]} for i in (0, 3)]
+            board = Path(scratch) / f"{event_id}.yml"
+            board.write_text(json.dumps({**spec, "rows": layout, "style": {"frame": {"width": width}}}))
+            paths.append(str(board))
+        subprocess.run(["dct", "render", *paths, "--no-cache", "--project-dir", str(ROOT),
+                        "--format", "html", "--output", str(destination / "{stem}.html")], check=True)
+        for board in paths:
+            html = destination / (Path(board).stem + ".html")
+            link = '<link rel="stylesheet" href="/chart-sizing.css">'
+            html.write_text(html.read_text().replace("</head>", link + "</head>", 1))

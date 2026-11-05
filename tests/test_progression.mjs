@@ -8,7 +8,7 @@ const growth=events.find(e=>e.action==='increase');
 const fields=new Map();
 const $=key=>{if(!fields.has(key))fields.set(key,{innerHTML:'',textContent:'',setAttribute(){},querySelectorAll(){return [];}});return fields.get(key);};
 const state={data,progress:1,chartMetric:'level'};
-const context=vm.createContext({state,$,esc:String,SERIES:{},EVENT_COLORS:{skill:'red',item:'green',party:'blue'},events,imani});
+const context=vm.createContext({state,$,window:{matchMedia:()=>({matches:false})},esc:String,SERIES:{},EVENT_COLORS:{skill:'red',item:'green',party:'blue'},events,imani});
 const source=readFileSync('site/dist/app.js','utf8');
 vm.runInContext(source.slice(source.indexOf('function characterState('),source.indexOf('function inventoryAt(')),context);
 vm.runInContext(source.slice(source.indexOf('function renderChart('),source.indexOf('function renderCharacters(')),context);

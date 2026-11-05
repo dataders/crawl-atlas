@@ -105,7 +105,8 @@ stay in item summaries; they never become absolute stat totals.
 The hosted Charts tab displays the static HTML board exported by dbt Charts.
 Run `uv run python scripts/render_reader_charts.py` after rebuilding the public SQLite data.
 The reading slider selects the latest visible checkpoint across the cast. Level and five
-stat histories appear as stacked charts, with all observed characters included.
+stat histories appear in two rows of three, or one column on narrow screens.
+All observed characters are included.
 The interactive local board is also available below.
 
 The dashboard reads the same generated public SQLite snapshot as the website; it

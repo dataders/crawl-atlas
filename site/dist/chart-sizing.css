@@ -1,0 +1,5 @@
+/* Keep chart units in CSS pixels so browser zoom also magnifies plot labels. */
+.dbt-charts-board > svg { width: auto; margin-inline: auto; }
+@media (max-width: 440px) {
+  .dbt-charts-board > svg { max-width: 100%; }
+}
