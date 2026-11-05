@@ -1,4 +1,5 @@
 """Build the static dbt Charts snapshots selected by the reader's spoiler boundary."""
+from concurrent.futures import ThreadPoolExecutor
 import json
 import subprocess
 import tempfile
@@ -36,10 +37,11 @@ boundaries = [{"book": b["number"], "event_id": f"book-start-{b['number']}",
 with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
     boards = {}
     book_counts = {}
+    cutoffs = {}
     metrics = {"Level": "Level", "STR": "Strength", "INT": "Intelligence",
                "DEX": "Dexterity", "CHA": "Charisma"}
     for row in [*rows, *boundaries]:
-        if row["kind"] not in ("level", "stat") or row["event_id"] in boards:
+        if row["event_id"] in boards:
             continue
         visible = [r for r in rows if r["kind"] in ("level", "stat") and r["progress"] <= row["progress"]]
         spec = {"extends": "neon", "source": "crawl_atlas", "rows": [],
@@ -79,6 +81,7 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
             "title": "Latest level observations", "warnings_ignore": ["WARN-QUERY-RETURNED-ZERO-ROWS"]}
         boards[row["event_id"]] = spec
         book_counts[row["event_id"]] = row["book"]
+        cutoffs[row["event_id"]] = row["progress"]
     for columns, width, destination in [(1, 440, compact), (2, 1360, out)]:
         paths = []
         for event_id, spec in boards.items():
@@ -91,12 +94,38 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
                           {"cols": [dexterity, charisma]}]
                 if "Level" in spec["charts"]:
                     spec["charts"]["Level"]["height"] = 320
+            fields = ("character, discovery, observation, change, scope, location, evidence" if columns == 2
+                      else "character || ' · ' || discovery AS discovery, observation, location")
+            spec["queries"]["ledger"] = f"""
+                WITH observed AS (
+                    SELECT character, metric AS discovery,
+                        coalesce(printf('%g', previous), '—') AS before_value,
+                        CASE WHEN value IS NOT NULL THEN printf('%g', value)
+                             WHEN action = 'remove' THEN 'Removed'
+                             WHEN action = 'increase' THEN 'Total unknown'
+                             WHEN action = 'delta' THEN 'Unstated' ELSE 'Known' END AS after_value,
+                        CASE WHEN delta IS NOT NULL THEN printf('%+g', delta)
+                             WHEN action = 'increase' THEN 'Increased' ELSE '—' END AS change,
+                        scope, 'B' || book || ' · Ch ' || chapter || ' · ' ||
+                        printf('%.0f%%', position*100) AS location, confidence AS evidence,
+                        previous, progress, event_id, metric
+                    FROM progression WHERE progress <= {cutoffs[event_id]}
+                ), display AS (
+                    SELECT *, (CASE WHEN previous IS NULL THEN '—' ELSE before_value END)
+                        || ' → ' || after_value AS observation FROM observed
+                )
+                SELECT {fields} FROM display ORDER BY progress DESC, event_id, metric"""
+            spec["charts"]["ledger"] = {"type": "table", "query": "ledger",
+                "title": "Progression ledger", "style": {"pagination": {"page_rows": 12}}}
             board = Path(scratch) / f"{event_id}.yml"
-            board.write_text(json.dumps({**spec, "width": width, "rows": [*layout, "levels"],
+            board.write_text(json.dumps({**spec, "width": width, "rows": [*layout, "levels", "ledger"],
                 "style": {**spec["style"], "frame": {"margin": 16, "card_gap": 12}}}))
             paths.append(str(board))
-        subprocess.run(["dct", "render", *paths, "--no-cache", "--project-dir", str(ROOT),
+        def render_batch(batch):
+            subprocess.run(["dct", "render", *batch, "--no-cache", "--project-dir", str(ROOT),
                         "--format", "html", "--output", str(destination / "{stem}.html")], check=True)
+        with ThreadPoolExecutor(max_workers=4) as workers:
+            list(workers.map(render_batch, [paths[i::4] for i in range(4)]))
         for board in paths:
             html = destination / (Path(board).stem + ".html")
             link = '<link rel="stylesheet" href="/chart-sizing.css">'

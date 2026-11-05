@@ -21,10 +21,8 @@ jobs:
       - name: Check browser JavaScript
         run: |
           node --check site/dist/app.js
-          node --check site/dist/explorer.js
           node --check site/dist/rewards.js
-      - name: Check explorer filtering
+      - name: Check reader behavior
         run: |
-          node tests/test_explorer.mjs
           node tests/test_progression.mjs
           node tests/test_rewards.mjs

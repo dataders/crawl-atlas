@@ -15,7 +15,7 @@ def digest(path):
 
 def snapshot():
     rows = json.loads((ROOT / "site/dist/data/progression.json").read_text())
-    ids = {row["event_id"] for row in rows if row["kind"] in ("stat", "level")}
+    ids = {row["event_id"] for row in rows}
     books = json.loads((ROOT / "site/dist/data/series.json").read_text())["books"]
     ids.update(f"book-start-{b['number']}" for b in books[1:])
     return {

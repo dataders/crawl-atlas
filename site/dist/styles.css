@@ -340,6 +340,7 @@ body main > :is(.explorer-section,.character-section,.ledger-section,.rewards-se
 
 .progression-section .section-heading { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
 #reader-board { display:block; }
+#reader-board[aria-busy="true"] { visibility:hidden; }
 .topbar { grid-template-columns:1fr auto; }
 #section-jump { color:var(--muted); background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:4px 8px; font-size:13px; }
 @media(max-width:720px) {

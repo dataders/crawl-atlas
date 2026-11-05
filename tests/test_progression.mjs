@@ -37,6 +37,17 @@ for (const book of data.books.slice(1).reverse()) {
   assert.ok(html.includes(book.number <= 3 ? `>Book ${book.number}</text>` : `>B${book.number}</text>`));
   assert.ok(!html.includes(`>B${book.number+1}</text>`));
 }
+// A skill between level-ups must immediately get its own native ledger row.
+const skill = state.facts.find(row => row.kind === "skill" && row.progress > state.facts[0].progress);
+for (const cutoff of [skill.progress, skill.progress - 1e-8]) {
+  state.progress = cutoff;
+  vm.runInContext('renderChart()', context);
+  const html = readFileSync('site/dist/' + frame.src, 'utf8');
+  const ledger = html.split('id="chart-ledger"')[1];
+  assert.ok(ledger, 'dbt Charts exports the ledger in the same board');
+  assert.equal((ledger.match(/class="dbt-table-row"/g)||[]).length,
+    state.facts.filter(row => row.progress <= cutoff).length);
+}
 state.progress = 0;
 vm.runInContext('renderChart()', context);
 assert.ok(frame.hidden && !frame.src);

@@ -47,10 +47,9 @@ dct validate charts/crawl-atlas.yml --strict
 
 One reading slider controls charts, the progression ledger, character dossiers,
 inventory, rewards, and history on a single page. Header links jump between sections.
-Search and combine character, type, scope, and change filters;
-inspect evidence on each row; export all matching, spoiler-filtered rows as CSV.
-Use **Filter characters in the detail sections** to narrow the ledger, dossiers,
-inventory, rewards, history, and CSV export. The board includes all known characters.
+The board’s progression ledger lists observations newest first, twelve per page.
+Use **Filter characters in the detail sections** to narrow dossiers, inventory,
+rewards, and history. The board includes all known characters.
 Dossiers label levels with their last-observed book and chapter. New sessions start
 at the beginning. Reading position is retained in the URL.
 
@@ -84,9 +83,7 @@ ORDER BY progress;
 ```
 
 The raw database contains all books; SQL callers must apply their own reading
-boundary. The UI applies it before filters, options, pagination, and CSV export.
-The site searches factual summaries with browser-side text matching; it does not
-provide full-text EPUB search, embeddings, a vector database, or a hosted SQL API.
+boundary. The reader applies it before building each chart and paginated table.
 The EPUB prose stays in the private local corpus. SQLite supports direct SQL
 queries over all event facts, including inventory and story records in `events`.
 
@@ -109,12 +106,11 @@ stay in item summaries; they never become absolute stat totals.
 The page opens with the static HTML board exported by dbt Charts. Its latest-level
 table shows the most recent observation for each character at the slider position.
 Run `uv run python scripts/render_reader_charts.py` after rebuilding the public SQLite data.
-The reading slider selects the latest visible checkpoint across the cast. Level and five
-stat histories appear in two rows of three, or one column on narrow screens.
+The reading slider selects the latest visible checkpoint across the cast. Level fills the first row, followed by a two-by-two stat grid, or one column on narrow screens.
 All observed characters are included.
 
-The five stat panels show explicitly recorded **base** values. Equipment and temporary
-observations remain searchable in the progression ledger. Points mark observations;
+The four stat panels show explicitly recorded **base** values. Equipment and temporary
+observations appear in the progression ledger. Points mark observations;
 lines connect those observations across gaps in the text.
 
 Pages serves the checkpoint HTML in `site/dist/charts/`. Changes to the local

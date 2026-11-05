@@ -152,8 +152,7 @@ function renderPosition() {
 }
 
 function renderChart() {
-  const checkpoint = state.facts.findLast(row => row.progress <= state.progress &&
-    (row.kind === "level" || row.kind === "stat"));
+  const checkpoint = state.facts.findLast(row => row.progress <= state.progress);
   const frame = $("#reader-board");
   $("#chart-empty").hidden = Boolean(checkpoint);
   frame.hidden = !checkpoint;
@@ -165,7 +164,10 @@ function renderChart() {
   const book = currentLocation().book.number;
   const id = book > checkpoint.book ? `book-start-${book}` : checkpoint.event_id;
   const path = `charts/${layout}${encodeURIComponent(id)}.html`;
-  if (frame.getAttribute("src") !== path) frame.setAttribute("src", path);
+  if (frame.getAttribute("src") !== path) {
+    frame.setAttribute("aria-busy", "true");
+    frame.setAttribute("src", path);
+  }
 }
 
 function renderCharacters(events, roster) {
@@ -233,7 +235,6 @@ function renderAll() {
   renderCharacters(events, party);
   renderInventory(events);
   renderHistory(events);
-  renderExplorer();
   renderRewards(events);
   const url = new URL(window.location);
   ["book", "chapter", "position"].forEach(key => url.searchParams.delete(key));
@@ -272,8 +273,45 @@ async function start() {
   }
   renderAll();
   const section = location.hash.slice(1) || params.get("view");
-  if (section && document.querySelector(`[data-view="${CSS.escape(section)}"]`)) document.getElementById(section).scrollIntoView();
+  if (section === "explorer") jumpToLedger();
+  else if (section && document.querySelector(`[data-view="${CSS.escape(section)}"]`)) document.getElementById(section).scrollIntoView();
 }
+
+let ledgerJumpPending = false;
+function jumpToLedger() {
+  const frame = $("#reader-board");
+  if (frame.hidden) {
+    $("#progression").scrollIntoView();
+    return;
+  }
+  const table = frame.contentDocument?.getElementById("chart-ledger");
+  if (!table) {
+    ledgerJumpPending = true;
+    return;
+  }
+  ledgerJumpPending = false;
+  const top = frame.getBoundingClientRect().top + table.getBoundingClientRect().top;
+  const stickyHeight = $(".topbar").offsetHeight + $(".reader-position").offsetHeight;
+  window.scrollBy(0, top - stickyHeight - 8);
+}
+window.addEventListener("hashchange", () => {
+  if (location.hash === "#explorer") jumpToLedger();
+});
+$("#section-jump").addEventListener("change", event => {
+  const id = event.target.value;
+  if (id) {
+    location.hash = id;
+    if (id === "explorer") jumpToLedger();
+    else document.getElementById(id).scrollIntoView();
+  }
+  event.target.value = "";
+});
+document.querySelector('a[href="#explorer"]').addEventListener("click", () => {
+  if (location.hash === "#explorer") jumpToLedger();
+});
+new ResizeObserver(() => {
+  document.documentElement.style.setProperty("--header-height", $(".topbar").offsetHeight + "px");
+}).observe($(".topbar"));
 
 $('#cast-all').addEventListener('click', () => saveCast(null));
 window.matchMedia("(max-width: 820px)").addEventListener("change", () => {
@@ -283,9 +321,12 @@ $("#reader-board").addEventListener("load", event => {
   const frame = event.target;
   const body = frame.contentDocument?.body;
   if (!body || !frame.hasAttribute("src")) return;
+  if (frame.contentDocument.URL !== frame.src) return;
+  frame.removeAttribute("aria-busy");
   const resize = () => { frame.style.height = Math.ceil(body.getBoundingClientRect().height) + "px"; };
   new ResizeObserver(resize).observe(body);
   resize();
+  if (ledgerJumpPending) jumpToLedger();
 });
 $('#cast-none').addEventListener('click', () => saveCast([]));
 $('#cast-core').addEventListener('click', () => {
