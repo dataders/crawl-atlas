@@ -6,20 +6,22 @@
     <meta name="description" content="Explore every known level, skill, party, and inventory change in Dungeon Crawler Carl without reading past your place." />
     <title>Crawl Atlas — Dungeon Crawler Carl</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080b10'/%3E%3Cpath d='M7 7h18v5H12v8h13v5H7z' fill='%23d9ff43'/%3E%3Ccircle cx='21.5' cy='16' r='2.5' fill='%23ff5c35'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="stylesheet" href="styles.css?v=7" />
   </head>
   <body>
     <div class="scanlines" aria-hidden="true"></div>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Crawl Atlas home"><span class="brand-mark">CA</span><span>Crawl Atlas</span></a>
-      <nav class="workspace-nav" aria-label="Explore the archive">
-        <a href="#progression" data-view="progression">Charts</a>
-        <a href="#explorer" data-view="explorer">Progression ledger</a>
-        <a href="#character" data-view="character">Characters</a>
-        <a href="#ledger" data-view="ledger">Inventory</a>
-        <a href="#rewards" data-view="rewards">Boxes &amp; rewards</a><a href="#history" data-view="history">History</a>
-      </nav>
       <div class="topbar-actions">
+        <select id="section-jump" aria-label="Jump to section">
+          <option value="">Jump to…</option>
+          <option value="progression" data-view="progression">Charts</option>
+          <option value="explorer" data-view="explorer">Progression ledger</option>
+          <option value="character" data-view="character">Characters</option>
+          <option value="ledger" data-view="ledger">Inventory</option>
+          <option value="rewards" data-view="rewards">Boxes &amp; rewards</option>
+          <option value="history" data-view="history">History</option>
+        </select>
         <span id="book-title" hidden></span>
         <button class="icon-button" id="about-button" type="button" aria-expanded="false" aria-controls="about-panel">?</button>
       </div>
@@ -64,8 +66,7 @@
       </details>
 
       <section id="explorer" class="explorer-section" aria-labelledby="explorer-title">
-        <div class="section-heading"><div><p class="eyebrow">The progression archive</p><h2 id="explorer-title">Every increase. In context.</h2></div><button type="button" id="export-results">Export results ↓</button></div>
-        <p class="explorer-intro">Find a level, trace a skill, or compare stat observations. Only discoveries up to your reading position appear.</p>
+        <div class="section-heading"><h2 id="explorer-title">Progression ledger</h2><button type="button" id="export-results">Export results ↓</button></div>
         <div class="query-presets" aria-label="Quick queries"><button type="button" data-preset="all">All observations</button><button type="button" data-preset="level">Level increases</button><button type="button" data-preset="skill">Skills & spells</button><button type="button" data-preset="stat">Base stats</button></div>
         <div class="query-controls">
           <label class="query-search">Search<input id="query-search" type="search" placeholder="Try Magic Missile or Constitution…"></label>
@@ -149,7 +150,7 @@
 
     <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
     <script src="rewards.js" defer></script>
-  <script src="explorer.js?v=6" defer></script>
+  <script src="explorer.js?v=7" defer></script>
     <script src="app.js?v=6" defer></script>
   </body>
 </html>

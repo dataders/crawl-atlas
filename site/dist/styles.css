@@ -335,11 +335,13 @@ body .master-slider { flex:1; margin:0; }
 .topbar .workspace-nav a { text-decoration:none; color:var(--muted); white-space:nowrap; }
 .topbar .workspace-nav a[aria-current] { background:var(--acid); color:#192015; }
 main section[id] { scroll-margin-top:calc(var(--header-height, 48px) + 60px); }
-body main > :is(.explorer-section,.character-section,.ledger-section,.rewards-section,.history-section,.cast-selector) { width:min(100% - 24px, 1360px); margin:16px auto; }
+body main > :is(.explorer-section,.character-section,.ledger-section,.rewards-section,.history-section,.cast-selector) { width:calc(100% - 32px); margin:16px auto; }
 .cast-selector summary { cursor:pointer; }
 
 .progression-section .section-heading { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
 #reader-board { display:block; }
+.topbar { grid-template-columns:1fr auto; }
+#section-jump { color:var(--muted); background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:4px 8px; font-size:13px; }
 @media(max-width:720px) {
   .topbar { gap:4px 12px; padding:4px 10px; grid-template-columns:1fr auto; }
   .topbar .workspace-nav { grid-row:2; grid-column:1/-1; }

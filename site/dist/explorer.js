@@ -38,20 +38,17 @@ function resetQuery() {
   queryFields.forEach(field => { $(`#query-${field}`).value = field === 'sort' ? 'newest' : ''; });
   queryState.page = 0;
 }
-const sectionLinks = [...document.querySelectorAll('[data-view]')];
-function highlightSection() {
-  const boundary = document.querySelector('.reader-position').getBoundingClientRect().bottom + 24;
-  const active = sectionLinks.filter(link => document.getElementById(link.dataset.view).getBoundingClientRect().top <= boundary).at(-1) ?? sectionLinks[0];
-  sectionLinks.forEach(link => {
-    if (link === active) link.setAttribute('aria-current', 'location');
-    else link.removeAttribute('aria-current');
-  });
-}
+document.querySelector('#section-jump').addEventListener('change', event => {
+  const section = document.getElementById(event.target.value);
+  if (section) {
+    location.hash = section.id;
+    section.scrollIntoView();
+  }
+  event.target.value = '';
+});
 new ResizeObserver(() => {
   document.documentElement.style.setProperty('--header-height', document.querySelector('.topbar').offsetHeight + 'px');
-  highlightSection();
 }).observe(document.querySelector('.topbar'));
-window.addEventListener('scroll', highlightSection, {passive: true});
 queryFields.forEach(field => document.querySelector(`#query-${field}`).addEventListener(field === 'search' ? 'input' : 'change', () => { queryState.page = 0; renderExplorer(); }));
 document.querySelectorAll('[data-preset]').forEach(button => button.addEventListener('click', () => {
   resetQuery();
