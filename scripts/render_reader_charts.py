@@ -37,7 +37,7 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
     boards = {}
     book_counts = {}
     metrics = {"Level": "Level", "STR": "Strength", "INT": "Intelligence",
-               "CON": "Constitution", "DEX": "Dexterity", "CHA": "Charisma"}
+               "DEX": "Dexterity", "CHA": "Charisma"}
     for row in [*rows, *boundaries]:
         if row["kind"] not in ("level", "stat") or row["event_id"] in boards:
             continue
@@ -79,11 +79,18 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
             "title": "Latest level observations", "warnings_ignore": ["WARN-QUERY-RETURNED-ZERO-ROWS"]}
         boards[row["event_id"]] = spec
         book_counts[row["event_id"]] = row["book"]
-    for columns, width, destination in [(1, 440, compact), (3, 1360, out)]:
+    for columns, width, destination in [(1, 440, compact), (2, 1360, out)]:
         paths = []
         for event_id, spec in boards.items():
             items = spec["rows"]
-            layout = items if columns == 1 else [{"cols": items[i:i+3]} for i in (0, 3)]
+            if columns == 1:
+                layout = items
+            else:
+                level, strength, intelligence, dexterity, charisma = items
+                layout = [level, {"cols": [strength, intelligence]},
+                          {"cols": [dexterity, charisma]}]
+                if "Level" in spec["charts"]:
+                    spec["charts"]["Level"]["height"] = 320
             board = Path(scratch) / f"{event_id}.yml"
             board.write_text(json.dumps({**spec, "width": width, "rows": [*layout, "levels"],
                 "style": {**spec["style"], "frame": {"margin": 16, "card_gap": 12}}}))
