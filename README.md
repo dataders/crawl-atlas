@@ -105,7 +105,8 @@ stay in item summaries; they never become absolute stat totals.
 The hosted Charts tab displays scrollable dbt Charts SVGs for the selected character.
 After rebuilding the public SQLite data, run `uv run python scripts/render_reader_charts.py`
 to render each observation checkpoint. The reading slider selects the latest visible
-checkpoint for each metric. The interactive local board is also available below.
+board for the selected character, with level and five stats stacked in reading order.
+The interactive local board is also available below.
 
 The dashboard reads the same generated public SQLite snapshot as the website; it
 needs no warehouse credentials. Install dbt Charts from the latest Dataface release

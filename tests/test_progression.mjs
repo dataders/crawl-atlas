@@ -19,9 +19,10 @@ state.facts = JSON.parse(readFileSync('site/dist/data/progression.json','utf8'))
 $('#chart-character').value = imani.name;
 vm.runInContext('renderChart(events)',context);
 const output = $('#reader-chart-stack').innerHTML;
-assert.ok(output.includes('later change has no recorded total'));
-const last = state.facts.filter(row => row.character === imani.name && row.kind === 'level' && row.value !== null).at(-1);
-assert.ok(output.includes(last.event_id + '-Level.svg'));
+const last = state.facts.filter(row => row.character === imani.name && ['level','stat'].includes(row.kind)).at(-1);
+assert.ok(output.includes(last.event_id + '.svg'));
+const board = readFileSync('site/dist/reader-charts/' + last.event_id + '.svg','utf8');
+assert.ok(board.includes('Later change has no recorded total'));
 state.progress = 0;
 vm.runInContext('renderChart([])',context);
 assert.ok(!$('#reader-chart-stack').innerHTML.includes('<img'));

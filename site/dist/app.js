@@ -160,14 +160,10 @@ function renderChart(events) {
   select.disabled = !known.length;
   const rows = state.facts.filter(row => row.character === select.value && row.progress <= state.progress &&
     (row.kind === "level" || row.kind === "stat"));
-  const metrics = {Level: "Level", STR: "Strength", INT: "Intelligence", CON: "Constitution", DEX: "Dexterity", CHA: "Charisma"};
-  $("#reader-chart-stack").innerHTML = Object.entries(metrics).map(([metric, title]) => {
-    const observations = rows.filter(row => row.metric === metric);
-    const last = observations.filter(row => row.value !== null).at(-1);
-    const latest = observations.at(-1);
-    const note = latest && latest.value === null ? "The later change has no recorded total." : "";
-    return `<article><h3>${title}</h3>${last ? `<img loading="lazy" alt="${esc(select.value)} ${title} observations through Book ${last.book}, Chapter ${last.chapter}" src="reader-charts/${encodeURIComponent(last.event_id)}-${metric}.svg"><p>Last recorded value: ${last.value} · Book ${last.book}, Chapter ${last.chapter}. ${note}</p>` : "<p>No recorded value by this reading position.</p>"}</article>`;
-  }).join("");
+  const checkpoint = rows.at(-1);
+  $("#reader-chart-stack").innerHTML = checkpoint
+    ? `<img src="reader-charts/${encodeURIComponent(checkpoint.event_id)}.svg" alt="${esc(select.value)}: level and five stat histories through Book ${checkpoint.book}, Chapter ${checkpoint.chapter}">`
+    : '<p class="empty">No level or stat observations at this reading position.</p>';
 }
 
 function renderCharacters(events, roster) {
