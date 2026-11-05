@@ -88,9 +88,10 @@ function partyAt(events) {
 
 function renderPosition() {
   const location = currentLocation();
+  const bookPercent = Math.round(100 * (location.chapter - 1 + location.position) / location.book.chapterCount);
   $("#location-chapter").textContent = `Book ${location.book.number} · Chapter ${location.chapter}`;
-  $("#book-range").setAttribute("aria-valuetext", `Book ${location.book.number}, chapter ${location.chapter}, ${Math.round(location.position * 100)} percent through chapter`);
-  $("#location-percent").textContent = `${Math.round(location.position * 100)}% through chapter`;
+  $("#book-range").setAttribute("aria-valuetext", `Book ${location.book.number}, chapter ${location.chapter}, ${bookPercent} percent through book`);
+  $("#location-percent").textContent = `${bookPercent}% through book`;
   $("#overall-progress").textContent = `${Math.round(state.progress * 100)}% of series`;
   $("#book-range").value = Math.round(state.progress * 10000);
   $("#book-range").style.setProperty("--range-fill", `${state.progress * 100}%`);
