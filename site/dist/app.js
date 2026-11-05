@@ -134,6 +134,7 @@ function renderAll() {
   renderCast(allEvents);
   renderPosition();
   renderChart();
+  updateFloorBands();
   updateBoardDetails();
   const url = new URL(window.location);
   ["book", "chapter", "position"].forEach(key => url.searchParams.delete(key));
@@ -153,6 +154,9 @@ async function start() {
   const tables = await fetch("data/detail-tables.json?v=3");
   if (!tables.ok) throw new Error("Could not load detail tables");
   state.detailTables = await tables.json();
+  const floors = await fetch("data/floors.json");
+  if (!floors.ok) throw new Error("Could not load dungeon floors");
+  state.floors = await floors.json();
   try {
     const saved = JSON.parse(localStorage.getItem('crawl-atlas-cast'));
     if (saved === null || (Array.isArray(saved) && saved.every(name => typeof name === 'string'))) state.followedCharacters = saved;
@@ -226,6 +230,7 @@ $("#reader-board").addEventListener("load", event => {
   if (!body || !frame.hasAttribute("src")) return;
   if (frame.contentDocument.URL !== frame.src) return;
   frame.removeAttribute("aria-busy");
+  updateFloorBands();
   updateBoardDetails();
   const resize = () => { frame.style.height = Math.ceil(body.getBoundingClientRect().height) + "px"; };
   new ResizeObserver(resize).observe(body);

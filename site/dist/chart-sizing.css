@@ -16,3 +16,7 @@
   outline: 2px solid #eceee2;
   outline-offset: 3px;
 }
+
+.floor-key {box-sizing:border-box;width:max(1360px,calc(76% + 250px));max-width:100%;margin:0 auto;padding:12px 32px 0;color:#c5dc99;font:600 12px/1.5 system-ui,sans-serif}
+.floor-key summary {cursor:pointer;width:fit-content}
+.floor-key ol {display:flex;flex-wrap:wrap;gap:6px 20px;padding:0;list-style:none;color:#c4cfc1;font-weight:400}

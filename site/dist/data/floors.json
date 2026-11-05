@@ -1,0 +1,80 @@
+[
+  {
+    "floor": 1,
+    "source": "b1-c2-p21",
+    "book": 1,
+    "chapter": 2,
+    "position": 0.161538
+  },
+  {
+    "floor": 2,
+    "source": "b1-c30-p2",
+    "book": 1,
+    "chapter": 30,
+    "position": 0.014925
+  },
+  {
+    "floor": 3,
+    "source": "b2-c1-p2",
+    "book": 2,
+    "chapter": 1,
+    "position": 0.0125
+  },
+  {
+    "floor": 4,
+    "source": "b3-c1-p9",
+    "book": 3,
+    "chapter": 1,
+    "position": 0.04918
+  },
+  {
+    "floor": 5,
+    "source": "b4-c1-p9",
+    "book": 4,
+    "chapter": 1,
+    "position": 0.057692
+  },
+  {
+    "floor": 6,
+    "source": "b5-c1-p10",
+    "book": 5,
+    "chapter": 1,
+    "position": 0.05618
+  },
+  {
+    "floor": 7,
+    "source": "b5-epilogue-p2",
+    "book": 6,
+    "chapter": 1,
+    "position": 0,
+    "locationLabel": "Book 5 epilogue"
+  },
+  {
+    "floor": 8,
+    "source": "b6-c1-p2",
+    "book": 6,
+    "chapter": 1,
+    "position": 0.016667
+  },
+  {
+    "floor": 9,
+    "source": "b6-c72-p185",
+    "book": 6,
+    "chapter": 72,
+    "position": 1
+  },
+  {
+    "floor": 10,
+    "source": "b8-c1-p2",
+    "book": 8,
+    "chapter": 1,
+    "position": 0.020408
+  },
+  {
+    "floor": 11,
+    "source": "b8-c88-p2",
+    "book": 8,
+    "chapter": 88,
+    "position": 0.016529
+  }
+]
