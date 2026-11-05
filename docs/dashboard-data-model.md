@@ -16,6 +16,7 @@ dbt project should materialize the dimensions and facts in an `analytics` schema
 | `fct_character_observation` | one row per event and metric | (`event_id`, `metric`) | Numeric level/stat/skill observations, prior value, delta, scope, and confidence |
 | `fct_acquisition` | one row per reward/acquisition stage | `event_id` | Award, open, receive, identify, and apply steps with box/reward attributes |
 | `bridge_acquisition_lineage` | one row per child-parent edge | (`child_event_id`, `parent_event_id`) | Many-step reward provenance without flattening or inventing attribution |
+| `mart_crawl_atlas_dashboard` | one row per event and observed metric; one row for non-observation events | (`event_id`, `metric`) with nullable `metric` | Portable presentation mart consumed by the static dbt Charts board |
 
 All facts carry `book`, `chapter`, and normalized `progress`. Every dashboard
 query applies the reader's boundary before aggregation or display. `source` is a
@@ -65,6 +66,18 @@ the board while retaining `payload` for less common attributes.
 
 `child_event_id text`, `parent_event_id text`.
 
+### `mart_crawl_atlas_dashboard`
+
+`event_id text`, `book integer`, `chapter integer`, `position real`,
+`progress real`, `event_kind text`, `character text`, `event_name text`,
+`action text`, `confidence text`, `source text`, `summary text`,
+`item_state text`, `quantity real`, `observation_kind text`, `metric text`,
+`value real`, `previous_value real`, `delta real`, `scope text`.
+
+This denormalized mart is the deployment boundary for the current static board.
+The normalized facts and dimensions remain source of truth; Snowflake/dbt can
+materialize this mart from them with the same column contract.
+
 ## dbt and Snowflake path
 
 This deserves its own dbt project in this repository once Snowflake becomes the
@@ -73,7 +86,7 @@ system of record. Keep the curated public exports as raw sources, then build:
 1. `stg_crawl_atlas__series`, `__books`, `__characters`, `__events`,
    `__observations`, `__acquisitions`, and `__acquisition_links` to rename and
    type source fields.
-2. The seven public relations above as contracted marts in an `analytics`
+2. The normalized public relations above plus the dashboard mart as contracted models in an `analytics`
    schema. Materialize dimensions and facts as tables; the lineage bridge can
    remain a view while small.
 3. Uniqueness, not-null, accepted-value, relationship, and spoiler-boundary

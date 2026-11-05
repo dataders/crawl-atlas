@@ -64,6 +64,11 @@ class DatabaseTests(unittest.TestCase):
                     db.execute('SELECT count(*) FROM fct_acquisition').fetchone()[0],
                     db.execute('SELECT count(*) FROM acquisitions').fetchone()[0],
                 )
+                mart_count = db.execute('SELECT count(*) FROM mart_crawl_atlas_dashboard').fetchone()[0]
+                non_observation_events = db.execute(
+                    "SELECT count(*) FROM events WHERE kind NOT IN ('stat', 'skill', 'level')"
+                ).fetchone()[0]
+                self.assertEqual(mart_count, len(rows) + non_observation_events)
                 expected = {e['id'] for e in data['events'] if e['type'] in ('stat', 'skill', 'level')}
                 self.assertEqual({r['event_id'] for r in rows}, expected)
                 self.assertEqual(rows, json.loads(Path('site/dist/data/progression.json').read_text()))

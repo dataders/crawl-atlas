@@ -95,6 +95,31 @@ def build(source, output):
             CREATE VIEW fct_character_observation AS SELECT * FROM progression;
             CREATE VIEW fct_acquisition AS SELECT * FROM acquisitions;
             CREATE VIEW bridge_acquisition_lineage AS SELECT * FROM acquisition_links;
+            CREATE VIEW mart_crawl_atlas_dashboard AS
+                SELECT
+                    event.id AS event_id,
+                    event.book,
+                    event.chapter,
+                    event.position,
+                    event.progress,
+                    event.kind AS event_kind,
+                    event.character,
+                    event.name AS event_name,
+                    event.action,
+                    event.confidence,
+                    event.source,
+                    event.summary,
+                    event.item_state,
+                    event.quantity,
+                    observation.kind AS observation_kind,
+                    observation.metric,
+                    observation.value,
+                    observation.previous AS previous_value,
+                    observation.delta,
+                    observation.scope
+                FROM fct_timeline_event AS event
+                LEFT JOIN fct_character_observation AS observation
+                    ON observation.event_id = event.id;
         ''')
         series = data['series']
         db.execute('INSERT INTO series VALUES (?,?,?,?,?,?)', (
