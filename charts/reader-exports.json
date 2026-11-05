@@ -1,12 +1,16 @@
 {
   "inputs": {
-    "scripts/render_reader_charts.py": "9d32985ce118ad95a002ddae92e26a7740d4205287159c6d336ca14b1311ad48",
+    "scripts/render_reader_charts.py": "f5cb61339e260c60c7554e42b722cc91da1281aca0bfa7d176f46a7fe58b86cc",
     "scripts/reader_book_axis.py": "f56a53536ce0b72e2192d25e5e1bc4c108683481d4be6111dc38f91d3a832d8c",
     "dbt_charts.yml": "82ec41b091db1e35075fe4012563fbff375f5fb3bb2131fe3f3e065eb7a7d522",
     "site/dist/data/series.json": "9560cece862d90eb03f5b2af3c826aa8ba9dcf9aeb87464c9da625d2874c3d83",
     "site/dist/data/progression.json": "503a104ad61b4f934b2c5f82384c739e91b43b7a7db186d17e71098727be6917",
-    "site/dist/data/crawl-atlas.sqlite": "c0b4ac20bacfe56b218b3d8a9bc8fa4102efb34ac3537557309aef33fb8302d9"
+    "site/dist/data/crawl-atlas.sqlite": "c0b4ac20bacfe56b218b3d8a9bc8fa4102efb34ac3537557309aef33fb8302d9",
+    "scripts/detail_rows.cjs": "e7202530bf923a94710cf1b7978353ba8dc616ad5ea27b1d990284d45e4e4540",
+    "scripts/render_detail_tables.py": "0723b4af370b7b210eaaab5881bc4637d8aef5b528e221df6af6b433c3cc6a86",
+    "site/dist/detail-model.js": "db9128c2d1c0baead64b3ec6260fd71ba7ca2c7e855aff1d79f2709b2dc3dedf"
   },
+  "detail_tables": "c05c357dd1abcc3d2fb232a645bed59a886d86719a4aefaa69adc5191dafabfe",
   "exports": {
     "b8-audit-b8-c1-p76-princess-donut-skill-heal-critter-equipment.html": "7e27174547a69bb60864425e564f3e04de6d85b6b0f33e763b7649bef61f3399",
     "b8-audit-b8-c1-p76-princess-donut-skill-twinkle-toes-reported.html": "7e27174547a69bb60864425e564f3e04de6d85b6b0f33e763b7649bef61f3399",

@@ -2,6 +2,7 @@
 from concurrent.futures import ThreadPoolExecutor
 import json
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 from check_reader_exports import record
@@ -130,4 +131,5 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
             html = destination / (Path(board).stem + ".html")
             link = '<link rel="stylesheet" href="/chart-sizing.css">'
             html.write_text(finish_book_axes(html.read_text(), book_counts[Path(board).stem]).replace("</head>", link + "</head>", 1))
+subprocess.run([sys.executable, str(ROOT / "scripts/render_detail_tables.py")], check=True)
 record()

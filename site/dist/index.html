@@ -66,37 +66,6 @@
         <p id="cast-status" class="query-footnote" role="status"></p>
       </details>
 
-      <section id="character" class="character-section" aria-labelledby="character-title">
-        <div class="section-heading compact">
-          <div><p class="eyebrow">Character dossiers</p><h2 id="character-title">Party &amp; allies known here</h2></div>
-          <span class="section-count" id="party-count"></span>
-        </div>
-        <div class="character-workspace">
-          <div class="character-sidebar">
-            <div class="filter-row roster-filters" id="roster-filters" aria-label="Filter characters by relationship"></div>
-            <div class="character-list" id="character-list" role="tablist" aria-label="Choose a known character"></div>
-          </div>
-          <article class="dossier" id="character-dossier" aria-live="polite"></article>
-        </div>
-      </section>
-
-      <section id="ledger" class="ledger-section" aria-labelledby="inventory-title">
-        <div class="section-heading compact">
-          <div><p class="eyebrow">Cumulative ledger</p><h2 id="inventory-title">Inventory at this point</h2></div>
-          <span class="section-count" id="inventory-count"></span>
-        </div>
-        <div class="ledger-toolbar">
-          <div id="inventory-owner-filters" class="filter-row" aria-label="Filter inventory by owner"></div>
-          <label class="search-field">Search <input id="inventory-search" type="search" placeholder="Item name or type" /></label>
-        </div>
-        <div class="inventory-table-wrap">
-          <table class="inventory-table">
-            <thead><tr><th>Item</th><th>Owner</th><th>Type</th><th>State</th><th>Acquired</th></tr></thead>
-            <tbody id="inventory-list"></tbody>
-          </table>
-        </div>
-      </section>
-
       <section id="rewards" class="rewards-section" aria-labelledby="rewards-title">
         <div class="section-heading"><div><p class="eyebrow">Reward provenance</p><h2 id="rewards-title">Where the loot came from</h2></div><span id="reward-count" class="section-count"></span></div>
         <p class="explorer-intro">Follow the cause → box awarded → box opened → reward received. Location means when the text reveals it. Initial coverage includes Book 1 opening batches and selected explicit lineages in Books 1, 5, and 8.</p>
@@ -133,6 +102,8 @@
 
     <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
     <script src="rewards.js" defer></script>
-    <script src="app.js?v=8" defer></script>
+    <script src="detail-model.js" defer></script>
+    <script src="board-details.js" defer></script>
+    <script src="app.js?v=9" defer></script>
   </body>
 </html>

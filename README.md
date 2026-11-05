@@ -49,7 +49,11 @@ One reading slider controls charts, the progression ledger, character dossiers,
 inventory, rewards, and history on a single page. Header links jump between sections.
 The board’s progression ledger lists observations newest first, twelve per page.
 Use **Filter characters in the detail sections** to narrow dossiers, inventory,
-rewards, and history. The board includes all known characters.
+rewards, and history. The board’s level and stat plots include all known characters. Inside the board,
+the **Character** dropdown changes only the dossier. The **Owner** dropdown
+and item search change only inventory. These controls select dbt-rendered
+table rows in the browser at the exact slider position. Native dbt query
+variables require a live query host such as dbt Charts Cloud or `dct serve`.
 Dossiers label levels with their last-observed book and chapter. New sessions start
 at the beginning. Reading position is retained in the URL.
 

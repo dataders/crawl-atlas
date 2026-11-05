@@ -10,9 +10,9 @@ const $=key=>{if(!fields.has(key))fields.set(key,{innerHTML:'',textContent:'',se
 const state={data,progress:1,chartMetric:'level'};
 const context=vm.createContext({state,$,window:{matchMedia:()=>({matches:false})},esc:String,SERIES:{},EVENT_COLORS:{skill:'red',item:'green',party:'blue'},events,imani});
 const source=readFileSync('site/dist/app.js','utf8');
-vm.runInContext(source.slice(source.indexOf('function characterState('),source.indexOf('function inventoryAt(')),context);
+vm.runInContext(readFileSync('site/dist/detail-model.js','utf8'),context);
 vm.runInContext(source.slice(source.indexOf('function currentLocation('),source.indexOf('function progressFor(')),context);
-vm.runInContext(source.slice(source.indexOf('function renderChart('),source.indexOf('function renderCharacters(')),context);
+vm.runInContext(source.slice(source.indexOf('function renderChart('),source.indexOf('function renderHistory(')),context);
 context.before=events.filter(e=>e.progress<growth.progress);
 assert.equal(vm.runInContext('characterState(imani,before).level',context),24);
 assert.equal(vm.runInContext('characterState(imani,events).level',context),null);

@@ -57,7 +57,7 @@ function progressFor(bookNumber, chapter, position = 0) {
   return Math.min(1, (book.startChapter + localChapter - 2 + position) / state.data.series.chapterCount);
 }
 
-function visibleEvents() { return state.data.events.filter((event) => event.progress <= state.progress + 1e-8); }
+function visibleEvents() { return state.data.events.filter((event) => event.progress <= state.progress); }
 
 function followedEvents(events = visibleEvents()) {
   return state.followedCharacters === null ? events : events.filter(event => state.followedCharacters.includes(event.subject));
@@ -67,7 +67,7 @@ function renderCast(events) {
   const known = state.data.characters.filter(character => names.has(character.name));
   $('#cast-options').innerHTML = known.map(character => `<label class="cast-chip"><input type="checkbox" value="${esc(character.name)}" ${state.followedCharacters === null || state.followedCharacters.includes(character.name) ? 'checked' : ''}><span style="--person-color:${character.color}">${esc(character.name)}</span></label>`).join('') || '<span class="empty">Character choices appear as you meet them.</span>';
   const selected = known.filter(character => state.followedCharacters === null || state.followedCharacters.includes(character.name));
-  $('#cast-status').textContent = `${selected.length} of ${known.length} known characters selected · Applies to every view and export. Saved on this device.`;
+  $('#cast-status').textContent = `${selected.length} of ${known.length} known characters selected · Applies to character details, inventory, rewards and history. Saved on this device.`;
   $('#cast-options').querySelectorAll('input').forEach(input => input.addEventListener('change', () => {
     const selection = new Set(state.followedCharacters ?? known.map(character => character.name));
     input.checked ? selection.add(input.value) : selection.delete(input.value);
@@ -84,49 +84,6 @@ function partyAt(events) {
   const membership = new Map();
   events.filter((event) => event.type === "party" && ["join", "leave"].includes(event.action)).forEach((event) => membership.set(event.subject, event.action !== "leave"));
   return state.data.characters.filter((character) => membership.get(character.name));
-}
-
-function characterState(character, events) {
-  const mine = events.filter((event) => event.subject === character.name || (character.name === "Princess Donut" && event.subject === "Donut"));
-  const levels = mine.filter((event) => event.type === "level");
-  const statEvents = mine.filter((event) => event.type === "stat" && (event.stats || event.statsDelta));
-  const skills = new Map();
-  mine.filter((event) => event.type === "skill").forEach((event) => {
-    const key = `${event.skillId ?? event.name.toLowerCase()}|${event.skillScope ?? "reported"}`;
-    if (event.action === "remove") skills.delete(key);
-    else skills.set(key, { name: event.name, scope: event.skillScope ?? "reported", level: event.level ?? skills.get(key)?.level ?? null, book: event.book ?? 1, chapter: event.chapter, detail: event.detail, source: event.source });
-  });
-  const stats = {};
-  const baseStats = {};
-  statEvents.forEach((event) => {
-    Object.assign(stats, event.stats ?? {});
-    Object.entries(event.stats ?? {}).forEach(([name, value]) => {
-      if (event.statScopes?.[name] === "base") baseStats[name] = value;
-    });
-    Object.entries(event.statsDelta ?? {}).forEach(([name, delta]) => { stats[name] = (stats[name] ?? 0) + delta; });
-  });
-  const relationship = mine.filter((event) => event.type === "party" && event.relationship).at(-1)?.relationship ?? character.relationship ?? character.role ?? "Known character";
-  const profile = Object.assign({}, ...mine.map(event => event.profile ?? {}));
-  return { character, relationship, profile, levelEvent: levels.at(-1), level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => a.name.localeCompare(b.name)), events: mine };
-}
-
-function inventoryAt(events) {
-  const inventory = new Map();
-  events.filter((event) => event.type === "item" && !event.historyOnly).forEach((event) => {
-    const key = event.itemId ?? `${event.subject}|${event.name}`.toLowerCase();
-    const previous = inventory.get(key) ?? {};
-    if (["remove", "consume", "destroy", "lose"].includes(event.action)) {
-      const priorQuantity = typeof previous.quantity === "number" ? previous.quantity : null;
-      const usedQuantity = typeof event.quantity === "number" ? event.quantity : null;
-      const remaining = event.remainingQuantity ?? (priorQuantity !== null && usedQuantity !== null ? priorQuantity - usedQuantity : null);
-      if (remaining !== null && remaining > 0) inventory.set(key, { ...previous, quantity: remaining, state: previous.state ?? "carried" });
-      else inventory.delete(key);
-    } else {
-      const quantity = typeof event.quantity === "number" && typeof previous.quantity === "number" && event.action === "add" ? previous.quantity + event.quantity : event.quantity ?? previous.quantity;
-      inventory.set(key, { ...previous, ...event, quantity, acquiredBook: previous.acquiredBook ?? event.book, acquiredChapter: previous.acquiredChapter ?? event.chapter, state: event.action === "equip" || event.state === "equipped" ? "equipped" : event.action === "unequip" ? "carried" : event.state ?? previous.state ?? "carried" });
-    }
-  });
-  return [...inventory.values()].sort((a, b) => a.subject.localeCompare(b.subject) || a.name.localeCompare(b.name));
 }
 
 function renderPosition() {
@@ -155,65 +112,20 @@ function renderChart() {
   const checkpoint = state.facts.findLast(row => row.progress <= state.progress);
   const frame = $("#reader-board");
   $("#chart-empty").hidden = Boolean(checkpoint);
-  frame.hidden = !checkpoint;
-  if (!checkpoint) {
+  const hasDetails = !checkpoint && state.data.events.some(e => e.progress <= state.progress && ["item", "party"].includes(e.type));
+  frame.hidden = !checkpoint && !hasDetails;
+  if (frame.hidden) {
     frame.removeAttribute("src");
     return;
   }
   const layout = window.matchMedia("(max-width: 820px)").matches ? "compact/" : "";
   const book = currentLocation().book.number;
-  const id = book > checkpoint.book ? `book-start-${book}` : checkpoint.event_id;
-  const path = `charts/${layout}${encodeURIComponent(id)}.html`;
+  const id = checkpoint && book > checkpoint.book ? `book-start-${book}` : checkpoint?.event_id;
+  const path = id ? `charts/${layout}${encodeURIComponent(id)}.html` : "charts/details-only.html";
   if (frame.getAttribute("src") !== path) {
     frame.setAttribute("aria-busy", "true");
     frame.setAttribute("src", path);
   }
-}
-
-function renderCharacters(events, roster) {
-  if (!roster.length) {
-    $("#party-count").textContent = "No characters known yet";
-    $("#roster-filters").innerHTML = "";
-    $("#character-list").innerHTML = "";
-    $("#character-dossier").innerHTML = '<div class="empty">No selected characters are known at this point. Adjust Your cast or the reading position.</div>';
-    return;
-  }
-  const filters = [{ id: "All", label: "All" }, { id: "core", label: "Core" }, { id: "support", label: "Support" }, { id: "ally", label: "Allies" }];
-  const availableFilters = filters.filter((filter) => filter.id === "All" || roster.some((character) => character.group === filter.id));
-  if (!availableFilters.some((filter) => filter.id === state.rosterFilter)) state.rosterFilter = "All";
-  $("#roster-filters").innerHTML = availableFilters.map((filter) => `<button type="button" class="filter-button ${filter.id === state.rosterFilter ? "active" : ""}" data-roster-filter="${filter.id}">${filter.label}</button>`).join("");
-  $("#roster-filters").querySelectorAll("[data-roster-filter]").forEach((button) => button.addEventListener("click", () => { state.rosterFilter = button.dataset.rosterFilter; renderCharacters(events, roster); }));
-  const allStates = roster.map((character) => characterState(character, events));
-  const states = allStates.filter(({ character }) => state.rosterFilter === "All" || character.group === state.rosterFilter);
-  if (!states.some(({ character }) => character.name === state.selectedCharacter)) state.selectedCharacter = states[0].character.name;
-  $("#party-count").textContent = `${allStates.length} known ${allStates.length === 1 ? "character" : "characters"}`;
-  $("#character-list").innerHTML = states.map(({ character, relationship, level, skills }) => `<button class="character-tab ${character.name === state.selectedCharacter ? "active" : ""}" role="tab" aria-selected="${character.name === state.selectedCharacter}" data-character="${esc(character.name)}" style="--person-color:${character.color ?? SERIES[character.name]}"><span><strong>${esc(character.name)}</strong><span>${esc(relationship)} · ${skills.length} ${skills.length === 1 ? "skill" : "skills"}</span></span><span class="mini-level"><small>Observed</small>${level ?? "—"}</span></button>`).join("");
-  $("#character-list").querySelectorAll("[data-character]").forEach((button) => button.addEventListener("click", () => { state.selectedCharacter = button.dataset.character; renderAll(); }));
-  const selected = states.find(({ character }) => character.name === state.selectedCharacter);
-  const color = selected.character.color ?? SERIES[selected.character.name];
-  const baseStatEntries = Object.entries(selected.baseStats);
-  const reportedEntries = Object.entries(selected.stats).filter(([name, value]) => selected.baseStats[name] !== value);
-  const levelHistory = selected.levels.map((event) => `<span>B${event.book} Ch. ${event.chapter}: ${event.level ?? "Increased; total unknown"}</span>`).join(" → ");
-  $("#character-dossier").style.setProperty("--person-color", color);
-  $("#character-dossier").innerHTML = `
-    <header class="dossier-head"><div><p class="eyebrow">Selected character</p><h3>${esc(selected.character.name)}</h3><span class="dossier-role">${esc(selected.relationship)}${Object.keys(selected.profile).length ? ` · ${esc(Object.values(selected.profile).join(" · "))}` : ""}</span></div><div class="dossier-level"><small>LAST OBSERVED</small>${selected.level ?? "Unknown"}<small>${selected.levelEvent ? `Book ${selected.levelEvent.book} · Ch. ${selected.levelEvent.chapter}` : "No level recorded"}</small></div></header>
-    <p class="observation-note">${selected.levelEvent?.action === "increase" ? `Later level gains are confirmed in Book ${selected.levelEvent.book}, Chapter ${selected.levelEvent.chapter}, but the exact total is unstated. ${esc(selected.levelEvent.summary)}` : selected.levelEvent ? `Level last observed in Book ${selected.levelEvent.book}, Chapter ${selected.levelEvent.chapter}. Later growth may not be recorded; this is not a claim about their current level.` : "No explicit level recorded for this character yet."}</p>
-    <div class="dossier-grid">
-      <div class="dossier-block"><h4>Confirmed base stats</h4>${baseStatEntries.length ? `<div class="stats">${baseStatEntries.map(([name,value]) => `<div class="stat"><span>${esc(name)}</span>${esc(value)}</div>`).join("")}</div><div class="skill-meta">Latest explicitly unmodified values; unreported growth is not guessed.</div>` : '<div class="empty">No unmodified stat display yet.</div>'}${reportedEntries.length ? `<h4 style="margin-top:20px">Reported with modifiers</h4><div class="stats">${reportedEntries.map(([name,value]) => `<div class="stat modified"><span>${esc(name)}</span>${esc(value)}</div>`).join("")}</div>` : ""}<h4 style="margin-top:20px">Level history</h4><div class="skill-meta">${levelHistory || "No explicit level shown yet."}</div></div>
-      <div class="dossier-block"><h4>All known skills & spells</h4>${selected.skills.length ? `<div class="skills-grid">${selected.skills.map((skill) => `<div class="skill-card"><strong>${esc(skill.name)}</strong><span>${skill.level !== null ? `L${esc(skill.level)}` : "KNOWN"}</span><div class="skill-meta">${esc(skill.scope)} · Confirmed by Book ${skill.book ?? 1}, Ch. ${skill.chapter}${skill.detail ? ` · ${esc(skill.detail)}` : ""}</div></div>`).join("")}</div>` : '<div class="empty">No named skills revealed yet.</div>'}</div>
-    </div>`;
-}
-
-function renderInventory(events) {
-  const allItems = inventoryAt(events);
-  const owners = ["All", ...new Set(allItems.map((item) => item.subject))];
-  if (!owners.includes(state.inventoryOwner)) state.inventoryOwner = "All";
-  $("#inventory-owner-filters").innerHTML = owners.map((owner) => `<button type="button" class="filter-button ${owner === state.inventoryOwner ? "active" : ""}" data-owner="${esc(owner)}">${esc(owner)}</button>`).join("");
-  $("#inventory-owner-filters").querySelectorAll("[data-owner]").forEach((button) => button.addEventListener("click", () => { state.inventoryOwner = button.dataset.owner; renderInventory(events); }));
-  const query = state.inventorySearch.trim().toLowerCase();
-  const items = allItems.filter((item) => (state.inventoryOwner === "All" || item.subject === state.inventoryOwner) && (!query || `${item.name} ${item.category ?? ""} ${item.detail ?? ""}`.toLowerCase().includes(query)));
-  $("#inventory-count").textContent = `${allItems.length} active ${allItems.length === 1 ? "entry" : "entries"}`;
-  $("#inventory-list").innerHTML = items.length ? items.map((item) => `<tr><td><div class="inventory-name">${esc(item.name)}${item.quantity ? ` ×${esc(item.quantity)}` : ""}</div>${item.detail ? `<div class="inventory-detail">${esc(item.detail)}</div>` : ""}</td><td>${esc(item.subject)}</td><td>${esc(item.category ?? "Item")}</td><td><span class="state-pill ${esc(item.state)}">${esc(item.state)}</span></td><td>B${esc(item.acquiredBook ?? item.book ?? 1)} · Ch. ${esc(item.acquiredChapter ?? item.chapter)}</td></tr>`).join("") : '<tr><td colspan="5"><div class="empty">No matching active inventory.</div></td></tr>';
 }
 
 function renderHistory(events) {
@@ -229,11 +141,9 @@ function renderAll() {
   const allEvents = visibleEvents();
   renderCast(allEvents);
   const events = followedEvents(allEvents);
-  const party = partyAt(events);
   renderPosition();
   renderChart();
-  renderCharacters(events, party);
-  renderInventory(events);
+  updateBoardDetails();
   renderHistory(events);
   renderRewards(events);
   const url = new URL(window.location);
@@ -251,6 +161,9 @@ async function start() {
   const facts = await fetch("data/progression.json", { cache: "no-store" });
   if (!facts.ok) throw new Error("Could not load progression archive");
   state.facts = await facts.json();
+  const tables = await fetch("data/detail-tables.json");
+  if (!tables.ok) throw new Error("Could not load detail tables");
+  state.detailTables = await tables.json();
   try {
     const saved = JSON.parse(localStorage.getItem('crawl-atlas-cast'));
     if (saved === null || (Array.isArray(saved) && saved.every(name => typeof name === 'string'))) state.followedCharacters = saved;
@@ -273,41 +186,42 @@ async function start() {
   }
   renderAll();
   const section = location.hash.slice(1) || params.get("view");
-  if (section === "explorer") jumpToLedger();
+  if (boardSections[section]) jumpToBoard(section);
   else if (section && document.querySelector(`[data-view="${CSS.escape(section)}"]`)) document.getElementById(section).scrollIntoView();
 }
 
-let ledgerJumpPending = false;
-function jumpToLedger() {
+const boardSections = {explorer:"chart-ledger", character:"character", ledger:"ledger"};
+let pendingSection = null;
+function jumpToBoard(id) {
   const frame = $("#reader-board");
   if (frame.hidden) {
     $("#progression").scrollIntoView();
     return;
   }
-  const table = frame.contentDocument?.getElementById("chart-ledger");
+  const table = frame.contentDocument?.getElementById(boardSections[id]);
   if (!table) {
-    ledgerJumpPending = true;
+    pendingSection = id;
     return;
   }
-  ledgerJumpPending = false;
+  pendingSection = null;
   const top = frame.getBoundingClientRect().top + table.getBoundingClientRect().top;
   const stickyHeight = $(".topbar").offsetHeight + $(".reader-position").offsetHeight;
   window.scrollBy(0, top - stickyHeight - 8);
 }
 window.addEventListener("hashchange", () => {
-  if (location.hash === "#explorer") jumpToLedger();
+  if (boardSections[location.hash.slice(1)]) jumpToBoard(location.hash.slice(1));
 });
 $("#section-jump").addEventListener("change", event => {
   const id = event.target.value;
   if (id) {
     location.hash = id;
-    if (id === "explorer") jumpToLedger();
+    if (boardSections[id]) jumpToBoard(id);
     else document.getElementById(id).scrollIntoView();
   }
   event.target.value = "";
 });
 document.querySelector('a[href="#explorer"]').addEventListener("click", () => {
-  if (location.hash === "#explorer") jumpToLedger();
+  if (boardSections[location.hash.slice(1)]) jumpToBoard(location.hash.slice(1));
 });
 new ResizeObserver(() => {
   document.documentElement.style.setProperty("--header-height", $(".topbar").offsetHeight + "px");
@@ -323,10 +237,11 @@ $("#reader-board").addEventListener("load", event => {
   if (!body || !frame.hasAttribute("src")) return;
   if (frame.contentDocument.URL !== frame.src) return;
   frame.removeAttribute("aria-busy");
+  updateBoardDetails();
   const resize = () => { frame.style.height = Math.ceil(body.getBoundingClientRect().height) + "px"; };
   new ResizeObserver(resize).observe(body);
   resize();
-  if (ledgerJumpPending) jumpToLedger();
+  if (pendingSection) jumpToBoard(pendingSection);
 });
 $('#cast-none').addEventListener('click', () => saveCast([]));
 $('#cast-core').addEventListener('click', () => {
@@ -347,7 +262,6 @@ $("#book-select").addEventListener("change", (event) => { state.progress = progr
 $("#chapter-select").addEventListener("change", (event) => { state.progress = progressFor($("#book-select").value, event.target.value); renderAll(); });
 $("#previous-chapter").addEventListener("click", () => { const { globalChapter } = currentLocation(); state.progress = Math.max(0, (globalChapter - 2) / state.data.series.chapterCount); renderAll(); });
 $("#next-chapter").addEventListener("click", () => { const { globalChapter } = currentLocation(); state.progress = Math.min(1, globalChapter / state.data.series.chapterCount); renderAll(); });
-$("#inventory-search").addEventListener("input", (event) => { state.inventorySearch = event.target.value; renderInventory(followedEvents()); });
 $("#about-button").addEventListener("click", () => { $("#about-panel").hidden = false; $("#about-button").setAttribute("aria-expanded", "true"); $("#about-close").focus(); });
 $("#about-close").addEventListener("click", () => { $("#about-panel").hidden = true; $("#about-button").setAttribute("aria-expanded", "false"); $("#about-button").focus(); });
 document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !$("#about-panel").hidden) $("#about-close").click(); });

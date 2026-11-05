@@ -8,6 +8,8 @@ on:
       - "site/dist/**"
       - "scripts/render_reader_charts.py"
       - "scripts/reader_book_axis.py"
+      - "scripts/detail_rows.cjs"
+      - "scripts/render_detail_tables.py"
       - "scripts/check_reader_exports.py"
       - "charts/reader-exports.json"
       - "dbt_charts.yml"

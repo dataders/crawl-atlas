@@ -6,7 +6,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "charts/reader-exports.json"
 INPUTS = ("scripts/render_reader_charts.py", "scripts/reader_book_axis.py", "dbt_charts.yml", "site/dist/data/series.json",
-          "site/dist/data/progression.json", "site/dist/data/crawl-atlas.sqlite")
+          "site/dist/data/progression.json", "site/dist/data/crawl-atlas.sqlite",
+          "scripts/detail_rows.cjs", "scripts/render_detail_tables.py", "site/dist/detail-model.js")
 
 
 def digest(path):
@@ -20,6 +21,7 @@ def snapshot():
     ids.update(f"book-start-{b['number']}" for b in books[1:])
     return {
         "inputs": {name: digest(ROOT / name) for name in INPUTS},
+        "detail_tables": digest(ROOT / "site/dist/data/detail-tables.json"),
         "exports": {name: digest(ROOT / "site/dist/charts" / name)
                     for prefix in ("", "compact/") for event in sorted(ids)
                     for name in [f"{prefix}{event}.html"]},
