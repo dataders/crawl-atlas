@@ -51,6 +51,15 @@ class DatabaseTests(unittest.TestCase):
                 self.assertEqual(db.execute('PRAGMA integrity_check').fetchone()[0], 'ok')
                 self.assertEqual(db.execute('PRAGMA foreign_key_check').fetchall(), [])
                 self.assertEqual(db.execute('SELECT count(*) FROM events').fetchone()[0], len(data['events']))
+                self.assertEqual(db.execute('SELECT count(*) FROM dim_series').fetchone()[0], 1)
+                self.assertEqual(db.execute('SELECT count(*) FROM dim_book').fetchone()[0], len(data['books']))
+                self.assertEqual(db.execute('SELECT count(*) FROM dim_character').fetchone()[0], len(data['characters']))
+                self.assertEqual(db.execute('SELECT count(*) FROM fct_timeline_event').fetchone()[0], len(data['events']))
+                self.assertEqual(db.execute('SELECT count(*) FROM fct_character_observation').fetchone()[0], len(rows))
+                self.assertEqual(
+                    db.execute('SELECT count(*) FROM fct_acquisition').fetchone()[0],
+                    db.execute('SELECT count(*) FROM acquisitions').fetchone()[0],
+                )
                 expected = {e['id'] for e in data['events'] if e['type'] in ('stat', 'skill', 'level')}
                 self.assertEqual({r['event_id'] for r in rows}, expected)
                 self.assertEqual(rows, json.loads(Path('site/dist/data/progression.json').read_text()))

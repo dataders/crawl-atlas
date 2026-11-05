@@ -54,7 +54,11 @@ def build(source, output):
     path.unlink(missing_ok=True)
     with closing(sqlite3.connect(path)) as db, db:
         db.executescript('''
+            CREATE TABLE series (id TEXT PRIMARY KEY, title TEXT, book_count INTEGER,
+                chapter_count INTEGER, data_version TEXT, coverage_note TEXT);
             CREATE TABLE books (number INTEGER PRIMARY KEY, title TEXT, chapter_count INTEGER);
+            CREATE TABLE characters (id TEXT PRIMARY KEY, name TEXT UNIQUE,
+                character_group TEXT, color TEXT);
             CREATE TABLE events (id TEXT PRIMARY KEY, book INTEGER REFERENCES books(number),
                 chapter INTEGER, position REAL, progress REAL, kind TEXT, character TEXT,
                 name TEXT, action TEXT, confidence TEXT, source TEXT, summary TEXT, payload TEXT);
@@ -78,8 +82,25 @@ def build(source, output):
                 parent_event_id TEXT REFERENCES acquisitions(event_id),
                 PRIMARY KEY(child_event_id, parent_event_id));
             CREATE INDEX acquisitions_character_stage ON acquisitions(character, stage, progress);
+            CREATE VIEW dim_series AS SELECT id AS series_id, title, book_count,
+                chapter_count, data_version, coverage_note FROM series;
+            CREATE VIEW dim_book AS SELECT number AS book_number, title, chapter_count
+                FROM books;
+            CREATE VIEW dim_character AS SELECT id AS character_id, name AS character,
+                character_group, color FROM characters;
+            CREATE VIEW fct_timeline_event AS SELECT * FROM events;
+            CREATE VIEW fct_character_observation AS SELECT * FROM progression;
+            CREATE VIEW fct_acquisition AS SELECT * FROM acquisitions;
+            CREATE VIEW bridge_acquisition_lineage AS SELECT * FROM acquisition_links;
         ''')
+        series = data['series']
+        db.execute('INSERT INTO series VALUES (?,?,?,?,?,?)', (
+            series['id'], series['title'], series['bookCount'], series['chapterCount'],
+            series['dataVersion'], series['coverageNote']))
         db.executemany('INSERT INTO books VALUES (?,?,?)', [(b['number'], b['title'], b['chapterCount']) for b in data['books']])
+        db.executemany('INSERT INTO characters VALUES (?,?,?,?)', [(
+            character['id'], character['name'], character.get('group'), character.get('color'))
+            for character in data['characters']])
         db.executemany('INSERT INTO events VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)', [(
             e['id'], e['book'], e['chapter'], e['position'], e['progress'], e['type'],
             e['subject'], e['name'], e.get('action'), e['confidence'], e['source'],
