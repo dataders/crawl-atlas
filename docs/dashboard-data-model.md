@@ -22,6 +22,13 @@ All facts carry `book`, `chapter`, and normalized `progress`. Every dashboard
 query applies the reader's boundary before aggregation or display. `source` is a
 private-corpus anchor; `summary` is a short public fact, never source prose.
 
+The reader uses two coordinates. The slider filters facts by series `progress`.
+Each chart then plots those facts at `book - 1 + (chapter - 1 + position) /
+chapter_count`, measured in books. This gives every reached book equal width;
+the smaller ticks show the fraction of its chapters traversed. The right edge is
+the end of the current book, including unread space. Book-start exports change
+the scale before a new observation arrives, without revealing later values.
+
 ## Column contracts
 
 ### `dim_series`

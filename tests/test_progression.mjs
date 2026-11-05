@@ -11,6 +11,7 @@ const state={data,progress:1,chartMetric:'level'};
 const context=vm.createContext({state,$,window:{matchMedia:()=>({matches:false})},esc:String,SERIES:{},EVENT_COLORS:{skill:'red',item:'green',party:'blue'},events,imani});
 const source=readFileSync('site/dist/app.js','utf8');
 vm.runInContext(source.slice(source.indexOf('function characterState('),source.indexOf('function inventoryAt(')),context);
+vm.runInContext(source.slice(source.indexOf('function currentLocation('),source.indexOf('function progressFor(')),context);
 vm.runInContext(source.slice(source.indexOf('function renderChart('),source.indexOf('function renderCharacters(')),context);
 context.before=events.filter(e=>e.progress<growth.progress);
 assert.equal(vm.runInContext('characterState(imani,before).level',context),24);
@@ -28,6 +29,14 @@ state.progress = state.facts[0].progress;
 vm.runInContext('renderChart()', context);
 const early = readFileSync('site/dist/' + frame.src, 'utf8');
 assert.ok(early.includes('Carl') && !early.includes('Mordecai'));
+for (const book of data.books.slice(1).reverse()) {
+  state.progress = (book.startChapter - 1 + 0.001) / data.series.chapterCount;
+  vm.runInContext('renderChart()', context);
+  const html = readFileSync('site/dist/' + frame.src, 'utf8');
+  assert.ok(html.includes(`data-book-count="${book.number}"`));
+  assert.ok(html.includes(book.number <= 3 ? `>Book ${book.number}</text>` : `>B${book.number}</text>`));
+  assert.ok(!html.includes(`>B${book.number+1}</text>`));
+}
 state.progress = 0;
 vm.runInContext('renderChart()', context);
 assert.ok(frame.hidden && !frame.src);

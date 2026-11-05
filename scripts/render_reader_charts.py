@@ -4,6 +4,7 @@ import subprocess
 import tempfile
 from pathlib import Path
 from check_reader_exports import record
+from reader_book_axis import finish_book_axes
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "site/dist"
@@ -12,12 +13,32 @@ out.mkdir(exist_ok=True)
 compact = out / "compact"
 compact.mkdir(exist_ok=True)
 rows = json.loads((DIST / "data/progression.json").read_text())
-cast_colors = {c["name"]: c["color"] for c in json.loads((DIST / "data/series.json").read_text())["characters"]}
+series = json.loads((DIST / "data/series.json").read_text())
+cast_colors = {c["name"]: c["color"] for c in series["characters"]}
+
+
+def book_axis(n):
+    # dct's static label pass can present numeric ticks as dates from the epoch.
+    v = "(isDate(datum.value) ? toNumber(datum.value)/86400000 : toNumber(datum.value))"
+    step = 25 if n == 1 else 50
+    prefix = "Book " if n <= 3 else "B"
+    minor = f"({v}%100) + '%'" if n <= 3 else "''"
+    expr = (f"{v} === {100*n} ? " + ("'100%'" if n <= 3 else "''") +
+            f" : {v}%100 === 0 ? '{prefix}' + (1+{v}/100) : {minor}")
+    return {"scale": {"nice": False, "values": list(range(0, n*100+1, step)),
+                      "continuous": {"domain": [0, n*100]}},
+            "ticks": {"step": step}, "labels": {"expr": expr}}
+
+
+boundaries = [{"book": b["number"], "event_id": f"book-start-{b['number']}",
+               "kind": "level", "progress": (b["startChapter"]-1)/series["series"]["chapterCount"]}
+              for b in series["books"][1:]]
 with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
     boards = {}
+    book_counts = {}
     metrics = {"Level": "Level", "STR": "Strength", "INT": "Intelligence",
                "CON": "Constitution", "DEX": "Dexterity", "CHA": "Charisma"}
-    for row in rows:
+    for row in [*rows, *boundaries]:
         if row["kind"] not in ("level", "stat") or row["event_id"] in boards:
             continue
         visible = [r for r in rows if r["kind"] in ("level", "stat") and r["progress"] <= row["progress"]]
@@ -34,15 +55,14 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
             if not any(r["value"] is not None for r in points):
                 spec["rows"].append({"title": title, "text": "No value recorded yet."})
                 continue
-            spec["queries"][metric] = f"""SELECT progress * 100 AS series_percent, value, character AS crawler
-                FROM progression WHERE metric = '{metric}'
+            spec["queries"][metric] = f"""SELECT (book-1)*100 + 100.0*(chapter-1+position)/chapter_count AS book_position, value, character AS crawler
+                FROM progression JOIN books ON books.number = progression.book WHERE metric = '{metric}'
                 AND (kind = 'level' OR (kind = 'stat' AND scope = 'base'))
                 AND value IS NOT NULL AND progress <= {row["progress"]}
                 ORDER BY progress, character"""
             chart = {"title": title, "color": "crawler", "type": "line", "query": metric,
-                     "x": "series_percent", "x_label": "Series read (%)", "y": "value",
-                     "y_label": title, "style": {"axis_x": {"scale": {"continuous": {
-                         "domain": [0, max(1, row["progress"] * 100)]}}}},
+                     "x": "book_position", "x_label": ("Progress within book" if row["book"] <= 3 else "Book start · minor ticks mark 50%"), "y": "value",
+                     "y_label": title, "style": {"axis_x": book_axis(row["book"])},
                      "height": 240, "layers": [{"type": "scatter", "y": "value", "color": "crawler"}]}
             spec["charts"][metric] = chart
             spec["rows"].append(metric)
@@ -58,6 +78,7 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
         spec["charts"]["levels"] = {"type": "table", "query": "levels",
             "title": "Latest level observations", "warnings_ignore": ["WARN-QUERY-RETURNED-ZERO-ROWS"]}
         boards[row["event_id"]] = spec
+        book_counts[row["event_id"]] = row["book"]
     for columns, width, destination in [(1, 440, compact), (3, 1360, out)]:
         paths = []
         for event_id, spec in boards.items():
@@ -72,5 +93,5 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
         for board in paths:
             html = destination / (Path(board).stem + ".html")
             link = '<link rel="stylesheet" href="/chart-sizing.css">'
-            html.write_text(html.read_text().replace("</head>", link + "</head>", 1))
+            html.write_text(finish_book_axes(html.read_text(), book_counts[Path(board).stem]).replace("</head>", link + "</head>", 1))
 record()

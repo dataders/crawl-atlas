@@ -161,7 +161,9 @@ function renderChart() {
     return;
   }
   const layout = window.matchMedia("(max-width: 820px)").matches ? "compact/" : "";
-  const path = `charts/${layout}${encodeURIComponent(checkpoint.event_id)}.html`;
+  const book = currentLocation().book.number;
+  const id = book > checkpoint.book ? `book-start-${book}` : checkpoint.event_id;
+  const path = `charts/${layout}${encodeURIComponent(id)}.html`;
   if (frame.getAttribute("src") !== path) frame.setAttribute("src", path);
 }
 
