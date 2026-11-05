@@ -101,12 +101,17 @@ class BookEightTests(unittest.TestCase):
     def test_audit_is_published_without_missing_records(self):
         audit = json.loads(Path('data/public/book-8-audit.json').read_text())
         published = [e for e in self.events if e['book'] == 8]
-        imani = json.loads(Path('data/public/imani-audit.json').read_text())
-        additions = [e for e in imani['events'] if e['source'].startswith('b8-')]
-        rewards = json.loads(Path('data/public/reward-provenance.json').read_text())
-        new_rewards = [e for e in rewards['events'] if e['source'].startswith('b8-') and e['id'].startswith('reward-')]
-        self.assertEqual(len(published), len(audit['events']) + len(additions) + len(new_rewards))
+        identities = {(e['source'], e['subject'], e['type'], e['name']) for e in published}
+        for row in audit['events']:
+            self.assertIn((row['source'], row['subject'], row['type'], row['name']), identities)
         self.assertEqual(len([e for e in published if e['type'] == 'level']), 7)
+
+    def test_charts_use_exact_base_readings_only(self):
+        by_source = {(row['source'], row['metric'], row['scope']): row['value'] for row in self.rows}
+        self.assertEqual(by_source['b4-c34-p134', 'STR', 'base'], 75)
+        self.assertEqual(by_source['b7-c3-p105', 'CHA', 'base'], 163)
+        self.assertNotIn(('b7-c3-p109', 'CHA', 'base'), by_source)
+        self.assertNotIn(('b7-c77-p21', 'INT', 'base'), by_source)
 
     def test_skill_scope_does_not_invent_training_growth(self):
         rows = [r for r in self.rows if r['book'] == 8 and r['metric'] == 'Second Chance']

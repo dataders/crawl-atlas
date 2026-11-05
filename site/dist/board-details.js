@@ -35,20 +35,18 @@ function updateBoardDetails() {
         <label>Stage<select data-reward="stage"></select></label><label>Tier<select data-reward="tier"></select></label>
         <label>Box type<select data-reward="kind"></select></label><label>Search rewards<input type="search" data-reward="search"></label></div>
         <div data-reward-rows></div><p data-note="rewards" aria-live="polite"></p></section>
-      <section id="history"><h2>Story history</h2><label>Event type<select data-event-type></select></label>
+      <section id="history"><h2>History</h2><label>Event type<select data-event-type></select></label>
         <div data-story></div><p data-note="story" aria-live="polite"></p></section>`;
     const inventory = details.ownerDocument.createElement('div');
     inventory.id = 'ledger';
     inventory.innerHTML = '<h4>Inventory</h4><label>Search items <input type="search" data-field="search"></label><div data-items></div><p data-note="inventory" aria-live="polite"></p>';
     details.querySelector('#character').append(inventory);
     board.append(details);
-    const layoutNativeTables = installTableLimits(board);
     board.addEventListener('click', e=>{
       const button = e.target.closest('button[data-limit]');
       if (!button) return;
       tableLimits.set(button.dataset.table, Number(button.dataset.limit));
-      if (['ledger','levels'].includes(button.dataset.table)) layoutNativeTables();
-      else updateBoardDetails();
+      updateBoardDetails();
     });
     details.querySelector('[data-field="person"]').onchange = e => {
       state.selectedCharacter = e.target.value;
@@ -127,10 +125,11 @@ function updateBoardDetails() {
     ...parents.map(p=>`${p.name} · B${p.book} Ch ${p.chapter} · ${p.source}`)
   ].filter(Boolean).join(' · '));
   details.querySelector('[data-reward-rows]').innerHTML = detailTable('rewards', matches.map(rewardRecord), notes);
-  const types = ['All', ...new Set(events.map(e=>e.type))];
+  const entries = storyEntries(events, state.facts, state.progress);
+  const types = ['All', ...new Set(entries.map(entry => entry.type))];
   if (!types.includes(state.historyFilter)) state.historyFilter='All';
   details.querySelector('[data-event-type]').innerHTML = optionList(types,state.historyFilter);
-  const history = events.filter(e=>state.historyFilter==='All'||e.type===state.historyFilter).reverse();
-  details.querySelector('[data-story]').innerHTML = detailTable('story', history.map(storyRecord), history.map(e=>e.summary??e.detail));
+  const history = entries.filter(entry => state.historyFilter === 'All' || entry.type === state.historyFilter);
+  details.querySelector('[data-story]').innerHTML = detailTable('story', history.map(entry => entry.row), history.map(entry => entry.note));
   details.querySelectorAll('[data-note]').forEach(note=>note.textContent='');
 }

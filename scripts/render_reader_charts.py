@@ -1,6 +1,7 @@
 """Build the static dbt Charts snapshots selected by the reader's spoiler boundary."""
 from concurrent.futures import ThreadPoolExecutor
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -32,13 +33,25 @@ def book_axis(n):
             "ticks": {"step": step}, "labels": {"expr": expr}}
 
 
+OPEN_SCOPES = {"estimate": "Estimate", "lower-bound": "Lower bound"}
+OPEN_POINT_STYLE = {"marks": {"point": {"filled": False, "stroke_width": 2, "size": 88}}}
+
+
+def point_query(metric, predicate, cutoff):
+    return f"""SELECT (book-1)*100 + 100.0*(chapter-1+position)/chapter_count AS book_position,
+            value, character AS crawler
+        FROM progression JOIN books ON books.number = progression.book
+        WHERE metric = '{metric}' AND ({predicate}) AND value IS NOT NULL
+            AND progress <= {cutoff}
+        ORDER BY progress, character"""
+
+
 boundaries = [{"book": b["number"], "event_id": f"book-start-{b['number']}",
                "kind": "level", "progress": (b["startChapter"]-1)/series["series"]["chapterCount"]}
               for b in series["books"][1:]]
 with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
     boards = {}
     book_counts = {}
-    cutoffs = {}
     metrics = {"Level": "Level", "STR": "Strength", "INT": "Intelligence",
                "DEX": "Dexterity", "CHA": "Charisma"}
     for row in [*rows, *boundaries]:
@@ -53,38 +66,46 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
                     "axis_y": {"grid": {"opacity": 0.2}}}},
                 "queries": {}, "charts": {}}
         for metric, title in metrics.items():
-            points = [r for r in visible if r["metric"] == metric and (metric == "Level" or r["scope"] == "base")]
+            measured = [r for r in visible if r["metric"] == metric and r["value"] is not None]
+            exact = [r for r in measured if r["scope"] not in OPEN_SCOPES and
+                     (r["kind"] == "level" or r["scope"] == "base")]
+            qualified = [r for r in measured if r["scope"] in OPEN_SCOPES]
             title = title if metric == "Level" else f"Base {title.lower()}"
-            if not any(r["value"] is not None for r in points):
+            if not exact and not qualified:
                 spec["rows"].append({"title": title, "text": "No value recorded yet."})
                 continue
-            spec["queries"][metric] = f"""SELECT (book-1)*100 + 100.0*(chapter-1+position)/chapter_count AS book_position, value, character AS crawler
-                FROM progression JOIN books ON books.number = progression.book WHERE metric = '{metric}'
-                AND (kind = 'level' OR (kind = 'stat' AND scope = 'base'))
-                AND value IS NOT NULL AND progress <= {row["progress"]}
-                ORDER BY progress, character"""
-            chart = {"title": title, "color": "crawler", "type": "line", "query": metric,
-                     "x": "book_position", "x_label": ("Progress within book" if row["book"] <= 3 else "Book start · minor ticks mark 50%"), "y": "value",
-                     "y_label": title, "style": {"axis_x": book_axis(row["book"])},
-                     "height": 240, "layers": [{"type": "scatter", "y": "value", "color": "crawler"}]}
+            chart = {"title": title, "color": "crawler", "x": "book_position", "y": "value",
+                     "x_label": ("Progress within book" if row["book"] <= 3 else "Book start · minor ticks mark 50%"),
+                     "y_label": title, "style": {"axis_x": book_axis(row["book"])}, "height": 240}
+            if exact:
+                spec["queries"][metric] = point_query(metric,
+                    "(kind = 'level' AND scope NOT IN ('estimate','lower-bound')) OR scope = 'base'",
+                    max(r["progress"] for r in exact))
+                chart.update(type="line", query=metric, layers=[{"type": "scatter", "y": "value", "color": "crawler"}])
+
+            # Separate native scatter queries keep bounds and estimates out of the line.
+            for index, (scope, person) in enumerate(sorted({(r["scope"], r["character"]) for r in qualified})):
+                query = f"{metric}_open_{index}"
+                last = max(r["progress"] for r in qualified if r["scope"] == scope and r["character"] == person)
+                sql_person = person.replace("'", "''")
+                spec["queries"][query] = point_query(metric, f"scope = '{scope}' AND character = '{sql_person}'", last)
+                label = f"{OPEN_SCOPES[scope]} · {person}"
+                if "query" not in chart:
+                    chart.update(type="scatter", query=query, y_label=label, layers=[])
+                    chart["style"].update(OPEN_POINT_STYLE)
+                else:
+                    chart["layers"].append({"type": "scatter", "x": "book_position", "y": "value",
+                        "color": "crawler", "query": query, "label": label, "style": OPEN_POINT_STYLE})
+            if qualified:
+                chart["subtitle"] = "Filled: recorded value. Open: estimate or lower bound."
             spec["charts"][metric] = chart
             spec["rows"].append(metric)
-        spec["queries"]["levels"] = f"""
-            WITH ranked AS (
-                SELECT character, value, book, chapter,
-                       ROW_NUMBER() OVER (PARTITION BY character ORDER BY progress DESC, event_id DESC) AS rank
-                FROM progression WHERE kind = 'level' AND progress <= {row["progress"]}
-            )
-            SELECT character, COALESCE(CAST(CAST(value AS INTEGER) AS TEXT), 'Unknown') AS level,
-                   'B' || book || ' · Ch ' || chapter AS observed_at
-            FROM ranked WHERE rank = 1 ORDER BY character"""
-        spec["charts"]["levels"] = {"type": "table", "query": "levels",
-            "title": "Latest level observations", "warnings_ignore": ["WARN-QUERY-RETURNED-ZERO-ROWS"]}
         boards[row["event_id"]] = spec
         book_counts[row["event_id"]] = row["book"]
-        cutoffs[row["event_id"]] = row["progress"]
     for columns, width, destination in [(1, 440, compact), (2, 1360, out)]:
         paths = []
+        rendered_specs = {}
+        aliases = {}
         for event_id, spec in boards.items():
             items = spec["rows"]
             if columns == 1:
@@ -95,32 +116,16 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
                           {"cols": [dexterity, charisma]}]
                 if "Level" in spec["charts"]:
                     spec["charts"]["Level"]["height"] = 320
-            fields = ("character, discovery, observation, change, scope, location, evidence" if columns == 2
-                      else "character || ' · ' || discovery AS discovery, observation, location")
-            spec["queries"]["ledger"] = f"""
-                WITH observed AS (
-                    SELECT character, metric AS discovery,
-                        coalesce(printf('%g', previous), '—') AS before_value,
-                        CASE WHEN value IS NOT NULL THEN printf('%g', value)
-                             WHEN action = 'remove' THEN 'Removed'
-                             WHEN action = 'increase' THEN 'Total unknown'
-                             WHEN action = 'delta' THEN 'Unstated' ELSE 'Known' END AS after_value,
-                        CASE WHEN delta IS NOT NULL THEN printf('%+g', delta)
-                             WHEN action = 'increase' THEN 'Increased' ELSE '—' END AS change,
-                        scope, 'B' || book || ' · Ch ' || chapter || ' · ' ||
-                        printf('%.0f%%', position*100) AS location, confidence AS evidence,
-                        previous, progress, event_id, metric
-                    FROM progression WHERE progress <= {cutoffs[event_id]}
-                ), display AS (
-                    SELECT *, (CASE WHEN previous IS NULL THEN '—' ELSE before_value END)
-                        || ' → ' || after_value AS observation FROM observed
-                )
-                SELECT {fields} FROM display ORDER BY progress DESC, event_id, metric"""
-            spec["charts"]["ledger"] = {"type": "table", "query": "ledger",
-                "title": "Progression ledger", "style": {"pagination": {"page_rows": 12}}}
             board = Path(scratch) / f"{event_id}.yml"
-            board.write_text(json.dumps({**spec, "width": width, "rows": [*layout, "levels", "ledger"],
-                "style": {**spec["style"], "frame": {"margin": 16, "card_gap": 12}}}))
+            serialized = json.dumps({**spec, "width": width, "rows": layout,
+                "style": {**spec["style"], "frame": {"margin": 16, "card_gap": 12}}})
+            # History updates at every observation, even when the plots are identical.
+            key = (book_counts[event_id], serialized)
+            if key in rendered_specs:
+                aliases[event_id] = rendered_specs[key]
+                continue
+            rendered_specs[key] = event_id
+            board.write_text(serialized)
             paths.append(str(board))
         def render_batch(batch):
             subprocess.run(["dct", "render", *batch, "--no-cache", "--project-dir", str(ROOT),
@@ -131,5 +136,7 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
             html = destination / (Path(board).stem + ".html")
             link = '<link rel="stylesheet" href="/chart-sizing.css">'
             html.write_text(finish_book_axes(html.read_text(), book_counts[Path(board).stem]).replace("</head>", link + "</head>", 1))
+        for event_id, original in aliases.items():
+            shutil.copyfile(destination / f"{original}.html", destination / f"{event_id}.html")
 subprocess.run([sys.executable, str(ROOT / "scripts/render_detail_tables.py")], check=True)
 record()

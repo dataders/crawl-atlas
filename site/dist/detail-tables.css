@@ -17,3 +17,18 @@
 .table-controls {display:flex;align-items:center;flex-wrap:wrap;gap:6px;color:#bdc7bb;font:12px/1.3 'Inter Variable',system-ui,sans-serif; margin:6px 0 10px}
 .table-controls button {padding:4px 8px;background:#222b24;color:#edf0ed;border:1px solid #4d5a50;border-radius:4px;cursor:pointer}
 .detail-table-scroll svg:is([data-detail-table=rewards],[data-detail-table=story]) {min-width:600px}
+
+/* Give the native tables the same surfaces as the rest of the reader. */
+.detail-table-scroll svg > g:first-child > rect:first-child,
+.detail-table-scroll .dbt-table-row > rect {fill:#222b24}
+.detail-table-scroll svg > g:first-child > rect:nth-child(2) {fill:#54604f}
+.detail-table-scroll svg > g:first-child > text {fill:#c2d99b}
+.detail-table-scroll .dbt-table-row text {fill:#eceee2}
+.detail-table-scroll svg[data-detail-table=story] text[data-col="0"] {fill:#b6c1b3}
+.detail-table-scroll svg[data-detail-table=story] text[data-col="2"] {font-weight:600}
+.detail-table-scroll svg:is([data-detail-table=skills],[data-detail-table=inventory],[data-detail-table=rewards],[data-detail-table=story]) g[tabindex] {cursor:pointer}
+.detail-table-scroll g[tabindex]:is(:hover,:focus-visible) .dbt-table-row text {fill:#f3f6ec}
+.detail-table-scroll g[tabindex]:is(:hover,:focus-visible) .dbt-table-row > rect {fill:#354333}
+.reader-details :is(select,input,button):focus-visible {outline:2px solid #c2d99b;outline-offset:2px}
+.table-controls button {min-height:32px}
+.table-controls button:hover {background:#354333}

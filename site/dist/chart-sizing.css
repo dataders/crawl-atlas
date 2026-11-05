@@ -4,3 +4,15 @@
   max-width: 100%;
   margin-inline: auto;
 }
+
+/* Keep book ticks as the axis accent; secondary labels use the reader's sage. */
+.dbt-chart [data-authored-kind="subtitle"],
+.dbt-chart [data-authored-kind="y_label"] text {
+  fill: #b6c1b3;
+}
+
+/* Hollow observations have their own keyboard stop and native hover text. */
+.dbt-chart circle[data-dct-role="point"][tabindex]:focus-visible {
+  outline: 2px solid #eceee2;
+  outline-offset: 3px;
+}

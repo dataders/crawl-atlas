@@ -143,14 +143,14 @@ function renderAll() {
 }
 
 async function start() {
-  const response = await fetch("data/series.json?v=2.6.0", { cache: "no-store" });
+  const response = await fetch("data/series.json?v=2.7.0", { cache: "no-store" });
   if (!response.ok) throw new Error(`Could not load dataset (${response.status})`);
   state.data = normalizeData(await response.json());
   state.data.characters ??= [];
   const facts = await fetch("data/progression.json", { cache: "no-store" });
   if (!facts.ok) throw new Error("Could not load progression archive");
   state.facts = await facts.json();
-  const tables = await fetch("data/detail-tables.json?v=2");
+  const tables = await fetch("data/detail-tables.json?v=3");
   if (!tables.ok) throw new Error("Could not load detail tables");
   state.detailTables = await tables.json();
   try {
@@ -179,7 +179,7 @@ async function start() {
   else if (section && document.querySelector(`[data-view="${CSS.escape(section)}"]`)) document.getElementById(section).scrollIntoView();
 }
 
-const boardSections = {explorer:"chart-ledger", character:"character", ledger:"ledger", rewards:"rewards", history:"history"};
+const boardSections = {explorer:"history", character:"character", ledger:"ledger", rewards:"rewards", history:"history"};
 let pendingSection = null;
 function jumpToBoard(id) {
   const frame = $("#reader-board");
@@ -209,7 +209,7 @@ $("#section-jump").addEventListener("change", event => {
   }
   event.target.value = "";
 });
-document.querySelector('a[href="#explorer"]').addEventListener("click", () => {
+document.querySelector('a[href="#history"]').addEventListener("click", () => {
   if (boardSections[location.hash.slice(1)]) jumpToBoard(location.hash.slice(1));
 });
 new ResizeObserver(() => {

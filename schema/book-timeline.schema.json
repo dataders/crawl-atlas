@@ -212,7 +212,9 @@
                 "base",
                 "reported",
                 "equipment",
-                "temporary"
+                "temporary",
+                "estimate",
+                "lower-bound"
               ]
             }
           },

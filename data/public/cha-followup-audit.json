@@ -1,0 +1,192 @@
+{
+  "booksReviewed": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "scope": "Targeted scan for charisma in Books 2–8 with local context and existing observations checked. Only exact totals labeled as base enter the base chart. Thresholds and expiring effects remain separate observations.",
+  "events": [
+    {
+      "source": "b2-c2-p172",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Donut’s post-class stat sheet lists 70 CHA without a modifier. The sheet separately itemizes modifiers on other stats.",
+      "action": "merge",
+      "stats": {
+        "CHA": 70
+      },
+      "statScopes": {
+        "CHA": "base"
+      },
+      "evidence": [
+        "b2-c2-p167",
+        "b2-c2-p171"
+      ]
+    },
+    {
+      "source": "b2-c15-p92",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Mordecai reports 76 CHA for Donut while discussing a purchase. No base and equipment breakdown is given.",
+      "action": "merge",
+      "stats": {
+        "CHA": 76
+      },
+      "statScopes": {
+        "CHA": "reported"
+      }
+    },
+    {
+      "source": "b2-c21-p87",
+      "type": "stat",
+      "subject": "Katia Grim",
+      "name": "CHA confirmation",
+      "summary": "Carl reads 8 CHA on Katia’s party stat sheet. It does not separate bonuses from base values.",
+      "action": "merge",
+      "stats": {
+        "CHA": 8
+      },
+      "statScopes": {
+        "CHA": "reported"
+      },
+      "evidence": [
+        "b2-c21-p82"
+      ]
+    },
+    {
+      "source": "b3-c2-p185",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Mordecai reports that Donut currently has 94 Charisma while discussing the next threshold. No base or equipment breakdown is stated.",
+      "action": "merge",
+      "stats": {
+        "CHA": 94
+      },
+      "statScopes": {
+        "CHA": "reported"
+      }
+    },
+    {
+      "source": "b3-c30-p14",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Love Vampire",
+      "summary": "Donut reports using Love Vampire after passing 100 CHA. The casts did not trigger its effect.",
+      "action": "note"
+    },
+    {
+      "source": "b4-c30-p58",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Carl reports 120 CHA for Donut while calculating the range of a spell. No unmodified value is specified.",
+      "action": "merge",
+      "stats": {
+        "CHA": 120
+      },
+      "statScopes": {
+        "CHA": "reported"
+      }
+    },
+    {
+      "source": "b5-c51-p42",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Carl reports that Donut’s CHA is 130. Only her strength is explicitly identified as base in the preceding exchange.",
+      "action": "merge",
+      "stats": {
+        "CHA": 130
+      },
+      "statScopes": {
+        "CHA": "reported"
+      }
+    },
+    {
+      "source": "b6-c22-p140",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Temporary charisma tiara gone",
+      "summary": "Carl confirms that Donut lost the tiara that doubled her charisma. He does not give a new total.",
+      "action": "note"
+    },
+    {
+      "source": "b6-c30-p32",
+      "type": "story",
+      "subject": "Katia Grim",
+      "name": "Charisma decreased",
+      "summary": "Mordecai reports a loss of charisma for Katia. He gives neither the size of the loss nor a new total.",
+      "action": "note"
+    },
+    {
+      "source": "b7-c3-p105",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Mordecai identifies 163 as Donut’s real base charisma when explaining the potion.",
+      "action": "merge",
+      "stats": {
+        "CHA": 163
+      },
+      "statScopes": {
+        "CHA": "base"
+      }
+    },
+    {
+      "source": "b7-c3-p109",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Charisma check altered",
+      "summary": "Donut drinks a potion that lets her count as having 193 CHA for a check. Her actual base is 163.",
+      "action": "note",
+      "evidence": [
+        "b7-c3-p105"
+      ]
+    },
+    {
+      "source": "b7-c77-p35",
+      "type": "stat",
+      "subject": "Li Na",
+      "name": "CHA confirmation",
+      "summary": "The system confirms Li Na has maxed every base stat, explicitly including charisma. The cap is 300.",
+      "action": "merge",
+      "stats": {
+        "CHA": 300
+      },
+      "statScopes": {
+        "CHA": "base"
+      },
+      "evidence": [
+        "b7-c77-p32",
+        "b7-c77-p33",
+        "b7-c77-p34"
+      ]
+    },
+    {
+      "source": "b7-c77-p39",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Boosted charisma above 300",
+      "summary": "Donut reports more than 300 CHA. Carl clarifies that her base has not reached 300.",
+      "action": "note",
+      "evidence": [
+        "b7-c77-p38"
+      ]
+    },
+    {
+      "source": "b7-c86-p119",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Monologue",
+      "summary": "Donut uses Monologue, a benefit from passing 300 boosted charisma. Its skill rank is unstated.",
+      "action": "note"
+    }
+  ]
+}

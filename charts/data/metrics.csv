@@ -56,6 +56,12 @@ series_progress,book,chapter,chapter_position,character,metric,value,scope,summa
 9.86577,1,47,56.64,Princess Donut,Level,13,confirmed,Continued grinding raises both Carl and Donut to level 13.,b1-c47-p81
 9.879104,1,47,62.94,Mongo,Level,1,confirmed,System confirms bonded Mongo joins the party at level 1. No post-bond level-up occurs before Book 1 ends.,b1-c47-p90
 10.166843,2,1,98.75,Princess Donut,Level,13,confirmed,Princess Donut is explicitly confirmed at level 13.,b2-c1-p158
+10.347458,2,2,84.0,Princess Donut,STR,20,base,Donut’s post-selection stat sheet lists 20 Strength before bonuses. It lists equipment separately for the attributes with modifiers.,b2-c2-p168
+10.348517,2,2,84.5,Princess Donut,INT,23,base,Donut's stat breakdown lists 23 Intelligence before the two item bonuses.,b2-c2-p169
+10.348517,2,2,84.5,Princess Donut,INT,29,equipment,Donut's tiara and charm bring her displayed Intelligence to 29.,b2-c2-p169
+10.350636,2,2,85.5,Princess Donut,DEX,12,base,Donut's stat breakdown lists 12 Dexterity before equipment and the floor bonus.,b2-c2-p171
+10.350636,2,2,85.5,Princess Donut,DEX,21,temporary,"With two items and a temporary floor bonus, Donut's displayed Dexterity is 21.",b2-c2-p171
+10.351695,2,2,86.0,Princess Donut,CHA,70,base,Donut’s post-class stat sheet lists 70 CHA without a modifier. The sheet separately itemizes modifiers on other stats.,b2-c2-p172
 10.362288,2,2,91.0,Carl,STR,10,base,Carl's STR is explicitly reported as 10.,b2-c2-p182
 10.362288,2,2,91.0,Carl,STR,16,equipment,Carl's STR is explicitly reported as 16.,b2-c2-p182
 10.363347,2,2,91.5,Carl,INT,5,base,Carl's INT is explicitly reported as 5.,b2-c2-p183
@@ -71,10 +77,17 @@ series_progress,book,chapter,chapter_position,character,metric,value,scope,summa
 12.371529,2,12,39.36,Princess Donut,Level,15,confirmed,Princess Donut is explicitly confirmed at level 15.,b2-c12-p37
 12.466192,2,12,84.04,Mongo,Level,10,confirmed,Mongo is explicitly confirmed at level 10.,b2-c12-p79
 12.484223,2,12,92.55,Carl,Level,18,confirmed,Carl is explicitly confirmed at level 18.,b2-c12-p87
+12.73631,2,14,11.54,Carl,STR,23,estimate,Carl reports 30 Strength without his gauntlet. Subtracting the three-point toe ring and the two equipped two-point rings gives an estimated base of 23. His earlier base of 10 plus the subsequently stated allocations of 3 and 10 independently gives 23.,b2-c14-p15
+12.73631,2,14,11.54,Carl,STR,30,reported,Carl reports 30 Strength without his gauntlet. The passage does not remove his other gear.,b2-c14-p15
 12.882986,2,14,80.77,Mongo,Level,11,confirmed,Mongo is explicitly confirmed at level 11.,b2-c14-p105
 12.882986,2,14,80.77,Princess Donut,Level,16,confirmed,Princess Donut is explicitly confirmed at level 16.,b2-c14-p105
+13.061967,2,15,65.25,Princess Donut,CHA,76,reported,Mordecai reports 76 CHA for Donut while discussing a purchase. No base and equipment breakdown is given.,b2-c15-p92
 13.73326,2,18,82.1,Mongo,Level,12,confirmed,Mongo is explicitly confirmed at level 12.,b2-c18-p133
 14.231607,2,21,17.32,Katia Grim,Level,9,confirmed,Katia Grim is explicitly confirmed at level 9.,b2-c21-p31
+14.293154,2,21,46.37,Katia Grim,STR,11,reported,Katia’s stat readout lists 11 Strength.,b2-c21-p83
+14.294338,2,21,46.93,Katia Grim,INT,8,reported,Carl reads Intelligence 8 from Katia's character sheet. The display does not separate modifiers.,b2-c21-p84
+14.296705,2,21,48.04,Katia Grim,DEX,30,reported,Carl reads Dexterity 30 from Katia's character sheet. The display does not separate modifiers.,b2-c21-p86
+14.297889,2,21,48.6,Katia Grim,CHA,8,reported,Carl reads 8 CHA on Katia’s party stat sheet. It does not separate bonuses from base values.,b2-c21-p87
 15.297073,3,1,20.22,Katia Grim,CON,102,temporary,Katia Grim's CON is explicitly reported as 102.,b3-c1-p37
 15.402427,3,1,69.95,Katia Grim,STR,11,reported,Katia Grim's STR is explicitly reported as 11.,b3-c1-p128
 15.612215,3,2,68.97,Carl,STR,41,reported,Carl's STR is explicitly reported as 41.,b3-c2-p180
@@ -82,12 +95,15 @@ series_progress,book,chapter,chapter_position,character,metric,value,scope,summa
 15.613839,3,2,69.73,Carl,CON,34,reported,Carl's CON is explicitly reported as 34.,b3-c2-p182
 15.61465,3,2,70.11,Carl,DEX,23,reported,Carl's DEX is explicitly reported as 23.,b3-c2-p183
 15.615462,3,2,70.5,Carl,CHA,25,reported,Carl's CHA is explicitly reported as 25.,b3-c2-p184
+15.616274,3,2,70.88,Princess Donut,CHA,94,reported,Mordecai reports that Donut currently has 94 Charisma while discussing the next threshold. No base or equipment breakdown is stated.,b3-c2-p185
 15.814042,3,3,64.23,Prepotente,Level,27,confirmed,Prepotente is explicitly confirmed at level 27.,b3-c3-p79
 15.819209,3,3,66.67,Carl,Level,27,confirmed,Carl is explicitly confirmed at level 27.,b3-c3-p82
 15.820932,3,3,67.48,Princess Donut,Level,26,confirmed,Princess Donut is explicitly confirmed at level 26.,b3-c3-p83
 15.826099,3,3,69.92,Elle McGib,Level,17,confirmed,Elle McGib is explicitly confirmed at level 17.,b3-c3-p86
 16.421394,3,6,50.9,Katia Grim,Level,22,confirmed,Katia Grim is explicitly confirmed at level 22.,b3-c6-p85
 16.421394,3,6,50.9,Mongo,Level,14,confirmed,Mongo is explicitly confirmed at level 14.,b3-c6-p85
+16.48229,3,6,79.64,Princess Donut,INT,41,reported,Carl reports Donut at 41 Intelligence before her rest and shower buffs.,b3-c6-p133
+16.48229,3,6,79.64,Princess Donut,INT,49,temporary,Rest and shower buffs temporarily bring Donut to 49 Intelligence.,b3-c6-p133
 16.537076,3,7,5.5,Mongo,Level,15,confirmed,Mongo is explicitly confirmed at level 15.,b3-c7-p11
 16.902646,3,8,78.05,Imani C.,Level,24,confirmed,Imani C. is explicitly confirmed at level 24.,b3-c8-p96
 17.378646,3,11,2.72,Carl,Level,29,confirmed,Carl is explicitly confirmed at level 29.,b3-c11-p4
@@ -97,6 +113,9 @@ series_progress,book,chapter,chapter_position,character,metric,value,scope,summa
 18.195942,3,14,88.48,Carl,Level,32,confirmed,Carl is explicitly confirmed at level 32.,b3-c14-p146
 18.318366,3,15,46.27,Princess Donut,CHA,100,base,Princess Donut's CHA is explicitly reported as 100.,b3-c15-p62
 18.318366,3,15,46.27,Princess Donut,Level,30,confirmed,Princess Donut is explicitly confirmed at level 30.,b3-c15-p62
+18.45412,3,16,10.34,Princess Donut,INT,40,base,Carl explicitly identifies Donut's Intelligence before equipment or temporary effects as 40.,b3-c16-p9
+18.45412,3,16,10.34,Princess Donut,INT,44,equipment,"With her butterfly charm and tiara, Donut's Intelligence is 44.",b3-c16-p9
+18.456556,3,16,11.49,Princess Donut,INT,52,temporary,Carl confirms Donut's effective Intelligence of 52 after rest and shower buffs.,b3-c16-p10
 20.123195,3,23,98.15,Katia Grim,Level,37,confirmed,Katia Grim is explicitly confirmed at level 37.,b3-c23-p53
 20.482942,3,25,67.95,Prepotente,Level,34,confirmed,Prepotente is explicitly confirmed at level 34.,b3-c25-p106
 20.4843,3,25,68.59,Carl,Level,34,confirmed,Carl is explicitly confirmed at level 34.,b3-c25-p107
@@ -119,17 +138,26 @@ series_progress,book,chapter,chapter_position,character,metric,value,scope,summa
 25.998207,4,17,71.15,Elle McGib,Level,35,confirmed,Elle McGib is explicitly confirmed at level 35.,b4-c17-p111
 26.460351,4,19,89.29,Katia Grim,Level,41,confirmed,Katia Grim is explicitly confirmed at level 41.,b4-c19-p100
 26.509756,4,20,12.61,Louis Santiago,Level,30,confirmed,Louis Santiago is explicitly confirmed at level 30.,b4-c20-p15
+26.951091,4,22,20.91,Carl,DEX,32,equipment,"Carl states his Dexterity is 32 with equipment, before his daily buffs.",b4-c22-p32
+26.989864,4,22,39.22,Carl,STR,80,reported,Carl reports 80 Strength while lifting the anchor. No unmodified total is given.,b4-c22-p60
 28.200483,4,28,10.63,Carl,Level,47,confirmed,Carl is explicitly confirmed at level 47.,b4-c28-p22
 28.200483,4,28,10.63,Katia Grim,Level,44,confirmed,Katia Grim is explicitly confirmed at level 44.,b4-c28-p22
 28.200483,4,28,10.63,Princess Donut,Level,39,confirmed,Princess Donut is explicitly confirmed at level 39.,b4-c28-p22
+28.699876,4,30,46.34,Princess Donut,INT,53,reported,Donut's displayed Intelligence is 53. Carl treats her higher effective value as an estimate.,b4-c30-p57
+28.701599,4,30,47.15,Princess Donut,CHA,120,reported,Carl reports 120 CHA for Donut while calculating the range of a spell. No unmodified value is specified.,b4-c30-p58
 29.420714,4,33,86.58,Prepotente,Level,55,confirmed,Prepotente is explicitly confirmed at level 55.,b4-c33-p129
+29.542848,4,34,44.22,Carl,STR,75,base,Carl distinguishes his unenhanced Strength of 75 from his total with gear and buffs.,b4-c34-p134
 29.86812,5,1,97.75,Carl,INT,17,equipment,Carl's INT is explicitly reported as 17.,b5-c1-p174
 30.252776,5,3,79.31,Katia Grim,Level,52,confirmed,Katia Grim is explicitly confirmed at level 52.,b5-c3-p69
 30.809185,5,6,41.94,Carl,Level,54,confirmed,Carl is explicitly confirmed at level 54.,b5-c6-p65
 30.809185,5,6,41.94,Princess Donut,Level,41,confirmed,Princess Donut is explicitly confirmed at level 41.,b5-c6-p65
+34.183145,5,22,34.44,Carl,INT,25,reported,Carl reports 25 Intelligence before his daily buffs; he does not give a bare stat breakdown.,b5-c22-p31
+37.24828,5,36,81.19,Carl,STR,100,base,Carl reports exactly 100 after allocating his points to base Strength.,b5-c36-p164
 37.737434,5,39,12.07,Carl,Level,56,confirmed,Carl is explicitly confirmed at level 56.,b5-c39-p7
 40.022301,5,49,90.53,Prepotente,Level,57,confirmed,Prepotente is explicitly confirmed at level 57.,b5-c49-p86
 40.316949,5,51,29.6,Princess Donut,Level,47,confirmed,Princess Donut is explicitly confirmed at level 47.,b5-c51-p37
+40.323729,5,51,32.8,Princess Donut,STR,58,base,Donut identifies 58 as her base Strength after receiving a stat reward.,b5-c51-p41
+40.325424,5,51,33.6,Princess Donut,CHA,130,reported,Carl reports that Donut’s CHA is 130. Only her strength is explicitly identified as base in the preceding exchange.,b5-c51-p42
 41.647908,5,57,57.81,Prepotente,Level,70,confirmed,Prepotente is explicitly confirmed at level 70.,b5-c57-p37
 42.392524,5,61,9.27,Carl,Level,59,confirmed,Carl is explicitly confirmed at level 59.,b5-c61-p14
 42.392524,5,61,9.27,Princess Donut,Level,50,confirmed,Princess Donut is explicitly confirmed at level 50.,b5-c61-p14
@@ -148,10 +176,19 @@ series_progress,book,chapter,chapter_position,character,metric,value,scope,summa
 59.20297,6,65,43.8,Elle McGib,Level,72,confirmed,Elle McGib is explicitly confirmed at level 72.,b6-c65-p53
 60.616125,6,72,10.81,Carl,Level,73,confirmed,Carl is explicitly confirmed at level 73.,b6-c72-p20
 60.616125,6,72,10.81,Princess Donut,Level,63,confirmed,Princess Donut is explicitly confirmed at level 63.,b6-c72-p20
+61.397342,7,3,79.55,Princess Donut,CHA,163,base,Mordecai identifies 163 as Donut’s real base charisma when explaining the potion.,b7-c3-p105
 70.773305,7,48,5.0,Prepotente,Level,99,confirmed,Prepotente is explicitly confirmed at level 99.,b7-c48-p3
 71.402265,7,51,1.87,Carl,Level,75,confirmed,Carl is explicitly confirmed at level 75.,b7-c51-p2
 72.607328,7,56,70.66,Li Na,Level,84,confirmed,Li Na is explicitly confirmed at level 84.,b7-c56-p118
+76.961707,7,77,25.93,Princess Donut,STR,100,lower-bound,Mordecai confirms Donut passed the 100-point threshold for both Strength and Intelligence. These values mark the thresholds for choosing stat benefits; the exact totals are unstated.,b7-c77-p21
+76.961707,7,77,25.93,Princess Donut,INT,100,lower-bound,Mordecai confirms Donut passed the 100-point threshold for both Strength and Intelligence. These values mark the thresholds for choosing stat benefits; the exact totals are unstated.,b7-c77-p21
+76.964323,7,77,27.16,Princess Donut,CHA,200,lower-bound,Donut confirms crossing the 200-point Charisma threshold for a stat benefit. The exact total is unstated.,b7-c77-p22
 76.977401,7,77,33.33,Carl,Level,81,confirmed,Carl is explicitly confirmed at level 81.,b7-c77-p27
+76.990479,7,77,39.51,Li Na,STR,300,base,The system identifies Li Na’s base Strength as 300.,b7-c77-p32
+76.993095,7,77,40.74,Li Na,INT,300,base,The system announces that Li Na has reached 300 base Intelligence.,b7-c77-p33
+76.998326,7,77,43.21,Li Na,CHA,300,base,"The system confirms Li Na has maxed every base stat, explicitly including charisma. The cap is 300.",b7-c77-p35
+76.998326,7,77,43.21,Li Na,DEX,300,estimate,The system reports that every base stat is capped and gives 300 for Strength and Intelligence. Applying that cap yields 300 each for Dexterity and Constitution. Those two metrics are not individually numbered in the announcement.,b7-c77-p35
+76.998326,7,77,43.21,Li Na,CON,300,estimate,The system reports that every base stat is capped and gives 300 for Strength and Intelligence. Applying that cap yields 300 each for Dexterity and Constitution. Those two metrics are not individually numbered in the announcement.,b7-c77-p35
 77.011404,7,77,49.38,Prepotente,Level,100,confirmed,Prepotente is explicitly confirmed at level 100.,b7-c77-p40
 77.488849,7,79,74.74,Princess Donut,Level,135,confirmed,Princess Donut is explicitly confirmed at level 135.,b7-c79-p71
 79.888575,8,4,7.41,Princess Donut,Level,135,confirmed,Princess Donut is explicitly observed at level 135.,b8-c4-p6

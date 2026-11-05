@@ -199,7 +199,6 @@ SERIES_SKILL_MILESTONES = (
     (3, 29, "Katia Grim", "Crowd Blast", None, "same battering ram skill Katia had used"),
     (4, 2, "Katia Grim", "Catcher", 11, "raised her Catcher skill"),
     (4, 32, "Katia Grim", "Hanzo", None, "Katia also received a spell called Hanzo"),
-    (5, 47, "Prepotente", "Community Pool", None, "Community Pool spell"),
     (5, 62, "Katia Grim", "I Need My Personal Space", None, "spell called I Need My Personal Space"),
     (5, 55, "Imani C.", "Smart Juice", None, "aura I can cast called Smart Juice"),
     (7, 51, "Li Na", "Dark Purpose", 15, "It hit level 15"),
@@ -525,6 +524,9 @@ def main() -> None:
     events = (character_events(character) + inventory_events(inventory) + series_progression_events(series_corpus)
               + curated_audit_events(series_corpus, "book-8-audit.json", "b8-audit")
               + curated_audit_events(series_corpus, "imani-audit.json", "imani-audit"))
+    for audit in ("strength-followup-audit", "int-dex-audit", "cha-followup-audit",
+                  "skill-followup-audit", "ally-skill-followup-audit", "estimated-stats-audit"):
+        events.extend(curated_audit_events(series_corpus, audit + ".json", audit))
     from reward_provenance import apply_reward_audit
     events = apply_reward_audit(events, series_corpus)
     corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
@@ -565,7 +567,7 @@ def main() -> None:
             "title": "Dungeon Crawler Carl",
             "bookCount": len(book_rows),
             "chapterCount": total_chapters,
-            "dataVersion": "2.6.0",
+            "dataVersion": "2.7.0",
             "coverageNote": "Eight-book chapter map with source-anchored progression for the core party and major recurring allies. Skills and inventory appear only when explicitly confirmed.",
         },
         "books": book_rows,

@@ -70,33 +70,80 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 9.754652,1,47,4.2,Carl,Slingshot,5,Training raises Carl's Slingshot to 5 and Donut's Magic Missile to 8.,Training raises Carl's Slingshot to 5 and Donut's Magic Missile to 8.,b1-c47-p6
 9.754652,1,47,4.2,Princess Donut,Magic Missile,8,Training raises Carl's Slingshot to 5 and Donut's Magic Missile to 8.,Training raises Carl's Slingshot to 5 and Donut's Magic Missile to 8.,b1-c47-p6
 9.76206,1,47,7.69,Carl,Determine Value,3,"Carl drinks a third Determine Value potion; the previously explicit potion rule adds one level, and a history-sort ability appears.","Carl drinks a third Determine Value potion; the previously explicit potion rule adds one level, and a history-sort ability appears.",b1-c47-p11
+10.237288,2,2,32.0,Princess Donut,Magic Missile,9,,Mordecai reports Donut’s Magic Missile at level 9.,b2-c2-p64
+10.864254,2,5,27.93,Princess Donut,Heal,1,,Donut’s spell list gives Heal a rank of 1.,b2-c5-p31
+10.866163,2,5,28.83,Princess Donut,Torch,10,,Donut’s spell list gives Torch a rank of 10.,b2-c5-p32
+10.868071,2,5,29.73,Princess Donut,Magic Missile,9,,Donut’s spell list gives Magic Missile a rank of 9.,b2-c5-p33
+10.86998,2,5,30.63,Princess Donut,Puddle Jumper,3,,Donut’s spell list gives Puddle Jumper a rank of 3.,b2-c5-p34
+10.871889,2,5,31.53,Princess Donut,Second Chance,5,,Donut’s spell list gives Second Chance a rank of 5.,b2-c5-p35
+10.873797,2,5,32.43,Princess Donut,Heal Critter,1,,Donut’s spell list gives Heal Critter a rank of 1.,b2-c5-p36
+10.875706,2,5,33.33,Princess Donut,Clockwork Triplicate,1,,Donut’s spell list gives Clockwork Triplicate a rank of 1.,b2-c5-p37
+10.906245,2,5,47.75,Carl,Cesta Punta,3,,Carl gains Cesta Punta at level 3 after drinking a skill potion.,b2-c5-p53
+12.457176,2,12,79.79,Princess Donut,Clockwork Triplicate,3,,Donut raises Clockwork Triplicate to level 3.,b2-c12-p75
+12.463938,2,12,82.98,Carl,Fear,3,,Practice brings Carl’s Fear spell to level 3.,b2-c12-p78
+12.878096,2,14,78.46,Carl,Iron Punch,10,,Carl’s Iron Punch reaches level 10 with the gauntlet bonus.,b2-c14-p102
+12.879726,2,14,79.23,Princess Donut,Acute Ears,,,Donut detects a nearby boss using Acute Ears. Its rank is unstated.,b2-c14-p103
 15.177681,2,25,63.87,Katia Grim,Rush,,"Explicitly confirmed in Book 2, Chapter 25.",Katia Grim's Rush is explicitly confirmed.,b2-c25-p76
 15.323701,3,1,32.79,Katia Grim,Pathfinder,,"Explicitly confirmed in Book 3, Chapter 1.",Katia Grim's Pathfinder is explicitly confirmed.,b3-c1-p60
 15.769257,3,3,43.09,Katia Grim,Catcher,,"Explicitly confirmed in Book 3, Chapter 3.",Katia Grim's Catcher is explicitly confirmed.,b3-c3-p53
+16.48229,3,6,79.64,Princess Donut,Second Chance,7,,Donut raises Second Chance to level 7.,b3-c6-p133
 16.983377,3,9,16.15,Imani C.,Juiced,,Observed effect name; ability level unstated.,Imani’s wing contact applies a temporary 10% Strength buff.,b3-c9-p21
 16.985007,3,9,16.92,Imani C.,Shrouded,,Observed effect name; ability level unstated.,Imani’s wing contact applies temporary 10% damage reduction.,b3-c9-p22
 16.986636,3,9,17.69,Imani C.,Trolled,,Observed effect name; ability level unstated.,Imani’s wing contact accelerates healing by 25% temporarily.,b3-c9-p23
+17.238429,3,10,36.54,Carl,Bare Knuckle,9,,Carl raises Bare Knuckle to level 9 in training.,b3-c10-p19
+17.238429,3,10,36.54,Princess Donut,Dodge,7,,Donut trains Dodge to level 7.,b3-c10-p19
 20.424544,3,25,40.38,Katia Grim,Find Crawler,3,"Explicitly confirmed in Book 3, Chapter 25.",Katia Grim's Find Crawler is explicitly confirmed at level 3.,b3-c25-p63
+20.873555,3,27,52.32,Carl,Explosives Handling,11,,Carl reports that his Explosives Handling skill rose to level 11.,b3-c27-p79
 21.283026,3,29,45.59,Katia Grim,Crowd Blast,,"Explicitly confirmed in Book 3, Chapter 29.",Katia Grim's Crowd Blast is explicitly confirmed.,b3-c29-p62
+21.427966,3,30,14.0,Princess Donut,Love Vampire,,,Donut reports using Love Vampire after passing 100 CHA. The casts did not trigger its effect.,b3-c30-p14
 21.640436,3,31,14.29,Imani C.,Wing-contact constitution buff,,Descriptive label; formal ability name unknown.,Imani’s wings grant a non-stacking Constitution buff lasting ten minutes; its magnitude is unstated.,b3-c31-p20
 21.784201,3,31,82.14,Imani C.,Acid neutralization,,Descriptive label; formal ability name unknown.,Imani casts an unnamed effect that negates acid affecting nearby allies.,b3-c31-p115
 22.75074,4,2,38.35,Katia Grim,Catcher,11,"Explicitly confirmed in Book 4, Chapter 2.",Katia Grim's Catcher is explicitly confirmed at level 11.,b4-c2-p79
+22.81142,4,2,66.99,Elle McGib,Graupel,,,Elle reports receiving a spellbook for Graupel. She has yet to try the spell.,b4-c2-p138
 23.465318,4,5,75.63,Louis Santiago,Cloud of Exhaust,11,"Explicitly confirmed in Book 4, Chapter 5.",Louis Santiago's Cloud of Exhaust is explicitly confirmed at level 11.,b4-c5-p90
+23.548247,4,6,14.77,Princess Donut,Puddle Jumper,6,,Carl compares Donut’s level 6 Puddle Jumper to Firas’s higher rank.,b4-c6-p26
+25.199024,4,13,93.94,Princess Donut,Animal Wrangling,8,,A skill potion raises Donut’s Animal Wrangling to level 8.,b4-c13-p155
 29.194697,4,32,79.9,Katia Grim,Hanzo,,"Explicitly confirmed in Book 4, Chapter 32.",Katia Grim's Hanzo is explicitly confirmed.,b4-c32-p155
+29.768139,5,1,50.56,Princess Donut,Character Actor,6,,Mordecai reports that Donut’s Character Actor skill has reached level 6.,b5-c1-p90
+30.381356,5,4,40.0,Princess Donut,Laundry Day,,,Donut receives Laundry Day from a spellbook. The rank she learns is unstated.,b5-c4-p22
+30.385208,5,4,41.82,Carl,Fear,5,,Carl reports that his Fear spell remains at level 5.,b5-c4-p23
+30.385208,5,4,41.82,Princess Donut,Magic Missile,11,,Carl reports that Donut’s Magic Missile remains at level 11 despite practice.,b5-c4-p23
+31.188147,5,8,20.81,Carl,Fear,10,,Carl’s potion raises Fear to level 10.,b5-c8-p31
+31.192413,5,8,22.82,Carl,Ping,2,,Carl checks Ping at level 2 while planning further training.,b5-c8-p34
 33.916801,5,21,8.73,Imani C.,Glamor counterspell,,Descriptive label; formal ability name unknown.,Imani removes Eva’s glamor from the NPCs with a counterspell.,b5-c21-p11
-39.528814,5,47,57.6,Prepotente,Community Pool,,"Explicitly confirmed in Book 5, Chapter 47.",Prepotente's Community Pool is explicitly confirmed.,b5-c47-p72
+34.662859,5,24,60.87,Princess Donut,Torch,13,,Donut casts Torch at its reported level of 13.,b5-c24-p42
+36.34887,5,32,56.67,Carl,Powerful Strike,10,,Carl trains Powerful Strike from rank 9 to 10.,b5-c32-p51
+36.353578,5,32,58.89,Carl,Powerful Strike,15,,The training display shows Powerful Strike at 15 with Carl’s bonuses.,b5-c32-p53
 41.246148,5,55,68.18,Imani C.,Smart Juice,,"Explicitly confirmed in Book 5, Chapter 55.",Imani C.'s Smart Juice is explicitly confirmed.,b5-c55-p60
 42.349709,5,60,89.06,Imani C.,Dread,,Reported ability in a plan; level unstated.,Carl assigns Imani to cast Dread during the planned attack; this passage states the plan rather than confirming the cast.,b5-c60-p57
 42.687735,5,62,48.61,Katia Grim,I Need My Personal Space,,"Explicitly confirmed in Book 5, Chapter 62.",Katia Grim's I Need My Personal Space is explicitly confirmed.,b5-c62-p35
 45.448332,5,75,51.61,Imani C.,Healing wings,,Descriptive label; formal ability name unknown.,Imani heals Carl by wrapping him in her wings.,b5-c75-p80
+45.963484,6,2,94.76,Princess Donut,Laundry Day,15,,Mordecai identifies Donut’s Laundry Day as level 15.,b6-c2-p181
+53.904641,6,40,42.99,Carl,Smush,12,,Carl explicitly gives his unmodified Smush rank as 12.,b6-c40-p46
+53.904641,6,40,42.99,Carl,Smush,14,,"The display with the pedicure bonus shows 14. The stated bonus is three levels, but the resulting display is below 15.",b6-c40-p46
+54.34816,6,42,52.33,Carl,Fear,11,,Carl casts Fear at level 11.,b6-c42-p101
+55.995446,6,50,29.85,Carl,Find Crawler,5,,Carl identifies Find Crawler as a level 5 skill.,b6-c50-p20
+59.211724,6,65,47.93,Elle McGib,Graupel,5,,Elle reports that Graupel is rank 5.,b6-c65-p58
+61.09382,7,2,36.28,Princess Donut,Heal Critter,8,,Carl identifies Donut’s Heal Critter spell as level 8.,b7-c2-p41
+61.387712,7,3,75.0,Princess Donut,Torch,14,,Donut’s Torch is level 14 while the party considers which spell to improve.,b7-c3-p99
+63.895813,7,15,58.82,Princess Donut,Bad Attitude,15,,Donut casts her newly improved Bad Attitude at level 15.,b7-c15-p90
 65.556456,7,23,42.65,Imani C.,Total Ear Protection,,,Imani casts Total Ear Protection on Donut and Mongo.,b7-c23-p29
 70.698396,7,47,69.64,Imani C.,Tripper,,Temporary tattoo grant; exact level not stated.,Imani confirms using Carl’s Tripper through Katia’s tattoo; her exact spell level is unstated.,b7-c47-p39
+70.724879,7,47,82.14,Carl,Tripper,15,,Carl’s bandana supplies the level 15 version of Tripper.,b7-c47-p46
+70.728662,7,47,83.93,Carl,Tripper,7,,Carl removes the bandana and finds that his own Tripper spell is level 7.,b7-c47-p47
 70.736229,7,47,87.5,Imani C.,Tripper,,Temporary and fading over four days; later expiry time is not recorded.,The tattoo-granted Tripper loses potency as Carl’s source spell recovers over four days. It can later be recharged with another potion.,b7-c47-p49
+71.604229,7,51,97.2,Li Na,Defile Soul,,,Li Na reports using Defile Soul. Its rank is unstated.,b7-c51-p104
 71.604229,7,51,97.2,Li Na,Dark Purpose,15,"Explicitly confirmed in Book 7, Chapter 51.",Li Na's Dark Purpose is explicitly confirmed at level 15.,b7-c51-p104
+71.743644,7,52,63.0,Li Na,Succulent Decay,,,Li Na names Succulent Decay as the dread she is activating. Its rank is unstated.,b7-c52-p63
 71.743644,7,52,63.0,Li Na,Blood Horror,15,"Explicitly confirmed in Book 7, Chapter 52.",Li Na's Blood Horror is explicitly confirmed at level 15.,b7-c52-p63
 72.62382,7,56,78.44,Prepotente,Iron Stomach,,"Explicitly confirmed in Book 7, Chapter 56.",Prepotente's Iron Stomach is explicitly confirmed.,b7-c56-p131
+72.79606,7,57,59.74,Carl,Pugilism,15,,"After a skill potion, Carl reports Pugilism at 15 on its own.",b7-c57-p46
+73.629943,7,61,53.33,Elle McGib,Subterfuge,,,Elle reports that her active Subterfuge spell was canceled. Its rank is unstated.,b7-c61-p48
 74.295003,7,64,67.24,Prepotente,Group psionic protection,,"Explicitly confirmed in Book 7, Chapter 64.",Prepotente's Group psionic protection is explicitly confirmed.,b7-c64-p39
+76.212622,7,73,72.36,Princess Donut,Magic Missile,15,,Donut reports that Magic Missile has reached level 15.,b7-c73-p89
+77.654926,7,80,53.12,Princess Donut,Magic Missile,16,,Brain Trust raises the casting strength to 16 while the spell’s own rank remains 15.,b7-c80-p51
 77.710099,7,80,79.17,Imani C.,Group shield,,Descriptive label; formal ability name unknown.,"Imani protects Elle, Holger, and others with a shield unfamiliar to Carl.",b7-c80-p76
+78.947665,7,86,63.3,Princess Donut,Monologue,,,"Donut uses Monologue, a benefit from passing 300 boosted charisma. Its skill rank is unstated.",b7-c86-p119
 79.401591,8,1,77.55,Princess Donut,Heal Critter,15,,Donut reports Heal Critter at level 15; her cloak supplies this spell level.,b8-c1-p76
 79.401591,8,1,77.55,Princess Donut,Twinkle Toes,,,Princess Donut is confirmed to have Twinkle Toes.,b8-c1-p76
 80.11634,8,5,14.91,Princess Donut,Sniper,,,Princess Donut is confirmed to have Sniper.,b8-c5-p17

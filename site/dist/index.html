@@ -16,7 +16,6 @@
         <select id="section-jump" aria-label="Jump to section">
           <option value="">Jump to…</option>
           <option value="progression" data-view="progression">Charts</option>
-          <option value="explorer" data-view="explorer">Progression ledger</option>
           <option value="character" data-view="character">Characters</option>
           <option value="ledger" data-view="ledger">Inventory</option>
           <option value="rewards" data-view="rewards">Boxes &amp; rewards</option>
@@ -41,7 +40,7 @@
           <input disabled id="book-range" type="range" min="0" max="10000" value="0" step="1" aria-label="Position in the series" />
           <div class="chapter-ruler" id="chapter-ruler" aria-hidden="true"></div>
           <div class="slider-labels"><span>Book 1 · Chapter 1</span><span id="overall-progress">0% of series</span><span id="last-chapter-label">Book 8 · Chapter 98</span></div>
-          <p class="coverage-note">All eight books are mapped. Level and stat milestones appear only when the text states them directly; Book 8 now includes an audit of explicit levels, named skills, class changes, and selected equipment. Imani has a targeted audit across Books 1–8. Other characters in Books 2–7 still have selective coverage. Missing observations are not current values.</p>
+          <p class="coverage-note">The slider limits all charts and tables to your place in the series.</p>
         </div>
         <button id="enter-reader" type="button" disabled>Go <span aria-hidden="true">→</span></button>
         <div class="position-actions">
@@ -56,8 +55,8 @@
           <div><h2 id="progression-title">Character progression</h2></div>
         </div>
         <p class="empty" id="chart-empty">Move the reading slider to your place in the series to see the charts.</p>
-        <iframe hidden id="reader-board" title="Character charts and progression ledger at your reading position" style="width:100%;border:0"></iframe>
-        <p class="query-footnote">Each book gets equal width. Small ticks show progress through that book by chapter. Dots mark recorded values. Between dots, the timing of a change is unknown. For equipment bonuses and temporary effects, see the <a href="#explorer">progression ledger</a>.</p>
+        <iframe hidden id="reader-board" title="Character charts and history at your reading position" style="width:100%;border:0"></iframe>
+        <p class="query-footnote">Select a row in <a href="#history">History</a> for its source and the basis of any estimate.</p>
       </section>
 
       <details class="cast-selector"><summary>Filter characters in the detail sections</summary>
@@ -78,9 +77,9 @@
 
     <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
     <script src="rewards.js?v=2" defer></script>
-    <script src="detail-model.js?v=3" defer></script>
-    <script src="table-limits.js" defer></script>
-    <script src="board-details.js?v=3" defer></script>
-    <script src="app.js?v=11" defer></script>
+    <script src="detail-model.js?v=4" defer></script>
+    <script src="table-limits.js?v=2" defer></script>
+    <script src="board-details.js?v=4" defer></script>
+    <script src="app.js?v=12" defer></script>
   </body>
 </html>

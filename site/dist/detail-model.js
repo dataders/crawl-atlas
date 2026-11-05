@@ -11,9 +11,11 @@ function characterState(character, events) {
   const stats = {};
   const baseStats = {};
   statEvents.forEach((event) => {
-    Object.assign(stats, event.stats ?? {});
     Object.entries(event.stats ?? {}).forEach(([name, value]) => {
-      if (event.statScopes?.[name] === "base") baseStats[name] = value;
+      const scope = event.statScopes?.[name];
+      if (scope === "estimate" || scope === "lower-bound") return;
+      stats[name] = value;
+      if (scope === "base") baseStats[name] = value;
     });
     Object.entries(event.statsDelta ?? {}).forEach(([name, delta]) => { stats[name] = (stats[name] ?? 0) + delta; });
   });
@@ -54,8 +56,51 @@ function inventoryRecord(item) {
   return {item:item.name, owner:item.subject, quantity:String(item.quantity ?? '—'), state:item.state,
     type:item.category ?? 'Item', acquired:`B${item.acquiredBook ?? item.book ?? 1} · Ch ${item.acquiredChapter ?? item.chapter}`};
 }
-function storyRecord(e) {
-  return {event:e.name ?? e.type, character:e.subject ?? 'Story', type:e.type,
-    location:`B${e.book} · Ch ${e.chapter} · ${Math.round(e.position * 100)}%`};
+function progressionChange(fact) {
+  if (fact.scope === 'estimate') return `${fact.metric} ≈${fact.value}`;
+  if (fact.scope === 'lower-bound') return `${fact.metric} >${fact.value}`;
+  if (fact.action === 'remove') return `${fact.metric} removed`;
+  if (fact.action === 'delta' && fact.delta != null) {
+    return `${fact.metric} ${fact.delta > 0 ? '+' : ''}${fact.delta} (${fact.scope})`;
+  }
+  if (fact.value == null) {
+    if (fact.action === 'increase') return `${fact.metric} increased (total unknown)`;
+    return `${fact.metric} observed`;
+  }
+  const value = fact.previous == null || fact.previous === fact.value
+    ? fact.value : `${fact.previous} → ${fact.value}`;
+  return `${fact.metric} ${value}`;
 }
-if (typeof module !== 'undefined') module.exports = {characterState, inventoryAt, dossierTables, inventoryRecord, storyRecord};
+
+function eventChange(event) {
+  const name = event.name ?? event.type;
+  if (event.type === 'item') {
+    const actions = {equip:'Equipped', add:'Acquired', remove:'Removed', note:'Observed'};
+    return `${actions[event.action] ?? 'Observed'} ${name}`;
+  }
+  if (event.type === 'party' || event.type === 'story') return event.summary || name;
+  return name;
+}
+
+// A single stat readout may contain several facts. Replace its generic story
+// row with the individual observations rather than listing the event twice.
+function storyEntries(events, facts, cutoff) {
+  const byEvent = new Map();
+  for (const fact of facts) {
+    if (fact.progress > cutoff) continue;
+    if (!byEvent.has(fact.event_id)) byEvent.set(fact.event_id, []);
+    byEvent.get(fact.event_id).push(fact);
+  }
+  return events.filter(event => event.progress <= cutoff).toSorted((a,b) => b.progress - a.progress)
+    .flatMap(event => {
+      const where = `B${event.book} · Ch ${event.chapter} · ${Math.round(event.position * 100)}%`;
+      const entry = (change, note) => ({
+        type:event.type, row:{where, who:event.subject ?? 'Story', what_changed:change}, note
+      });
+      const observations = byEvent.get(event.id);
+      if (!observations) return [entry(eventChange(event), [event.summary, event.detail, event.confidence, event.source].filter(Boolean).join(' · '))];
+      return observations.map(fact => entry(progressionChange(fact),
+        [fact.summary, fact.scope, fact.confidence, fact.source].filter(Boolean).join(' · ')));
+    });
+}
+if (typeof module !== 'undefined') module.exports = {characterState, inventoryAt, dossierTables, inventoryRecord, storyEntries};

@@ -4,7 +4,7 @@
     "title": "Dungeon Crawler Carl",
     "bookCount": 8,
     "chapterCount": 472,
-    "dataVersion": "2.6.0",
+    "dataVersion": "2.7.0",
     "coverageNote": "Eight-book chapter map with source-anchored progression for the core party and major recurring allies. Skills and inventory appear only when explicitly confirmed."
   },
   "books": [
@@ -8396,6 +8396,149 @@
       "progress": 0.10166843
     },
     {
+      "source": "b2-c2-p64",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Mordecai reports Donut’s Magic Missile at level 9.",
+      "level": 9,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b2-c2-p64-princess-donut-skill-magic-missile-reported",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.32,
+      "confidence": "verified",
+      "progress": 0.10237288
+    },
+    {
+      "source": "b2-c2-p168",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "Strength",
+      "action": "set",
+      "stats": {
+        "STR": 20
+      },
+      "statScopes": {
+        "STR": "base"
+      },
+      "summary": "Donut’s post-selection stat sheet lists 20 Strength before bonuses. It lists equipment separately for the attributes with modifiers.",
+      "evidence": [
+        "b2-c2-p167"
+      ],
+      "id": "strength-followup-audit-b2-c2-p168-princess-donut-stat-strength",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.84,
+      "confidence": "verified",
+      "progress": 0.10347458
+    },
+    {
+      "source": "b2-c2-p169",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "INT base observation",
+      "summary": "Donut's stat breakdown lists 23 Intelligence before the two item bonuses.",
+      "action": "merge",
+      "stats": {
+        "INT": 23
+      },
+      "statScopes": {
+        "INT": "base"
+      },
+      "id": "int-dex-audit-b2-c2-p169-princess-donut-stat-int-base-observation",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.845,
+      "confidence": "verified",
+      "progress": 0.10348517
+    },
+    {
+      "source": "b2-c2-p169",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "INT equipment observation",
+      "summary": "Donut's tiara and charm bring her displayed Intelligence to 29.",
+      "action": "merge",
+      "stats": {
+        "INT": 29
+      },
+      "statScopes": {
+        "INT": "equipment"
+      },
+      "id": "int-dex-audit-b2-c2-p169-princess-donut-stat-int-equipment-observation",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.845,
+      "confidence": "verified",
+      "progress": 0.10348517
+    },
+    {
+      "source": "b2-c2-p171",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "DEX base observation",
+      "summary": "Donut's stat breakdown lists 12 Dexterity before equipment and the floor bonus.",
+      "action": "merge",
+      "stats": {
+        "DEX": 12
+      },
+      "statScopes": {
+        "DEX": "base"
+      },
+      "id": "int-dex-audit-b2-c2-p171-princess-donut-stat-dex-base-observation",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.855,
+      "confidence": "verified",
+      "progress": 0.10350636
+    },
+    {
+      "source": "b2-c2-p171",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "DEX temporary observation",
+      "summary": "With two items and a temporary floor bonus, Donut's displayed Dexterity is 21.",
+      "action": "merge",
+      "stats": {
+        "DEX": 21
+      },
+      "statScopes": {
+        "DEX": "temporary"
+      },
+      "id": "int-dex-audit-b2-c2-p171-princess-donut-stat-dex-temporary-observation",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.855,
+      "confidence": "verified",
+      "progress": 0.10350636
+    },
+    {
+      "source": "b2-c2-p172",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Donut’s post-class stat sheet lists 70 CHA without a modifier. The sheet separately itemizes modifiers on other stats.",
+      "action": "merge",
+      "stats": {
+        "CHA": 70
+      },
+      "statScopes": {
+        "CHA": "base"
+      },
+      "evidence": [
+        "b2-c2-p167",
+        "b2-c2-p171"
+      ],
+      "id": "cha-followup-audit-b2-c2-p172-princess-donut-stat-cha-confirmation",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.86,
+      "confidence": "verified",
+      "progress": 0.10351695
+    },
+    {
       "id": "series-2-2-carl-str-10-base",
       "book": 2,
       "chapter": 2,
@@ -8571,6 +8714,158 @@
       "progress": 0.10381356
     },
     {
+      "source": "b2-c5-p31",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Heal",
+      "summary": "Donut’s spell list gives Heal a rank of 1.",
+      "level": 1,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ],
+      "id": "skill-followup-audit-b2-c5-p31-princess-donut-skill-heal-reported",
+      "book": 2,
+      "chapter": 5,
+      "position": 0.279279,
+      "confidence": "verified",
+      "progress": 0.10864254
+    },
+    {
+      "source": "b2-c5-p32",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Torch",
+      "summary": "Donut’s spell list gives Torch a rank of 10.",
+      "level": 10,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ],
+      "id": "skill-followup-audit-b2-c5-p32-princess-donut-skill-torch-reported",
+      "book": 2,
+      "chapter": 5,
+      "position": 0.288288,
+      "confidence": "verified",
+      "progress": 0.10866163
+    },
+    {
+      "source": "b2-c5-p33",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Donut’s spell list gives Magic Missile a rank of 9.",
+      "level": 9,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ],
+      "id": "skill-followup-audit-b2-c5-p33-princess-donut-skill-magic-missile-reported",
+      "book": 2,
+      "chapter": 5,
+      "position": 0.297297,
+      "confidence": "verified",
+      "progress": 0.10868071
+    },
+    {
+      "source": "b2-c5-p34",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Puddle Jumper",
+      "summary": "Donut’s spell list gives Puddle Jumper a rank of 3.",
+      "level": 3,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ],
+      "id": "skill-followup-audit-b2-c5-p34-princess-donut-skill-puddle-jumper-reported",
+      "book": 2,
+      "chapter": 5,
+      "position": 0.306306,
+      "confidence": "verified",
+      "progress": 0.1086998
+    },
+    {
+      "source": "b2-c5-p35",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Second Chance",
+      "summary": "Donut’s spell list gives Second Chance a rank of 5.",
+      "level": 5,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ],
+      "id": "skill-followup-audit-b2-c5-p35-princess-donut-skill-second-chance-reported",
+      "book": 2,
+      "chapter": 5,
+      "position": 0.315315,
+      "confidence": "verified",
+      "progress": 0.10871889
+    },
+    {
+      "source": "b2-c5-p36",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Heal Critter",
+      "summary": "Donut’s spell list gives Heal Critter a rank of 1.",
+      "level": 1,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ],
+      "id": "skill-followup-audit-b2-c5-p36-princess-donut-skill-heal-critter-reported",
+      "book": 2,
+      "chapter": 5,
+      "position": 0.324324,
+      "confidence": "verified",
+      "progress": 0.10873797
+    },
+    {
+      "source": "b2-c5-p37",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Clockwork Triplicate",
+      "summary": "Donut’s spell list gives Clockwork Triplicate a rank of 1.",
+      "level": 1,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ],
+      "id": "skill-followup-audit-b2-c5-p37-princess-donut-skill-clockwork-triplicate-reported",
+      "book": 2,
+      "chapter": 5,
+      "position": 0.333333,
+      "confidence": "verified",
+      "progress": 0.10875706
+    },
+    {
+      "source": "b2-c5-p53",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Cesta Punta",
+      "summary": "Carl gains Cesta Punta at level 3 after drinking a skill potion.",
+      "level": 3,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p51"
+      ],
+      "id": "skill-followup-audit-b2-c5-p53-carl-skill-cesta-punta-reported",
+      "book": 2,
+      "chapter": 5,
+      "position": 0.477477,
+      "confidence": "verified",
+      "progress": 0.10906245
+    },
+    {
       "id": "series-2-7-carl-level-14",
       "book": 2,
       "chapter": 7,
@@ -8631,6 +8926,38 @@
       "progress": 0.12371529
     },
     {
+      "source": "b2-c12-p75",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Clockwork Triplicate",
+      "summary": "Donut raises Clockwork Triplicate to level 3.",
+      "level": 3,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b2-c12-p75-princess-donut-skill-clockwork-triplicate-reported",
+      "book": 2,
+      "chapter": 12,
+      "position": 0.797872,
+      "confidence": "verified",
+      "progress": 0.12457176
+    },
+    {
+      "source": "b2-c12-p78",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Fear",
+      "summary": "Practice brings Carl’s Fear spell to level 3.",
+      "level": 3,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b2-c12-p78-carl-skill-fear-reported",
+      "book": 2,
+      "chapter": 12,
+      "position": 0.829787,
+      "confidence": "verified",
+      "progress": 0.12463938
+    },
+    {
       "id": "series-2-12-mongo-level-10",
       "book": 2,
       "chapter": 12,
@@ -8661,6 +8988,83 @@
       "progress": 0.12484223
     },
     {
+      "source": "b2-c14-p15",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "Estimated base Strength",
+      "summary": "Carl reports 30 Strength without his gauntlet. Subtracting the three-point toe ring and the two equipped two-point rings gives an estimated base of 23. His earlier base of 10 plus the subsequently stated allocations of 3 and 10 independently gives 23.",
+      "action": "merge",
+      "stats": {
+        "STR": 23
+      },
+      "statScopes": {
+        "STR": "estimate"
+      },
+      "evidence": [
+        "b2-c2-p182",
+        "b2-c6-p11",
+        "b2-c8-p29"
+      ],
+      "confidence": "inferred",
+      "id": "estimated-stats-audit-b2-c14-p15-carl-stat-estimated-base-strength",
+      "book": 2,
+      "chapter": 14,
+      "position": 0.115385,
+      "progress": 0.1273631
+    },
+    {
+      "source": "b2-c14-p15",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "Strength",
+      "action": "set",
+      "stats": {
+        "STR": 30
+      },
+      "statScopes": {
+        "STR": "reported"
+      },
+      "summary": "Carl reports 30 Strength without his gauntlet. The passage does not remove his other gear.",
+      "id": "strength-followup-audit-b2-c14-p15-carl-stat-strength",
+      "book": 2,
+      "chapter": 14,
+      "position": 0.115385,
+      "confidence": "verified",
+      "progress": 0.1273631
+    },
+    {
+      "source": "b2-c14-p102",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Iron Punch",
+      "summary": "Carl’s Iron Punch reaches level 10 with the gauntlet bonus.",
+      "level": 10,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "skill-followup-audit-b2-c14-p102-carl-skill-iron-punch-effective",
+      "book": 2,
+      "chapter": 14,
+      "position": 0.784615,
+      "confidence": "verified",
+      "progress": 0.12878096
+    },
+    {
+      "source": "b2-c14-p103",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Acute Ears",
+      "summary": "Donut detects a nearby boss using Acute Ears. Its rank is unstated.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b2-c14-p103-princess-donut-skill-acute-ears-reported",
+      "book": 2,
+      "chapter": 14,
+      "position": 0.792308,
+      "confidence": "verified",
+      "progress": 0.12879726
+    },
+    {
       "id": "series-2-14-mongo-level-11",
       "book": 2,
       "chapter": 14,
@@ -8689,6 +9093,26 @@
       "action": "set",
       "level": 16,
       "progress": 0.12882986
+    },
+    {
+      "source": "b2-c15-p92",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Mordecai reports 76 CHA for Donut while discussing a purchase. No base and equipment breakdown is given.",
+      "action": "merge",
+      "stats": {
+        "CHA": 76
+      },
+      "statScopes": {
+        "CHA": "reported"
+      },
+      "id": "cha-followup-audit-b2-c15-p92-princess-donut-stat-cha-confirmation",
+      "book": 2,
+      "chapter": 15,
+      "position": 0.652482,
+      "confidence": "verified",
+      "progress": 0.13061967
     },
     {
       "id": "series-2-18-mongo-level-12",
@@ -8734,6 +9158,89 @@
       "action": "join",
       "relationship": "Temporary party member",
       "progress": 0.14284869
+    },
+    {
+      "source": "b2-c21-p83",
+      "type": "stat",
+      "subject": "Katia Grim",
+      "name": "Strength",
+      "action": "set",
+      "stats": {
+        "STR": 11
+      },
+      "statScopes": {
+        "STR": "reported"
+      },
+      "summary": "Katia’s stat readout lists 11 Strength.",
+      "id": "strength-followup-audit-b2-c21-p83-katia-grim-stat-strength",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.463687,
+      "confidence": "verified",
+      "progress": 0.14293154
+    },
+    {
+      "source": "b2-c21-p84",
+      "type": "stat",
+      "subject": "Katia Grim",
+      "name": "INT reported observation",
+      "summary": "Carl reads Intelligence 8 from Katia's character sheet. The display does not separate modifiers.",
+      "action": "merge",
+      "stats": {
+        "INT": 8
+      },
+      "statScopes": {
+        "INT": "reported"
+      },
+      "id": "int-dex-audit-b2-c21-p84-katia-grim-stat-int-reported-observation",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.469274,
+      "confidence": "verified",
+      "progress": 0.14294338
+    },
+    {
+      "source": "b2-c21-p86",
+      "type": "stat",
+      "subject": "Katia Grim",
+      "name": "DEX reported observation",
+      "summary": "Carl reads Dexterity 30 from Katia's character sheet. The display does not separate modifiers.",
+      "action": "merge",
+      "stats": {
+        "DEX": 30
+      },
+      "statScopes": {
+        "DEX": "reported"
+      },
+      "id": "int-dex-audit-b2-c21-p86-katia-grim-stat-dex-reported-observation",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.480447,
+      "confidence": "verified",
+      "progress": 0.14296705
+    },
+    {
+      "source": "b2-c21-p87",
+      "type": "stat",
+      "subject": "Katia Grim",
+      "name": "CHA confirmation",
+      "summary": "Carl reads 8 CHA on Katia’s party stat sheet. It does not separate bonuses from base values.",
+      "action": "merge",
+      "stats": {
+        "CHA": 8
+      },
+      "statScopes": {
+        "CHA": "reported"
+      },
+      "evidence": [
+        "b2-c21-p82"
+      ],
+      "id": "cha-followup-audit-b2-c21-p87-katia-grim-stat-cha-confirmation",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.486034,
+      "confidence": "verified",
+      "progress": 0.14297889
     },
     {
       "id": "series-2-25-katia-grim-skill-rush-none",
@@ -8908,6 +9415,26 @@
       "progress": 0.15615462
     },
     {
+      "source": "b3-c2-p185",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Mordecai reports that Donut currently has 94 Charisma while discussing the next threshold. No base or equipment breakdown is stated.",
+      "action": "merge",
+      "stats": {
+        "CHA": 94
+      },
+      "statScopes": {
+        "CHA": "reported"
+      },
+      "id": "cha-followup-audit-b3-c2-p185-princess-donut-stat-cha-confirmation",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.708812,
+      "confidence": "verified",
+      "progress": 0.15616274
+    },
+    {
       "id": "series-3-3-katia-grim-skill-catcher-none",
       "book": 3,
       "chapter": 3,
@@ -9044,6 +9571,62 @@
       "action": "set",
       "level": 14,
       "progress": 0.16421394
+    },
+    {
+      "source": "b3-c6-p133",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "INT reported observation",
+      "summary": "Carl reports Donut at 41 Intelligence before her rest and shower buffs.",
+      "action": "merge",
+      "stats": {
+        "INT": 41
+      },
+      "statScopes": {
+        "INT": "reported"
+      },
+      "id": "int-dex-audit-b3-c6-p133-princess-donut-stat-int-reported-observation",
+      "book": 3,
+      "chapter": 6,
+      "position": 0.796407,
+      "confidence": "verified",
+      "progress": 0.1648229
+    },
+    {
+      "source": "b3-c6-p133",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "INT temporary observation",
+      "summary": "Rest and shower buffs temporarily bring Donut to 49 Intelligence.",
+      "action": "merge",
+      "stats": {
+        "INT": 49
+      },
+      "statScopes": {
+        "INT": "temporary"
+      },
+      "id": "int-dex-audit-b3-c6-p133-princess-donut-stat-int-temporary-observation",
+      "book": 3,
+      "chapter": 6,
+      "position": 0.796407,
+      "confidence": "verified",
+      "progress": 0.1648229
+    },
+    {
+      "source": "b3-c6-p133",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Second Chance",
+      "summary": "Donut raises Second Chance to level 7.",
+      "level": 7,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b3-c6-p133-princess-donut-skill-second-chance-reported",
+      "book": 3,
+      "chapter": 6,
+      "position": 0.796407,
+      "confidence": "verified",
+      "progress": 0.1648229
     },
     {
       "id": "series-3-7-mongo-level-15",
@@ -9211,6 +9794,38 @@
       "progress": 0.16986636
     },
     {
+      "source": "b3-c10-p19",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Bare Knuckle",
+      "summary": "Carl raises Bare Knuckle to level 9 in training.",
+      "level": 9,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b3-c10-p19-carl-skill-bare-knuckle-reported",
+      "book": 3,
+      "chapter": 10,
+      "position": 0.365385,
+      "confidence": "verified",
+      "progress": 0.17238429
+    },
+    {
+      "source": "b3-c10-p19",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Dodge",
+      "summary": "Donut trains Dodge to level 7.",
+      "level": 7,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b3-c10-p19-princess-donut-skill-dodge-reported",
+      "book": 3,
+      "chapter": 10,
+      "position": 0.365385,
+      "confidence": "verified",
+      "progress": 0.17238429
+    },
+    {
       "id": "series-3-11-carl-level-29",
       "book": 3,
       "chapter": 11,
@@ -9324,6 +9939,66 @@
       "action": "set",
       "level": 30,
       "progress": 0.18318366
+    },
+    {
+      "source": "b3-c16-p9",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "INT base observation",
+      "summary": "Carl explicitly identifies Donut's Intelligence before equipment or temporary effects as 40.",
+      "action": "merge",
+      "stats": {
+        "INT": 40
+      },
+      "statScopes": {
+        "INT": "base"
+      },
+      "id": "int-dex-audit-b3-c16-p9-princess-donut-stat-int-base-observation",
+      "book": 3,
+      "chapter": 16,
+      "position": 0.103448,
+      "confidence": "verified",
+      "progress": 0.1845412
+    },
+    {
+      "source": "b3-c16-p9",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "INT equipment observation",
+      "summary": "With her butterfly charm and tiara, Donut's Intelligence is 44.",
+      "action": "merge",
+      "stats": {
+        "INT": 44
+      },
+      "statScopes": {
+        "INT": "equipment"
+      },
+      "id": "int-dex-audit-b3-c16-p9-princess-donut-stat-int-equipment-observation",
+      "book": 3,
+      "chapter": 16,
+      "position": 0.103448,
+      "confidence": "verified",
+      "progress": 0.1845412
+    },
+    {
+      "source": "b3-c16-p10",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "INT temporary observation",
+      "summary": "Carl confirms Donut's effective Intelligence of 52 after rest and shower buffs.",
+      "action": "merge",
+      "stats": {
+        "INT": 52
+      },
+      "statScopes": {
+        "INT": "temporary"
+      },
+      "id": "int-dex-audit-b3-c16-p10-princess-donut-stat-int-temporary-observation",
+      "book": 3,
+      "chapter": 16,
+      "position": 0.114943,
+      "confidence": "verified",
+      "progress": 0.18456556
     },
     {
       "source": "b3-c18-p109",
@@ -9462,6 +10137,22 @@
       "progress": 0.20873555
     },
     {
+      "source": "b3-c27-p79",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Explosives Handling",
+      "summary": "Carl reports that his Explosives Handling skill rose to level 11.",
+      "level": 11,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b3-c27-p79-carl-skill-explosives-handling-reported",
+      "book": 3,
+      "chapter": 27,
+      "position": 0.523179,
+      "confidence": "verified",
+      "progress": 0.20873555
+    },
+    {
       "id": "series-3-29-katia-grim-skill-crowd-blast-none",
       "book": 3,
       "chapter": 29,
@@ -9476,6 +10167,20 @@
       "action": "set",
       "level": null,
       "progress": 0.21283026
+    },
+    {
+      "source": "b3-c30-p14",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Love Vampire",
+      "summary": "Donut reports using Love Vampire after passing 100 CHA. The casts did not trigger its effect.",
+      "action": "note",
+      "id": "cha-followup-audit-b3-c30-p14-princess-donut-skill-love-vampire",
+      "book": 3,
+      "chapter": 30,
+      "position": 0.14,
+      "confidence": "verified",
+      "progress": 0.21427966
     },
     {
       "source": "b3-c31-p19",
@@ -9607,6 +10312,20 @@
       "progress": 0.2275074
     },
     {
+      "source": "b4-c2-p138",
+      "type": "skill",
+      "subject": "Elle McGib",
+      "name": "Graupel",
+      "action": "note",
+      "summary": "Elle reports receiving a spellbook for Graupel. She has yet to try the spell.",
+      "id": "ally-skill-followup-audit-b4-c2-p138-elle-mcgib-skill-graupel",
+      "book": 4,
+      "chapter": 2,
+      "position": 0.669903,
+      "confidence": "verified",
+      "progress": 0.2281142
+    },
+    {
       "id": "series-4-2-carl-level-41",
       "book": 4,
       "chapter": 2,
@@ -9713,6 +10432,22 @@
       "progress": 0.23465318
     },
     {
+      "source": "b4-c6-p26",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Puddle Jumper",
+      "summary": "Carl compares Donut’s level 6 Puddle Jumper to Firas’s higher rank.",
+      "level": 6,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b4-c6-p26-princess-donut-skill-puddle-jumper-reported",
+      "book": 4,
+      "chapter": 6,
+      "position": 0.147727,
+      "confidence": "verified",
+      "progress": 0.23548247
+    },
+    {
       "id": "series-4-6-louis-santiago-level-24",
       "book": 4,
       "chapter": 6,
@@ -9741,6 +10476,22 @@
       "action": "set",
       "level": 34,
       "progress": 0.24858174
+    },
+    {
+      "source": "b4-c13-p155",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Animal Wrangling",
+      "summary": "A skill potion raises Donut’s Animal Wrangling to level 8.",
+      "level": 8,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b4-c13-p155-princess-donut-skill-animal-wrangling-reported",
+      "book": 4,
+      "chapter": 13,
+      "position": 0.939394,
+      "confidence": "verified",
+      "progress": 0.25199024
     },
     {
       "id": "series-4-17-carl-level-44",
@@ -9848,6 +10599,46 @@
       "progress": 0.26509756
     },
     {
+      "source": "b4-c22-p32",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "DEX equipment observation",
+      "summary": "Carl states his Dexterity is 32 with equipment, before his daily buffs.",
+      "action": "merge",
+      "stats": {
+        "DEX": 32
+      },
+      "statScopes": {
+        "DEX": "equipment"
+      },
+      "id": "int-dex-audit-b4-c22-p32-carl-stat-dex-equipment-observation",
+      "book": 4,
+      "chapter": 22,
+      "position": 0.20915,
+      "confidence": "verified",
+      "progress": 0.26951091
+    },
+    {
+      "source": "b4-c22-p60",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "Strength",
+      "action": "set",
+      "stats": {
+        "STR": 80
+      },
+      "statScopes": {
+        "STR": "reported"
+      },
+      "summary": "Carl reports 80 Strength while lifting the anchor. No unmodified total is given.",
+      "id": "strength-followup-audit-b4-c22-p60-carl-stat-strength",
+      "book": 4,
+      "chapter": 22,
+      "position": 0.392157,
+      "confidence": "verified",
+      "progress": 0.26989864
+    },
+    {
       "id": "series-4-24-samantha-roster-companion",
       "book": 4,
       "chapter": 24,
@@ -9908,6 +10699,46 @@
       "progress": 0.28200483
     },
     {
+      "source": "b4-c30-p57",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "INT reported observation",
+      "summary": "Donut's displayed Intelligence is 53. Carl treats her higher effective value as an estimate.",
+      "action": "merge",
+      "stats": {
+        "INT": 53
+      },
+      "statScopes": {
+        "INT": "reported"
+      },
+      "id": "int-dex-audit-b4-c30-p57-princess-donut-stat-int-reported-observation",
+      "book": 4,
+      "chapter": 30,
+      "position": 0.463415,
+      "confidence": "verified",
+      "progress": 0.28699876
+    },
+    {
+      "source": "b4-c30-p58",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Carl reports 120 CHA for Donut while calculating the range of a spell. No unmodified value is specified.",
+      "action": "merge",
+      "stats": {
+        "CHA": 120
+      },
+      "statScopes": {
+        "CHA": "reported"
+      },
+      "id": "cha-followup-audit-b4-c30-p58-princess-donut-stat-cha-confirmation",
+      "book": 4,
+      "chapter": 30,
+      "position": 0.471545,
+      "confidence": "verified",
+      "progress": 0.28701599
+    },
+    {
       "id": "series-4-32-katia-grim-skill-hanzo-none",
       "book": 4,
       "chapter": 32,
@@ -9937,6 +10768,42 @@
       "action": "set",
       "level": 55,
       "progress": 0.29420714
+    },
+    {
+      "source": "b4-c34-p134",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "Strength",
+      "action": "set",
+      "stats": {
+        "STR": 75
+      },
+      "statScopes": {
+        "STR": "base"
+      },
+      "summary": "Carl distinguishes his unenhanced Strength of 75 from his total with gear and buffs.",
+      "id": "strength-followup-audit-b4-c34-p134-carl-stat-strength",
+      "book": 4,
+      "chapter": 34,
+      "position": 0.442244,
+      "confidence": "verified",
+      "progress": 0.29542848
+    },
+    {
+      "source": "b5-c1-p90",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Character Actor",
+      "summary": "Mordecai reports that Donut’s Character Actor skill has reached level 6.",
+      "level": 6,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b5-c1-p90-princess-donut-skill-character-actor-reported",
+      "book": 5,
+      "chapter": 1,
+      "position": 0.505618,
+      "confidence": "verified",
+      "progress": 0.29768139
     },
     {
       "id": "series-5-1-katia-grim-roster-allied-team-leader",
@@ -9989,6 +10856,54 @@
       "progress": 0.30252776
     },
     {
+      "source": "b5-c4-p22",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Laundry Day",
+      "summary": "Donut receives Laundry Day from a spellbook. The rank she learns is unstated.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b5-c4-p22-princess-donut-skill-laundry-day-reported",
+      "book": 5,
+      "chapter": 4,
+      "position": 0.4,
+      "confidence": "verified",
+      "progress": 0.30381356
+    },
+    {
+      "source": "b5-c4-p23",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Fear",
+      "summary": "Carl reports that his Fear spell remains at level 5.",
+      "level": 5,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b5-c4-p23-carl-skill-fear-reported",
+      "book": 5,
+      "chapter": 4,
+      "position": 0.418182,
+      "confidence": "verified",
+      "progress": 0.30385208
+    },
+    {
+      "source": "b5-c4-p23",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Carl reports that Donut’s Magic Missile remains at level 11 despite practice.",
+      "level": 11,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b5-c4-p23-princess-donut-skill-magic-missile-reported",
+      "book": 5,
+      "chapter": 4,
+      "position": 0.418182,
+      "confidence": "verified",
+      "progress": 0.30385208
+    },
+    {
       "id": "series-5-6-carl-level-54",
       "book": 5,
       "chapter": 6,
@@ -10017,6 +10932,41 @@
       "action": "set",
       "level": 41,
       "progress": 0.30809185
+    },
+    {
+      "source": "b5-c8-p31",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Fear",
+      "summary": "Carl’s potion raises Fear to level 10.",
+      "level": 10,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b5-c8-p30"
+      ],
+      "id": "skill-followup-audit-b5-c8-p31-carl-skill-fear-reported",
+      "book": 5,
+      "chapter": 8,
+      "position": 0.208054,
+      "confidence": "verified",
+      "progress": 0.31188147
+    },
+    {
+      "source": "b5-c8-p34",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Ping",
+      "summary": "Carl checks Ping at level 2 while planning further training.",
+      "level": 2,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b5-c8-p34-carl-skill-ping-reported",
+      "book": 5,
+      "chapter": 8,
+      "position": 0.228188,
+      "confidence": "verified",
+      "progress": 0.31192413
     },
     {
       "id": "series-5-8-prepotente-class-profane-vitiate",
@@ -10113,6 +11063,77 @@
       "progress": 0.33918483
     },
     {
+      "source": "b5-c22-p31",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "INT reported observation",
+      "summary": "Carl reports 25 Intelligence before his daily buffs; he does not give a bare stat breakdown.",
+      "action": "merge",
+      "stats": {
+        "INT": 25
+      },
+      "statScopes": {
+        "INT": "reported"
+      },
+      "id": "int-dex-audit-b5-c22-p31-carl-stat-int-reported-observation",
+      "book": 5,
+      "chapter": 22,
+      "position": 0.344444,
+      "confidence": "verified",
+      "progress": 0.34183145
+    },
+    {
+      "source": "b5-c24-p42",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Torch",
+      "summary": "Donut casts Torch at its reported level of 13.",
+      "level": 13,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b5-c24-p42-princess-donut-skill-torch-reported",
+      "book": 5,
+      "chapter": 24,
+      "position": 0.608696,
+      "confidence": "verified",
+      "progress": 0.34662859
+    },
+    {
+      "source": "b5-c32-p51",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Powerful Strike",
+      "summary": "Carl trains Powerful Strike from rank 9 to 10.",
+      "level": 10,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b5-c32-p51-carl-skill-powerful-strike-reported",
+      "book": 5,
+      "chapter": 32,
+      "position": 0.566667,
+      "confidence": "verified",
+      "progress": 0.3634887
+    },
+    {
+      "source": "b5-c32-p53",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Powerful Strike",
+      "summary": "The training display shows Powerful Strike at 15 with Carl’s bonuses.",
+      "level": 15,
+      "skillScope": "effective",
+      "action": "set",
+      "evidence": [
+        "b5-c32-p51"
+      ],
+      "id": "skill-followup-audit-b5-c32-p53-carl-skill-powerful-strike-effective",
+      "book": 5,
+      "chapter": 32,
+      "position": 0.588889,
+      "confidence": "verified",
+      "progress": 0.36353578
+    },
+    {
       "source": "b5-c36-p14",
       "type": "level",
       "subject": "Imani C.",
@@ -10142,6 +11163,26 @@
       "progress": 0.37090955
     },
     {
+      "source": "b5-c36-p164",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "Strength",
+      "action": "set",
+      "stats": {
+        "STR": 100
+      },
+      "statScopes": {
+        "STR": "base"
+      },
+      "summary": "Carl reports exactly 100 after allocating his points to base Strength.",
+      "id": "strength-followup-audit-b5-c36-p164-carl-stat-strength",
+      "book": 5,
+      "chapter": 36,
+      "position": 0.811881,
+      "confidence": "verified",
+      "progress": 0.3724828
+    },
+    {
       "id": "series-5-39-carl-level-56",
       "book": 5,
       "chapter": 39,
@@ -10157,19 +11198,20 @@
       "progress": 0.37737434
     },
     {
-      "id": "series-5-47-prepotente-skill-community-pool-none",
+      "source": "b5-c47-p72",
+      "evidence": [
+        "b5-c47-p68"
+      ],
+      "subject": "Prepotente",
+      "type": "story",
+      "action": "note",
+      "name": "Community Pool scroll",
+      "summary": "Prepotente used a scroll for Community Pool. This use does not establish that he learned the spell.",
+      "id": "ally-skill-followup-audit-b5-c47-p72-prepotente-story-community-pool-scroll",
       "book": 5,
       "chapter": 47,
       "position": 0.576,
-      "type": "skill",
-      "subject": "Prepotente",
-      "name": "Community Pool",
-      "summary": "Prepotente's Community Pool is explicitly confirmed.",
-      "detail": "Explicitly confirmed in Book 5, Chapter 47.",
-      "source": "b5-c47-p72",
       "confidence": "verified",
-      "action": "set",
-      "level": null,
       "progress": 0.39528814
     },
     {
@@ -10201,6 +11243,46 @@
       "action": "set",
       "level": 47,
       "progress": 0.40316949
+    },
+    {
+      "source": "b5-c51-p41",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "Strength",
+      "action": "set",
+      "stats": {
+        "STR": 58
+      },
+      "statScopes": {
+        "STR": "base"
+      },
+      "summary": "Donut identifies 58 as her base Strength after receiving a stat reward.",
+      "id": "strength-followup-audit-b5-c51-p41-princess-donut-stat-strength",
+      "book": 5,
+      "chapter": 51,
+      "position": 0.328,
+      "confidence": "verified",
+      "progress": 0.40323729
+    },
+    {
+      "source": "b5-c51-p42",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Carl reports that Donut’s CHA is 130. Only her strength is explicitly identified as base in the preceding exchange.",
+      "action": "merge",
+      "stats": {
+        "CHA": 130
+      },
+      "statScopes": {
+        "CHA": "reported"
+      },
+      "id": "cha-followup-audit-b5-c51-p42-princess-donut-stat-cha-confirmation",
+      "book": 5,
+      "chapter": 51,
+      "position": 0.336,
+      "confidence": "verified",
+      "progress": 0.40325424
     },
     {
       "id": "series-5-55-imani-c-skill-smart-juice-none",
@@ -10586,6 +11668,22 @@
       "progress": 0.45448332
     },
     {
+      "source": "b6-c2-p181",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Laundry Day",
+      "summary": "Mordecai identifies Donut’s Laundry Day as level 15.",
+      "level": 15,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b6-c2-p181-princess-donut-skill-laundry-day-reported",
+      "book": 6,
+      "chapter": 2,
+      "position": 0.947644,
+      "confidence": "verified",
+      "progress": 0.45963484
+    },
+    {
       "id": "series-6-22-carl-level-65",
       "book": 6,
       "chapter": 22,
@@ -10614,6 +11712,34 @@
       "action": "set",
       "level": 57,
       "progress": 0.50083863
+    },
+    {
+      "source": "b6-c22-p140",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Temporary charisma tiara gone",
+      "summary": "Carl confirms that Donut lost the tiara that doubled her charisma. He does not give a new total.",
+      "action": "note",
+      "id": "cha-followup-audit-b6-c22-p140-princess-donut-story-temporary-charisma-tiara-gone",
+      "book": 6,
+      "chapter": 22,
+      "position": 0.972222,
+      "confidence": "verified",
+      "progress": 0.50205979
+    },
+    {
+      "source": "b6-c30-p32",
+      "type": "story",
+      "subject": "Katia Grim",
+      "name": "Charisma decreased",
+      "summary": "Mordecai reports a loss of charisma for Katia. He gives neither the size of the loss nor a new total.",
+      "action": "note",
+      "id": "cha-followup-audit-b6-c30-p32-katia-grim-story-charisma-decreased",
+      "book": 6,
+      "chapter": 30,
+      "position": 0.304762,
+      "confidence": "verified",
+      "progress": 0.51759483
     },
     {
       "source": "b6-c30-p32",
@@ -10693,6 +11819,70 @@
       "progress": 0.53612846
     },
     {
+      "source": "b6-c40-p46",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Smush",
+      "summary": "Carl explicitly gives his unmodified Smush rank as 12.",
+      "level": 12,
+      "skillScope": "base",
+      "action": "set",
+      "id": "skill-followup-audit-b6-c40-p46-carl-skill-smush-base",
+      "book": 6,
+      "chapter": 40,
+      "position": 0.429907,
+      "confidence": "verified",
+      "progress": 0.53904641
+    },
+    {
+      "source": "b6-c40-p46",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Smush",
+      "summary": "The display with the pedicure bonus shows 14. The stated bonus is three levels, but the resulting display is below 15.",
+      "level": 14,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "skill-followup-audit-b6-c40-p46-carl-skill-smush-effective",
+      "book": 6,
+      "chapter": 40,
+      "position": 0.429907,
+      "confidence": "verified",
+      "progress": 0.53904641
+    },
+    {
+      "source": "b6-c42-p101",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Fear",
+      "summary": "Carl casts Fear at level 11.",
+      "level": 11,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b6-c42-p101-carl-skill-fear-reported",
+      "book": 6,
+      "chapter": 42,
+      "position": 0.523316,
+      "confidence": "verified",
+      "progress": 0.5434816
+    },
+    {
+      "source": "b6-c50-p20",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Find Crawler",
+      "summary": "Carl identifies Find Crawler as a level 5 skill.",
+      "level": 5,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b6-c50-p20-carl-skill-find-crawler-reported",
+      "book": 6,
+      "chapter": 50,
+      "position": 0.298507,
+      "confidence": "verified",
+      "progress": 0.55995446
+    },
+    {
       "source": "b6-c52-p74",
       "type": "item",
       "subject": "Imani C.",
@@ -10743,6 +11933,20 @@
       "progress": 0.58969506
     },
     {
+      "source": "b6-c65-p48",
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Graupel cast",
+      "action": "note",
+      "summary": "Elle uses Graupel. Its rank has not yet been stated in this scene.",
+      "id": "ally-skill-followup-audit-b6-c65-p48-elle-mcgib-story-graupel-cast",
+      "book": 6,
+      "chapter": 65,
+      "position": 0.396694,
+      "confidence": "verified",
+      "progress": 0.59194215
+    },
+    {
       "id": "series-6-65-elle-mcgib-level-72",
       "book": 6,
       "chapter": 65,
@@ -10756,6 +11960,42 @@
       "action": "set",
       "level": 72,
       "progress": 0.5920297
+    },
+    {
+      "source": "b6-c65-p58",
+      "type": "skill",
+      "subject": "Elle McGib",
+      "name": "Graupel",
+      "action": "note",
+      "summary": "Elle reports that Graupel is rank 5.",
+      "level": 5,
+      "skillScope": "reported",
+      "evidence": [
+        "b6-c65-p48"
+      ],
+      "id": "ally-skill-followup-audit-b6-c65-p58-elle-mcgib-skill-graupel-reported",
+      "book": 6,
+      "chapter": 65,
+      "position": 0.479339,
+      "confidence": "verified",
+      "progress": 0.59211724
+    },
+    {
+      "source": "b6-c65-p58",
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Graupel cast at effective rank 16",
+      "action": "note",
+      "summary": "Elle reports that her rank-5 Graupel cast at rank 16 on this occasion.",
+      "evidence": [
+        "b6-c65-p48"
+      ],
+      "id": "ally-skill-followup-audit-b6-c65-p58-elle-mcgib-story-graupel-cast-at-effective-rank-16",
+      "book": 6,
+      "chapter": 65,
+      "position": 0.479339,
+      "confidence": "verified",
+      "progress": 0.59211724
     },
     {
       "source": "b6-c67-p2",
@@ -10806,6 +12046,75 @@
       "progress": 0.60616125
     },
     {
+      "source": "b7-c2-p41",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Heal Critter",
+      "summary": "Carl identifies Donut’s Heal Critter spell as level 8.",
+      "level": 8,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b7-c2-p41-princess-donut-skill-heal-critter-reported",
+      "book": 7,
+      "chapter": 2,
+      "position": 0.362832,
+      "confidence": "verified",
+      "progress": 0.6109382
+    },
+    {
+      "source": "b7-c3-p99",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Torch",
+      "summary": "Donut’s Torch is level 14 while the party considers which spell to improve.",
+      "level": 14,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b7-c3-p99-princess-donut-skill-torch-reported",
+      "book": 7,
+      "chapter": 3,
+      "position": 0.75,
+      "confidence": "verified",
+      "progress": 0.61387712
+    },
+    {
+      "source": "b7-c3-p105",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "CHA confirmation",
+      "summary": "Mordecai identifies 163 as Donut’s real base charisma when explaining the potion.",
+      "action": "merge",
+      "stats": {
+        "CHA": 163
+      },
+      "statScopes": {
+        "CHA": "base"
+      },
+      "id": "cha-followup-audit-b7-c3-p105-princess-donut-stat-cha-confirmation",
+      "book": 7,
+      "chapter": 3,
+      "position": 0.795455,
+      "confidence": "verified",
+      "progress": 0.61397342
+    },
+    {
+      "source": "b7-c3-p109",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Charisma check altered",
+      "summary": "Donut drinks a potion that lets her count as having 193 CHA for a check. Her actual base is 163.",
+      "action": "note",
+      "evidence": [
+        "b7-c3-p105"
+      ],
+      "id": "cha-followup-audit-b7-c3-p109-princess-donut-story-charisma-check-altered",
+      "book": 7,
+      "chapter": 3,
+      "position": 0.825758,
+      "confidence": "verified",
+      "progress": 0.61403762
+    },
+    {
       "source": "b7-c12-p9",
       "type": "story",
       "subject": "Imani C.",
@@ -10826,6 +12135,22 @@
       "position": 0.125,
       "confidence": "verified",
       "progress": 0.63162076
+    },
+    {
+      "source": "b7-c15-p90",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Bad Attitude",
+      "summary": "Donut casts her newly improved Bad Attitude at level 15.",
+      "level": 15,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b7-c15-p90-princess-donut-skill-bad-attitude-reported",
+      "book": 7,
+      "chapter": 15,
+      "position": 0.588235,
+      "confidence": "verified",
+      "progress": 0.63895813
     },
     {
       "source": "b7-c23-p29",
@@ -10881,6 +12206,38 @@
       "position": 0.696429,
       "confidence": "verified",
       "progress": 0.70698396
+    },
+    {
+      "source": "b7-c47-p46",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Tripper",
+      "summary": "Carl’s bandana supplies the level 15 version of Tripper.",
+      "level": 15,
+      "skillScope": "equipment",
+      "action": "set",
+      "id": "skill-followup-audit-b7-c47-p46-carl-skill-tripper-equipment",
+      "book": 7,
+      "chapter": 47,
+      "position": 0.821429,
+      "confidence": "verified",
+      "progress": 0.70724879
+    },
+    {
+      "source": "b7-c47-p47",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Tripper",
+      "summary": "Carl removes the bandana and finds that his own Tripper spell is level 7.",
+      "level": 7,
+      "skillScope": "base",
+      "action": "set",
+      "id": "skill-followup-audit-b7-c47-p47-carl-skill-tripper-base",
+      "book": 7,
+      "chapter": 47,
+      "position": 0.839286,
+      "confidence": "verified",
+      "progress": 0.70728662
     },
     {
       "source": "b7-c47-p49",
@@ -10956,6 +12313,20 @@
       "progress": 0.71402265
     },
     {
+      "source": "b7-c51-p104",
+      "type": "skill",
+      "subject": "Li Na",
+      "name": "Defile Soul",
+      "action": "note",
+      "summary": "Li Na reports using Defile Soul. Its rank is unstated.",
+      "id": "ally-skill-followup-audit-b7-c51-p104-li-na-skill-defile-soul",
+      "book": 7,
+      "chapter": 51,
+      "position": 0.971963,
+      "confidence": "verified",
+      "progress": 0.71604229
+    },
+    {
       "id": "series-7-51-li-na-skill-dark-purpose-15",
       "book": 7,
       "chapter": 51,
@@ -10970,6 +12341,20 @@
       "action": "set",
       "level": 15,
       "progress": 0.71604229
+    },
+    {
+      "source": "b7-c52-p63",
+      "type": "skill",
+      "subject": "Li Na",
+      "name": "Succulent Decay",
+      "action": "note",
+      "summary": "Li Na names Succulent Decay as the dread she is activating. Its rank is unstated.",
+      "id": "ally-skill-followup-audit-b7-c52-p63-li-na-skill-succulent-decay",
+      "book": 7,
+      "chapter": 52,
+      "position": 0.63,
+      "confidence": "verified",
+      "progress": 0.71743644
     },
     {
       "id": "series-7-52-li-na-skill-blood-horror-15",
@@ -11019,6 +12404,68 @@
       "progress": 0.7262382
     },
     {
+      "source": "b7-c56-p132",
+      "type": "story",
+      "subject": "Katia Grim",
+      "name": "Iron Stomach equipment effect",
+      "action": "note",
+      "summary": "Katia previously used Iron Stomach from knee pads she has since unequipped. The equipment description lists rank 10.",
+      "evidence": [
+        "b7-c56-p128",
+        "b7-c56-p131"
+      ],
+      "id": "ally-skill-followup-audit-b7-c56-p132-katia-grim-story-iron-stomach-equipment-effect",
+      "book": 7,
+      "chapter": 56,
+      "position": 0.790419,
+      "confidence": "verified",
+      "progress": 0.72625089
+    },
+    {
+      "source": "b7-c57-p46",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Pugilism",
+      "summary": "After a skill potion, Carl reports Pugilism at 15 on its own.",
+      "level": 15,
+      "skillScope": "base",
+      "action": "set",
+      "id": "skill-followup-audit-b7-c57-p46-carl-skill-pugilism-base",
+      "book": 7,
+      "chapter": 57,
+      "position": 0.597403,
+      "confidence": "verified",
+      "progress": 0.7279606
+    },
+    {
+      "source": "b7-c61-p48",
+      "type": "skill",
+      "subject": "Elle McGib",
+      "name": "Subterfuge",
+      "action": "note",
+      "summary": "Elle reports that her active Subterfuge spell was canceled. Its rank is unstated.",
+      "id": "ally-skill-followup-audit-b7-c61-p48-elle-mcgib-skill-subterfuge",
+      "book": 7,
+      "chapter": 61,
+      "position": 0.533333,
+      "confidence": "verified",
+      "progress": 0.73629943
+    },
+    {
+      "source": "b7-c63-p4",
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Subterfuge cast",
+      "action": "note",
+      "summary": "The system confirms that Elle cast Subterfuge to conceal her group.",
+      "id": "ally-skill-followup-audit-b7-c63-p4-elle-mcgib-story-subterfuge-cast",
+      "book": 7,
+      "chapter": 63,
+      "position": 0.057143,
+      "confidence": "verified",
+      "progress": 0.73952785
+    },
+    {
       "source": "b7-c64-p37",
       "type": "story",
       "subject": "Imani C.",
@@ -11059,6 +12506,81 @@
       "progress": 0.74295003
     },
     {
+      "source": "b7-c73-p89",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Donut reports that Magic Missile has reached level 15.",
+      "level": 15,
+      "skillScope": "reported",
+      "action": "set",
+      "id": "skill-followup-audit-b7-c73-p89-princess-donut-skill-magic-missile-reported",
+      "book": 7,
+      "chapter": 73,
+      "position": 0.723577,
+      "confidence": "verified",
+      "progress": 0.76212622
+    },
+    {
+      "source": "b7-c74-p11",
+      "type": "story",
+      "subject": "Katia Grim",
+      "name": "Enemy-pulling spell mentioned again",
+      "action": "note",
+      "summary": "The narrator confirms Katia has an enemy-pulling spell, written as Hamzo here. The earlier award used the spelling Hanzo. Neither passage gives a rank.",
+      "evidence": [
+        "b4-c32-p155"
+      ],
+      "id": "ally-skill-followup-audit-b7-c74-p11-katia-grim-story-enemy-pulling-spell-mentioned-again",
+      "book": 7,
+      "chapter": 74,
+      "position": 0.152778,
+      "confidence": "verified",
+      "progress": 0.76303555
+    },
+    {
+      "source": "b7-c77-p21",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "Strength and Intelligence thresholds",
+      "summary": "Mordecai confirms Donut passed the 100-point threshold for both Strength and Intelligence. These values mark the thresholds for choosing stat benefits; the exact totals are unstated.",
+      "action": "merge",
+      "stats": {
+        "STR": 100,
+        "INT": 100
+      },
+      "statScopes": {
+        "STR": "lower-bound",
+        "INT": "lower-bound"
+      },
+      "id": "estimated-stats-audit-b7-c77-p21-princess-donut-stat-strength-and-intelligence-thresholds",
+      "book": 7,
+      "chapter": 77,
+      "position": 0.259259,
+      "confidence": "verified",
+      "progress": 0.76961707
+    },
+    {
+      "source": "b7-c77-p22",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "Charisma threshold",
+      "summary": "Donut confirms crossing the 200-point Charisma threshold for a stat benefit. The exact total is unstated.",
+      "action": "merge",
+      "stats": {
+        "CHA": 200
+      },
+      "statScopes": {
+        "CHA": "lower-bound"
+      },
+      "id": "estimated-stats-audit-b7-c77-p22-princess-donut-stat-charisma-threshold",
+      "book": 7,
+      "chapter": 77,
+      "position": 0.271605,
+      "confidence": "verified",
+      "progress": 0.76964323
+    },
+    {
       "id": "series-7-77-carl-level-81",
       "book": 7,
       "chapter": 77,
@@ -11072,6 +12594,115 @@
       "action": "set",
       "level": 81,
       "progress": 0.76977401
+    },
+    {
+      "source": "b7-c77-p32",
+      "type": "stat",
+      "subject": "Li Na",
+      "name": "Strength",
+      "action": "set",
+      "stats": {
+        "STR": 300
+      },
+      "statScopes": {
+        "STR": "base"
+      },
+      "summary": "The system identifies Li Na’s base Strength as 300.",
+      "id": "strength-followup-audit-b7-c77-p32-li-na-stat-strength",
+      "book": 7,
+      "chapter": 77,
+      "position": 0.395062,
+      "confidence": "verified",
+      "progress": 0.76990479
+    },
+    {
+      "source": "b7-c77-p33",
+      "type": "stat",
+      "subject": "Li Na",
+      "name": "INT base observation",
+      "summary": "The system announces that Li Na has reached 300 base Intelligence.",
+      "action": "merge",
+      "stats": {
+        "INT": 300
+      },
+      "statScopes": {
+        "INT": "base"
+      },
+      "id": "int-dex-audit-b7-c77-p33-li-na-stat-int-base-observation",
+      "book": 7,
+      "chapter": 77,
+      "position": 0.407407,
+      "confidence": "verified",
+      "progress": 0.76993095
+    },
+    {
+      "source": "b7-c77-p35",
+      "type": "stat",
+      "subject": "Li Na",
+      "name": "CHA confirmation",
+      "summary": "The system confirms Li Na has maxed every base stat, explicitly including charisma. The cap is 300.",
+      "action": "merge",
+      "stats": {
+        "CHA": 300
+      },
+      "statScopes": {
+        "CHA": "base"
+      },
+      "evidence": [
+        "b7-c77-p32",
+        "b7-c77-p33",
+        "b7-c77-p34"
+      ],
+      "id": "cha-followup-audit-b7-c77-p35-li-na-stat-cha-confirmation",
+      "book": 7,
+      "chapter": 77,
+      "position": 0.432099,
+      "confidence": "verified",
+      "progress": 0.76998326
+    },
+    {
+      "source": "b7-c77-p35",
+      "type": "stat",
+      "subject": "Li Na",
+      "name": "Inferred capped Dexterity and Constitution",
+      "summary": "The system reports that every base stat is capped and gives 300 for Strength and Intelligence. Applying that cap yields 300 each for Dexterity and Constitution. Those two metrics are not individually numbered in the announcement.",
+      "action": "merge",
+      "stats": {
+        "DEX": 300,
+        "CON": 300
+      },
+      "statScopes": {
+        "DEX": "estimate",
+        "CON": "estimate"
+      },
+      "evidence": [
+        "b7-c77-p32",
+        "b7-c77-p33",
+        "b7-c77-p34"
+      ],
+      "confidence": "inferred",
+      "id": "estimated-stats-audit-b7-c77-p35-li-na-stat-inferred-capped-dexterity-and-constitution",
+      "book": 7,
+      "chapter": 77,
+      "position": 0.432099,
+      "progress": 0.76998326
+    },
+    {
+      "source": "b7-c77-p39",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Boosted charisma above 300",
+      "summary": "Donut reports more than 300 CHA. Carl clarifies that her base has not reached 300.",
+      "action": "note",
+      "evidence": [
+        "b7-c77-p38"
+      ],
+      "id": "cha-followup-audit-b7-c77-p39-princess-donut-story-boosted-charisma-above-300",
+      "book": 7,
+      "chapter": 77,
+      "position": 0.481481,
+      "confidence": "verified",
+      "progress": 0.77008788
     },
     {
       "id": "series-7-77-prepotente-level-100",
@@ -11104,6 +12735,22 @@
       "progress": 0.77488849
     },
     {
+      "source": "b7-c80-p51",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Brain Trust raises the casting strength to 16 while the spell’s own rank remains 15.",
+      "level": 16,
+      "skillScope": "effective",
+      "action": "set",
+      "id": "skill-followup-audit-b7-c80-p51-princess-donut-skill-magic-missile-effective",
+      "book": 7,
+      "chapter": 80,
+      "position": 0.53125,
+      "confidence": "verified",
+      "progress": 0.77654926
+    },
+    {
       "source": "b7-c80-p76",
       "type": "skill",
       "subject": "Imani C.",
@@ -11118,6 +12765,20 @@
       "position": 0.791667,
       "confidence": "verified",
       "progress": 0.77710099
+    },
+    {
+      "source": "b7-c86-p119",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Monologue",
+      "summary": "Donut uses Monologue, a benefit from passing 300 boosted charisma. Its skill rank is unstated.",
+      "action": "note",
+      "id": "cha-followup-audit-b7-c86-p119-princess-donut-skill-monologue",
+      "book": 7,
+      "chapter": 86,
+      "position": 0.632979,
+      "confidence": "verified",
+      "progress": 0.78947665
     },
     {
       "source": "b8-c1-p76",
@@ -12630,6 +14291,20 @@
       "position": 0.576271,
       "confidence": "verified",
       "progress": 0.97367854
+    },
+    {
+      "source": "b8-c86-p56",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Magic Missile cast",
+      "action": "note",
+      "summary": "Donut casts Magic Missile again. No new rank is stated.",
+      "id": "strength-followup-audit-b8-c86-p56-princess-donut-story-magic-missile-cast",
+      "book": 8,
+      "chapter": 86,
+      "position": 0.949153,
+      "confidence": "verified",
+      "progress": 0.97446854
     },
     {
       "source": "b8-c88-p64",

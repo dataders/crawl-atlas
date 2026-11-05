@@ -78,7 +78,7 @@ queries:
     source: crawl_atlas
     sql: |
       SELECT
-        COUNT(*) AS confirmed_points,
+        COUNT(CASE WHEN scope NOT IN ('estimate', 'lower-bound') AND value IS NOT NULL THEN 1 END) AS confirmed_points,
         COUNT(DISTINCT character) AS represented_characters,
         MAX(book) AS latest_book
       FROM progression
@@ -105,10 +105,20 @@ queries:
       FROM progression
       WHERE {{ filter('character', characters) }}
         AND CASE WHEN kind = 'level' THEN 'Level' ELSE metric END = {{ metric }}
-        AND value IS NOT NULL
+        AND value IS NOT NULL AND scope NOT IN ('estimate', 'lower-bound')
         AND (book < {{ through_book }} OR
           (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
       ORDER BY progress, character
+
+  metric_estimates:
+    source: crawl_atlas
+    sql: |
+      SELECT progress * 100 AS series_progress, character || ' · ' || scope AS series, value, summary
+      FROM progression
+      WHERE {{ filter('character', characters) }} AND metric = {{ metric }}
+        AND scope IN ('estimate', 'lower-bound') AND value IS NOT NULL
+        AND (book < {{ through_book }} OR
+          (book = {{ through_book }} AND chapter <= {{ through_chapter }}))
 
   selected_skills:
     source: crawl_atlas
@@ -190,11 +200,20 @@ charts:
     type: line
     query: metric_progression
     warnings_ignore: [WARN-QUERY-RETURNED-ZERO-ROWS]
-    title: Explicit progression milestones
-    subtitle: Gaps stay visible; missing levels and stats are never interpolated as facts.
+    title: Progression milestones
+    subtitle: Open circles mark estimates and thresholds.
     x: series_progress
     y: value
     color: series
+    layers:
+      - type: scatter
+        query: metric_estimates
+        x: series_progress
+        y: value
+        label: Estimate or threshold
+        style:
+          marks:
+            point: {filled: false, stroke_width: 2}
 
   roster:
     type: table
@@ -240,7 +259,7 @@ tabs:
         - text: |
             Showing **{{ metric }}** for selected characters through
             **Book {{ through_book }}, Chapter {{ through_chapter }}**.
-            Every plotted value is explicitly stated in the books; source gaps stay gaps.
+            Open circles show estimates and thresholds supported by the text.
         - cols: [points_kpi, characters_kpi, book_kpi]
         - progression
         - roster

@@ -1,0 +1,77 @@
+{
+  "scope": "Derived base estimates and stated thresholds. Retain the assumptions, and never treat these values as exact measurements.",
+  "events": [
+    {
+      "source": "b2-c14-p15",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "Estimated base Strength",
+      "summary": "Carl reports 30 Strength without his gauntlet. Subtracting the three-point toe ring and the two equipped two-point rings gives an estimated base of 23. His earlier base of 10 plus the subsequently stated allocations of 3 and 10 independently gives 23.",
+      "action": "merge",
+      "stats": {
+        "STR": 23
+      },
+      "statScopes": {
+        "STR": "estimate"
+      },
+      "evidence": [
+        "b2-c2-p182",
+        "b2-c6-p11",
+        "b2-c8-p29"
+      ],
+      "confidence": "inferred"
+    },
+    {
+      "source": "b7-c77-p21",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "Strength and Intelligence thresholds",
+      "summary": "Mordecai confirms Donut passed the 100-point threshold for both Strength and Intelligence. These values mark the thresholds for choosing stat benefits; the exact totals are unstated.",
+      "action": "merge",
+      "stats": {
+        "STR": 100,
+        "INT": 100
+      },
+      "statScopes": {
+        "STR": "lower-bound",
+        "INT": "lower-bound"
+      }
+    },
+    {
+      "source": "b7-c77-p22",
+      "type": "stat",
+      "subject": "Princess Donut",
+      "name": "Charisma threshold",
+      "summary": "Donut confirms crossing the 200-point Charisma threshold for a stat benefit. The exact total is unstated.",
+      "action": "merge",
+      "stats": {
+        "CHA": 200
+      },
+      "statScopes": {
+        "CHA": "lower-bound"
+      }
+    },
+    {
+      "source": "b7-c77-p35",
+      "type": "stat",
+      "subject": "Li Na",
+      "name": "Inferred capped Dexterity and Constitution",
+      "summary": "The system reports that every base stat is capped and gives 300 for Strength and Intelligence. Applying that cap yields 300 each for Dexterity and Constitution. Those two metrics are not individually numbered in the announcement.",
+      "action": "merge",
+      "stats": {
+        "DEX": 300,
+        "CON": 300
+      },
+      "statScopes": {
+        "DEX": "estimate",
+        "CON": "estimate"
+      },
+      "evidence": [
+        "b7-c77-p32",
+        "b7-c77-p33",
+        "b7-c77-p34"
+      ],
+      "confidence": "inferred"
+    }
+  ]
+}

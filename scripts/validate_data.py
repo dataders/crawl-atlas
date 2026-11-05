@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 CONFIDENCE_VALUES = {"verified", "partial", "inferred", "needs-review"}
-STAT_SCOPE_VALUES = {"base", "reported", "equipment", "temporary"}
+STAT_SCOPE_VALUES = {"base", "reported", "equipment", "temporary", "estimate", "lower-bound"}
 
 
 def validate(path: Path, corpus_path: Path | None = None) -> int:

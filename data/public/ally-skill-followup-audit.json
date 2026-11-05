@@ -1,0 +1,121 @@
+{
+  "booksReviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "scope": "Targeted check of recurring ally abilities. Separate reported ranks from effective casts, and record repeat uses as story events.",
+  "events": [
+    {
+      "source": "b4-c2-p138",
+      "type": "skill",
+      "subject": "Elle McGib",
+      "name": "Graupel",
+      "action": "note",
+      "summary": "Elle reports receiving a spellbook for Graupel. She has yet to try the spell."
+    },
+    {
+      "source": "b6-c65-p48",
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Graupel cast",
+      "action": "note",
+      "summary": "Elle uses Graupel. Its rank has not yet been stated in this scene."
+    },
+    {
+      "source": "b6-c65-p58",
+      "type": "skill",
+      "subject": "Elle McGib",
+      "name": "Graupel",
+      "action": "note",
+      "summary": "Elle reports that Graupel is rank 5.",
+      "level": 5,
+      "skillScope": "reported",
+      "evidence": [
+        "b6-c65-p48"
+      ]
+    },
+    {
+      "source": "b6-c65-p58",
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Graupel cast at effective rank 16",
+      "action": "note",
+      "summary": "Elle reports that her rank-5 Graupel cast at rank 16 on this occasion.",
+      "evidence": [
+        "b6-c65-p48"
+      ]
+    },
+    {
+      "source": "b7-c51-p104",
+      "type": "skill",
+      "subject": "Li Na",
+      "name": "Defile Soul",
+      "action": "note",
+      "summary": "Li Na reports using Defile Soul. Its rank is unstated."
+    },
+    {
+      "source": "b7-c52-p63",
+      "type": "skill",
+      "subject": "Li Na",
+      "name": "Succulent Decay",
+      "action": "note",
+      "summary": "Li Na names Succulent Decay as the dread she is activating. Its rank is unstated."
+    },
+    {
+      "source": "b7-c56-p132",
+      "type": "story",
+      "subject": "Katia Grim",
+      "name": "Iron Stomach equipment effect",
+      "action": "note",
+      "summary": "Katia previously used Iron Stomach from knee pads she has since unequipped. The equipment description lists rank 10.",
+      "evidence": [
+        "b7-c56-p128",
+        "b7-c56-p131"
+      ]
+    },
+    {
+      "source": "b7-c61-p48",
+      "type": "skill",
+      "subject": "Elle McGib",
+      "name": "Subterfuge",
+      "action": "note",
+      "summary": "Elle reports that her active Subterfuge spell was canceled. Its rank is unstated."
+    },
+    {
+      "source": "b7-c63-p4",
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Subterfuge cast",
+      "action": "note",
+      "summary": "The system confirms that Elle cast Subterfuge to conceal her group."
+    },
+    {
+      "source": "b7-c74-p11",
+      "type": "story",
+      "subject": "Katia Grim",
+      "name": "Enemy-pulling spell mentioned again",
+      "action": "note",
+      "summary": "The narrator confirms Katia has an enemy-pulling spell, written as Hamzo here. The earlier award used the spelling Hanzo. Neither passage gives a rank.",
+      "evidence": [
+        "b4-c32-p155"
+      ]
+    },
+    {
+      "source": "b5-c47-p72",
+      "evidence": [
+        "b5-c47-p68"
+      ],
+      "subject": "Prepotente",
+      "type": "story",
+      "action": "note",
+      "name": "Community Pool scroll",
+      "summary": "Prepotente used a scroll for Community Pool. This use does not establish that he learned the spell."
+    }
+  ]
+}

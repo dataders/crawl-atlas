@@ -19,7 +19,8 @@ def progression_rows(events):
         for metric, value in values.items():
             scope = event.get('statScopes', {}).get(metric, 'reported') if kind == 'stat' else (event.get('skillScope', 'reported') if kind == 'skill' else 'confirmed')
             key = (event['subject'], kind, event.get('skillId', metric.lower()), scope, event['confidence'])
-            before = previous.get(key)
+            approximate = scope in ('estimate', 'lower-bound')
+            before = None if approximate else previous.get(key)
             delta = value - before if isinstance(value, (int, float)) and before is not None else None
             if kind == 'skill' and 'levelDelta' in event:
                 delta = event['levelDelta']
@@ -35,7 +36,7 @@ def progression_rows(events):
                              summary=event.get('summary', '')))
             if event.get('action') in ('remove', 'delta', 'increase') or metric in event.get('statsDelta', {}):
                 previous.pop(key, None)
-            elif isinstance(value, (int, float)):
+            elif not approximate and isinstance(value, (int, float)):
                 previous[key] = value
     return rows
 

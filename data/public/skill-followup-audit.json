@@ -1,0 +1,445 @@
+{
+  "scope": "Targeted review of Carl and Princess Donut in Books 2–7. Each row records a source-confirmed skill or rank, not every mention or use.",
+  "events": [
+    {
+      "source": "b2-c2-p64",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Mordecai reports Donut’s Magic Missile at level 9.",
+      "level": 9,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b2-c5-p31",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Heal",
+      "summary": "Donut’s spell list gives Heal a rank of 1.",
+      "level": 1,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ]
+    },
+    {
+      "source": "b2-c5-p32",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Torch",
+      "summary": "Donut’s spell list gives Torch a rank of 10.",
+      "level": 10,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ]
+    },
+    {
+      "source": "b2-c5-p33",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Donut’s spell list gives Magic Missile a rank of 9.",
+      "level": 9,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ]
+    },
+    {
+      "source": "b2-c5-p34",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Puddle Jumper",
+      "summary": "Donut’s spell list gives Puddle Jumper a rank of 3.",
+      "level": 3,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ]
+    },
+    {
+      "source": "b2-c5-p35",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Second Chance",
+      "summary": "Donut’s spell list gives Second Chance a rank of 5.",
+      "level": 5,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ]
+    },
+    {
+      "source": "b2-c5-p36",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Heal Critter",
+      "summary": "Donut’s spell list gives Heal Critter a rank of 1.",
+      "level": 1,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ]
+    },
+    {
+      "source": "b2-c5-p37",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Clockwork Triplicate",
+      "summary": "Donut’s spell list gives Clockwork Triplicate a rank of 1.",
+      "level": 1,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p30"
+      ]
+    },
+    {
+      "source": "b2-c5-p53",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Cesta Punta",
+      "summary": "Carl gains Cesta Punta at level 3 after drinking a skill potion.",
+      "level": 3,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b2-c5-p51"
+      ]
+    },
+    {
+      "source": "b2-c12-p75",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Clockwork Triplicate",
+      "summary": "Donut raises Clockwork Triplicate to level 3.",
+      "level": 3,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b2-c12-p78",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Fear",
+      "summary": "Practice brings Carl’s Fear spell to level 3.",
+      "level": 3,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b2-c14-p102",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Iron Punch",
+      "summary": "Carl’s Iron Punch reaches level 10 with the gauntlet bonus.",
+      "level": 10,
+      "skillScope": "effective",
+      "action": "set"
+    },
+    {
+      "source": "b2-c14-p103",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Acute Ears",
+      "summary": "Donut detects a nearby boss using Acute Ears. Its rank is unstated.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b3-c6-p133",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Second Chance",
+      "summary": "Donut raises Second Chance to level 7.",
+      "level": 7,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b3-c10-p19",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Bare Knuckle",
+      "summary": "Carl raises Bare Knuckle to level 9 in training.",
+      "level": 9,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b3-c10-p19",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Dodge",
+      "summary": "Donut trains Dodge to level 7.",
+      "level": 7,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b3-c27-p79",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Explosives Handling",
+      "summary": "Carl reports that his Explosives Handling skill rose to level 11.",
+      "level": 11,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b4-c6-p26",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Puddle Jumper",
+      "summary": "Carl compares Donut’s level 6 Puddle Jumper to Firas’s higher rank.",
+      "level": 6,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b4-c13-p155",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Animal Wrangling",
+      "summary": "A skill potion raises Donut’s Animal Wrangling to level 8.",
+      "level": 8,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b5-c1-p90",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Character Actor",
+      "summary": "Mordecai reports that Donut’s Character Actor skill has reached level 6.",
+      "level": 6,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b5-c4-p22",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Laundry Day",
+      "summary": "Donut receives Laundry Day from a spellbook. The rank she learns is unstated.",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b5-c4-p23",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Carl reports that Donut’s Magic Missile remains at level 11 despite practice.",
+      "level": 11,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b5-c4-p23",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Fear",
+      "summary": "Carl reports that his Fear spell remains at level 5.",
+      "level": 5,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b5-c8-p31",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Fear",
+      "summary": "Carl’s potion raises Fear to level 10.",
+      "level": 10,
+      "skillScope": "reported",
+      "action": "set",
+      "evidence": [
+        "b5-c8-p30"
+      ]
+    },
+    {
+      "source": "b5-c8-p34",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Ping",
+      "summary": "Carl checks Ping at level 2 while planning further training.",
+      "level": 2,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b5-c24-p42",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Torch",
+      "summary": "Donut casts Torch at its reported level of 13.",
+      "level": 13,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b5-c32-p51",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Powerful Strike",
+      "summary": "Carl trains Powerful Strike from rank 9 to 10.",
+      "level": 10,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b5-c32-p53",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Powerful Strike",
+      "summary": "The training display shows Powerful Strike at 15 with Carl’s bonuses.",
+      "level": 15,
+      "skillScope": "effective",
+      "action": "set",
+      "evidence": [
+        "b5-c32-p51"
+      ]
+    },
+    {
+      "source": "b6-c2-p181",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Laundry Day",
+      "summary": "Mordecai identifies Donut’s Laundry Day as level 15.",
+      "level": 15,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b6-c40-p46",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Smush",
+      "summary": "Carl explicitly gives his unmodified Smush rank as 12.",
+      "level": 12,
+      "skillScope": "base",
+      "action": "set"
+    },
+    {
+      "source": "b6-c40-p46",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Smush",
+      "summary": "The display with the pedicure bonus shows 14. The stated bonus is three levels, but the resulting display is below 15.",
+      "level": 14,
+      "skillScope": "effective",
+      "action": "set"
+    },
+    {
+      "source": "b6-c42-p101",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Fear",
+      "summary": "Carl casts Fear at level 11.",
+      "level": 11,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b6-c50-p20",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Find Crawler",
+      "summary": "Carl identifies Find Crawler as a level 5 skill.",
+      "level": 5,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b7-c2-p41",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Heal Critter",
+      "summary": "Carl identifies Donut’s Heal Critter spell as level 8.",
+      "level": 8,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b7-c3-p99",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Torch",
+      "summary": "Donut’s Torch is level 14 while the party considers which spell to improve.",
+      "level": 14,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b7-c15-p90",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Bad Attitude",
+      "summary": "Donut casts her newly improved Bad Attitude at level 15.",
+      "level": 15,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b7-c47-p46",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Tripper",
+      "summary": "Carl’s bandana supplies the level 15 version of Tripper.",
+      "level": 15,
+      "skillScope": "equipment",
+      "action": "set"
+    },
+    {
+      "source": "b7-c47-p47",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Tripper",
+      "summary": "Carl removes the bandana and finds that his own Tripper spell is level 7.",
+      "level": 7,
+      "skillScope": "base",
+      "action": "set"
+    },
+    {
+      "source": "b7-c57-p46",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Pugilism",
+      "summary": "After a skill potion, Carl reports Pugilism at 15 on its own.",
+      "level": 15,
+      "skillScope": "base",
+      "action": "set"
+    },
+    {
+      "source": "b7-c73-p89",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Donut reports that Magic Missile has reached level 15.",
+      "level": 15,
+      "skillScope": "reported",
+      "action": "set"
+    },
+    {
+      "source": "b7-c80-p51",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Magic Missile",
+      "summary": "Brain Trust raises the casting strength to 16 while the spell’s own rank remains 15.",
+      "level": 16,
+      "skillScope": "effective",
+      "action": "set"
+    }
+  ]
+}

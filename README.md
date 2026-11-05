@@ -43,11 +43,11 @@ uv run python scripts/build_database.py
 dct validate charts/crawl-atlas.yml --strict
 ```
 
-## Progression ledger and SQL database
+## Reader history and SQL database
 
-One reading slider controls charts, the progression ledger, character dossiers,
+One reading slider controls charts, character dossiers,
 inventory, rewards, and history on a single page. Header links jump between sections.
-The board’s progression ledger lists observations newest first. Each table starts with up to ten rows; its own controls show more or all visible records.
+History lists story events and progression observations together, newest first. Select a row for its source and scope. Each table starts with up to ten rows; its own controls show more or all visible records.
 Use **Filter characters in the detail sections** to narrow dossiers, inventory,
 rewards, and history. The board’s level and stat plots include all known characters. Inside the board,
 the **Character** dropdown selects the dossier and its inventory. Choose **Party**
@@ -108,14 +108,13 @@ stay in item summaries; they never become absolute stat totals.
 
 ## dbt Charts dashboard
 
-The page opens with the static HTML board exported by dbt Charts. Its latest-level
-table shows the most recent observation for each character at the slider position.
+The page opens with the static HTML board exported by dbt Charts. Dossiers show the most recent recorded level for each character at the slider position.
 Run `uv run python scripts/render_reader_charts.py` after rebuilding the public SQLite data.
 The reading slider selects the latest visible checkpoint across the cast. Level fills the first row, followed by a two-by-two stat grid, or one column on narrow screens.
 All observed characters are included.
 
-The four stat panels show explicitly recorded **base** values. Equipment and temporary
-observations appear in the progression ledger. Points mark observations;
+The four stat panels connect recorded **base** values. An open circle shows a sourced estimate or threshold. Equipment and temporary
+observations appear in History. Points mark observations;
 lines connect those observations across gaps in the text.
 
 Pages serves the checkpoint HTML in `site/dist/charts/`. Changes to the local

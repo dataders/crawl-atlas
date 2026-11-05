@@ -1,5 +1,6 @@
 """Finish the two-tier ruler on dct's static SVG; leave its scales and marks intact."""
 import re
+from html import escape, unescape
 from xml.etree import ElementTree as ET
 
 # Match only the exported x axis, including its title and the two translated groups.
@@ -53,6 +54,22 @@ def clean_chart_labels(html):
             label = re.search(r'aria-label="([^"]*)"', tag)
             if label is None:
                 return tag
+            open_label = re.search(r"(Estimate|Lower bound) · ([^;]+)", label[1])
+            if open_label:
+                scope, person = open_label.groups()
+                # Retain the native numeric hover header so dbt groups matching marks.
+                header, _, reading = label[1].split("; ", 2)
+                value = reading.rsplit(": ", 1)[-1]
+                person = unescape(person)
+                description = ("approximately " if scope == "Estimate" else "greater than ") + value
+                encoded = escape(f"{header}; ⁢{person} · {scope.lower()}; Value: {description}")
+                tag = tag[:label.start(1)] + encoded + tag[label.end(1):]
+                if "data-dbt-series=" not in tag:
+                    tag = tag.replace("<circle ", f'<circle data-dbt-series="{escape(person)}" ', 1)
+                position = float(header.removeprefix("⁡"))
+                location = f"Book {int(position // 100) + 1}, {position % 100:.1f}% through"
+                title = escape(f"{person}, {description}. {location}.")
+                return tag[:-2] + f' tabindex="0"><title>{title}</title></circle>'
             key = (re.search(r'transform="([^"]+)"', tag)[1],
                    re.search(r'fill="([^"]+)"', tag)[1])
             if "; ⁢Value" not in label[1]:
