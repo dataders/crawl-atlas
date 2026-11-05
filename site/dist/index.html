@@ -49,8 +49,8 @@
       </section>
 
       <nav class="workspace-nav" aria-label="Explore the archive">
-        <button type="button" data-view="explorer" aria-pressed="true">Progression ledger</button>
-        <button type="button" data-view="progression" aria-pressed="false">Charts</button>
+        <button type="button" data-view="progression" aria-pressed="true">Charts</button>
+        <button type="button" data-view="explorer" aria-pressed="false">Progression ledger</button>
         <button type="button" data-view="character" aria-pressed="false">Characters</button>
         <button type="button" data-view="ledger" aria-pressed="false">Inventory</button>
         <button type="button" data-view="rewards" aria-pressed="false">Boxes &amp; rewards</button><button type="button" data-view="history" aria-pressed="false">History</button>
@@ -77,19 +77,9 @@
       <section class="progression-section" aria-labelledby="progression-title">
         <div class="section-heading">
           <div><p class="eyebrow">Cumulative story</p><h2 id="progression-title">How the cast got here</h2></div>
-          <div class="chart-legend" id="chart-legend"></div>
+          <label>Character <select id="chart-character"></select></label>
         </div>
-        <div class="chart-toolbar">
-          <div class="metric-tabs" id="metric-tabs" role="tablist" aria-label="Choose progression metric"></div>
-          <p id="chart-explanation">Every numbered dot is an explicitly confirmed level.</p>
-        </div>
-        <div id="level-uncertainty" class="level-uncertainty" hidden></div>
-        <div class="chart-frame">
-          <svg id="progress-chart" role="img" aria-label="Character levels and discoveries over the selected part of the book"></svg>
-          <div class="chart-tooltip" id="chart-tooltip" hidden></div>
-        </div>
-        <div class="chart-key" id="chart-key"></div>
-        <div class="milestone-strip" id="milestone-strip" aria-label="Confirmed chart milestones"></div>
+        <div id="reader-chart-stack"></div>
       </section>
 
 
@@ -160,7 +150,7 @@
 
     <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
     <script src="rewards.js" defer></script>
-  <script src="explorer.js" defer></script>
-    <script src="app.js?v=2.2.1" defer></script>
+  <script src="explorer.js?v=3.0" defer></script>
+    <script src="app.js?v=3.0" defer></script>
   </body>
 </html>

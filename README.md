@@ -102,9 +102,10 @@ stay in item summaries; they never become absolute stat totals.
 
 ## dbt Charts dashboard
 
-The hosted app uses its own live Charts view, synchronized with the reading slider and
-Your cast selection. The old `dbt-charts.html` URL redirects there; it no longer serves
-an unfiltered static snapshot. The separate local dbt Charts dashboard remains available below.
+The hosted Charts tab displays scrollable dbt Charts SVGs for the selected character.
+After rebuilding the public SQLite data, run `uv run python scripts/render_reader_charts.py`
+to render each observation checkpoint. The reading slider selects the latest visible
+checkpoint for each metric. The interactive local board is also available below.
 
 The dashboard reads the same generated public SQLite snapshot as the website; it
 needs no warehouse credentials. Install dbt Charts from the latest Dataface release

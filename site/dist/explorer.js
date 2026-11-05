@@ -43,7 +43,7 @@ document.querySelectorAll('[data-view]').forEach(button => button.addEventListen
   document.querySelectorAll('[data-view]').forEach(tab => tab.setAttribute('aria-pressed', String(tab === button)));
   ['explorer', 'progression', 'character', 'ledger', 'history', 'rewards'].forEach(view => { document.querySelector(`.${view}-section`).hidden = view !== button.dataset.view; });
 }));
-['progression', 'character', 'ledger', 'history', 'rewards'].forEach(view => { document.querySelector(`.${view}-section`).hidden = true; });
+['explorer', 'character', 'ledger', 'history', 'rewards'].forEach(view => { document.querySelector(`.${view}-section`).hidden = true; });
 queryFields.forEach(field => document.querySelector(`#query-${field}`).addEventListener(field === 'search' ? 'input' : 'change', () => { queryState.page = 0; renderExplorer(); }));
 document.querySelectorAll('[data-preset]').forEach(button => button.addEventListener('click', () => {
   resetQuery();

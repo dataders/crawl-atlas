@@ -150,117 +150,24 @@ function renderPosition() {
   chapterSelect.value = String(location.chapter);
 }
 
-function renderChart(events, party) {
-  const svg = $("#progress-chart");
-  const width = 1100, height = 380, left = 64, right = 28, top = 54, bottom = 52;
-  const horizon = Math.max(state.progress, 1 / state.data.series.chapterCount);
-  const x = (progress) => left + progress / horizon * (width - left - right);
-  const parts = [];
-  state.data.books.forEach((book, index) => {
-    const start = (book.startChapter - 1) / state.data.series.chapterCount;
-    if (start > state.progress) return;
-    const end = Math.min(horizon, book.endChapter / state.data.series.chapterCount);
-    parts.push(`<rect class="book-band ${index % 2 ? "alternate" : ""}" x="${x(start)}" y="${top - 30}" width="${x(end) - x(start)}" height="${height - top - bottom + 43}"/>`);
-    parts.push(`<line class="book-boundary" x1="${x(start)}" y1="${top - 30}" x2="${x(start)}" y2="${height - bottom + 13}"/>`);
-    parts.push(`<text class="book-axis" x="${x((start + end) / 2)}" y="${top - 38}" text-anchor="middle">BOOK ${book.number}</text>`);
-  });
-  const metrics = [{ id: "level", label: "Level" }, ...["STR", "INT", "CON", "DEX", "CHA"].map((id) => ({ id, label: id }))];
-  $("#metric-tabs").innerHTML = metrics.map((metric) => `<button class="metric-tab" type="button" role="tab" aria-selected="${state.chartMetric === metric.id}" data-metric="${metric.id}">${metric.label}</button>`).join("");
-  $("#metric-tabs").querySelectorAll("[data-metric]").forEach((button) => button.addEventListener("click", () => { state.chartMetric = button.dataset.metric; renderChart(events, party); }));
-
-  $("#level-uncertainty").hidden = true;
-  $("#level-uncertainty").innerHTML = "";
-  let chartCharacters = [];
-  let milestoneRows = [];
-  if (state.chartMetric === "level") {
-    const levelEvents = events.filter((event) => event.type === "level" && Number.isFinite(event.level));
-    const uncertain = state.data.characters.map(character => ({character, levels: events.filter(e => e.subject === character.name && e.type === "level")})).filter(({levels}) => levels.at(-1)?.action === "increase" && levels.at(-1).level == null);
-    $("#level-uncertainty").hidden = !uncertain.length;
-    $("#level-uncertainty").innerHTML = uncertain.map(({character, levels}) => {
-      const latest = levels.at(-1), exact = levels.filter(e => Number.isFinite(e.level)).at(-1);
-      return `<p><strong>${esc(character.name)} leveled up again · exact total unknown</strong><br>Confirmed in Book ${latest.book}, Chapter ${latest.chapter}.${exact ? ` Level ${exact.level} was recorded in Book ${exact.book}, Chapter ${exact.chapter}; it is not a maximum or a current level.` : ""}</p>`;
-    }).join("");
-    uncertain.forEach(({character, levels}) => {
-      const event = levels.at(-1), markerX = x(event.progress);
-      parts.push(`<line class="unknown-level-marker chart-event" data-event="${esc(event.id)}" x1="${markerX}" x2="${markerX}" y1="${top}" y2="${height-bottom}"/><text class="unknown-level-label" x="${Math.min(markerX+9,width-240)}" y="${top+18}">↑ Level increased · total unknown</text>`);
-    });
-    const maxKnown = Math.max(15, ...levelEvents.map((event) => event.level));
-    const y = (value) => top + (maxKnown - value) / maxKnown * (height - top - bottom);
-    const levelStep = maxKnown <= 20 ? 5 : 10;
-    for (let value = 0; value <= maxKnown; value += levelStep) parts.push(`<line class="chart-grid" x1="${left}" y1="${y(value)}" x2="${width-right}" y2="${y(value)}"/><text class="chart-axis" x="8" y="${y(value)+4}">LVL ${value}</text>`);
-    chartCharacters = state.data.characters.filter((character) => levelEvents.some((event) => event.subject === character.name));
-    chartCharacters.forEach((character, characterIndex) => {
-      const levels = levelEvents.filter((event) => event.subject === character.name);
-      const color = character.color ?? SERIES[character.name] ?? "#f5ca5c";
-      let path = `M ${x(levels[0].progress)} ${y(levels[0].level)}`;
-      levels.slice(1).forEach((event) => { path += ` L ${x(event.progress)} ${y(event.level)}`; });
-      parts.push(`<path class="level-path" stroke-dasharray="4 6" style="--series-color:${color}" d="${path}"/>`);
-      levels.forEach((event) => {
-        const labelY = y(event.level) - 10 - (characterIndex * 2);
-        parts.push(`<circle class="level-dot chart-event" style="--series-color:${color}" cx="${x(event.progress)}" cy="${y(event.level)}" r="6" data-event="${esc(event.id)}"/><text class="level-value" style="--series-color:${color}" x="${x(event.progress)}" y="${labelY}" text-anchor="middle">${event.level}</text>`);
-      });
-      milestoneRows.push({ character, points: events.filter(event => event.subject === character.name && event.type === "level").map((event) => ({ event, label: `B${event.book} C${event.chapter} · ${event.level == null ? "Increased · total unknown" : `L${event.level}`}`, scope: "base" })) });
-    });
-    const eventRows = { skill: height - 41, item: height - 27, party: height - 13 };
-    events.filter((event) => eventRows[event.type]).forEach((event) => {
-      const shape = event.type === "party"
-        ? `<path class="event-dot chart-event" fill="${EVENT_COLORS[event.type]}" d="M ${x(event.progress)} ${eventRows[event.type]-6} l 6 11 h -12 z" data-event="${esc(event.id)}"/>`
-        : `<rect class="event-dot chart-event" fill="${EVENT_COLORS[event.type]}" x="${x(event.progress)-4}" y="${eventRows[event.type]-4}" width="8" height="8" transform="${event.type === "skill" ? `rotate(45 ${x(event.progress)} ${eventRows[event.type]})` : ""}" data-event="${esc(event.id)}"/>`;
-      parts.push(shape);
-    });
-    $("#chart-explanation").textContent = "Dots mark exact observations. Dashed lines only connect them; growth between observations and after the last dot is unknown.";
-    $("#chart-key").innerHTML = '<span><i class="level-key"></i>Confirmed level</span><span><i class="skill-key"></i>Skill or spell</span><span><i class="item-key"></i>Inventory</span><span><i class="party-key"></i>Party</span>';
-    svg.setAttribute("aria-label", "Explicitly confirmed character levels through the selected point in the series");
-  } else {
-    const metric = state.chartMetric;
-    const statEvents = events.filter((event) => event.type === "stat" && Number.isFinite(event.stats?.[metric]));
-    const maxKnown = Math.max(10, ...statEvents.map((event) => event.stats[metric]));
-    const axisMax = Math.ceil((maxKnown + 2) / 5) * 5;
-    const y = (value) => top + (axisMax - value) / axisMax * (height - top - bottom);
-    const statStep = axisMax <= 50 ? 5 : axisMax <= 150 ? 25 : 50;
-    for (let value = 0; value <= axisMax; value += statStep) parts.push(`<line class="chart-grid" x1="${left}" y1="${y(value)}" x2="${width-right}" y2="${y(value)}"/><text class="chart-axis" x="12" y="${y(value)+4}">${value}</text>`);
-    chartCharacters = state.data.characters.filter((character) => statEvents.some((event) => event.subject === character.name));
-    chartCharacters.forEach((character) => {
-      const points = statEvents.filter((event) => event.subject === character.name);
-      const basePoints = points.filter((event) => event.statScopes?.[metric] === "base");
-      const color = character.color ?? SERIES[character.name] ?? "#f5ca5c";
-      if (basePoints.length) {
-        let path = `M ${x(basePoints[0].progress)} ${y(basePoints[0].stats[metric])}`;
-        basePoints.slice(1).forEach((event) => { path += ` L ${x(event.progress)} ${y(event.stats[metric])}`; });
-        parts.push(`<path class="stat-path" stroke-dasharray="4 6" style="--series-color:${color}" d="${path}"/>`);
-      }
-      points.forEach((event) => {
-        const scope = event.statScopes?.[metric] ?? "reported";
-        const value = event.stats[metric];
-        parts.push(`<circle class="stat-dot ${scope === "base" ? "base" : "reported"} chart-event" style="--series-color:${color}" cx="${x(event.progress)}" cy="${y(value)}" r="6" data-event="${esc(event.id)}"/><text class="stat-value" style="--series-color:${color}" x="${x(event.progress)}" y="${y(value)-11}" text-anchor="middle">${value}</text>`);
-      });
-      milestoneRows.push({ character, points: points.map((event) => ({ event, label: `B${event.book} C${event.chapter} · ${event.stats[metric]}`, scope: event.statScopes?.[metric] ?? "reported" })) });
-    });
-    $("#chart-explanation").textContent = `${metric} dots mark observations. Dashed guides connect base values, without estimating growth between them. Hollow points include modifiers.`;
-    $("#chart-key").innerHTML = '<span><i class="base-key"></i>Base / unmodified</span><span><i class="reported-key"></i>Reported with modifier</span>';
-    svg.setAttribute("aria-label", `${metric} stat history through the selected point in the series`);
-  }
-  parts.push(`<line class="selection-line" x1="${x(state.progress)}" y1="${top}" x2="${x(state.progress)}" y2="${height-bottom+13}"/>`);
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-  svg.innerHTML = parts.join("");
-  $("#chart-legend").innerHTML = chartCharacters.map((character) => `<span class="legend-person" style="--person-color:${character.color ?? SERIES[character.name]}"><i></i>${esc(character.name)}</span>`).join("");
-  $("#milestone-strip").innerHTML = milestoneRows.map(({ character, points }) => `<div class="milestone-row" style="--person-color:${character.color ?? SERIES[character.name]}"><span class="milestone-person">${esc(character.name)}</span><div class="milestone-pills">${points.map(({ event, label, scope }) => `<span class="milestone-pill ${scope === "base" ? "" : "reported"}" title="${esc(event.summary ?? event.name)}"><strong>${esc(label)}</strong>${scope === "base" ? "" : ` · ${esc(scope)}`}</span>`).join("")}</div></div>`).join("") || '<div class="empty">No explicit values for this stat yet.</div>';
-  const tooltip = $("#chart-tooltip");
-  svg.querySelectorAll(".chart-event").forEach((node) => {
-    const show = (event) => {
-      const datum = state.data.events.find((entry) => entry.id === node.dataset.event);
-      if (!datum) return;
-      const rect = svg.getBoundingClientRect();
-      const scope = state.chartMetric === "level" ? "" : datum.statScopes?.[state.chartMetric];
-      tooltip.innerHTML = `<strong>Book ${datum.book} · Chapter ${datum.chapter}${scope ? ` · ${esc(scope)}` : ""}</strong>${esc(datum.summary ?? datum.name)}`;
-      tooltip.hidden = false;
-      tooltip.style.left = `${Math.min(rect.width - 270, Math.max(8, event.clientX - rect.left + 10))}px`;
-      tooltip.style.top = `${Math.max(8, event.clientY - rect.top - 58)}px`;
-    };
-    node.addEventListener("mouseenter", show);
-    node.addEventListener("mousemove", show);
-    node.addEventListener("mouseleave", () => { tooltip.hidden = true; });
-  });
+function renderChart(events) {
+  const select = $("#chart-character");
+  const previous = select.value;
+  const known = state.data.characters.filter(person => events.some(event => event.subject === person.name));
+  select.innerHTML = known.map(person => `<option>${esc(person.name)}</option>`).join("");
+  if (known.some(person => person.name === previous)) select.value = previous;
+  else if (known.some(person => person.name === "Carl")) select.value = "Carl";
+  select.disabled = !known.length;
+  const rows = state.facts.filter(row => row.character === select.value && row.progress <= state.progress &&
+    (row.kind === "level" || row.kind === "stat"));
+  const metrics = {Level: "Level", STR: "Strength", INT: "Intelligence", CON: "Constitution", DEX: "Dexterity", CHA: "Charisma"};
+  $("#reader-chart-stack").innerHTML = Object.entries(metrics).map(([metric, title]) => {
+    const observations = rows.filter(row => row.metric === metric);
+    const last = observations.filter(row => row.value !== null).at(-1);
+    const latest = observations.at(-1);
+    const note = latest && latest.value === null ? "The later change has no recorded total." : "";
+    return `<article><h3>${title}</h3>${last ? `<img loading="lazy" alt="${esc(select.value)} ${title} observations through Book ${last.book}, Chapter ${last.chapter}" src="reader-charts/${encodeURIComponent(last.event_id)}-${metric}.svg"><p>Last recorded value: ${last.value} · Book ${last.book}, Chapter ${last.chapter}. ${note}</p>` : "<p>No recorded value by this reading position.</p>"}</article>`;
+  }).join("");
 }
 
 function renderCharacters(events, roster) {
@@ -324,7 +231,7 @@ function renderAll() {
   const events = followedEvents(allEvents);
   const party = partyAt(events);
   renderPosition();
-  renderChart(events, party);
+  renderChart(events);
   renderCharacters(events, party);
   renderInventory(events);
   renderHistory(events);
@@ -361,6 +268,7 @@ async function start() {
 }
 
 $('#cast-all').addEventListener('click', () => saveCast(null));
+$("#chart-character").addEventListener("change", () => renderChart(followedEvents()));
 $('#cast-none').addEventListener('click', () => saveCast([]));
 $('#cast-core').addEventListener('click', () => {
   const known = new Set(visibleEvents().map(event => event.subject));

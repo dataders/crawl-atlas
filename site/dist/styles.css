@@ -315,3 +315,5 @@ details { max-width:280px; font-size:12px; } summary { cursor:pointer; color:var
 .rewards-section table { min-width: 800px; width: 100%; }
 .rewards-section details { margin-top: 8px; font-size: 14px; }
 @media(max-width:700px) { .rewards-section { padding: 18px 12px; } .rewards-section .query-controls { grid-template-columns: 1fr 1fr; } }
+#reader-chart-stack article { padding: 1rem 0; border-top: 1px solid currentColor; }
+#reader-chart-stack img { display: block; width: 100%; height: auto; }
