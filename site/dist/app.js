@@ -132,6 +132,7 @@ function inventoryAt(events) {
 function renderPosition() {
   const location = currentLocation();
   $("#location-chapter").textContent = `Book ${location.book.number} · Chapter ${location.chapter}`;
+  $("#book-range").setAttribute("aria-valuetext", `Book ${location.book.number}, chapter ${location.chapter}, ${Math.round(location.position * 100)} percent through chapter`);
   $("#location-percent").textContent = `${Math.round(location.position * 100)}% through chapter`;
   $("#overall-progress").textContent = `${Math.round(state.progress * 100)}% of series`;
   $("#book-range").value = Math.round(state.progress * 10000);
@@ -237,7 +238,7 @@ function renderAll() {
   const url = new URL(window.location);
   ["book", "chapter", "position"].forEach(key => url.searchParams.delete(key));
   url.searchParams.delete("progress");
-  if (state.progress > 0) url.searchParams.set("progress", Math.round(state.progress * 10000));
+  url.searchParams.set("progress", Math.round(state.progress * 10000));
   history.replaceState(null, "", url);
 }
 
@@ -254,11 +255,21 @@ async function start() {
     if (saved === null || (Array.isArray(saved) && saved.every(name => typeof name === 'string'))) state.followedCharacters = saved;
   } catch {}
   const params = new URLSearchParams(window.location.search);
-  if (params.has("progress") && Number.isFinite(Number(params.get("progress")))) state.progress = Math.min(1, Math.max(0, Number(params.get("progress")) / 10000));
-  else if (params.has("chapter")) state.progress = progressFor(Number(params.get("book")) || 1, Number(params.get("chapter")) || 1, (Number(params.get("position")) || 0) / 100);
+  const hasProgress = params.has("progress") && params.get("progress").trim() !== "" && Number.isFinite(Number(params.get("progress")));
+  const hasChapter = Number.isInteger(Number(params.get("chapter"))) && Number(params.get("chapter")) >= 1;
+  if (hasProgress) state.progress = Math.min(1, Math.max(0, Number(params.get("progress")) / 10000));
+  else if (hasChapter) state.progress = progressFor(Number(params.get("book")) || 1, Number(params.get("chapter")) || 1, (Number(params.get("position")) || 0) / 100);
   $("#book-title").textContent = `${state.data.series.title} · ${state.data.series.bookCount} books`;
   $("#data-version").textContent = state.data.series.dataVersion;
   $("#last-chapter-label").textContent = `Book ${state.data.books.at(-1).number} · Chapter ${state.data.books.at(-1).chapterCount}`;
+  document.body.classList.toggle("choosing-position", !hasProgress && !hasChapter);
+  document.body.classList.remove("reader-loading");
+  $("#book-range").disabled = false;
+  if (!hasProgress && !hasChapter) {
+    renderPosition();
+    $("#enter-reader").disabled = false;
+    return;
+  }
   renderAll();
   const section = location.hash.slice(1) || params.get("view");
   if (section && document.querySelector(`[data-view="${CSS.escape(section)}"]`)) document.getElementById(section).scrollIntoView();
@@ -266,7 +277,7 @@ async function start() {
 
 $('#cast-all').addEventListener('click', () => saveCast(null));
 window.matchMedia("(max-width: 820px)").addEventListener("change", () => {
-  if (state.facts) renderChart();
+  if (state.facts && !document.body.classList.contains("choosing-position")) renderChart();
 });
 $("#reader-board").addEventListener("load", event => {
   const frame = event.target;
@@ -281,7 +292,16 @@ $('#cast-core').addEventListener('click', () => {
   const known = new Set(visibleEvents().map(event => event.subject));
   saveCast(state.data.characters.filter(character => character.group === 'core' && known.has(character.name)).map(character => character.name));
 });
-$("#book-range").addEventListener("input", (event) => { state.progress = Number(event.target.value) / 10000; renderAll(); });
+$("#book-range").addEventListener("input", (event) => {
+  state.progress = Number(event.target.value) / 10000;
+  if (document.body.classList.contains("choosing-position")) renderPosition();
+  else renderAll();
+});
+$("#enter-reader").addEventListener("click", () => {
+  const url = new URL(window.location.href);
+  url.searchParams.set("progress", $("#book-range").value);
+  window.location.assign(url.href);
+});
 $("#book-select").addEventListener("change", (event) => { state.progress = progressFor(event.target.value, 1); renderAll(); });
 $("#chapter-select").addEventListener("change", (event) => { state.progress = progressFor($("#book-select").value, event.target.value); renderAll(); });
 $("#previous-chapter").addEventListener("click", () => { const { globalChapter } = currentLocation(); state.progress = Math.max(0, (globalChapter - 2) / state.data.series.chapterCount); renderAll(); });
@@ -291,4 +311,4 @@ $("#about-button").addEventListener("click", () => { $("#about-panel").hidden = 
 $("#about-close").addEventListener("click", () => { $("#about-panel").hidden = true; $("#about-button").setAttribute("aria-expanded", "false"); $("#about-button").focus(); });
 document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !$("#about-panel").hidden) $("#about-close").click(); });
 
-start().catch((error) => { document.querySelector("main").innerHTML = `<section class="empty"><h1>Dataset unavailable</h1><p>${esc(error.message)}</p></section>`; });
+start().catch((error) => { document.body.classList.remove("reader-loading", "choosing-position"); document.querySelector("main").innerHTML = `<section class="empty"><h1>Dataset unavailable</h1><p>${esc(error.message)}</p></section>`; });

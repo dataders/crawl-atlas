@@ -6,9 +6,9 @@
     <meta name="description" content="Explore every known level, skill, party, and inventory change in Dungeon Crawler Carl without reading past your place." />
     <title>Crawl Atlas — Dungeon Crawler Carl</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080b10'/%3E%3Cpath d='M7 7h18v5H12v8h13v5H7z' fill='%23d9ff43'/%3E%3Ccircle cx='21.5' cy='16' r='2.5' fill='%23ff5c35'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=7" />
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
-  <body>
+  <body class="reader-loading">
     <div class="scanlines" aria-hidden="true"></div>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Crawl Atlas home"><span class="brand-mark">CA</span><span>Crawl Atlas</span></a>
@@ -30,7 +30,7 @@
     <main id="top">
       <section class="reader-position" aria-labelledby="reader-position-title">
         <div class="position-heading">
-          <div><p class="eyebrow">Spoiler boundary</p><h1 id="reader-position-title">Where are you reading?</h1></div>
+          <div><p class="eyebrow">Dungeon Crawler Carl</p><h1 id="reader-position-title">Where are you reading?</h1></div>
           <div class="position-readout"><strong id="location-chapter">Book 1 · Chapter 1</strong><span id="location-percent">0% through chapter</span></div>
         </div>
         <div class="position-slicers" aria-label="Choose book and chapter">
@@ -38,11 +38,12 @@
           <label>Chapter<select id="chapter-select" aria-label="Choose chapter"></select></label>
         </div>
         <div class="master-slider">
-          <input id="book-range" type="range" min="0" max="10000" value="0" step="1" aria-label="Position in the series" />
+          <input disabled id="book-range" type="range" min="0" max="10000" value="0" step="1" aria-label="Position in the series" />
           <div class="chapter-ruler" id="chapter-ruler" aria-hidden="true"></div>
           <div class="slider-labels"><span>Book 1 · Chapter 1</span><span id="overall-progress">0% of series</span><span id="last-chapter-label">Book 8 · Chapter 98</span></div>
           <p class="coverage-note">All eight books are mapped. Level and stat milestones appear only when the text states them directly; Book 8 now includes an audit of explicit levels, named skills, class changes, and selected equipment. Imani has a targeted audit across Books 1–8. Other characters in Books 2–7 still have selective coverage. Missing observations are not current values.</p>
         </div>
+        <button id="enter-reader" type="button" disabled>Go <span aria-hidden="true">→</span></button>
         <div class="position-actions">
           <button id="previous-chapter" type="button">← Previous chapter</button>
           <div class="spoiler-lock"><span></span>Everything below stops here</div>
@@ -151,6 +152,6 @@
     <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
     <script src="rewards.js" defer></script>
   <script src="explorer.js?v=7" defer></script>
-    <script src="app.js?v=6" defer></script>
+    <script src="app.js?v=7" defer></script>
   </body>
 </html>
