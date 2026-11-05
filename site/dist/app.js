@@ -150,20 +150,18 @@ function renderPosition() {
   chapterSelect.value = String(location.chapter);
 }
 
-function renderChart(events) {
-  const select = $("#chart-character");
-  const previous = select.value;
-  const known = state.data.characters.filter(person => events.some(event => event.subject === person.name));
-  select.innerHTML = known.map(person => `<option>${esc(person.name)}</option>`).join("");
-  if (known.some(person => person.name === previous)) select.value = previous;
-  else if (known.some(person => person.name === "Carl")) select.value = "Carl";
-  select.disabled = !known.length;
-  const rows = state.facts.filter(row => row.character === select.value && row.progress <= state.progress &&
+function renderChart() {
+  const checkpoint = state.facts.findLast(row => row.progress <= state.progress &&
     (row.kind === "level" || row.kind === "stat"));
-  const checkpoint = rows.at(-1);
-  $("#reader-chart-stack").innerHTML = checkpoint
-    ? `<img src="reader-charts/${encodeURIComponent(checkpoint.event_id)}.svg" alt="${esc(select.value)}: level and five stat histories through Book ${checkpoint.book}, Chapter ${checkpoint.chapter}">`
-    : '<p class="empty">No level or stat observations at this reading position.</p>';
+  const frame = $("#reader-board");
+  $("#chart-empty").hidden = Boolean(checkpoint);
+  frame.hidden = !checkpoint;
+  if (!checkpoint) {
+    frame.removeAttribute("src");
+    return;
+  }
+  const path = `charts/${encodeURIComponent(checkpoint.event_id)}.html`;
+  if (frame.getAttribute("src") !== path) frame.setAttribute("src", path);
 }
 
 function renderCharacters(events, roster) {
@@ -227,7 +225,7 @@ function renderAll() {
   const events = followedEvents(allEvents);
   const party = partyAt(events);
   renderPosition();
-  renderChart(events);
+  renderChart();
   renderCharacters(events, party);
   renderInventory(events);
   renderHistory(events);
@@ -264,7 +262,14 @@ async function start() {
 }
 
 $('#cast-all').addEventListener('click', () => saveCast(null));
-$("#chart-character").addEventListener("change", () => renderChart(followedEvents()));
+$("#reader-board").addEventListener("load", event => {
+  const frame = event.target;
+  const body = frame.contentDocument?.body;
+  if (!body || !frame.hasAttribute("src")) return;
+  const resize = () => { frame.style.height = Math.ceil(body.getBoundingClientRect().height) + "px"; };
+  new ResizeObserver(resize).observe(body);
+  resize();
+});
 $('#cast-none').addEventListener('click', () => saveCast([]));
 $('#cast-core').addEventListener('click', () => {
   const known = new Set(visibleEvents().map(event => event.subject));

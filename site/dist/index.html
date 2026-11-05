@@ -42,7 +42,7 @@
         </div>
       </section>
 
-      <section class="cast-selector" aria-labelledby="cast-selector-title">
+      <section class="cast-selector" hidden aria-labelledby="cast-selector-title">
         <div class="cast-heading"><div><p class="eyebrow">Your cast</p><h2 id="cast-selector-title">Follow the characters you care about</h2></div><div class="cast-actions"><button type="button" id="cast-all">All known</button><button type="button" id="cast-core">Core party</button><button type="button" id="cast-none">Clear</button></div></div>
         <div id="cast-options" class="cast-options" aria-label="Characters included in every view"></div>
         <p id="cast-status" class="query-footnote" role="status"></p>
@@ -78,8 +78,8 @@
         <div class="section-heading">
           <div><h2 id="progression-title">Character progression</h2></div>
         </div>
-        <label class="board-picker">Character for all charts <select id="chart-character"></select></label>
-        <div id="reader-chart-stack"></div>
+        <p class="empty" id="chart-empty">Level and stat histories appear as you read.</p>
+        <iframe hidden id="reader-board" title="Character levels and stats at your reading position" style="width:100%;border:0"></iframe>
       </section>
 
 
@@ -150,7 +150,7 @@
 
     <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
     <script src="rewards.js" defer></script>
-  <script src="explorer.js?v=3.0" defer></script>
-    <script src="app.js?v=3.1" defer></script>
+  <script src="explorer.js?v=4" defer></script>
+    <script src="app.js?v=4" defer></script>
   </body>
 </html>

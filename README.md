@@ -102,10 +102,10 @@ stay in item summaries; they never become absolute stat totals.
 
 ## dbt Charts dashboard
 
-The hosted Charts tab displays scrollable dbt Charts SVGs for the selected character.
-After rebuilding the public SQLite data, run `uv run python scripts/render_reader_charts.py`
-to render each observation checkpoint. The reading slider selects the latest visible
-board for the selected character, with level and five stats stacked in reading order.
+The hosted Charts tab displays the static HTML board exported by dbt Charts.
+Run `uv run python scripts/render_reader_charts.py` after rebuilding the public SQLite data.
+The reading slider selects the latest visible checkpoint across the cast. Level and five
+stat histories appear as stacked charts, with all observed characters included.
 The interactive local board is also available below.
 
 The dashboard reads the same generated public SQLite snapshot as the website; it

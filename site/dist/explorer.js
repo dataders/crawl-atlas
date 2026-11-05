@@ -41,6 +41,7 @@ function resetQuery() {
 document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
   const url = new URL(window.location); url.searchParams.set('view', button.dataset.view); history.replaceState(null, '', url);
   document.querySelectorAll('[data-view]').forEach(tab => tab.setAttribute('aria-pressed', String(tab === button)));
+  document.querySelector('.cast-selector').hidden = button.dataset.view === 'progression';
   ['explorer', 'progression', 'character', 'ledger', 'history', 'rewards'].forEach(view => { document.querySelector(`.${view}-section`).hidden = view !== button.dataset.view; });
 }));
 ['explorer', 'character', 'ledger', 'history', 'rewards'].forEach(view => { document.querySelector(`.${view}-section`).hidden = true; });
