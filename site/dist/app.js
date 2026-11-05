@@ -258,8 +258,8 @@ async function start() {
   $("#data-version").textContent = state.data.series.dataVersion;
   $("#last-chapter-label").textContent = `Book ${state.data.books.at(-1).number} · Chapter ${state.data.books.at(-1).chapterCount}`;
   renderAll();
-  const view = params.get("view");
-  if (["explorer", "progression", "character", "ledger", "history", "rewards"].includes(view)) document.querySelector(`[data-view="${view}"]`).click();
+  const section = location.hash.slice(1) || params.get("view");
+  if (section && document.querySelector(`[data-view="${CSS.escape(section)}"]`)) document.getElementById(section).scrollIntoView();
 }
 
 $('#cast-all').addEventListener('click', () => saveCast(null));

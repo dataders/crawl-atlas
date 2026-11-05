@@ -6,18 +6,18 @@
     <meta name="description" content="Explore every known level, skill, party, and inventory change in Dungeon Crawler Carl without reading past your place." />
     <title>Crawl Atlas — Dungeon Crawler Carl</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080b10'/%3E%3Cpath d='M7 7h18v5H12v8h13v5H7z' fill='%23d9ff43'/%3E%3Ccircle cx='21.5' cy='16' r='2.5' fill='%23ff5c35'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <link rel="stylesheet" href="styles.css?v=6" />
   </head>
   <body>
     <div class="scanlines" aria-hidden="true"></div>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Crawl Atlas home"><span class="brand-mark">CA</span><span>Crawl Atlas</span></a>
       <nav class="workspace-nav" aria-label="Explore the archive">
-        <button type="button" data-view="progression" aria-pressed="true">Charts</button>
-        <button type="button" data-view="explorer" aria-pressed="false">Progression ledger</button>
-        <button type="button" data-view="character" aria-pressed="false">Characters</button>
-        <button type="button" data-view="ledger" aria-pressed="false">Inventory</button>
-        <button type="button" data-view="rewards" aria-pressed="false">Boxes &amp; rewards</button><button type="button" data-view="history" aria-pressed="false">History</button>
+        <a href="#progression" data-view="progression">Charts</a>
+        <a href="#explorer" data-view="explorer">Progression ledger</a>
+        <a href="#character" data-view="character">Characters</a>
+        <a href="#ledger" data-view="ledger">Inventory</a>
+        <a href="#rewards" data-view="rewards">Boxes &amp; rewards</a><a href="#history" data-view="history">History</a>
       </nav>
       <div class="topbar-actions">
         <span id="book-title" hidden></span>
@@ -48,13 +48,21 @@
         </div>
       </section>
 
-      <section class="cast-selector" hidden aria-labelledby="cast-selector-title">
+      <section id="progression" class="progression-section" aria-labelledby="progression-title">
+        <div class="section-heading">
+          <div><h2 id="progression-title">Character progression</h2></div>
+        </div>
+        <p class="empty" id="chart-empty">Move the reading slider to your place in the series to see the charts.</p>
+        <iframe hidden id="reader-board" title="Character levels and stats at your reading position" style="width:100%;border:0"></iframe>
+      </section>
+
+      <details class="cast-selector"><summary>Filter characters in the detail sections</summary>
         <div class="cast-heading"><div><p class="eyebrow">Your cast</p><h2 id="cast-selector-title">Follow the characters you care about</h2></div><div class="cast-actions"><button type="button" id="cast-all">All known</button><button type="button" id="cast-core">Core party</button><button type="button" id="cast-none">Clear</button></div></div>
         <div id="cast-options" class="cast-options" aria-label="Characters included in every view"></div>
         <p id="cast-status" class="query-footnote" role="status"></p>
-      </section>
+      </details>
 
-      <section class="explorer-section" aria-labelledby="explorer-title">
+      <section id="explorer" class="explorer-section" aria-labelledby="explorer-title">
         <div class="section-heading"><div><p class="eyebrow">The progression archive</p><h2 id="explorer-title">Every increase. In context.</h2></div><button type="button" id="export-results">Export results ↓</button></div>
         <p class="explorer-intro">Find a level, trace a skill, or compare stat observations. Only discoveries up to your reading position appear.</p>
         <div class="query-presets" aria-label="Quick queries"><button type="button" data-preset="all">All observations</button><button type="button" data-preset="level">Level increases</button><button type="button" data-preset="skill">Skills & spells</button><button type="button" data-preset="stat">Base stats</button></div>
@@ -73,29 +81,7 @@
         <p class="query-footnote">Changes compare known observations of the same scope and confidence. A dash means no comparable earlier value, not zero. Gaps may span unreported increases. Skill scopes distinguish trained, equipment, class, granted, and effective casting levels. Older reported skill values may include gear effects. Modifier-only entries show the stated change without inventing a total.</p>
       </section>
 
-      <section class="progression-section" aria-labelledby="progression-title">
-        <div class="section-heading">
-          <div><h2 id="progression-title">Character progression</h2></div>
-        </div>
-        <p class="empty" id="chart-empty">Move the reading slider to your place in the series to see the charts.</p>
-        <iframe hidden id="reader-board" title="Character levels and stats at your reading position" style="width:100%;border:0"></iframe>
-      </section>
-
-
-      <section class="rewards-section" hidden aria-labelledby="rewards-title">
-        <div class="section-heading"><div><p class="eyebrow">Reward provenance</p><h2 id="rewards-title">Where the loot came from</h2></div><span id="reward-count" class="section-count"></span></div>
-        <p class="explorer-intro">Follow the cause → box awarded → box opened → reward received. Location means when the text reveals it. Initial coverage includes Book 1 opening batches and selected explicit lineages in Books 1, 5, and 8.</p>
-        <div class="query-controls">
-          <label>Search<input id="reward-search" type="search" placeholder="Item, box, boss, sponsor…"></label>
-          <label>Stage<select id="reward-stage"><option value="">All stages</option><option value="awarded">Boxes awarded</option><option value="opened">Boxes opened</option><option value="received">Rewards received</option><option value="identified">Later details</option><option value="trigger">Reward causes</option><option value="applied">Effects applied</option></select></label>
-          <label>Box tier<select id="reward-tier"><option value="">All tiers</option></select></label>
-          <label>Box type<select id="reward-kind"><option value="">All types</option></select></label>
-        </div>
-        <div class="table-scroll"><table><thead><tr><th>Recipient / reward</th><th>Stage</th><th>Box tier / type</th><th>Source chain</th><th>Revealed</th></tr></thead><tbody id="reward-results"></tbody></table></div>
-        <p class="query-footnote">Unknown tiers and causes stay unknown. Batch attribution does not identify a specific box. Recipients describe who received each reward, not who owns it now.</p>
-      </section>
-
-      <section class="character-section" aria-labelledby="character-title">
+      <section id="character" class="character-section" aria-labelledby="character-title">
         <div class="section-heading compact">
           <div><p class="eyebrow">Character dossiers</p><h2 id="character-title">Party &amp; allies known here</h2></div>
           <span class="section-count" id="party-count"></span>
@@ -109,7 +95,7 @@
         </div>
       </section>
 
-      <section class="ledger-section" aria-labelledby="inventory-title">
+      <section id="ledger" class="ledger-section" aria-labelledby="inventory-title">
         <div class="section-heading compact">
           <div><p class="eyebrow">Cumulative ledger</p><h2 id="inventory-title">Inventory at this point</h2></div>
           <span class="section-count" id="inventory-count"></span>
@@ -126,7 +112,20 @@
         </div>
       </section>
 
-      <section class="history-section" aria-labelledby="history-title">
+      <section id="rewards" class="rewards-section" aria-labelledby="rewards-title">
+        <div class="section-heading"><div><p class="eyebrow">Reward provenance</p><h2 id="rewards-title">Where the loot came from</h2></div><span id="reward-count" class="section-count"></span></div>
+        <p class="explorer-intro">Follow the cause → box awarded → box opened → reward received. Location means when the text reveals it. Initial coverage includes Book 1 opening batches and selected explicit lineages in Books 1, 5, and 8.</p>
+        <div class="query-controls">
+          <label>Search<input id="reward-search" type="search" placeholder="Item, box, boss, sponsor…"></label>
+          <label>Stage<select id="reward-stage"><option value="">All stages</option><option value="awarded">Boxes awarded</option><option value="opened">Boxes opened</option><option value="received">Rewards received</option><option value="identified">Later details</option><option value="trigger">Reward causes</option><option value="applied">Effects applied</option></select></label>
+          <label>Box tier<select id="reward-tier"><option value="">All tiers</option></select></label>
+          <label>Box type<select id="reward-kind"><option value="">All types</option></select></label>
+        </div>
+        <div class="table-scroll"><table><thead><tr><th>Recipient / reward</th><th>Stage</th><th>Box tier / type</th><th>Source chain</th><th>Revealed</th></tr></thead><tbody id="reward-results"></tbody></table></div>
+        <p class="query-footnote">Unknown tiers and causes stay unknown. Batch attribution does not identify a specific box. Recipients describe who received each reward, not who owns it now.</p>
+      </section>
+
+      <section id="history" class="history-section" aria-labelledby="history-title">
         <div class="section-heading compact">
           <div><p class="eyebrow">Event log</p><h2 id="history-title">Story history to here</h2></div>
           <span class="section-count" id="history-count"></span>
@@ -149,7 +148,7 @@
 
     <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
     <script src="rewards.js" defer></script>
-  <script src="explorer.js?v=4" defer></script>
-    <script src="app.js?v=5" defer></script>
+  <script src="explorer.js?v=6" defer></script>
+    <script src="app.js?v=6" defer></script>
   </body>
 </html>

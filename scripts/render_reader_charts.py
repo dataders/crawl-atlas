@@ -37,6 +37,18 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
                      "height": 240, "layers": [{"type": "scatter", "y": "value", "color": "crawler"}]}
             spec["charts"][metric] = chart
             spec["rows"].append(metric)
+        spec["queries"]["levels"] = f"""
+            WITH ranked AS (
+                SELECT character, value, book, chapter,
+                       ROW_NUMBER() OVER (PARTITION BY character ORDER BY progress DESC, event_id DESC) AS rank
+                FROM progression WHERE kind = 'level' AND progress <= {row["progress"]}
+            )
+            SELECT character, COALESCE(CAST(CAST(value AS INTEGER) AS TEXT), 'Unknown') AS level,
+                   'B' || book || ' · Ch ' || chapter AS observed_at
+            FROM ranked WHERE rank = 1 ORDER BY character"""
+        spec["charts"]["levels"] = {"type": "table", "query": "levels",
+            "title": "Latest level observations", "warnings_ignore": ["WARN-QUERY-RETURNED-ZERO-ROWS"],
+            "style": {"pagination": {"page_rows": 20}}}
         boards[row["event_id"]] = spec
     for columns, width, destination in [(1, 440, compact), (3, 1360, out)]:
         paths = []
@@ -44,7 +56,7 @@ with tempfile.TemporaryDirectory(dir=ROOT) as scratch:
             items = spec["rows"]
             layout = items if columns == 1 else [{"cols": items[i:i+3]} for i in (0, 3)]
             board = Path(scratch) / f"{event_id}.yml"
-            board.write_text(json.dumps({**spec, "rows": layout, "style": {"frame": {"width": width}}}))
+            board.write_text(json.dumps({**spec, "rows": [*layout, "levels"], "style": {"frame": {"width": width}}}))
             paths.append(str(board))
         subprocess.run(["dct", "render", *paths, "--no-cache", "--project-dir", str(ROOT),
                         "--format", "html", "--output", str(destination / "{stem}.html")], check=True)

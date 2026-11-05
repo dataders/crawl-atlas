@@ -45,10 +45,14 @@ dct validate charts/crawl-atlas.yml --strict
 
 ## Progression ledger and SQL database
 
-The main interface has separate progression ledger, charts, characters, inventory,
-and history views. Search and combine character, type, scope, and change filters;
+One reading slider controls charts, the progression ledger, character dossiers,
+inventory, rewards, and history on a single page. Header links jump between sections.
+Search and combine character, type, scope, and change filters;
 inspect evidence on each row; export all matching, spoiler-filtered rows as CSV.
-Use **Your cast** to select multiple characters across every view and export; selections are saved on this device. Dossiers label levels with their last-observed book and chapter. New sessions start at the beginning. Reading position is retained in the URL.
+Use **Filter characters in the detail sections** to narrow the ledger, dossiers,
+inventory, rewards, history, and CSV export. The board includes all known characters.
+Dossiers label levels with their last-observed book and chapter. New sessions start
+at the beginning. Reading position is retained in the URL.
 
 `site/dist/data/crawl-atlas.sqlite` contains all curated public events, with indexed
 `events` and `progression` tables, a `books` table, and an `increases` view. The UI
@@ -102,7 +106,8 @@ stay in item summaries; they never become absolute stat totals.
 
 ## dbt Charts dashboard
 
-The hosted Charts tab displays the static HTML board exported by dbt Charts.
+The page opens with the static HTML board exported by dbt Charts. Its latest-level
+table shows the most recent observation for each character at the slider position.
 Run `uv run python scripts/render_reader_charts.py` after rebuilding the public SQLite data.
 The reading slider selects the latest visible checkpoint across the cast. Level and five
 stat histories appear in two rows of three, or one column on narrow screens.

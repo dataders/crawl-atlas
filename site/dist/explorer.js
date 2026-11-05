@@ -38,13 +38,20 @@ function resetQuery() {
   queryFields.forEach(field => { $(`#query-${field}`).value = field === 'sort' ? 'newest' : ''; });
   queryState.page = 0;
 }
-document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
-  const url = new URL(window.location); url.searchParams.set('view', button.dataset.view); history.replaceState(null, '', url);
-  document.querySelectorAll('[data-view]').forEach(tab => tab.setAttribute('aria-pressed', String(tab === button)));
-  document.querySelector('.cast-selector').hidden = button.dataset.view === 'progression';
-  ['explorer', 'progression', 'character', 'ledger', 'history', 'rewards'].forEach(view => { document.querySelector(`.${view}-section`).hidden = view !== button.dataset.view; });
-}));
-['explorer', 'character', 'ledger', 'history', 'rewards'].forEach(view => { document.querySelector(`.${view}-section`).hidden = true; });
+const sectionLinks = [...document.querySelectorAll('[data-view]')];
+function highlightSection() {
+  const boundary = document.querySelector('.reader-position').getBoundingClientRect().bottom + 24;
+  const active = sectionLinks.filter(link => document.getElementById(link.dataset.view).getBoundingClientRect().top <= boundary).at(-1) ?? sectionLinks[0];
+  sectionLinks.forEach(link => {
+    if (link === active) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+}
+new ResizeObserver(() => {
+  document.documentElement.style.setProperty('--header-height', document.querySelector('.topbar').offsetHeight + 'px');
+  highlightSection();
+}).observe(document.querySelector('.topbar'));
+window.addEventListener('scroll', highlightSection, {passive: true});
 queryFields.forEach(field => document.querySelector(`#query-${field}`).addEventListener(field === 'search' ? 'input' : 'change', () => { queryState.page = 0; renderExplorer(); }));
 document.querySelectorAll('[data-preset]').forEach(button => button.addEventListener('click', () => {
   resetQuery();
