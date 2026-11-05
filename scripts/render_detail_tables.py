@@ -14,7 +14,7 @@ result = {}
 with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
     for name, rows in records.items():
         board = Path(tmp) / f"{name}.yml"
-        spec = {"extends": "neon", "width": 740 if name == "inventory" else 480, "rows": [name],
+        spec = {"extends": "neon", "width": 740 if name in {"inventory", "story", "rewards"} else 480, "rows": [name],
                 "queries": {"records": {"type": "values", "rows": rows}},
                 "charts": {name: {"type": "table", "query": "records",
                                    "style": {"pagination": {"enabled": False}}}}}
@@ -29,9 +29,10 @@ with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
         library = {}
         for row, node in zip(rows, rendered):
             body.remove(node)
-            baseline = float(node.find(f'{SVG}text').get("y"))
+            ys = [float(el.get("y")) for el in node.iter()
+                  if el.tag in {f"{SVG}text", f"{SVG}tspan"} and el.get("y") is not None]
             key = json.dumps(row, ensure_ascii=False, separators=(",", ":"))
-            library[key] = [baseline, ET.tostring(node, encoding="unicode")]
+            library[key] = [min(ys), ET.tostring(node, encoding="unicode"), 24 + max(ys) - min(ys)]
         result[name] = {"header": ET.tostring(body, encoding="unicode"), "rows": library,
                         "width": float(group.get("data-chart-width"))}
 (DIST / "data/detail-tables.json").write_text(json.dumps(result, ensure_ascii=False, separators=(",", ":")))

@@ -1,6 +1,6 @@
 const SERIES = { Carl: "#d8ff3e", "Princess Donut": "#4dd9d2", Donut: "#4dd9d2", Mongo: "#ff6441" };
 const EVENT_COLORS = { level: "#d8ff3e", skill: "#4dd9d2", item: "#ff6441", party: "#ad8cff", stat: "#f5ca5c", story: "#8e9ba5" };
-const state = { data: null, progress: 0, chartMetric: "level", selectedCharacter: null, rosterFilter: "All", inventoryOwner: "All", inventorySearch: "", historyFilter: "All", followedCharacters: null };
+const state = { data: null, progress: 0, chartMetric: "level", selectedCharacter: null, rosterFilter: "All", rewardFilters: {stage:"",tier:"",kind:"",search:""}, inventorySearch: "", historyFilter: "All", followedCharacters: null };
 const $ = (selector) => document.querySelector(selector);
 const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[c]));
 const slug = (value) => String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -112,7 +112,7 @@ function renderChart() {
   const checkpoint = state.facts.findLast(row => row.progress <= state.progress);
   const frame = $("#reader-board");
   $("#chart-empty").hidden = Boolean(checkpoint);
-  const hasDetails = !checkpoint && state.data.events.some(e => e.progress <= state.progress && ["item", "party"].includes(e.type));
+  const hasDetails = !checkpoint && state.data.events.some(e => e.progress <= state.progress);
   frame.hidden = !checkpoint && !hasDetails;
   if (frame.hidden) {
     frame.removeAttribute("src");
@@ -128,24 +128,12 @@ function renderChart() {
   }
 }
 
-function renderHistory(events) {
-  const filters = ["All", "level", "skill", "item", "party", "stat", "story"];
-  $("#history-filters").innerHTML = filters.map((filter) => `<button type="button" class="filter-button ${filter === state.historyFilter ? "active" : ""}" data-history-filter="${filter}">${filter}</button>`).join("");
-  $("#history-filters").querySelectorAll("[data-history-filter]").forEach((button) => button.addEventListener("click", () => { state.historyFilter = button.dataset.historyFilter; renderHistory(events); }));
-  const filtered = events.filter((event) => state.historyFilter === "All" || event.type === state.historyFilter);
-  $("#history-count").textContent = `${events.length} events known`;
-  $("#history-list").innerHTML = filtered.length ? filtered.map((event) => `<li class="history-event" style="--event-color:${EVENT_COLORS[event.type] ?? EVENT_COLORS.story}"><span class="history-location">Book ${event.book}<br>Chapter ${event.chapter} · ${Math.round((event.position ?? 0)*100)}%</span><i class="history-marker"></i><div class="history-copy"><strong>${esc(event.subject ?? "Story")} · ${esc(event.name ?? event.type)}</strong><span>${esc(event.summary ?? event.detail ?? "")}</span></div></li>`).join("") : '<li class="empty">No events in this category yet.</li>';
-}
-
 function renderAll() {
   const allEvents = visibleEvents();
   renderCast(allEvents);
-  const events = followedEvents(allEvents);
   renderPosition();
   renderChart();
   updateBoardDetails();
-  renderHistory(events);
-  renderRewards(events);
   const url = new URL(window.location);
   ["book", "chapter", "position"].forEach(key => url.searchParams.delete(key));
   url.searchParams.delete("progress");
@@ -161,7 +149,7 @@ async function start() {
   const facts = await fetch("data/progression.json", { cache: "no-store" });
   if (!facts.ok) throw new Error("Could not load progression archive");
   state.facts = await facts.json();
-  const tables = await fetch("data/detail-tables.json");
+  const tables = await fetch("data/detail-tables.json?v=2");
   if (!tables.ok) throw new Error("Could not load detail tables");
   state.detailTables = await tables.json();
   try {
@@ -190,7 +178,7 @@ async function start() {
   else if (section && document.querySelector(`[data-view="${CSS.escape(section)}"]`)) document.getElementById(section).scrollIntoView();
 }
 
-const boardSections = {explorer:"chart-ledger", character:"character", ledger:"ledger"};
+const boardSections = {explorer:"chart-ledger", character:"character", ledger:"ledger", rewards:"rewards", history:"history"};
 let pendingSection = null;
 function jumpToBoard(id) {
   const frame = $("#reader-board");

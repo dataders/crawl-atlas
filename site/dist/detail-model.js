@@ -54,4 +54,8 @@ function inventoryRecord(item) {
   return {item:item.name, owner:item.subject, quantity:String(item.quantity ?? '—'), state:item.state,
     type:item.category ?? 'Item', acquired:`B${item.acquiredBook ?? item.book ?? 1} · Ch ${item.acquiredChapter ?? item.chapter}`};
 }
-if (typeof module !== 'undefined') module.exports = {characterState, inventoryAt, dossierTables, inventoryRecord};
+function storyRecord(e) {
+  return {event:e.name ?? e.type, character:e.subject ?? 'Story', type:e.type,
+    location:`B${e.book} · Ch ${e.chapter} · ${Math.round(e.position * 100)}%`};
+}
+if (typeof module !== 'undefined') module.exports = {characterState, inventoryAt, dossierTables, inventoryRecord, storyRecord};

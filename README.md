@@ -47,11 +47,12 @@ dct validate charts/crawl-atlas.yml --strict
 
 One reading slider controls charts, the progression ledger, character dossiers,
 inventory, rewards, and history on a single page. Header links jump between sections.
-The board’s progression ledger lists observations newest first, twelve per page.
+The board’s progression ledger lists observations newest first. Each table starts with up to ten rows; its own controls show more or all visible records.
 Use **Filter characters in the detail sections** to narrow dossiers, inventory,
 rewards, and history. The board’s level and stat plots include all known characters. Inside the board,
-the **Character** dropdown changes only the dossier. The **Owner** dropdown
-and item search change only inventory. These controls select dbt-rendered
+the **Character** dropdown selects the dossier and its inventory. Choose **Party**
+to inspect shared items. Boxes & rewards and story history are in the same board,
+with independent filters and the same reading boundary. These controls select dbt-rendered
 table rows in the browser at the exact slider position. Native dbt query
 variables require a live query host such as dbt Charts Cloud or `dct serve`.
 Dossiers label levels with their last-observed book and chapter. New sessions start

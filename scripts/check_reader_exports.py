@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "charts/reader-exports.json"
 INPUTS = ("scripts/render_reader_charts.py", "scripts/reader_book_axis.py", "dbt_charts.yml", "site/dist/data/series.json",
           "site/dist/data/progression.json", "site/dist/data/crawl-atlas.sqlite",
-          "scripts/detail_rows.cjs", "scripts/render_detail_tables.py", "site/dist/detail-model.js")
+          "scripts/detail_rows.cjs", "scripts/render_detail_tables.py", "site/dist/detail-model.js", "site/dist/rewards.js")
 
 
 def digest(path):

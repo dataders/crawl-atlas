@@ -12,7 +12,7 @@ const context=vm.createContext({state,$,window:{matchMedia:()=>({matches:false})
 const source=readFileSync('site/dist/app.js','utf8');
 vm.runInContext(readFileSync('site/dist/detail-model.js','utf8'),context);
 vm.runInContext(source.slice(source.indexOf('function currentLocation('),source.indexOf('function progressFor(')),context);
-vm.runInContext(source.slice(source.indexOf('function renderChart('),source.indexOf('function renderHistory(')),context);
+vm.runInContext(source.slice(source.indexOf('function renderChart('),source.indexOf('function renderAll(')),context);
 context.before=events.filter(e=>e.progress<growth.progress);
 assert.equal(vm.runInContext('characterState(imani,before).level',context),24);
 assert.equal(vm.runInContext('characterState(imani,events).level',context),null);

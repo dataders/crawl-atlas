@@ -66,30 +66,6 @@
         <p id="cast-status" class="query-footnote" role="status"></p>
       </details>
 
-      <section id="rewards" class="rewards-section" aria-labelledby="rewards-title">
-        <div class="section-heading"><div><p class="eyebrow">Reward provenance</p><h2 id="rewards-title">Where the loot came from</h2></div><span id="reward-count" class="section-count"></span></div>
-        <p class="explorer-intro">Follow the cause → box awarded → box opened → reward received. Location means when the text reveals it. Initial coverage includes Book 1 opening batches and selected explicit lineages in Books 1, 5, and 8.</p>
-        <div class="query-controls">
-          <label>Search<input id="reward-search" type="search" placeholder="Item, box, boss, sponsor…"></label>
-          <label>Stage<select id="reward-stage"><option value="">All stages</option><option value="awarded">Boxes awarded</option><option value="opened">Boxes opened</option><option value="received">Rewards received</option><option value="identified">Later details</option><option value="trigger">Reward causes</option><option value="applied">Effects applied</option></select></label>
-          <label>Box tier<select id="reward-tier"><option value="">All tiers</option></select></label>
-          <label>Box type<select id="reward-kind"><option value="">All types</option></select></label>
-        </div>
-        <div class="table-scroll"><table><thead><tr><th>Recipient / reward</th><th>Stage</th><th>Box tier / type</th><th>Source chain</th><th>Revealed</th></tr></thead><tbody id="reward-results"></tbody></table></div>
-        <p class="query-footnote">Unknown tiers and causes stay unknown. Batch attribution does not identify a specific box. Recipients describe who received each reward, not who owns it now.</p>
-      </section>
-
-      <section id="history" class="history-section" aria-labelledby="history-title">
-        <div class="section-heading compact">
-          <div><p class="eyebrow">Event log</p><h2 id="history-title">Story history to here</h2></div>
-          <span class="section-count" id="history-count"></span>
-        </div>
-        <div class="history-layout">
-          <div class="filter-row vertical" id="history-filters" aria-label="Filter story history"></div>
-          <ol class="history-list" id="history-list"></ol>
-        </div>
-      </section>
-
       <aside class="about-panel" id="about-panel" hidden>
         <button id="about-close" type="button" aria-label="Close information">×</button>
         <p class="eyebrow">Spoiler lock</p>
@@ -101,9 +77,10 @@
     </main>
 
     <footer><span>Dataset v<span id="data-version">—</span></span><span>Facts, not prose · <a href="https://github.com/dataders/crawl-atlas" id="repo-link">Open source</a></span></footer>
-    <script src="rewards.js" defer></script>
-    <script src="detail-model.js" defer></script>
-    <script src="board-details.js" defer></script>
-    <script src="app.js?v=9" defer></script>
+    <script src="rewards.js?v=2" defer></script>
+    <script src="detail-model.js?v=2" defer></script>
+    <script src="table-limits.js" defer></script>
+    <script src="board-details.js?v=2" defer></script>
+    <script src="app.js?v=10" defer></script>
   </body>
 </html>
