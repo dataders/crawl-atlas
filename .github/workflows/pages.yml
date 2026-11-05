@@ -6,6 +6,10 @@ on:
     paths:
       - ".github/workflows/pages.yml"
       - "site/dist/**"
+      - "scripts/render_reader_charts.py"
+      - "scripts/check_reader_exports.py"
+      - "charts/reader-exports.json"
+      - "dbt_charts.yml"
   workflow_dispatch:
 
 permissions:
@@ -31,10 +35,17 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - uses: astral-sh/setup-uv@v6
+      - name: Verify reader exports before upload
+        run: uv run python scripts/check_reader_exports.py
+
+      - name: Prepare current reader assets
+        run: rsync -a --exclude='/reader-charts/' site/dist/ "${RUNNER_TEMP}/crawl-atlas-pages/"
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4
         with:
-          path: site/dist
+          path: ${{ runner.temp }}/crawl-atlas-pages
 
       - name: Deploy to GitHub Pages
         id: deployment

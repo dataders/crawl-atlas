@@ -112,6 +112,16 @@ Run `uv run python scripts/render_reader_charts.py` after rebuilding the public 
 The reading slider selects the latest visible checkpoint across the cast. Level and five
 stat histories appear in two rows of three, or one column on narrow screens.
 All observed characters are included.
+
+The five stat panels show explicitly recorded **base** values. Equipment and temporary
+observations remain searchable in the progression ledger. Points mark observations;
+lines connect those observations across gaps in the text.
+
+Pages serves the checkpoint HTML in `site/dist/charts/`. Changes to the local
+interactive board do not change that HTML. Regenerate the reader after editing its
+inputs or generator, then commit the exports and `charts/reader-exports.json` together.
+The Pages job checks their hashes before upload. Legacy SVG snapshots in
+`site/dist/reader-charts/` are excluded from the production artifact.
 The interactive local board is also available below.
 
 The dashboard reads the same generated public SQLite snapshot as the website; it
