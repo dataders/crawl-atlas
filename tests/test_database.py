@@ -55,6 +55,10 @@ class DatabaseTests(unittest.TestCase):
                 self.assertEqual(db.execute('SELECT count(*) FROM dim_book').fetchone()[0], len(data['books']))
                 self.assertEqual(db.execute('SELECT count(*) FROM dim_character').fetchone()[0], len(data['characters']))
                 self.assertEqual(db.execute('SELECT count(*) FROM fct_timeline_event').fetchone()[0], len(data['events']))
+                self.assertEqual(
+                    db.execute("SELECT item_state FROM fct_timeline_event WHERE kind = 'item' AND item_state IS NOT NULL LIMIT 1").fetchone()[0],
+                    'equipped',
+                )
                 self.assertEqual(db.execute('SELECT count(*) FROM fct_character_observation').fetchone()[0], len(rows))
                 self.assertEqual(
                     db.execute('SELECT count(*) FROM fct_acquisition').fetchone()[0],

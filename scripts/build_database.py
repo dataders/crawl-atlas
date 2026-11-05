@@ -88,7 +88,10 @@ def build(source, output):
                 FROM books;
             CREATE VIEW dim_character AS SELECT id AS character_id, name AS character,
                 character_group, color FROM characters;
-            CREATE VIEW fct_timeline_event AS SELECT * FROM events;
+            CREATE VIEW fct_timeline_event AS SELECT events.*,
+                json_extract(payload, '$.state') AS item_state,
+                CAST(json_extract(payload, '$.quantity') AS REAL) AS quantity
+                FROM events;
             CREATE VIEW fct_character_observation AS SELECT * FROM progression;
             CREATE VIEW fct_acquisition AS SELECT * FROM acquisitions;
             CREATE VIEW bridge_acquisition_lineage AS SELECT * FROM acquisition_links;

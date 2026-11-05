@@ -40,7 +40,11 @@ private-corpus anchor; `summary` is a short public fact, never source prose.
 
 `id text`, `book integer`, `chapter integer`, `position real`, `progress real`,
 `kind text`, `character text`, `name text`, `action text`, `confidence text`,
-`source text`, `summary text`, `payload text`.
+`source text`, `summary text`, `payload text`, `item_state text`, `quantity real`.
+
+`item_state` and `quantity` are presentation-safe projections of the item
+payload. Keeping them on the fact avoids warehouse-specific JSON extraction in
+the board while retaining `payload` for less common attributes.
 
 ### `fct_character_observation`
 
