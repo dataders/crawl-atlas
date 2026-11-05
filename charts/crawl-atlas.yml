@@ -205,8 +205,6 @@ charts:
       columns:
         roster_group:
           label: Group
-        latest_confirmed_level:
-          format: integer
 
   skills:
     type: table
