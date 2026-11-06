@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from extract_epub import extract_book
+from extract_epub import extract_book_complete
 
 
 BOOKS = (
@@ -30,11 +30,13 @@ def main() -> None:
 
     books = []
     candidates = []
+    supplemental_candidates = []
     for number, title, filename in BOOKS:
         epub = args.root / filename
         if not epub.exists():
             raise FileNotFoundError(f"Missing Book {number} EPUB: {epub}")
-        chapters, book_candidates = extract_book(epub, book_number=number)
+        corpus, book_candidates, book_supplemental = extract_book_complete(epub, book_number=number)
+        chapters = corpus["chapters"]
         books.append(
             {
                 "number": number,
@@ -43,15 +45,21 @@ def main() -> None:
                 "source": epub.name,
                 "chapterCount": len(chapters),
                 "chapters": chapters,
+                "supplemental_sections": corpus["supplemental_sections"],
+                "spine_documents": corpus["spine_documents"],
+                "coverage": corpus["coverage"],
             }
         )
         candidates.extend(book_candidates)
+        supplemental_candidates.extend(book_supplemental)
 
     args.output.mkdir(parents=True, exist_ok=True)
     corpus_path = args.output / "series-corpus.json"
     candidates_path = args.output / "series-review-candidates.json"
     corpus_path.write_text(json.dumps({"series": "Dungeon Crawler Carl", "books": books}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     candidates_path.write_text(json.dumps(candidates, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (args.output / "series-supplemental-review-candidates.json").write_text(json.dumps(supplemental_candidates, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Retained {sum(len(book['supplemental_sections']) for book in books)} supplemental spine documents for separate reveal review")
     print(f"Wrote {sum(book['chapterCount'] for book in books)} chapters across {len(books)} books to {corpus_path}")
     print(f"Wrote {len(candidates)} review candidates to {candidates_path}")
 

@@ -1,0 +1,551 @@
+{
+  "scope": "Selected source-backed equipment transitions for Carl and Princess Donut. Equip means explicitly worn or observed active; unequip retains possession, remove means lost or destroyed. Dates of later observations are not claimed as first equip times. This does not establish a complete loadout at every point.",
+  "coverageNotes": [
+    "Existing Book 1 glove destruction and boxer replacement events remain authoritative and are not duplicated.",
+    "Temporary gear removal, transformation-related slot suppression, and later re-equipping are not comprehensively tracked.",
+    "Possession or an intention to wear an item alone does not establish that it was equipped.",
+    "The old crupper remains carried after the Book 8 replacement; its prior remove action is corrected to unequip in book-8-audit.json."
+  ],
+  "events": [
+    {
+      "source": "b1-c2-p70",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Pink Crocs",
+      "action": "remove",
+      "state": "no longer held",
+      "category": "Equipment",
+      "summary": "Carl loses both Crocs while fleeing down the tunnel.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b1-c7-p38",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Crown of the Sepsis Whore",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Donut equips the crown; it appears on her head.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b1-c25-p76",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted War Gauntlet of the Exalted Grull",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl tests the equipped bracer; making a fist transforms it into the war gauntlet.",
+      "confidence": "verified",
+      "statBoosts": [
+        {
+          "stat": "STR",
+          "value": 3,
+          "unit": "points",
+          "source": "b1-c25-p59",
+          "condition": "Fist mode only"
+        },
+        {
+          "stat": "DEX",
+          "value": 1,
+          "unit": "points",
+          "source": "b1-c25-p60"
+        }
+      ],
+      "evidence": [
+        "b1-c25-p59",
+        "b1-c25-p60"
+      ]
+    },
+    {
+      "source": "b2-c25-p69",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Crown of the Sepsis Whore",
+      "action": "remove",
+      "state": "no longer held",
+      "category": "Equipment",
+      "summary": "The crown crumbles into dust and disappears.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b3-c2-p125",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Necklace of the Haute Bourgeoisie",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl puts on the necklace, which adds five Dexterity.",
+      "confidence": "verified",
+      "evidence": [
+        "b3-c2-p92",
+        "b3-c2-p97"
+      ],
+      "statBoosts": [
+        {
+          "stat": "DEX",
+          "value": 5,
+          "unit": "points",
+          "source": "b3-c2-p97"
+        }
+      ]
+    },
+    {
+      "source": "b3-c16-p9",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Tiara of Mana Genita",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "The active equipment breakdown confirms Donut is wearing the new tiara, adding three Intelligence.",
+      "confidence": "verified",
+      "evidence": [
+        "b3-c2-p145",
+        "b3-c2-p147"
+      ],
+      "statBoosts": [
+        {
+          "stat": "INT",
+          "value": 3,
+          "unit": "points",
+          "source": "b3-c2-p147"
+        }
+      ]
+    },
+    {
+      "source": "b4-c28-p120",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Drakea’s Enchanted Kerchief of Disorder",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl ties the kerchief around his head.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b4-c32-p18",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Leather jacket",
+      "action": "unequip",
+      "state": "carried",
+      "category": "Equipment",
+      "summary": "Carl is now wearing the new patch jacket in place of his original leather jacket. Disposal of the original is not recorded.",
+      "confidence": "verified",
+      "evidence": [
+        "b4-c28-p77",
+        "b4-c28-p80"
+      ]
+    },
+    {
+      "source": "b4-c32-p18",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Anarchist’s Battle Rattle",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Donut comments on Carl wearing his new jacket.",
+      "confidence": "verified",
+      "evidence": [
+        "b4-c28-p83"
+      ]
+    },
+    {
+      "source": "b4-c32-p81",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Ring of Strength +2 (Quan)",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl equips the two-point Strength ring taken from Quan. This is a separate ring, not an upgrade to an earlier ring.",
+      "confidence": "verified",
+      "statBoosts": [
+        {
+          "stat": "STR",
+          "value": 2,
+          "unit": "points",
+          "source": "b4-c32-p81"
+        }
+      ]
+    },
+    {
+      "source": "b4-c32-p96",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Rockard’s Ring of Sniping",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl adds the looted ring to his finger.",
+      "confidence": "verified",
+      "evidence": [
+        "b4-c32-p83"
+      ]
+    },
+    {
+      "source": "b5-c5-p13",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Night Wyrm’s Ring of Divine Suffering",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl puts on the ring; it raises his stats by five percent.",
+      "confidence": "verified",
+      "evidence": [
+        "b3-c19-p61",
+        "b3-c19-p65"
+      ],
+      "statBoosts": [
+        {
+          "stat": "ALL",
+          "value": 5,
+          "unit": "percent",
+          "source": "b3-c19-p65"
+        }
+      ]
+    },
+    {
+      "source": "b5-c43-p30",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Silver Bracelet of the Ab-solar",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Donut equips the new silver bracelet on her left front leg.",
+      "confidence": "verified",
+      "evidence": [
+        "b5-c43-p26"
+      ]
+    },
+    {
+      "source": "b5-c48-p5",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Night Wyrm’s Ring of Divine Suffering",
+      "action": "unequip",
+      "state": "carried",
+      "category": "Equipment",
+      "summary": "Carl removes the ring and returns it to inventory.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b5-c55-p78",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Quarter Fall nipple ring",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl pierces his left nipple with the ring granting Quarter Fall.",
+      "confidence": "verified",
+      "evidence": [
+        "b5-c55-p30"
+      ]
+    },
+    {
+      "source": "b5-c70-p53",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Temporary charisma-doubling tiara",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Donut is wearing a temporary benefactor tiara that doubles Charisma and lasts thirty hours.",
+      "confidence": "verified",
+      "statBoosts": [
+        {
+          "stat": "CHA",
+          "value": 100,
+          "unit": "percent",
+          "source": "b5-c70-p53",
+          "condition": "While temporary tiara lasts"
+        }
+      ]
+    },
+    {
+      "source": "b5-c72-p69",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Night Wyrm’s Ring of Divine Suffering",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl puts on the ring before marking Vrah.",
+      "confidence": "verified",
+      "statBoosts": [
+        {
+          "stat": "ALL",
+          "value": 5,
+          "unit": "percent",
+          "source": "b3-c19-p65"
+        }
+      ],
+      "evidence": [
+        "b3-c19-p65"
+      ]
+    },
+    {
+      "source": "b5-c75-p54",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Temporary charisma-doubling tiara",
+      "action": "remove",
+      "state": "no longer held",
+      "category": "Equipment",
+      "summary": "The temporary tiara is gone, lost during the battle.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c3-p99",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Auto Buckler of the Peach Pit",
+      "action": "unequip",
+      "state": "carried",
+      "category": "Equipment",
+      "summary": "Carl removes the old buckler from his left arm before replacing it.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c3-p142",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Scavenger’s Daughter Patch",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl finishes sewing the back patch onto his jacket and puts the jacket on; the patch activates.",
+      "confidence": "verified",
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b6-c3-p142",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Anarchist’s Battle Rattle",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl puts the jacket back on with the Scavenger’s Daughter patch attached.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c22-p140",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Tiara of Mana Genita",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Donut is again explicitly wearing her usual Mana Genita tiara.",
+      "confidence": "verified",
+      "statBoosts": [
+        {
+          "stat": "INT",
+          "value": 3,
+          "unit": "points",
+          "source": "b3-c2-p147"
+        }
+      ],
+      "evidence": [
+        "b3-c2-p147"
+      ]
+    },
+    {
+      "source": "b6-c24-p34",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Tiara of Mana Genita",
+      "action": "unequip",
+      "state": "carried",
+      "category": "Equipment",
+      "summary": "Donut keeps the old tiara in inventory while equipping its replacement.",
+      "confidence": "verified",
+      "evidence": [
+        "b6-c24-p22"
+      ]
+    },
+    {
+      "source": "b6-c24-p34",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Tiara of the Inebriated Dragonfly",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Donut equips the new tiara and immediately uses its Hover skill.",
+      "confidence": "verified",
+      "evidence": [
+        "b6-c24-p23",
+        "b6-c24-p28"
+      ],
+      "statBoosts": [
+        {
+          "stat": "INT",
+          "value": 10,
+          "unit": "points",
+          "source": "b6-c24-p28"
+        }
+      ]
+    },
+    {
+      "source": "b6-c47-p4",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Nipple Ring of the Superior Fire Demon’s Hand Maiden",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl explicitly confirms Donut has active fire protection from her nipple ring. This is a later observation, not its first equip time.",
+      "confidence": "verified",
+      "evidence": [
+        "b6-c2-p135",
+        "b6-c2-p146",
+        "b6-c2-p148"
+      ]
+    },
+    {
+      "source": "b7-c3-p62",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Tiara of the Inebriated Dragonfly",
+      "action": "unequip",
+      "state": "carried",
+      "category": "Equipment",
+      "summary": "Donut places the tiara on a charging pillow to transfer its magical properties. It is no longer worn.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c3-p112",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Tiara of a Thousand Lights",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Donut puts on the new tiara before its absorption jewels have been charged.",
+      "confidence": "verified",
+      "evidence": [
+        "b7-c3-p22",
+        "b7-c3-p32"
+      ],
+      "statBoosts": [
+        {
+          "stat": "CHA",
+          "value": 10,
+          "unit": "points",
+          "source": "b7-c3-p32",
+          "condition": "Before absorbed buffs"
+        }
+      ]
+    },
+    {
+      "source": "b7-c4-p66",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Toe Ring of the Well-Balanced",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl puts the toe ring on his left pinky toe and configures its automatic healing potion.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c85-p41",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted Night Wyrm’s Ring of Divine Suffering",
+      "action": "remove",
+      "state": "consumed",
+      "category": "Equipment",
+      "summary": "Carl gives the ring to Donut, who swallows it.",
+      "confidence": "verified",
+      "evidence": [
+        "b7-c85-p37",
+        "b7-c85-p38"
+      ]
+    },
+    {
+      "source": "b8-c8-p4",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Tiara of a Thousand Lights",
+      "action": "unequip",
+      "state": "carried",
+      "category": "Equipment",
+      "summary": "Donut takes off the tiara to try on the new veil.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b8-c89-p68",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Lucky Shot patch",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Carl sews the four-leaf-clover patch onto his jacket. He plans to remove it after use; removal has not happened at this point.",
+      "confidence": "verified",
+      "evidence": [
+        "b8-c89-p62",
+        "b8-c89-p63",
+        "b8-c89-p64"
+      ],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b1-c7-p47",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Enchanted Crown of the Sepsis Whore",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "The crown description confirms its five-point Intelligence bonus.",
+      "confidence": "verified",
+      "statBoosts": [
+        {
+          "stat": "INT",
+          "value": 5,
+          "unit": "points",
+          "source": "b1-c7-p47"
+        }
+      ]
+    },
+    {
+      "source": "b6-c3-p149",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Scavenger’s Daughter Patch",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "The activated patch grants 25 Dexterity and 25 Strength in addition to its other benefits.",
+      "confidence": "verified",
+      "evidence": [
+        "b6-c3-p148"
+      ],
+      "statBoosts": [
+        {
+          "stat": "DEX",
+          "value": 25,
+          "unit": "points",
+          "source": "b6-c3-p148"
+        },
+        {
+          "stat": "STR",
+          "value": 25,
+          "unit": "points",
+          "source": "b6-c3-p149"
+        }
+      ]
+    }
+  ]
+}

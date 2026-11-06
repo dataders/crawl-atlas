@@ -1,0 +1,136 @@
+{
+  "scope": "Juice Box: independently reviewed numbered EPUB observations, with wiki used only as a discovery lead. Form-dependent displayed levels are story facts, never numeric level measurements.",
+  "corroborationUrl": "https://dungeon-crawler-carl.fandom.com/wiki/Juice_Box",
+  "knownGaps": [
+    "No trustworthy true level or complete base-stat display found.",
+    "No source-confirmed death found; departure is not treated as death.",
+    "No separately tracked equipped item confirmed in this audit.",
+    "Shapeshifting and possession labels describe demonstrated abilities rather than named, leveled skill notifications."
+  ],
+  "events": [
+    {
+      "source": "b4-c1-p141",
+      "type": "story",
+      "subject": "Juice Box",
+      "name": "Character introduced",
+      "action": "note",
+      "summary": "Juice Box is introduced as a changeling at the Toe inn.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b4-c5-p7",
+      "type": "skill",
+      "subject": "Juice Box",
+      "name": "Shapeshifting",
+      "action": "set",
+      "level": null,
+      "skillScope": "reported",
+      "summary": "Juice Box changes between Ratkin and Mouser forms. This describes an observed ability; no numeric skill level is stated.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c9-p8",
+      "type": "story",
+      "subject": "Juice Box",
+      "name": "Form-dependent displayed level",
+      "action": "note",
+      "summary": "Her human form displays level 35. The narration explicitly warns that her displayed level changes with her form and does not reveal her true level.",
+      "confidence": "verified",
+      "displayedLevel": 35,
+      "form": "Human",
+      "evidence": [
+        "b7-c9-p5"
+      ]
+    },
+    {
+      "source": "b7-c10-p74",
+      "type": "story",
+      "subject": "Juice Box",
+      "name": "Blank-form displayed level",
+      "action": "note",
+      "summary": "Her blank form displays level 120. Her true level remains unknown; this is not a confirmed level increase.",
+      "confidence": "verified",
+      "displayedLevel": 120,
+      "form": "Blank",
+      "evidence": [
+        "b7-c10-p73",
+        "b7-c9-p8"
+      ]
+    },
+    {
+      "source": "b7-c44-p13",
+      "type": "story",
+      "subject": "Juice Box",
+      "name": "The Unwashed form",
+      "action": "note",
+      "summary": "Juice Box demonstrates a form identified as the Unwashed, also called the Beautiful Place.",
+      "confidence": "verified",
+      "evidence": [
+        "b7-c43-p87",
+        "b7-c44-p11"
+      ]
+    },
+    {
+      "source": "b7-c70-p63",
+      "type": "story",
+      "subject": "Juice Box",
+      "name": "Dynastes form",
+      "action": "note",
+      "summary": "Juice Box appears as a large armored dynastes with scythes.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c79-p88",
+      "type": "story",
+      "subject": "Juice Box",
+      "name": "Hunter Wraith form",
+      "action": "note",
+      "summary": "Juice Box transforms into a Hunter Wraith.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c80-p79",
+      "type": "skill",
+      "subject": "Juice Box",
+      "name": "Possession (Hunter Wraith)",
+      "action": "set",
+      "level": null,
+      "skillScope": "reported",
+      "summary": "A system message confirms Juice Box controls Louis through wraith possession. This ability is demonstrated in Hunter Wraith form; no skill level is stated.",
+      "confidence": "verified",
+      "evidence": [
+        "b7-c79-p88"
+      ]
+    },
+    {
+      "source": "b7-c83-p56",
+      "type": "story",
+      "subject": "Juice Box",
+      "name": "Fleshmancer form",
+      "action": "note",
+      "summary": "Juice Box changes form after being asked to become a Fleshmancer and requests medical supplies.",
+      "confidence": "verified",
+      "evidence": [
+        "b7-c83-p55"
+      ]
+    },
+    {
+      "source": "b7-c85-p101",
+      "type": "story",
+      "subject": "Juice Box",
+      "name": "Departure from the realm",
+      "action": "note",
+      "summary": "A system message confirms Juice Box has left the realm and forfeited her warlord position. This does not confirm her death.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c87-p40",
+      "type": "story",
+      "subject": "Juice Box",
+      "name": "Departure through the Nothing",
+      "action": "note",
+      "summary": "The narration confirms Juice Box entered the Nothing. Her destination and survival are not confirmed at this point.",
+      "confidence": "verified"
+    }
+  ]
+}

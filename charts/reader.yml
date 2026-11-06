@@ -1,0 +1,225 @@
+{
+  "extends": "neon",
+  "width": 1360,
+  "style": {
+    "background": "#161c18",
+    "timestamp": {
+      "visible": false
+    },
+    "frame": {
+      "margin": 20
+    },
+    "charts": {}
+  },
+  "queries": {
+    "levels": {
+      "type": "values",
+      "rows": [
+        {
+          "at": 0,
+          "level": null,
+          "character": "No observations"
+        }
+      ]
+    }
+  },
+  "charts": {
+    "levels": {
+      "type": "line",
+      "title": "Level",
+      "query": "levels",
+      "x": "at",
+      "y": "level",
+      "color": "character",
+      "height": 350,
+      "style": {
+        "legend": {
+          "position": {
+            "edge": "bottom"
+          }
+        },
+        "endpoint_labels": {
+          "visible": false
+        }
+      },
+      "warnings_ignore": [
+        "WARN-TOO-MANY-COLOR-CATEGORIES"
+      ]
+    }
+  },
+  "rows": [
+    "levels",
+    {
+      "title": "Character dossier",
+      "variables": {
+        "character": {
+          "options": {
+            "static": [
+              "Carl"
+            ]
+          },
+          "default": "Carl",
+          "required": true
+        }
+      },
+      "tabs": {
+        "id": "dossier_tab",
+        "default": "Overview",
+        "items": [
+          {
+            "title": "Overview",
+            "rows": [
+              {
+                "text": "Choose your reading position to see this character."
+              }
+            ]
+          },
+          {
+            "title": "Inventory",
+            "rows": [
+              {
+                "tabs": {
+                  "id": "gear_view",
+                  "default": "All items",
+                  "items": [
+                    {
+                      "title": "All items",
+                      "rows": [
+                        {
+                          "queries": {
+                            "inventory_entries": {
+                              "type": "values",
+                              "rows": []
+                            }
+                          },
+                          "charts": {
+                            "inventory_entries": {
+                              "type": "table",
+                              "query": "inventory_entries",
+                              "title": "Inventory",
+                              "style": {
+                                "pagination": {
+                                  "page_rows": 10
+                                },
+                                "columns": {
+                                  "stat_boost": {
+                                    "width": 200
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "rows": [
+                            "inventory_entries"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "title": "Equipped",
+                      "rows": [
+                        {
+                          "text": "Last recorded equipment; later swaps may be missing."
+                        },
+                        {
+                          "queries": {
+                            "equipped_entries": {
+                              "type": "values",
+                              "rows": []
+                            }
+                          },
+                          "charts": {
+                            "equipped_entries": {
+                              "type": "table",
+                              "query": "equipped_entries",
+                              "title": "Equipped",
+                              "style": {
+                                "pagination": {
+                                  "page_rows": 10
+                                },
+                                "columns": {
+                                  "stat_boost": {
+                                    "width": 200
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "rows": [
+                            "equipped_entries"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "title": "Boxes & rewards",
+            "rows": [
+              {
+                "queries": {
+                  "rewards_entries": {
+                    "type": "values",
+                    "rows": []
+                  }
+                },
+                "charts": {
+                  "rewards_entries": {
+                    "type": "table",
+                    "query": "rewards_entries",
+                    "title": "Boxes & rewards",
+                    "style": {
+                      "pagination": {
+                        "page_rows": 10
+                      }
+                    }
+                  }
+                },
+                "rows": [
+                  "rewards_entries"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "History",
+            "rows": [
+              {
+                "queries": {
+                  "history_entries": {
+                    "type": "values",
+                    "rows": []
+                  }
+                },
+                "charts": {
+                  "history_entries": {
+                    "type": "table",
+                    "query": "history_entries",
+                    "title": "History",
+                    "style": {
+                      "pagination": {
+                        "page_rows": 10
+                      },
+                      "columns": {
+                        "evidence": {
+                          "width": "50%"
+                        }
+                      }
+                    }
+                  }
+                },
+                "rows": [
+                  "history_entries"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "notes": "Canonical complete reader layout, theme, Level and dossier table definitions. build_single_board.py fills spoiler-bounded values and imports the audited native stat and skill chart definitions."
+}

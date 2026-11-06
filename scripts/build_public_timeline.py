@@ -19,6 +19,8 @@ OUTPUT = ROOT / "site/dist/data/series.json"
 LEGACY_OUTPUT = ROOT / "site/dist/data/book-1.json"
 CORPUS = ROOT / "data/private/corpus.json"
 SERIES_CORPUS = ROOT / "data/private/series-corpus.json"
+FLOOR_AUDIT = ROOT / "data/public/character-floor-audit.json"
+PARTY_LOCATION_AUDIT = ROOT / "data/public/party-location-audit.json"
 CHAPTER_COUNT = 47
 ITEM_ALIASES = {
     "Common Fingerless Glove": "Common Fingerless Gloves",
@@ -521,11 +523,15 @@ def main() -> None:
     character = json.loads(CHARACTER_AUDIT.read_text(encoding="utf-8"))
     inventory = json.loads(INVENTORY_AUDIT.read_text(encoding="utf-8"))
     series_corpus = json.loads(SERIES_CORPUS.read_text(encoding="utf-8"))
+    floor_audit = json.loads(FLOOR_AUDIT.read_text(encoding="utf-8"))
+    party_location_audit = json.loads(PARTY_LOCATION_AUDIT.read_text(encoding="utf-8"))
     events = (character_events(character) + inventory_events(inventory) + series_progression_events(series_corpus)
+              + curated_audit_events(series_corpus, FLOOR_AUDIT.name, "floor-audit")
+              + curated_audit_events(series_corpus, PARTY_LOCATION_AUDIT.name, "party-location-audit")
               + curated_audit_events(series_corpus, "book-8-audit.json", "b8-audit")
               + curated_audit_events(series_corpus, "imani-audit.json", "imani-audit"))
     for audit in ("strength-followup-audit", "int-dex-audit", "cha-followup-audit",
-                  "skill-followup-audit", "ally-skill-followup-audit", "estimated-stats-audit"):
+                  "skill-followup-audit", "ally-skill-followup-audit", "estimated-stats-audit", "dexterity-deep-audit", "character-status-audit", "equipment-followup-audit", "late-progression-audit", "wiki-led-audit", "juice-box-audit", "ally-inventory-audit"):
         events.extend(curated_audit_events(series_corpus, audit + ".json", audit))
     from reward_provenance import apply_reward_audit
     events = apply_reward_audit(events, series_corpus)
@@ -567,11 +573,12 @@ def main() -> None:
             "title": "Dungeon Crawler Carl",
             "bookCount": len(book_rows),
             "chapterCount": total_chapters,
-            "dataVersion": "2.7.0",
+            "dataVersion": "2.10.0",
             "coverageNote": "Eight-book chapter map with source-anchored progression for the core party and major recurring allies. Skills and inventory appear only when explicitly confirmed.",
         },
         "books": book_rows,
         "characters": [
+            {"id": "juice-box", "name": "Juice Box", "role": "Changeling NPC", "group": "other", "color": "#8b9690"},
             {"id": "osvaldo", "name": "Osvaldo", "group": "ally", "color": "#df9a72"},
             {"id": "penelope", "name": "Penelope", "group": "ally", "color": "#e8a9cb"},
             {"id": "sexy-scolopendra", "name": "Sexy Scolopendra", "group": "ally", "color": "#c5b5e8"},
@@ -591,9 +598,23 @@ def main() -> None:
         "audit": {
             "characterEvents": len(character["events"]),
             "inventoryEvents": len(inventory["inventory_events"]),
+            "floorObservations": len(floor_audit["events"]),
+            "partyLocationObservations": len(party_location_audit["events"]),
             "knownGaps": character.get("audit_gaps", []) + inventory.get("known_gaps", []),
         },
     }
+    # Recurring characters audited for status join the roster only through
+    # source-timed events; metadata carries no future fate or affiliation.
+    known_names = {character["name"] for character in payload["characters"]}
+    payload["characters"].extend(character for character in floor_audit.get("characters", [])
+                                 if character["name"] not in known_names)
+    known_names = {character["name"] for character in payload["characters"]}
+    payload["characters"].extend(character for character in party_location_audit.get("characters", [])
+                                 if character["name"] not in known_names)
+    known_names = {character["name"] for character in payload["characters"]}
+    status_audit = json.loads((ROOT / "data/public/character-status-audit.json").read_text())
+    payload["characters"].extend(character for character in status_audit.get("characters", [])
+                                 if character["name"] not in known_names)
     encoded = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
     OUTPUT.write_text(encoded, encoding="utf-8")
     LEGACY_OUTPUT.write_text(encoded, encoding="utf-8")

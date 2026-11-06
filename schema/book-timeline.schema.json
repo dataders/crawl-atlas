@@ -122,7 +122,8 @@
             "enum": [
               "core",
               "support",
-              "ally"
+              "ally",
+              "other"
             ]
           },
           "color": {
@@ -308,6 +309,54 @@
                   "batch",
                   "inferred"
                 ]
+              }
+            }
+          },
+          "lifeStatus": {
+            "enum": [
+              "dead",
+              "presumed-dead",
+              "alive"
+            ],
+            "description": "Explicit status revealed at this event. Absence does not establish survival."
+          },
+          "statBoosts": {
+            "type": "array",
+            "description": "Item bonuses revealed at this event, not a computed character total.",
+            "items": {
+              "type": "object",
+              "required": [
+                "stat",
+                "value",
+                "unit",
+                "source"
+              ],
+              "properties": {
+                "stat": {
+                  "enum": [
+                    "STR",
+                    "INT",
+                    "CON",
+                    "DEX",
+                    "CHA",
+                    "ALL"
+                  ]
+                },
+                "value": {
+                  "type": "number"
+                },
+                "unit": {
+                  "enum": [
+                    "points",
+                    "percent"
+                  ]
+                },
+                "source": {
+                  "type": "string"
+                },
+                "condition": {
+                  "type": "string"
+                }
               }
             }
           }

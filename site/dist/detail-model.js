@@ -17,11 +17,22 @@ function characterState(character, events) {
       stats[name] = value;
       if (scope === "base") baseStats[name] = value;
     });
-    Object.entries(event.statsDelta ?? {}).forEach(([name, delta]) => { stats[name] = (stats[name] ?? 0) + delta; });
+    Object.keys(event.statsDelta ?? {}).forEach((name) => {
+      const scope = event.statScopes?.[name];
+      if (scope === "estimate" || scope === "lower-bound") return;
+      // An allocation or equipment bonus does not establish a total. The last
+      // observation may be stale or use a different scope, so never add to it.
+      // Preserve a total explicitly supplied in this same observation.
+      if (!Object.hasOwn(event.stats ?? {}, name)) stats[name] = null;
+    });
   });
   const relationship = mine.filter((event) => event.type === "party" && event.relationship).at(-1)?.relationship ?? character.relationship ?? character.role ?? "Known character";
   const profile = Object.assign({}, ...mine.map(event => event.profile ?? {}));
-  return { character, relationship, profile, levelEvent: levels.at(-1), level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => (b.level ?? -Infinity) - (a.level ?? -Infinity) || a.name.localeCompare(b.name)), events: mine };
+  // Callers supply only revealed events, in reading order. Missing death data
+  // is not evidence of survival, and a presumption is not a confirmed death.
+  const lifeStatusEvent = mine.filter(event => ["dead", "presumed-dead", "alive"].includes(event.lifeStatus)).at(-1);
+  const lifeStatus = lifeStatusEvent?.lifeStatus ?? "unknown";
+  return { character, relationship, profile, lifeStatus, lifeStatusEvent, levelEvent: levels.at(-1), level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => (b.level ?? -Infinity) - (a.level ?? -Infinity) || a.name.localeCompare(b.name)), events: mine };
 }
 
 function inventoryAt(events) {
@@ -37,7 +48,7 @@ function inventoryAt(events) {
       else inventory.delete(key);
     } else {
       const quantity = typeof event.quantity === "number" && typeof previous.quantity === "number" && event.action === "add" ? previous.quantity + event.quantity : event.quantity ?? previous.quantity;
-      inventory.set(key, { ...previous, ...event, quantity, acquiredProgress: previous.acquiredProgress ?? event.progress, acquiredBook: previous.acquiredBook ?? event.book, acquiredChapter: previous.acquiredChapter ?? event.chapter, state: event.action === "equip" || event.state === "equipped" ? "equipped" : event.action === "unequip" ? "carried" : event.state ?? previous.state ?? "carried" });
+      inventory.set(key, { ...previous, ...event, quantity, acquiredProgress: previous.acquiredProgress ?? event.progress, acquiredBook: previous.acquiredBook ?? event.book, acquiredChapter: previous.acquiredChapter ?? event.chapter, state: event.action === "unequip" ? "carried" : event.action === "equip" || event.state === "equipped" ? "equipped" : event.state ?? previous.state ?? "carried" });
     }
   });
   return [...inventory.values()].sort((a, b) => a.subject.localeCompare(b.subject) || a.name.localeCompare(b.name));
@@ -52,8 +63,16 @@ function dossierTables(person) {
     history: person.levels.map(l => ({level:String(l.level ?? 'Total unknown'), observed:`B${l.book} · Ch ${l.chapter}`}))
   };
 }
+function itemStatBoost(item) {
+  if (!item.statBoosts?.length) return '—';
+  return item.statBoosts.map(boost => {
+    const stat = boost.stat === 'ALL' ? 'All stats' : boost.stat;
+    const amount = `${boost.value > 0 ? '+' : ''}${boost.value}${boost.unit === 'percent' ? '%' : ''}`;
+    return `${stat} ${amount}${boost.condition ? ` (${boost.condition})` : ''}`;
+  }).join(' · ');
+}
 function inventoryRecord(item) {
-  return {item:item.name, owner:item.subject, quantity:String(item.quantity ?? '—'), state:item.state,
+  return {item:item.name, owner:item.subject, stat_boost:itemStatBoost(item), quantity:String(item.quantity ?? '—'), state:item.state,
     type:item.category ?? 'Item', acquired:`B${item.acquiredBook ?? item.book ?? 1} · Ch ${item.acquiredChapter ?? item.chapter}`};
 }
 function progressionChange(fact) {
@@ -103,4 +122,4 @@ function storyEntries(events, facts, cutoff) {
         [fact.summary, fact.scope, fact.confidence, fact.source].filter(Boolean).join(' · ')));
     });
 }
-if (typeof module !== 'undefined') module.exports = {characterState, inventoryAt, dossierTables, inventoryRecord, storyEntries};
+if (typeof module !== 'undefined') module.exports = {characterState, inventoryAt, dossierTables, inventoryRecord, itemStatBoost, storyEntries};

@@ -71,6 +71,50 @@ class ExtractorTests(unittest.TestCase):
         self.assertEqual(candidates[0]["kinds"], ["system"])
         self.assertEqual(candidates[0]["anchor"], "b1-c1-p3")
 
+    def test_supplemental_sections_preserve_anchors_and_require_reveal_review(self):
+        container = '<container><rootfiles><rootfile full-path="OPS/package.opf"/></rootfiles></container>'
+        documents = [
+            ('prologue.xhtml', 'Prologue', '<h1>Prologue</h1><p>Level 8.</p>'),
+            ('one.xhtml', 'Chapter 1', '<h1>1</h1><p>Opening.</p>'),
+            ('interlude.xhtml', 'i9', '<h1>Another perspective</h1><p>A skill appears.</p>'),
+            ('two.xhtml', 'Chapter 2', '<h1>2</h1><p>Next.</p>'),
+            ('epilogue.xhtml', 'Epilogue', '<h1>Epilogue</h1><p>Level 15.</p>'),
+            ('back.xhtml', 'Back matter', '<div>Text outside supported paragraph tags.</div>'),
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            epub = Path(tmp) / 'sections.epub'
+            with zipfile.ZipFile(epub, 'w') as archive:
+                archive.writestr('META-INF/container.xml', container)
+                manifest = ''.join(f'<item id="d{i}" href="{name}"/>' for i,(name,_,_) in enumerate(documents))
+                spine = ''.join(f'<itemref idref="d{i}"/>' for i in range(len(documents)))
+                archive.writestr('OPS/package.opf', f'<package><manifest>{manifest}</manifest><spine>{spine}</spine></package>')
+                for name,title,body in documents:
+                    archive.writestr('OPS/'+name, f'<html><head><title>{title}</title></head><body>{body}</body></html>')
+            legacy_chapters, legacy_candidates = MODULE.extract_book(epub, book_number=6)
+            corpus, candidates, supplemental_candidates = MODULE.extract_book_complete(epub, book_number=6)
+            again, _, _ = MODULE.extract_book_complete(epub, book_number=6)
+        self.assertEqual(corpus['chapters'], legacy_chapters)
+        self.assertEqual(candidates, legacy_candidates)
+        self.assertEqual(corpus['chapters'][1]['paragraphs'][1]['anchor'], 'b6-c2-p2')
+        self.assertEqual(len(corpus['spine_documents']), len(documents))
+        self.assertEqual(len(corpus['supplemental_sections']), 4)
+        prologue, interlude, epilogue, back = corpus['supplemental_sections']
+        self.assertEqual(prologue['reveal']['before_chapter'], 1)
+        self.assertEqual(interlude['reveal'], {'policy':'manual-review', 'position_unit':'within-section', 'after_chapter':1, 'before_chapter':2})
+        self.assertEqual(epilogue['reveal']['after_chapter'], 2)
+        self.assertIsNone(epilogue['reveal']['before_chapter'])
+        self.assertTrue(all('-s' in candidate['anchor'] and 'chapter' not in candidate for candidate in supplemental_candidates))
+        self.assertTrue(all(candidate['reveal_policy'] == 'manual-review' for candidate in supplemental_candidates))
+        self.assertEqual(corpus['supplemental_sections'], again['supplemental_sections'])
+        self.assertIn('Text outside supported paragraph tags.', corpus['spine_documents'][-1]['body_text'])
+        self.assertEqual(back['paragraphs'], [])
+
+    def test_complete_body_text_omits_script_and_records_images(self):
+        parser = MODULE.SpineTextParser()
+        parser.feed('<html><head><title>Ignore</title></head><body><div>Outside<p>Inside<br>Next</p></div><script>not prose</script><img src="map.png" alt="Floor map"></body></html>')
+        self.assertEqual(parser.text, 'Outside\nInside\nNext')
+        self.assertEqual(parser.images, [{'source':'map.png','alt':'Floor map'}])
+
 
 if __name__ == "__main__":
     unittest.main()

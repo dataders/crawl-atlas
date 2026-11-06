@@ -1,0 +1,166 @@
+{
+  "scope": "Wiki-led discovery with each published observation independently confirmed in the numbered EPUB corpus. Unknown levels remain null. Wiki aliases are not merged automatically.",
+  "events": [
+    {
+      "source": "b2-c11-p37",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Wisp Armor",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Carl casts Wisp Armor on himself. Its level is not explicitly stated here.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b3-c2-p125",
+      "type": "skill",
+      "subject": "Carl",
+      "name": "Talon Strike",
+      "level": 5,
+      "skillScope": "equipment",
+      "action": "set",
+      "summary": "Carl equips the necklace granting Talon Strike at level 5. This is an item-granted level, not a trained base level.",
+      "evidence": [
+        "b3-c2-p98"
+      ],
+      "confidence": "verified"
+    },
+    {
+      "source": "b2-c2-p174",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Night Vision",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Donut gains Night Vision through her Cat race selection.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b2-c2-p174",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Cat-like Reflexes",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Donut gains Cat-like Reflexes through her Cat race selection.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b2-c5-p49",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Scutelliphily",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Donut identifies Scutelliphily as the skill granted by her Earth Hobby Potion. No level is stated.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b5-c3-p85",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Standing Ovation",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Donut discusses the melody for her Standing Ovation spell; its level is unstated.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c1-p58",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Venom Spitter",
+      "level": 3,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Donut confirms she retains Venom Spitter at level 3.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c1-p58",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Brain Freeze",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Donut reports gaining Brain Freeze. Its level is unstated.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c1-p58",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Why Are You Hitting Yourself",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Donut reports gaining Why Are You Hitting Yourself. Its level is unstated.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c2-p183",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Legionnaires of the Damned",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Donut applies the spellbook and learns Legionnaires of the Damned. Its level is unstated.",
+      "evidence": [
+        "b6-c2-p170",
+        "b6-c2-p182"
+      ],
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c65-p9",
+      "type": "skill",
+      "subject": "Princess Donut",
+      "name": "Minion Army",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Donut explicitly casts Minion Army. Her earlier possession of the tome did not establish that she could learn or cast it.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b2-c21-p95",
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "Gear Head",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Katia identifies Gear Head as her acquired Earth Hobby skill. Its level is unstated.",
+      "evidence": [],
+      "confidence": "verified"
+    },
+    {
+      "source": "b3-c10-p7",
+      "type": "skill",
+      "subject": "Katia Grim",
+      "name": "Walk in Their Shoes",
+      "level": null,
+      "skillScope": "reported",
+      "action": "set",
+      "summary": "Katia describes her Walk in Their Shoes ability and its appearance-matching requirement. Its level is unstated.",
+      "evidence": [],
+      "confidence": "verified"
+    }
+  ]
+}

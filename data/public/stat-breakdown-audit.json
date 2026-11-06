@@ -1,0 +1,890 @@
+{
+  "scope": "Absolute stat totals and simultaneous base/modifier breakdowns, revealed only at their source paragraph. Missing base is unknown. Conditional and temporary totals describe only the stated snapshot. Components are additive only where itemized by the source. This is not a continuous equipment-state reconstruction.",
+  "observations": [
+    {
+      "character": "Carl",
+      "metric": "STR",
+      "source": "b1-c4-p37",
+      "book": 1,
+      "chapter": 4,
+      "position": 0.291339,
+      "progress": 0.00697318,
+      "total": 6,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 6,
+      "components": []
+    },
+    {
+      "character": "Carl",
+      "metric": "INT",
+      "source": "b1-c4-p38",
+      "book": 1,
+      "chapter": 4,
+      "position": 0.299213,
+      "progress": 0.00698986,
+      "total": 3,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 3,
+      "components": []
+    },
+    {
+      "character": "Carl",
+      "metric": "CON",
+      "source": "b1-c4-p39",
+      "book": 1,
+      "chapter": 4,
+      "position": 0.307087,
+      "progress": 0.00700654,
+      "total": 5,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 5,
+      "components": []
+    },
+    {
+      "character": "Carl",
+      "metric": "DEX",
+      "source": "b1-c4-p40",
+      "book": 1,
+      "chapter": 4,
+      "position": 0.314961,
+      "progress": 0.00702322,
+      "total": 5,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 5,
+      "components": []
+    },
+    {
+      "character": "Carl",
+      "metric": "CHA",
+      "source": "b1-c4-p41",
+      "book": 1,
+      "chapter": 4,
+      "position": 0.322835,
+      "progress": 0.0070399,
+      "total": 4,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 4,
+      "components": []
+    },
+    {
+      "character": "Carl",
+      "metric": "CON",
+      "source": "b1-c6-p19",
+      "book": 1,
+      "chapter": 6,
+      "position": 0.452381,
+      "progress": 0.01155165,
+      "total": 9,
+      "confidence": "verified",
+      "summary": "Equipping the cloak raises Constitution from 5 to 9.",
+      "evidence": [],
+      "base": 5,
+      "components": [
+        {
+          "name": "Cloak",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "STR",
+      "source": "b1-c7-p9",
+      "book": 1,
+      "chapter": 7,
+      "position": 0.142857,
+      "progress": 0.01301453,
+      "total": 11,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 11,
+      "components": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "INT",
+      "source": "b1-c7-p10",
+      "book": 1,
+      "chapter": 7,
+      "position": 0.15873,
+      "progress": 0.01304816,
+      "total": 11,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 11,
+      "components": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CON",
+      "source": "b1-c7-p11",
+      "book": 1,
+      "chapter": 7,
+      "position": 0.174603,
+      "progress": 0.01308179,
+      "total": 2,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 2,
+      "components": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "DEX",
+      "source": "b1-c7-p12",
+      "book": 1,
+      "chapter": 7,
+      "position": 0.190476,
+      "progress": 0.01311542,
+      "total": 8,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 8,
+      "components": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CHA",
+      "source": "b1-c7-p13",
+      "book": 1,
+      "chapter": 7,
+      "position": 0.206349,
+      "progress": 0.01314904,
+      "total": 25,
+      "confidence": "verified",
+      "summary": "Initial stat display before magical equipment modifiers.",
+      "evidence": [],
+      "base": 25,
+      "components": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "INT",
+      "source": "b1-c8-p97",
+      "book": 1,
+      "chapter": 8,
+      "position": 0.843478,
+      "progress": 0.01661754,
+      "total": 17,
+      "confidence": "verified",
+      "summary": "Partial party stat display gives Intelligence 17; no modifier breakdown.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "CON",
+      "source": "b1-c9-p55",
+      "book": 1,
+      "chapter": 9,
+      "position": 0.585106,
+      "progress": 0.01818878,
+      "total": 10,
+      "confidence": "verified",
+      "summary": "The newly equipped ring brings displayed Constitution to 10; base is not restated.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "CON",
+      "source": "b1-c19-p61",
+      "book": 1,
+      "chapter": 19,
+      "position": 0.847222,
+      "progress": 0.03993056,
+      "total": 12,
+      "confidence": "verified",
+      "summary": "A second Constitution ring brings the displayed total to 12.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "INT",
+      "source": "b1-c23-p24",
+      "book": 1,
+      "chapter": 23,
+      "position": 0.533333,
+      "progress": 0.04774011,
+      "total": 24,
+      "confidence": "verified",
+      "summary": "Reported Intelligence 24; modifier breakdown is not stated.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "STR",
+      "source": "b1-c23-p33",
+      "book": 1,
+      "chapter": 23,
+      "position": 0.733333,
+      "progress": 0.04816384,
+      "total": 9,
+      "confidence": "verified",
+      "summary": "Carl compares his reported Strength 9 with Donut's 18.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "DEX",
+      "source": "b1-c25-p14",
+      "book": 1,
+      "chapter": 25,
+      "position": 0.181818,
+      "progress": 0.05123267,
+      "total": 12,
+      "confidence": "verified",
+      "summary": "Equipping a Dexterity bracelet brings Donut's displayed total to 12.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CON",
+      "source": "b1-c35-p62",
+      "book": 1,
+      "chapter": 35,
+      "position": 0.54386,
+      "progress": 0.07318614,
+      "total": 4,
+      "confidence": "verified",
+      "summary": "The grooming buff brings Donut's Constitution to 4 for 30 hours.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "CON",
+      "source": "b1-c42-p44",
+      "book": 1,
+      "chapter": 42,
+      "position": 0.34375,
+      "progress": 0.08759269,
+      "total": 14,
+      "confidence": "verified",
+      "summary": "Zhang's Constitution of 15 is explicitly one point above Carl's total.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "STR",
+      "source": "b2-c2-p168",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.84,
+      "progress": 0.10347458,
+      "total": 20,
+      "confidence": "verified",
+      "summary": "Post-selection stat sheet lists Strength 20 with no modifier.",
+      "evidence": [],
+      "base": 20,
+      "components": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "INT",
+      "source": "b2-c2-p169",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.845,
+      "progress": 0.10348517,
+      "total": 29,
+      "confidence": "verified",
+      "summary": "Base Intelligence 23 plus tiara and charm gives displayed 29.",
+      "evidence": [],
+      "base": 23,
+      "components": [
+        {
+          "name": "Tiara",
+          "value": 5
+        },
+        {
+          "name": "Charm",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CON",
+      "source": "b2-c2-p170",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.85,
+      "progress": 0.10349576,
+      "total": 6,
+      "confidence": "verified",
+      "summary": "Base Constitution 4 plus the brush buff gives 6.",
+      "evidence": [],
+      "base": 4,
+      "components": [
+        {
+          "name": "Brush buff",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "DEX",
+      "source": "b2-c2-p171",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.855,
+      "progress": 0.10350636,
+      "total": 21,
+      "confidence": "verified",
+      "summary": "Base Dexterity 12 plus equipment 4 and temporary floor bonus 5 gives 21.",
+      "evidence": [],
+      "base": 12,
+      "components": [
+        {
+          "name": "Crupper",
+          "value": 2
+        },
+        {
+          "name": "Bracelet",
+          "value": 2
+        },
+        {
+          "name": "Temporary floor bonus",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CHA",
+      "source": "b2-c2-p172",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.86,
+      "progress": 0.10351695,
+      "total": 70,
+      "confidence": "verified",
+      "summary": "Post-selection stat sheet lists Charisma 70 with no modifier.",
+      "evidence": [],
+      "base": 70,
+      "components": []
+    },
+    {
+      "character": "Carl",
+      "metric": "STR",
+      "source": "b2-c2-p182",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.91,
+      "progress": 0.10362288,
+      "total": 16,
+      "confidence": "verified",
+      "summary": "The sheet gives base Strength 10, 13 with the toe ring, and 16 when the gauntlet is formed. This point uses the formed-gauntlet total.",
+      "evidence": [],
+      "base": 10,
+      "components": [
+        {
+          "name": "Toe ring",
+          "value": 3
+        },
+        {
+          "name": "Formed gauntlet",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "character": "Carl",
+      "metric": "INT",
+      "source": "b2-c2-p183",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.915,
+      "progress": 0.10363347,
+      "total": 5,
+      "confidence": "verified",
+      "summary": "Post-selection stat sheet lists Intelligence 5 with no modifier.",
+      "evidence": [],
+      "base": 5,
+      "components": []
+    },
+    {
+      "character": "Carl",
+      "metric": "CON",
+      "source": "b2-c2-p184",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.92,
+      "progress": 0.10364407,
+      "total": 19,
+      "confidence": "verified",
+      "summary": "Base Constitution 10 plus four equipment bonuses gives 19.",
+      "evidence": [],
+      "base": 10,
+      "components": [
+        {
+          "name": "Shirt",
+          "value": 4
+        },
+        {
+          "name": "First ring",
+          "value": 1
+        },
+        {
+          "name": "Second ring",
+          "value": 2
+        },
+        {
+          "name": "Boxers",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "character": "Carl",
+      "metric": "DEX",
+      "source": "b2-c2-p185",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.925,
+      "progress": 0.10365466,
+      "total": 11,
+      "confidence": "verified",
+      "summary": "Base Dexterity 10 plus the gauntlet bonus gives 11.",
+      "evidence": [],
+      "base": 10,
+      "components": [
+        {
+          "name": "Gauntlet",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "character": "Carl",
+      "metric": "CHA",
+      "source": "b2-c2-p186",
+      "book": 2,
+      "chapter": 2,
+      "position": 0.93,
+      "progress": 0.10366525,
+      "total": 25,
+      "confidence": "verified",
+      "summary": "Post-selection stat sheet lists Charisma 25 with no modifier.",
+      "evidence": [],
+      "base": 25,
+      "components": []
+    },
+    {
+      "character": "Carl",
+      "metric": "STR",
+      "source": "b2-c14-p15",
+      "book": 2,
+      "chapter": 14,
+      "position": 0.115385,
+      "progress": 0.1273631,
+      "total": 30,
+      "confidence": "verified",
+      "summary": "Reported Strength 30 with other equipment but without the gauntlet.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CHA",
+      "source": "b2-c15-p92",
+      "book": 2,
+      "chapter": 15,
+      "position": 0.652482,
+      "progress": 0.13061967,
+      "total": 76,
+      "confidence": "verified",
+      "summary": "Mordecai reports Charisma 76; base and modifiers are not separated.",
+      "evidence": []
+    },
+    {
+      "character": "Katia Grim",
+      "metric": "STR",
+      "source": "b2-c21-p83",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.463687,
+      "progress": 0.14293154,
+      "total": 11,
+      "confidence": "verified",
+      "summary": "Katia's party stat sheet gives this total without separating base values and modifiers.",
+      "evidence": []
+    },
+    {
+      "character": "Katia Grim",
+      "metric": "INT",
+      "source": "b2-c21-p84",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.469274,
+      "progress": 0.14294338,
+      "total": 8,
+      "confidence": "verified",
+      "summary": "Katia's party stat sheet gives this total without separating base values and modifiers.",
+      "evidence": []
+    },
+    {
+      "character": "Katia Grim",
+      "metric": "CON",
+      "source": "b2-c21-p85",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.47486,
+      "progress": 0.14295521,
+      "total": 51,
+      "confidence": "verified",
+      "summary": "Katia's party stat sheet gives this total without separating base values and modifiers.",
+      "evidence": []
+    },
+    {
+      "character": "Katia Grim",
+      "metric": "DEX",
+      "source": "b2-c21-p86",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.480447,
+      "progress": 0.14296705,
+      "total": 30,
+      "confidence": "verified",
+      "summary": "Katia's party stat sheet gives this total without separating base values and modifiers.",
+      "evidence": []
+    },
+    {
+      "character": "Katia Grim",
+      "metric": "CHA",
+      "source": "b2-c21-p87",
+      "book": 2,
+      "chapter": 21,
+      "position": 0.486034,
+      "progress": 0.14297889,
+      "total": 8,
+      "confidence": "verified",
+      "summary": "Katia's party stat sheet gives this total without separating base values and modifiers.",
+      "evidence": []
+    },
+    {
+      "character": "Katia Grim",
+      "metric": "CON",
+      "source": "b3-c1-p37",
+      "book": 3,
+      "chapter": 1,
+      "position": 0.202186,
+      "progress": 0.15297073,
+      "total": 102,
+      "confidence": "verified",
+      "summary": "The active momentum bonus doubles Katia's normal reported Constitution of 51 to 102. The 51 is not identified as her unmodified base.",
+      "evidence": []
+    },
+    {
+      "character": "Katia Grim",
+      "metric": "STR",
+      "source": "b3-c1-p128",
+      "book": 3,
+      "chapter": 1,
+      "position": 0.699454,
+      "progress": 0.15402427,
+      "total": 11,
+      "confidence": "verified",
+      "summary": "Katia reports Strength 11 without a modifier breakdown.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "STR",
+      "source": "b3-c2-p180",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.689655,
+      "progress": 0.15612215,
+      "total": 41,
+      "confidence": "verified",
+      "summary": "Displayed Strength 41 before the additional 3 from forming the gauntlet.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "INT",
+      "source": "b3-c2-p181",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.693487,
+      "progress": 0.15613027,
+      "total": 15,
+      "confidence": "verified",
+      "summary": "Carl's stat sheet reports Intelligence 15, including current equipment.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "CON",
+      "source": "b3-c2-p182",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.697318,
+      "progress": 0.15613839,
+      "total": 34,
+      "confidence": "verified",
+      "summary": "Carl's stat sheet reports Constitution 34, including current equipment.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "DEX",
+      "source": "b3-c2-p183",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.701149,
+      "progress": 0.1561465,
+      "total": 23,
+      "confidence": "verified",
+      "summary": "Carl's stat sheet reports Dexterity 23, including current equipment.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "CHA",
+      "source": "b3-c2-p184",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.704981,
+      "progress": 0.15615462,
+      "total": 25,
+      "confidence": "verified",
+      "summary": "Carl's stat sheet reports Charisma 25; no modifier breakdown is supplied.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CHA",
+      "source": "b3-c2-p185",
+      "book": 3,
+      "chapter": 2,
+      "position": 0.708812,
+      "progress": 0.15616274,
+      "total": 94,
+      "confidence": "verified",
+      "summary": "Mordecai reports current Charisma 94 without a modifier breakdown.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "INT",
+      "source": "b3-c6-p133",
+      "book": 3,
+      "chapter": 6,
+      "position": 0.796407,
+      "progress": 0.1648229,
+      "total": 49,
+      "confidence": "verified",
+      "summary": "Rest and shower buffs bring Donut's reported Intelligence 41 to effective 49.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CON",
+      "source": "b3-c7-p55",
+      "book": 3,
+      "chapter": 7,
+      "position": 0.275,
+      "progress": 0.16583686,
+      "total": 21,
+      "confidence": "verified",
+      "summary": "After stat potions, base Constitution is 8. Anklet, brush and temporary Hooligan floor bonus bring the total to 21.",
+      "evidence": [],
+      "base": 8,
+      "components": [
+        {
+          "name": "Anklet",
+          "value": 1
+        },
+        {
+          "name": "Brush buff",
+          "value": 2
+        },
+        {
+          "name": "Temporary Hooligan bonus",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "character": "Katia Grim",
+      "metric": "STR",
+      "source": "b3-c13-p66",
+      "book": 3,
+      "chapter": 13,
+      "position": 0.392857,
+      "progress": 0.17879843,
+      "total": 49,
+      "confidence": "verified",
+      "summary": "Katia's Strength is explicitly 49 after all enhancements; no unmodified base is given.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "INT",
+      "source": "b3-c16-p10",
+      "book": 3,
+      "chapter": 16,
+      "position": 0.114943,
+      "progress": 0.18456556,
+      "total": 52,
+      "confidence": "verified",
+      "summary": "Base Intelligence 40 plus equipment 4 and rest/shower buffs of 8 gives effective 52. The interface displays 44 because it omits the temporary buffs.",
+      "evidence": [
+        "b3-c16-p9"
+      ],
+      "base": 40,
+      "components": [
+        {
+          "name": "Butterfly charm",
+          "value": 1
+        },
+        {
+          "name": "Tiara",
+          "value": 3
+        },
+        {
+          "name": "Rest and shower",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "character": "Carl",
+      "metric": "DEX",
+      "source": "b4-c22-p32",
+      "book": 4,
+      "chapter": 22,
+      "position": 0.20915,
+      "progress": 0.26951091,
+      "total": 32,
+      "confidence": "verified",
+      "summary": "Carl explicitly gives Dexterity 32 with all equipment, before daily buffs.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "STR",
+      "source": "b4-c22-p60",
+      "book": 4,
+      "chapter": 22,
+      "position": 0.392157,
+      "progress": 0.26989864,
+      "total": 80,
+      "confidence": "verified",
+      "summary": "Carl reports Strength 80 while lifting an anchor, without separating modifiers.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "INT",
+      "source": "b4-c30-p57",
+      "book": 4,
+      "chapter": 30,
+      "position": 0.463415,
+      "progress": 0.28699876,
+      "total": 64,
+      "confidence": "inferred",
+      "summary": "Carl estimates effective Intelligence at about 64 after rest and shower buffs; the interface still displays 53. The book explicitly treats 64 as approximate.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CHA",
+      "source": "b4-c30-p58",
+      "book": 4,
+      "chapter": 30,
+      "position": 0.471545,
+      "progress": 0.28701599,
+      "total": 120,
+      "confidence": "verified",
+      "summary": "Reported Charisma 120 used to discuss spell range; modifier breakdown is absent.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "INT",
+      "source": "b5-c1-p174",
+      "book": 5,
+      "chapter": 1,
+      "position": 0.977528,
+      "progress": 0.2986812,
+      "total": 17,
+      "confidence": "verified",
+      "summary": "Carl explicitly reports Intelligence 17 with boxers and jacket, before daily buffs.",
+      "evidence": []
+    },
+    {
+      "character": "Carl",
+      "metric": "INT",
+      "source": "b5-c22-p31",
+      "book": 5,
+      "chapter": 22,
+      "position": 0.344444,
+      "progress": 0.34183145,
+      "total": 25,
+      "confidence": "verified",
+      "summary": "Carl reports Intelligence 25 before daily buffs, without a base breakdown.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CHA",
+      "source": "b5-c51-p42",
+      "book": 5,
+      "chapter": 51,
+      "position": 0.336,
+      "progress": 0.40325424,
+      "total": 130,
+      "confidence": "verified",
+      "summary": "Reported Charisma 130; this passage does not identify an unmodified base.",
+      "evidence": []
+    },
+    {
+      "character": "Princess Donut",
+      "metric": "CHA",
+      "source": "b5-c70-p53",
+      "book": 5,
+      "chapter": 70,
+      "position": 0.339744,
+      "progress": 0.44351641,
+      "total": 276,
+      "confidence": "verified",
+      "summary": "The temporary tiara doubles base Charisma 138 to 276. This reported total excludes additional saferoom buffs.",
+      "evidence": [],
+      "base": 138,
+      "components": [
+        {
+          "name": "Temporary tiara",
+          "value": 138
+        }
+      ]
+    },
+    {
+      "character": "Osvaldo",
+      "metric": "DEX",
+      "source": "b8-c80-p23",
+      "book": 8,
+      "chapter": 80,
+      "position": 0.323944,
+      "progress": 0.96043208,
+      "total": 285,
+      "confidence": "verified",
+      "summary": "Donut explicitly reports Osvaldo's Dexterity 285 with all his buffs.",
+      "evidence": []
+    }
+  ]
+}

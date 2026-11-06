@@ -1,0 +1,22 @@
+/* Keep project information readable without competing with the charts. */
+.source-link { color:var(--muted); font-size:13px; white-space:nowrap; text-decoration:none; padding:8px 2px; }
+.source-link:hover { color:var(--text); text-decoration:underline; }
+.source-link:focus-visible { outline:2px solid var(--acid); outline-offset:3px; }
+.about-panel { width:min(540px,100%); padding:72px clamp(24px,5vw,40px) 32px; background:#161c18; overflow-y:auto; overscroll-behavior:contain; }
+.about-panel h2 { font-size:26px; line-height:1.2; letter-spacing:-.025em; margin-bottom:16px; }
+.about-panel h3 { font-size:15px; line-height:1.4; margin:24px 0 8px; color:var(--text); }
+.about-panel p { font-size:15px; line-height:1.65; margin-bottom:14px; }
+.about-panel a { color:var(--acid); text-underline-offset:3px; }
+.about-panel .legal { font-size:12px; line-height:1.6; }
+.choosing-position .topbar-actions { display:flex; }
+.choosing-position #section-jump { display:none; }
+.choosing-position main > .about-panel:not([hidden]) { display:block; }
+@media(max-width:600px) {
+  .topbar-actions { gap:8px; }
+  #section-jump { max-width:100px; }
+  .source-link { font-size:12px; }
+}
+@media(max-width:380px) {
+  .topbar .brand {font-size:12px;gap:6px}
+  #section-jump {width:80px}
+}

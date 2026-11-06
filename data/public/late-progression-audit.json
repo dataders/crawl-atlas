@@ -1,0 +1,114 @@
+{
+  "scope": "Targeted reread of Books 6–8 for Carl stat observations and later Li Na levels, including a raw EPUB scan of documents omitted from the numbered chapter corpus. Gear bonuses and temporary percentage effects are not complete totals.",
+  "coverageNotes": [
+    "427 numbered-corpus paragraphs matched full stat names, stat points/stats, or Li Na, with surrounding context examined for candidates. No uppercase STR/INT/CON/DEX/CHA stat sheets were found in Books 6–8.",
+    "Eleven matching paragraphs in omitted raw EPUB documents were reviewed; none added a Carl stat value or Li Na level.",
+    "Li Na level 87 is explicit in Book 7 Chapter 77. No subsequent explicit numerical level was found in this pass.",
+    "No new complete Carl stat sheet was located after Book 5. Later modifiers and an Intelligence point award establish continued change without supplying all totals.",
+    "Carl Charisma about 30 is inferred from an aura calculation, with unknown base/effective scope and possible rounding. Do not present it as exact base Charisma."
+  ],
+  "events": [
+    {
+      "source": "b6-c3-p142",
+      "type": "story",
+      "subject": "Carl",
+      "name": "Peace patch Dexterity modifier",
+      "action": "note",
+      "summary": "Carl puts on his jacket after attaching the peace-symbol patch, which grants ten percent Dexterity. No absolute Dexterity total is stated.",
+      "confidence": "verified",
+      "evidence": [
+        "b6-c3-p75",
+        "b6-c3-p129"
+      ]
+    },
+    {
+      "source": "b6-c3-p149",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "Scavenger’s Daughter Strength bonus",
+      "action": "delta",
+      "statsDelta": {
+        "STR": 25
+      },
+      "statScopes": {
+        "STR": "equipment"
+      },
+      "summary": "The activated Scavenger’s Daughter patch grants 25 Strength. This is an equipment bonus, not a base value or a complete effective total.",
+      "confidence": "verified",
+      "evidence": [
+        "b6-c3-p142",
+        "b6-c3-p145"
+      ]
+    },
+    {
+      "source": "b7-c27-p2",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "Intelligence award",
+      "action": "delta",
+      "statsDelta": {
+        "INT": 5
+      },
+      "statScopes": {
+        "INT": "base"
+      },
+      "summary": "Carl receives five Intelligence points following his marked kill. The passage gives the increase, not a new Intelligence total.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c56-p152",
+      "type": "stat",
+      "subject": "Carl",
+      "name": "Estimated reported Charisma",
+      "action": "merge",
+      "stats": {
+        "CHA": 30
+      },
+      "statScopes": {
+        "CHA": "reported"
+      },
+      "summary": "Carl says an aura grants allies 20% of his Charisma and gives Donut six points. Dividing six by 0.20 suggests about 30 Charisma. The passage does not establish base versus effective scope or rounding, so this is only an approximate reported value.",
+      "confidence": "inferred"
+    },
+    {
+      "source": "b7-c56-p154",
+      "type": "story",
+      "subject": "Carl",
+      "name": "Hairbrush Constitution modifier",
+      "action": "note",
+      "summary": "Carl describes using his new hairbrush, which grants a 25% Constitution buff for thirty hours after brushing. No complete Constitution total is given.",
+      "confidence": "verified",
+      "evidence": [
+        "b7-c56-p140",
+        "b7-c56-p146",
+        "b7-c56-p149"
+      ]
+    },
+    {
+      "source": "b7-c77-p38",
+      "type": "level",
+      "subject": "Li Na",
+      "name": "Level",
+      "action": "set",
+      "level": 87,
+      "summary": "Donut explicitly reports Li Na at level 87 after the battle. The preceding level-84 observation is no longer the latest known level.",
+      "confidence": "verified",
+      "evidence": [
+        "b7-c77-p32",
+        "b7-c77-p33"
+      ]
+    },
+    {
+      "source": "b8-c39-p27",
+      "type": "story",
+      "subject": "Carl",
+      "name": "Temporary Constitution bonus",
+      "action": "note",
+      "summary": "Carl drinks the beer and receives its temporary Constitution buff: two percent for the next race. This is not a base-stat increase.",
+      "confidence": "verified",
+      "evidence": [
+        "b8-c39-p26"
+      ]
+    }
+  ]
+}

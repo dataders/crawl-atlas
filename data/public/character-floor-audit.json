@@ -1,0 +1,94 @@
+{
+  "scope": "Source-anchored observations of tracked characters on dungeon floors. Rows establish presence at a reveal point, not continuous location between observations. Shared locationGroup values mean the characters are explicitly co-located at that observation; missing groups remain unknown.",
+  "coverageNotes": [
+    "Floor seven begins in the Book 5 epilogue, which is outside the numbered-chapter corpus, so no character observations are published for that floor.",
+    "A dialogue mention or leaderboard appearance is not enough to establish physical co-location. Check-in observations establish the floor but leave locationGroup unset when the speaker's position is unknown.",
+    "Garret, Garret Two, Sir Rendlegore, and Rend are one canonical character. Alias changes are timed story events, not separate paths."
+  ],
+  "characters": [
+    {
+      "id": "garret",
+      "name": "Garret",
+      "role": "Tummy Acher pet; later named Sir Rendlegore",
+      "group": "core",
+      "color": "#9fd356"
+    }
+  ],
+  "aliases": [
+    {
+      "character": "Garret",
+      "aliases": ["Garret", "Garret Two", "Sir Rendlegore", "Rendlegore", "Rend"]
+    }
+  ],
+  "events": [
+    {"source":"b1-c2-p33","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl is physically present on Floor 1.","action":"observe","floor":1,"observationKind":"presence","locationGroup":"core-party","mode":"physical"},
+    {"source":"b1-c2-p24","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut is physically present with Carl on Floor 1.","action":"observe","floor":1,"observationKind":"presence","locationGroup":"core-party","mode":"physical"},
+
+    {"source":"b1-c30-p11","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl is physically present on Floor 2.","action":"observe","floor":2,"observationKind":"presence","locationGroup":"core-party","mode":"physical"},
+    {"source":"b1-c30-p11","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut is physically present with Carl on Floor 2.","action":"observe","floor":2,"observationKind":"presence","locationGroup":"core-party","mode":"physical"},
+    {"source":"b1-c46-p47","type":"story","subject":"Mongo","name":"Floor observation","summary":"Mongo is physically present with Princess Donut on Floor 2.","action":"observe","floor":2,"observationKind":"presence","locationGroup":"core-party","mode":"physical"},
+
+    {"source":"b2-c1-p20","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl arrives on Floor 3 with Princess Donut and Mongo.","action":"observe","floor":3,"observationKind":"arrival","locationGroup":"core-party","mode":"physical"},
+    {"source":"b2-c1-p20","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut arrives on Floor 3 with Carl and Mongo.","action":"observe","floor":3,"observationKind":"arrival","locationGroup":"core-party","mode":"physical"},
+    {"source":"b2-c1-p20","type":"story","subject":"Mongo","name":"Floor observation","summary":"Mongo arrives on Floor 3 with Carl and Princess Donut.","action":"observe","floor":3,"observationKind":"arrival","locationGroup":"core-party","mode":"physical"},
+    {"source":"b2-c21-p30","type":"story","subject":"Katia Grim","name":"Floor observation","summary":"Katia is physically present on Floor 3.","action":"observe","floor":3,"observationKind":"presence","mode":"physical"},
+
+    {"source":"b3-c1-p13","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl arrives on Floor 4 with Princess Donut, Mongo, and Katia.","action":"observe","floor":4,"observationKind":"arrival","locationGroup":"core-party","mode":"physical"},
+    {"source":"b3-c1-p13","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut arrives on Floor 4 with Carl, Mongo, and Katia.","action":"observe","floor":4,"observationKind":"arrival","locationGroup":"core-party","mode":"physical"},
+    {"source":"b3-c1-p13","type":"story","subject":"Mongo","name":"Floor observation","summary":"Mongo arrives on Floor 4 with Carl, Princess Donut, and Katia.","action":"observe","floor":4,"observationKind":"arrival","locationGroup":"core-party","mode":"physical"},
+    {"source":"b3-c1-p13","type":"story","subject":"Katia Grim","name":"Floor observation","summary":"Katia arrives on Floor 4 with Carl, Princess Donut, and Mongo.","action":"observe","floor":4,"observationKind":"arrival","locationGroup":"core-party","mode":"physical"},
+
+    {"source":"b4-c1-p20","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl is physically present with Princess Donut on Floor 5.","action":"observe","floor":5,"observationKind":"arrival","locationGroup":"core-party","mode":"physical"},
+    {"source":"b4-c1-p20","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut is physically present with Carl on Floor 5.","action":"observe","floor":5,"observationKind":"arrival","locationGroup":"core-party","mode":"physical"},
+    {"source":"b4-c1-p38","type":"story","subject":"Mongo","name":"Floor observation","summary":"Mongo is confirmed with Carl and Princess Donut on Floor 5.","action":"observe","floor":5,"observationKind":"presence","locationGroup":"core-party","mode":"stored"},
+    {"source":"b4-c1-p45","type":"story","subject":"Katia Grim","name":"Floor observation","summary":"Katia is physically present with Carl and Princess Donut on Floor 5.","action":"observe","floor":5,"observationKind":"presence","locationGroup":"core-party","mode":"physical"},
+
+    {"source":"b5-c1-p21","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl arrives on Floor 6 in a separate location with Katia.","action":"observe","floor":6,"observationKind":"separated-arrival","locationGroup":"floor6-office","mode":"physical"},
+    {"source":"b5-c1-p21","type":"story","subject":"Katia Grim","name":"Floor observation","summary":"Katia arrives on Floor 6 in a separate location with Carl.","action":"observe","floor":6,"observationKind":"separated-arrival","locationGroup":"floor6-office","mode":"physical"},
+    {"source":"b5-c1-p20","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut arrives on Floor 6 separately from Carl and Katia.","action":"observe","floor":6,"observationKind":"separated-arrival","locationGroup":"floor6-line","mode":"physical"},
+    {"source":"b5-c1-p20","type":"story","subject":"Mongo","name":"Floor observation","summary":"Mongo arrives on Floor 6 with Princess Donut, separately from Carl and Katia.","action":"observe","floor":6,"observationKind":"separated-arrival","locationGroup":"floor6-line","mode":"physical"},
+    {"source":"b5-c6-p24","type":"story","subject":"Prepotente","name":"Floor observation","summary":"Prepotente is physically present with Miriam Dom on Floor 6.","action":"observe","floor":6,"observationKind":"presence","locationGroup":"miriam-prepotente","mode":"physical"},
+    {"source":"b5-c6-p24","type":"story","subject":"Miriam Dom","name":"Floor observation","summary":"Miriam Dom is physically present with Prepotente on Floor 6.","action":"observe","floor":6,"observationKind":"presence","locationGroup":"miriam-prepotente","mode":"physical"},
+    {"source":"b5-c63-p104","type":"story","subject":"Tserendolgor","name":"Floor observation","summary":"Tserendolgor is physically present with her pet Garret on Floor 6.","action":"observe","floor":6,"observationKind":"presence","locationGroup":"tserendolgor-party","mode":"physical"},
+    {"source":"b5-c63-p104","type":"story","subject":"Garret","name":"Floor observation","summary":"Garret is introduced on Floor 6 as Tserendolgor's Tummy Acher pet.","action":"observe","floor":6,"observationKind":"presence","locationGroup":"tserendolgor-party","mode":"physical"},
+
+    {"source":"b6-c1-p14","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl arrives on Floor 8 with Princess Donut.","action":"observe","floor":8,"observationKind":"arrival","locationGroup":"floor8-cuba","mode":"physical"},
+    {"source":"b6-c1-p14","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut arrives on Floor 8 with Carl.","action":"observe","floor":8,"observationKind":"arrival","locationGroup":"floor8-cuba","mode":"physical"},
+    {"source":"b6-c1-p34","type":"story","subject":"Imani C.","name":"Floor observation","summary":"Imani checks in from a separate Floor 8 location with Elle.","action":"observe","floor":8,"observationKind":"check-in","locationGroup":"floor8-imani-elle","mode":"physical"},
+    {"source":"b6-c1-p34","type":"story","subject":"Elle McGib","name":"Floor observation","summary":"Elle checks in from a separate Floor 8 location with Imani.","action":"observe","floor":8,"observationKind":"check-in","locationGroup":"floor8-imani-elle","mode":"physical"},
+    {"source":"b6-c1-p35","type":"story","subject":"Katia Grim","name":"Floor observation","summary":"Katia checks in from a separate location on Floor 8.","action":"observe","floor":8,"observationKind":"check-in","locationGroup":"floor8-katia","mode":"physical"},
+    {"source":"b6-c1-p40","type":"story","subject":"Li Na","name":"Floor observation","summary":"Li Na checks in from a separate location on Floor 8.","action":"observe","floor":8,"observationKind":"check-in","locationGroup":"floor8-li-na","mode":"physical"},
+    {"source":"b6-c2-p22","type":"story","subject":"Mongo","name":"Floor observation","summary":"Mongo is released from storage with the core party on Floor 8.","action":"observe","floor":8,"observationKind":"presence","locationGroup":"floor8-cuba","mode":"physical"},
+    {"source":"b6-c2-p33","type":"story","subject":"Samantha","name":"Floor observation","summary":"Samantha is physically present with Carl's group on Floor 8.","action":"observe","floor":8,"observationKind":"presence","locationGroup":"floor8-cuba","mode":"physical"},
+    {"source":"b6-c58-p59","type":"story","subject":"Tserendolgor","name":"Floor observation","summary":"Tserendolgor is physically present with Garret late on Floor 8.","action":"observe","floor":8,"observationKind":"presence","locationGroup":"tserendolgor-party","mode":"physical"},
+    {"source":"b6-c58-p59","type":"story","subject":"Garret","name":"Floor observation","summary":"Garret is physically present with Tserendolgor late on Floor 8.","action":"observe","floor":8,"observationKind":"presence","locationGroup":"tserendolgor-party","mode":"physical"},
+    {"source":"b6-c59-p73","type":"story","subject":"Garret","name":"Ownership change","summary":"Tserendolgor places the reset pet in a carrier and transfers him to Carl.","action":"transfer","floor":8,"observationKind":"transfer","locationGroup":"core-party","mode":"stored","owner":"Carl"},
+
+    {"source":"b7-c1-p29","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl is physically present with Princess Donut on Floor 9.","action":"observe","floor":9,"observationKind":"arrival","locationGroup":"floor9-core","mode":"physical"},
+    {"source":"b7-c1-p29","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut is physically present with Carl on Floor 9.","action":"observe","floor":9,"observationKind":"arrival","locationGroup":"floor9-core","mode":"physical"},
+    {"source":"b7-c2-p6","type":"story","subject":"Mongo","name":"Floor observation","summary":"Mongo is physically present with the core party on Floor 9.","action":"observe","floor":9,"observationKind":"presence","locationGroup":"floor9-core","mode":"physical"},
+    {"source":"b7-c4-p122","type":"story","subject":"Imani C.","name":"Floor observation","summary":"Imani is in a separate Floor 9 saferoom with Elle.","action":"observe","floor":9,"observationKind":"presence","locationGroup":"floor9-imani-elle","mode":"physical"},
+    {"source":"b7-c4-p122","type":"story","subject":"Elle McGib","name":"Floor observation","summary":"Elle is in a separate Floor 9 saferoom with Imani.","action":"observe","floor":9,"observationKind":"presence","locationGroup":"floor9-imani-elle","mode":"physical"},
+    {"source":"b7-c5-p15","type":"story","subject":"Garret","name":"Floor observation","summary":"The reset Tummy Acher is physically released from his carrier on Floor 9.","action":"observe","floor":9,"observationKind":"presence","locationGroup":"floor9-core","mode":"physical"},
+    {"source":"b7-c5-p140","type":"story","subject":"Garret","name":"Identity update","summary":"Garret is renamed Sir Rendlegore, commonly shortened to Rend.","action":"rename","floor":9,"observationKind":"identity","locationGroup":"floor9-core","mode":"physical","alias":"Sir Rendlegore"},
+    {"source":"b7-c18-p74","type":"story","subject":"Prepotente","name":"Floor observation","summary":"Prepotente checks in from a separate position on Floor 9.","action":"observe","floor":9,"observationKind":"check-in","mode":"physical"},
+
+    {"source":"b8-c1-p13","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl arrives on Floor 10.","action":"observe","floor":10,"observationKind":"arrival","locationGroup":"floor10-core","mode":"physical"},
+    {"source":"b8-c1-p15","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut arrives with Carl on Floor 10.","action":"observe","floor":10,"observationKind":"arrival","locationGroup":"floor10-core","mode":"physical"},
+    {"source":"b8-c1-p43","type":"story","subject":"Imani C.","name":"Floor observation","summary":"Imani checks in from an unspecified location on Floor 10.","action":"observe","floor":10,"observationKind":"check-in","mode":"physical"},
+    {"source":"b8-c1-p43","type":"story","subject":"Elle McGib","name":"Floor observation","summary":"Elle checks in from an unspecified location on Floor 10.","action":"observe","floor":10,"observationKind":"check-in","mode":"physical"},
+    {"source":"b8-c1-p43","type":"story","subject":"Louis Santiago","name":"Floor observation","summary":"Louis checks in from an unspecified location on Floor 10.","action":"observe","floor":10,"observationKind":"check-in","mode":"physical"},
+    {"source":"b8-c1-p43","type":"story","subject":"Prepotente","name":"Floor observation","summary":"Prepotente checks in from an unspecified location on Floor 10.","action":"observe","floor":10,"observationKind":"check-in","mode":"physical"},
+    {"source":"b8-c3-p35","type":"story","subject":"Mongo","name":"Floor observation","summary":"Mongo is physically present with Carl and Princess Donut on Floor 10.","action":"observe","floor":10,"observationKind":"presence","locationGroup":"floor10-core","mode":"physical"},
+    {"source":"b8-c5-p2","type":"story","subject":"Garret","name":"Floor observation","summary":"Rend is physically present with Carl's party on Floor 10.","action":"observe","floor":10,"observationKind":"presence","locationGroup":"floor10-core","mode":"physical","alias":"Rend"},
+
+    {"source":"b8-c88-p19","type":"story","subject":"Carl","name":"Floor observation","summary":"Carl is physically present with Princess Donut on Floor 11.","action":"observe","floor":11,"observationKind":"arrival","locationGroup":"floor11-core","mode":"physical"},
+    {"source":"b8-c88-p18","type":"story","subject":"Princess Donut","name":"Floor observation","summary":"Princess Donut arrives with Carl on Floor 11.","action":"observe","floor":11,"observationKind":"arrival","locationGroup":"floor11-core","mode":"physical"},
+    {"source":"b8-c88-p33","type":"story","subject":"Imani C.","name":"Floor observation","summary":"Imani checks in with Elle from Floor 11.","action":"observe","floor":11,"observationKind":"check-in","locationGroup":"floor11-imani-elle","mode":"physical"},
+    {"source":"b8-c88-p33","type":"story","subject":"Elle McGib","name":"Floor observation","summary":"Elle checks in with Imani from Floor 11.","action":"observe","floor":11,"observationKind":"check-in","locationGroup":"floor11-imani-elle","mode":"physical"},
+    {"source":"b8-c88-p34","type":"story","subject":"Prepotente","name":"Floor observation","summary":"Prepotente checks in from Floor 11 with Jurgen.","action":"observe","floor":11,"observationKind":"check-in","locationGroup":"floor11-prepotente","mode":"physical"},
+    {"source":"b8-c88-p66","type":"story","subject":"Mongo","name":"Floor observation","summary":"Mongo is released from his carrier with the core party on Floor 11.","action":"observe","floor":11,"observationKind":"presence","locationGroup":"floor11-core","mode":"physical"},
+    {"source":"b8-c88-p66","type":"story","subject":"Garret","name":"Floor observation","summary":"Rend is released from his carrier with the core party on Floor 11.","action":"observe","floor":11,"observationKind":"presence","locationGroup":"floor11-core","mode":"physical","alias":"Rend"},
+    {"source":"b8-c89-p3","type":"story","subject":"Samantha","name":"Floor observation","summary":"Samantha is physically present in the core party's space on Floor 11.","action":"observe","floor":11,"observationKind":"presence","locationGroup":"floor11-core-space","mode":"physical"}
+  ]
+}

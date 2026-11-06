@@ -796,7 +796,7 @@
       "subject": "Princess Donut",
       "name": "Enchanted Fae Scale Quadruped Crupper of the Fleet",
       "summary": "Donut removes her old crupper, which had provided +2 dexterity.",
-      "action": "remove",
+      "action": "unequip",
       "state": "carried",
       "category": "Equipment",
       "detail": "Donut removes her old crupper, which had provided +2 dexterity."

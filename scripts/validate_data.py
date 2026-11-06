@@ -37,6 +37,13 @@ def validate(path: Path, corpus_path: Path | None = None) -> int:
             assert 0 <= row["position"] <= 1
             assert row["type"] in {"level", "stat", "skill", "item", "party", "story"}
             assert row["confidence"] in CONFIDENCE_VALUES
+            if "lifeStatus" in row:
+                assert row["lifeStatus"] in {"dead", "presumed-dead", "alive"}
+            for boost in row.get("statBoosts", []):
+                assert boost["stat"] in {"STR", "INT", "CON", "DEX", "CHA", "ALL"}
+                assert boost["unit"] in {"points", "percent"}
+                assert isinstance(boost["value"], (int, float))
+                assert boost["source"] == row["source"] or boost["source"] in row.get("evidence", [])
             if row["type"] == "stat":
                 stat_names = set(row.get("stats", {})) | set(row.get("statsDelta", {}))
                 assert set(row.get("statScopes", {})) <= stat_names

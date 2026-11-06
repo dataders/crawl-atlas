@@ -48,6 +48,19 @@ def clean_chart_labels(html):
     """Use one hover identity for the line and dot at the same chart position."""
     def clean_plot(match):
         labels = {}
+        panel = match[0]
+        # Dct combines each layer's measure label into the shared axis title.
+        # The panel title names the measure even for an estimate-only chart;
+        # layer names remain in the point descriptions, where they belong.
+        title = re.search(r'<text\b[^>]*data-authored-kind="title"[^>]*>(.*?)</text>', panel, re.S)
+        if title:
+            metric = escape(unescape(re.sub(r'<[^>]+>', '', title[1])))
+            # Compact exports wrap long layer-derived titles in tspans. Replace
+            # their complete contents, retaining the parent text's geometry.
+            panel = re.sub(r'(data-authored-kind="y_label"[^>]*>\s*<text\b[^>]*>).*?(</text>)',
+                           lambda m: m[1] + metric + m[2], panel, flags=re.S)
+            panel = re.sub(r'(data-dct-role="y-axis"[^>]*aria-label="Y-axis titled &#x27;).*?(&#x27; for a [^"]+)',
+                           lambda m: m[1] + metric + m[2], panel)
 
         def clean_point(point):
             tag = point[0]
@@ -80,18 +93,18 @@ def clean_chart_labels(html):
                 tag = tag[:label.start(1)] + labels[key] + tag[label.end(1):]
             return tag
 
-        return re.sub(r'<circle\b[^>]*data-dct-role="point"[^>]*/>', clean_point, match[0])
+        return re.sub(r'<circle\b[^>]*data-dct-role="point"[^>]*/>', clean_point, panel)
 
     # Each dct panel is a nested SVG. Scope lookups to that panel.
     html = re.sub(r'<svg\b(?:(?!<svg\b|</svg>).)*</svg>', clean_plot, html, flags=re.S)
     # Format the native hover header at display time; dct groups marks by the
     # original coordinate, so nearby observations still have separate tooltips.
-    html = html.replace("function headerRow(entry, seriesColor, ts) {", """function headerRow(entry, seriesColor, ts) {
+    if "const position = Number(entry.value);" not in html:
+        html = html.replace("function headerRow(entry, seriesColor, ts) {", """function headerRow(entry, seriesColor, ts) {
         const position = Number(entry.value);
         if (Number.isFinite(position)) {
             const book = Math.floor(position / 100) + 1;
             const percent = Math.floor(position % 100);
             entry = {...entry, value: 'Book ' + book + ' · ' + percent + '% through'};
         }""", 1)
-    return re.sub(r'(data-authored-kind="y_label"><text[^>]*>)([^<]+), Value</text>',
-                  r'\1\2</text>', html).replace(", Value&#x27; for a linear scale", "&#x27; for a linear scale")
+    return html
