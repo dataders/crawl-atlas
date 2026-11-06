@@ -380,17 +380,20 @@
       "action": "set"
     },
     {
-      "source": "b8-c21-p66",
+      "source": "b8-c21-p74",
       "type": "skill",
       "subject": "Carl",
       "name": "Jump",
       "summary": "The currently worn kangaroo costume grants Jump at level 10; it is not a permanent trained skill.",
       "level": 10,
       "skillScope": "equipment",
-      "action": "set"
+      "action": "set",
+      "evidence": [
+        "b8-c21-p66"
+      ]
     },
     {
-      "source": "b8-c21-p67",
+      "source": "b8-c21-p74",
       "type": "skill",
       "subject": "Carl",
       "name": "Lotion Application",
@@ -398,7 +401,10 @@
       "skillScope": "equipment",
       "level": null,
       "levelDelta": 5,
-      "action": "delta"
+      "action": "delta",
+      "evidence": [
+        "b8-c21-p67"
+      ]
     },
     {
       "source": "b8-c22-p5",
@@ -878,14 +884,49 @@
       "action": "note"
     },
     {
-      "source": "b8-c21-p67",
+      "source": "b8-c21-p74",
       "type": "item",
       "subject": "Carl",
       "name": "Enchanted Juvenile Macropus Dominus Skin",
       "summary": "Carl is wearing a timed kangaroo costume granting Jump 10 and a five-level Lotion Application bonus.",
       "action": "equip",
       "state": "equipped",
-      "category": "Costume"
+      "category": "Costume",
+      "evidence": [
+        "b8-c21-p67",
+        "b8-c21-p65",
+        "b8-c21-p66",
+        "b8-c21-p67",
+        "b8-c21-p68"
+      ],
+      "effects": [
+        {
+          "id": "acid",
+          "kind": "benefit",
+          "target": "Seeping Acid",
+          "operation": "immune"
+        },
+        {
+          "id": "jump",
+          "kind": "skill",
+          "target": "Jump",
+          "operation": "grant: level 10"
+        },
+        {
+          "id": "lotion",
+          "kind": "skill",
+          "target": "Lotion Application",
+          "operation": "add",
+          "value": 5,
+          "unit": "levels"
+        },
+        {
+          "id": "duration",
+          "kind": "rule",
+          "target": "Costume duration",
+          "operation": "rule: 12 hours; early removal blocked"
+        }
+      ]
     },
     {
       "source": "b8-c34-p2",

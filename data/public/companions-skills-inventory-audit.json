@@ -1,0 +1,335 @@
+{
+  "scope": "Focused all-eight-book companion skills and equipment re-audit. Records are observations at their reveal anchors, not a claim of complete possessions or first acquisition. Descriptive labels ending in unnamed distinguish abilities whose canonical names are not supplied.",
+  "coverageNotes": [
+    "Existing Mongo kukri claw caps, Samantha Gurkha hat, Juice Box shapeshifting/possession, and Osvaldo movement skills are not duplicated.",
+    "No numerical skill levels were invented from outcomes, narrative adjectives, estimates, or another character's skill.",
+    "Mordecai's old-crawl skills in the Book 6 epilogue require supplemental reveal mapping and historical scope; they are deliberately excluded from active current skills.",
+    "Sexy Scolopendra has no newly verified possessed equipment or learned skills after her Book 8 pet transformation in this pass. Her former boss attacks are not inherited as pet skills.",
+    "Shapeshifted clothing and body parts are not recorded as Juice Box inventory.",
+    "All quantity omissions mean unknown quantities. No inventory ownership is inferred from a proposed gift or planned equipment change."
+  ],
+  "events": [
+    {
+      "source": "b1-c36-p10",
+      "type": "item",
+      "subject": "Zev",
+      "name": "Life-support suit",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Zev wears a mesh life-support suit with a water-filled helmet, connecting tubes, and backpack.",
+      "confidence": "verified",
+      "state": "equipped"
+    },
+    {
+      "source": "b2-c8-p78",
+      "type": "skill",
+      "subject": "Signet",
+      "name": "Water Lily",
+      "action": "set",
+      "skillScope": "reported",
+      "summary": "Signet identifies the inherited magic she used on Donut as Water Lily. Its level is not stated.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b2-c9-p97",
+      "type": "skill",
+      "subject": "Signet",
+      "name": "Ink Marauder",
+      "action": "set",
+      "skillScope": "reported",
+      "summary": "Mordecai identifies Signet's summoning magic as Ink Marauder. His preceding guess about its level is not a measured value.",
+      "confidence": "verified",
+      "evidence": [
+        "b2-c9-p59"
+      ]
+    },
+    {
+      "source": "b2-c17-p157",
+      "type": "item",
+      "subject": "Mongo",
+      "name": "Enchanted Fang Caps of the Expectorating Tizheruk",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Mongo is observed wearing the previously described enchanted fang caps. They enhance biting and can inflict poison or paralysis.",
+      "confidence": "verified",
+      "state": "equipped",
+      "evidence": [
+        "b2-c13-p49",
+        "b2-c13-p53",
+        "b2-c13-p54",
+        "b2-c13-p55"
+      ]
+    },
+    {
+      "source": "b2-c21-p173",
+      "type": "skill",
+      "subject": "Mongo",
+      "name": "Pounce",
+      "action": "set",
+      "skillScope": "reported",
+      "summary": "Donut explicitly identifies Mongo as having a Pounce ability; no level is stated.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b3-c7-p97",
+      "type": "item",
+      "subject": "Mongo",
+      "name": "Enchanted Mongoliensis Saddle",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Carl affixes the saddle to Mongo. It increases his Constitution by 20%; its melee damage bonus requires a rider.",
+      "confidence": "verified",
+      "state": "equipped",
+      "evidence": [
+        "b3-c7-p84",
+        "b3-c7-p89",
+        "b3-c7-p90"
+      ],
+      "statBoosts": [
+        {
+          "stat": "CON",
+          "value": 20,
+          "unit": "percent",
+          "source": "b3-c7-p89"
+        }
+      ]
+    },
+    {
+      "source": "b4-c13-p156",
+      "type": "item",
+      "subject": "Mongo",
+      "name": "Additional fang caps (speed and strength)",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Carl installs a second pair of fang caps. The text specifies 15% movement speed and 15% Strength; these are additional caps, not replacements.",
+      "confidence": "verified",
+      "state": "equipped",
+      "statBoosts": [
+        {
+          "stat": "STR",
+          "value": 15,
+          "unit": "percent",
+          "source": "b4-c13-p156"
+        }
+      ]
+    },
+    {
+      "source": "b4-c34-p168",
+      "type": "skill",
+      "subject": "Juice Box",
+      "name": "Buried-creature detection (buzz-ard form)",
+      "action": "set",
+      "skillScope": "granted",
+      "summary": "Juice Box uses the buzz-ard form's hunting ability to find creatures hidden in sand. This is a borrowed form-specific ability; no numeric level is given.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b5-c17-p63",
+      "type": "item",
+      "subject": "Odette",
+      "name": "Floating wheelchair",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Odette is visibly supported by her circular hovering wheelchair. No numerical benefits are stated.",
+      "confidence": "verified",
+      "state": "in use"
+    },
+    {
+      "source": "b5-c17-p63",
+      "type": "item",
+      "subject": "Zev",
+      "name": "Life-support suit",
+      "action": "unequip",
+      "category": "Equipment",
+      "summary": "Zev appears without her usual suit. Its removal does not establish that she discarded it.",
+      "confidence": "verified",
+      "state": "carried"
+    },
+    {
+      "source": "b5-c17-p63",
+      "type": "item",
+      "subject": "Zev",
+      "name": "Neck rebreather",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Zev wears a simple rebreather around her throat in place of the usual suit.",
+      "confidence": "verified",
+      "state": "equipped"
+    },
+    {
+      "source": "b5-c30-p22",
+      "type": "item",
+      "subject": "Zev",
+      "name": "Neck rebreather",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Zev is again observed wearing only the rebreather.",
+      "confidence": "verified",
+      "state": "equipped"
+    },
+    {
+      "source": "b5-c62-p25",
+      "type": "skill",
+      "subject": "Signet",
+      "name": "Tracking enchantment (unnamed)",
+      "action": "set",
+      "skillScope": "reported",
+      "summary": "Signet says an enchantment lets her locate Carl and Donut. The original casting time, formal spell name, and level are unspecified.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b5-c71-p195",
+      "type": "skill",
+      "subject": "Signet",
+      "name": "Ink Marauder",
+      "action": "set",
+      "skillScope": "reported",
+      "summary": "The narration again identifies Signet's blood-sacrifice summoning spell as Ink Marauder. No numeric level is stated.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c55-p38",
+      "type": "skill",
+      "subject": "Samantha",
+      "name": "Spell amplification (unnamed)",
+      "action": "set",
+      "skillScope": "reported",
+      "summary": "Carl confirms that Samantha can amplify spells, after earlier failed attempts to elicit the ability. No formal skill name or level is supplied.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c65-p10",
+      "type": "skill",
+      "subject": "Samantha",
+      "name": "Spell amplification (unnamed)",
+      "action": "set",
+      "skillScope": "reported",
+      "summary": "Samantha participates with Imani in enhancing Donut's spell. The predicted effect is not treated as a numeric level for Samantha.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c2-p11",
+      "type": "skill",
+      "subject": "Mordecai",
+      "name": "Potion analysis (alchemy table)",
+      "action": "set",
+      "skillScope": "equipment",
+      "summary": "The upgraded alchemy table gives Mordecai the ability to examine potions and discover how they were made; no numeric skill level is stated.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c43-p3",
+      "type": "item",
+      "subject": "Odette",
+      "name": "Floating wheelchair",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Odette again appears in the floating wheelchair, without her usual costume apparatus.",
+      "confidence": "verified",
+      "state": "in use"
+    },
+    {
+      "source": "b7-c64-p21",
+      "type": "item",
+      "subject": "Osvaldo",
+      "name": "Memorial Crystal: Apito",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Carl identifies the memorial crystal currently in Osvaldo's possession.",
+      "confidence": "verified",
+      "evidence": [
+        "b7-c64-p13"
+      ]
+    },
+    {
+      "source": "b7-c78-p85",
+      "type": "item",
+      "subject": "Osvaldo",
+      "name": "Memorial Crystal: Apito",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "A quest update explicitly reports that the crystal has passed from Osvaldo to Prepotente.",
+      "confidence": "verified",
+      "state": "transferred"
+    },
+    {
+      "source": "b7-c86-p124",
+      "type": "item",
+      "subject": "Mordecai",
+      "name": "Memorial crossbow bolt",
+      "action": "note",
+      "category": "Ammunition",
+      "summary": "Mordecai holds a nonmagical crossbow bolt incorporating his mother's ashes.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c86-p126",
+      "type": "item",
+      "subject": "Mordecai",
+      "name": "Memorial crossbow bolt",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Mordecai loads his memorial bolt into the crossbow on Donut's back, transferring it out of his possession.",
+      "confidence": "verified",
+      "state": "transferred"
+    },
+    {
+      "source": "b8-c11-p19",
+      "type": "item",
+      "subject": "Mongo",
+      "name": "The Nemes of Pestilence",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Dong helps Mongo put on the nemes. Its conditional protector effect doubles Strength while temporarily protecting him near his critically injured owner.",
+      "confidence": "verified",
+      "state": "equipped",
+      "evidence": [
+        "b8-c8-p20",
+        "b8-c8-p23",
+        "b8-c8-p24"
+      ],
+      "statBoosts": [
+        {
+          "stat": "STR",
+          "value": 100,
+          "unit": "percent",
+          "source": "b8-c8-p23",
+          "condition": "Owner below 10% health and within three meters; temporary protector activation, once per day"
+        }
+      ]
+    },
+    {
+      "source": "b8-c90-p7",
+      "type": "item",
+      "subject": "Mongo",
+      "name": "The Nemes of Pestilence",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Mongo keeps the nemes equipped for the fight.",
+      "confidence": "verified",
+      "state": "equipped"
+    },
+    {
+      "source": "b8-c95-p115",
+      "type": "item",
+      "subject": "Penelope",
+      "name": "Collar with trap module",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Carl checks that Penelope is still wearing the collar carrying the trap module.",
+      "confidence": "verified",
+      "state": "equipped"
+    },
+    {
+      "source": "b8-c95-p115",
+      "type": "item",
+      "subject": "Penelope",
+      "name": "Enchanted Spiked Kneepads of the Munificent Goddess Kina",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Penelope is explicitly wearing the kneepads previously given to Katia and then Donut. Their benefits include underwater breathing and temporary deity effects.",
+      "confidence": "verified",
+      "state": "equipped"
+    }
+  ]
+}

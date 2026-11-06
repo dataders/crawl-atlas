@@ -1,0 +1,256 @@
+{
+  "scope": "Five randomly selected chapters read end to end: B1C20, B5C1, B7C46, B6C46, B5C72; 766 paragraphs. Seed 3480168778011671065. Observations do not establish first acquisition.",
+  "events": [
+    {
+      "source": "b1-c20-p17",
+      "subject": "Frank Q",
+      "type": "level",
+      "name": "Level",
+      "summary": "Frank Q is explicitly identified as level 8.",
+      "action": "set",
+      "level": 8
+    },
+    {
+      "source": "b1-c20-p88",
+      "subject": "Maggie My",
+      "type": "level",
+      "name": "Level",
+      "summary": "Maggie My is explicitly identified as level 9.",
+      "action": "set",
+      "level": 9
+    },
+    {
+      "source": "b1-c20-p96",
+      "subject": "Carl",
+      "type": "level",
+      "name": "Level",
+      "summary": "Carl is explicitly identified as level 8.",
+      "action": "set",
+      "level": 8
+    },
+    {
+      "source": "b1-c20-p96",
+      "subject": "Princess Donut",
+      "type": "level",
+      "name": "Level",
+      "summary": "Princess Donut is explicitly identified as level 8.",
+      "action": "set",
+      "level": 8
+    },
+    {
+      "source": "b1-c20-p105",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Explosives Handling",
+      "summary": "Carl confirms level 5 while inspecting the smoke bomb.",
+      "action": "set",
+      "level": 5,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b1-c20-p94",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Potion of Iron Skin",
+      "summary": "Carl drinks one potion and gives another to Donut, who drinks it.",
+      "category": "Inventory",
+      "action": "consume",
+      "quantity": 2
+    },
+    {
+      "source": "b1-c20-p13",
+      "subject": "Frank Q",
+      "type": "item",
+      "name": "Enchanted spiked shoulder armor",
+      "summary": "Frank wears glowing metal shoulder armor; its bonuses cannot be inspected.",
+      "category": "Inventory",
+      "action": "equip",
+      "state": "equipped"
+    },
+    {
+      "source": "b1-c20-p14",
+      "subject": "Frank Q",
+      "type": "item",
+      "name": "Battle axe",
+      "summary": "Frank carries a single-headed iron battle axe.",
+      "category": "Inventory",
+      "action": "equip",
+      "state": "equipped"
+    },
+    {
+      "source": "b1-c20-p14",
+      "subject": "Frank Q",
+      "type": "item",
+      "name": "Throwing knives",
+      "summary": "Frank wears a belt holding throwing knives.",
+      "category": "Inventory",
+      "action": "equip",
+      "state": "equipped"
+    },
+    {
+      "source": "b5-c1-p73",
+      "subject": "Katia Grim",
+      "type": "story",
+      "name": "HAZMAT endorsement",
+      "summary": "Katia selects the HAZMAT endorsement for Monster Truck Driver; the class name remains unchanged.",
+      "action": "note"
+    },
+    {
+      "source": "b5-c1-p78",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Legendary Diva",
+      "summary": "Donut selects Legendary Diva for this floor rather than a permanent class.",
+      "action": "note"
+    },
+    {
+      "source": "b5-c1-p151",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Unarmed Combat",
+      "summary": "Carl reports Unarmed Combat at level 9 while considering class options.",
+      "action": "set",
+      "level": 9,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b5-c1-p178",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Agent Provocateur",
+      "summary": "Carl selects Agent Provocateur: one additional Intelligence point per future level, two Explosives Handling levels, one Sapper table skill level, advanced Bomb Maker workshop access and faster explosives training. No resulting skill or stat total is given.",
+      "action": "note",
+      "evidence": [
+        "b5-c1-p166",
+        "b5-c1-p167",
+        "b5-c1-p168",
+        "b5-c1-p169",
+        "b5-c1-p170",
+        "b5-c1-p176"
+      ]
+    },
+    {
+      "source": "b5-c1-p178",
+      "subject": "Carl",
+      "type": "level",
+      "name": "Level",
+      "summary": "The class confirmation identifies Carl as level 47.",
+      "action": "set",
+      "level": 47
+    },
+    {
+      "source": "b5-c72-p21",
+      "subject": "Princess Donut",
+      "type": "skill",
+      "name": "All Eyes on Me",
+      "summary": "Donut performs the audience-focusing charm spell. Its rank is unstated.",
+      "action": "set",
+      "level": null,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b5-c72-p41",
+      "subject": "Mongo",
+      "type": "item",
+      "name": "Crab costume",
+      "summary": "Mongo wears the crab costume around his neck for the performance.",
+      "category": "Inventory",
+      "action": "equip",
+      "state": "equipped"
+    },
+    {
+      "source": "b5-c72-p51",
+      "subject": "Signet",
+      "type": "item",
+      "name": "Assassination knife",
+      "summary": "Carl hands Signet the knife previously used in an assassination attempt against Donut.",
+      "category": "Inventory",
+      "action": "add",
+      "quantity": 1
+    },
+    {
+      "source": "b5-c72-p65",
+      "subject": "Signet",
+      "type": "story",
+      "name": "Disappeared into the Nothing",
+      "summary": "Signet is pulled into the Nothing after cutting her throat. Her fate beyond the disappearance is not established here.",
+      "action": "note",
+      "evidence": [
+        "b5-c72-p58",
+        "b5-c72-p60"
+      ]
+    },
+    {
+      "source": "b6-c46-p21",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Father’s Glock",
+      "summary": "Carl examines the non-magical pistol from his father. He says its rounds need adjustment before he can safely fire it.",
+      "category": "Inventory",
+      "action": "note",
+      "state": "carried",
+      "evidence": [
+        "b6-c46-p13",
+        "b6-c46-p19",
+        "b6-c46-p21"
+      ]
+    },
+    {
+      "source": "b6-c46-p184",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Shrink wand",
+      "summary": "Carl takes out his shrink wand. It affects objects rather than living flesh.",
+      "category": "Inventory",
+      "action": "note",
+      "state": "carried",
+      "evidence": [
+        "b6-c46-p174",
+        "b6-c46-p184"
+      ]
+    },
+    {
+      "source": "b6-c46-p188",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Snap collars",
+      "summary": "Carl has made orcish-steel collars that close around a neck when thrown correctly. He uses one with the shrink wand.",
+      "category": "Inventory",
+      "action": "note",
+      "state": "carried",
+      "evidence": [
+        "b6-c46-p185",
+        "b6-c46-p186",
+        "b6-c46-p188"
+      ]
+    },
+    {
+      "source": "b6-c46-p7",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Clockwork Triplicate used",
+      "summary": "Donut casts Clockwork Triplicate on Mongo. This confirms use but supplies no new rank.",
+      "action": "note"
+    },
+    {
+      "source": "b6-c46-p101",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Size-Up potion used",
+      "summary": "Carl drinks a Size-Up potion supplied by Prepotente. The inspection fails when he loses sight of the target; this is potion access, not a learned skill.",
+      "action": "note",
+      "evidence": [
+        "b6-c46-p92",
+        "b6-c46-p101"
+      ]
+    },
+    {
+      "source": "b6-c46-p122",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Jug O’ Boom supply exhausted",
+      "summary": "Carl says his Jug O’ Booms ran out earlier; ordinary moonshine jugs remain. The time of depletion is unstated.",
+      "action": "note"
+    }
+  ]
+}

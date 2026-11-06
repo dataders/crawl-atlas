@@ -1,0 +1,503 @@
+{
+  "booksReviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "scope": "Targeted secondary-cast audit of named skills and observed equipment. Reveal positions follow the corpus, including retrospective reports. Unknown ranks and quantities remain unknown. Descriptive item labels do not imply official names. This is not a complete inventory reconstruction.",
+  "events": [
+    {
+      "source": "b1-c39-p41",
+      "type": "item",
+      "subject": "Hekla",
+      "name": "Repeating crossbow",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Hekla is identified as the crawler carrying the repeating crossbow. Earlier anonymous sightings do not establish her identity."
+    },
+    {
+      "source": "b1-c39-p41",
+      "type": "item",
+      "subject": "Hekla",
+      "name": "Glittering breastplate",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Hekla is observed wearing a glittering breastplate. Its bonuses are unstated."
+    },
+    {
+      "source": "b3-c22-p131",
+      "type": "item",
+      "subject": "Hekla",
+      "name": "Curved blades",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Hekla draws a short curved blade in each hand.",
+      "quantity": 2
+    },
+    {
+      "source": "b3-c24-p111",
+      "type": "item",
+      "subject": "Hekla",
+      "name": "Repeating crossbow",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Katia reveals that she recovered Hekla’s crossbow. It is no longer in Hekla’s possession."
+    },
+    {
+      "source": "b3-c24-p129",
+      "type": "story",
+      "subject": "Hekla",
+      "name": "Crossbow properties revealed",
+      "action": "note",
+      "summary": "Inspection identifies Hekla’s former weapon as the Enchanted Repeating Crossbow of the Scavenger Mother of Mothers, which can cast Birth Defect. This is an equipment property revealed after its transfer, not a learned skill.",
+      "evidence": [
+        "b3-c24-p119"
+      ]
+    },
+    {
+      "source": "b3-c22-p120",
+      "type": "item",
+      "subject": "Eva",
+      "name": "Sabers",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Eva is observed wielding sabers. Their enchantments are not yet identified."
+    },
+    {
+      "source": "b3-c27-p59",
+      "type": "item",
+      "subject": "Eva",
+      "name": "Sabers",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Carl recovers one of Eva’s two sabers, left on the train after the fight. One of the pair remains with Eva.",
+      "remainingQuantity": 1
+    },
+    {
+      "source": "b4-c33-p122",
+      "type": "story",
+      "subject": "Eva",
+      "name": "Saber identified",
+      "action": "note",
+      "summary": "The saber Carl recovered from Eva is identified as Left Fang of the Green Sultan, half of her matched magical pair. This name is first revealed here."
+    },
+    {
+      "source": "b1-c20-p72",
+      "type": "item",
+      "subject": "Frank Q",
+      "name": "Gun",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Frank draws a gun from inventory and fires it."
+    },
+    {
+      "source": "b1-c43-p92",
+      "type": "skill",
+      "subject": "Frank Q",
+      "name": "Find Crawler",
+      "action": "set",
+      "level": null,
+      "skillScope": "reported",
+      "summary": "The Maestro identifies Frank’s Find Crawler skill. Its current rank is not stated; the offered potion’s potential upgrade is not an observed rank."
+    },
+    {
+      "source": "b3-c19-p61",
+      "type": "item",
+      "subject": "Frank Q",
+      "name": "Ring of Divine Suffering",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Frank presents the ring and its name is revealed. Prior ownership is established here, without backdating the reveal."
+    },
+    {
+      "source": "b3-c19-p67",
+      "type": "item",
+      "subject": "Frank Q",
+      "name": "Ring of Divine Suffering",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Carl accepts the ring Frank offers."
+    },
+    {
+      "source": "b1-c20-p73",
+      "type": "item",
+      "subject": "Maggie My",
+      "name": "Pistol",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Maggie fires her pistol."
+    },
+    {
+      "source": "b1-c43-p45",
+      "type": "item",
+      "subject": "Maggie My",
+      "name": "Area-of-effect stealth ring",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "A recap reveals Maggie’s ring granting a stationary area-of-effect stealth ability. The ability’s formal name and rank are not given."
+    },
+    {
+      "source": "b1-c43-p92",
+      "type": "item",
+      "subject": "Maggie My",
+      "name": "Legendary Skill Potion",
+      "action": "note",
+      "category": "Consumable",
+      "summary": "Maggie takes the potion offered by the Maestro. Receiving it does not establish that she drank it or learned its skill."
+    },
+    {
+      "source": "b3-c32-p76",
+      "type": "item",
+      "subject": "Miriam Dom",
+      "name": "Hooked staff",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Miriam carries a long staff with a hooked end."
+    },
+    {
+      "source": "b5-c44-p15",
+      "type": "skill",
+      "subject": "Miriam Dom",
+      "name": "Revive",
+      "action": "set",
+      "level": null,
+      "skillScope": "reported",
+      "summary": "Miriam reports repeatedly casting her Revive spell. Its rank is not stated."
+    },
+    {
+      "source": "b5-c44-p15",
+      "type": "item",
+      "subject": "Miriam Dom",
+      "name": "Blood potions",
+      "action": "note",
+      "category": "Consumable",
+      "summary": "Miriam reports having a handful of blood potions remaining. An exact quantity is not stated."
+    },
+    {
+      "source": "b5-c47-p30",
+      "type": "story",
+      "subject": "Miriam Dom",
+      "name": "Get Out of Jail unlearned",
+      "action": "note",
+      "summary": "Miriam explains that she unlearned a spell to make a tome. Donut reads it and identifies Get Out of Jail; it is no longer a known spell for Miriam.",
+      "evidence": [
+        "b5-c47-p26"
+      ]
+    },
+    {
+      "source": "b5-c49-p51",
+      "type": "item",
+      "subject": "Miriam Dom",
+      "name": "Hooked staff",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Prepotente collects Miriam’s remaining loot. Her previously observed staff is no longer tracked as held by her."
+    },
+    {
+      "source": "b5-c49-p51",
+      "type": "item",
+      "subject": "Miriam Dom",
+      "name": "Blood potions",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Prepotente collects Miriam’s remaining loot. Her previously observed supplies are no longer tracked as held by her."
+    },
+    {
+      "source": "b1-c22-p27",
+      "type": "item",
+      "subject": "Yolanda Martinez",
+      "name": "Bow",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Yolanda is first observed carrying a bow."
+    },
+    {
+      "source": "b1-c22-p27",
+      "type": "item",
+      "subject": "Yolanda Martinez",
+      "name": "Quiver",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Yolanda carries a large quiver over her shoulder."
+    },
+    {
+      "source": "b1-c31-p25",
+      "type": "item",
+      "subject": "Yolanda Martinez",
+      "name": "Quiver",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Brandon reports that Yolanda received a new type of quiver from her boss box. The old quiver’s disposition and the new bonuses are unstated."
+    },
+    {
+      "source": "b1-c26-p111",
+      "type": "item",
+      "subject": "Brandon An",
+      "name": "Lightning maul",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Brandon wields a giant maul glittering with lightning."
+    },
+    {
+      "source": "b1-c31-p25",
+      "type": "item",
+      "subject": "Brandon An",
+      "name": "Magic boomerang",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Brandon reports receiving a magic boomerang in his boss box."
+    },
+    {
+      "source": "b4-c4-p74",
+      "type": "item",
+      "subject": "Ifechi",
+      "name": "Medical bag",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "A recap first shows Ifechi with a medical bag. This observation is revealed here, although the footage is from earlier."
+    },
+    {
+      "source": "b4-c4-p80",
+      "type": "item",
+      "subject": "Ifechi",
+      "name": "Leech staff",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Ifechi uses a staff that launches leeches. The text does not name a separately learned spell."
+    },
+    {
+      "source": "b4-c4-p154",
+      "type": "item",
+      "subject": "Ifechi",
+      "name": "Leech staff",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Florin is shown holding Ifechi’s leech staff after her death."
+    },
+    {
+      "source": "b4-c5-p87",
+      "type": "skill",
+      "subject": "Firas M",
+      "name": "Puddle Jumper",
+      "action": "set",
+      "level": null,
+      "skillScope": "reported",
+      "summary": "Louis identifies Firas’s escape spell as Puddle Jumper. Its rank is not yet stated."
+    },
+    {
+      "source": "b4-c6-p26",
+      "type": "skill",
+      "subject": "Firas M",
+      "name": "Puddle Jumper",
+      "action": "set",
+      "level": 10,
+      "skillScope": "reported",
+      "summary": "Firas’s Puddle Jumper is explicitly reported at rank 10."
+    },
+    {
+      "source": "b4-c6-p26",
+      "type": "item",
+      "subject": "Firas M",
+      "name": "Intelligence-enhanced mace",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Firas owns an intelligence-enhanced mace intended for a cleric. The bonus amount is not stated."
+    },
+    {
+      "source": "b4-c11-p56",
+      "type": "item",
+      "subject": "Firas M",
+      "name": "Long knife",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Firas draws a long knife during the staged encounter."
+    },
+    {
+      "source": "b4-c12-p33",
+      "type": "item",
+      "subject": "Firas M",
+      "name": "Launcher tube",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Firas has a launcher tube in his inventory for the coordinated attack.",
+      "quantity": 1
+    },
+    {
+      "source": "b5-c36-p103",
+      "type": "item",
+      "subject": "Firas M",
+      "name": "Hammer-skill cloak",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Carl gives Firas a cloak that grants hammer-based attack skills. Those skills are not individually named."
+    },
+    {
+      "source": "b4-c20-p77",
+      "type": "item",
+      "subject": "Gwendolyn Duet",
+      "name": "Spear",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Gwen’s fighting with a spear is described. No weapon bonuses are stated."
+    },
+    {
+      "source": "b5-c71-p120",
+      "type": "item",
+      "subject": "Horton",
+      "name": "Acoustic guitar",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Horton performs with an acoustic guitar missing a string. This records observed use, not confirmed permanent ownership."
+    },
+    {
+      "source": "b4-c4-p67",
+      "type": "item",
+      "subject": "Quan Ch",
+      "name": "Celestial cloak",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Quan’s magical garment is observed providing flight and protection. Suggested spell identities and ranks remain uncertain."
+    },
+    {
+      "source": "b4-c31-p129",
+      "type": "item",
+      "subject": "Quan Ch",
+      "name": "Three rings",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Quan loses the arm bearing three rings during the fight. Their individual identities are not yet revealed.",
+      "historyOnly": true
+    },
+    {
+      "source": "b4-c32-p81",
+      "type": "item",
+      "subject": "Quan Ch",
+      "name": "Strength ring",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "The ring taken with Quan’s severed arm is identified in Carl’s possession. This is a historical loss, not a new acquisition.",
+      "historyOnly": true
+    },
+    {
+      "source": "b4-c32-p83",
+      "type": "item",
+      "subject": "Quan Ch",
+      "name": "Rockard’s Ring of Sniping",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "The ring taken with Quan’s severed arm is identified in Carl’s possession. This is a historical loss, not a new acquisition.",
+      "historyOnly": true
+    },
+    {
+      "source": "b4-c32-p98",
+      "type": "item",
+      "subject": "Quan Ch",
+      "name": "Sappy gold ring",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "The ring taken with Quan’s severed arm is identified in Carl’s possession. This is a historical loss, not a new acquisition.",
+      "historyOnly": true
+    },
+    {
+      "source": "b6-c58-p87",
+      "type": "item",
+      "subject": "Quan Ch",
+      "name": "Celestial cloak",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Quan’s clothes are stripped off during battle and Carl takes the magical cloak."
+    },
+    {
+      "source": "b6-c58-p106",
+      "type": "item",
+      "subject": "Quan Ch",
+      "name": "Sappy gold ring",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Carl identifies the personal ring Quan is asking to have returned. Possession has not transferred in this paragraph.",
+      "historyOnly": true
+    },
+    {
+      "source": "b3-c31-p66",
+      "type": "item",
+      "subject": "Tserendolgor",
+      "name": "Flamethrower",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Tserendolgor is observed using a flamethrower. Its proper name is not yet revealed."
+    },
+    {
+      "source": "b3-c31-p66",
+      "type": "item",
+      "subject": "Tserendolgor",
+      "name": "Army helmet",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Tserendolgor wears an army helmet fitted around her ears."
+    },
+    {
+      "source": "b4-c32-p7",
+      "type": "item",
+      "subject": "Tserendolgor",
+      "name": "Flamethrower",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Ren reports receiving an upgrade for her flamethrower."
+    },
+    {
+      "source": "b5-c45-p48",
+      "type": "skill",
+      "subject": "Tserendolgor",
+      "name": "Ultraviolet",
+      "action": "set",
+      "level": null,
+      "skillScope": "reported",
+      "summary": "Ren reports casting Ultraviolet on her flamethrower. Its rank is not stated."
+    },
+    {
+      "source": "b5-c64-p179",
+      "type": "item",
+      "subject": "Tserendolgor",
+      "name": "Robe",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Imani gives Ren a robe after Ren removes her weapon attachment for the event."
+    },
+    {
+      "source": "b6-c59-p48",
+      "type": "item",
+      "subject": "Tserendolgor",
+      "name": "Eye in the Sky scrolls",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Ren offers her supplies, including Eye in the Sky scrolls, to Carl. Their exact quantity is unstated.",
+      "historyOnly": true
+    },
+    {
+      "source": "b6-c59-p52",
+      "type": "item",
+      "subject": "Tserendolgor",
+      "name": "Flamethrower",
+      "action": "remove",
+      "category": "Equipment",
+      "summary": "Ren gives the flamethrower to Carl and reveals that its name is Velma.",
+      "evidence": [
+        "b6-c59-p48"
+      ]
+    },
+    {
+      "source": "b6-c59-p55",
+      "type": "item",
+      "subject": "Tserendolgor",
+      "name": "Knife of Frozen Tears",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Ren draws and names the Knife of Frozen Tears, made from Sylvan crystal."
+    }
+  ]
+}

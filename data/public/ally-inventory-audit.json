@@ -195,6 +195,16 @@
       "state": "no longer held",
       "category": "Equipment",
       "summary": "Prepotente reports that a deity stole the crystal from his neck."
+    },
+    {
+      "source": "b5-c49-p51",
+      "type": "item",
+      "subject": "Prepotente",
+      "name": "Wand (unidentified)",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Prepotente holds a wand after collecting Miriam’s loot. The wand’s name, effects, and original owner are not established."
     }
   ]
 }

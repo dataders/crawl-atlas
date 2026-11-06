@@ -1,0 +1,364 @@
+{
+  "scope": "Equipment effects, separate from absolute measurements. Revealed rules are not silently evaluated into totals.",
+  "events": [
+    {
+      "source": "b4-c28-p90",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Enchanted Anarchist’s Battle Rattle",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [
+        {
+          "id": "jacket-base",
+          "kind": "stat",
+          "target": "ALL",
+          "operation": "add",
+          "value": 1,
+          "unit": "points"
+        },
+        {
+          "id": "patch-count",
+          "kind": "rule",
+          "target": "ALL",
+          "operation": "rule: +1 point per attached compatible patch; doubled with an eligible back patch"
+        },
+        {
+          "id": "explosives-range",
+          "kind": "benefit",
+          "target": "Thrown explosive range and accuracy",
+          "operation": "add",
+          "value": 50,
+          "unit": "percent"
+        }
+      ],
+      "evidence": [
+        "b4-c28-p86",
+        "b4-c28-p87"
+      ]
+    },
+    {
+      "source": "b4-c28-p98",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Earth patch",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [
+        {
+          "id": "earth-str",
+          "kind": "stat",
+          "target": "STR",
+          "operation": "add",
+          "value": 5,
+          "unit": "percent"
+        },
+        {
+          "id": "cloud-immunity",
+          "kind": "benefit",
+          "target": "Cloud-based attacks",
+          "operation": "immune"
+        }
+      ],
+      "evidence": [
+        "b4-c28-p96",
+        "b4-c28-p97"
+      ]
+    },
+    {
+      "source": "b5-c36-p135",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Earth patch",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [],
+      "evidence": [],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b5-c36-p158",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bomb patch",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [
+        {
+          "id": "bomb-con",
+          "kind": "stat",
+          "target": "CON",
+          "operation": "add",
+          "value": 11,
+          "unit": "percent"
+        },
+        {
+          "id": "bomb-skill",
+          "kind": "skill",
+          "target": "Dangerous Explosives Handling",
+          "operation": "add",
+          "value": 2,
+          "unit": "levels"
+        },
+        {
+          "id": "bomb-damage",
+          "kind": "benefit",
+          "target": "Explosive damage",
+          "operation": "add",
+          "value": 6,
+          "unit": "percent"
+        }
+      ],
+      "evidence": [
+        "b5-c36-p154",
+        "b5-c36-p155",
+        "b5-c36-p156"
+      ]
+    },
+    {
+      "source": "b6-c3-p33",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bomb patch",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [],
+      "evidence": [],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b6-c3-p76",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Peace patch",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [
+        {
+          "id": "peace-dex",
+          "kind": "stat",
+          "target": "DEX",
+          "operation": "add",
+          "value": 10,
+          "unit": "percent"
+        },
+        {
+          "id": "peace-bongos",
+          "kind": "skill",
+          "target": "Bongo playing",
+          "operation": "add",
+          "value": 10,
+          "unit": "percent"
+        }
+      ],
+      "evidence": [
+        "b6-c3-p75"
+      ]
+    },
+    {
+      "source": "b6-c3-p129",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Peace patch",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [],
+      "evidence": [],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b6-c3-p146",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Scavenger’s Daughter Patch",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [
+        {
+          "id": "patch-double",
+          "kind": "rule",
+          "target": "Patch stat-point benefits",
+          "operation": "multiply",
+          "value": 2,
+          "unit": "times"
+        }
+      ],
+      "evidence": [],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b6-c3-p153",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Scavenger’s Daughter Patch",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [
+        {
+          "id": "climb",
+          "kind": "skill",
+          "target": "Climb",
+          "operation": "grant"
+        },
+        {
+          "id": "soul-reaper",
+          "kind": "skill",
+          "target": "Soul Reaper",
+          "operation": "grant"
+        },
+        {
+          "id": "bone-key",
+          "kind": "skill",
+          "target": "Mysterious Bone Key",
+          "operation": "grant"
+        },
+        {
+          "id": "deity-notification",
+          "kind": "benefit",
+          "target": "Nearby deity notification",
+          "operation": "grant"
+        }
+      ],
+      "evidence": [
+        "b6-c3-p150",
+        "b6-c3-p151",
+        "b6-c3-p152"
+      ],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b8-c89-p68",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Lucky Shot patch",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [
+        {
+          "id": "lucky-shot",
+          "kind": "benefit",
+          "target": "Lucky Shot",
+          "operation": "grant: redirects a fatal blow to a party member; once per floor"
+        }
+      ],
+      "evidence": [
+        "b8-c89-p63",
+        "b8-c89-p64"
+      ],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b5-c36-p134",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Arrows patch",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [
+        {
+          "id": "arrows-dex",
+          "kind": "stat",
+          "target": "DEX",
+          "operation": "add",
+          "value": 5,
+          "unit": "percent"
+        },
+        {
+          "id": "arrows-damage",
+          "kind": "benefit",
+          "target": "Ranged projectile damage",
+          "operation": "add",
+          "value": 5,
+          "unit": "percent"
+        }
+      ],
+      "evidence": [
+        "b5-c36-p132",
+        "b5-c36-p133"
+      ]
+    },
+    {
+      "source": "b6-c3-p33",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Arrows patch",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [],
+      "evidence": [],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b5-c43-p54",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Midnight Epicure patch",
+      "action": "note",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [
+        {
+          "id": "vampire",
+          "kind": "benefit",
+          "target": "Vampirism",
+          "operation": "immune"
+        },
+        {
+          "id": "lycanthropy",
+          "kind": "benefit",
+          "target": "Lycanthropy",
+          "operation": "immune"
+        },
+        {
+          "id": "undead",
+          "kind": "benefit",
+          "target": "Magic damage against sapient undead",
+          "operation": "add",
+          "value": 25,
+          "unit": "percent"
+        }
+      ],
+      "evidence": [
+        "b5-c43-p51",
+        "b5-c43-p52",
+        "b5-c43-p53"
+      ]
+    },
+    {
+      "source": "b5-c44-p31",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Midnight Epicure patch",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [],
+      "evidence": [],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    },
+    {
+      "source": "b5-c44-p29",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bomb patch",
+      "action": "equip",
+      "category": "Equipment",
+      "summary": "Recorded equipment effects; these do not establish a complete character stat or skill total.",
+      "effects": [],
+      "evidence": [],
+      "attachedTo": "Enchanted Anarchist’s Battle Rattle"
+    }
+  ]
+}

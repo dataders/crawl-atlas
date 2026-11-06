@@ -359,6 +359,57 @@
                 }
               }
             }
+          },
+          "attachedTo": {
+            "type": "string",
+            "description": "Name of the same-owner parent item required for an attached effect to apply."
+          },
+          "effects": {
+            "type": "array",
+            "description": "Source-item effects, never absolute character measurements. Stable ids permit later revisions.",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "kind",
+                "target",
+                "operation"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "enum": [
+                    "stat",
+                    "skill",
+                    "benefit",
+                    "rule"
+                  ]
+                },
+                "target": {
+                  "type": "string"
+                },
+                "operation": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number"
+                },
+                "unit": {
+                  "enum": [
+                    "points",
+                    "percent",
+                    "levels",
+                    "times"
+                  ]
+                },
+                "condition": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }

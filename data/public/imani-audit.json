@@ -53,7 +53,7 @@
           5
         ]
       },
-      "historyOnly": true
+      "category": "Equipment"
     },
     {
       "source": "b1-c22-p28",
@@ -72,7 +72,7 @@
           5
         ]
       },
-      "historyOnly": true
+      "category": "Equipment"
     },
     {
       "source": "b1-c26-p70",
@@ -97,7 +97,7 @@
           2
         ]
       },
-      "historyOnly": true
+      "category": "Equipment"
     },
     {
       "source": "b1-c37-p47",
@@ -432,8 +432,9 @@
       "action": "note",
       "quantity": 15,
       "unit": "cards",
-      "historyOnly": true,
-      "evidenceSentences": {}
+      "evidenceSentences": {},
+      "category": "Inventory",
+      "state": "carried"
     },
     {
       "source": "b7-c12-p9",
@@ -699,6 +700,16 @@
       "name": "Floating observed",
       "action": "note",
       "summary": "Imani is explicitly seen floating. This records the observation, not the unknown time of acquisition."
+    },
+    {
+      "source": "b7-c16-p57",
+      "type": "item",
+      "subject": "Imani C.",
+      "name": "Gloves",
+      "action": "equip",
+      "state": "equipped",
+      "category": "Equipment",
+      "summary": "Imani wears gloves while helping with the dream procedure. No magical bonus is stated."
     }
   ]
 }

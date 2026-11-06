@@ -1,0 +1,157 @@
+{
+  "scope": "Five randomly selected Book 7 chapters read end to end: 23, 32, 36, 48, 83. Observations do not imply exhaustive coverage.",
+  "events": [
+    {
+      "source": "b7-c23-p5",
+      "type": "story",
+      "subject": "Carl",
+      "name": "Titivated",
+      "action": "note",
+      "summary": "Carl receives Titivated, reducing projectile damage. The reduction is not quantified."
+    },
+    {
+      "source": "b7-c23-p53",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Enchanted earplugs",
+      "action": "equip",
+      "summary": "Carl puts in enchanted earplugs for the bombardment. Their protection is not quantified.",
+      "category": "Equipment",
+      "evidence": [
+        "b7-c23-p27"
+      ],
+      "effects": [
+        {
+          "id": "earplug-protection",
+          "kind": "benefit",
+          "target": "Hearing protection",
+          "operation": "grant"
+        }
+      ]
+    },
+    {
+      "source": "b7-c23-p61",
+      "type": "story",
+      "subject": "Carl",
+      "name": "Invisibility potion used",
+      "action": "note",
+      "summary": "Carl drinks an invisibility potion; this does not establish a learned spell."
+    },
+    {
+      "source": "b7-c23-p61",
+      "type": "story",
+      "subject": "Princess Donut",
+      "name": "Invisibility potion used",
+      "action": "note",
+      "summary": "Donut drinks an invisibility potion; this does not establish a learned spell."
+    },
+    {
+      "source": "b7-c23-p61",
+      "type": "story",
+      "subject": "Mongo",
+      "name": "Invisibility potion applied",
+      "action": "note",
+      "summary": "Carl applies an invisibility potion to Mongo."
+    },
+    {
+      "source": "b7-c32-p10",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Tiara of a Thousand Lights",
+      "action": "note",
+      "summary": "Donut uses Targeting, newly added to her crown. Its rank is unstated.",
+      "category": "Equipment",
+      "effects": [
+        {
+          "id": "tiara-targeting",
+          "kind": "skill",
+          "target": "Targeting",
+          "operation": "grant"
+        }
+      ]
+    },
+    {
+      "source": "b7-c32-p70",
+      "type": "level",
+      "subject": "Justice Light",
+      "name": "Character level",
+      "action": "set",
+      "summary": "Justice Light is confirmed at level 65.",
+      "level": 65
+    },
+    {
+      "source": "b7-c48-p2",
+      "type": "level",
+      "subject": "Bianca",
+      "name": "Character level",
+      "action": "set",
+      "summary": "Bianca is confirmed at level 70.",
+      "level": 70
+    },
+    {
+      "source": "b7-c48-p14",
+      "type": "story",
+      "subject": "Prepotente",
+      "name": "Recruited as Colonel",
+      "action": "note",
+      "summary": "Carl recruits Prepotente and assigns him the rank of Colonel.",
+      "evidence": [
+        "b7-c48-p7"
+      ]
+    },
+    {
+      "source": "b7-c48-p18",
+      "type": "item",
+      "subject": "Prepotente",
+      "name": "Enhanced Pet Biscuit",
+      "action": "note",
+      "summary": "Prepotente reports possessing several enhanced pet biscuits. Their exact count is unstated.",
+      "category": "Inventory"
+    },
+    {
+      "source": "b7-c83-p24",
+      "type": "item",
+      "subject": "Louis Santiago",
+      "name": "Donut Holes shirt",
+      "action": "equip",
+      "summary": "Louis is wearing a magical Donut Holes shirt. No stat bonus is stated.",
+      "category": "Equipment"
+    },
+    {
+      "source": "b7-c83-p47",
+      "type": "item",
+      "subject": "Samantha",
+      "name": "Nuclear bomb",
+      "action": "note",
+      "summary": "Samantha reports possessing a nuclear bomb stolen from Buster. Her plan to use it has not occurred.",
+      "category": "Inventory"
+    },
+    {
+      "source": "b7-c83-p48",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Nuclear bomb attached to robot dog",
+      "action": "note",
+      "summary": "Carl confirms possessing a nuclear bomb still attached to a robot dog.",
+      "category": "Inventory"
+    },
+    {
+      "source": "b7-c83-p49",
+      "type": "item",
+      "subject": "Carl",
+      "name": "Princess Lunette flesh-golem body",
+      "action": "note",
+      "summary": "Samantha identifies the flesh-golem body in Carl’s inventory as a possible donor; no transplant has occurred.",
+      "category": "Inventory"
+    },
+    {
+      "source": "b7-c83-p57",
+      "type": "item",
+      "subject": "Princess Donut",
+      "name": "Mordecai’s Special Brew",
+      "action": "note",
+      "summary": "Donut confirms that she still carries a Mordecai’s Special Brew. It has not been consumed in this observation.",
+      "category": "Inventory"
+    }
+  ]
+}

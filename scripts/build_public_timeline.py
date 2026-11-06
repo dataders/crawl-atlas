@@ -531,7 +531,9 @@ def main() -> None:
               + curated_audit_events(series_corpus, "book-8-audit.json", "b8-audit")
               + curated_audit_events(series_corpus, "imani-audit.json", "imani-audit"))
     for audit in ("strength-followup-audit", "int-dex-audit", "cha-followup-audit",
-                  "skill-followup-audit", "ally-skill-followup-audit", "estimated-stats-audit", "dexterity-deep-audit", "character-status-audit", "equipment-followup-audit", "late-progression-audit", "wiki-led-audit", "juice-box-audit", "ally-inventory-audit"):
+                  "skill-followup-audit", "ally-skill-followup-audit", "estimated-stats-audit", "dexterity-deep-audit", "character-status-audit", "equipment-followup-audit", "late-progression-audit", "wiki-led-audit", "juice-box-audit", "ally-inventory-audit",
+                  "allies-skills-inventory-audit", "secondary-skills-inventory-audit",
+                  "companions-skills-inventory-audit", "patch-effects-audit", "chapter-sweep-2026-11-06", "chapter-sweep-2026-11-06-batch-2", "chapter-sweep-2026-11-06-batch-3", "chapter-sweep-2026-11-06-book-7"):
         events.extend(curated_audit_events(series_corpus, audit + ".json", audit))
     from reward_provenance import apply_reward_audit
     events = apply_reward_audit(events, series_corpus)

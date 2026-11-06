@@ -9,6 +9,8 @@ from pathlib import Path
 import subprocess
 import tempfile
 import shutil
+from functools import lru_cache
+from copy import deepcopy
 from render_dossier_charts import observations, board_spec as stats_board
 from render_skill_charts import qualifying_rows, board_spec as skills_board
 
@@ -23,40 +25,34 @@ def dim_color(color):
 
 
 def character_order(series, facts, audit, cutoff):
-    """Rank revealed characters by distinct exact base-stat observations.
-
-    A first numeric measurement counts once; subsequent measurements count only
-    when that stat's value changes. Totals, bonuses, estimates and lower bounds
-    do not inflate this measure. No future observation affects the order.
-    """
+    """Rank by revealed updates; multiple metrics from one event count once."""
     canonical = lambda name: 'Princess Donut' if name == 'Donut' else name
     roster = {c['name'] for c in series['characters'] if c['name'] != 'Party'}
-    known = {canonical(r['character']) for r in facts if r['progress'] <= cutoff and canonical(r['character']) in roster}
-    known.update(canonical(e.get('subject')) for e in series['events']
-                 if e['progress'] <= cutoff and canonical(e.get('subject')) in roster)
-    counts, previous = {}, {}
-    for point in observations(facts, audit, series['books']):
-        if point['progress'] > cutoff or point['kind'] != 'base':
-            continue
-        value = point['value']
-        if isinstance(value, bool) or not isinstance(value, (int, float)):
-            continue
-        name = canonical(point['character'])
-        known.add(name)
-        key = (name, point['stat'])
-        if key not in previous or previous[key] != value:
-            counts[name] = counts.get(name, 0) + 1
-        previous[key] = value
-    return sorted(known & roster, key=lambda name: (-counts.get(name, 0), name.casefold()))
+    updates = {}
+    for event in series['events']:
+        name = canonical(event.get('subject'))
+        if event['progress'] <= cutoff and name in roster:
+            # One source scene/type/name is one update, even if multiple audits
+            # record it or its numeric facts have been expanded into rows.
+            updates.setdefault(name, set()).add((event.get('source', event.get('id', event['progress'])),
+                                                event.get('type'), event.get('name')))
+    return sorted(updates, key=lambda name: (-len(updates[name]), name.casefold()))
 
 
 def detail_rows(data_root, progress, character):
+    # Tabs share frozen data; callers may reshape rows for compact layouts.
+    return deepcopy(_detail_rows(data_root, progress, character))
+
+
+@lru_cache(maxsize=16)
+def _detail_rows(data_root, progress, character):
     """Use the same pure inventory/reward/history reducers as the reader."""
     javascript = r'''
 const fs = require('node:fs');
 const [root, dataRoot, cutoffText, character] = process.argv.slice(1);
 const cutoff = Number(cutoffText);
 const {inventoryAt,inventoryRecord,storyEntries} = require(root+'/site/dist/detail-model.js');
+const {equipmentEffectRows} = require(root+'/site/dist/equipment-effects.js');
 const {rewardRows,rewardRecord} = require(root+'/site/dist/rewards.js');
 const {dossierRecord,dossierEvents,isRecordedEquipped} = require(root+'/site/dist/board-details.js');
 const data = JSON.parse(fs.readFileSync(dataRoot+'/site/dist/data/series.json'));
@@ -66,6 +62,7 @@ const own = dossierEvents(visible,character);
 const items = inventoryAt(visible).filter(e=>e.subject===character||(character==='Princess Donut'&&e.subject==='Donut'));
 items.sort((a,b)=>(b.acquiredProgress??b.progress)-(a.acquiredProgress??a.progress));
 console.log(JSON.stringify({
+ effects:equipmentEffectRows(visible,character),
  inventory:items.map(e=>dossierRecord('inventory',inventoryRecord(e))),
  equipped:items.filter(isRecordedEquipped).map(e=>dossierRecord('inventory',inventoryRecord(e))),
  rewards:rewardRows(own,visible).sort((a,b)=>b.event.progress-a.event.progress).map(e=>dossierRecord('rewards',rewardRecord(e))),
@@ -140,9 +137,16 @@ def build(data_root, progress, character, tab, width):
         skill_spec=skills_board(skill_rows,books,width-40,counts)
         skill_spec['charts']['history']['style']['axis_x']=axis(books)
         overview.append(nested(skill_spec))
+    tables=detail_rows(data_root,progress,character)
+    if tables['effects']:
+        if width < 800:
+            tables['effects'] = [{'effect': r['effect'], 'source': r['from_item']+' · '+r['state']+' · '+r['observed']+((' · '+r['condition']) if r['condition']!='—' else '')} for r in tables['effects']]
+        overview.append({'queries':{'equipment_effects':{'type':'values','rows':tables['effects']}},
+                         'charts':{'equipment_effects':{'type':'table','query':'equipment_effects',
+                                  'title':'Equipment effects','style':{'pagination':{'page_rows':8}}}},
+                         'rows':['equipment_effects']})
     if not overview:
         overview=[{'text':'No stat or skill measurements recorded at this position.'}]
-    tables=detail_rows(data_root,progress,character)
     tabs = dossier['tabs']['items']
     tabs[0]['rows'] = overview
     gear_tabs = tabs[1]['rows'][0]['tabs']
@@ -157,7 +161,7 @@ def build(data_root, progress, character, tab, width):
             item['rows'][0]['queries'][name+'_entries']['rows'] = tables[name]
         else:
             item['rows'] = [{'text':'No entries recorded at this position.'}]
-    available = [item for i, item in enumerate(tabs) if (bool(points or skill_rows) if i == 0 else bool(tables[TABS[i]]))]
+    available = [item for i, item in enumerate(tabs) if (bool(points or skill_rows or tables['effects']) if i == 0 else bool(tables[TABS[i]]))]
     if available: dossier['tabs']['items'] = available
     dossier['title'] = character
     dossier['variables']['character'] = {'options':{'static':ordered_characters},'default':character,'required':True}

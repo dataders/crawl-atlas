@@ -1,0 +1,660 @@
+{
+  "booksReviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "scope": "Targeted eight-book review of ten recurring allies. Observations are dated when revealed, not assumed acquisition dates. Unknown skill ranks stay null. Unnamed abilities are story observations; summoned weapons and item summons are not invented trained skills.",
+  "knownGaps": [
+    "Not a complete inventory: the novels rarely expose full ally loadouts. Absence of a later mention is not proof of retention or loss.",
+    "Supplemental prose requires separate reveal-position mapping and is not published by this audit.",
+    "Figures and scrolls are not assumed to remain unused indefinitely; exact current quantities are usually unknown."
+  ],
+  "events": [
+    {
+      "source": "b5-c36-p15",
+      "type": "item",
+      "subject": "Elle McGib",
+      "name": "Anti-slip socks",
+      "summary": "Elle still wears her pre-dungeon anti-slip socks. No magical bonus is stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b5-c36-p15",
+      "type": "item",
+      "subject": "Elle McGib",
+      "name": "Wedding ring on a chain",
+      "summary": "Elle wears her gold wedding ring on a chain around her neck. No magical bonus is stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b6-c2-p186",
+      "type": "item",
+      "subject": "Elle McGib",
+      "name": "Ice staff",
+      "summary": "Carl reports that Elle received an ice staff. No name or numeric modifiers are given.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory"
+    },
+    {
+      "source": "b8-c37-p51",
+      "type": "skill",
+      "subject": "Elle McGib",
+      "name": "Ice Bolt",
+      "summary": "Elle casts an ice bolt at Akuma; the spell level is not stated.",
+      "action": "set",
+      "confidence": "verified",
+      "level": null,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b8-c48-p40",
+      "type": "story",
+      "subject": "Elle McGib",
+      "name": "Brain-freezing spell",
+      "summary": "Carl reports Elle has become proficient with a spell that freezes fluid around the brain. Its formal name and level are not stated.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b3-c32-p22",
+      "type": "item",
+      "subject": "Li Na",
+      "name": "White and red robe",
+      "summary": "Li Na wears a flowing white and red robe. No numeric item bonus is stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b3-c32-p22",
+      "type": "story",
+      "subject": "Li Na",
+      "name": "Chain combat abilities",
+      "summary": "Li Na uses multiple chains with fire, wind-blade, and immobilizing effects. The source does not establish which are physical inventory items versus manifested abilities.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b5-c36-p17",
+      "type": "story",
+      "subject": "Li Na",
+      "name": "Smoke transformation",
+      "summary": "Elle reports that Li Na can turn into smoke. No formal skill name or level is given.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b8-c61-p31",
+      "type": "skill",
+      "subject": "Li Na",
+      "name": "Deadly Bloom",
+      "summary": "Li Na has cast a dread trap on a cactus that normally releases paralyzing spores. Its level is not stated.",
+      "action": "set",
+      "confidence": "verified",
+      "level": null,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b7-c55-p71",
+      "type": "story",
+      "subject": "Li Na",
+      "name": "Multi-chain defensive skill",
+      "summary": "Li Na can control ten chains for about ninety seconds with a once-daily defensive skill. This observation does not establish a numeric rank.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b3-c32-p165",
+      "type": "story",
+      "subject": "Li Jun",
+      "name": "Glowing-hand combat buff",
+      "summary": "Li Jun casts a buff on his hands before striking a monster. The buff name and level are not stated.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c4-p62",
+      "type": "story",
+      "subject": "Li Jun",
+      "name": "Walk on Air taken",
+      "summary": "Carl recognizes Walk on Air as a skill taken from Li Jun after the loss of his eye. This is a retrospective observation, not a new skill acquisition.",
+      "action": "note",
+      "confidence": "verified",
+      "evidence": [
+        "b7-c4-p58"
+      ]
+    },
+    {
+      "source": "b7-c40-p56",
+      "type": "skill",
+      "subject": "Li Jun",
+      "name": "Walk on Air",
+      "summary": "Katia confirms Li Jun has regained Walk on Air by purchasing a book. Its restored level is not stated.",
+      "action": "set",
+      "confidence": "verified",
+      "level": null,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b3-c31-p8",
+      "type": "item",
+      "subject": "Zhang",
+      "name": "Black and gold segmented armor",
+      "summary": "Zhang is observed wearing glowing black and gold segmented armor. No numeric modifiers are stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b3-c32-p93",
+      "type": "skill",
+      "subject": "Zhang",
+      "name": "Dirt Clod",
+      "summary": "Zhang casts Dirt Clod to strike immobilized enemies with rocks.",
+      "action": "set",
+      "confidence": "verified",
+      "level": null,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b6-c64-p39",
+      "type": "item",
+      "subject": "Zhang",
+      "name": "Shrink wand (borrowed from Carl)",
+      "summary": "Carl lends Zhang his shrink wand for the demolition and escape work.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory"
+    },
+    {
+      "source": "b6-c72-p105",
+      "type": "item",
+      "subject": "Zhang",
+      "name": "Shrink wand (borrowed from Carl)",
+      "summary": "Zhang returns the borrowed shrink wand to Carl.",
+      "action": "remove",
+      "confidence": "verified",
+      "state": "no longer held",
+      "category": "Inventory"
+    },
+    {
+      "source": "b7-c57-p62",
+      "type": "item",
+      "subject": "Zhang",
+      "name": "Zhang's Cape of Odds",
+      "summary": "Zhang wears the celestial cape. While inactive it grants 15% to all stats and an equipment Dodge benefit.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b7-c57-p62",
+      "type": "skill",
+      "subject": "Zhang",
+      "name": "Dodge",
+      "summary": "His pre-cape Dodge level is explicitly stated as 11.",
+      "action": "set",
+      "confidence": "verified",
+      "level": 11,
+      "skillScope": "base"
+    },
+    {
+      "source": "b7-c57-p62",
+      "type": "skill",
+      "subject": "Zhang",
+      "name": "Dodge",
+      "summary": "His effective Dodge level with the cape is explicitly stated as 14.",
+      "action": "set",
+      "confidence": "verified",
+      "level": 14,
+      "skillScope": "effective"
+    },
+    {
+      "source": "b7-c57-p63",
+      "type": "skill",
+      "subject": "Zhang",
+      "name": "Roll the Dice",
+      "summary": "The equipped Cape of Odds grants a once-per-hour random-outcome ability. No rank is stated.",
+      "action": "set",
+      "confidence": "verified",
+      "level": null,
+      "skillScope": "equipment",
+      "evidence": [
+        "b7-c57-p62"
+      ]
+    },
+    {
+      "source": "b4-c6-p105",
+      "type": "item",
+      "subject": "Louis Santiago",
+      "name": "Bat",
+      "summary": "Louis strikes an enemy with his bat. No magical bonus is stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b4-c32-p155",
+      "type": "item",
+      "subject": "Louis Santiago",
+      "name": "Unidentified spellbook",
+      "summary": "Louis receives a spellbook; neither its spell nor whether he learns it is identified.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory"
+    },
+    {
+      "source": "b7-c50-p11",
+      "type": "story",
+      "subject": "Louis Santiago",
+      "name": "Poison-cloud spell",
+      "summary": "Louis uses a spell to fill the area around the stronghold with lethal poison. The spell name and rank are not stated.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b7-c84-p127",
+      "type": "item",
+      "subject": "Louis Santiago",
+      "name": "Rebreather implant",
+      "summary": "Mordecai installs a rebreather during surgery; Louis begins breathing through his new gills. No stat bonus is inferred.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment",
+      "evidence": [
+        "b7-c84-p121",
+        "b7-c84-p124"
+      ]
+    },
+    {
+      "source": "b3-c19-p11",
+      "type": "item",
+      "subject": "Bautista",
+      "name": "Voca Nye (purple variant)",
+      "summary": "Bautista reports using his last purple Voca Nye to stop an enemy spell. No remaining supply is implied.",
+      "action": "remove",
+      "confidence": "verified",
+      "state": "no longer held",
+      "category": "Inventory"
+    },
+    {
+      "source": "b3-c29-p19",
+      "type": "item",
+      "subject": "Bautista",
+      "name": "Stuffed monster figures",
+      "summary": "Bautista reports collecting over a thousand figures and using about forty. His remaining exact count is not established.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory"
+    },
+    {
+      "source": "b3-c29-p19",
+      "type": "item",
+      "subject": "Bautista",
+      "name": "Stuffed Grulke Infantry Figure",
+      "summary": "Bautista retains four Grulke figures after offering one to Carl; one has a differently colored hat.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory",
+      "quantity": 4,
+      "evidence": [
+        "b3-c29-p16"
+      ]
+    },
+    {
+      "source": "b3-c29-p31",
+      "type": "item",
+      "subject": "Bautista",
+      "name": "Glowing orange sword",
+      "summary": "Bautista carries a glowing orange sword on his belt. No numeric modifiers are stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b5-c36-p21",
+      "type": "story",
+      "subject": "Bautista",
+      "name": "Taming spell",
+      "summary": "Bautista reports using a taming spell on the summoned cat for the decoy. The exact spell title and rank are not specified.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b5-c36-p23",
+      "type": "item",
+      "subject": "Bautista",
+      "name": "Figure refresher kit",
+      "summary": "Bautista reports a sponsor-provided kit that allows two tag replacements on surviving summoned figures.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory"
+    },
+    {
+      "source": "b6-c2-p186",
+      "type": "item",
+      "subject": "Bautista",
+      "name": "Shape-changing ring",
+      "summary": "Carl reports that Bautista received a shape-changing ring. No numeric modifiers are stated.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory"
+    },
+    {
+      "source": "b6-c70-p20",
+      "type": "item",
+      "subject": "Bautista",
+      "name": "Shape-changing ring",
+      "summary": "Bautista uses the ring to transform into a large four-armed form.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment",
+      "evidence": [
+        "b6-c2-p186"
+      ]
+    },
+    {
+      "source": "b5-c63-p119",
+      "type": "skill",
+      "subject": "Britney",
+      "name": "Shield",
+      "summary": "Britney casts Shield. The source describes thirty seconds of protection and a four-hour cooldown, but no spell rank.",
+      "action": "set",
+      "confidence": "verified",
+      "level": null,
+      "skillScope": "reported",
+      "evidence": [
+        "b5-c63-p99"
+      ]
+    },
+    {
+      "source": "b5-c65-p12",
+      "type": "item",
+      "subject": "Britney",
+      "name": "Slate Butterfly jacket",
+      "summary": "Britney wears a jacket made from stuffed Slate Butterflies, intended for summoning the creatures.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment",
+      "evidence": [
+        "b5-c63-p76"
+      ]
+    },
+    {
+      "source": "b5-c74-p129",
+      "type": "story",
+      "subject": "Britney",
+      "name": "Slate Butterflies expended",
+      "summary": "The Slate Butterflies summoned from the jacket are struck by lightning and explode into stuffing. The remaining garment or supply is not inventoried.",
+      "action": "note",
+      "confidence": "verified",
+      "evidence": [
+        "b5-c74-p125",
+        "b5-c74-p127"
+      ]
+    },
+    {
+      "source": "b7-c7-p59",
+      "type": "item",
+      "subject": "Britney",
+      "name": "Elle fan-club underwear",
+      "summary": "Britney describes underwear granting 10% dexterity and enhancing berserking skills. No numeric skill rank is given.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b7-c10-p63",
+      "type": "item",
+      "subject": "Britney",
+      "name": "Hand mirror",
+      "summary": "Britney pulls a hand mirror from her inventory for Ferdinand.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory"
+    },
+    {
+      "source": "b4-c25-p65",
+      "type": "skill",
+      "subject": "Tran",
+      "name": "Pathfinder",
+      "summary": "Tran is explicitly identified as having Pathfinder.",
+      "action": "set",
+      "confidence": "verified",
+      "level": null,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b4-c25-p156",
+      "type": "skill",
+      "subject": "Tran",
+      "name": "Heal Others",
+      "summary": "Tran casts Heal Others on Vadim.",
+      "action": "set",
+      "confidence": "verified",
+      "level": null,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b4-c27-p73",
+      "type": "item",
+      "subject": "Tran",
+      "name": "Sword",
+      "summary": "Tran wields a sword while clearing the submerged passage. No numeric bonus is stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b4-c28-p69",
+      "type": "item",
+      "subject": "Tran",
+      "name": "Ring of Water Breathing",
+      "summary": "Tran receives the same water-breathing ring as Carl; it permits underwater breathing and imposes -1 Charisma when worn. Actual equipping is not stated.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory",
+      "evidence": [
+        "b4-c28-p66",
+        "b4-c28-p67",
+        "b4-c28-p68"
+      ]
+    },
+    {
+      "source": "b4-c32-p155",
+      "type": "item",
+      "subject": "Tran",
+      "name": "Scroll subscription",
+      "summary": "Tran receives a recurring scroll subscription. Individual scroll contents are not identified.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory"
+    },
+    {
+      "source": "b6-c22-p90",
+      "type": "item",
+      "subject": "Tran",
+      "name": "Magical wheelchair",
+      "summary": "Tran has a magical wheelchair that permits floating after losing his legs.",
+      "action": "note",
+      "confidence": "verified",
+      "state": "carried",
+      "category": "Inventory"
+    },
+    {
+      "source": "b7-c21-p85",
+      "type": "item",
+      "subject": "Tran",
+      "name": "Crab-leg battle armor",
+      "summary": "Tran wears an armored exoskeleton over his crab-leg mobility apparatus. The armor restricts carrying ranged weapons.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b7-c40-p46",
+      "type": "story",
+      "subject": "Tran",
+      "name": "Noodle-limb spell",
+      "summary": "Katia reports that Tran received a spell temporarily turning his arms and fingers into noodles. Its name and rank are not stated.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b1-c22-p20",
+      "type": "item",
+      "subject": "Chris",
+      "name": "Metal skullcap",
+      "summary": "Chris wears a metal skullcap. No magical bonus is stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b1-c26-p111",
+      "type": "story",
+      "subject": "Chris",
+      "name": "Conjured spear",
+      "summary": "Chris casts a spell creating an ethereal spear that lasts five minutes. Its name and rank are not stated; the spear is not treated as a carried item.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b1-c37-p42",
+      "type": "item",
+      "subject": "Chris",
+      "name": "Tuskling pig harness",
+      "summary": "Chris wears a leather pig harness while pulling the group. No numeric modifiers are stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b5-c36-p17",
+      "type": "story",
+      "subject": "Chris",
+      "name": "Burrowing",
+      "summary": "Elle reports Chris can burrow into the ground. No formal skill name or rank is given.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b6-c52-p41",
+      "type": "item",
+      "subject": "Dong Quixote",
+      "name": "Lance",
+      "summary": "Dong Quixote carries a lance while training. No magical bonus is stated.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b6-c64-p97",
+      "type": "item",
+      "subject": "Dong Quixote",
+      "name": "Jefferson the nickel sock",
+      "summary": "Carl hands Dong the nickel-sock weapon; Dong wields it and learns its name, Jefferson.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment",
+      "evidence": [
+        "b6-c64-p94",
+        "b6-c64-p95"
+      ]
+    },
+    {
+      "source": "b7-c20-p98",
+      "type": "item",
+      "subject": "Dong Quixote",
+      "name": "Jefferson the nickel sock",
+      "summary": "Dong Quixote holds the nickel-sock weapon across his lap in the gunner seat.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment",
+      "evidence": [
+        "b7-c2-p83"
+      ]
+    },
+    {
+      "source": "b7-c63-p38",
+      "type": "story",
+      "subject": "Dong Quixote",
+      "name": "Mounted on Gonk",
+      "summary": "Dong Quixote arrives riding Gonk, the large swamp yak. This does not establish ownership or a new riding-skill rank.",
+      "action": "note",
+      "confidence": "verified"
+    },
+    {
+      "source": "b8-c66-p81",
+      "type": "item",
+      "subject": "Dong Quixote",
+      "name": "Lance",
+      "summary": "Dong Quixote charges with his lance lowered and strikes the god of war. This confirms later use, not a newly acquired lance.",
+      "action": "equip",
+      "confidence": "verified",
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b6-c64-p95",
+      "type": "item",
+      "subject": "Dong Quixote",
+      "name": "Lance",
+      "action": "unequip",
+      "state": "carried",
+      "category": "Equipment",
+      "summary": "Dong puts his lance into inventory when he takes up the nickel sock.",
+      "confidence": "verified"
+    },
+    {
+      "source": "b8-c59-p40",
+      "type": "item",
+      "subject": "Dong Quixote",
+      "name": "Jefferson the nickel sock",
+      "action": "remove",
+      "state": "no longer held",
+      "category": "Equipment",
+      "summary": "Bucket Boy reports the sock teleported away after he took it to investigate Dong’s illness. Its new owner is unknown.",
+      "confidence": "verified"
+    }
+  ]
+}

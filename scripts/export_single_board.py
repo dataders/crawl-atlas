@@ -111,17 +111,19 @@ def main():
         for tab,points in tabs.items():
             for progress in ([1] if args.sample else points):
                 for width in (440,1360):jobs.append((str(args.data_root),str(args.output),person,tab,progress,width))
+    # Keep one character/checkpoint together to reuse its frozen detail rows.
+    jobs.sort(key=lambda job: (job[2], job[4], job[5], job[3]))
     print(f'{len(jobs)} whole-board states for {len(states)} characters',flush=True)
     if args.plan:return
     for directory in ('boards','board-assets','data'):(args.output/directory).mkdir(parents=True,exist_ok=True)
     manifest={'version':1,'renderer':'dbt-charts 0.11.1','complete':not args.sample,'characters':{},'books':data['books'],'series':data['series']}
     start=time.monotonic()
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
-        for i,(person,tab,progress,width,key) in enumerate(pool.map(export,jobs,chunksize=1),1):
+        for i,(person,tab,progress,width,key) in enumerate(pool.map(export,jobs,chunksize=10),1):
             manifest['characters'].setdefault(person,{}).setdefault(tab,{}).setdefault(width,[]).append({'progress':progress,'file':key})
             if i%50==0:print(f'{i}/{len(jobs)} states, {time.monotonic()-start:.0f}s',flush=True)
     source_inputs=['charts/reader.yml','scripts/build_single_board.py','scripts/export_single_board.py',
-        'scripts/render_dossier_charts.py','scripts/render_skill_charts.py','site/dist/detail-model.js',
+        'scripts/render_dossier_charts.py','scripts/render_skill_charts.py','site/dist/detail-model.js','site/dist/equipment-effects.js',
         'site/dist/board-details.js','site/dist/rewards.js','site/dist/static-reader.js']
     data_inputs=['site/dist/data/series.json','site/dist/data/progression.json','site/dist/data/floors.json','data/public/stat-breakdown-audit.json']
     manifest['inputs']={path:hashlib.sha256(((ROOT if path in source_inputs else args.data_root)/path).read_bytes()).hexdigest() for path in source_inputs+data_inputs}

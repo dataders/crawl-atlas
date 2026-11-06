@@ -39,6 +39,15 @@ def validate(path: Path, corpus_path: Path | None = None) -> int:
             assert row["confidence"] in CONFIDENCE_VALUES
             if "lifeStatus" in row:
                 assert row["lifeStatus"] in {"dead", "presumed-dead", "alive"}
+            effect_ids = [effect['id'] for effect in row.get('effects', [])]
+            assert len(effect_ids) == len(set(effect_ids)), 'duplicate effect id within item observation'
+            for effect in row.get('effects', []):
+                assert row['type'] == 'item'
+                assert effect['kind'] in {'stat', 'skill', 'benefit', 'rule'}
+                assert effect['target'] and effect['operation']
+                if effect['operation'] in {'add', 'multiply'}:
+                    assert isinstance(effect.get('value'), (int, float)) and not isinstance(effect['value'], bool)
+                    assert effect.get('unit') in {'points', 'percent', 'levels', 'times'}
             for boost in row.get("statBoosts", []):
                 assert boost["stat"] in {"STR", "INT", "CON", "DEX", "CHA", "ALL"}
                 assert boost["unit"] in {"points", "percent"}
