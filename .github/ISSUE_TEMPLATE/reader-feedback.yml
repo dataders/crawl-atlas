@@ -1,0 +1,29 @@
+name: Reader feedback
+description: Report a bug, suggest a feature, or correct a detail in Crawl Atlas.
+body:
+  - type: markdown
+    attributes:
+      value: Issues are public. Please keep spoilers out of the title.
+  - type: dropdown
+    id: category
+    attributes:
+      label: What would you like to report?
+      options:
+        - Bug
+        - Feature request
+        - Missing or incorrect information
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Book and chapter or reader link
+      description: For a correction, give the earliest place a reader can learn this detail.
+      placeholder: Book 2, chapter 7
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: For a bug, tell us what you did and what happened. For a feature, describe what you’d like to do. For a correction, summarize the detail in your own words.
+    validations:
+      required: true
