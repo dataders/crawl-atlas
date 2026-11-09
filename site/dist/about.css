@@ -20,3 +20,7 @@
   .topbar .brand {font-size:12px;gap:6px}
   #section-jump {width:80px}
 }
+.splash-book-note { display:none; }
+.choosing-position .splash-book-note { display:grid; gap:8px; color:var(--muted); font-size:14px; line-height:1.5; }
+.splash-book-note p { margin:0; }
+.splash-book-note a { color:var(--acid); text-decoration:underline; text-underline-offset:3px; }
