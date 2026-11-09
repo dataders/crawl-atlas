@@ -54,7 +54,7 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/crawl-atlas-pages/data"
           cp site/dist/index.html site/dist/styles.css site/dist/about.css site/dist/static-reader.js site/dist/CNAME "${RUNNER_TEMP}/crawl-atlas-pages/"
           cp site/dist/data/reader-board.json "${RUNNER_TEMP}/crawl-atlas-pages/data/"
-          cp -R site/dist/boards site/dist/board-assets "${RUNNER_TEMP}/crawl-atlas-pages/"
+          cp -R site/dist/branding site/dist/boards site/dist/board-assets "${RUNNER_TEMP}/crawl-atlas-pages/"
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4
