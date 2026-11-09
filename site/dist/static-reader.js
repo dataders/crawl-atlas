@@ -53,9 +53,22 @@
     // never leave later-book data displayed beneath an earlier reading position.
     frame.style.visibility='hidden';frame.setAttribute('aria-busy','true');
     try{
-      const response=await fetch(`boards/${checkpoint.file}.html.gz`);
-      if(!response.ok)throw Error('Could not load this board.');
-      const html=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).text();
+      let compressed;
+      if(document.documentElement.hasAttribute('data-packed-boards')){
+        const response=await fetch(`board-packs/${checkpoint.file.slice(0,3)}.bin`);
+        if(!response.ok)throw Error('Could not load this board.');
+        const bytes=new Uint8Array(await response.arrayBuffer());
+        const header=bytes.indexOf(10);
+        const entry=JSON.parse(new TextDecoder().decode(bytes.subarray(0,header)))[checkpoint.file];
+        if(!entry)throw Error('The board was updated. Reload to view this reading position.');
+        const start=header+1+entry[0];
+        compressed=new Blob([bytes.subarray(start,start+entry[1])]).stream();
+      }else{
+        const response=await fetch(`boards/${checkpoint.file}.html.gz`);
+        if(!response.ok)throw Error('Could not load this board.');
+        compressed=response.body;
+      }
+      const html=await new Response(compressed.pipeThrough(new DecompressionStream('gzip'))).text();
       if(token!==request)return;
       const base=new URL('boards/',location.href).href;
       assignedRequest=token;

@@ -9,6 +9,7 @@ on:
       - "scripts/build_single_board.py"
       - "scripts/export_single_board.py"
       - "scripts/check_single_board.py"
+      - "scripts/pack_reader_boards.py"
       - "charts/reader.yml"
       - "scripts/render_reader_charts.py"
       - "scripts/render_dossier_charts.py"
@@ -57,7 +58,9 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/crawl-atlas-pages/charts/compact"
           cp site/dist/charts/spoiler-free-*.html "${RUNNER_TEMP}/crawl-atlas-pages/charts/"
           cp site/dist/charts/compact/spoiler-free-*.html "${RUNNER_TEMP}/crawl-atlas-pages/charts/compact/"
-          cp -R site/dist/branding site/dist/boards site/dist/board-assets "${RUNNER_TEMP}/crawl-atlas-pages/"
+          cp -R site/dist/branding site/dist/board-assets "${RUNNER_TEMP}/crawl-atlas-pages/"
+          uv run python scripts/pack_reader_boards.py site/dist/boards "${RUNNER_TEMP}/crawl-atlas-pages/board-packs"
+          sed -i 's/<html /<html data-packed-boards /' "${RUNNER_TEMP}/crawl-atlas-pages/index.html"
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4
