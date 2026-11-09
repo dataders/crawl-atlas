@@ -43,36 +43,38 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 4.184322,1,20,75.0,Carl,Explosives Handling,5,,Carl confirms level 5 while inspecting the smoke bomb.,b1-c20-p105
 4.290254,1,21,25.0,Carl,Chopper Pilot,5,Sustained driving raises Chopper Pilot to level 5.,Sustained driving raises Chopper Pilot to level 5.,b1-c21-p13
 4.774011,1,23,53.33,Princess Donut,Magic Missile,5,Magic Missile reaches level 5; narration again shows Donut at 24 Intelligence.,Magic Missile reaches level 5; narration again shows Donut at 24 Intelligence.,b1-c23-p24
-5.134272,1,25,23.38,Princess Donut,Puddle Jumper,,Donut reads a tome; Mordecai identifies the newly learned teleport spell as Puddle Jumper.,Donut reads a tome; Mordecai identifies the newly learned teleport spell as Puddle Jumper.,b1-c25-p18
+5.139775,1,25,25.97,Princess Donut,Puddle Jumper,,Donut learned the spell by reading her Bronze Boss Box tome.,Mordecai identifies Donut’s new spell as Puddle Jumper.,b1-c25-p20
 5.150781,1,25,31.17,Princess Donut,Dodge,4,Mordecai's fight review confirms Donut had Strength 18 and Dodge level 4.,Mordecai's fight review confirms Donut had Strength 18 and Dodge level 4.,b1-c25-p24
-5.20306,1,25,55.84,Carl,Pugilism,6,"Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.","Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.",b1-c25-p43
-5.20306,1,25,55.84,Carl,Unarmed Combat,6,"Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.","Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.",b1-c25-p43
-5.20306,1,25,55.84,Carl,Foot Soldier,6,"Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.","Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.",b1-c25-p43
+5.20306,1,25,55.84,Carl,Bare Knuckle,6,,Carl explicitly reports his Bare Knuckle skill reaching level 6.,b1-c25-p43
+5.20306,1,25,55.84,Carl,Pugilism,6,"Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.",Carl says his fighting skills rose to 6. Identification of this individual skill follows the previously described group.,b1-c25-p43
+5.20306,1,25,55.84,Carl,Unarmed Combat,6,"Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.",Carl says his fighting skills rose to 6. Identification of this individual skill follows the previously described group.,b1-c25-p43
+5.20306,1,25,55.84,Carl,Foot Soldier,6,"Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.",Carl says his fighting skills rose to 6. Identification of this individual skill follows the previously described group.,b1-c25-p43
 5.20306,1,25,55.84,Carl,Smush,6,"Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.","Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.",b1-c25-p43
 5.20306,1,25,55.84,Carl,Iron Punch,5,"Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.","Carl says his bare-knuckle and other fighting skills, including Smush, reached 6; Iron Punch reached 5. Named level-6 skills follow the previously established four-skill set.",b1-c25-p43
 5.238829,1,25,72.73,Carl,Determine Value,2,A second Determine Value potion raises the skill to level 2.,A second Determine Value potion raises the skill to level 2.,b1-c25-p56
-5.252586,1,25,79.22,Carl,Iron Punch,,The equipped gauntlet adds two Iron Punch levels and one Powerful Strike level; effective totals use the latest explicit bases.,The equipped gauntlet adds two Iron Punch levels and one Powerful Strike level; effective totals use the latest explicit bases.,b1-c25-p61
-5.252586,1,25,79.22,Carl,Powerful Strike,,The equipped gauntlet adds two Iron Punch levels and one Powerful Strike level; effective totals use the latest explicit bases.,The equipped gauntlet adds two Iron Punch levels and one Powerful Strike level; effective totals use the latest explicit bases.,b1-c25-p61
+5.269095,1,25,87.01,Carl,Iron Punch,,The equipped gauntlet adds 2 to Iron Punch.,The equipped gauntlet adds 2 to Iron Punch.,b1-c25-p67
+5.269095,1,25,87.01,Carl,Powerful Strike,,The equipped gauntlet adds 1 to Powerful Strike.,The equipped gauntlet adds 1 to Powerful Strike.,b1-c25-p67
 6.305338,1,30,76.12,Carl,Pugilism,10,"A Cheat Code Potion permanently adds three levels, bringing Pugilism to level 10.","A Cheat Code Potion permanently adds three levels, bringing Pugilism to level 10.",b1-c30-p102
-6.324311,1,30,85.07,Carl,Smush,,The pedicure-kit buff temporarily adds three Smush levels for 30 hours.,The pedicure-kit buff temporarily adds three Smush levels for 30 hours.,b1-c30-p114
-6.33854,1,30,91.79,Princess Donut,Second Chance,1,Donut reads her mailed spellbook and identifies the new necromancy spell as Second Chance level 1.,Donut reads her mailed spellbook and identifies the new necromancy spell as Second Chance level 1.,b1-c30-p123
 6.343284,1,30,94.03,Princess Donut,Heal,,Carl's inventory of Donut's known spells confirms she has the universal starter Heal spell; its acquisition moment and level are not separately shown.,Carl's inventory of Donut's known spells confirms she has the universal starter Heal spell; its acquisition moment and level are not separately shown.,b1-c30-p126
+6.344865,1,30,94.78,Princess Donut,Second Chance,1,Donut reads her mailed spellbook and identifies the new necromancy spell as Second Chance level 1.,Donut identifies the spell as level 1 Second Chance. It costs ten mana and revives a lower-level monster for one minute per spell level.,b1-c30-p127
+6.587887,1,32,9.48,Carl,Smush,,The kit requires bare feet.,Using the pedicure kit activates a temporary three-level Smush bonus for 30 hours.,b1-c32-p11
 6.660944,1,32,43.97,Carl,Slingshot,3,Practice raises Carl's Slingshot skill to level 3.,Practice raises Carl's Slingshot skill to level 3.,b1-c32-p51
 6.66277,1,32,44.83,Princess Donut,Second Chance,3,Repeated use raises Second Chance to level 3.,Repeated use raises Second Chance to level 3.,b1-c32-p52
 6.73948,1,32,81.03,Carl,Incendiary Device Handling,5,Creating the first Carl's Jug O' Boom makes Incendiary Device Handling jump to level 5.,Creating the first Carl's Jug O' Boom makes Incendiary Device Handling jump to level 5.,b1-c32-p94
 6.75957,1,32,90.52,Carl,Aiming,,Carl receives Aiming and Steady Hand without displayed levels; Donut's Second Chance reaches level 4.,Carl receives Aiming and Steady Hand without displayed levels; Donut's Second Chance reaches level 4.,b1-c32-p105
 6.75957,1,32,90.52,Carl,Steady Hand,,Carl receives Aiming and Steady Hand without displayed levels; Donut's Second Chance reaches level 4.,Carl receives Aiming and Steady Hand without displayed levels; Donut's Second Chance reaches level 4.,b1-c32-p105
 6.75957,1,32,90.52,Princess Donut,Second Chance,4,Carl receives Aiming and Steady Hand without displayed levels; Donut's Second Chance reaches level 4.,Carl receives Aiming and Steady Hand without displayed levels; Donut's Second Chance reaches level 4.,b1-c32-p105
+6.905924,1,33,59.6,Carl,Slingshot,3,,Carl checks his skills after the fight. Slingshot is still rank three.,b1-c33-p59
 6.905924,1,33,59.6,Carl,Aiming,4,Aiming rises to level 4 while Slingshot remains at 3.,Aiming rises to level 4 while Slingshot remains at 3.,b1-c33-p59
 7.361359,1,35,74.56,Carl,IED,7,"Creating Carl's Jug O' Boom raises IED, Explosives Handling, and several unnamed explosive skills to level 7.","Creating Carl's Jug O' Boom raises IED, Explosives Handling, and several unnamed explosive skills to level 7.",b1-c35-p85
 7.361359,1,35,74.56,Carl,Explosives Handling,7,"Creating Carl's Jug O' Boom raises IED, Explosives Handling, and several unnamed explosive skills to level 7.","Creating Carl's Jug O' Boom raises IED, Explosives Handling, and several unnamed explosive skills to level 7.",b1-c35-p85
 7.361359,1,35,74.56,Carl,Other explosives-based skills,7,"Creating Carl's Jug O' Boom raises IED, Explosives Handling, and several unnamed explosive skills to level 7.","Creating Carl's Jug O' Boom raises IED, Explosives Handling, and several unnamed explosive skills to level 7.",b1-c35-p85
-7.389236,1,35,87.72,Carl,Protective Shell,15,Equipping the boxers adds two Constitution to Carl's last displayed 12 and grants item-bound access to level-15 Protective Shell.,Equipping the boxers adds two Constitution to Carl's last displayed 12 and grants item-bound access to level-15 Protective Shell.,b1-c35-p100
+7.392953,1,35,89.47,Carl,Protective Shell,15,Item-bound access.,Equipping the boxers grants rank-15 Protective Shell.,b1-c35-p102
 8.618026,1,41,67.71,Carl,Most bomb-themed skills,9,"Most bomb skills reach level 9, and Carl gains unnamed mechanic and construction skills.","Most bomb skills reach level 9, and Carl gains unnamed mechanic and construction skills.",b1-c41-p65
 8.618026,1,41,67.71,Carl,Mechanic-themed skills,,"Most bomb skills reach level 9, and Carl gains unnamed mechanic and construction skills.","Most bomb skills reach level 9, and Carl gains unnamed mechanic and construction skills.",b1-c41-p65
 8.618026,1,41,67.71,Carl,Construction-themed skills,,"Most bomb skills reach level 9, and Carl gains unnamed mechanic and construction skills.","Most bomb skills reach level 9, and Carl gains unnamed mechanic and construction skills.",b1-c41-p65
 9.09129,1,43,91.09,Frank Q,Find Crawler,,,The Maestro identifies Frank’s Find Crawler skill. Its current rank is not stated; the offered potion’s potential upgrade is not an observed rank.,b1-c43-p92
-9.39821,1,45,35.96,Princess Donut,Second Chance,5,"Second Chance reaches level 5, extending reanimation duration and eligible target level.","Second Chance reaches level 5, extending reanimation duration and eligible target level.",b1-c45-p32
+9.39821,1,45,35.96,Princess Donut,Second Chance,5,"At rank 5, Second Chance costs 10 mana and reanimates a corpse for ten minutes. Donut can apparently target monsters up to five levels above her.","At rank 5, Second Chance costs 10 mana and reanimates a corpse for ten minutes. Donut can apparently target monsters up to five levels above her.",b1-c45-p32
 9.754652,1,47,4.2,Carl,Slingshot,5,Training raises Carl's Slingshot to 5 and Donut's Magic Missile to 8.,Training raises Carl's Slingshot to 5 and Donut's Magic Missile to 8.,b1-c47-p6
 9.754652,1,47,4.2,Princess Donut,Magic Missile,8,Training raises Carl's Slingshot to 5 and Donut's Magic Missile to 8.,Training raises Carl's Slingshot to 5 and Donut's Magic Missile to 8.,b1-c47-p6
 9.76206,1,47,7.69,Carl,Determine Value,3,"Carl drinks a third Determine Value potion; the previously explicit potion rule adds one level, and a history-sort ability appears.","Carl drinks a third Determine Value potion; the previously explicit potion rule adds one level, and a history-sort ability appears.",b1-c47-p11
@@ -101,6 +103,7 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 14.307357,2,21,53.07,Katia Grim,Gear Head,,,Katia identifies Gear Head as her acquired Earth Hobby skill. Its level is unstated.,b2-c21-p95
 14.399678,2,21,96.65,Mongo,Pounce,,,Donut explicitly identifies Mongo as having a Pounce ability; no level is stated.,b2-c21-p173
 15.177681,2,25,63.87,Katia Grim,Rush,,"Explicitly confirmed in Book 2, Chapter 25.",Katia Grim's Rush is explicitly confirmed.,b2-c25-p76
+15.317912,3,1,30.05,Princess Donut,Negotiation,4,,"The expired class originally granted Negotiation 5, which Donut trained to 7. Her retained training leaves her at level 4.",b3-c1-p55
 15.323701,3,1,32.79,Katia Grim,Pathfinder,,"Explicitly confirmed in Book 3, Chapter 1.",Katia Grim's Pathfinder is explicitly confirmed.,b3-c1-p60
 15.567569,3,2,47.89,Carl,Talon Strike,5,,"Carl equips the necklace granting Talon Strike at level 5. This is an item-granted level, not a trained base level.",b3-c2-p125
 15.769257,3,3,43.09,Katia Grim,Catcher,,"Explicitly confirmed in Book 3, Chapter 3.",Katia Grim's Catcher is explicitly confirmed.,b3-c3-p53
@@ -108,17 +111,20 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 16.983377,3,9,16.15,Imani C.,Juiced,,Observed effect name; ability level unstated.,Imani’s wing contact applies a temporary 10% Strength buff.,b3-c9-p21
 16.985007,3,9,16.92,Imani C.,Shrouded,,Observed effect name; ability level unstated.,Imani’s wing contact applies temporary 10% damage reduction.,b3-c9-p22
 16.986636,3,9,17.69,Imani C.,Trolled,,Observed effect name; ability level unstated.,Imani’s wing contact accelerates healing by 25% temporarily.,b3-c9-p23
+17.151239,3,9,95.38,Carl,Powerful Strike,7,,Carl has trained Powerful Strike to level 7.,b3-c9-p124
+17.151239,3,9,95.38,Carl,Powerful Strike,13,,"The upgraded ring adds five levels and his gauntlet adds one, raising Powerful Strike to 13.",b3-c9-p124
 17.189537,3,10,13.46,Katia Grim,Walk in Their Shoes,,,Katia describes her Walk in Their Shoes ability and its appearance-matching requirement. Its level is unstated.,b3-c10-p7
 17.238429,3,10,36.54,Carl,Bare Knuckle,9,,Carl raises Bare Knuckle to level 9 in training.,b3-c10-p19
 17.238429,3,10,36.54,Princess Donut,Dodge,7,,Donut trains Dodge to level 7.,b3-c10-p19
 18.321528,3,15,47.76,Princess Donut,Love Vampire,,,Donut names the ability she selected after reaching the Charisma milestone. No numeric ability rank is stated.,b3-c15-p64
-20.424544,3,25,40.38,Katia Grim,Find Crawler,3,"Explicitly confirmed in Book 3, Chapter 25.",Katia Grim's Find Crawler is explicitly confirmed at level 3.,b3-c25-p63
+20.424544,3,25,40.38,Katia Grim,Find Crawler,3,"Explicitly confirmed in Book 3, Chapter 25.",Katia drinks the potion in her Gold Savage Box and learns Find Crawler 3. It locates nearby crawlers on her map.,b3-c25-p63
 20.873555,3,27,52.32,Carl,Explosives Handling,11,,Carl reports that his Explosives Handling skill rose to level 11.,b3-c27-p79
 21.283026,3,29,45.59,Katia Grim,Crowd Blast,,"Explicitly confirmed in Book 3, Chapter 29.",Katia Grim's Crowd Blast is explicitly confirmed.,b3-c29-p62
 21.427966,3,30,14.0,Princess Donut,Love Vampire,,,Donut reports using Love Vampire after passing 100 CHA. The casts did not trigger its effect.,b3-c30-p14
 21.640436,3,31,14.29,Imani C.,Wing-contact constitution buff,,Descriptive label; formal ability name unknown.,Imani’s wings grant a non-stacking Constitution buff lasting ten minutes; its magnitude is unstated.,b3-c31-p20
 21.784201,3,31,82.14,Imani C.,Acid neutralization,,Descriptive label; formal ability name unknown.,Imani casts an unnamed effect that negates acid affecting nearby allies.,b3-c31-p115
 21.927966,3,32,50.0,Zhang,Dirt Clod,,,Zhang casts Dirt Clod to strike immobilized enemies with rocks.,b3-c32-p93
+22.749712,4,2,37.86,Princess Donut,Wall of Fire,,,Donut reads the tome and learns Wall of Fire.,b4-c2-p78
 22.75074,4,2,38.35,Katia Grim,Catcher,11,"Explicitly confirmed in Book 4, Chapter 2.",Katia Grim's Catcher is explicitly confirmed at level 11.,b4-c2-p79
 22.81142,4,2,66.99,Elle McGib,Graupel,,,Elle reports receiving a spellbook for Graupel. She has yet to try the spell.,b4-c2-p138
 23.317547,4,5,5.88,Juice Box,Shapeshifting,,,Juice Box changes between Ratkin and Mouser forms. This describes an observed ability; no numeric skill level is stated.,b4-c5-p7
@@ -126,13 +132,17 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 23.465318,4,5,75.63,Louis Santiago,Cloud of Exhaust,11,"Explicitly confirmed in Book 4, Chapter 5.",Louis Santiago's Cloud of Exhaust is explicitly confirmed at level 11.,b4-c5-p90
 23.548247,4,6,14.77,Firas M,Puddle Jumper,10,,Firas’s Puddle Jumper is explicitly reported at rank 10.,b4-c6-p26
 23.548247,4,6,14.77,Princess Donut,Puddle Jumper,6,,Carl compares Donut’s level 6 Puddle Jumper to Firas’s higher rank.,b4-c6-p26
+24.725061,4,11,70.23,Princess Donut,Second Chance,10,,Carl reports Second Chance rank 10. Glass Cannon doubles its reanimation duration and eligible level gap.,b4-c11-p92
 25.199024,4,13,93.94,Princess Donut,Animal Wrangling,8,,A skill potion raises Donut’s Animal Wrangling to level 8.,b4-c13-p155
+26.075831,4,18,7.79,Carl,Infusion,3,,Infusion rises to rank 3.,b4-c18-p12
 27.62738,4,25,40.12,Tran,Pathfinder,,,Tran is explicitly identified as having Pathfinder.,b4-c25-p65
 27.74639,4,25,96.3,Tran,Heal Others,,,Tran casts Heal Others on Vadim.,b4-c25-p156
 29.194697,4,32,79.9,Katia Grim,Hanzo,,"Explicitly confirmed in Book 4, Chapter 32.",Katia Grim's Hanzo is explicitly confirmed.,b4-c32-p155
+29.218723,4,32,91.24,Carl,Ping,,,The tome from Carl’s Platinum Quest Box teaches Ping. The opening gives no rank.,b4-c32-p177
 29.566622,4,34,55.45,Juice Box,Buried-creature detection (buzz-ard form),,,Juice Box uses the buzz-ard form's hunting ability to find creatures hidden in sand. This is a borrowed form-specific ability; no numeric level is given.,b4-c34-p168
 29.768139,5,1,50.56,Princess Donut,Character Actor,6,,Mordecai reports that Donut’s Character Actor skill has reached level 6.,b5-c1-p90
 29.840745,5,1,84.83,Carl,Unarmed Combat,9,,Carl reports Unarmed Combat at level 9 while considering class options.,b5-c1-p151
+30.257647,5,3,81.61,Katia Grim,Find Crawler,,,The same box upgrades Katia’s Find Crawler. The new rank is unstated.,b5-c3-p71
 30.29174,5,3,97.7,Princess Donut,Standing Ovation,,,Donut discusses the melody for her Standing Ovation spell; its level is unstated.,b5-c3-p85
 30.381356,5,4,40.0,Princess Donut,Laundry Day,,,Donut receives Laundry Day from a spellbook. The rank she learns is unstated.,b5-c4-p22
 30.385208,5,4,41.82,Carl,Fear,5,,Carl reports that his Fear spell remains at level 5.,b5-c4-p23
@@ -143,6 +153,7 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 34.662859,5,24,60.87,Princess Donut,Torch,13,,Donut casts Torch at its reported level of 13.,b5-c24-p42
 36.34887,5,32,56.67,Carl,Powerful Strike,10,,Carl trains Powerful Strike from rank 9 to 10.,b5-c32-p51
 36.353578,5,32,58.89,Carl,Powerful Strike,15,,The training display shows Powerful Strike at 15 with Carl’s bonuses.,b5-c32-p53
+36.926336,5,35,29.23,Carl,Marked for Death,,,The ring’s skill increases between the second and third kill. The new rank is unstated.,b5-c35-p38
 38.797024,5,44,12.2,Miriam Dom,Revive,,,Miriam reports repeatedly casting her Revive spell. Its rank is not stated.,b5-c44-p15
 39.128329,5,45,68.57,Tserendolgor,Ultraviolet,,,Ren reports casting Ultraviolet on her flamethrower. Its rank is not stated.,b5-c45-p48
 39.457627,5,47,24.0,Princess Donut,Get Out of Jail,,,"Donut learns Get Out of Jail from Miriam’s spellbook. The stated forty points are casting cost, not skill rank.",b5-c47-p30
@@ -157,6 +168,8 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 45.653249,6,1,48.33,Princess Donut,Brain Freeze,,,Donut reports gaining Brain Freeze. Its level is unstated.,b6-c1-p58
 45.653249,6,1,48.33,Princess Donut,Venom Spitter,3,,Donut confirms she retains Venom Spitter at level 3.,b6-c1-p58
 45.653249,6,1,48.33,Princess Donut,Why Are You Hitting Yourself,,,Donut reports gaining Why Are You Hitting Yourself. Its level is unstated.,b6-c1-p58
+45.899148,6,2,64.4,Princess Donut,Love Vampire,6,,The skill potion raises Love Vampire from rank three to six.,b6-c2-p123
+45.900257,6,2,64.92,Princess Donut,Rigorous,,,Donut reads the prize-counter spellbook and learns the team buff Rigorous. Its rank is unstated.,b6-c2-p124
 45.963484,6,2,94.76,Princess Donut,Laundry Day,15,,Mordecai identifies Donut’s Laundry Day as level 15.,b6-c2-p181
 45.965702,6,2,95.81,Princess Donut,Legionnaires of the Damned,,,Donut applies the spellbook and learns Legionnaires of the Damned. Its level is unstated.,b6-c2-p183
 50.703005,6,25,31.82,Princess Donut,Hole,,,Donut casts Hole during the crab capture. No numeric spell rank is given.,b6-c25-p28
@@ -164,6 +177,7 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 53.904641,6,40,42.99,Carl,Smush,12,,Carl explicitly gives his unmodified Smush rank as 12.,b6-c40-p46
 53.904641,6,40,42.99,Carl,Smush,14,,"The display with the pedicure bonus shows 14. The stated bonus is three levels, but the resulting display is below 15.",b6-c40-p46
 54.34816,6,42,52.33,Carl,Fear,11,,Carl casts Fear at level 11.,b6-c42-p101
+55.633738,6,48,59.12,Carl,Wand-casting,5,,The dungeon raises Carl’s wand-casting skill to five.,b6-c48-p81
 55.995446,6,50,29.85,Carl,Find Crawler,5,,Carl identifies Find Crawler as a level 5 skill.,b6-c50-p20
 57.055932,6,55,30.4,Samantha,Spell amplification (unnamed),,,"Carl confirms that Samantha can amplify spells, after earlier failed attempts to elicit the ability. No formal skill name or level is supplied.",b6-c55-p38
 58.438048,6,61,82.76,Carl,Super Spreader,,,Carl confirms he can use Super Spreader on one person per hour. No rank is stated.,b6-c61-p96
@@ -175,10 +189,12 @@ series_progress,book,chapter,chapter_position,character,skill,level,detail,summa
 61.387712,7,3,75.0,Princess Donut,Torch,14,,Donut’s Torch is level 14 while the party considers which spell to improve.,b7-c3-p99
 63.895813,7,15,58.82,Princess Donut,Bad Attitude,15,,Donut casts her newly improved Bad Attitude at level 15.,b7-c15-p90
 65.556456,7,23,42.65,Imani C.,Total Ear Protection,,,Imani casts Total Ear Protection on Donut and Mongo.,b7-c23-p29
+69.192267,7,40,58.75,Carl,"Run, Little Günter, Run",5,,Carl learns the spell from a special-edition book that starts its user at level 5.,b7-c40-p47
 69.216102,7,40,70.0,Li Jun,Walk on Air,,,Katia confirms Li Jun has regained Walk on Air by purchasing a book. Its restored level is not stated.,b7-c40-p56
 70.698396,7,47,69.64,Imani C.,Tripper,,Temporary tattoo grant; exact level not stated.,Imani confirms using Carl’s Tripper through Katia’s tattoo; her exact spell level is unstated.,b7-c47-p39
 70.724879,7,47,82.14,Carl,Tripper,15,,Carl’s bandana supplies the level 15 version of Tripper.,b7-c47-p46
 70.728662,7,47,83.93,Carl,Tripper,7,,Carl removes the bandana and finds that his own Tripper spell is level 7.,b7-c47-p47
+70.732446,7,47,85.71,Carl,Tripper,1,,Carl temporarily loses six of his seven intrinsic Tripper levels when he shares the spell with Imani.,b7-c47-p48
 70.736229,7,47,87.5,Imani C.,Tripper,,Temporary and fading over four days; later expiry time is not recorded.,The tattoo-granted Tripper loses potency as Carl’s source spell recovers over four days. It can later be recharged with another potion.,b7-c47-p49
 71.604229,7,51,97.2,Li Na,Defile Soul,,,Li Na reports using Defile Soul. Its rank is unstated.,b7-c51-p104
 71.604229,7,51,97.2,Li Na,Dark Purpose,15,"Explicitly confirmed in Book 7, Chapter 51.",Li Na's Dark Purpose is explicitly confirmed at level 15.,b7-c51-p104

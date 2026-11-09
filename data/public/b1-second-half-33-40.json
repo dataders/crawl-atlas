@@ -1,0 +1,1390 @@
+{
+  "scope": "Book 1 chapters 33–40. Observations appear at the paragraph that establishes them.",
+  "characters": [
+    {
+      "id": "jack",
+      "name": "Jack",
+      "role": "Meadow Lark resident",
+      "group": "other",
+      "color": "#ac9886"
+    },
+    {
+      "id": "randall",
+      "name": "Randall",
+      "role": "Meadow Lark resident",
+      "group": "other",
+      "color": "#9a80a2"
+    }
+  ],
+  "events": [
+    {
+      "source": "b1-c33-p3",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Puddle Jumper cost",
+      "summary": "Donut has 26 mana available. Casting Puddle Jumper costs 20 mana and starts a five-hour cooldown.",
+      "action": "note",
+      "evidence": [
+        "b1-c33-p2"
+      ]
+    },
+    {
+      "source": "b1-c33-p9",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Puddle Jumper cast",
+      "summary": "Donut teleports into the filling room alone.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c33-p38",
+      "subject": "Party",
+      "type": "story",
+      "name": "Laminak consultants",
+      "summary": "Donut introduces the two consultants as Caroline and Max.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c33-p41",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Carl's Jug O' Boom",
+      "summary": "Carl expends two jugs.",
+      "action": "remove",
+      "category": "Inventory",
+      "quantity": 2
+    },
+    {
+      "source": "b1-c33-p45",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Potion of Healing",
+      "summary": "Carl takes a healing potion after a Magic Missile hits him.",
+      "action": "consume",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c33-p56",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Laminak consultants defeated",
+      "summary": "Donut kills both fairy consultants. The passage does not distinguish their names by kill order.",
+      "action": "note",
+      "evidence": [
+        "b1-c33-p42"
+      ]
+    },
+    {
+      "source": "b1-c33-p58",
+      "subject": "Princess Donut",
+      "type": "level",
+      "name": "Character level",
+      "summary": "Donut says she has also reached level eleven immediately after Carl reports his own level.",
+      "action": "set",
+      "level": 11
+    },
+    {
+      "source": "b1-c33-p59",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Slingshot",
+      "summary": "Carl checks his skills after the fight. Slingshot is still rank three.",
+      "action": "set",
+      "level": 3,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b1-c33-p76",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Hobgoblin Detonator",
+      "summary": "Carl reports that one detonator remains.",
+      "action": "note",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c33-p78",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Rev-Up Smoothies banner",
+      "summary": "Carl puts the cloth banner into his inventory.",
+      "action": "add",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c33-p97",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Wait, Bosses Can Leave Their Rooms?",
+      "summary": "Carl receives an achievement when the boss reaches outside its chamber.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Wait, Bosses Can Leave Their Rooms?"
+      }
+    },
+    {
+      "source": "b1-c34-p3",
+      "subject": "Party",
+      "type": "story",
+      "name": "Krakaren identified",
+      "summary": "The attacking creature is identified as a level-ten neighborhood boss and a Krakaren clone.",
+      "action": "note",
+      "evidence": [
+        "b1-c34-p2"
+      ]
+    },
+    {
+      "source": "b1-c34-p27",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Taint",
+      "summary": "The Taint debuff takes effect.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c34-p33",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Rev-Up Immunity Smoothie",
+      "summary": "Carl finishes a single bottle containing ten doses.",
+      "action": "add",
+      "category": "Consumable",
+      "quantity": 10,
+      "unit": "doses"
+    },
+    {
+      "source": "b1-c34-p37",
+      "subject": "Carl",
+      "type": "stat",
+      "name": "Buzzed",
+      "summary": "The smoothie temporarily adds three Charisma and subtracts one Dexterity. Neither total is given.",
+      "action": "merge",
+      "statsDelta": {
+        "CHA": 3,
+        "DEX": -1
+      },
+      "statScopes": {
+        "CHA": "temporary",
+        "DEX": "temporary"
+      },
+      "evidence": [
+        "b1-c34-p36"
+      ]
+    },
+    {
+      "source": "b1-c34-p39",
+      "subject": "Princess Donut",
+      "type": "stat",
+      "name": "Buzzed",
+      "summary": "The smoothie temporarily adds three Charisma and subtracts one Dexterity. Neither total is given.",
+      "action": "merge",
+      "statsDelta": {
+        "CHA": 3,
+        "DEX": -1
+      },
+      "statScopes": {
+        "CHA": "temporary",
+        "DEX": "temporary"
+      },
+      "evidence": [
+        "b1-c34-p36"
+      ]
+    },
+    {
+      "source": "b1-c34-p39",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Rev-Up Immunity Smoothie",
+      "summary": "Carl passes the bottle with the remaining nine doses to Donut.",
+      "action": "remove",
+      "category": "Inventory",
+      "quantity": 9,
+      "unit": "doses"
+    },
+    {
+      "source": "b1-c34-p39",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Rev-Up Immunity Smoothie",
+      "summary": "After Carl and Donut have each drunk one dose, Donut holds the bottle with eight left.",
+      "action": "note",
+      "category": "Consumable",
+      "quantity": 8,
+      "unit": "doses"
+    },
+    {
+      "source": "b1-c34-p40",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Existing Taint persists",
+      "summary": "The smoothie grants immunity to new infections. Carl still cannot heal while the existing Taint is active.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c34-p47",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Mana available",
+      "summary": "Donut reports 16 mana before casting Magic Missile and 12 afterward.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c34-p52",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Vigorous Measles resisted",
+      "summary": "The smoothie prevents the new infection.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p8",
+      "subject": "Party",
+      "type": "story",
+      "name": "Krakaren clone defeated",
+      "summary": "Donut confirms that the boss is dead and the chamber has reopened.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p9",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Health reading",
+      "summary": "Carl’s health display reads six percent and continues to drop while Taint blocks healing.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p14",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Scroll of Heal",
+      "summary": "Donut uses one healing scroll on Carl.",
+      "action": "consume",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c35-p14",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Healing resumes",
+      "summary": "Donut’s scroll and Carl’s own healing spell restore his hearing and sight.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p19",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Leather jacket",
+      "summary": "The jacket is scorched and still has one sleeve. Carl is still wearing it.",
+      "action": "note",
+      "category": "Equipment",
+      "state": "equipped"
+    },
+    {
+      "source": "b1-c35-p38",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Neighborhood map",
+      "summary": "Looting the Krakaren adds the surrounding neighborhood to Carl’s map.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p45",
+      "subject": "Party",
+      "type": "story",
+      "name": "Floor-two tutorial guild",
+      "summary": "Carl and Donut meet Mordecai in the tutorial guild after the boss fight.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p47",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Bugaboo form",
+      "summary": "Carl recognizes Mordecai in a new Bugaboo body.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p49",
+      "subject": "Mordecai",
+      "type": "level",
+      "name": "Character level",
+      "summary": "Mordecai’s properties show level 50 in his Bugaboo form.",
+      "action": "set",
+      "level": 50
+    },
+    {
+      "source": "b1-c35-p62",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Boss Box opened",
+      "summary": "Donut finds an enchanted fur brush in her boss box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxKind": "Boss",
+        "boxId": "b1-35-princess-boss"
+      }
+    },
+    {
+      "source": "b1-c35-p75",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Location manager",
+      "summary": "Mordecai identifies Damien as his manager’s manager for this city.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p87",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Dungeonpreneur",
+      "summary": "The dungeon registers Carl’s invention in its codex.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Dungeonpreneur"
+      }
+    },
+    {
+      "source": "b1-c35-p88",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Dungeonpreneur royalties",
+      "summary": "Carl earns one gold coin whenever another crawler makes a kill with his invention.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p90",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Bronze Crowd Control Box opened",
+      "summary": "Carl opens a Bronze Crowd Control Box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxKind": "Crowd Control",
+        "boxId": "b1-35-carl-crowd-control",
+        "boxTier": "Bronze"
+      }
+    },
+    {
+      "source": "b1-c35-p91",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Boss Box opened",
+      "summary": "Carl opens his boss box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxKind": "Boss",
+        "boxId": "b1-35-carl-boss"
+      }
+    },
+    {
+      "source": "b1-c35-p98",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Enchanted BigBoi Boxers",
+      "summary": "Carl identifies the boxers from his boss box.",
+      "action": "add",
+      "category": "Equipment",
+      "quantity": 1,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-second-half-33-40-b1-c35-p91-carl-story-boss-box-opened"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b1-c35-p105",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Protective Shell cost",
+      "summary": "The item-bound spell costs no mana. Removing the boxers ends access and preserves the cooldown.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c35-p107",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Protective Shell duration",
+      "summary": "The spell currently lasts 20 seconds, covers a 4.5-meter radius, and has a 30-hour cooldown.",
+      "action": "note",
+      "evidence": [
+        "b1-c35-p106"
+      ]
+    },
+    {
+      "source": "b1-c35-p109",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Past Protective Shell",
+      "summary": "Mordecai says he had Protective Shell during his own crawl. Its former rank is unknown.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c36-p7",
+      "subject": "Zev",
+      "type": "story",
+      "name": "Dungeon administrator",
+      "summary": "Zev is identified as a Borant assistant communications representative and dungeon administrator.",
+      "action": "note",
+      "evidence": [
+        "b1-c36-p6"
+      ]
+    },
+    {
+      "source": "b1-c36-p28",
+      "subject": "Party",
+      "type": "story",
+      "name": "Crawler Assisted Outreach Program",
+      "summary": "Carl and Donut enter Borant’s outreach program. Zev becomes their PR representative.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c36-p30",
+      "subject": "Zev",
+      "type": "story",
+      "name": "Outreach channel",
+      "summary": "Zev opens a channel for contacting Carl and Donut about appearances.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c36-p33",
+      "subject": "Party",
+      "type": "story",
+      "name": "Odette’s interview agreement",
+      "summary": "Odette has first refusal on interviews when Carl and Donut start a floor.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c37-p44",
+      "subject": "Party",
+      "type": "story",
+      "name": "Meadow Lark transport",
+      "summary": "Imani and Chris pull a ten-car wheelchair train carrying 39 people.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c37-p47",
+      "subject": "Imani C.",
+      "type": "story",
+      "name": "Temporary chain",
+      "summary": "Imani’s gold-box scroll supplied the lightweight chain joining the cars. It lasts 30 hours.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c37-p49",
+      "subject": "Brandon An",
+      "type": "story",
+      "name": "Mind Horror boss star",
+      "summary": "Brandon reports that he, Chris and Yolanda defeated the boss. Carl sees an additional star beside his name.",
+      "action": "note",
+      "evidence": [
+        "b1-c37-p48"
+      ]
+    },
+    {
+      "source": "b1-c37-p52",
+      "subject": "Chris",
+      "type": "level",
+      "name": "Character level",
+      "summary": "Carl reports Yolanda at level nine and says both brothers are at the same level.",
+      "action": "set",
+      "level": 9
+    },
+    {
+      "source": "b1-c37-p52",
+      "subject": "Brandon An",
+      "type": "level",
+      "name": "Character level",
+      "summary": "Carl reports Yolanda at level nine and says both brothers are at the same level.",
+      "action": "set",
+      "level": 9
+    },
+    {
+      "source": "b1-c37-p52",
+      "subject": "Yolanda Martinez",
+      "type": "level",
+      "name": "Character level",
+      "summary": "Carl reports Yolanda at level nine and says both brothers are at the same level.",
+      "action": "set",
+      "level": 9
+    },
+    {
+      "source": "b1-c37-p61",
+      "subject": "Elle McGib",
+      "type": "story",
+      "name": "Crawler identification",
+      "summary": "Carl sees Mrs. McGibbons’s crawler name, Elle McGib, and number 12,330,800.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c37-p73",
+      "subject": "Jack",
+      "type": "story",
+      "name": "Meadow Lark resident",
+      "summary": "Yolanda addresses the resident wearing a Bengals cap as Jack.",
+      "action": "note",
+      "evidence": [
+        "b1-c37-p72"
+      ]
+    },
+    {
+      "source": "b1-c37-p73",
+      "subject": "Jack",
+      "type": "item",
+      "name": "Bengals cap",
+      "summary": "Yolanda identifies the resident wearing the cap as Jack.",
+      "action": "equip",
+      "category": "Equipment",
+      "state": "equipped",
+      "evidence": [
+        "b1-c37-p72"
+      ]
+    },
+    {
+      "source": "b1-c38-p3",
+      "subject": "Jack",
+      "type": "story",
+      "name": "Death confirmed",
+      "summary": "Jack dies when Yolanda shoots him as he triggers a dungeon penalty.",
+      "action": "note",
+      "lifeStatus": "dead",
+      "deathEvidence": "witnessed"
+    },
+    {
+      "source": "b1-c38-p3",
+      "subject": "Randall",
+      "type": "story",
+      "name": "Meadow Lark resident",
+      "summary": "Randall falls from Meadow Lark’s last train car when it lurches forward.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c38-p7",
+      "subject": "Party",
+      "type": "story",
+      "name": "Rage elemental identified",
+      "summary": "The summoned rage elemental is level 93.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c38-p12",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Scroll of Confusing Fog",
+      "summary": "Donut uses a Confusing Fog scroll. The book does not date when she received it.",
+      "action": "consume",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c38-p19",
+      "subject": "Randall",
+      "type": "story",
+      "name": "Death confirmed",
+      "summary": "The rage elemental kills Randall alongside Yolanda.",
+      "action": "note",
+      "lifeStatus": "dead",
+      "deathEvidence": "witnessed"
+    },
+    {
+      "source": "b1-c38-p20",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Protective Shell cast",
+      "summary": "Carl casts the shell from his enchanted boxers.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c38-p27",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Potion of Healing",
+      "summary": "Carl uses a healing potion.",
+      "action": "consume",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c38-p34",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Potion of Healing",
+      "summary": "Carl gives Elle a healing potion.",
+      "action": "remove",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c38-p34",
+      "subject": "Elle McGib",
+      "type": "item",
+      "name": "Potion of Healing",
+      "summary": "Carl places a healing potion in Elle’s hand.",
+      "action": "add",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c38-p41",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Carl's Jug O' Boom",
+      "summary": "Carl expends one jug outside the safe room.",
+      "action": "remove",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c38-p45",
+      "subject": "Party",
+      "type": "story",
+      "name": "Big Shot Chicken",
+      "summary": "Carl, Donut and the Meadow Lark survivors take shelter in a chicken-restaurant safe room.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c38-p46",
+      "subject": "Elle McGib",
+      "type": "item",
+      "name": "Potion of Healing",
+      "summary": "Brandon helps Elle drink the potion Carl handed her.",
+      "action": "consume",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c38-p47",
+      "subject": "Imani C.",
+      "type": "story",
+      "name": "Care for the injured",
+      "summary": "Imani administers healing potions to injured residents. The number used is unstated.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c38-p47",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Wheelchairs salvaged",
+      "summary": "Donut saves several wheelchairs before the group takes shelter.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c39-p9",
+      "subject": "Yolanda Martinez",
+      "type": "story",
+      "name": "Player-killer marker",
+      "summary": "A replay shows a player-killer marker starting to form when Yolanda shoots Jack.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c39-p21",
+      "subject": "Carl",
+      "type": "story",
+      "name": "What goes up…",
+      "summary": "The dungeon recognizes survival of Reverse Gravity.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "What goes up…"
+      }
+    },
+    {
+      "source": "b1-c39-p21",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "What goes up…",
+      "summary": "The dungeon recognizes survival of Reverse Gravity.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "What goes up…"
+      }
+    },
+    {
+      "source": "b1-c39-p24",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Like a Moth to the Flame",
+      "summary": "The dungeon recognizes damaging an opponent more than 75 levels higher.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Like a Moth to the Flame"
+      }
+    },
+    {
+      "source": "b1-c39-p24",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Like a Moth to the Flame",
+      "summary": "The dungeon recognizes damaging an opponent more than 75 levels higher.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Like a Moth to the Flame"
+      }
+    },
+    {
+      "source": "b1-c39-p25",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Platinum Lucky Bastard Box",
+      "summary": "A Platinum Lucky Bastard Box is awarded for damaging the rage elemental.",
+      "action": "note",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "b1-second-half-33-40-b1-c39-p24-carl-story-like-a-moth-to-the-flame"
+        ],
+        "boxKind": "Lucky Bastard",
+        "boxTier": "Platinum",
+        "boxId": "b1-39-carl-lucky-bastard",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c39-p25",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Platinum Lucky Bastard Box",
+      "summary": "A Platinum Lucky Bastard Box is awarded for damaging the rage elemental.",
+      "action": "note",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "b1-second-half-33-40-b1-c39-p24-princess-donut-story-like-a-moth-to-the-flame"
+        ],
+        "boxKind": "Lucky Bastard",
+        "boxTier": "Platinum",
+        "boxId": "b1-39-princess-lucky-bastard",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c39-p26",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Platinum Lucky Bastard Box opened",
+      "summary": "The platinum box contains a scratch ticket.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-second-half-33-40-b1-c39-p25-carl-story-platinum-lucky-bastard-box"
+        ],
+        "boxKind": "Lucky Bastard",
+        "boxId": "b1-39-carl-lucky-bastard",
+        "boxTier": "Platinum"
+      }
+    },
+    {
+      "source": "b1-c39-p26",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Platinum Lucky Bastard Box opened",
+      "summary": "The platinum box contains a scratch ticket.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-second-half-33-40-b1-c39-p25-princess-donut-story-platinum-lucky-bastard-box"
+        ],
+        "boxKind": "Lucky Bastard",
+        "boxId": "b1-39-princess-lucky-bastard",
+        "boxTier": "Platinum"
+      }
+    },
+    {
+      "source": "b1-c39-p39",
+      "subject": "Lucia Mar",
+      "type": "story",
+      "name": "Four player-killer markers",
+      "summary": "The broadcast shows four player-killer skulls beside Lucia’s name. The victims and circumstances are unstated.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c39-p40",
+      "subject": "Lucia Mar",
+      "type": "story",
+      "name": "Registered pets",
+      "summary": "Carl identifies Lucia’s two accompanying Rottweilers as registered pets. Neither displays its own stars or skulls.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c39-p47",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Dungeon Codex entry",
+      "summary": "The broadcast displays Carl’s invention with its entry in the codex.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c39-p58",
+      "subject": "Party",
+      "type": "story",
+      "name": "Safe-room closure",
+      "summary": "The dungeon announces safe areas will now close an hour before each floor collapses.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c40-p3",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Mother of All Bombs",
+      "summary": "Carl and the Meadow Lark team finish the MOAB.",
+      "action": "add",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c40-p22",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Goblin riveter",
+      "summary": "Carl has a goblin riveter in hand at the restaurant.",
+      "action": "note",
+      "category": "Inventory"
+    },
+    {
+      "source": "b1-c40-p30",
+      "subject": "Imani C.",
+      "type": "story",
+      "name": "Safe-room test",
+      "summary": "Imani’s suggestion works repeatedly. The safe-room boundary returns the elemental to the main hall.",
+      "action": "note",
+      "evidence": [
+        "b1-c40-p19"
+      ]
+    },
+    {
+      "source": "b1-c40-p33",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Goblin chopper with detachable sidecar",
+      "summary": "Carl removes the sidecar and fits a newly built trailer. Donut rides in the rear seat.",
+      "action": "note",
+      "category": "Inventory",
+      "state": "sidecar detached"
+    },
+    {
+      "source": "b1-c40-p37",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "One trillion views",
+      "summary": "Donut tells Carl she has just reached one trillion views.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c40-p40",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Temporary Meadow Lark chain",
+      "summary": "Carl recovers the 300-foot chain that joined the train cars.",
+      "action": "add",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c40-p40",
+      "subject": "Party",
+      "type": "story",
+      "name": "Meadow Lark train lost",
+      "summary": "The train cars and abandoned mobility aids are gone when Carl and Donut leave the restaurant.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c40-p62",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Last hobgoblin pus used",
+      "summary": "Carl says he has used the last of his hobgoblin pus.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c40-p70",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Temporary Meadow Lark chain",
+      "summary": "The party deploys Imani’s chain during the escape.",
+      "action": "remove",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b1-c40-p84",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Self-healing",
+      "summary": "Donut heals herself with a spell after the trailer tilts. No rank is given.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c40-p92",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Goblin chopper with detachable sidecar",
+      "summary": "The chopper displays a boiler-breach warning.",
+      "action": "note",
+      "category": "Inventory",
+      "state": "boiler warning"
+    },
+    {
+      "source": "b1-c40-p102",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Mother of All Bombs",
+      "summary": "The MOAB goes down the stairwell on the trailer.",
+      "action": "lose",
+      "category": "Inventory",
+      "quantity": 1,
+      "evidence": [
+        "b1-c40-p33"
+      ]
+    },
+    {
+      "source": "b1-c40-p122",
+      "subject": "Party",
+      "type": "story",
+      "name": "Puddle Jumper escape",
+      "summary": "Donut teleports herself and Carl about 500 feet down a second-floor hallway. They remain on the same floor.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c40-p130",
+      "subject": "Party",
+      "type": "story",
+      "name": "Rage elemental defeated",
+      "summary": "Carl attributes the elemental’s disappearance to the dungeon’s stairway rule. Neither crawler receives experience.",
+      "action": "note",
+      "evidence": [
+        "b1-c40-p124",
+        "b1-c40-p126"
+      ]
+    },
+    {
+      "source": "b1-c40-p133",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Route to the stairs",
+      "summary": "Carl tells Brandon his group can approach the staircase.",
+      "action": "note"
+    }
+  ],
+  "corrections": [
+    {
+      "id": "inv-034-fairy-loot-item-0-0",
+      "set": {
+        "source": "b1-c33-p60",
+        "subject": "Party",
+        "summary": "The two fairies each drop 25 coins and five brochures. The individual recipient is unspecified."
+      }
+    },
+    {
+      "id": "inv-034-fairy-loot-item-1-0",
+      "set": {
+        "source": "b1-c33-p60",
+        "subject": "Party",
+        "summary": "The two fairies each drop 25 coins and five brochures. The individual recipient is unspecified."
+      }
+    },
+    {
+      "id": "inv-034-fairy-loot-item-2-0",
+      "set": {
+        "source": "b1-c33-p64",
+        "summary": "Carl stores both bodies and collects the clothes and wings left behind."
+      }
+    },
+    {
+      "id": "inv-034-fairy-loot-item-3-0",
+      "set": {
+        "source": "b1-c33-p64",
+        "summary": "Carl stores both bodies and collects the clothes and wings left behind."
+      }
+    },
+    {
+      "id": "inv-034-fairy-loot-summary",
+      "set": {
+        "source": "b1-c33-p64",
+        "summary": "Carl takes the two laminak bodies, clothes and wings."
+      }
+    },
+    {
+      "id": "inv-035b-moonshine-room-cleanout-item-2-0",
+      "set": {
+        "name": "Table",
+        "quantity": 1,
+        "detail": "The other table is recorded as the Alchemy Workstation.",
+        "summary": "Carl takes two tables in total. One is listed separately as an alchemy workstation."
+      }
+    },
+    {
+      "id": "inv-035b-moonshine-room-cleanout-item-0-0",
+      "set": {
+        "summary": "Carl counts 80 empty jugs."
+      }
+    },
+    {
+      "id": "inv-035b-moonshine-room-cleanout-item-1-0",
+      "set": {
+        "summary": "Carl counts 60 full jugs."
+      }
+    },
+    {
+      "id": "inv-035b-moonshine-room-cleanout-item-3-0",
+      "set": {
+        "summary": "Carl takes the alchemy workstation from the filling room."
+      }
+    },
+    {
+      "id": "inv-035b-moonshine-room-cleanout-summary",
+      "set": {
+        "summary": "Carl collects empty and full jugs and two tables."
+      }
+    },
+    {
+      "id": "inv-036-immunity-smoothies-consumed-item-2-0",
+      "set": {
+        "subject": "Carl",
+        "source": "b1-c34-p17",
+        "name": "Full Rev-Up moonshine jug",
+        "quantity": 1,
+        "summary": "Carl uses some moonshine and discards the jug."
+      }
+    },
+    {
+      "id": "inv-036-immunity-smoothies-consumed-item-1-0",
+      "set": {
+        "subject": "Carl",
+        "source": "b1-c34-p24",
+        "name": "Laminak corpse",
+        "quantity": 1,
+        "summary": "Carl uses one of the two corpses for the smoothie."
+      }
+    },
+    {
+      "id": "carl-donut-buzzed-stat-modifiers-story",
+      "set": {
+        "subject": "Carl",
+        "name": "Smoothie effects identified",
+        "summary": "The smoothie grants temporary disease protection. Its Buzzed effect adds three Charisma and subtracts one Dexterity."
+      }
+    },
+    {
+      "id": "inv-036-immunity-smoothies-consumed-item-0-0",
+      "set": {
+        "source": "b1-c34-p37",
+        "action": "consume",
+        "unit": "doses",
+        "summary": "Carl drinks one dose from the ten-dose bottle."
+      }
+    },
+    {
+      "id": "inv-036-immunity-smoothies-consumed-item-0-1",
+      "set": {
+        "action": "consume",
+        "quantity": 1,
+        "unit": "doses",
+        "historyOnly": true,
+        "summary": "Donut receives the bottle and drinks one dose."
+      }
+    },
+    {
+      "id": "inv-036-immunity-smoothies-consumed-summary",
+      "set": {
+        "summary": "Carl and Donut each drink a dose from the same bottle."
+      }
+    },
+    {
+      "id": "inv-037-krakaren-bomb-and-shields-item-0-0",
+      "set": {
+        "source": "b1-c34-p64",
+        "summary": "Carl expends one jug in the boss encounter."
+      }
+    },
+    {
+      "id": "inv-037-krakaren-bomb-and-shields-item-1-0",
+      "set": {
+        "source": "b1-c34-p64",
+        "summary": "Carl expends one stick of goblin dynamite."
+      }
+    },
+    {
+      "id": "inv-037-krakaren-bomb-and-shields-item-2-0",
+      "set": {
+        "source": "b1-c35-p22",
+        "summary": "Carl finds the redoubt panel shattered after the battle."
+      }
+    },
+    {
+      "id": "inv-037-krakaren-bomb-and-shields-item-3-0",
+      "set": {
+        "name": "Alchemy Workstation",
+        "action": "note",
+        "summary": "Carl takes out the alchemy workstation he already owns."
+      }
+    },
+    {
+      "id": "inv-037-krakaren-bomb-and-shields-summary",
+      "set": {
+        "summary": "Carl and Donut shelter under the alchemy workstation."
+      }
+    },
+    {
+      "id": "inv-038-krakaren-opening-item-0-0",
+      "set": {
+        "source": "b1-c35-p62",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-33-40-b1-c35-p62-princess-donut-story-boss-box-opened"
+          ],
+          "outcomeType": "item"
+        },
+        "statBoosts": [
+          {
+            "stat": "CON",
+            "value": 2,
+            "unit": "points",
+            "source": "b1-c35-p62",
+            "condition": "Ten minutes of grooming, lasts 30 hours"
+          }
+        ],
+        "effects": [
+          {
+            "id": "brush-con",
+            "kind": "stat",
+            "target": "CON",
+            "operation": "add",
+            "value": 2,
+            "unit": "points",
+            "condition": "Ten minutes of grooming, lasts 30 hours"
+          }
+        ],
+        "summary": "Ten minutes of brushing gives Donut two extra Constitution points for 30 hours."
+      }
+    },
+    {
+      "id": "donut-temporary-constitution-4-stat",
+      "set": {
+        "source": "b1-c39-p12",
+        "summary": "The grooming bonus activates here. The earlier item description put Donut’s Constitution with this buff at four.",
+        "confidence": "inferred",
+        "evidence": [
+          "b1-c35-p62"
+        ]
+      }
+    },
+    {
+      "id": "inv-038-krakaren-opening-summary",
+      "set": {
+        "subject": "Carl",
+        "source": "b1-c35-p90",
+        "summary": "Carl reviews his reward boxes and collects coins and supplies."
+      }
+    },
+    {
+      "id": "inv-038-krakaren-opening-item-1-0",
+      "set": {
+        "subject": "Carl",
+        "source": "b1-c35-p90",
+        "summary": "Carl receives several hundred coins. The party now has just over 1,000."
+      }
+    },
+    {
+      "id": "inv-038-krakaren-opening-item-2-0",
+      "set": {
+        "subject": "Carl",
+        "source": "b1-c35-p90",
+        "summary": "Carl receives more potions, torches, biscuits and food."
+      }
+    },
+    {
+      "id": "inv-038-krakaren-opening-item-3-0",
+      "set": {
+        "subject": "Carl",
+        "source": "b1-c35-p90",
+        "summary": "Carl finds dynamite, smoke bombs and lighters in goblin boxes."
+      }
+    },
+    {
+      "id": "inv-038-krakaren-opening-item-4-0",
+      "set": {
+        "source": "b1-c35-p90",
+        "subject": "Carl",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-33-40-b1-c35-p90-carl-story-bronze-crowd-control-box-opened"
+          ],
+          "outcomeType": "item"
+        },
+        "summary": "Carl receives two scrolls of Confusing Fog and plans to pass them to Donut."
+      }
+    },
+    {
+      "id": "inv-038-krakaren-opening-item-5-0",
+      "set": {
+        "category": "Equipment",
+        "effects": [
+          {
+            "id": "boxers-con",
+            "kind": "stat",
+            "target": "CON",
+            "operation": "add",
+            "value": 2,
+            "unit": "points"
+          },
+          {
+            "id": "boxers-shell",
+            "kind": "skill",
+            "target": "Protective Shell",
+            "operation": "grant",
+            "value": 15,
+            "unit": "levels"
+          }
+        ],
+        "statBoosts": [
+          {
+            "stat": "CON",
+            "value": 2,
+            "unit": "points",
+            "source": "b1-c35-p102"
+          }
+        ],
+        "state": "equipped",
+        "summary": "Carl equips the boxers and adds Protective Shell to his hotlist.",
+        "evidence": [
+          "b1-c35-p100",
+          "b1-c35-p101"
+        ]
+      },
+      "removeFields": [
+        "acquisition"
+      ]
+    },
+    {
+      "id": "carl-constitution-14-protective-shell-15-ability",
+      "set": {
+        "source": "b1-c35-p102",
+        "skillScope": "equipment",
+        "summary": "Equipping the boxers grants rank-15 Protective Shell.",
+        "detail": "Item-bound access."
+      }
+    },
+    {
+      "id": "carl-constitution-14-protective-shell-15-stats",
+      "set": {
+        "source": "b1-c35-p102",
+        "statsDelta": {
+          "CON": 2
+        },
+        "summary": "The boxers add two Constitution. Carl does not read out a new total.",
+        "evidence": [
+          "b1-c35-p100"
+        ]
+      },
+      "removeFields": [
+        "stats"
+      ]
+    },
+    {
+      "id": "imani-audit-b1-c37-p42-imani-c-item-pig-harness",
+      "set": {
+        "action": "equip",
+        "state": "equipped",
+        "category": "Equipment",
+        "summary": "Imani wears a tuskling harness to pull the residents’ train alongside Chris."
+      }
+    },
+    {
+      "id": "inv-040b-lucky-bastard-tickets-item-1-0",
+      "set": {
+        "source": "b1-c39-p35",
+        "summary": "Carl identifies his five-spot scratch ticket as Fireball or Custard.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-33-40-b1-c39-p26-carl-story-platinum-lucky-bastard-box-opened"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-040b-lucky-bastard-tickets-item-0-0",
+      "set": {
+        "source": "b1-c39-p26",
+        "summary": "Donut receives a Dungeon Gold Rush ticket with six scratch spots. It cannot be played in a safe room.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-33-40-b1-c39-p26-princess-donut-story-platinum-lucky-bastard-box-opened"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-040b-lucky-bastard-tickets-summary",
+      "set": {
+        "source": "b1-c39-p26",
+        "name": "Platinum box rewards",
+        "summary": "Carl and Donut each find a scratch ticket in their own box."
+      },
+      "removeFields": [
+        "acquisition"
+      ]
+    },
+    {
+      "id": "inv-041-chopper-destroyed-item-0-0",
+      "set": {
+        "source": "b1-c40-p102",
+        "subject": "Carl",
+        "summary": "The chopper falls into the stairwell after Carl and Donut jump clear. Its detached sidecar is not aboard."
+      }
+    }
+  ]
+}

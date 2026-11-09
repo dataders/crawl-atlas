@@ -22,7 +22,14 @@ SERIES_CORPUS = ROOT / "data/private/series-corpus.json"
 FLOOR_AUDIT = ROOT / "data/public/character-floor-audit.json"
 PARTY_LOCATION_AUDIT = ROOT / "data/public/party-location-audit.json"
 CHAPTER_COUNT = 47
-FIRST_HALF_AUDITS = ("b1-first-half-01-08", "b1-first-half-09-16", "b1-first-half-17-24")
+REVIEWED_AUDITS = {
+    **dict.fromkeys(("b1-first-half-01-08", "b1-first-half-09-16", "b1-first-half-17-24"), (1, 1, 1, 24)),
+    **dict.fromkeys(("b1-second-half-25-32", "b1-second-half-33-40", "b1-second-half-41-47"), (1, 1, 25, 47)),
+    "leaderboard-level-audit": (2, 8, 1, 999),
+    "lead-audit-b2-3": (2, 3, 1, 999),
+    "lead-audit-b4-6": (4, 6, 1, 999),
+    "lead-audit-b7-8": (7, 8, 1, 999),
+}
 ITEM_ALIASES = {
     "Common Fingerless Glove": "Common Fingerless Gloves",
     "Original boxers": "Boxers",
@@ -538,11 +545,11 @@ def main() -> None:
         events.extend(curated_audit_events(series_corpus, audit + ".json", audit))
     corrections = []
     audit_characters = []
-    for stem in FIRST_HALF_AUDITS:
+    for stem, bounds in REVIEWED_AUDITS.items():
         filename = stem + ".json"
         audit = json.loads((ROOT / "data/public" / filename).read_text())
         events.extend(curated_audit_events(series_corpus, filename, stem))
-        corrections.extend(audit.get("corrections", []))
+        corrections.extend((row, bounds) for row in audit.get("corrections", []))
         audit_characters.extend(audit.get("characters", []))
     from reward_provenance import apply_reward_audit
     events = apply_reward_audit(events, series_corpus)
@@ -550,7 +557,7 @@ def main() -> None:
     anchor_locations = {p["anchor"]: (b["number"], c["number"], p["position"])
                         for b in series_corpus["books"] for c in b["chapters"] for p in c["paragraphs"]}
     corrected = set()
-    for correction in corrections:
+    for correction, (first_book, last_book, first_chapter, last_chapter) in corrections:
         event = by_id[correction["id"]]
         if event["id"] in corrected:
             raise ValueError(f"Conflicting corrections for {event['id']}")
@@ -560,7 +567,7 @@ def main() -> None:
         event.update(correction["set"])
         location = anchor_locations[event["source"]]
         book, chapter, position = location
-        if book != 1 or not 1 <= chapter <= 24:
+        if not (first_book <= book <= last_book and first_chapter <= chapter <= last_chapter):
             raise ValueError(f"Correction falls outside the reviewed chapters: {event['source']}")
         if any(anchor_locations[anchor] > location for anchor in event.get("evidence", [])):
             raise ValueError(f"Correction reveals later evidence: {event['id']}")
@@ -603,7 +610,7 @@ def main() -> None:
             "title": "Dungeon Crawler Carl",
             "bookCount": len(book_rows),
             "chapterCount": total_chapters,
-            "dataVersion": "2.11.0",
+            "dataVersion": "2.12.0",
             "coverageNote": "Eight-book chapter map with source-anchored progression for the core party and major recurring allies. Skills and inventory appear only when explicitly confirmed.",
         },
         "books": book_rows,

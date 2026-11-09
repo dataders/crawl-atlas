@@ -199,121 +199,188 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 5.039986,1,24,78.87,Carl,Scroll of Heal Critter,remove,wasted; invalid target,1,Inventory,The Heal Critter scroll is consumed when the spell rejects its target.,b1-c24-p56
 5.051922,1,24,84.51,Carl,Potion of Healing,remove,,2,Inventory,Carl drinks two more healing potions.,b1-c24-p60
 5.078778,1,24,97.18,Princess Donut,Potion of Healing,remove,,1,Inventory,Donut drinks one of her own healing potions.,b1-c24-p69
-5.095752,1,25,5.19,Carl,Free weights and dumbbells,add,carried,,Inventory,"Carl strips the Juicer gym and office, including structural and mundane items for later construction.",b1-c25-p4
-5.095752,1,25,5.19,Carl,Weight benches,add,carried,,Inventory,"Carl strips the Juicer gym and office, including structural and mundane items for later construction.",b1-c25-p4
-5.095752,1,25,5.19,Carl,Exercise mats and medicine balls,add,carried,,Inventory,"Carl strips the Juicer gym and office, including structural and mundane items for later construction.",b1-c25-p4
-5.095752,1,25,5.19,Carl,Broken gym equipment,add,carried,,Inventory,"Carl strips the Juicer gym and office, including structural and mundane items for later construction.",b1-c25-p4
-5.095752,1,25,5.19,Carl,Tools,add,carried,,Inventory,"Carl strips the Juicer gym and office, including structural and mundane items for later construction.",b1-c25-p4
-5.095752,1,25,5.19,Carl,Broken door,add,carried,1,Inventory,"Carl strips the Juicer gym and office, including structural and mundane items for later construction.",b1-c25-p4
-5.095752,1,25,5.19,Carl,Laptop with dead battery,add,carried,1,Inventory,"Carl strips the Juicer gym and office, including structural and mundane items for later construction.",b1-c25-p4
-5.095752,1,25,5.19,Carl,File cabinet and paper files,add,carried,1,Inventory,"Carl strips the Juicer gym and office, including structural and mundane items for later construction.",b1-c25-p4
+5.090249,1,25,2.6,Carl,Neighborhood Map,add,carried,1,Inventory,Carl collects the neighborhood map from the Juicer encounter.,b1-c25-p2
+5.090249,1,25,2.6,Carl,Free weights and dumbbells,add,carried,,Inventory,Carl takes this from the Juicer’s gym and office.,b1-c25-p2
+5.090249,1,25,2.6,Carl,Weight benches,add,carried,,Inventory,Carl takes this from the Juicer’s gym and office.,b1-c25-p2
+5.090249,1,25,2.6,Carl,Exercise mats and medicine balls,add,carried,,Inventory,Carl takes this from the Juicer’s gym and office.,b1-c25-p2
+5.090249,1,25,2.6,Carl,Broken gym equipment,add,carried,,Inventory,Carl takes this from the Juicer’s gym and office.,b1-c25-p2
+5.090249,1,25,2.6,Carl,Tools,add,carried,,Inventory,Carl takes this from the Juicer’s gym and office.,b1-c25-p2
+5.090249,1,25,2.6,Carl,Broken door,add,carried,1,Inventory,Carl takes this from the Juicer’s gym and office.,b1-c25-p2
+5.090249,1,25,2.6,Carl,Laptop with dead battery,add,carried,1,Inventory,Carl takes this from the Juicer’s gym and office.,b1-c25-p2
+5.090249,1,25,2.6,Carl,File cabinet and paper files,add,carried,1,Inventory,Carl takes this from the Juicer’s gym and office.,b1-c25-p2
 5.095752,1,25,5.19,Carl,Johnny Walker Black,add,carried,0.5,Inventory,"Carl strips the Juicer gym and office, including structural and mundane items for later construction.",b1-c25-p4
-5.244332,1,25,75.32,Princess Donut,Dexterity bracelet +2,equip,equipped,1,Inventory,"Juicer openings give Donut Dexterity jewelry and 12 Heal scrolls; Carl receives Heal scrolls, shuriken, a second Determine Value potion, and his signature war gauntlet.",b1-c25-p58
-5.244332,1,25,75.32,Princess Donut,Tome of Puddle Jumper,remove,consumed to learn spell,1,Inventory,"Juicer openings give Donut Dexterity jewelry and 12 Heal scrolls; Carl receives Heal scrolls, shuriken, a second Determine Value potion, and his signature war gauntlet.",b1-c25-p58
-5.244332,1,25,75.32,Princess Donut,Scroll of Heal,add,carried,12,Inventory,"Juicer openings give Donut Dexterity jewelry and 12 Heal scrolls; Carl receives Heal scrolls, shuriken, a second Determine Value potion, and his signature war gauntlet.",b1-c25-p58
-5.244332,1,25,75.32,Carl,Scroll of Heal,add,carried,5,Inventory,"Juicer openings give Donut Dexterity jewelry and 12 Heal scrolls; Carl receives Heal scrolls, shuriken, a second Determine Value potion, and his signature war gauntlet.",b1-c25-p58
-5.244332,1,25,75.32,Carl,Cowboy hat,add,carried,1,Inventory,"Juicer openings give Donut Dexterity jewelry and 12 Heal scrolls; Carl receives Heal scrolls, shuriken, a second Determine Value potion, and his signature war gauntlet.",b1-c25-p58
-5.244332,1,25,75.32,Carl,Enchanted Shuriken of Bloodlust,add,carried,100,Inventory,"Juicer openings give Donut Dexterity jewelry and 12 Heal scrolls; Carl receives Heal scrolls, shuriken, a second Determine Value potion, and his signature war gauntlet.",b1-c25-p58
-5.244332,1,25,75.32,Carl,Potion of Determine Value,remove,consumed,1,Inventory,"Juicer openings give Donut Dexterity jewelry and 12 Heal scrolls; Carl receives Heal scrolls, shuriken, a second Determine Value potion, and his signature war gauntlet.",b1-c25-p58
-5.244332,1,25,75.32,Carl,Enchanted War Gauntlet of the Exalted Grull,add,equipped on right wrist,1,Inventory,"Juicer openings give Donut Dexterity jewelry and 12 Heal scrolls; Carl receives Heal scrolls, shuriken, a second Determine Value potion, and his signature war gauntlet.",b1-c25-p58
-5.293859,1,25,98.7,Carl,Enchanted War Gauntlet of the Exalted Grull,equip,equipped,,Equipment,Carl tests the equipped bracer; making a fist transforms it into the war gauntlet.,b1-c25-p76
-5.411674,1,26,54.31,Carl,Agatha's shopping cart and contents,remove,"stored during battle, returned afterward",1,Inventory,Carl inventories Agatha's loaded cart to make room in the redoubt and returns it after the fight; hidden inventory-history implications are discovered in chapter 47.,b1-c26-p63
+5.123267,1,25,18.18,Princess Donut,Unidentified boss-box tome,add,carried,1,Inventory,Donut finds an unread spellbook in her Bronze Boss Box.,b1-c25-p14
+5.123267,1,25,18.18,Princess Donut,Dexterity bracelet +2,equip,equipped,1,Equipment,Donut equips the Silver Adventurer Box bracelet on her front leg.,b1-c25-p14
+5.126018,1,25,19.48,Princess Donut,Scroll of Heal,add,carried,12,Inventory,Donut receives twelve Heal scrolls after finishing the boss battle below 5% health.,b1-c25-p15
+5.134272,1,25,23.38,Princess Donut,Unidentified boss-box tome,remove,consumed to learn spell,1,Inventory,Donut reads the book from the Bronze Boss Box.,b1-c25-p18
+5.20306,1,25,55.84,Carl,Scroll of Heal,add,carried,5,Inventory,Carl receives five Heal scrolls after finishing below 10% health.,b1-c25-p43
+5.20306,1,25,55.84,Carl,Cowboy hat,add,carried,1,Inventory,Carl puts the cowboy hat into his inventory.,b1-c25-p43
+5.22232,1,25,64.94,Carl,Enchanted Shuriken of Bloodlust,add,carried,100,Inventory,The boss box contains 100 enchanted shuriken.,b1-c25-p50
+5.238829,1,25,72.73,Carl,Potion of Determine Value,remove,consumed,1,Inventory,Carl drinks the Determine Value potion from his Gold Looter Box.,b1-c25-p56
+5.244332,1,25,75.32,Carl,Enchanted War Gauntlet of the Exalted Grull,add,carried,1,Equipment,Carl finds a right-handed war gauntlet in the Gold Brawler Box.,b1-c25-p58
+5.269095,1,25,87.01,Carl,Enchanted War Gauntlet of the Exalted Grull,equip,equipped,,Equipment,Carl puts the war bracer on his right wrist.,b1-c25-p67
+5.307569,1,26,5.17,Princess Donut,Grooming brush,add,carried,,Inventory,Sebastian gives Donut one of his brushes.,b1-c26-p6
+5.411674,1,26,54.31,Carl,Agatha's shopping cart and contents,add,held for Agatha,1,Inventory,Carl takes Agatha’s loaded cart into his inventory during the encounter.,b1-c26-p63
 5.433592,1,26,64.66,Party,Portable redoubt sections,add,carried,5,Inventory,Carl and Meadow Lark convert goblin tables and gym equipment into a rapidly deployable defensive redoubt.,b1-c26-p75
 5.433592,1,26,64.66,Party,Barbell roof supports,add,carried,5,Inventory,Carl and Meadow Lark convert goblin tables and gym equipment into a rapidly deployable defensive redoubt.,b1-c26-p75
 5.460988,1,26,77.59,Carl,Bloodlust shuriken spike strips,add,carried,,Inventory,Several fragile Bloodlust shuriken are embedded in wooden spike strips for the Ball of Swine fight.,b1-c26-p90
 5.499343,1,26,95.69,Brandon An,Lightning maul,equip,,,Equipment,Brandon wields a giant maul glittering with lightning.,b1-c26-p111
-5.612956,1,27,49.32,Carl,Ruby necklace,add,carried,1,Inventory,"Party salvages tuskling jewelry, costume items, a Pig Harness, remaining shuriken, and reusable redoubt pieces.",b1-c27-p36
-5.612956,1,27,49.32,Carl,Unenchanted jewelry,add,carried,,Inventory,"Party salvages tuskling jewelry, costume items, a Pig Harness, remaining shuriken, and reusable redoubt pieces.",b1-c27-p36
-5.612956,1,27,49.32,Carl,Pig Harness,add,carried,1,Inventory,"Party salvages tuskling jewelry, costume items, a Pig Harness, remaining shuriken, and reusable redoubt pieces.",b1-c27-p36
-5.612956,1,27,49.32,Princess Donut,Tusking sexual prop,add,carried,1,Inventory,"Party salvages tuskling jewelry, costume items, a Pig Harness, remaining shuriken, and reusable redoubt pieces.",b1-c27-p36
-5.612956,1,27,49.32,Carl,Tuxedo jacket,add,carried,1,Inventory,"Party salvages tuskling jewelry, costume items, a Pig Harness, remaining shuriken, and reusable redoubt pieces.",b1-c27-p36
+5.522986,1,27,6.85,Carl,Agatha's shopping cart and contents,remove,returned,1,Inventory,Carl gives the loaded cart back to Agatha.,b1-c27-p5
+5.557813,1,27,23.29,Carl,Borough Field Guide,add,carried,1,Inventory,Carl collects the persistent borough reward.,b1-c27-p17
+5.557813,1,27,23.29,Princess Donut,Borough Field Guide,add,carried,1,Inventory,Princess Donut collects the persistent borough reward.,b1-c27-p17
+5.581031,1,27,34.25,Carl,Tuxedo jacket,add,carried,1,Inventory,Carl takes a tuxedo jacket.,b1-c27-p25
+5.589738,1,27,38.36,Brandon An,Tooth,add,carried,1,Inventory,Brandon picks up a sharp tooth in the arena.,b1-c27-p28
+5.604249,1,27,45.21,Carl,Ruby necklace,add,carried,1,Inventory,Carl loots a ruby necklace.,b1-c27-p33
+5.604249,1,27,45.21,Carl,Unenchanted jewelry,add,carried,,Inventory,Carl takes unenchanted jewelry.,b1-c27-p33
+5.604249,1,27,45.21,Carl,Pig Harness,add,carried,1,Inventory,Carl takes a Pig Harness.,b1-c27-p33
+5.604249,1,27,45.21,Princess Donut,Tusking sexual prop,add,carried,1,Inventory,Donut inventories a prop Imani discarded.,b1-c27-p33
 5.612956,1,27,49.32,Carl,Recovered shuriken and redoubt pieces,add,carried,,Inventory,"Party salvages tuskling jewelry, costume items, a Pig Harness, remaining shuriken, and reusable redoubt pieces.",b1-c27-p36
-6.330635,1,30,88.06,Carl,Gold coin,add,carried,105,Inventory,"Ball of Swine and achievement boxes add currency, drink tickets, a workbench shaping tool, a temporary skill potion, and the pedicure kit.",b1-c30-p118
-6.330635,1,30,88.06,Carl,Desperado Club Drink Ticket,add,carried,3,Inventory,"Ball of Swine and achievement boxes add currency, drink tickets, a workbench shaping tool, a temporary skill potion, and the pedicure kit.",b1-c30-p118
-6.330635,1,30,88.06,Carl,Goo-Inator 3000,add,carried,1,Inventory,"Ball of Swine and achievement boxes add currency, drink tickets, a workbench shaping tool, a temporary skill potion, and the pedicure kit.",b1-c30-p118
-6.330635,1,30,88.06,Carl,Cheat Code Potion,remove,consumed immediately,1,Inventory,"Ball of Swine and achievement boxes add currency, drink tickets, a workbench shaping tool, a temporary skill potion, and the pedicure kit.",b1-c30-p118
-6.330635,1,30,88.06,Carl,Enchanted Pedicure Kit of the Sylph,add,carried,1,Inventory,"Ball of Swine and achievement boxes add currency, drink tickets, a workbench shaping tool, a temporary skill potion, and the pedicure kit.",b1-c30-p118
-6.33854,1,30,91.79,Princess Donut,Dungeon Book of the Floor Club membership,add,active,1,Inventory,A boss-box reward enrolls Donut in the book club; her first mailed tome teaches Second Chance.,b1-c30-p123
-6.33854,1,30,91.79,Princess Donut,Tome of Second Chance,remove,consumed to learn spell,1,Inventory,A boss-box reward enrolls Donut in the book club; her first mailed tome teaches Second Chance.,b1-c30-p123
+5.954505,1,29,10.53,Odette,Heart necklace,note,in use,,Equipment,Odette wears a heart necklace beneath her stage costume.,b1-c29-p6
+5.954505,1,29,10.53,Odette,Mantis helmet,note,carried,,Equipment,Odette removes the helmet she wore on camera.,b1-c29-p6
+5.969373,1,29,17.54,Odette,Hovering mobility disk,note,in use,,Equipment,Odette uses a floating disk to move around after leaving her stage costume.,b1-c29-p10
+6.066012,1,29,63.16,Odette,Black belt,equip,equipped,,Equipment,Odette still wears the gold-box belt she received after losing her legs on Floor 11.,b1-c29-p36
+6.084597,1,29,71.93,Princess Donut,Torches,set,carried,230,Inventory,Donut explicitly counts 230 torches in her inventory.,b1-c29-p41
+6.196243,1,30,24.63,Carl,Vial of Brindle Grub Hemolymph,add,carried,1,Inventory,Carl takes one vial of alchemy material.,b1-c30-p33
+6.227865,1,30,39.55,Princess Donut,Poor Dingo Pelt,add,carried,2,Inventory,Donut collects the pelts from both dingoes.,b1-c30-p53
+6.229446,1,30,40.3,Princess Donut,Gold coin,add,carried,2,Inventory,Donut collects two gold coins from the dingoes.,b1-c30-p54
+6.286365,1,30,67.16,Carl,Gold coin,add,carried,5,Inventory,The bronze box gives Carl five gold coins.,b1-c30-p90
+6.286365,1,30,67.16,Carl,Desperado Club Drink Ticket,add,carried,3,Inventory,The bronze box gives Carl three Desperado Club drink tickets.,b1-c30-p90
+6.289527,1,30,68.66,Carl,Goo-Inator 3000,add,carried,1,Inventory,Carl receives the Goo-Inator from his silver mechanic box.,b1-c30-p92
+6.29427,1,30,70.9,Carl,Gold coin,add,carried,100,Inventory,The silver boss box gives Carl 100 additional gold coins.,b1-c30-p95
+6.295851,1,30,71.64,Carl,Cheat Code Potion,add,carried,1,Inventory,Carl receives the Cheat Code Potion in his silver boss box.,b1-c30-p96
+6.302176,1,30,74.63,Carl,Cheat Code Potion,remove,consumed,1,Inventory,Carl drinks the potion before it expires.,b1-c30-p100
+6.313243,1,30,79.85,Carl,Enchanted Pedicure Kit of the Sylph,add,carried,1,Inventory,Carl identifies the pedicure kit among his rewards.,b1-c30-p107
+6.327473,1,30,86.57,Carl,Enchanted Pedicure Kit of the Sylph,note,carried,,Inventory,"The kit lists four temporary barefoot bonuses, activated by using it in a safe or personal space.",b1-c30-p116
+6.332216,1,30,88.81,Princess Donut,Mailed spellbook,add,carried,1,Inventory,Donut collects a spellbook from the safe-room mailbox.,b1-c30-p119
+6.335378,1,30,90.3,Princess Donut,Dungeon Book of the Floor Club membership,add,active,1,Inventory,Donut says her boss box enrolled her in a club that mails her a spellbook on each floor.,b1-c30-p121
+6.33854,1,30,91.79,Princess Donut,Mailed spellbook,remove,consumed to learn spell,1,Inventory,"Donut reads the mailed tome, learning a new spell.",b1-c30-p123
 6.434986,1,31,37.31,Brandon An,Magic boomerang,note,,,Equipment,Brandon reports receiving a magic boomerang in his boss box.,b1-c31-p25
 6.434986,1,31,37.31,Yolanda Martinez,Quiver,note,,,Equipment,Brandon reports that Yolanda received a new type of quiver from her boss box. The old quiver’s disposition and the new bonuses are unstated.,b1-c31-p25
-6.755918,1,32,88.79,Party,Toilet-grade Rev-Up moonshine jug,add,carried,,Inventory,Clurichaun loot supplies valuable moonshine; Carl tests one Boom Jug and then crafts ten more.,b1-c32-p103
-6.755918,1,32,88.79,Party,Slingshots and dice,add,carried,,Inventory,Clurichaun loot supplies valuable moonshine; Carl tests one Boom Jug and then crafts ten more.,b1-c32-p103
-6.755918,1,32,88.79,Party,Carl's Jug O' Boom,add,carried,11,Inventory,Clurichaun loot supplies valuable moonshine; Carl tests one Boom Jug and then crafts ten more.,b1-c32-p103
-6.918764,1,33,65.66,Carl,Gold coin,add,carried,50,Inventory,"Two fairies yield gold and brochures; Carl stores their bodies, clothes, and wings for possible alchemy.",b1-c33-p65
-6.918764,1,33,65.66,Carl,Brochure,add,carried,10,Inventory,"Two fairies yield gold and brochures; Carl stores their bodies, clothes, and wings for possible alchemy.",b1-c33-p65
-6.918764,1,33,65.66,Carl,Laminak corpse,add,carried,2,Inventory,"Two fairies yield gold and brochures; Carl stores their bodies, clothes, and wings for possible alchemy.",b1-c33-p65
-6.918764,1,33,65.66,Carl,Laminak clothes and wings,add,carried,2,Inventory,"Two fairies yield gold and brochures; Carl stores their bodies, clothes, and wings for possible alchemy.",b1-c33-p65
-6.933744,1,33,72.73,Carl,Empty Rev-Up jug,add,carried,80,Inventory,"Before the boss emerges, Carl strips the filling room of 140 jugs and two tables, including the indestructible Alchemy Workstation.",b1-c33-p72
-6.933744,1,33,72.73,Carl,Full Rev-Up moonshine jug,add,carried,60,Inventory,"Before the boss emerges, Carl strips the filling room of 140 jugs and two tables, including the indestructible Alchemy Workstation.",b1-c33-p72
-6.933744,1,33,72.73,Carl,Tables,add,carried,2,Inventory,"Before the boss emerges, Carl strips the filling room of 140 jugs and two tables, including the indestructible Alchemy Workstation.",b1-c33-p72
-6.933744,1,33,72.73,Carl,Alchemy Workstation,add,carried,1,Inventory,"Before the boss emerges, Carl strips the filling room of 140 jugs and two tables, including the indestructible Alchemy Workstation.",b1-c33-p72
+6.64268,1,32,35.34,Princess Donut,Slingshots and dice,add,carried,,Inventory,"Donut uses her inventory to loot loose items, including slingshots and dice.",b1-c32-p41
+6.655465,1,32,41.38,Carl,Slingshot,add,carried,1,Inventory,Carl obtains a slingshot from Donut and starts practicing with it.,b1-c32-p48
+6.664597,1,32,45.69,Princess Donut,Rev-Up pamphlet,add,carried,1,Inventory,Donut loots a nonmagical promotional pamphlet.,b1-c32-p53
+6.697472,1,32,61.21,Party,Toilet-grade Rev-Up moonshine jug,set,carried,25,Inventory,The party has collected 25 jugs of moonshine.,b1-c32-p71
+6.730348,1,32,76.72,Carl,Carl's Jug O' Boom,add,carried,1,Inventory,Carl finishes the first jug.,b1-c32-p89
+6.730348,1,32,76.72,Party,Toilet-grade Rev-Up moonshine jug,remove,used,1,Inventory,1 of the group’s stock used in crafting.,b1-c32-p89
+6.746786,1,32,84.48,Carl,Carl's Jug O' Boom,remove,used,1,Inventory,Carl uses the first jug in a test.,b1-c32-p98
+6.754091,1,32,87.93,Party,Toilet-grade Rev-Up moonshine jug,remove,used,10,Inventory,10 of the group’s stock used in crafting.,b1-c32-p102
+6.754091,1,32,87.93,Carl,Carl's Jug O' Boom,add,carried,10,Inventory,Carl and Donut make ten additional jugs after testing the first.,b1-c32-p102
+6.867403,1,33,41.41,Carl,Carl's Jug O' Boom,remove,,2,Inventory,Carl expends two jugs.,b1-c33-p41
+6.875963,1,33,45.45,Carl,Potion of Healing,consume,,1,Inventory,Carl takes a healing potion after a Magic Missile hits him.,b1-c33-p45
+6.908064,1,33,60.61,Party,Gold coin,add,carried,50,Inventory,The two fairies each drop 25 coins and five brochures. The individual recipient is unspecified.,b1-c33-p60
+6.908064,1,33,60.61,Party,Brochure,add,carried,10,Inventory,The two fairies each drop 25 coins and five brochures. The individual recipient is unspecified.,b1-c33-p60
+6.916624,1,33,64.65,Carl,Laminak corpse,add,carried,2,Inventory,Carl stores both bodies and collects the clothes and wings left behind.,b1-c33-p64
+6.916624,1,33,64.65,Carl,Laminak clothes and wings,add,carried,2,Inventory,Carl stores both bodies and collects the clothes and wings left behind.,b1-c33-p64
+6.933744,1,33,72.73,Carl,Empty Rev-Up jug,add,carried,80,Inventory,Carl counts 80 empty jugs.,b1-c33-p72
+6.933744,1,33,72.73,Carl,Full Rev-Up moonshine jug,add,carried,60,Inventory,Carl counts 60 full jugs.,b1-c33-p72
+6.933744,1,33,72.73,Carl,Table,add,carried,1,Inventory,Carl takes two tables in total. One is listed separately as an alchemy workstation.,b1-c33-p72
+6.933744,1,33,72.73,Carl,Alchemy Workstation,add,carried,1,Inventory,Carl takes the alchemy workstation from the filling room.,b1-c33-p72
+6.942304,1,33,76.77,Carl,Hobgoblin Detonator,note,,1,Inventory,Carl reports that one detonator remains.,b1-c33-p76
+6.946585,1,33,78.79,Carl,Rev-Up Smoothies banner,add,,1,Inventory,Carl puts the cloth banner into his inventory.,b1-c33-p78
 6.970125,1,33,89.9,Carl,Glass smoothie container,add,carried,18,Inventory,Carl finds the staged equipment and recipe needed to craft immunity smoothies.,b1-c33-p89
 6.970125,1,33,89.9,Carl,Bicycle-powered blender blade lid,add,carried,1,Inventory,Carl finds the staged equipment and recipe needed to craft immunity smoothies.,b1-c33-p89
 6.970125,1,33,89.9,Carl,Rev-Up Immunity Smoothie Recipe,add,carried,1,Inventory,Carl finds the staged equipment and recipe needed to craft immunity smoothies.,b1-c33-p89
 6.970125,1,33,89.9,Carl,Stationary bicycle,add,carried,1,Inventory,Carl finds the staged equipment and recipe needed to craft immunity smoothies.,b1-c33-p89
-7.107902,1,34,54.93,Carl,Rev-Up Immunity Smoothie,remove,consumed,1,Inventory,Carl blends protective smoothies from moonshine and a fairy corpse; both party members drink one during the Krakaren fight.,b1-c34-p39
-7.107902,1,34,54.93,Princess Donut,Rev-Up Immunity Smoothie,remove,consumed,1,Inventory,Carl blends protective smoothies from moonshine and a fairy corpse; both party members drink one during the Krakaren fight.,b1-c34-p39
-7.107902,1,34,54.93,Party,Laminak corpse,remove,consumed as ingredient,1,Inventory,Carl blends protective smoothies from moonshine and a fairy corpse; both party members drink one during the Krakaren fight.,b1-c34-p39
-7.107902,1,34,54.93,Party,Rev-Up moonshine,remove,carried,,Inventory,Carl blends protective smoothies from moonshine and a fairy corpse; both party members drink one during the Krakaren fight.,b1-c34-p39
-7.18847,1,34,92.96,Carl,Carl's Jug O' Boom,remove,detonated,1,Inventory,"Carl arms a zombie with a Boom Jug and dynamite, then shelters under a redoubt panel and indestructible Alchemy Table; the panel is destroyed.",b1-c34-p66
-7.18847,1,34,92.96,Carl,Goblin Dynamite,remove,detonated,1,Inventory,"Carl arms a zombie with a Boom Jug and dynamite, then shelters under a redoubt panel and indestructible Alchemy Table; the panel is destroyed.",b1-c34-p66
-7.18847,1,34,92.96,Carl,Portable redoubt section,remove,destroyed,1,Inventory,"Carl arms a zombie with a Boom Jug and dynamite, then shelters under a redoubt panel and indestructible Alchemy Table; the panel is destroyed.",b1-c34-p66
-7.18847,1,34,92.96,Carl,Alchemy Table,add,used as shield; survived,1,Inventory,"Carl arms a zombie with a Boom Jug and dynamite, then shelters under a redoubt panel and indestructible Alchemy Table; the panel is destroyed.",b1-c34-p66
-7.392953,1,35,89.47,Princess Donut,Enchanted Fur Brush of the Ecclesiastic,add,carried,1,Inventory,"Krakaren rewards give Donut a nightly Constitution brush and Carl self-sizing enchanted boxers with Protective Shell, plus generic consumables and explosives.",b1-c35-p102
-7.392953,1,35,89.47,Carl,Gold coins,add,carried,,Inventory,"Krakaren rewards give Donut a nightly Constitution brush and Carl self-sizing enchanted boxers with Protective Shell, plus generic consumables and explosives.",b1-c35-p102
-7.392953,1,35,89.47,Party,"Potions, torches, biscuits, food",add,carried,,Inventory,"Krakaren rewards give Donut a nightly Constitution brush and Carl self-sizing enchanted boxers with Protective Shell, plus generic consumables and explosives.",b1-c35-p102
-7.392953,1,35,89.47,Carl,"Dynamite, smoke bombs, and lighters",add,carried,,Inventory,"Krakaren rewards give Donut a nightly Constitution brush and Carl self-sizing enchanted boxers with Protective Shell, plus generic consumables and explosives.",b1-c35-p102
-7.392953,1,35,89.47,Princess Donut,Scroll of Confusing Fog,add,carried,2,Inventory,"Krakaren rewards give Donut a nightly Constitution brush and Carl self-sizing enchanted boxers with Protective Shell, plus generic consumables and explosives.",b1-c35-p102
-7.392953,1,35,89.47,Carl,Enchanted BigBoi Boxers,equip,equipped,1,Inventory,"Krakaren rewards give Donut a nightly Constitution brush and Carl self-sizing enchanted boxers with Protective Shell, plus generic consumables and explosives.",b1-c35-p102
+7.042254,1,34,23.94,Carl,Full Rev-Up moonshine jug,remove,carried,1,Inventory,Carl uses some moonshine and discards the jug.,b1-c34-p17
+7.063142,1,34,33.8,Carl,Laminak corpse,remove,consumed as ingredient,1,Inventory,Carl uses one of the two corpses for the smoothie.,b1-c34-p24
+7.089998,1,34,46.48,Carl,Rev-Up Immunity Smoothie,add,,10,Consumable,Carl finishes a single bottle containing ten doses.,b1-c34-p33
+7.101934,1,34,52.11,Carl,Rev-Up Immunity Smoothie,consume,consumed,1,Inventory,Carl drinks one dose from the ten-dose bottle.,b1-c34-p37
+7.107902,1,34,54.93,Carl,Rev-Up Immunity Smoothie,remove,,9,Inventory,Carl passes the bottle with the remaining nine doses to Donut.,b1-c34-p39
+7.107902,1,34,54.93,Princess Donut,Rev-Up Immunity Smoothie,note,,8,Consumable,"After Carl and Donut have each drunk one dose, Donut holds the bottle with eight left.",b1-c34-p39
+7.107902,1,34,54.93,Princess Donut,Rev-Up Immunity Smoothie,consume,consumed,1,Inventory,Donut receives the bottle and drinks one dose.,b1-c34-p39
+7.182502,1,34,90.14,Carl,Carl's Jug O' Boom,remove,detonated,1,Inventory,Carl expends one jug in the boss encounter.,b1-c34-p64
+7.182502,1,34,90.14,Carl,Goblin Dynamite,remove,detonated,1,Inventory,Carl expends one stick of goblin dynamite.,b1-c34-p64
+7.18847,1,34,92.96,Carl,Alchemy Workstation,note,used as shield; survived,1,Inventory,Carl takes out the alchemy workstation he already owns.,b1-c34-p66
+7.229408,1,35,12.28,Princess Donut,Scroll of Heal,consume,,1,Inventory,Donut uses one healing scroll on Carl.,b1-c35-p14
+7.238701,1,35,16.67,Carl,Leather jacket,note,equipped,,Equipment,The jacket is scorched and still has one sleeve. Carl is still wearing it.,b1-c35-p19
+7.244276,1,35,19.3,Carl,Portable redoubt section,remove,destroyed,1,Inventory,Carl finds the redoubt panel shattered after the battle.,b1-c35-p22
+7.318614,1,35,54.39,Princess Donut,Enchanted Fur Brush of the Ecclesiastic,add,carried,1,Inventory,Ten minutes of brushing gives Donut two extra Constitution points for 30 hours.,b1-c35-p62
+7.370651,1,35,78.95,Carl,Gold coins,add,carried,,Inventory,"Carl receives several hundred coins. The party now has just over 1,000.",b1-c35-p90
+7.370651,1,35,78.95,Carl,"Potions, torches, biscuits, food",add,carried,,Inventory,"Carl receives more potions, torches, biscuits and food.",b1-c35-p90
+7.370651,1,35,78.95,Carl,"Dynamite, smoke bombs, and lighters",add,carried,,Inventory,"Carl finds dynamite, smoke bombs and lighters in goblin boxes.",b1-c35-p90
+7.370651,1,35,78.95,Carl,Scroll of Confusing Fog,add,carried,2,Inventory,Carl receives two scrolls of Confusing Fog and plans to pass them to Donut.,b1-c35-p90
+7.385519,1,35,85.96,Carl,Enchanted BigBoi Boxers,add,,1,Equipment,Carl identifies the boxers from his boss box.,b1-c35-p98
+7.392953,1,35,89.47,Carl,Enchanted BigBoi Boxers,equip,equipped,1,Equipment,Carl equips the boxers and adds Protective Shell to his hotlist.,b1-c35-p102
 7.392953,1,35,89.47,Carl,Boxers,remove,carried,1,Inventory,Carl's original scorched boxers fall apart when he changes into the enchanted pair.,b1-c35-p102
 7.446876,1,36,14.93,Zev,Life-support suit,equip,equipped,,Equipment,"Zev wears a mesh life-support suit with a water-filled helmet, connecting tubes, and backpack.",b1-c36-p10
 7.734327,1,37,50.6,Chris,Tuskling pig harness,equip,equipped,,Equipment,Chris wears a leather pig harness while pulling the group. No numeric modifiers are stated.,b1-c37-p42
-7.734327,1,37,50.6,Imani C.,Pig harness,note,equipped,,Equipment,Imani wears a pig harness while hauling the residents.,b1-c37-p42
+7.734327,1,37,50.6,Imani C.,Pig harness,equip,equipped,,Equipment,Imani wears a tuskling harness to pull the residents’ train alongside Chris.,b1-c37-p42
 7.74709,1,37,56.63,Imani C.,Yog’s Special Chain scroll,note,,,,"Imani has used a scroll to create a temporary, lightweight chain; the speaker is uncertain of its exact name.",b1-c37-p47
-8.147393,1,39,45.57,Princess Donut,Dungeon Gold Rush ticket,add,carried,1,Inventory,Their Platinum Lucky Bastard boxes yield limited-use scratch tickets with randomized beneficial or harmful combat effects.,b1-c39-p36
-8.147393,1,39,45.57,Carl,Fireball or Custard ticket,add,carried,1,Inventory,Their Platinum Lucky Bastard boxes yield limited-use scratch tickets with randomized beneficial or harmful combat effects.,b1-c39-p36
+7.813457,1,37,87.95,Jack,Bengals cap,equip,equipped,,Equipment,Yolanda identifies the resident wearing the cap as Jack.,b1-c37-p73
+7.882817,1,38,20.69,Princess Donut,Scroll of Confusing Fog,consume,,1,Inventory,Donut uses a Confusing Fog scroll. The book does not date when she received it.,b1-c38-p12
+7.93761,1,38,46.55,Carl,Potion of Healing,consume,,1,Inventory,Carl uses a healing potion.,b1-c38-p27
+7.963179,1,38,58.62,Carl,Potion of Healing,remove,,1,Inventory,Carl gives Elle a healing potion.,b1-c38-p34
+7.963179,1,38,58.62,Elle McGib,Potion of Healing,add,,1,Inventory,Carl places a healing potion in Elle’s hand.,b1-c38-p34
+7.988749,1,38,70.69,Carl,Carl's Jug O' Boom,remove,,1,Inventory,Carl expends one jug outside the safe room.,b1-c38-p41
+8.007013,1,38,79.31,Elle McGib,Potion of Healing,consume,,1,Inventory,Brandon helps Elle drink the potion Carl handed her.,b1-c38-p46
+8.120575,1,39,32.91,Princess Donut,Dungeon Gold Rush ticket,add,carried,1,Inventory,Donut receives a Dungeon Gold Rush ticket with six scratch spots. It cannot be played in a safe room.,b1-c39-p26
+8.144711,1,39,44.3,Carl,Fireball or Custard ticket,add,carried,1,Inventory,Carl identifies his five-spot scratch ticket as Fireball or Custard.,b1-c39-p35
 8.160802,1,39,51.9,Hekla,Glittering breastplate,equip,,,Equipment,Hekla is observed wearing a glittering breastplate. Its bonuses are unstated.,b1-c39-p41
 8.160802,1,39,51.9,Hekla,Repeating crossbow,equip,,,Equipment,Hekla is identified as the crawler carrying the repeating crossbow. Earlier anonymous sightings do not establish her identity.,b1-c39-p41
-8.490025,1,41,7.29,Party,Goblin chopper with detachable sidecar,remove,carried,1,Inventory,Carl confirms the chopper was destroyed during the rage-elemental escape.,b1-c41-p7
+8.267491,1,40,2.26,Carl,Mother of All Bombs,add,,1,Inventory,Carl and the Meadow Lark team finish the MOAB.,b1-c40-p3
+8.297757,1,40,16.54,Carl,Goblin riveter,note,,,Inventory,Carl has a goblin riveter in hand at the restaurant.,b1-c40-p22
+8.31528,1,40,24.81,Carl,Goblin chopper with detachable sidecar,note,sidecar detached,,Inventory,Carl removes the sidecar and fits a newly built trailer. Donut rides in the rear seat.,b1-c40-p33
+8.326431,1,40,30.08,Carl,Temporary Meadow Lark chain,add,,1,Inventory,Carl recovers the 300-foot chain that joined the train cars.,b1-c40-p40
+8.374219,1,40,52.63,Carl,Temporary Meadow Lark chain,remove,,1,Inventory,The party deploys Imani’s chain during the escape.,b1-c40-p70
+8.409265,1,40,69.17,Carl,Goblin chopper with detachable sidecar,note,boiler warning,,Inventory,The chopper displays a boiler-breach warning.,b1-c40-p92
+8.425194,1,40,76.69,Carl,Mother of All Bombs,lose,,1,Inventory,The MOAB goes down the stairwell on the trailer.,b1-c40-p102
+8.425194,1,40,76.69,Carl,Goblin chopper with detachable sidecar,remove,carried,1,Inventory,The chopper falls into the stairwell after Carl and Donut jump clear. Its detached sidecar is not aboard.,b1-c40-p102
 8.580508,1,41,50.0,Princess Donut,Mana Toast,add,carried,2,Inventory,"Carl gives his free mana toast to Donut, who stores both portions.",b1-c41-p48
-8.657751,1,41,86.46,Carl,Gorgon Marital Aid,add,carried,1,Inventory,"Mechanic and Sapper boxes add a hardening tool, safe explosive workbench, and ten configurable proximity triggers.",b1-c41-p83
-8.657751,1,41,86.46,Carl,Sapper's Table,add,carried,1,Inventory,"Mechanic and Sapper boxes add a hardening tool, safe explosive workbench, and ten configurable proximity triggers.",b1-c41-p83
-8.657751,1,41,86.46,Carl,Proximity Trigger,add,carried,10,Inventory,"Mechanic and Sapper boxes add a hardening tool, safe explosive workbench, and ten configurable proximity triggers.",b1-c41-p83
-8.9927,1,43,44.55,Maggie My,Area-of-effect stealth ring,note,,,Equipment,A recap reveals Maggie’s ring granting a stationary area-of-effect stealth ability. The ability’s formal name and rank are not given.,b1-c43-p45
-9.084997,1,43,88.12,Carl,Bates zip-up tactical boots,add,carried,1,Inventory,The Maestro gifts Carl correctly sized service boots and socks as a taunt; Carl refuses to equip them.,b1-c43-p89
-9.084997,1,43,88.12,Carl,Socks,add,carried,1,Inventory,The Maestro gifts Carl correctly sized service boots and socks as a taunt; Carl refuses to equip them.,b1-c43-p89
+8.609199,1,41,63.54,Princess Donut,Brush,add,,,Inventory,Donut produces a brush for Carl to groom her.,b1-c41-p61
+8.640095,1,41,78.12,Carl,Gorgon Marital Aid,add,carried,1,Inventory,Carl finds the Gorgon Marital Aid in the Mechanic’s Box.,b1-c41-p75
+8.648923,1,41,82.29,Carl,Sapper's Table,add,carried,1,Inventory,Carl finds a Sapper’s Table in the Sapper’s Box.,b1-c41-p79
+8.653337,1,41,84.38,Carl,Proximity Trigger,add,carried,10,Inventory,Carl identifies ten Proximity Triggers from the Sapper’s Box.,b1-c41-p81
+8.9927,1,43,44.55,Maggie My,Area-of-effect stealth ring,note,,,Equipment,Maggie’s ring grants stealth over an area. Its rank is unknown.,b1-c43-p45
+9.034653,1,43,64.36,Maggie My,Black dagger,equip,,,Equipment,Maggie draws a black dagger with a purple glow.,b1-c43-p65
+9.080802,1,43,86.14,Carl,Bates zip-up tactical boots,add,carried,1,Inventory,Carl receives a pair of Bates tactical boots in his size.,b1-c43-p87
+9.0829,1,43,87.13,Carl,Socks,add,carried,1,Inventory,The Maestro tells Carl there are socks in his gift box.,b1-c43-p88
 9.09129,1,43,91.09,Maggie My,Legendary Skill Potion,note,,,Consumable,Maggie takes the potion offered by the Maestro. Receiving it does not establish that she drank it or learned its skill.,b1-c43-p92
 9.121832,1,44,5.5,Princess Donut,Spike Module,add,carried,1,Inventory,Donut's Gold Sapper Box yields two ready-made trap modules.,b1-c44-p6
 9.121832,1,44,5.5,Princess Donut,Alarm Module,add,carried,1,Inventory,Donut's Gold Sapper Box yields two ready-made trap modules.,b1-c44-p6
-9.388688,1,45,31.46,Carl,Pet Biscuit,remove,carried,1,Inventory,"Carl feeds a pet biscuit to a wounded caged dingo, neutralizing its hostility.",b1-c45-p28
-9.581739,1,46,22.58,Carl,Spiked kobold helmet,add,carried,,Inventory,"After the kobold pit fight, Carl salvages helmets, coins, a Heal Critter scroll, biscuits, cage, one-use pen key, and arena chairs.",b1-c46-p14
-9.581739,1,46,22.58,Carl,Gold coins,add,carried,,Inventory,"After the kobold pit fight, Carl salvages helmets, coins, a Heal Critter scroll, biscuits, cage, one-use pen key, and arena chairs.",b1-c46-p14
-9.581739,1,46,22.58,Carl,Scroll of Heal Critter,add,carried,1,Inventory,"After the kobold pit fight, Carl salvages helmets, coins, a Heal Critter scroll, biscuits, cage, one-use pen key, and arena chairs.",b1-c46-p14
-9.581739,1,46,22.58,Carl,Pet Biscuits,add,carried,,Inventory,"After the kobold pit fight, Carl salvages helmets, coins, a Heal Critter scroll, biscuits, cage, one-use pen key, and arena chairs.",b1-c46-p14
-9.581739,1,46,22.58,Carl,Gerbil cage,add,carried,1,Inventory,"After the kobold pit fight, Carl salvages helmets, coins, a Heal Critter scroll, biscuits, cage, one-use pen key, and arena chairs.",b1-c46-p14
-9.581739,1,46,22.58,Carl,Master Pen Key,add,single use,1,Inventory,"After the kobold pit fight, Carl salvages helmets, coins, a Heal Critter scroll, biscuits, cage, one-use pen key, and arena chairs.",b1-c46-p14
+9.376785,1,45,25.84,Carl,Pet Biscuit,remove,carried,1,Inventory,Carl takes one pet biscuit from his inventory and throws it into the first dingo’s cage.,b1-c45-p23
+9.395829,1,45,34.83,Carl,Pet Biscuit,remove,,13,Inventory,Carl repeats the feeding for the other thirteen of the fourteen captive dingoes.,b1-c45-p31
+9.550984,1,46,8.06,Carl,Kobold neighborhood map,add,,,Inventory,Carl loots the neighborhood map after the boss fight.,b1-c46-p5
+9.561236,1,46,12.9,Carl,Spiked kobold helmet,add,carried,,Inventory,Carl salvages several spiked kobold helmets.,b1-c46-p8
+9.561236,1,46,12.9,Carl,Gold coins,add,carried,,Inventory,Carl salvages gold coins from the defeated kobolds.,b1-c46-p8
+9.561236,1,46,12.9,Carl,Scroll of Heal Critter,add,carried,1,Inventory,Carl finds one Scroll of Heal Critter.,b1-c46-p8
+9.561236,1,46,12.9,Carl,Pet Biscuits,add,carried,,Inventory,Carl finds a handful of pet biscuits.,b1-c46-p8
+9.564653,1,46,14.52,Carl,Gerbil cage,add,carried,1,Inventory,Carl adds the undamaged gerbil cage to his inventory.,b1-c46-p9
+9.571487,1,46,17.74,Carl,Master Pen Key,add,carried,1,Inventory,Carl finds the Master Pen Key on a kobold.,b1-c46-p11
 9.581739,1,46,22.58,Carl,Arena chairs,add,carried,,Inventory,"After the kobold pit fight, Carl salvages helmets, coins, a Heal Critter scroll, biscuits, cage, one-use pen key, and arena chairs.",b1-c46-p14
-9.687671,1,46,72.58,Party,Master Pen Key,remove,consumed/broken,1,Inventory,Party spends the one-use key on the mongoliensis and begins taming him with biscuits.,b1-c46-p45
-9.687671,1,46,72.58,Party,Mongoliensis juvenile,remove,released; bonding in progress,1,Inventory,Party spends the one-use key on the mongoliensis and begins taming him with biscuits.,b1-c46-p45
-9.687671,1,46,72.58,Party,Pet Biscuits,add,carried,,Inventory,Party spends the one-use key on the mongoliensis and begins taming him with biscuits.,b1-c46-p45
-9.76206,1,47,7.69,Princess Donut,Tome of Heal Critter,remove,consumed to learn spell,1,Inventory,"Final second-floor boss boxes teach Donut Heal Critter and give Carl his third Determine Value potion plus 1,000 gold.",b1-c47-p11
+9.684254,1,46,70.97,Carl,Master Pen Key,remove,consumed/broken,1,Inventory,Carl spends the one-use key to release the juvenile.,b1-c46-p44
+9.684254,1,46,70.97,Party,Mongoliensis juvenile,remove,released; bonding in progress,1,Inventory,The juvenile is released from its pen.,b1-c46-p44
+9.687671,1,46,72.58,Princess Donut,Pet Biscuits,remove,carried,,Inventory,Donut uses some pet biscuits from her supply to feed the juvenile. The remaining count is unknown.,b1-c46-p45
+9.76206,1,47,7.69,Carl,Potion of Determine Value,add,,1,Inventory,Carl receives a Potion of Determine Value from the boss rewards before drinking it.,b1-c47-p11
+9.76206,1,47,7.69,Princess Donut,Tome of Heal Critter,add,carried,1,Inventory,Donut receives the Heal Critter spell book in the boss rewards.,b1-c47-p11
 9.76206,1,47,7.69,Carl,Potion of Determine Value,remove,consumed,1,Inventory,"Final second-floor boss boxes teach Donut Heal Critter and give Carl his third Determine Value potion plus 1,000 gold.",b1-c47-p11
 9.76206,1,47,7.69,Carl,Gold coin,add,carried,1000,Inventory,"Final second-floor boss boxes teach Donut Heal Critter and give Carl his third Determine Value potion plus 1,000 gold.",b1-c47-p11
-9.904291,1,47,74.83,Carl,Trans Tunnel 7C Orator Relay by Valtay Corp.,remove,no longer held,1,Inventory,Determine Value history reveals three high-value Valtay devices that briefly entered Carl's inventory inside Agatha's cart and were returned with it.,b1-c47-p107
-9.904291,1,47,74.83,Carl,Valtay Perso-Shield Platinum Edition,remove,no longer held,1,Inventory,Determine Value history reveals three high-value Valtay devices that briefly entered Carl's inventory inside Agatha's cart and were returned with it.,b1-c47-p107
-9.904291,1,47,74.83,Carl,Mag 3040 Valtay Corp Pulse Pistol,remove,no longer held,1,Inventory,Determine Value history reveals three high-value Valtay devices that briefly entered Carl's inventory inside Agatha's cart and were returned with it.,b1-c47-p107
+9.901328,1,47,73.43,Carl,Trans Tunnel 7C Orator Relay by Valtay Corp.,remove,no longer held,1,Inventory,Carl finds Trans Tunnel 7C Orator Relay by Valtay Corp. in his item history. It is absent from his current inventory.,b1-c47-p105
+9.902809,1,47,74.13,Carl,Valtay Perso-Shield Platinum Edition,remove,no longer held,1,Inventory,Carl finds Valtay Perso-Shield Platinum Edition in his item history. It is absent from his current inventory.,b1-c47-p106
+9.904291,1,47,74.83,Carl,Mag 3040 Valtay Corp Pulse Pistol,remove,no longer held,1,Inventory,Carl finds Mag 3040 Valtay Corp Pulse Pistol in his item history. It is absent from his current inventory.,b1-c47-p107
+9.914662,1,47,79.72,Agatha,Mag 3040 Valtay Corp Pulse Pistol,note,,,Inventory,Carl identifies Mag 3040 Valtay Corp Pulse Pistol among the contents of Agatha’s cart during an earlier encounter.,b1-c47-p114
+9.914662,1,47,79.72,Agatha,Trans Tunnel 7C Orator Relay by Valtay Corp.,note,,,Inventory,Carl identifies Trans Tunnel 7C Orator Relay by Valtay Corp. among the contents of Agatha’s cart during an earlier encounter.,b1-c47-p114
+9.914662,1,47,79.72,Agatha,Valtay Perso-Shield Platinum Edition,note,,,Inventory,Carl identifies Valtay Perso-Shield Platinum Edition among the contents of Agatha’s cart during an earlier encounter.,b1-c47-p114
+11.033246,2,6,7.69,Carl,Nica’s rings,add,carried,2,Equipment,Carl collects two rings from Nica.,b2-c6-p10
+11.034876,2,6,8.46,Carl,Nica’s rings,equip,equipped,2,Equipment,"Carl equips both rings, bringing the number he wears to four. Each new ring grants two Strength.",b2-c6-p11
+11.275589,2,7,22.08,Carl,Mold lion heart,add,carried,1,Inventory,Carl collects the mold lion’s heart.,b2-c7-p34
 13.547835,2,17,94.58,Mongo,Enchanted Fang Caps of the Expectorating Tizheruk,equip,equipped,,Equipment,Mongo is observed wearing the previously described enchanted fang caps. They enhance biting and can inflict poison or paralysis.,b2-c17-p157
 14.225689,2,21,14.53,Carl,Hobgoblin smoke curtains,add,,10,Inventory,Carl purchases ten smoke curtains.,b2-c21-p26
 14.225689,2,21,14.53,Carl,Impact hob-lobbers,add,,3,Inventory,Carl buys three boxes of impact-detonated hob-lobbers. The number per box is unstated.,b2-c21-p26
 14.269482,2,21,35.2,Katia Grim,Broken mirror,add,,1,Inventory,Carl gives Katia a hand-sized mirror fragment to help shape her face.,b2-c21-p63
 14.273033,2,21,36.87,Katia Grim,Magical leather jerkin,equip,equipped,,Inventory,Katia says her equipped jerkin merges into her shapeshifting mass.,b2-c21-p66
-14.300256,2,21,49.72,Katia Grim,Constitution ring (+15),equip,equipped,,Inventory,Katia wears a ring adding 15 Constitution. Other buffs also contribute to her displayed total.,b2-c21-p89
+14.300256,2,21,49.72,Katia Grim,Constitution ring (+15),equip,equipped,,Inventory,Katia wears a ring from an early loot box that grants 15 Constitution. Other buffs also contribute to her displayed total.,b2-c21-p89
 14.394944,2,21,94.41,Carl,Hobgoblin smoke curtains,consume,,2,Inventory,Carl lights and deploys two smoke curtains.,b2-c21-p169
 15.165219,2,25,57.98,Princess Donut,Enchanted Crown of the Sepsis Whore,remove,no longer held,,Equipment,The crown crumbles into dust and disappears.,b2-c25-p69
 15.567569,3,2,47.89,Carl,Enchanted Necklace of the Haute Bourgeoisie,equip,equipped,,Equipment,"Carl puts on the necklace, which adds five Dexterity.",b3-c2-p125
+15.924421,3,4,16.33,Carl,Bronze Crafter’s Box,add,unopened,1,Reward box,The workbench achievement awards Carl a Bronze Crafter’s Box.,b3-c4-p16
+15.926582,3,4,17.35,Carl,Bronze Crafter’s Box,remove,opened,1,Reward box,Carl opens his Bronze Crafter’s Box.,b3-c4-p17
+15.926582,3,4,17.35,Carl,Bucket of pink glitter,add,carried,1,Inventory,Carl receives a bucket of pink glitter.,b3-c4-p17
+15.926582,3,4,17.35,Carl,Pliers,add,carried,1,Inventory,Carl receives ordinary pliers.,b3-c4-p17
+15.926582,3,4,17.35,Carl,Tape measure,add,carried,1,Inventory,Carl receives a tape measure.,b3-c4-p17
 16.039,3,4,70.41,Katia Grim,Axe,note,carried,,Equipment,Katia practices fighting with her axe. Its acquisition date and bonuses are unstated.,b3-c4-p69
 16.628178,3,7,48.5,Mongo,Enchanted Mongoliensis Saddle,equip,equipped,,Equipment,Carl affixes the saddle to Mongo. It increases his Constitution by 20%; its melee damage bonus requires a rider.,b3-c7-p97
+17.14309,3,9,91.54,Carl,Scroll of Upgrade,remove,consumed,1,Inventory,Carl uses the scroll.,b3-c9-p119
+17.149609,3,9,94.62,Carl,Enchanted Toe Ring of the Splatter Skunk,note,,,Equipment,The upgraded ring grants 10 Strength and five levels of Powerful Strike.,b3-c9-p123
 17.897498,3,13,47.62,Katia Grim,Transformation-mass backpack,equip,equipped,,Equipment,Katia equips the metal-filled backpack made by Carl and incorporates its mass into her form.,b3-c13-p80
 18.340501,3,15,56.72,Princess Donut,Prism Industries Capacitating and Focusing Goggles,note,carried,,Equipment,Donut removes her new sponsor-gift goggles for inspection; their formal name is revealed.,b3-c15-p76
 18.349987,3,15,61.19,Princess Donut,Prism Industries Capacitating and Focusing Goggles,note,,,Equipment,The goggles protect vision and focus eye-originating energy spells. Donut reports four simultaneous Magic Missile beams and stored-shot combination.,b3-c15-p82
@@ -330,6 +397,7 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 19.890918,3,22,88.51,Hekla,Curved blades,equip,,2,Equipment,Hekla draws a short curved blade in each hand.,b3-c22-p131
 20.28286,3,24,73.51,Katia Grim,Repeating crossbow,note,carried,,Equipment,Katia reveals that she recovered Hekla’s repeating crossbow.,b3-c24-p111
 20.28286,3,24,73.51,Hekla,Repeating crossbow,remove,,,Equipment,Katia reveals that she recovered Hekla’s crossbow. It is no longer in Hekla’s possession.,b3-c24-p111
+20.424544,3,25,40.38,Katia Grim,Gold Savage Box,remove,opened,1,Reward box,Katia reports opening the Gold Savage Box awarded for killing a crawler.,b3-c25-p63
 20.845493,3,27,39.07,Eva,Sabers,remove,,,Equipment,"Carl recovers one of Eva’s two sabers, left on the train after the fight. One of the pair remains with Eva.",b3-c27-p59
 20.910035,3,27,69.54,Katia Grim,Repeating crossbow,equip,equipped,,Equipment,Katia deploys the crossbow from inventory and mounts it behind her transformed shield.,b3-c27-p105
 21.216039,3,29,13.97,Bautista,Stuffed Grulke Infantry Figure,note,carried,4,Inventory,Bautista retains four Grulke figures after offering one to Carl; one has a differently colored hat.,b3-c29-p19
@@ -342,6 +410,8 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 21.773608,3,31,77.14,Katia Grim,Crowd-control baton,note,carried,,Equipment,Katia draws and uses her crowd-control baton.,b3-c31-p108
 21.847093,3,32,11.83,Li Na,White and red robe,equip,equipped,,Equipment,Li Na wears a flowing white and red robe. No numeric item bonus is stated.,b3-c32-p22
 21.908602,3,32,40.86,Miriam Dom,Hooked staff,note,,,Equipment,Miriam carries a long staff with a hooked end.,b3-c32-p76
+22.747655,4,2,36.89,Princess Donut,Tome of Wall of Fire,add,,1,Inventory,Donut finds the Wall of Fire spellbook in a platinum box.,b4-c2-p76
+22.749712,4,2,37.86,Princess Donut,Tome of Wall of Fire,consume,,1,Inventory,Donut uses her spellbook.,b4-c2-p78
 22.75074,4,2,38.35,Katia Grim,Antidote potions,note,carried,,Consumable,Katia receives antidote potions from her boxes; the quantity is unstated.,b4-c2-p79
 22.75074,4,2,38.35,Katia Grim,Water-breathing scrolls,note,carried,,Consumable,Katia receives several water-breathing scrolls from her boxes; the quantity is unstated.,b4-c2-p79
 23.172522,4,4,37.43,Quan Ch,Celestial cloak,equip,,,Equipment,Quan’s magical garment is observed providing flight and protection. Suggested spell identities and ranks remain uncertain.,b4-c4-p67
@@ -353,7 +423,10 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 24.666839,4,11,42.75,Firas M,Long knife,equip,,,Equipment,Firas draws a long knife during the staged encounter.,b4-c11-p56
 24.845917,4,12,27.27,Firas M,Launcher tube,note,,1,Equipment,Firas has a launcher tube in his inventory for the coordinated attack.,b4-c12-p33
 25.200308,4,13,94.55,Mongo,Additional fang caps (speed and strength),equip,equipped,,Equipment,"Carl installs a second pair of fang caps. The text specifies 15% movement speed and 15% Strength; these are additional caps, not replacements.",b4-c13-p156
+26.078582,4,18,9.09,Carl,Hobgoblin Disco Ball,add,,1,Inventory,Carl creates a Hobgoblin Disco Ball using Infusion.,b4-c18-p14
 26.62014,4,20,64.71,Gwendolyn Duet,Spear,note,,,Equipment,Gwen’s fighting with a spear is described. No weapon bonuses are stated.,b4-c20-p77
+27.218738,4,23,47.24,Carl,Double-sided paddle,note,,,Inventory,Carl takes out the paddle for the kayak.,b4-c23-p60
+27.218738,4,23,47.24,Carl,Kayak,note,,,Inventory,Carl takes his kayak from inventory and uses it with Donut.,b4-c23-p60
 28.057079,4,27,42.94,Tran,Sword,equip,equipped,,Equipment,Tran wields a sword while clearing the submerged passage. No numeric bonus is stated.,b4-c27-p73
 28.248587,4,28,33.33,Tran,Ring of Water Breathing,note,carried,,Inventory,Tran receives the same water-breathing ring as Carl; it permits underwater breathing and imposes -1 Charisma when worn. Actual equipping is not stated.,b4-c28-p69
 28.270081,4,28,43.48,Carl,Enchanted Anarchist’s Battle Rattle,note,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b4-c28-p90
@@ -370,14 +443,22 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 29.132448,4,32,50.52,Quan Ch,Sappy gold ring,remove,,,Equipment,"The ring taken with Quan’s severed arm is identified in Carl’s possession. This is a historical loss, not a new acquisition.",b4-c32-p98
 29.194697,4,32,79.9,Louis Santiago,Unidentified spellbook,note,carried,,Inventory,Louis receives a spellbook; neither its spell nor whether he learns it is identified.,b4-c32-p155
 29.194697,4,32,79.9,Tran,Scroll subscription,note,carried,,Inventory,Tran receives a recurring scroll subscription. Individual scroll contents are not identified.,b4-c32-p155
+29.21217,4,32,88.14,Carl,Enchanted Handcuffs,add,,1,Inventory,Carl identifies the handcuffs from his Savage Box.,b4-c32-p171
+30.257647,5,3,81.61,Katia Grim,Desperado Club gambling chip,add,,1,Inventory,Katia reports getting the chip from her Platinum Asshole’s Box.,b5-c3-p71
 30.523608,5,5,7.14,Carl,Enchanted Night Wyrm’s Ring of Divine Suffering,equip,equipped,,Equipment,Carl puts on the ring; it raises his stats by five percent.,b5-c5-p13
 33.231218,5,17,85.14,Odette,Floating wheelchair,note,in use,,Equipment,Odette is visibly supported by her circular hovering wheelchair. No numerical benefits are stated.,b5-c17-p63
 33.231218,5,17,85.14,Zev,Life-support suit,unequip,carried,,Equipment,Zev appears without her usual suit. Its removal does not establish that she discarded it.,b5-c17-p63
 33.231218,5,17,85.14,Zev,Neck rebreather,equip,equipped,,Equipment,Zev wears a simple rebreather around her throat in place of the usual suit.,b5-c17-p63
+34.558462,5,24,11.59,Carl,Gonorrhea arrow,add,,1,Inventory,Carl takes one additional special arrow from the hunter.,b5-c24-p8
+34.558462,5,24,11.59,Carl,Photograph of Louis,add,,1,Inventory,Carl loots a photograph of Louis.,b5-c24-p8
+34.558462,5,24,11.59,Carl,Regular arrows,add,,,Inventory,Carl takes an unspecified number of arrows from the hunter.,b5-c24-p8
+34.558462,5,24,11.59,Carl,Unenchanted bow,add,,1,Inventory,Carl loots a bow from the dead hunter.,b5-c24-p8
+34.586097,5,24,24.64,Carl,Enchanted Venomous Elven Rock Chucker,add,,1,Inventory,Carl stores the siege contraption in his inventory.,b5-c24-p17
 35.902189,5,30,45.83,Zev,Neck rebreather,equip,equipped,,Equipment,Zev is again observed wearing only the rebreather.,b5-c30-p22
 37.092004,5,36,7.43,Elle McGib,Anti-slip socks,equip,equipped,,Equipment,Elle still wears her pre-dungeon anti-slip socks. No magical bonus is stated.,b5-c36-p15
 37.092004,5,36,7.43,Elle McGib,Wedding ring on a chain,equip,equipped,,Equipment,Elle wears her gold wedding ring on a chain around her neck. No magical bonus is stated.,b5-c36-p15
 37.100394,5,36,11.39,Bautista,Figure refresher kit,note,carried,,Inventory,Bautista reports a sponsor-provided kit that allows two tag replacements on surviving summoned figures.,b5-c36-p23
+37.184301,5,36,50.99,Carl,Invisibility potions,add,,,Inventory,Carl receives several potions in a Silver Lucky Bastard Box. Quantity unspecified.,b5-c36-p103
 37.184301,5,36,50.99,Firas M,Hammer-skill cloak,note,,,Equipment,Carl gives Firas a cloak that grants hammer-based attack skills. Those skills are not individually named.,b5-c36-p103
 37.216815,5,36,66.34,Carl,Arrows patch,note,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b5-c36-p134
 37.217864,5,36,66.83,Carl,Earth patch,equip,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b5-c36-p135
@@ -405,18 +486,26 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 44.855574,5,72,71.83,Signet,Assassination knife,add,,1,Inventory,Carl hands Signet the knife previously used in an assassination attempt against Donut.,b5-c72-p51
 44.909286,5,72,97.18,Carl,Enchanted Night Wyrm’s Ring of Divine Suffering,equip,equipped,,Equipment,Carl puts on the ring before marking Vrah.,b5-c72-p69
 45.412794,5,75,34.84,Princess Donut,Temporary charisma-doubling tiara,remove,no longer held,,Equipment,"The temporary tiara is gone, lost during the battle.",b5-c75-p54
+45.8814,6,2,56.02,Princess Donut,Town upgrade coupon,add,,1,Inventory,Donut receives a coupon for the Tina quest and saves it.,b6-c2-p107
+45.88251,6,2,56.54,Princess Donut,Enchanted Fur Brush of the Ecclesiastic,note,,,Inventory,"Donut’s upgraded brush adds 10% Constitution during its grooming buff, alongside its existing two-point bonus.",b6-c2-p108
+45.88251,6,2,56.54,Princess Donut,Love Vampire skill potion,add,,1,Inventory,Donut receives a skill potion from a Gold Pacifist’s Box.,b6-c2-p108
+45.899148,6,2,64.4,Princess Donut,Love Vampire skill potion,consume,,1,Inventory,Donut uses the skill potion.,b6-c2-p123
 45.96903,6,2,97.38,Bautista,Shape-changing ring,note,carried,,Inventory,Carl reports that Bautista received a shape-changing ring. No numeric modifiers are stated.,b6-c2-p186
 45.96903,6,2,97.38,Elle McGib,Ice staff,note,carried,,Inventory,Carl reports that Elle received an ice staff. No name or numeric modifiers are given.,b6-c2-p186
 46.011568,6,3,17.46,Carl,Arrows patch,equip,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b6-c3-p33
 46.011568,6,3,17.46,Carl,Bomb patch,equip,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b6-c3-p33
 46.05977,6,3,40.21,Carl,Peace patch,note,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b6-c3-p76
 46.085553,6,3,52.38,Carl,Enchanted Auto Buckler of the Peach Pit,unequip,carried,,Equipment,Carl removes the old buckler from his left arm before replacing it.,b6-c3-p99
+46.087795,6,3,53.44,Carl,Enchanted Nipple Ring of the Defiler,add,,1,Equipment,Carl identifies the ring he received from a Platinum Apostate Box.,b6-c3-p101
+46.096763,6,3,57.67,Carl,Enchanted Nipple Ring of the Defiler,note,,,Equipment,"While worn, the ring reveals religious affiliations, permits shrine destruction without divine penalties, adds 25% damage against clerics, and grants Black Nimbus once per hour.",b6-c3-p109
 46.119182,6,3,68.25,Carl,Peace patch,equip,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b6-c3-p129
 46.133755,6,3,75.13,Carl,Enchanted Anarchist’s Battle Rattle,equip,equipped,,Equipment,Carl puts the jacket back on with the Scavenger’s Daughter patch attached.,b6-c3-p142
 46.133755,6,3,75.13,Carl,Scavenger’s Daughter Patch,equip,equipped,,Equipment,Carl finishes sewing the back patch onto his jacket and puts the jacket on; the patch activates.,b6-c3-p142
 46.138239,6,3,77.25,Carl,Scavenger’s Daughter Patch,note,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b6-c3-p146
 46.141602,6,3,78.84,Carl,Scavenger’s Daughter Patch,note,,,Equipment,The activated patch grants 25 Dexterity and 25 Strength in addition to its other benefits.,b6-c3-p149
 46.146086,6,3,80.95,Carl,Scavenger’s Daughter Patch,note,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b6-c3-p153
+47.59633,6,10,65.47,Carl,Spirit Box,add,,1,Inventory,Carl disarms and keeps one Spirit Box trap.,b6-c10-p91
+47.792885,6,11,58.24,Princess Donut,The Bard’s Golden Throat,equip,,,Equipment,"Donut equips the headset microphone. It assists bard performances, amplifies her voice, and adds 5% Charisma while equipped.",b6-c11-p106
 50.132415,6,22,62.5,Tran,Magical wheelchair,note,carried,,Inventory,Tran has a magical wheelchair that permits floating after losing his legs.,b6-c22-p90
 50.205979,6,22,97.22,Princess Donut,Enchanted Tiara of Mana Genita,equip,equipped,,Equipment,Donut is again explicitly wearing her usual Mana Genita tiara.,b6-c22-p140
 50.51608,6,24,43.59,Princess Donut,Enchanted Tiara of Mana Genita,unequip,carried,,Equipment,Donut keeps the old tiara in inventory while equipping its replacement.,b6-c24-p34
@@ -431,10 +520,14 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 50.753563,6,25,55.68,Princess Donut,Raul totem card,add,,1,Totem card,Donut receives Raul’s card and stores it in inventory.,b6-c25-p49
 51.759483,6,30,30.48,Imani C.,Addiction cures,note,,,,Imani purchases two addiction cures and has administered the first to Katia.,b6-c30-p32
 51.78975,6,30,44.76,Imani C.,Blitz treatment patch,note,,,,Imani has the patch ready for Katia’s next treatment; the passage describes planned administration.,b6-c30-p47
+53.766726,6,39,77.89,Princess Donut,Lazarus-A-Bang-Bang totem card,note,,,Inventory,"Donut shows her unique combo card, level 140 with Constitution 80 after its buffs were frozen.",b6-c39-p74
 55.10344,6,46,8.82,Carl,Father’s Glock,note,carried,,Inventory,Carl examines the non-magical pistol from his father. He says its rounds need adjustment before he can safely fire it.,b6-c46-p21
 55.24854,6,46,77.31,Carl,Shrink wand,note,carried,,Inventory,Carl takes out his shrink wand. It affects objects rather than living flesh.,b6-c46-p184
 55.252101,6,46,78.99,Carl,Snap collars,note,carried,,Inventory,Carl has made orcish-steel collars that close around a neck when thrown correctly. He uses one with the shrink wand.,b6-c46-p188
 55.303283,6,47,3.15,Princess Donut,Enchanted Nipple Ring of the Superior Fire Demon’s Hand Maiden,equip,equipped,,Equipment,"Carl explicitly confirms Donut has active fire protection from her nipple ring. This is a later observation, not its first equip time.",b6-c47-p4
+56.418131,6,52,29.36,Carl,Cracker Jack scroll,set,,1,Inventory,Carl uses two of his three scrolls to unlock a shield for each party member.,b6-c52-p32
+56.418131,6,52,29.36,Carl,Valtay Perso-Shield Platinum Edition,add,,1,Inventory,Carl unlocks his own Valtay shield.,b6-c52-p32
+56.425906,6,52,33.03,Princess Donut,"Bull Rush, Bespoke Personal Shield",equip,,1,Inventory,Carl attaches Donut’s unlocked shield pin to her collar.,b6-c52-p36
 56.435624,6,52,37.61,Dong Quixote,Lance,equip,equipped,,Equipment,Dong Quixote carries a lance while training. No magical bonus is stated.,b6-c52-p41
 56.499767,6,52,67.89,Imani C.,Amhuluk totem,note,,,,"Imani’s Amhuluk totem casts a poison cloud. This is the totem’s attack, not a native spell attributed to Imani.",b6-c52-p74
 57.77112,6,58,67.97,Quan Ch,Celestial cloak,remove,,,Equipment,Quan’s clothes are stripped off during battle and Carl takes the magical cloak.,b6-c58-p87
@@ -450,6 +543,11 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 59.537014,6,67,1.47,Imani C.,Card deck,note,carried,15,Inventory,Imani’s deck contains 15 cards; its first six are highlighted as totems.,b6-c67-p2
 60.263653,6,70,44.44,Bautista,Shape-changing ring,equip,equipped,,Equipment,Bautista uses the ring to transform into a large four-armed form.,b6-c70-p20
 60.713468,6,72,56.76,Zhang,Shrink wand (borrowed from Carl),remove,no longer held,,Inventory,Zhang returns the borrowed shrink wand to Carl.,b6-c72-p105
+61.236839,7,3,3.79,Princess Donut,Shield spellbook,add,,,Inventory,Donut receives a shield spellbook from the box.,b7-c3-p5
+61.241654,7,3,6.06,Princess Donut,Sentry spellbook,add,,,Inventory,Donut receives a sentry spellbook from the box.,b7-c3-p8
+61.243259,7,3,6.82,Princess Donut,Dark spellbook,add,,,Inventory,The quest box also contains a dark spellbook.,b7-c3-p9
+61.243259,7,3,6.82,Princess Donut,Tartan kilt,add,,,Inventory,Donut receives a tartan kilt from the box.,b7-c3-p9
+61.249679,7,3,9.85,Princess Donut,You’re Not Done Yet spellbook,add,,,Inventory,Mordecai identifies the dark book from Donut’s quest box as You’re Not Done Yet.,b7-c3-p13
 61.328326,7,3,46.97,Princess Donut,Enchanted Tiara of the Inebriated Dragonfly,unequip,carried,,Equipment,Donut places the tiara on a charging pillow to transfer its magical properties. It is no longer worn.,b7-c3-p62
 61.408577,7,3,84.85,Princess Donut,Tiara of a Thousand Lights,equip,equipped,,Equipment,Donut puts on the new tiara before its absorption jewels have been charged.,b7-c3-p112
 61.53915,7,4,46.48,Carl,Enchanted Toe Ring of the Well-Balanced,equip,equipped,,Equipment,Carl puts the toe ring on his left pinky toe and configures its automatic healing potion.,b7-c4-p66
@@ -459,11 +557,18 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 65.040233,7,20,98.99,Dong Quixote,Jefferson the nickel sock,equip,equipped,,Equipment,Dong Quixote holds the nickel-sock weapon across his lap in the gunner seat.,b7-c20-p98
 65.233952,7,21,90.43,Tran,Crab-leg battle armor,equip,equipped,,Equipment,Tran wears an armored exoskeleton over his crab-leg mobility apparatus. The armor restricts carrying ranged weapons.,b7-c21-p85
 65.631231,7,23,77.94,Carl,Enchanted earplugs,equip,,,Equipment,Carl puts in enchanted earplugs for the bombardment. Their protection is not quantified.,b7-c23-p53
+65.843926,7,24,78.33,Carl,Build Trench scrolls,consume,,1,Inventory,Carl uses one of his Build Trench scrolls.,b7-c24-p47
 66.199983,7,26,46.39,Carl,Heal scroll,consume,,1,Consumable,Carl uses a Heal scroll on D’Nadia. No remaining stock count is stated.,b7-c26-p45
 67.399037,7,32,12.35,Princess Donut,Tiara of a Thousand Lights,note,,,Equipment,"Donut uses Targeting, newly added to her crown. Its rank is unstated.",b7-c32-p10
+69.149894,7,40,38.75,Carl,"Spellbook of Run, Little Günter, Run",add,,1,Inventory,"Carl has the Run, Little Günter, Run spellbook.",b7-c40-p31
+69.18697,7,40,56.25,Princess Donut,Tiara of a Thousand Lights,note,,,Equipment,"The tiara absorbs 10 Constitution, two Dodge levels and 1% Intelligence from two hats. Katia hands it to Carl to return to Donut.",b7-c40-p45
+69.192267,7,40,58.75,Carl,"Spellbook of Run, Little Günter, Run",consume,consumed,,Inventory,Carl uses the special-edition spellbook.,b7-c40-p47
 69.71008,7,43,3.16,Odette,Floating wheelchair,note,in use,,Equipment,"Odette again appears in the floating wheelchair, without her usual costume apparatus.",b7-c43-p3
 70.826271,7,48,30.0,Prepotente,Enhanced Pet Biscuit,note,,,Inventory,Prepotente reports possessing several enhanced pet biscuits. Their exact count is unstated.,b7-c48-p18
-72.840084,7,57,80.52,Zhang,Zhang's Cape of Odds,equip,equipped,,Equipment,Zhang wears the celestial cape. While inactive it grants 15% to all stats and an equipment Dodge benefit.,b7-c57-p62
+72.609865,7,56,71.86,Katia Grim,Enchanted Spiked Kneepads of the Munificent Goddess Kina,add,,,Equipment,Katia received the divine kneepads in her celestial box.,b7-c56-p120
+72.621283,7,56,77.25,Katia Grim,Enchanted Spiked Kneepads of the Munificent Goddess Kina,note,,,Equipment,"The kneepads reflect a quarter of melee damage, allow breathing underwater and grant three ranked skills.",b7-c56-p129
+72.625089,7,56,79.04,Katia Grim,Enchanted Spiked Kneepads of the Munificent Goddess Kina,remove,given away,,Equipment,Katia has given away the kneepads.,b7-c56-p132
+72.840084,7,57,80.52,Zhang,Zhang's Cape of Odds,equip,equipped,,Equipment,"Zhang wears the cape from his celestial box. While inactive, it adds 15% to every stat and grants rank-10 Dodge.",b7-c57-p62
 74.229252,7,64,36.21,Osvaldo,Memorial Crystal: Apito,note,,,Equipment,Carl identifies the memorial crystal currently in Osvaldo's possession.,b7-c64-p21
 77.308207,7,78,89.47,Prepotente,Memorial Crystal: Apito,note,carried,,Equipment,A quest update confirms that Prepotente now possesses the crystal previously held by Osvaldo.,b7-c78-p85
 77.308207,7,78,89.47,Osvaldo,Memorial Crystal: Apito,remove,transferred,,Equipment,A quest update explicitly reports that the crystal has passed from Osvaldo to Prepotente.,b7-c78-p85
@@ -474,11 +579,17 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 78.355558,7,83,83.82,Princess Donut,Mordecai’s Special Brew,note,,,Inventory,Donut confirms that she still carries a Mordecai’s Special Brew. It has not been consumed in this observation.,b7-c83-p57
 78.57799,7,84,88.81,Louis Santiago,Rebreather implant,equip,equipped,,Equipment,Mordecai installs a rebreather during surgery; Louis begins breathing through his new gills. No stat bonus is inferred.,b7-c84-p127
 78.685218,7,85,39.42,Carl,Enchanted Night Wyrm’s Ring of Divine Suffering,remove,consumed,,Equipment,"Carl gives the ring to Donut, who swallows it.",b7-c85-p41
+78.744296,7,85,67.31,Carl,Carl’s Book of Boom,add,,,Inventory,"Carl’s Book of Voodoo is split into two volumes, the second named Carl’s Book of Boom.",b7-c85-p70
+78.754482,7,85,72.12,Carl,Carl’s Book of Boom,note,,,Inventory,The page donated by Asi Hamami offers level-10 Lockpick for five minutes if consumed. Carl examines it.,b7-c85-p75
+78.756519,7,85,73.08,Princess Donut,A Banquet Fit for a Princess,add,,,Inventory,"Donut receives A Banquet Fit for a Princess, her own collection of donated pages.",b7-c85-p76
 78.945411,7,86,62.23,Katia Grim,Repeating crossbow,remove,no longer held,,Equipment,Katia’s crossbow is now mounted on Donut; it is no longer in Katia’s loadout.,b7-c86-p117
 78.9533,7,86,65.96,Mordecai,Memorial crossbow bolt,note,,,Ammunition,Mordecai holds a nonmagical crossbow bolt incorporating his mother's ashes.,b7-c86-p124
 78.955554,7,86,67.02,Mordecai,Memorial crossbow bolt,remove,transferred,,Equipment,"Mordecai loads his memorial bolt into the crossbow on Donut's back, transferring it out of his possession.",b7-c86-p126
 80.732621,8,8,5.8,Princess Donut,Tiara of a Thousand Lights,unequip,carried,,Equipment,Donut takes off the tiara to try on the new veil.,b8-c8-p4
 80.757185,8,8,17.39,Princess Donut,The Assassin’s Veil,equip,equipped,,Equipment,Equipped veil provides +10% dexterity; the final dexterity total is unstated.,b8-c8-p12
+80.867723,8,8,69.57,Princess Donut,Default Winner spellbook,add,,,Inventory,A spellbook appears from the Default Winner Box and immediately disappears.,b8-c8-p48
+80.870793,8,8,71.01,Princess Donut,Quiver of enchanted crossbow bolts,add,,,Inventory,Donut’s Lorena Bobbitt Box contains a quiver of enchanted bolts.,b8-c8-p49
+80.883075,8,8,76.81,Princess Donut,Quiver of enchanted crossbow bolts,note,,,Inventory,The bolts in the quiver are identified as The Danforth. Carl counts roughly ten.,b8-c8-p53
 81.007381,8,9,35.48,Princess Donut,Celestial claw caps,equip,equipped,,Equipment,Donut equips removable caps to cover the destructive celestial claws.,b8-c9-p22
 81.02105,8,9,41.94,Princess Donut,Ice Slick spell book,add,carried,,Spell book,Special-edition Ice Slick book starts at level 5 and trains faster; learning is not yet shown.,b8-c9-p26
 81.027884,8,9,45.16,Princess Donut,Enchanted Fae Scale Quadruped Crupper of the Fleet,unequip,carried,,Equipment,"Donut removes her old crupper, which had provided +2 dexterity.",b8-c9-p28
@@ -494,12 +605,16 @@ series_progress,book,chapter,chapter_position,character,item,action,state,quanti
 91.632697,8,59,50.63,Dong Quixote,Jefferson the nickel sock,remove,no longer held,,Equipment,Bucket Boy reports the sock teleported away after he took it to investigate Dong’s illness. Its new owner is unknown.,b8-c59-p40
 93.197057,8,66,89.01,Dong Quixote,Lance,equip,equipped,,Equipment,"Dong Quixote charges with his lance lowered and strikes the god of war. This confirms later use, not a newly acquired lance.",b8-c66-p81
 93.86458,8,70,4.08,Prepotente,Memorial Crystal: Apito,equip,equipped,,Equipment,Prepotente wears the crystal as a necklace. He temporarily hands it to Carl for inspection.,b8-c70-p2
+94.00294,8,70,69.39,Prepotente,Memorial Crystal: Apito,note,,,Equipment,Carl returns the necklace to Prepotente after inspecting it.,b8-c70-p34
 97.944915,8,89,30.0,Princess Donut,Tome of Gatekeeper,add,carried,,Spell book,Donut has the Gatekeeper book but has not read it; its spell cannot be used until floor 12.,b8-c89-p21
 98.087167,8,89,97.14,Carl,Lucky Shot patch,equip,equipped,,Equipment,Carl sews the four-leaf-clover patch onto his jacket. He plans to remove it after use; removal has not happened at this point.,b8-c89-p68
 98.087167,8,89,97.14,Carl,Lucky Shot patch,note,,,Equipment,Recorded equipment effects; these do not establish a complete character stat or skill total.,b8-c89-p68
 98.126926,8,90,15.91,Mongo,Kukri claw caps,equip,equipped,,Equipment,Mongo receives foot claw caps that improve slicing; no numeric skill value is stated.,b8-c90-p7
 98.126926,8,90,15.91,Mongo,The Nemes of Pestilence,equip,equipped,,Equipment,Mongo keeps the nemes equipped for the fight.,b8-c90-p7
+98.136556,8,90,20.45,Bigs,Gurkha hat,equip,equipped,,Equipment,Bigs wears a miniature Gurkha hat.,b8-c90-p9
+98.136556,8,90,20.45,Jamal,Gurkha hat,equip,equipped,,Equipment,Jamal wears a reshaped Gurkha hat.,b8-c90-p9
 98.141371,8,90,22.73,Samantha,Gurkha hat,equip,equipped,,Equipment,The worn hat increases several unnamed melee skills by three levels; their individual totals are unstated.,b8-c90-p10
+98.141371,8,90,22.73,Princess Donut,Gurkha hat,note,carried,,Equipment,Donut’s hat grants five levels to several unnamed skills. It is on a charging pillow awaiting transfer to her tiara.,b8-c90-p10
 99.331692,8,95,84.56,Penelope,Collar with trap module,equip,equipped,,Equipment,Carl checks that Penelope is still wearing the collar carrying the trap module.,b8-c95-p115
 99.331692,8,95,84.56,Penelope,Enchanted Spiked Kneepads of the Munificent Goddess Kina,equip,equipped,,Equipment,Penelope is explicitly wearing the kneepads previously given to Katia and then Donut. Their benefits include underwater breathing and temporary deity effects.,b8-c95-p115
 99.817612,8,98,13.91,Prepotente,Memorial Crystal: Apito,remove,no longer held,,Equipment,Prepotente reports that a deity stole the crystal from his neck.,b8-c98-p16

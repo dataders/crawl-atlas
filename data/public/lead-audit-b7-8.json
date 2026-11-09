@@ -1,0 +1,942 @@
+{
+  "scope": "Books 7 and 8. Source-anchored corrections and additions from the reviewed candidate passages.",
+  "characters": [
+    {
+      "id": "asi-hamami",
+      "name": "Asi Hamami",
+      "role": "Character",
+      "group": "other",
+      "color": "#b7afa1"
+    },
+    {
+      "id": "bigs",
+      "name": "Bigs",
+      "role": "Character",
+      "group": "other",
+      "color": "#81b9ae"
+    },
+    {
+      "id": "genesis",
+      "name": "Genesis",
+      "role": "Character",
+      "group": "other",
+      "color": "#b29ac2"
+    },
+    {
+      "id": "jamal",
+      "name": "Jamal",
+      "role": "Character",
+      "group": "other",
+      "color": "#a1ae78"
+    },
+    {
+      "id": "rapture",
+      "name": "Rapture",
+      "role": "Character",
+      "group": "other",
+      "color": "#c2a098"
+    },
+    {
+      "id": "rosetta-thag",
+      "name": "Rosetta Thag",
+      "role": "Character",
+      "group": "other",
+      "color": "#9dacca"
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "role": "Character",
+      "group": "other",
+      "color": "#d6b48b"
+    },
+    {
+      "id": "tipid",
+      "name": "Tipid",
+      "role": "Character",
+      "group": "other",
+      "color": "#a0b99a"
+    }
+  ],
+  "events": [
+    {
+      "source": "b7-c3-p4",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Platinum To Hell in a Handbasket Box",
+      "action": "note",
+      "summary": "Donut opens the platinum To Hell in a Handbasket box.",
+      "evidence": [],
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Platinum",
+        "boxKind": "To Hell in a Handbasket"
+      }
+    },
+    {
+      "source": "b7-c3-p5",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Shield spellbook",
+      "action": "add",
+      "summary": "Donut receives a shield spellbook from the box.",
+      "evidence": [
+        "b7-c3-p4"
+      ],
+      "category": "Inventory",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b7-8-b7-c3-p4-princess-donut-story-platinum-to-hell-in-a-handbasket-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b7-c3-p6",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Platinum Tserendolgor Box",
+      "action": "note",
+      "summary": "Donut opens the platinum Tserendolgor box.",
+      "evidence": [],
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Platinum",
+        "boxKind": "Tserendolgor"
+      }
+    },
+    {
+      "source": "b7-c3-p8",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Sentry spellbook",
+      "action": "add",
+      "summary": "Donut receives a sentry spellbook from the box.",
+      "evidence": [
+        "b7-c3-p6"
+      ],
+      "category": "Inventory",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b7-8-b7-c3-p6-princess-donut-story-platinum-tserendolgor-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b7-c3-p9",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Legendary Quest Box",
+      "action": "note",
+      "summary": "Donut opens the legendary Quest box.",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Legendary",
+        "boxKind": "Quest"
+      },
+      "evidence": []
+    },
+    {
+      "source": "b7-c3-p9",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Tartan kilt",
+      "action": "add",
+      "summary": "Donut receives a tartan kilt from the box.",
+      "category": "Inventory",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b7-8-b7-c3-p9-princess-donut-story-legendary-quest-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b7-c3-p9",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Dark spellbook",
+      "action": "add",
+      "summary": "The quest box also contains a dark spellbook.",
+      "category": "Inventory",
+      "historyOnly": true,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b7-8-b7-c3-p9-princess-donut-story-legendary-quest-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b7-c3-p13",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "You’re Not Done Yet spellbook",
+      "action": "add",
+      "summary": "Mordecai identifies the dark book from Donut’s quest box as You’re Not Done Yet.",
+      "evidence": [
+        "b7-c3-p9"
+      ],
+      "category": "Inventory"
+    },
+    {
+      "source": "b7-c9-p35",
+      "subject": "Ruby",
+      "type": "story",
+      "name": "Compression sickness",
+      "action": "note",
+      "summary": "Ruby has compression sickness and is being kept safe with the other changeling children by Mordecai."
+    },
+    {
+      "source": "b7-c9-p38",
+      "subject": "Juice Box",
+      "type": "story",
+      "name": "Private messages",
+      "action": "note",
+      "summary": "Juice Box can receive private system notifications and send mental voice messages. She says she lacks the warlord chat and Faction Wars manager.",
+      "evidence": [
+        "b7-c9-p36",
+        "b7-c9-p37"
+      ]
+    },
+    {
+      "source": "b7-c11-p28",
+      "subject": "Rosetta Thag",
+      "type": "level",
+      "name": "Character level",
+      "action": "set",
+      "summary": "Her sheet shows level 60, Crest Barn Burner.",
+      "level": 60
+    },
+    {
+      "source": "b7-c11-p29",
+      "subject": "Rosetta Thag",
+      "type": "story",
+      "name": "Princess Posse colonel",
+      "action": "note",
+      "summary": "Colonel in the Princess Posse."
+    },
+    {
+      "source": "b7-c11-p35",
+      "subject": "Tipid",
+      "type": "level",
+      "name": "Character level",
+      "action": "set",
+      "summary": "His current character sheet shows level 60, Crest Liquid Dervish.",
+      "level": 60
+    },
+    {
+      "source": "b7-c11-p36",
+      "subject": "Tipid",
+      "type": "story",
+      "name": "Princess Posse colonel",
+      "action": "note",
+      "summary": "Colonel in the Princess Posse."
+    },
+    {
+      "source": "b7-c11-p95",
+      "subject": "Tipid",
+      "type": "story",
+      "name": "Former crawler level",
+      "action": "note",
+      "summary": "Tipid left his original crawl at level 96 as a Poisoner. On returning as a mercenary, he received a temporary class."
+    },
+    {
+      "source": "b7-c24-p47",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Build Trench scrolls",
+      "action": "consume",
+      "summary": "Carl uses one of his Build Trench scrolls.",
+      "evidence": [
+        "b7-c24-p46",
+        "b6-c61-p84"
+      ],
+      "category": "Inventory",
+      "historyOnly": true,
+      "quantity": 1
+    },
+    {
+      "source": "b7-c27-p49",
+      "subject": "Carl",
+      "type": "party",
+      "name": "Party leadership",
+      "action": "note",
+      "summary": "The system designates Carl leader of the Royal Court of Princess Donut after his combined base stats overtake the other members.",
+      "leader": "Carl"
+    },
+    {
+      "source": "b7-c40-p31",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Spellbook of Run, Little Günter, Run",
+      "action": "add",
+      "summary": "Carl has the Run, Little Günter, Run spellbook.",
+      "category": "Inventory",
+      "quantity": 1
+    },
+    {
+      "source": "b7-c40-p45",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Tiara of a Thousand Lights",
+      "action": "note",
+      "summary": "The tiara absorbs 10 Constitution, two Dodge levels and 1% Intelligence from two hats. Katia hands it to Carl to return to Donut.",
+      "category": "Equipment",
+      "effects": [
+        {
+          "id": "con",
+          "kind": "stat",
+          "target": "CON",
+          "operation": "add",
+          "value": 10,
+          "unit": "points"
+        },
+        {
+          "id": "dodge",
+          "kind": "skill",
+          "target": "Dodge",
+          "operation": "add",
+          "value": 2,
+          "unit": "levels"
+        },
+        {
+          "id": "int",
+          "kind": "stat",
+          "target": "INT",
+          "operation": "add",
+          "value": 1,
+          "unit": "percent"
+        }
+      ],
+      "statBoosts": [
+        {
+          "stat": "CON",
+          "value": 10,
+          "unit": "points",
+          "source": "b7-c40-p45"
+        },
+        {
+          "stat": "INT",
+          "value": 1,
+          "unit": "percent",
+          "source": "b7-c40-p45"
+        }
+      ]
+    },
+    {
+      "source": "b7-c40-p47",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Run, Little Günter, Run",
+      "action": "set",
+      "summary": "Carl learns the spell from a special-edition book that starts its user at level 5.",
+      "evidence": [
+        "b7-c40-p31",
+        "b7-c40-p32"
+      ],
+      "level": 5,
+      "skillScope": "base"
+    },
+    {
+      "source": "b7-c40-p47",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Spellbook of Run, Little Günter, Run",
+      "action": "consume",
+      "summary": "Carl uses the special-edition spellbook.",
+      "evidence": [
+        "b7-c40-p31",
+        "b7-c40-p32"
+      ],
+      "category": "Inventory",
+      "state": "consumed"
+    },
+    {
+      "source": "b7-c47-p48",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Tripper",
+      "action": "set",
+      "summary": "Carl temporarily loses six of his seven intrinsic Tripper levels when he shares the spell with Imani.",
+      "evidence": [
+        "b7-c47-p46",
+        "b7-c47-p47"
+      ],
+      "level": 1,
+      "skillScope": "base",
+      "confidence": "inferred"
+    },
+    {
+      "source": "b7-c47-p49",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Tripper recovery",
+      "action": "note",
+      "summary": "The system estimates four days for Carl’s spell to regain the donated levels."
+    },
+    {
+      "source": "b7-c56-p118",
+      "subject": "Li Jun",
+      "type": "story",
+      "name": "Celestial Who Let the Gods Out Box",
+      "action": "note",
+      "summary": "Receives a Celestial Who Let the Gods Out box following the Club Vanquisher encounter.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxTier": "Celestial",
+        "boxKind": "Who Let the Gods Out"
+      }
+    },
+    {
+      "source": "b7-c56-p118",
+      "subject": "Zhang",
+      "type": "story",
+      "name": "Celestial Who Let the Gods Out Box",
+      "action": "note",
+      "summary": "Receives a Celestial Who Let the Gods Out box following the Club Vanquisher encounter.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxTier": "Celestial",
+        "boxKind": "Who Let the Gods Out"
+      }
+    },
+    {
+      "source": "b7-c56-p118",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Celestial Who Let the Gods Out Box",
+      "action": "note",
+      "summary": "Receives a Celestial Who Let the Gods Out box following the Club Vanquisher encounter.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxTier": "Celestial",
+        "boxKind": "Who Let the Gods Out"
+      }
+    },
+    {
+      "source": "b7-c56-p118",
+      "subject": "Prepotente",
+      "type": "story",
+      "name": "Celestial Who Let the Gods Out Box",
+      "action": "note",
+      "summary": "Receives a Celestial Who Let the Gods Out box following the Club Vanquisher encounter.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxTier": "Celestial",
+        "boxKind": "Who Let the Gods Out"
+      }
+    },
+    {
+      "source": "b7-c56-p118",
+      "subject": "Katia Grim",
+      "type": "story",
+      "name": "Celestial Who Let the Gods Out Box",
+      "action": "note",
+      "summary": "Receives a Celestial Who Let the Gods Out box following the Club Vanquisher encounter.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxTier": "Celestial",
+        "boxKind": "Who Let the Gods Out"
+      }
+    },
+    {
+      "source": "b7-c56-p118",
+      "subject": "Li Na",
+      "type": "story",
+      "name": "Leaderboard rank",
+      "action": "note",
+      "summary": "Li Na takes second place on the leaderboard, between Carl and Prepotente."
+    },
+    {
+      "source": "b7-c56-p120",
+      "subject": "Katia Grim",
+      "type": "item",
+      "name": "Enchanted Spiked Kneepads of the Munificent Goddess Kina",
+      "action": "add",
+      "summary": "Katia received the divine kneepads in her celestial box.",
+      "evidence": [],
+      "category": "Equipment",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b7-8-b7-c56-p118-katia-grim-story-celestial-who-let-the-gods-out-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b7-c56-p129",
+      "subject": "Katia Grim",
+      "type": "item",
+      "name": "Enchanted Spiked Kneepads of the Munificent Goddess Kina",
+      "action": "note",
+      "summary": "The kneepads reflect a quarter of melee damage, allow breathing underwater and grant three ranked skills.",
+      "evidence": [
+        "b7-c56-p120",
+        "b7-c56-p125",
+        "b7-c56-p126",
+        "b7-c56-p127",
+        "b7-c56-p128"
+      ],
+      "category": "Equipment",
+      "effects": [
+        {
+          "id": "reflect",
+          "kind": "benefit",
+          "target": "Melee damage reflection",
+          "operation": "grant",
+          "value": 25,
+          "unit": "percent"
+        },
+        {
+          "id": "breathing",
+          "kind": "benefit",
+          "target": "Underwater breathing",
+          "operation": "grant"
+        },
+        {
+          "id": "swim",
+          "kind": "skill",
+          "target": "Swim",
+          "operation": "grant",
+          "value": 15,
+          "unit": "levels"
+        },
+        {
+          "id": "iron-stomach",
+          "kind": "skill",
+          "target": "Iron Stomach",
+          "operation": "grant",
+          "value": 10,
+          "unit": "levels"
+        },
+        {
+          "id": "eater-of-the-dead",
+          "kind": "skill",
+          "target": "Eater of the Dead",
+          "operation": "grant",
+          "value": 10,
+          "unit": "levels"
+        }
+      ]
+    },
+    {
+      "source": "b7-c56-p132",
+      "subject": "Katia Grim",
+      "type": "stat",
+      "name": "Intelligence",
+      "action": "delta",
+      "summary": "Katia gained 20 permanent Intelligence points by consuming enchanted items with Iron Stomach.",
+      "evidence": [
+        "b7-c56-p128",
+        "b7-c56-p131"
+      ],
+      "statsDelta": {
+        "INT": 20
+      },
+      "statScopes": {
+        "INT": "base"
+      }
+    },
+    {
+      "source": "b7-c56-p132",
+      "subject": "Katia Grim",
+      "type": "item",
+      "name": "Enchanted Spiked Kneepads of the Munificent Goddess Kina",
+      "action": "remove",
+      "summary": "Katia has given away the kneepads.",
+      "evidence": [
+        "b7-c56-p128",
+        "b7-c56-p131"
+      ],
+      "category": "Equipment",
+      "state": "given away"
+    },
+    {
+      "source": "b7-c77-p20",
+      "subject": "Princess Donut",
+      "type": "party",
+      "name": "Party leadership",
+      "action": "note",
+      "summary": "Donut confirms she has regained party leadership.",
+      "leader": "Princess Donut"
+    },
+    {
+      "source": "b7-c85-p70",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Carl’s Book of Boom",
+      "action": "add",
+      "summary": "Carl’s Book of Voodoo is split into two volumes, the second named Carl’s Book of Boom.",
+      "category": "Inventory"
+    },
+    {
+      "source": "b7-c85-p72",
+      "subject": "Asi Hamami",
+      "type": "story",
+      "name": "Donor profile",
+      "action": "note",
+      "summary": "Asi Hamami is identified on a donated page as a level-59 Fox Warrior."
+    },
+    {
+      "source": "b7-c85-p75",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Carl’s Book of Boom",
+      "action": "note",
+      "summary": "The page donated by Asi Hamami offers level-10 Lockpick for five minutes if consumed. Carl examines it.",
+      "evidence": [
+        "b7-c85-p72"
+      ],
+      "category": "Inventory",
+      "effects": [
+        {
+          "id": "lockpick",
+          "kind": "skill",
+          "target": "Lockpick",
+          "operation": "grant for five minutes on consumption",
+          "value": 10,
+          "unit": "levels"
+        }
+      ]
+    },
+    {
+      "source": "b7-c85-p76",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "A Banquet Fit for a Princess",
+      "action": "add",
+      "summary": "Donut receives A Banquet Fit for a Princess, her own collection of donated pages.",
+      "category": "Inventory"
+    },
+    {
+      "source": "b8-c8-p34",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Legendary Lorena Bobbitt Box",
+      "action": "note",
+      "summary": "Donut’s Lorena Bobbitt Box is legendary.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxTier": "Legendary",
+        "boxKind": "Lorena Bobbitt"
+      }
+    },
+    {
+      "source": "b8-c8-p35",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Legendary Default Winner Box",
+      "action": "note",
+      "summary": "Donut received the legendary box for winning Faction Wars, among 40 boxes in total.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxTier": "Legendary",
+        "boxKind": "Default Winner"
+      }
+    },
+    {
+      "source": "b8-c8-p48",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Default Winner spellbook",
+      "action": "add",
+      "summary": "A spellbook appears from the Default Winner Box and immediately disappears.",
+      "category": "Inventory",
+      "historyOnly": true,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b7-8-b8-c8-p35-princess-donut-story-legendary-default-winner-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b8-c8-p49",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Quiver of enchanted crossbow bolts",
+      "action": "add",
+      "summary": "Donut’s Lorena Bobbitt Box contains a quiver of enchanted bolts.",
+      "category": "Inventory",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b7-8-b8-c8-p34-princess-donut-story-legendary-lorena-bobbitt-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b8-c8-p53",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Quiver of enchanted crossbow bolts",
+      "action": "note",
+      "summary": "The bolts in the quiver are identified as The Danforth. Carl counts roughly ten.",
+      "evidence": [
+        "b8-c8-p49",
+        "b8-c8-p51"
+      ],
+      "category": "Inventory"
+    },
+    {
+      "source": "b8-c13-p16",
+      "subject": "Rapture",
+      "type": "level",
+      "name": "Character level",
+      "action": "set",
+      "summary": "Level 95 Lady Mantaur Dominator.",
+      "level": 95
+    },
+    {
+      "source": "b8-c13-p16",
+      "subject": "Genesis",
+      "type": "level",
+      "name": "Character level",
+      "action": "set",
+      "summary": "Level 95 Lady Mantaur Dominator.",
+      "level": 95
+    },
+    {
+      "source": "b8-c13-p17",
+      "subject": "Rapture",
+      "type": "story",
+      "name": "Worship of Enyo",
+      "action": "note",
+      "summary": "Worships Enyo."
+    },
+    {
+      "source": "b8-c13-p17",
+      "subject": "Genesis",
+      "type": "story",
+      "name": "Worship of Enyo",
+      "action": "note",
+      "summary": "Worships Enyo."
+    },
+    {
+      "source": "b8-c13-p24",
+      "subject": "Rapture",
+      "type": "story",
+      "name": "Retractable wrist harpoon",
+      "action": "note",
+      "summary": "Rapture reveals a retractable harpoon in her wrist."
+    },
+    {
+      "source": "b8-c25-p47",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Weaseler",
+      "action": "note",
+      "summary": "Carl earns the Weaseler achievement.",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": []
+      }
+    },
+    {
+      "source": "b8-c25-p51",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Corpse-suit class benefits",
+      "action": "note",
+      "summary": "Unlocks the benefits and skills of a temporary class while wearing a corpse suit. Removal ends the suit-specific benefits.",
+      "evidence": [
+        "b8-c25-p47"
+      ],
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "lead-audit-b7-8-b8-c25-p47-carl-story-weaseler"
+        ],
+        "outcomeType": "benefit"
+      }
+    },
+    {
+      "source": "b8-c70-p26",
+      "subject": "Prepotente",
+      "type": "story",
+      "name": "Memorial Crystal quest",
+      "action": "note",
+      "summary": "Recalls the Midnight Epicure instructing him to acquire the crystal at the start of the Butcher’s Masquerade. Earlier origin is reported here."
+    },
+    {
+      "source": "b8-c70-p29",
+      "subject": "Prepotente",
+      "type": "story",
+      "name": "Worship of the Midnight Epicure",
+      "action": "note",
+      "summary": "His sponsors’ benefactor box enabled worship of the Midnight Epicure and he accepted."
+    },
+    {
+      "source": "b8-c70-p34",
+      "subject": "Prepotente",
+      "type": "item",
+      "name": "Memorial Crystal: Apito",
+      "action": "note",
+      "summary": "Carl returns the necklace to Prepotente after inspecting it.",
+      "evidence": [
+        "b8-c70-p2"
+      ],
+      "category": "Equipment"
+    },
+    {
+      "source": "b8-c81-p60",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Beast of Burden",
+      "action": "note",
+      "summary": "Carl takes a quadruped form until he passes a staircase. Some equipment returns to inventory and some effects change.",
+      "evidence": [
+        "b8-c81-p51",
+        "b8-c81-p54",
+        "b8-c81-p55"
+      ]
+    },
+    {
+      "source": "b8-c81-p61",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Transformed stats",
+      "action": "note",
+      "summary": "The system tells Carl his stats have changed without naming the affected stats or giving new totals."
+    },
+    {
+      "source": "b8-c81-p62",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Quadruped actions",
+      "action": "note",
+      "summary": "Gains a quadruped actions menu while transformed."
+    },
+    {
+      "source": "b8-c90-p8",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Gurkha mount blankets",
+      "action": "note",
+      "summary": "Donut’s new class outfits the mounts with blankets that grant the wearer 20% more Constitution and the Steady Charge skill."
+    },
+    {
+      "source": "b8-c90-p9",
+      "subject": "Bigs",
+      "type": "item",
+      "name": "Gurkha hat",
+      "action": "equip",
+      "summary": "Bigs wears a miniature Gurkha hat.",
+      "category": "Equipment",
+      "state": "equipped"
+    },
+    {
+      "source": "b8-c90-p9",
+      "subject": "Jamal",
+      "type": "item",
+      "name": "Gurkha hat",
+      "action": "equip",
+      "summary": "Jamal wears a reshaped Gurkha hat.",
+      "category": "Equipment",
+      "state": "equipped"
+    },
+    {
+      "source": "b8-c90-p10",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Gurkha hat",
+      "action": "note",
+      "summary": "Donut’s hat grants five levels to several unnamed skills. It is on a charging pillow awaiting transfer to her tiara.",
+      "category": "Equipment",
+      "state": "carried",
+      "effects": [
+        {
+          "id": "hat-skills",
+          "kind": "skill",
+          "target": "Multiple unspecified skills",
+          "operation": "add",
+          "value": 5,
+          "unit": "levels"
+        }
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "id": "allies-skills-inventory-audit-b7-c57-p62-zhang-item-zhang-s-cape-of-odds",
+      "set": {
+        "summary": "Zhang wears the cape from his celestial box. While inactive, it adds 15% to every stat and grants rank-10 Dodge.",
+        "effects": [
+          {
+            "id": "inactive-stats",
+            "kind": "stat",
+            "target": "ALL",
+            "operation": "add",
+            "value": 15,
+            "unit": "percent",
+            "condition": "While inactive"
+          },
+          {
+            "id": "inactive-dodge",
+            "kind": "skill",
+            "target": "Dodge",
+            "operation": "grant",
+            "value": 10,
+            "unit": "levels",
+            "condition": "While inactive"
+          }
+        ],
+        "statBoosts": [
+          {
+            "stat": "ALL",
+            "value": 15,
+            "unit": "percent",
+            "source": "b7-c57-p62",
+            "condition": "While inactive"
+          }
+        ],
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "lead-audit-b7-8-b7-c56-p118-zhang-story-celestial-who-let-the-gods-out-box"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    }
+  ]
+}

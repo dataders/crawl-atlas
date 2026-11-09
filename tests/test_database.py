@@ -104,7 +104,11 @@ class BookEightTests(unittest.TestCase):
         identities = {(e['source'], e['subject'], e['type'], e['name']) for e in published}
         for row in audit['events']:
             self.assertIn((row['source'], row['subject'], row['type'], row['name']), identities)
-        self.assertEqual(len([e for e in published if e['type'] == 'level']), 7)
+        expected_levels = {(e['source'], e['subject'], e['level'])
+                           for batch in (audit, json.loads(Path('data/public/lead-audit-b7-8.json').read_text()))
+                           for e in batch['events'] if e['type'] == 'level' and e['source'].startswith('b8-')}
+        self.assertTrue(expected_levels <= {(e['source'], e['subject'], e['level'])
+                                            for e in published if e['type'] == 'level'})
 
     def test_charts_use_exact_base_readings_only(self):
         by_source = {(row['source'], row['metric'], row['scope']): row['value'] for row in self.rows}

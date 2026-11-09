@@ -1,0 +1,933 @@
+{
+  "scope": "Book 1, chapters 41–47. Reveal-time review of progression, possessions, affiliations, abilities, awards and status.",
+  "characters": [
+    {
+      "id": "yvette",
+      "name": "Yvette",
+      "role": "Crawler",
+      "group": "other",
+      "color": "#ae839b"
+    }
+  ],
+  "events": [
+    {
+      "source": "b1-c41-p8",
+      "subject": "Party",
+      "type": "story",
+      "name": "Meadow Lark transport",
+      "action": "note",
+      "summary": "The Meadow Lark group arrives with 36 residents in three improvised carts."
+    },
+    {
+      "source": "b1-c41-p24",
+      "subject": "Imani C.",
+      "type": "story",
+      "name": "Meadow Lark descent",
+      "action": "note",
+      "summary": "Imani is the last of the group to go down the stairwell."
+    },
+    {
+      "source": "b1-c41-p40",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Racial benefits menu",
+      "action": "note",
+      "summary": "Donut reports briefly seeing a racial-benefits tab. She suspects a damage bonus against dogs."
+    },
+    {
+      "source": "b1-c41-p42",
+      "subject": "Party",
+      "type": "story",
+      "name": "Kobold quadrant safe room",
+      "action": "note",
+      "summary": "Carl and Donut arrive at an unstaffed safe room in the kobold quadrant."
+    },
+    {
+      "source": "b1-c41-p53",
+      "subject": "Zev",
+      "type": "story",
+      "name": "Temporarily replaced",
+      "action": "note",
+      "summary": "Mukta reports taking over Zev’s outreach duties for the day."
+    },
+    {
+      "source": "b1-c41-p61",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Brush",
+      "action": "add",
+      "summary": "Donut produces a brush for Carl to groom her.",
+      "category": "Inventory"
+    },
+    {
+      "source": "b1-c41-p66",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Grease Monkey!",
+      "action": "note",
+      "summary": "Carl earns an achievement for deploying a wheeled device.",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": []
+      }
+    },
+    {
+      "source": "b1-c41-p68",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Silver Mechanic’s Box",
+      "action": "note",
+      "summary": "Carl receives a Silver Mechanic’s Box.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "b1-second-half-41-47-b1-c41-p66-carl-story-grease-monkey"
+        ],
+        "boxKind": "Mechanic",
+        "boxTier": "Silver"
+      }
+    },
+    {
+      "source": "b1-c41-p69",
+      "subject": "Carl",
+      "type": "story",
+      "name": "You call that a trap?",
+      "action": "note",
+      "summary": "Carl receives a trap achievement.",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": []
+      }
+    },
+    {
+      "source": "b1-c41-p73",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Gold Sapper’s Box",
+      "action": "note",
+      "summary": "Carl receives a Gold Sapper’s Box.",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "b1-second-half-41-47-b1-c41-p69-carl-story-you-call-that-a-trap"
+        ],
+        "boxKind": "Sapper",
+        "boxTier": "Gold"
+      }
+    },
+    {
+      "source": "b1-c41-p74",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "You call that a trap?",
+      "action": "note",
+      "summary": "Carl confirms Donut also earned the trap achievement.",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": []
+      }
+    },
+    {
+      "source": "b1-c41-p84",
+      "subject": "Carl",
+      "type": "level",
+      "name": "Level",
+      "action": "set",
+      "summary": "Carl checks his level after the rage elemental encounter and remains at 11.",
+      "level": 11
+    },
+    {
+      "source": "b1-c42-p44",
+      "subject": "Li Jun",
+      "type": "level",
+      "name": "Level",
+      "action": "set",
+      "summary": "The on-air character display shows level 7.",
+      "level": 7
+    },
+    {
+      "source": "b1-c42-p44",
+      "subject": "Li Jun",
+      "type": "stat",
+      "name": "Character stats",
+      "action": "merge",
+      "summary": "The broadcast displays Strength 8.",
+      "stats": {
+        "STR": 8
+      },
+      "statScopes": {
+        "STR": "reported"
+      }
+    },
+    {
+      "source": "b1-c42-p44",
+      "subject": "Li Jun",
+      "type": "story",
+      "name": "Bronze boss star",
+      "action": "note",
+      "summary": "The on-air display shows one bronze star."
+    },
+    {
+      "source": "b1-c42-p44",
+      "subject": "Zhang",
+      "type": "level",
+      "name": "Level",
+      "action": "set",
+      "summary": "The on-air character display shows level 7.",
+      "level": 7
+    },
+    {
+      "source": "b1-c42-p44",
+      "subject": "Zhang",
+      "type": "stat",
+      "name": "Character stats",
+      "action": "merge",
+      "summary": "The broadcast displays Strength 8 and Constitution 15.",
+      "stats": {
+        "STR": 8,
+        "CON": 15
+      },
+      "statScopes": {
+        "STR": "reported",
+        "CON": "reported"
+      }
+    },
+    {
+      "source": "b1-c42-p44",
+      "subject": "Zhang",
+      "type": "story",
+      "name": "Bronze boss star",
+      "action": "note",
+      "summary": "The on-air display shows one bronze star."
+    },
+    {
+      "source": "b1-c42-p126",
+      "subject": "Li Jun",
+      "type": "story",
+      "name": "Reached a safe room",
+      "action": "note",
+      "summary": "The live feed shows all four group members reaching a safe room."
+    },
+    {
+      "source": "b1-c42-p126",
+      "subject": "Zhang",
+      "type": "story",
+      "name": "Reached a safe room",
+      "action": "note",
+      "summary": "The live feed shows all four group members reaching a safe room."
+    },
+    {
+      "source": "b1-c42-p126",
+      "subject": "Li Na",
+      "type": "story",
+      "name": "Reached a safe room",
+      "action": "note",
+      "summary": "The live feed shows all four group members reaching a safe room."
+    },
+    {
+      "source": "b1-c42-p126",
+      "subject": "Zhang",
+      "type": "story",
+      "name": "Healing potion used",
+      "action": "note",
+      "summary": "Zhang administers a healing potion to the injured fourth member of the group."
+    },
+    {
+      "source": "b1-c43-p41",
+      "subject": "Maggie My",
+      "type": "story",
+      "name": "Daughter’s death",
+      "action": "note",
+      "summary": "The recap shows Maggie killing her injured daughter."
+    },
+    {
+      "source": "b1-c43-p43",
+      "subject": "Yvette",
+      "type": "story",
+      "name": "Death identified",
+      "action": "note",
+      "summary": "A replay identifies the girl whose death was shown earlier as Yvette, Frank and Maggie’s daughter.",
+      "lifeStatus": "dead",
+      "deathEvidence": "witnessed",
+      "evidence": [
+        "b1-c43-p41"
+      ]
+    },
+    {
+      "source": "b1-c43-p44",
+      "subject": "Rebecca W",
+      "type": "story",
+      "name": "Earlier account corrected",
+      "action": "note",
+      "summary": "Carl recognizes that the account Frank gave him of Rebecca was false."
+    },
+    {
+      "source": "b1-c43-p45",
+      "subject": "Frank Q",
+      "type": "story",
+      "name": "Crawler tracking",
+      "action": "note",
+      "summary": "The broadcast explains that a potion gave Frank the ability to track nearby crawlers."
+    },
+    {
+      "source": "b1-c43-p46",
+      "subject": "Maggie My",
+      "type": "story",
+      "name": "Stationary stealth field",
+      "action": "note",
+      "summary": "The field provided by Maggie’s ring stays where it is cast."
+    },
+    {
+      "source": "b1-c43-p54",
+      "subject": "Frank Q",
+      "type": "story",
+      "name": "Hand lost",
+      "action": "note",
+      "summary": "The broadcast shows Frank losing a hand."
+    },
+    {
+      "source": "b1-c43-p58",
+      "subject": "Frank Q",
+      "type": "story",
+      "name": "Right hand missing",
+      "action": "note",
+      "summary": "When Frank appears on the show, Carl sees that it is his right hand that is missing."
+    },
+    {
+      "source": "b1-c43-p65",
+      "subject": "Maggie My",
+      "type": "item",
+      "name": "Black dagger",
+      "action": "equip",
+      "summary": "Maggie draws a black dagger with a purple glow.",
+      "category": "Equipment"
+    },
+    {
+      "source": "b1-c44-p20",
+      "subject": "Party",
+      "type": "story",
+      "name": "Le Mouvement losses",
+      "action": "note",
+      "summary": "Donut reports that a city boss killed the group members inside its chamber. One man survived outside."
+    },
+    {
+      "source": "b1-c44-p21",
+      "subject": "Lucia Mar",
+      "type": "story",
+      "name": "Magical shield",
+      "action": "note",
+      "summary": "A broadcast shows a magical shield stopping an attack on Lucia. Its source is unidentified."
+    },
+    {
+      "source": "b1-c44-p29",
+      "subject": "Imani C.",
+      "type": "story",
+      "name": "Floor observation",
+      "action": "observe",
+      "summary": "A replay confirms Imani entering the third floor.",
+      "floor": 3,
+      "observationKind": "presence",
+      "mode": "physical"
+    },
+    {
+      "source": "b1-c44-p43",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Creator royalties",
+      "action": "note",
+      "summary": "The new Accounts panel lists four credited kills at one gold per kill for Carl’s Jug O’ Boom."
+    },
+    {
+      "source": "b1-c44-p45",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Cash-out fee",
+      "action": "note",
+      "summary": "Uncollected royalties carry a fee of two coins plus 25% rounded up. Carl checks the terms without withdrawing gold."
+    },
+    {
+      "source": "b1-c44-p59",
+      "subject": "Zev",
+      "type": "story",
+      "name": "Censure overturned",
+      "action": "note",
+      "summary": "Zev resumes her duties after a successful appeal removes her censure."
+    },
+    {
+      "source": "b1-c44-p101",
+      "subject": "Party",
+      "type": "story",
+      "name": "Appearance fee doubled",
+      "action": "note",
+      "summary": "Zev reports that Carl and Donut’s appearance fee has doubled and now matches Lucia Mar’s."
+    },
+    {
+      "source": "b1-c45-p31",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Pet Biscuit",
+      "action": "remove",
+      "summary": "Carl repeats the feeding for the other thirteen of the fourteen captive dingoes.",
+      "category": "Inventory",
+      "quantity": 13,
+      "evidence": [
+        "b1-c45-p23",
+        "b1-c45-p28"
+      ]
+    },
+    {
+      "source": "b1-c45-p33",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Mana pool",
+      "action": "note",
+      "summary": "Donut has a pool of 28 mana points. She still has two pieces of mana toast."
+    },
+    {
+      "source": "b1-c45-p41",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Boom jug used",
+      "action": "note",
+      "summary": "Carl expends one boom jug in the kobold arena."
+    },
+    {
+      "source": "b1-c45-p84",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Gauntlet stun",
+      "action": "note",
+      "summary": "Carl’s gauntlet triggers Stun for the first time. It has a 2% chance to trigger and the boss shows a 15-second timer.",
+      "evidence": [
+        "b1-c45-p83"
+      ]
+    },
+    {
+      "source": "b1-c46-p4",
+      "subject": "Party",
+      "type": "story",
+      "name": "Ralph defeated",
+      "action": "note",
+      "summary": "The neighborhood boss fight ends. The thirteen surviving dingoes leave."
+    },
+    {
+      "source": "b1-c46-p5",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Kobold neighborhood map",
+      "action": "add",
+      "summary": "Carl loots the neighborhood map after the boss fight.",
+      "category": "Inventory"
+    },
+    {
+      "source": "b1-c46-p12",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Master Pen Key restriction",
+      "action": "note",
+      "summary": "The key can be used only once by a non-kobold."
+    },
+    {
+      "source": "b1-c46-p16",
+      "subject": "Carl",
+      "type": "story",
+      "name": "I’ll take the ceramic dalmatian, Pat!",
+      "action": "note",
+      "summary": "Receives an achievement for finding the reward room.",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": []
+      }
+    },
+    {
+      "source": "b1-c46-p19",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Menagerie!",
+      "action": "note",
+      "summary": "Receives an achievement for finding a pet reward room.",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": []
+      }
+    },
+    {
+      "source": "b1-c46-p24",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "I’ll take the ceramic dalmatian, Pat!",
+      "action": "note",
+      "summary": "Carl confirms that Donut saw the same reward-room notifications.",
+      "evidence": [
+        "b1-c46-p16"
+      ]
+    },
+    {
+      "source": "b1-c46-p24",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Menagerie!",
+      "action": "note",
+      "summary": "Carl confirms that Donut saw the same reward-room notifications.",
+      "evidence": [
+        "b1-c46-p19"
+      ]
+    },
+    {
+      "source": "b1-c46-p54",
+      "subject": "Mongo",
+      "type": "story",
+      "name": "Unbonded",
+      "action": "note",
+      "summary": "The pet profile says Mongo has yet to bond with a crawler."
+    },
+    {
+      "source": "b1-c47-p11",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Potion of Determine Value",
+      "action": "add",
+      "summary": "Carl receives a Potion of Determine Value from the boss rewards before drinking it.",
+      "category": "Inventory",
+      "quantity": 1,
+      "historyOnly": true
+    },
+    {
+      "source": "b1-c47-p13",
+      "subject": "Carl",
+      "type": "story",
+      "name": "PETA Enthusiast!",
+      "action": "note",
+      "summary": "Carl earns an achievement for turning a hostile creature into an ally.",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": []
+      }
+    },
+    {
+      "source": "b1-c47-p25",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Enhanced Growth",
+      "action": "note",
+      "summary": "Mordecai confirms Enhanced Growth prevents Donut from assigning her own stat points."
+    },
+    {
+      "source": "b1-c47-p28",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Former crawler class",
+      "action": "note",
+      "summary": "Mordecai identifies his former crawler build as a Changeling Fire Mage Arcanist. He specialized in fire on his sixth floor."
+    },
+    {
+      "source": "b1-c47-p64",
+      "subject": "Mongo",
+      "type": "story",
+      "name": "Hostility removed",
+      "action": "note",
+      "summary": "Mongo’s map marker changes from hostile to neutral before he bonds with Donut."
+    },
+    {
+      "source": "b1-c47-p79",
+      "subject": "Mongo",
+      "type": "story",
+      "name": "Responds to commands",
+      "action": "note",
+      "summary": "After training, Mongo waits for Donut’s command before charging a mob."
+    },
+    {
+      "source": "b1-c47-p91",
+      "subject": "Mongo",
+      "type": "story",
+      "name": "Royal Steed",
+      "action": "note",
+      "summary": "The system changes Mongo’s title to Royal Steed.",
+      "profile": {
+        "title": "Royal Steed"
+      }
+    },
+    {
+      "source": "b1-c47-p114",
+      "subject": "Agatha",
+      "type": "item",
+      "name": "Trans Tunnel 7C Orator Relay by Valtay Corp.",
+      "action": "note",
+      "summary": "Carl identifies Trans Tunnel 7C Orator Relay by Valtay Corp. among the contents of Agatha’s cart during an earlier encounter.",
+      "evidence": [
+        "b1-c47-p105"
+      ],
+      "historyOnly": true,
+      "category": "Inventory"
+    },
+    {
+      "source": "b1-c47-p114",
+      "subject": "Agatha",
+      "type": "item",
+      "name": "Valtay Perso-Shield Platinum Edition",
+      "action": "note",
+      "summary": "Carl identifies Valtay Perso-Shield Platinum Edition among the contents of Agatha’s cart during an earlier encounter.",
+      "evidence": [
+        "b1-c47-p106"
+      ],
+      "historyOnly": true,
+      "category": "Inventory"
+    },
+    {
+      "source": "b1-c47-p114",
+      "subject": "Agatha",
+      "type": "item",
+      "name": "Mag 3040 Valtay Corp Pulse Pistol",
+      "action": "note",
+      "summary": "Carl identifies Mag 3040 Valtay Corp Pulse Pistol among the contents of Agatha’s cart during an earlier encounter.",
+      "evidence": [
+        "b1-c47-p107"
+      ],
+      "historyOnly": true,
+      "category": "Inventory"
+    },
+    {
+      "source": "b1-c47-p109",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Orator Relay restriction",
+      "action": "note",
+      "summary": "The system identifies the communications device as forbidden to operate in the dungeon."
+    },
+    {
+      "source": "b1-c47-p113",
+      "subject": "Agatha",
+      "type": "story",
+      "name": "Seen alive",
+      "action": "note",
+      "summary": "Carl recognizes Agatha approaching the stair chamber.",
+      "lifeStatus": "alive"
+    },
+    {
+      "source": "b1-c47-p116",
+      "subject": "Agatha",
+      "type": "level",
+      "name": "Level",
+      "action": "set",
+      "summary": "Carl sees Agatha at level 4. He recalls she already had that level during the tuskling encounter.",
+      "level": 4
+    },
+    {
+      "source": "b1-c47-p130",
+      "subject": "Agatha",
+      "type": "story",
+      "name": "Descends the stairs",
+      "action": "note",
+      "summary": "Agatha takes her shopping cart down the stairway."
+    }
+  ],
+  "corrections": [
+    {
+      "id": "inv-042-sapper-opening-item-0-0",
+      "set": {
+        "source": "b1-c41-p75",
+        "summary": "Carl finds the Gorgon Marital Aid in the Mechanic’s Box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-41-47-b1-c41-p68-carl-story-silver-mechanic-s-box"
+          ]
+        },
+        "detail": "Carl finds the Gorgon Marital Aid in the Mechanic’s Box."
+      }
+    },
+    {
+      "id": "inv-042-sapper-opening-item-1-0",
+      "set": {
+        "source": "b1-c41-p79",
+        "summary": "Carl finds a Sapper’s Table in the Sapper’s Box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-41-47-b1-c41-p73-carl-story-gold-sapper-s-box"
+          ]
+        },
+        "detail": "Carl finds a Sapper’s Table in the Sapper’s Box."
+      }
+    },
+    {
+      "id": "inv-042-sapper-opening-item-2-0",
+      "set": {
+        "source": "b1-c41-p81",
+        "summary": "Carl identifies ten Proximity Triggers from the Sapper’s Box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-41-47-b1-c41-p73-carl-story-gold-sapper-s-box"
+          ]
+        },
+        "detail": "Carl identifies ten Proximity Triggers from the Sapper’s Box."
+      }
+    },
+    {
+      "id": "inv-042-sapper-opening-summary",
+      "set": {
+        "source": "b1-c41-p83",
+        "summary": "Carl has finished unpacking the Mechanic’s and Sapper’s boxes.",
+        "acquisition": {
+          "stage": "opened",
+          "sourceType": "opening_batch",
+          "parentEventIds": [
+            "b1-second-half-41-47-b1-c41-p68-carl-story-silver-mechanic-s-box",
+            "b1-second-half-41-47-b1-c41-p73-carl-story-gold-sapper-s-box"
+          ]
+        }
+      }
+    },
+    {
+      "id": "party-location-audit-b1-c43-p35-carl-story-media-encounter",
+      "set": {
+        "source": "b1-c42-p96",
+        "summary": "Carl appears live on the Maestro’s program."
+      }
+    },
+    {
+      "id": "party-location-audit-b1-c43-p35-princess-donut-story-media-encounter",
+      "set": {
+        "source": "b1-c42-p96",
+        "summary": "Princess Donut appears live on the Maestro’s program."
+      }
+    },
+    {
+      "id": "party-location-audit-b1-c42-p45-li-jun-party-team-observation",
+      "set": {
+        "source": "b1-c42-p46",
+        "summary": "Li Jun identifies his sister Li Na among the four people in his group."
+      }
+    },
+    {
+      "id": "party-location-audit-b1-c42-p45-zhang-party-team-observation",
+      "set": {
+        "source": "b1-c42-p46",
+        "summary": "Li Jun identifies his sister Li Na among the four people in his group."
+      }
+    },
+    {
+      "id": "party-location-audit-b1-c43-p35-frank-q-story-media-encounter",
+      "set": {
+        "source": "b1-c43-p57",
+        "summary": "Frank Q appears remotely on the same show as Carl and Donut."
+      }
+    },
+    {
+      "id": "party-location-audit-b1-c43-p35-maggie-my-story-media-encounter",
+      "set": {
+        "source": "b1-c43-p57",
+        "summary": "Maggie My appears remotely on the same show as Carl and Donut."
+      }
+    },
+    {
+      "id": "secondary-skills-inventory-audit-b1-c43-p45-maggie-my-item-area-of-effect-stealth-ring",
+      "set": {
+        "source": "b1-c43-p45",
+        "summary": "Maggie’s ring grants stealth over an area. Its rank is unknown.",
+        "effects": [
+          {
+            "id": "area-stealth",
+            "kind": "benefit",
+            "target": "Area stealth",
+            "operation": "grants"
+          }
+        ]
+      }
+    },
+    {
+      "id": "inv-043-maestro-gift-item-0-0",
+      "set": {
+        "source": "b1-c43-p87",
+        "summary": "Carl receives a pair of Bates tactical boots in his size.",
+        "detail": "Carl receives a pair of Bates tactical boots in his size."
+      }
+    },
+    {
+      "id": "inv-043-maestro-gift-item-1-0",
+      "set": {
+        "source": "b1-c43-p88",
+        "summary": "The Maestro tells Carl there are socks in his gift box.",
+        "detail": "The Maestro tells Carl there are socks in his gift box."
+      }
+    },
+    {
+      "id": "inv-045-dingo-biscuit-item-0-0",
+      "set": {
+        "source": "b1-c45-p23",
+        "summary": "Carl takes one pet biscuit from his inventory and throws it into the first dingo’s cage.",
+        "detail": "Carl takes one pet biscuit from his inventory and throws it into the first dingo’s cage."
+      }
+    },
+    {
+      "id": "inv-045-dingo-biscuit-summary",
+      "set": {
+        "source": "b1-c45-p29",
+        "summary": "The first dingo eats Carl’s biscuit and its marker changes to neutral."
+      }
+    },
+    {
+      "id": "donut-second-chance-5-ability",
+      "set": {
+        "source": "b1-c45-p32",
+        "summary": "At rank 5, Second Chance costs 10 mana and reanimates a corpse for ten minutes. Donut can apparently target monsters up to five levels above her.",
+        "detail": "At rank 5, Second Chance costs 10 mana and reanimates a corpse for ten minutes. Donut can apparently target monsters up to five levels above her."
+      }
+    },
+    {
+      "id": "inv-046-kobold-loot-and-key-item-0-0",
+      "set": {
+        "source": "b1-c46-p8",
+        "summary": "Carl salvages several spiked kobold helmets.",
+        "detail": "Carl salvages several spiked kobold helmets."
+      }
+    },
+    {
+      "id": "inv-046-kobold-loot-and-key-item-1-0",
+      "set": {
+        "source": "b1-c46-p8",
+        "summary": "Carl salvages gold coins from the defeated kobolds.",
+        "detail": "Carl salvages gold coins from the defeated kobolds."
+      }
+    },
+    {
+      "id": "inv-046-kobold-loot-and-key-item-2-0",
+      "set": {
+        "source": "b1-c46-p8",
+        "summary": "Carl finds one Scroll of Heal Critter.",
+        "detail": "Carl finds one Scroll of Heal Critter."
+      }
+    },
+    {
+      "id": "inv-046-kobold-loot-and-key-item-3-0",
+      "set": {
+        "source": "b1-c46-p8",
+        "summary": "Carl finds a handful of pet biscuits.",
+        "detail": "Carl finds a handful of pet biscuits."
+      }
+    },
+    {
+      "id": "inv-046-kobold-loot-and-key-item-4-0",
+      "set": {
+        "source": "b1-c46-p9",
+        "summary": "Carl adds the undamaged gerbil cage to his inventory.",
+        "detail": "Carl adds the undamaged gerbil cage to his inventory."
+      }
+    },
+    {
+      "id": "inv-046-kobold-loot-and-key-item-5-0",
+      "set": {
+        "source": "b1-c46-p11",
+        "summary": "Carl finds the Master Pen Key on a kobold.",
+        "state": "carried",
+        "detail": "Carl finds the Master Pen Key on a kobold."
+      }
+    },
+    {
+      "id": "inv-047-mongo-selected-item-0-0",
+      "set": {
+        "source": "b1-c46-p44",
+        "summary": "Carl spends the one-use key to release the juvenile.",
+        "subject": "Carl",
+        "detail": "Carl spends the one-use key to release the juvenile."
+      }
+    },
+    {
+      "id": "inv-047-mongo-selected-item-1-0",
+      "set": {
+        "source": "b1-c46-p44",
+        "summary": "The juvenile is released from its pen.",
+        "historyOnly": true,
+        "detail": "The juvenile is released from its pen."
+      }
+    },
+    {
+      "id": "inv-047-mongo-selected-item-2-0",
+      "set": {
+        "source": "b1-c46-p45",
+        "summary": "Donut uses some pet biscuits from her supply to feed the juvenile. The remaining count is unknown.",
+        "subject": "Princess Donut",
+        "action": "remove",
+        "historyOnly": true,
+        "detail": "Donut uses some pet biscuits from her supply to feed the juvenile. The remaining count is unknown."
+      }
+    },
+    {
+      "id": "inv-048-final-boss-opening-item-0-0",
+      "set": {
+        "source": "b1-c47-p11",
+        "summary": "Donut receives the Heal Critter spell book in the boss rewards.",
+        "action": "add",
+        "state": "carried",
+        "detail": "Donut receives the Heal Critter spell book in the boss rewards."
+      }
+    },
+    {
+      "id": "inv-048-final-boss-opening-summary",
+      "set": {
+        "source": "b1-c47-p11",
+        "summary": "Donut receives a spell book. Carl receives 1,000 gold and drinks a Determine Value potion."
+      }
+    },
+    {
+      "id": "party-03-mongo-joins-join",
+      "set": {
+        "source": "b1-c47-p90",
+        "summary": "The system records Mongo joining the party as Donut’s bonded pet."
+      }
+    },
+    {
+      "id": "mongo-party-level-1-level",
+      "set": {
+        "source": "b1-c47-p90",
+        "summary": "The system lists Mongo at level 1 when he joins the party."
+      }
+    },
+    {
+      "id": "inv-049-history-reveals-valtay-items-item-0-0",
+      "set": {
+        "source": "b1-c47-p105",
+        "summary": "Carl finds Trans Tunnel 7C Orator Relay by Valtay Corp. in his item history. It is absent from his current inventory.",
+        "historyOnly": true,
+        "detail": "Carl finds Trans Tunnel 7C Orator Relay by Valtay Corp. in his item history. It is absent from his current inventory."
+      }
+    },
+    {
+      "id": "inv-049-history-reveals-valtay-items-item-1-0",
+      "set": {
+        "source": "b1-c47-p106",
+        "summary": "Carl finds Valtay Perso-Shield Platinum Edition in his item history. It is absent from his current inventory.",
+        "historyOnly": true,
+        "detail": "Carl finds Valtay Perso-Shield Platinum Edition in his item history. It is absent from his current inventory."
+      }
+    },
+    {
+      "id": "inv-049-history-reveals-valtay-items-item-2-0",
+      "set": {
+        "source": "b1-c47-p107",
+        "summary": "Carl finds Mag 3040 Valtay Corp Pulse Pistol in his item history. It is absent from his current inventory.",
+        "historyOnly": true,
+        "detail": "Carl finds Mag 3040 Valtay Corp Pulse Pistol in his item history. It is absent from his current inventory."
+      }
+    },
+    {
+      "id": "inv-049-history-reveals-valtay-items-summary",
+      "set": {
+        "source": "b1-c47-p114",
+        "summary": "Carl traces his former possession of the Valtay devices to his temporary custody of Agatha’s cart."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1421 @@
+{
+  "scope": "Book 1 chapters 25–32, reviewed paragraph by paragraph against the local corpus.",
+  "events": [
+    {
+      "source": "b1-c25-p2",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Neighborhood Map",
+      "summary": "Carl collects the neighborhood map from the Juicer encounter.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c25-p3",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Recovered after the Juicer",
+      "summary": "Donut has recovered from her injuries by the time Carl finishes looting the gym.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c25-p14",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Silver Adventurer Box",
+      "summary": "Princess Donut opens a silver adventurer box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Silver",
+        "boxKind": "Adventurer"
+      }
+    },
+    {
+      "source": "b1-c25-p14",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Bronze Boss Box",
+      "summary": "Princess Donut opens a bronze boss box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Bronze",
+        "boxKind": "Boss"
+      }
+    },
+    {
+      "source": "b1-c25-p14",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Unidentified boss-box tome",
+      "summary": "Donut finds an unread spellbook in her Bronze Boss Box.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-second-half-25-32-b1-c25-p14-princess-donut-story-bronze-boss-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b1-c25-p15",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Silver Survivor Box",
+      "summary": "Princess Donut opens a silver survivor box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Silver",
+        "boxKind": "Survivor"
+      }
+    },
+    {
+      "source": "b1-c25-p22",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Puddle Jumper limits",
+      "summary": "Puddle Jumper costs 20 mana, has a ten-second delay and a five-hour cooldown, and can carry Donut and three others within sight.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c25-p43",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Bronze Survivor Box",
+      "summary": "Carl opens a bronze survivor box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Bronze",
+        "boxKind": "Survivor"
+      }
+    },
+    {
+      "source": "b1-c25-p43",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Crawler achievements",
+      "summary": "Carl has earned achievements for five hours on the chopper and over 100 wandering monsters defeated.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c25-p43",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Bare Knuckle",
+      "summary": "Carl explicitly reports his Bare Knuckle skill reaching level 6.",
+      "action": "set",
+      "level": 6,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b1-c25-p47",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Gold Brawler Box",
+      "summary": "Carl earns a Gold Brawler Box for a double defeat.",
+      "action": "note",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxTier": "Gold",
+        "boxKind": "Brawler"
+      }
+    },
+    {
+      "source": "b1-c25-p48",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Gold Looter Box",
+      "summary": "Carl receives another Gold Looter Box for exceeding ten tons in his inventory.",
+      "action": "note",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxTier": "Gold",
+        "boxKind": "Looter"
+      }
+    },
+    {
+      "source": "b1-c25-p49",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Boss box contents",
+      "summary": "Carl opens his boss reward.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxKind": "Boss"
+      }
+    },
+    {
+      "source": "b1-c25-p56",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Gold Looter Box",
+      "summary": "Carl opens his gold looter box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-second-half-25-32-b1-c25-p48-carl-story-gold-looter-box"
+        ],
+        "boxTier": "Gold",
+        "boxKind": "Looter"
+      }
+    },
+    {
+      "source": "b1-c25-p57",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Gold Brawler Box",
+      "summary": "Carl opens his gold brawler box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-second-half-25-32-b1-c25-p47-carl-story-gold-brawler-box"
+        ],
+        "boxTier": "Gold",
+        "boxKind": "Brawler"
+      }
+    },
+    {
+      "source": "b1-c25-p76",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Gauntlet transformation",
+      "summary": "Carl confirms that closing his fist activates the gauntlet and opening it returns the bracer to its resting form.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c26-p6",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Grooming brush",
+      "summary": "Sebastian gives Donut one of his brushes.",
+      "action": "add",
+      "quantity": null,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c26-p33",
+      "subject": "Agatha",
+      "type": "story",
+      "name": "Unaffiliated crawler",
+      "summary": "The boss encounter lists Agatha independently of Meadow Lark and the Royal Court.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c26-p67",
+      "subject": "Brandon An",
+      "type": "story",
+      "name": "Maintenance crew",
+      "summary": "Brandon says he and Chris were working maintenance at Meadow Lark before the collapse.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c26-p70",
+      "subject": "Brandon An",
+      "type": "story",
+      "name": "Strength-boosting equipment",
+      "summary": "Brandon has received gear that raises Strength. The items and point values are unspecified.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c27-p3",
+      "subject": "Yolanda Martinez",
+      "type": "story",
+      "name": "Health potion",
+      "summary": "Imani gives Yolanda a healing potion after the borough boss fight.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c27-p5",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Agatha's shopping cart and contents",
+      "summary": "Carl gives the loaded cart back to Agatha.",
+      "action": "remove",
+      "quantity": 1,
+      "state": "returned",
+      "category": "Inventory"
+    },
+    {
+      "source": "b1-c27-p8",
+      "subject": "Agatha",
+      "type": "story",
+      "name": "Inventory locked",
+      "summary": "Yolanda says Agatha has not completed the tutorial and cannot inventory her cart.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c27-p9",
+      "subject": "Agatha",
+      "type": "level",
+      "name": "Character level",
+      "summary": "The encounter raises Agatha to level 4.",
+      "action": "set",
+      "level": 4
+    },
+    {
+      "source": "b1-c27-p9",
+      "subject": "Brandon An",
+      "type": "level",
+      "name": "Character level",
+      "summary": "The encounter raises Brandon An to level 8.",
+      "action": "set",
+      "level": 8
+    },
+    {
+      "source": "b1-c27-p9",
+      "subject": "Chris",
+      "type": "level",
+      "name": "Character level",
+      "summary": "The encounter raises Chris to level 8.",
+      "action": "set",
+      "level": 8
+    },
+    {
+      "source": "b1-c27-p9",
+      "subject": "Yolanda Martinez",
+      "type": "level",
+      "name": "Character level",
+      "summary": "The encounter raises Yolanda Martinez to level 6.",
+      "action": "set",
+      "level": 6
+    },
+    {
+      "source": "b1-c27-p17",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Borough Field Guide",
+      "summary": "Carl collects the persistent borough reward.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c27-p17",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Borough Field Guide",
+      "summary": "Princess Donut collects the persistent borough reward.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c27-p19",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Borough map upgrade",
+      "summary": "The guide reveals monster types on the borough map.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c27-p28",
+      "subject": "Brandon An",
+      "type": "item",
+      "name": "Tooth",
+      "summary": "Brandon picks up a sharp tooth in the arena.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c27-p36",
+      "subject": "Carl",
+      "type": "story",
+      "name": "New inventory category",
+      "summary": "Carl discovers a category for salvage the system classifies as worthless.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c27-p51",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Last cigarette used",
+      "summary": "Carl smokes part of his last cigarette and discards it.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c27-p72",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "First studio invitation",
+      "summary": "Lexis invites Donut and Carl to appear on Odette’s show.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c28-p95",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Strength comparison",
+      "summary": "Odette displays the pair’s stats and says Donut is stronger than Carl. The screen values are not transcribed.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c29-p6",
+      "subject": "Odette",
+      "type": "item",
+      "name": "Mantis helmet",
+      "summary": "Odette removes the helmet she wore on camera.",
+      "action": "note",
+      "quantity": null,
+      "category": "Equipment",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c29-p6",
+      "subject": "Odette",
+      "type": "item",
+      "name": "Heart necklace",
+      "summary": "Odette wears a heart necklace beneath her stage costume.",
+      "action": "note",
+      "quantity": null,
+      "category": "Equipment",
+      "state": "in use"
+    },
+    {
+      "source": "b1-c29-p10",
+      "subject": "Odette",
+      "type": "item",
+      "name": "Hovering mobility disk",
+      "summary": "Odette uses a floating disk to move around after leaving her stage costume.",
+      "action": "note",
+      "quantity": null,
+      "category": "Equipment",
+      "state": "in use"
+    },
+    {
+      "source": "b1-c29-p17",
+      "subject": "Odette",
+      "type": "story",
+      "name": "Former crawler",
+      "summary": "Odette reached the stairs to Floor 13 and took a deal before descending.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c29-p20",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Former trainer",
+      "summary": "Odette confirms that she trained Mordecai during his crawl.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c29-p36",
+      "subject": "Odette",
+      "type": "item",
+      "name": "Black belt",
+      "summary": "Odette still wears the gold-box belt she received after losing her legs on Floor 11.",
+      "action": "equip",
+      "quantity": null,
+      "category": "Equipment",
+      "state": "equipped",
+      "effects": [
+        {
+          "id": "limb-attachment",
+          "kind": "benefit",
+          "target": "Monster body parts",
+          "operation": "attach"
+        }
+      ]
+    },
+    {
+      "source": "b1-c29-p38",
+      "subject": "Odette",
+      "type": "story",
+      "name": "Five sponsors",
+      "summary": "Odette recalls having five sponsors during her crawl.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c29-p41",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Torches",
+      "summary": "Donut explicitly counts 230 torches in her inventory.",
+      "action": "set",
+      "quantity": 230,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c29-p42",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Indenture condition",
+      "summary": "Odette says this season counts toward Mordecai’s contract only if one of his crawlers reaches Floor 4.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c29-p52",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Interview treat effect",
+      "summary": "Odette says the treats temporarily added 1.5 points to hidden wisdom and confidence stats. The affected confidence stats are unnamed.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p31",
+      "subject": "Agatha",
+      "type": "story",
+      "name": "Confirmed on Floor 2",
+      "summary": "A corpse record on Floor 2 credits the kill to Agatha.",
+      "action": "note",
+      "floor": 2
+    },
+    {
+      "source": "b1-c30-p33",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Vial of Brindle Grub Hemolymph",
+      "summary": "Carl takes one vial of alchemy material.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c30-p35",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Minimap detection",
+      "summary": "Carl observes that Donut detects moving monsters on her map before he does. The cause is unknown.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p52",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Mana pool",
+      "summary": "Donut spends 24 of her 26 mana fighting the dingoes.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p53",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Poor Dingo Pelt",
+      "summary": "Donut collects the pelts from both dingoes.",
+      "action": "add",
+      "quantity": 2,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c30-p54",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Gold coin",
+      "summary": "Donut collects two gold coins from the dingoes.",
+      "action": "add",
+      "quantity": 2,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c30-p63",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Psionic resistance",
+      "summary": "The Mind Horrors’ psionic attack leaves Donut unaffected during this encounter.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p69",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Battle stats increase",
+      "summary": "Carl reports several combat stats increasing. He does not name them or give values.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p70",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Borough Boss",
+      "summary": "Entering the borough boss chamber earns an achievement.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p76",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Bully and a Thief",
+      "summary": "Taking Agatha’s cart earned Carl a Bronze Asshole’s Box.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p79",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Battlefield Construction",
+      "summary": "Deploying a structure in battle earns Carl a Silver Mechanic’s Box.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p83",
+      "subject": "Carl",
+      "type": "story",
+      "name": "This Little Piggy Went to Market",
+      "summary": "Carl receives a Platinum Shoe Box for a barefoot combat achievement.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p85",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Borough victory achievements",
+      "summary": "The boss victory yields a Silver Boss Box and achievements for the group, the time and the number of minions.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p88",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Stairwell achievement",
+      "summary": "Carl earns an achievement for finding the stairs.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p90",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Bronze Asshole Box",
+      "summary": "Carl opens a bronze asshole box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Bronze",
+        "boxKind": "Asshole"
+      }
+    },
+    {
+      "source": "b1-c30-p91",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Silver Mechanic Box",
+      "summary": "Carl opens a silver mechanic box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Silver",
+        "boxKind": "Mechanic"
+      }
+    },
+    {
+      "source": "b1-c30-p95",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Silver Boss Box",
+      "summary": "Carl opens a silver boss box.",
+      "action": "note",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxTier": "Silver",
+        "boxKind": "Boss"
+      }
+    },
+    {
+      "source": "b1-c30-p95",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Gold coin",
+      "summary": "The silver boss box gives Carl 100 additional gold coins.",
+      "action": "add",
+      "quantity": 100,
+      "category": "Inventory",
+      "state": "carried",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-second-half-25-32-b1-c30-p95-carl-story-silver-boss-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b1-c30-p100",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Cheat Code Potion",
+      "summary": "Carl drinks the potion before it expires.",
+      "action": "remove",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "consumed"
+    },
+    {
+      "source": "b1-c30-p104",
+      "subject": "Lucia Mar",
+      "type": "story",
+      "name": "Magical gear",
+      "summary": "Carl sees Lucia wearing magical gear and wielding a mace on the recap. He suspects a Dexterity bonus, without an exact value.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c30-p116",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Enchanted Pedicure Kit of the Sylph",
+      "summary": "The kit lists four temporary barefoot bonuses, activated by using it in a safe or personal space.",
+      "action": "note",
+      "quantity": null,
+      "category": "Inventory",
+      "state": "carried",
+      "evidence": [
+        "b1-c30-p109",
+        "b1-c30-p110",
+        "b1-c30-p113",
+        "b1-c30-p114",
+        "b1-c30-p115"
+      ],
+      "effects": [
+        {
+          "id": "barefoot-damage",
+          "kind": "benefit",
+          "target": "Barefoot damage",
+          "operation": "add",
+          "value": 15,
+          "unit": "percent",
+          "condition": "Barefoot, for 30 hours after use"
+        },
+        {
+          "id": "smush",
+          "kind": "skill",
+          "target": "Smush",
+          "operation": "add",
+          "value": 3,
+          "unit": "levels",
+          "condition": "Barefoot, for 30 hours after use"
+        },
+        {
+          "id": "foot-bones",
+          "kind": "benefit",
+          "target": "Foot bones",
+          "operation": "rule: unbreakable",
+          "condition": "Barefoot, for 30 hours after use"
+        },
+        {
+          "id": "trap-warning",
+          "kind": "benefit",
+          "target": "Footfall traps",
+          "operation": "rule: alarm and five-second delay",
+          "condition": "Barefoot, for 30 hours after use"
+        }
+      ]
+    },
+    {
+      "source": "b1-c30-p119",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Mailed spellbook",
+      "summary": "Donut collects a spellbook from the safe-room mailbox.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c31-p12",
+      "subject": "Brandon An",
+      "type": "story",
+      "name": "Meadow Lark rescue",
+      "summary": "Six additional Waffle House residents joined the group before the floor collapse. Twenty-four elected to stay behind.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c31-p25",
+      "subject": "Chris",
+      "type": "story",
+      "name": "Boss-box book club",
+      "summary": "Brandon reports that Chris received a book-club reward. Its exact terms and any spellbook are unspecified.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c31-p38",
+      "subject": "Agatha",
+      "type": "story",
+      "name": "Absent from broadcast",
+      "summary": "Chris says Agatha was edited out of the broadcast. Her whereabouts remain unknown.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c31-p62",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "First followers",
+      "summary": "Donut watches her first followers and first view appear on the counter.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c32-p5",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Audience ratings",
+      "summary": "Carl’s display shows 69 billion views, 635 million followers and 149 million favorites.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c32-p7",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Audience ratings",
+      "summary": "Donut has roughly as many views and followers as Carl and about twice as many favorites.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c32-p11",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Pedicure buffs active",
+      "summary": "Imani helps Carl use the kit. Its barefoot damage, Smush, foot protection and trap-warning buffs activate.",
+      "action": "note",
+      "evidence": [
+        "b1-c30-p113",
+        "b1-c30-p114",
+        "b1-c30-p115",
+        "b1-c30-p116"
+      ]
+    },
+    {
+      "source": "b1-c32-p32",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "First Second Chance minion",
+      "summary": "Donut raises a level 1 clurichaun for one minute.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c32-p48",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Slingshot",
+      "summary": "Carl obtains a slingshot from Donut and starts practicing with it.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c32-p53",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Rev-Up pamphlet",
+      "summary": "Donut loots a nonmagical promotional pamphlet.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c32-p67",
+      "subject": "Carl",
+      "type": "story",
+      "name": "The Taint",
+      "summary": "Carl receives a five-minute debuff that blocks all healing.",
+      "action": "note",
+      "evidence": [
+        "b1-c32-p63",
+        "b1-c32-p65"
+      ]
+    },
+    {
+      "source": "b1-c32-p89",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Carl's Jug O' Boom",
+      "summary": "Carl finishes the first jug.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c32-p89",
+      "subject": "Party",
+      "type": "item",
+      "name": "Toilet-grade Rev-Up moonshine jug",
+      "summary": "1 of the group’s stock used in crafting.",
+      "action": "remove",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "used"
+    },
+    {
+      "source": "b1-c32-p98",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Carl's Jug O' Boom",
+      "summary": "Carl uses the first jug in a test.",
+      "action": "remove",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "used"
+    },
+    {
+      "source": "b1-c32-p102",
+      "subject": "Party",
+      "type": "item",
+      "name": "Toilet-grade Rev-Up moonshine jug",
+      "summary": "10 of the group’s stock used in crafting.",
+      "action": "remove",
+      "quantity": 10,
+      "category": "Inventory",
+      "state": "used"
+    },
+    {
+      "source": "b1-c32-p104",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Last intact table",
+      "summary": "Carl confirms that his Engineer’s Table survived the redoubt construction and is his only remaining intact table.",
+      "action": "note"
+    }
+  ],
+  "corrections": [
+    {
+      "id": "inv-025-gym-cleanout-item-0-0",
+      "set": {
+        "summary": "Carl takes this from the Juicer’s gym and office.",
+        "source": "b1-c25-p2"
+      }
+    },
+    {
+      "id": "inv-025-gym-cleanout-item-1-0",
+      "set": {
+        "summary": "Carl takes this from the Juicer’s gym and office.",
+        "source": "b1-c25-p2"
+      }
+    },
+    {
+      "id": "inv-025-gym-cleanout-item-2-0",
+      "set": {
+        "summary": "Carl takes this from the Juicer’s gym and office.",
+        "source": "b1-c25-p2"
+      }
+    },
+    {
+      "id": "inv-025-gym-cleanout-item-3-0",
+      "set": {
+        "summary": "Carl takes this from the Juicer’s gym and office.",
+        "source": "b1-c25-p2"
+      }
+    },
+    {
+      "id": "inv-025-gym-cleanout-item-4-0",
+      "set": {
+        "summary": "Carl takes this from the Juicer’s gym and office.",
+        "source": "b1-c25-p2"
+      }
+    },
+    {
+      "id": "inv-025-gym-cleanout-item-5-0",
+      "set": {
+        "summary": "Carl takes this from the Juicer’s gym and office.",
+        "source": "b1-c25-p2"
+      }
+    },
+    {
+      "id": "inv-025-gym-cleanout-item-6-0",
+      "set": {
+        "summary": "Carl takes this from the Juicer’s gym and office.",
+        "source": "b1-c25-p2"
+      }
+    },
+    {
+      "id": "inv-025-gym-cleanout-item-7-0",
+      "set": {
+        "summary": "Carl takes this from the Juicer’s gym and office.",
+        "source": "b1-c25-p2"
+      }
+    },
+    {
+      "id": "carl-intelligence-3-donut-dexterity-12-stats-carl",
+      "set": {
+        "summary": "Mordecai confirms Carl had 3 Intelligence when he cast the fog scrolls."
+      }
+    },
+    {
+      "id": "carl-intelligence-3-donut-dexterity-12-stats-princess-donut",
+      "set": {
+        "summary": "Equipping the bracelet raises Donut’s displayed Dexterity to 12.",
+        "source": "b1-c25-p14"
+      }
+    },
+    {
+      "id": "inv-026-juicer-box-openings-summary",
+      "set": {
+        "summary": "Donut begins opening her rewards at the training guild.",
+        "source": "b1-c25-p7"
+      }
+    },
+    {
+      "id": "inv-026-juicer-box-openings-item-0-0",
+      "set": {
+        "summary": "Donut equips the Silver Adventurer Box bracelet on her front leg.",
+        "category": "Equipment",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c25-p14-princess-donut-story-silver-adventurer-box"
+          ],
+          "outcomeType": "item"
+        },
+        "statBoosts": [
+          {
+            "stat": "DEX",
+            "unit": "points",
+            "value": 2,
+            "source": "b1-c25-p14"
+          }
+        ],
+        "source": "b1-c25-p14"
+      }
+    },
+    {
+      "id": "inv-026-juicer-box-openings-item-1-0",
+      "set": {
+        "summary": "Donut reads the book from the Bronze Boss Box.",
+        "name": "Unidentified boss-box tome",
+        "acquisition": {
+          "stage": "consumed",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c25-p14-princess-donut-story-bronze-boss-box"
+          ]
+        },
+        "source": "b1-c25-p18"
+      }
+    },
+    {
+      "id": "donut-puddle-jumper-acquired-ability",
+      "set": {
+        "summary": "Mordecai identifies Donut’s new spell as Puddle Jumper.",
+        "detail": "Donut learned the spell by reading her Bronze Boss Box tome.",
+        "source": "b1-c25-p20"
+      }
+    },
+    {
+      "id": "inv-026-juicer-box-openings-item-2-0",
+      "set": {
+        "summary": "Donut receives twelve Heal scrolls after finishing the boss battle below 5% health.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c25-p15-princess-donut-story-silver-survivor-box"
+          ],
+          "outcomeType": "item"
+        },
+        "source": "b1-c25-p15"
+      }
+    },
+    {
+      "id": "inv-026-juicer-box-openings-item-3-0",
+      "set": {
+        "summary": "Carl receives five Heal scrolls after finishing below 10% health.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c25-p43-carl-story-bronze-survivor-box"
+          ],
+          "outcomeType": "item"
+        },
+        "source": "b1-c25-p43"
+      }
+    },
+    {
+      "id": "inv-026-juicer-box-openings-item-4-0",
+      "set": {
+        "summary": "Carl puts the cowboy hat into his inventory.",
+        "source": "b1-c25-p43"
+      }
+    },
+    {
+      "id": "carl-fighting-6-iron-punch-5-skill-0",
+      "set": {
+        "confidence": "inferred",
+        "summary": "Carl says his fighting skills rose to 6. Identification of this individual skill follows the previously described group."
+      }
+    },
+    {
+      "id": "carl-fighting-6-iron-punch-5-skill-1",
+      "set": {
+        "confidence": "inferred",
+        "summary": "Carl says his fighting skills rose to 6. Identification of this individual skill follows the previously described group."
+      }
+    },
+    {
+      "id": "carl-fighting-6-iron-punch-5-skill-2",
+      "set": {
+        "confidence": "inferred",
+        "summary": "Carl says his fighting skills rose to 6. Identification of this individual skill follows the previously described group."
+      }
+    },
+    {
+      "id": "inv-026-juicer-box-openings-item-5-0",
+      "set": {
+        "summary": "The boss box contains 100 enchanted shuriken.",
+        "source": "b1-c25-p50",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c25-p49-carl-story-boss-box-contents"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-026-juicer-box-openings-item-6-0",
+      "set": {
+        "summary": "Carl drinks the Determine Value potion from his Gold Looter Box.",
+        "source": "b1-c25-p56",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c25-p56-carl-story-gold-looter-box"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-026-juicer-box-openings-item-7-0",
+      "set": {
+        "summary": "Carl finds a right-handed war gauntlet in the Gold Brawler Box.",
+        "state": "carried",
+        "category": "Equipment",
+        "source": "b1-c25-p58",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c25-p57-carl-story-gold-brawler-box"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "carl-gauntlet-skill-bonuses-skill-change-0",
+      "set": {
+        "skillScope": "equipment",
+        "action": "delta",
+        "levelDelta": 2,
+        "summary": "The equipped gauntlet adds 2 to Iron Punch.",
+        "detail": "The equipped gauntlet adds 2 to Iron Punch.",
+        "source": "b1-c25-p67"
+      }
+    },
+    {
+      "id": "carl-gauntlet-skill-bonuses-skill-change-1",
+      "set": {
+        "skillScope": "equipment",
+        "action": "delta",
+        "levelDelta": 1,
+        "summary": "The equipped gauntlet adds 1 to Powerful Strike.",
+        "detail": "The equipped gauntlet adds 1 to Powerful Strike.",
+        "source": "b1-c25-p67"
+      }
+    },
+    {
+      "id": "carl-gauntlet-skill-bonuses-stat-delta",
+      "set": {
+        "summary": "The bracer adds 1 Dexterity. Its 3-point Strength bonus applies in fist mode.",
+        "source": "b1-c25-p67"
+      }
+    },
+    {
+      "id": "equipment-followup-audit-b1-c25-p76-carl-item-enchanted-war-gauntlet-of-the-exalted-grull",
+      "set": {
+        "summary": "Carl puts the war bracer on his right wrist.",
+        "evidence": [
+          "b1-c25-p59",
+          "b1-c25-p60",
+          "b1-c25-p61",
+          "b1-c25-p62",
+          "b1-c25-p63"
+        ],
+        "effects": [
+          {
+            "id": "iron-punch",
+            "kind": "skill",
+            "target": "Iron Punch",
+            "operation": "add",
+            "value": 2,
+            "unit": "levels"
+          },
+          {
+            "id": "powerful-strike",
+            "kind": "skill",
+            "target": "Powerful Strike",
+            "operation": "add",
+            "value": 1,
+            "unit": "levels"
+          },
+          {
+            "id": "stun",
+            "kind": "benefit",
+            "target": "Stun chance",
+            "operation": "add",
+            "value": 2,
+            "unit": "percent",
+            "condition": "On a successful hit"
+          }
+        ],
+        "source": "b1-c25-p67"
+      }
+    },
+    {
+      "id": "inv-030-agatha-cart-temporary-item-0-0",
+      "set": {
+        "action": "add",
+        "state": "held for Agatha",
+        "historyOnly": false,
+        "summary": "Carl takes Agatha’s loaded cart into his inventory during the encounter.",
+        "source": "b1-c26-p63"
+      }
+    },
+    {
+      "id": "inv-030-agatha-cart-temporary-summary",
+      "set": {
+        "summary": "Agatha objects when Carl temporarily takes her cart.",
+        "source": "b1-c26-p63"
+      }
+    },
+    {
+      "id": "inv-029-ball-of-swine-loot-item-0-0",
+      "set": {
+        "summary": "Carl loots a ruby necklace.",
+        "source": "b1-c27-p33"
+      }
+    },
+    {
+      "id": "inv-029-ball-of-swine-loot-item-1-0",
+      "set": {
+        "summary": "Carl takes unenchanted jewelry.",
+        "source": "b1-c27-p33"
+      }
+    },
+    {
+      "id": "inv-029-ball-of-swine-loot-item-2-0",
+      "set": {
+        "summary": "Carl takes a Pig Harness.",
+        "source": "b1-c27-p33"
+      }
+    },
+    {
+      "id": "inv-029-ball-of-swine-loot-item-3-0",
+      "set": {
+        "summary": "Donut inventories a prop Imani discarded.",
+        "source": "b1-c27-p33"
+      }
+    },
+    {
+      "id": "inv-029-ball-of-swine-loot-item-4-0",
+      "set": {
+        "summary": "Carl takes a tuxedo jacket.",
+        "source": "b1-c27-p25"
+      }
+    },
+    {
+      "id": "floor-audit-b1-c30-p11-carl-story-floor-observation",
+      "set": {
+        "source": "b1-c30-p7"
+      }
+    },
+    {
+      "id": "floor-audit-b1-c30-p11-princess-donut-story-floor-observation",
+      "set": {
+        "source": "b1-c30-p7"
+      }
+    },
+    {
+      "id": "inv-031-borough-opening-summary",
+      "set": {
+        "summary": "Carl opens his borough and achievement boxes and inspects the new items.",
+        "source": "b1-c30-p89"
+      }
+    },
+    {
+      "id": "inv-031-borough-opening-item-0-0",
+      "set": {
+        "summary": "The bronze box gives Carl five gold coins.",
+        "quantity": 5,
+        "source": "b1-c30-p90",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c30-p90-carl-story-bronze-asshole-box"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-031-borough-opening-item-1-0",
+      "set": {
+        "summary": "The bronze box gives Carl three Desperado Club drink tickets.",
+        "source": "b1-c30-p90",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c30-p90-carl-story-bronze-asshole-box"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-031-borough-opening-item-2-0",
+      "set": {
+        "summary": "Carl receives the Goo-Inator from his silver mechanic box.",
+        "source": "b1-c30-p92",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c30-p91-carl-story-silver-mechanic-box"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-031-borough-opening-item-3-0",
+      "set": {
+        "summary": "Carl receives the Cheat Code Potion in his silver boss box.",
+        "action": "add",
+        "state": "carried",
+        "source": "b1-c30-p96",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-second-half-25-32-b1-c30-p95-carl-story-silver-boss-box"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-031-borough-opening-item-4-0",
+      "set": {
+        "summary": "Carl identifies the pedicure kit among his rewards.",
+        "source": "b1-c30-p107"
+      }
+    },
+    {
+      "id": "inv-032-donut-book-club-item-0-0",
+      "set": {
+        "summary": "Donut says her boss box enrolled her in a club that mails her a spellbook on each floor.",
+        "source": "b1-c30-p121"
+      }
+    },
+    {
+      "id": "inv-032-donut-book-club-item-1-0",
+      "set": {
+        "summary": "Donut reads the mailed tome, learning a new spell.",
+        "name": "Mailed spellbook",
+        "source": "b1-c30-p123"
+      }
+    },
+    {
+      "id": "inv-032-donut-book-club-summary",
+      "set": {
+        "summary": "Donut reads the first spellbook from her club membership."
+      }
+    },
+    {
+      "id": "donut-second-chance-acquired-1-ability",
+      "set": {
+        "summary": "Donut identifies the spell as level 1 Second Chance. It costs ten mana and revives a lower-level monster for one minute per spell level.",
+        "source": "b1-c30-p127"
+      }
+    },
+    {
+      "id": "carl-smush-temporary-plus-3-ability",
+      "set": {
+        "action": "delta",
+        "skillScope": "temporary",
+        "levelDelta": 3,
+        "summary": "Using the pedicure kit activates a temporary three-level Smush bonus for 30 hours.",
+        "detail": "The kit requires bare feet.",
+        "source": "b1-c32-p11"
+      }
+    },
+    {
+      "id": "inv-033-clurichaun-loot-and-boom-jugs-item-1-0",
+      "set": {
+        "summary": "Donut uses her inventory to loot loose items, including slingshots and dice.",
+        "subject": "Princess Donut",
+        "source": "b1-c32-p41"
+      }
+    },
+    {
+      "id": "inv-033-clurichaun-loot-and-boom-jugs-item-0-0",
+      "set": {
+        "summary": "The party has collected 25 jugs of moonshine.",
+        "action": "set",
+        "quantity": 25,
+        "detail": "Group count before crafting.",
+        "source": "b1-c32-p71"
+      }
+    },
+    {
+      "id": "inv-033-clurichaun-loot-and-boom-jugs-item-2-0",
+      "set": {
+        "summary": "Carl and Donut make ten additional jugs after testing the first.",
+        "subject": "Carl",
+        "quantity": 10,
+        "detail": null,
+        "source": "b1-c32-p102"
+      }
+    }
+  ]
+}

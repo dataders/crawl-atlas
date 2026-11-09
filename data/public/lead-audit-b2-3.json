@@ -1,0 +1,408 @@
+{
+  "scope": "Selected Book 2 and 3 leads verified against their paragraphs and the published observations.",
+  "events": [
+    {
+      "source": "b2-c2-p182",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Strength without the gauntlet",
+      "summary": "Carl has 10 base Strength and 13 with his toe ring alone.",
+      "action": "note"
+    },
+    {
+      "source": "b2-c6-p10",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Nica’s rings",
+      "summary": "Carl collects two rings from Nica.",
+      "action": "add",
+      "category": "Equipment",
+      "state": "carried",
+      "quantity": 2
+    },
+    {
+      "source": "b2-c6-p11",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Nica’s rings",
+      "summary": "Carl equips both rings, bringing the number he wears to four. Each new ring grants two Strength.",
+      "action": "equip",
+      "category": "Equipment",
+      "state": "equipped",
+      "quantity": 2,
+      "statBoosts": [
+        {
+          "stat": "STR",
+          "value": 4,
+          "unit": "points",
+          "source": "b2-c6-p11"
+        }
+      ],
+      "effects": [
+        {
+          "id": "pair-str",
+          "kind": "stat",
+          "target": "STR",
+          "operation": "add",
+          "value": 4,
+          "unit": "points",
+          "condition": "Both rings equipped (+2 each)"
+        }
+      ]
+    },
+    {
+      "source": "b2-c7-p34",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Mold lion heart",
+      "summary": "Carl collects the mold lion’s heart.",
+      "action": "add",
+      "category": "Inventory",
+      "state": "carried",
+      "quantity": 1
+    },
+    {
+      "source": "b2-c7-p35",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Mana pool",
+      "summary": "Donut has 29 mana. A cast of Second Chance costs 10.",
+      "action": "note"
+    },
+    {
+      "source": "b2-c8-p31",
+      "subject": "Brandon An",
+      "type": "story",
+      "name": "Race selection",
+      "summary": "Brandon chose to remain human.",
+      "action": "note"
+    },
+    {
+      "source": "b2-c8-p31",
+      "subject": "Chris",
+      "type": "story",
+      "name": "Race selection",
+      "summary": "Brandon reports that Chris chose a nonhuman race.",
+      "action": "note"
+    },
+    {
+      "source": "b2-c8-p31",
+      "subject": "Imani C.",
+      "type": "story",
+      "name": "Race selection",
+      "summary": "Brandon reports that Imani chose a nonhuman race.",
+      "action": "note"
+    },
+    {
+      "source": "b2-c8-p31",
+      "subject": "Brandon An",
+      "type": "story",
+      "name": "Meadow Lark’s Pacifist Boxes",
+      "summary": "Brandon reports that residents who reached the third floor without dealing damage received Legendary Pacifist Boxes. He does not name the recipients.",
+      "action": "note"
+    },
+    {
+      "source": "b3-c1-p55",
+      "subject": "Princess Donut",
+      "type": "skill",
+      "name": "Negotiation",
+      "summary": "The expired class originally granted Negotiation 5, which Donut trained to 7. Her retained training leaves her at level 4.",
+      "action": "set",
+      "level": 4,
+      "skillScope": "reported"
+    },
+    {
+      "source": "b3-c3-p47",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Good Rest",
+      "summary": "The Well-Rested benefit grants a 30-hour bonus after Carl sleeps in his bed. Base stats, experience gains and skill training each increase by 10%.",
+      "action": "note"
+    },
+    {
+      "source": "b3-c4-p15",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Martha Stewart",
+      "summary": "Carl earns an achievement for crafting at a workbench for the first time.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "First crafting session at a workbench"
+      }
+    },
+    {
+      "source": "b3-c4-p16",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bronze Crafter’s Box",
+      "summary": "The workbench achievement awards Carl a Bronze Crafter’s Box.",
+      "action": "add",
+      "category": "Reward box",
+      "state": "unopened",
+      "quantity": 1,
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "lead-audit-b2-3-b3-c4-p15-carl-story-martha-stewart"
+        ],
+        "boxTier": "Bronze",
+        "boxKind": "Crafter",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b3-c4-p17",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bronze Crafter’s Box",
+      "summary": "Carl opens his Bronze Crafter’s Box.",
+      "action": "remove",
+      "category": "Reward box",
+      "state": "opened",
+      "quantity": 1,
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b2-3-b3-c4-p16-carl-item-bronze-crafter-s-box"
+        ],
+        "boxTier": "Bronze",
+        "boxKind": "Crafter",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b3-c4-p17",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Pliers",
+      "summary": "Carl receives ordinary pliers.",
+      "action": "add",
+      "category": "Inventory",
+      "state": "carried",
+      "quantity": 1,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b2-3-b3-c4-p17-carl-item-bronze-crafter-s-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b3-c4-p17",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Tape measure",
+      "summary": "Carl receives a tape measure.",
+      "action": "add",
+      "category": "Inventory",
+      "state": "carried",
+      "quantity": 1,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b2-3-b3-c4-p17-carl-item-bronze-crafter-s-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b3-c4-p17",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bucket of pink glitter",
+      "summary": "Carl receives a bucket of pink glitter.",
+      "action": "add",
+      "category": "Inventory",
+      "state": "carried",
+      "quantity": 1,
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "lead-audit-b2-3-b3-c4-p17-carl-item-bronze-crafter-s-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b3-c6-p152",
+      "subject": "Imani C.",
+      "type": "story",
+      "name": "Message for Carl",
+      "summary": "Bautista relays word that Imani plans to meet Carl at the Desperado Club.",
+      "action": "note",
+      "confidence": "partial"
+    },
+    {
+      "source": "b3-c9-p119",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Scroll of Upgrade",
+      "summary": "Carl uses the scroll.",
+      "action": "remove",
+      "category": "Inventory",
+      "state": "consumed",
+      "quantity": 1
+    },
+    {
+      "source": "b3-c9-p121",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Toe ring upgrade",
+      "summary": "The upgraded item is Carl’s Enchanted Toe Ring of the Splatter Skunk.",
+      "action": "note"
+    },
+    {
+      "source": "b3-c9-p123",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Enchanted Toe Ring of the Splatter Skunk",
+      "summary": "The upgraded ring grants 10 Strength and five levels of Powerful Strike.",
+      "action": "note",
+      "category": "Equipment",
+      "effects": [
+        {
+          "id": "str",
+          "kind": "stat",
+          "target": "STR",
+          "operation": "add",
+          "value": 10,
+          "unit": "points"
+        },
+        {
+          "id": "strike",
+          "kind": "skill",
+          "target": "Powerful Strike",
+          "operation": "add",
+          "value": 5,
+          "unit": "levels"
+        }
+      ],
+      "statBoosts": [
+        {
+          "stat": "STR",
+          "value": 10,
+          "unit": "points",
+          "source": "b3-c9-p123"
+        }
+      ]
+    },
+    {
+      "source": "b3-c9-p124",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Powerful Strike",
+      "summary": "Carl has trained Powerful Strike to level 7.",
+      "action": "set",
+      "level": 7,
+      "skillScope": "base"
+    },
+    {
+      "source": "b3-c9-p124",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Powerful Strike",
+      "summary": "The upgraded ring adds five levels and his gauntlet adds one, raising Powerful Strike to 13.",
+      "action": "set",
+      "level": 13,
+      "skillScope": "effective"
+    },
+    {
+      "source": "b3-c10-p21",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Riding Mongo",
+      "summary": "Donut mounts Mongo and the saddle’s magic strap secures her.",
+      "action": "note"
+    },
+    {
+      "source": "b3-c10-p22",
+      "subject": "Mongo",
+      "type": "story",
+      "name": "Riding practice",
+      "summary": "Mongo throws Donut several times during practice.",
+      "action": "note"
+    },
+    {
+      "source": "b3-c12-p30",
+      "subject": "Katia Grim",
+      "type": "story",
+      "name": "Hand injury",
+      "summary": "Katia reports that healing did not restore the missing fingers on her right hand.",
+      "action": "note"
+    },
+    {
+      "source": "b3-c12-p32",
+      "subject": "Katia Grim",
+      "type": "story",
+      "name": "Reshaped fingers",
+      "summary": "Katia reshapes other tissue into replacement fingers and transfers a ring to her reshaped hand.",
+      "action": "note"
+    },
+    {
+      "source": "b3-c21-p6",
+      "subject": "Hekla",
+      "type": "level",
+      "name": "Character level",
+      "summary": "Hekla is level 33 when the parties meet.",
+      "action": "set",
+      "level": 33
+    },
+    {
+      "source": "b3-c25-p63",
+      "subject": "Katia Grim",
+      "type": "item",
+      "name": "Gold Savage Box",
+      "summary": "Katia reports opening the Gold Savage Box awarded for killing a crawler.",
+      "action": "remove",
+      "category": "Reward box",
+      "state": "opened",
+      "quantity": 1,
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxKind": "Savage",
+        "boxTier": "Gold",
+        "quantity": 1
+      }
+    }
+  ],
+  "corrections": [
+    {
+      "id": "series-2-2-carl-str-16-equipment",
+      "set": {
+        "summary": "With the gauntlet formed, Carl has 16 Strength. Its three points are conditional."
+      }
+    },
+    {
+      "id": "chapter-sweep-2026-11-06-batch-3-b2-c21-p89-katia-grim-item-constitution-ring-15",
+      "set": {
+        "summary": "Katia wears a ring from an early loot box that grants 15 Constitution. Other buffs also contribute to her displayed total."
+      }
+    },
+    {
+      "id": "series-3-25-katia-grim-skill-find-crawler-3",
+      "set": {
+        "summary": "Katia drinks the potion in her Gold Savage Box and learns Find Crawler 3. It locates nearby crawlers on her map.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "lead-audit-b2-3-b3-c25-p63-katia-grim-item-gold-savage-box"
+          ],
+          "outcomeType": "skill"
+        }
+      }
+    }
+  ]
+}
