@@ -204,15 +204,6 @@ function jumpToBoard(id) {
 window.addEventListener("hashchange", () => {
   if (boardSections[location.hash.slice(1)]) jumpToBoard(location.hash.slice(1));
 });
-$("#section-jump").addEventListener("change", event => {
-  const id = event.target.value;
-  if (id) {
-    location.hash = id;
-    if (boardSections[id]) jumpToBoard(id);
-    else document.getElementById(id).scrollIntoView();
-  }
-  event.target.value = "";
-});
 document.querySelector('a[href="#history"]').addEventListener("click", () => {
   if (boardSections[location.hash.slice(1)]) jumpToBoard(location.hash.slice(1));
 });

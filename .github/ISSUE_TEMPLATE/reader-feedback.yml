@@ -1,5 +1,5 @@
 name: Reader feedback
-description: Report a bug, suggest a feature, or correct a detail in Crawl Atlas.
+description: Report a bug, suggest a feature, or correct a detail in Dungeon Crawler’s Lookbook.
 body:
   - type: markdown
     attributes:

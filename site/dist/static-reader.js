@@ -68,7 +68,6 @@
   });
   $('#book-range').addEventListener('input',event=>{progress=clamp(event.target.value/10000);show();});
   $('#enter-reader').addEventListener('click',()=>{entered=true;document.body.classList.remove('choosing-position');show();});
-  $('#section-jump').addEventListener('change',event=>{const value=event.target.value;if(value==='progression'){scrollTo({top:0,behavior:'smooth'});return;}tab=({character:'overview',ledger:'inventory',rewards:'rewards',history:'history'})[value]??tab;show();});
   const about=$('#about-panel');$('#about-button').addEventListener('click',()=>{about.hidden=false;$('#about-button').setAttribute('aria-expanded','true');$('#about-close').focus();});
   const close=()=>{about.hidden=true;$('#about-button').setAttribute('aria-expanded','false');$('#about-button').focus();};
   $('#about-close').addEventListener('click',close);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!about.hidden)close();});

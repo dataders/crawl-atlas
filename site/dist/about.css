@@ -9,18 +9,25 @@
 .about-panel a { color:var(--acid); text-underline-offset:3px; }
 .about-panel .legal { font-size:12px; line-height:1.6; }
 .choosing-position .topbar-actions { display:flex; }
-.choosing-position #section-jump { display:none; }
 .choosing-position main > .about-panel:not([hidden]) { display:block; }
 @media(max-width:600px) {
   .topbar-actions { gap:8px; }
-  #section-jump { max-width:100px; }
   .source-link { font-size:12px; }
 }
 @media(max-width:380px) {
   .topbar .brand {font-size:12px;gap:6px}
-  #section-jump {width:80px}
 }
 .splash-book-note { display:none; }
 .choosing-position .splash-book-note { display:grid; gap:8px; color:var(--muted); font-size:14px; line-height:1.5; }
 .splash-book-note p { margin:0; }
 .splash-book-note a { color:var(--acid); text-decoration:underline; text-underline-offset:3px; }
+
+.brand-group { display:flex; flex-wrap:wrap; align-items:baseline; gap:0 12px; min-width:0; }
+.brand-group .brand { max-width:100%; }
+.charts-credit { font-size:12px; color:var(--muted); }
+.charts-credit a { color:inherit; text-underline-offset:2px; }
+.source-link svg { display:block; }
+@media(max-width:600px) {
+  .brand-group { flex-direction:column; }
+  .brand-group .brand { font-size:14px; }
+}
