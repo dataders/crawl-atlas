@@ -1,0 +1,95 @@
+{
+  "series": {
+    "title": "The Extremely Serious Dungeon Chronicles",
+    "bookCount": 8,
+    "chapterCount": 80,
+    "dataVersion": "FAKE-1"
+  },
+  "books": [
+    {
+      "number": 1,
+      "title": "The Suspicious Welcome Mat",
+      "chapterCount": 10,
+      "startChapter": 1,
+      "endChapter": 10
+    },
+    {
+      "number": 2,
+      "title": "A Completely Ordinary Tuesday",
+      "chapterCount": 10,
+      "startChapter": 11,
+      "endChapter": 20
+    },
+    {
+      "number": 3,
+      "title": "The Coupon Strikes Back",
+      "chapterCount": 10,
+      "startChapter": 21,
+      "endChapter": 30
+    },
+    {
+      "number": 4,
+      "title": "Trouble at the Snack Kiosk",
+      "chapterCount": 10,
+      "startChapter": 31,
+      "endChapter": 40
+    },
+    {
+      "number": 5,
+      "title": "Return of the Tiny Trumpet",
+      "chapterCount": 10,
+      "startChapter": 41,
+      "endChapter": 50
+    },
+    {
+      "number": 6,
+      "title": "Six Geese, No Explanation",
+      "chapterCount": 10,
+      "startChapter": 51,
+      "endChapter": 60
+    },
+    {
+      "number": 7,
+      "title": "The Spreadsheet of Destiny",
+      "chapterCount": 10,
+      "startChapter": 61,
+      "endChapter": 70
+    },
+    {
+      "number": 8,
+      "title": "Nachos at the End of Everything",
+      "chapterCount": 10,
+      "startChapter": 71,
+      "endChapter": 80
+    }
+  ],
+  "characters": [],
+  "events": [],
+  "checkpoints": [
+    {
+      "progress": 0.0,
+      "book": 1,
+      "event_id": "spoiler-free-0000"
+    },
+    {
+      "progress": 0.25,
+      "book": 3,
+      "event_id": "spoiler-free-2500"
+    },
+    {
+      "progress": 0.5,
+      "book": 5,
+      "event_id": "spoiler-free-5000"
+    },
+    {
+      "progress": 0.75,
+      "book": 7,
+      "event_id": "spoiler-free-7500"
+    },
+    {
+      "progress": 1.0,
+      "book": 8,
+      "event_id": "spoiler-free-10000"
+    }
+  ]
+}
