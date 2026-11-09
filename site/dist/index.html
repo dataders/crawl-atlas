@@ -10,7 +10,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://crawl-atlas.anders.omg.lol/" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080b10'/%3E%3Cpath d='M7 7h18v5H12v8h13v5H7z' fill='%23d9ff43'/%3E%3Ccircle cx='21.5' cy='16' r='2.5' fill='%23ff5c35'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=9" />
+    <link rel="stylesheet" href="styles.css?v=10" />
     <link rel="stylesheet" href="about.css?v=2" />
   </head>
   <body class="reader-loading">
@@ -44,7 +44,10 @@
           <div class="slider-labels"><span>Book 1 · Chapter 1</span><span id="overall-progress">0% of series</span><span id="last-chapter-label">Book 8 · Chapter 98</span></div>
           <p class="coverage-note">The slider limits all charts and tables to your place in the series.</p>
         </div>
-        <button id="enter-reader" type="button" disabled>Go <span aria-hidden="true">→</span></button>
+        <div class="splash-actions">
+          <button id="enter-reader" type="button" disabled>Go <span aria-hidden="true">→</span></button>
+          <button id="enter-demo" type="button" disabled>I haven't read them yet, can I see a spoiler-free version?</button>
+        </div>
         <div class="splash-book-note">
           <p>I loved how <a href="https://quartermaester.info/">Quartermaester’s Game of Thrones map</a> lets you follow characters up to the chapter you’ve read. I wanted to do that for Carl and Donut’s levels, skills, and gear.</p>
           <p>Thanks to the editors of the <a href="https://dungeon-crawler-carl.fandom.com/wiki/Dungeon_Crawler_Carl_Wiki">Dungeon Crawler Carl Wiki</a> for helping me cross-check details.</p>
@@ -62,6 +65,7 @@
         <div class="section-heading">
           <div><h2 id="progression-title">Character progression</h2></div>
         </div>
+        <p class="spoiler-free-banner" hidden><strong>Spoiler-free demo:</strong> every title, subject, number, skill, item, and relationship below is made up. <a href="./">Choose a real reading position instead.</a></p>
         <p class="empty" id="chart-empty">Move the reading slider to your place in the series to see the charts.</p>
         <iframe hidden id="reader-board" title="Character charts and history at your reading position" style="width:100%;border:0"></iframe>
 
@@ -88,6 +92,6 @@
     </main>
 
     <footer><span>Dataset v<span id="data-version">—</span></span></footer>
-    <script src="static-reader.js?v=2" defer></script>
+    <script src="static-reader.js?v=3" defer></script>
   </body>
 </html>
