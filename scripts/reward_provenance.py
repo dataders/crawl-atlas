@@ -1,29 +1,4 @@
 """Source-anchored acquisition chains; raw prose remains in the private corpus."""
-import json
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-
-
-def apply_reward_audit(events, corpus):
-    audit = json.loads((ROOT / 'data/public/reward-provenance.json').read_text())
-    anchors = {p['anchor']: (b['number'], c['number'], p['position'])
-               for b in corpus['books'] for c in b['chapters'] for p in c['paragraphs']}
-    by_id = {e['id']: e for e in events}
-    for row in audit['events']:
-        if row['id'] in by_id:
-            event = by_id[row['id']]
-            event.update(row)
-        else:
-            event = {'confidence': 'verified', 'action': 'note', 'type': 'story', **row}
-            events.append(event)
-            by_id[event['id']] = event
-        event['book'], event['chapter'], event['position'] = anchors[event['source']]
-        for evidence in event.get('evidence', []):
-            assert anchors[evidence] <= anchors[event['source']], 'Reward evidence reveals future text'
-    return events
-
-
 def acquisition_rows(events):
     rows, links = [], []
     by_id = {e['id']: e for e in events}

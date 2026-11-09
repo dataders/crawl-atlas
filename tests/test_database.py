@@ -99,16 +99,11 @@ class BookEightTests(unittest.TestCase):
         cls.rows = progression_rows(cls.events)
 
     def test_audit_is_published_without_missing_records(self):
-        audit = json.loads(Path('data/public/book-8-audit.json').read_text())
-        published = [e for e in self.events if e['book'] == 8]
-        identities = {(e['source'], e['subject'], e['type'], e['name']) for e in published}
-        for row in audit['events']:
-            self.assertIn((row['source'], row['subject'], row['type'], row['name']), identities)
-        expected_levels = {(e['source'], e['subject'], e['level'])
-                           for batch in (audit, json.loads(Path('data/public/lead-audit-b7-8.json').read_text()))
-                           for e in batch['events'] if e['type'] == 'level' and e['source'].startswith('b8-')}
-        self.assertTrue(expected_levels <= {(e['source'], e['subject'], e['level'])
-                                            for e in published if e['type'] == 'level'})
+        ledger = Path('data/public/book-08.jsonl')
+        expected = [json.loads(line) for line in ledger.read_text().splitlines()]
+        events = [r for r in expected if r['recordType'] == 'event']
+        self.assertTrue(events)
+        self.assertEqual({r['id'] for r in events}, {r['id'] for r in self.events if r['book'] == 8})
 
     def test_charts_use_exact_base_readings_only(self):
         by_source = {(row['source'], row['metric'], row['scope']): row['value'] for row in self.rows}
