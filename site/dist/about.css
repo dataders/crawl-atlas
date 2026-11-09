@@ -31,3 +31,7 @@
   .brand-group { flex-direction:column; }
   .brand-group .brand { font-size:14px; }
 }
+.feedback-trigger { background:transparent; border:0; font-family:inherit; cursor:pointer; }
+#reader-feedback { position:fixed; inset:3.25rem .75rem auto auto; margin:0; padding:1rem; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--text); font-size:14px; }
+#reader-feedback p { margin:.65rem 0; }
+#reader-feedback a { color:var(--acid); }
