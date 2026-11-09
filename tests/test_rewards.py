@@ -27,10 +27,16 @@ class RewardTests(unittest.TestCase):
         silver = next(r for r in box if r['box_tier'] == 'Silver')
         self.assertEqual(silver['source'], 'b5-c62-p44')
 
-    def test_unattributed_batch_does_not_invent_specific_box(self):
+    def test_first_healing_potions_belong_to_a_specific_opening(self):
         potion = next(r for r in self.rows if r['event_id'] == 'inv-004-first-ten-boxes-opened-item-3-0')
-        self.assertEqual(potion['attribution'], 'batch')
-        self.assertIsNone(potion['box_id'])
+        self.assertEqual(potion['quantity'], 2)
+        parents = [link['parent_event_id'] for link in self.links if link['child_event_id'] == potion['event_id']]
+        self.assertEqual(parents, ['inv-004-first-ten-boxes-opened-opened-box-3'])
+
+    def test_unattributed_batch_does_not_invent_specific_box(self):
+        potions = next(r for r in self.rows if r['source'] == 'b1-c19-p40' and r['name'] == 'Assorted potions')
+        self.assertEqual(potions['attribution'], 'batch')
+        self.assertIsNone(potions['box_id'])
         self.assertTrue(any(r['outcome_type'] == 'boon' for r in self.rows))
 
     def test_future_links_and_cycles_are_rejected(self):

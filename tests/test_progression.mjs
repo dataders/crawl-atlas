@@ -28,7 +28,7 @@ assert.ok(late.includes('Carl') && late.includes('Mordecai'));
 state.progress = state.facts[0].progress;
 vm.runInContext('renderChart()', context);
 const early = readFileSync('site/dist/' + frame.src, 'utf8');
-assert.ok(early.includes('Carl') && !early.includes('Mordecai'));
+assert.ok(early.includes('>Princess Donut<') && !early.includes('>Carl<') && !early.includes('Mordecai'));
 for (const book of data.books.slice(1).reverse()) {
   state.progress = (book.startChapter - 1 + 0.001) / data.series.chapterCount;
   vm.runInContext('renderChart()', context);

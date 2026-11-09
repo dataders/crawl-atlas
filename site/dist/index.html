@@ -88,19 +88,14 @@
 
       <aside class="about-panel" id="about-panel" aria-labelledby="about-title" hidden>
         <button id="about-close" type="button" aria-label="Close information">×</button>
-        <h2 id="about-title">About Dungeon Crawler’s Lookbook</h2>
-        <p>A reading companion for <em>Dungeon Crawler Carl</em>. Follow characters’ levels, stats, skills, and belongings as you read.</p>
-        <h3>The books</h3>
-        <p>All credit for this world and its characters goes to <a href="https://mattdinniman.com/">Matt Dinniman</a>. Thanks for giving us Carl, Donut, and a dungeon worth keeping track of. <a href="https://mattdinniman.com/books/">Find the books →</a></p>
-        <h3>Using the atlas</h3>
-        <p>Set the slider to your place in the series. Charts and character records only show observations recorded up to that point. A shared link includes its reading position—check it before opening someone else’s link.</p>
-        <h3>What the numbers mean</h3>
-        <p>The dataset covers eight books, but extraction is incomplete. A gap means no measurement is recorded here, not that a stat stayed unchanged. Lines connect observations; they don’t establish when an increase happened.</p>
-        <p>Filled dots show recorded values. Open circles show estimates or lower bounds. Equipment and temporary bonuses are kept separate. History includes source locations and the reasoning behind estimates.</p>
-        <h3>How it’s made</h3>
-        <p>Built with <a href="https://dbtcharts.com/">dbt Charts</a> using SQL, YAML, and a custom chart template, exported as static HTML and hosted on GitHub Pages. The reading slider selects a complete board export containing only observations up to that point. <a href="https://github.com/dbt-labs/dbt-charts">Explore the dbt Charts project →</a></p>
-        <p>Made by <a href="https://github.com/dataders">Anders Swanson</a>. <a href="https://github.com/dataders/crawl-atlas">Browse the source</a> or <a href="https://github.com/dataders/crawl-atlas/issues/new?template=reader-feedback.yml" target="_blank" rel="noopener">send feedback on GitHub</a>. You can also email anders [at] omg [dot] lol.</p>
-        <p class="legal">Unofficial fan project, not affiliated with the author or publisher. The site publishes factual summaries, not the EPUBs, book text, or artwork.</p>
+        <h2 id="about-title">About the Lookbook</h2>
+        <p>I’m <a href="https://github.com/dataders">Anders Swanson</a>. I built this unofficial companion to <a href="https://mattdinniman.com/books/dungeon-crawler-carl/">Matt Dinniman’s <em>Dungeon Crawler Carl</em></a> with <a href="https://dbtcharts.com/">dbt Charts</a>.</p>
+        <h3>Reading the charts</h3>
+        <p>Each point marks a passage. If a line goes from level 8 to level 12, those are the two readings I found. The character may have leveled up several times in between.</p>
+        <p>On the stat chart, <strong>●</strong> marks an exact reading. <strong>○</strong> means an estimate or a minimum. Base stats exclude gear and temporary bonuses.</p>
+        <p>The slider hides later chapters. A shared link opens at the sender’s place in the series.</p>
+        <h3>Spot a missing detail?</h3>
+        <p>Send me the book and chapter <a href="https://github.com/dataders/crawl-atlas/issues/new?template=reader-feedback.yml">on GitHub</a> or email anders [at] omg [dot] lol.</p>
       </aside>
     </main>
 

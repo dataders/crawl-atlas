@@ -1,0 +1,1484 @@
+{
+  "scope": "Book 1 chapters 1–8, reviewed paragraph by paragraph against the local corpus.",
+  "events": [
+    {
+      "source": "b1-c1-p8",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Persian show cat",
+      "summary": "Carl identifies Donut as a tortoiseshell Persian.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c1-p10",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Before the dungeon",
+      "summary": "Carl is 27, lives in Seattle, and works on marine electrical systems after serving in the Coast Guard.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c1-p48",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Mrs. Parsons dies",
+      "summary": "Carl finds physical evidence that his neighbor died when their building collapsed.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c2-p27",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Crawler ID",
+      "summary": "The dungeon identifies Donut as crawler 4,119.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c2-p28",
+      "subject": "Princess Donut",
+      "type": "level",
+      "name": "Character level",
+      "summary": "Donut’s first dungeon identification gives her level as 1.",
+      "action": "set",
+      "level": 1
+    },
+    {
+      "source": "b1-c2-p30",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Starting race and class",
+      "summary": "Donut’s starting race is Cat. She has no assigned class.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c2-p34",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Starting race and crawler ID",
+      "summary": "The system identifies Carl as human and assigns him crawler number 4,122.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c2-p54",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Loner",
+      "summary": "Carl earns the solo-entry achievement.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c2-p67",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Fall into an obvious trap",
+      "summary": "Carl earns an achievement at the false guild sign.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c2-p90",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Official dungeon signs",
+      "summary": "Reading a genuine sign unlocks highlighted dungeon signs and guild locations on Carl’s map.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c2-p102",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Tutorial guild contact",
+      "summary": "Carl meets Mordecai at the tutorial guild.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c3-p6",
+      "subject": "Mordecai",
+      "type": "item",
+      "name": "Black vest",
+      "summary": "Mordecai is wearing his black vest at the guild door.",
+      "action": "equip",
+      "quantity": null,
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b1-c3-p6",
+      "subject": "Mordecai",
+      "type": "item",
+      "name": "Blue pants",
+      "summary": "Mordecai is wearing his blue pants at the guild door.",
+      "action": "equip",
+      "quantity": null,
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b1-c3-p6",
+      "subject": "Mordecai",
+      "type": "item",
+      "name": "Worn sandals",
+      "summary": "Mordecai is wearing his worn sandals at the guild door.",
+      "action": "equip",
+      "quantity": null,
+      "state": "equipped",
+      "category": "Equipment"
+    },
+    {
+      "source": "b1-c3-p9",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Guildmaster",
+      "summary": "The guild’s identification lists Mordecai as a Rat Hooligan, guildmaster, and noncombatant NPC.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c3-p45",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Syndicate Standard",
+      "summary": "The goblin engineer recognizes the language Carl is speaking as Syndicate Standard.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c3-p66",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Former crawler",
+      "summary": "Mordecai says he reached Floor 11 during his own crawl.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c3-p67",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Changeling",
+      "summary": "Mordecai says he was born a skyfowl and became a Changeling on his third floor. His current rat form changes when his guildhall moves.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c4-p20",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Crawler menu",
+      "summary": "Mordecai unlocks the crawler menu for Carl.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c4-p38",
+      "subject": "Carl",
+      "type": "stat",
+      "name": "Character stats",
+      "summary": "The stat menu shows Carl has 3 INT.",
+      "action": "merge",
+      "stats": {
+        "INT": 3
+      },
+      "statScopes": {
+        "INT": "base"
+      }
+    },
+    {
+      "source": "b1-c4-p39",
+      "subject": "Carl",
+      "type": "stat",
+      "name": "Character stats",
+      "summary": "The stat menu shows Carl has 5 CON.",
+      "action": "merge",
+      "stats": {
+        "CON": 5
+      },
+      "statScopes": {
+        "CON": "base"
+      }
+    },
+    {
+      "source": "b1-c4-p40",
+      "subject": "Carl",
+      "type": "stat",
+      "name": "Character stats",
+      "summary": "The stat menu shows Carl has 5 DEX.",
+      "action": "merge",
+      "stats": {
+        "DEX": 5
+      },
+      "statScopes": {
+        "DEX": "base"
+      }
+    },
+    {
+      "source": "b1-c4-p41",
+      "subject": "Carl",
+      "type": "stat",
+      "name": "Character stats",
+      "summary": "The stat menu shows Carl has 4 CHA.",
+      "action": "merge",
+      "stats": {
+        "CHA": 4
+      },
+      "statScopes": {
+        "CHA": "base"
+      }
+    },
+    {
+      "source": "b1-c4-p57",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Starting ratings",
+      "summary": "Carl’s ratings menu shows zero views, followers, favorites, and patrons.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c4-p61",
+      "subject": "Mordecai",
+      "type": "story",
+      "name": "Previous crawl ratings",
+      "summary": "Mordecai recalls nearly 30 million followers and four patrons during his own crawl.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c4-p80",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Health recovered",
+      "summary": "Carl’s health menu shows that his frostbite, abrasions, and incipient infection have healed.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c4-p89",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Mana pool",
+      "summary": "Carl has three mana points. His healing spell costs two.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c4-p89",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Heal",
+      "summary": "The tutorial grants Carl a healing spell.",
+      "action": "set",
+      "level": null
+    },
+    {
+      "source": "b1-c5-p2",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Inventory unlocked",
+      "summary": "Mordecai activates Carl’s dimensional inventory.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c5-p22",
+      "subject": "Carl",
+      "type": "story",
+      "name": "First damage to a mob",
+      "summary": "Carl sees the achievement for dealing his first damage.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c5-p27",
+      "subject": "Carl",
+      "type": "story",
+      "name": "First mob killed",
+      "summary": "Carl’s first kill unlocks experience gain.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c5-p28",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Armed mob defeated unarmed",
+      "summary": "Carl receives the achievement for armed mob defeated unarmed.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Armed mob defeated unarmed"
+      }
+    },
+    {
+      "source": "b1-c5-p30",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bronze Weapon Box",
+      "summary": "The notification awards another bronze box.",
+      "action": "add",
+      "quantity": 1,
+      "state": "unopened",
+      "category": "Reward box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c5-p28-carl-story-armed-mob-defeated-unarmed"
+        ],
+        "boxKind": "Weapon",
+        "boxTier": "Bronze",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c5-p31",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Higher-level mob defeated",
+      "summary": "Carl receives the achievement for higher-level mob defeated.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Higher-level mob defeated"
+      }
+    },
+    {
+      "source": "b1-c5-p33",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bronze Adventurer Box",
+      "summary": "The notification awards another bronze box.",
+      "action": "add",
+      "quantity": 1,
+      "state": "unopened",
+      "category": "Reward box",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c5-p31-carl-story-higher-level-mob-defeated"
+        ],
+        "boxKind": "Adventurer",
+        "boxTier": "Bronze",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c5-p34",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Guildhall entry",
+      "summary": "Carl receives the achievement for entering a guildhall.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c5-p37",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Podophilia",
+      "summary": "Carl earns the Podophilia achievement.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Podophilia"
+      }
+    },
+    {
+      "source": "b1-c5-p39",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Gold Shoe Box",
+      "summary": "Carl receives a Gold Shoe Box for Podophilia.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Reward box",
+      "state": "unopened",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c5-p37-carl-story-podophilia"
+        ],
+        "boxId": "carl-first-gold-shoe",
+        "boxKind": "Shoe",
+        "boxTier": "Gold",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c5-p40",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Boom!",
+      "summary": "Carl earns the Boom! achievement.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Boom!"
+      }
+    },
+    {
+      "source": "b1-c5-p42",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Silver Goblin Box",
+      "summary": "Carl receives a Silver Goblin Box for Boom!.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Reward box",
+      "state": "unopened",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c5-p40-carl-story-boom"
+        ],
+        "boxId": "carl-first-silver-goblin",
+        "boxKind": "Goblin",
+        "boxTier": "Silver",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c5-p43",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Level-Up, Baby!",
+      "summary": "Carl sees the achievement for gaining a character level.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c5-p52",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Unspent stat points",
+      "summary": "Carl receives three unallocated stat points on reaching level 2.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c5-p76",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bronze Weapon Box",
+      "summary": "Carl opens the second Bronze Weapon Box in the sequence.",
+      "action": "remove",
+      "quantity": 1,
+      "state": "opened",
+      "category": "Reward box",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxKind": "Weapon",
+        "boxTier": "Bronze",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c5-p79",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bronze Adventurer Box",
+      "summary": "Carl opens the second Bronze Adventurer Box in the sequence.",
+      "action": "remove",
+      "quantity": 1,
+      "state": "opened",
+      "category": "Reward box",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [],
+        "boxKind": "Adventurer",
+        "boxTier": "Bronze",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c5-p80",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Potion of Healing",
+      "summary": "The second Bronze Adventurer Box contains one healing potion.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c5-p79-carl-item-bronze-adventurer-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b1-c5-p88",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Silver Goblin Box",
+      "summary": "Carl opens a Silver Goblin Box.",
+      "action": "remove",
+      "quantity": 1,
+      "state": "opened",
+      "category": "Reward box",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c5-p42-carl-item-silver-goblin-box"
+        ],
+        "boxId": "carl-first-silver-goblin",
+        "boxKind": "Goblin",
+        "boxTier": "Silver",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c5-p90",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Lighter",
+      "summary": "The Silver Goblin Box contains a lighter.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "carried",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c5-p88-carl-item-silver-goblin-box"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b1-c5-p98",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Gold Shoe Box",
+      "summary": "Carl opens a Gold Shoe Box.",
+      "action": "remove",
+      "quantity": 1,
+      "state": "opened",
+      "category": "Reward box",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c5-p39-carl-item-gold-shoe-box"
+        ],
+        "boxId": "carl-first-gold-shoe",
+        "boxKind": "Shoe",
+        "boxTier": "Gold",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c5-p103",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Pet Biscuit",
+      "summary": "Carl receives another 500 pet biscuits from the Legendary Pet Box.",
+      "action": "add",
+      "quantity": 500,
+      "category": "Inventory",
+      "state": "carried",
+      "acquisition": {
+        "stage": "received",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "inv-004-first-ten-boxes-opened-opened-box-1"
+        ],
+        "outcomeType": "item"
+      }
+    },
+    {
+      "source": "b1-c5-p122",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Transformation begins",
+      "summary": "Mordecai identifies the effect of the enhanced biscuit as a transformation.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c6-p10",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Goblin Pass",
+      "summary": "The tattoo permits travel through goblin territory. Natural goblin enemies deal 20% more damage to Carl.",
+      "action": "note",
+      "effects": [
+        {
+          "id": "goblin-passage",
+          "kind": "benefit",
+          "target": "Goblin hostility",
+          "operation": "suppresses"
+        },
+        {
+          "id": "goblin-enemies",
+          "kind": "rule",
+          "target": "Damage from natural goblin enemies",
+          "operation": "increased by 20%"
+        }
+      ],
+      "category": "Equipment"
+    },
+    {
+      "source": "b1-c6-p14",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Enchanted Nightgaunt Cloak of Stoutness",
+      "summary": "The cloak adds four Constitution, resists poison and ice, and protects worn armor against piercing.",
+      "action": "note",
+      "effects": [
+        {
+          "id": "con",
+          "kind": "stat",
+          "target": "CON",
+          "operation": "add",
+          "value": 4,
+          "unit": "points"
+        },
+        {
+          "id": "ward",
+          "kind": "benefit",
+          "target": "Poison and ice resistance",
+          "operation": "grant"
+        },
+        {
+          "id": "armor",
+          "kind": "benefit",
+          "target": "Armor piercing resistance",
+          "operation": "grant"
+        }
+      ],
+      "category": "Equipment",
+      "statBoosts": [
+        {
+          "stat": "CON",
+          "value": 4,
+          "unit": "points",
+          "source": "b1-c6-p14"
+        }
+      ]
+    },
+    {
+      "source": "b1-c6-p17",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Enchanted Trollskin Shirt of Pummeling",
+      "summary": "The shirt adds seven Regeneration ranks and prevents melee debuffs including stun, knockback, disarm, and loss of breath.",
+      "action": "note",
+      "effects": [
+        {
+          "id": "regen",
+          "kind": "skill",
+          "target": "Regeneration",
+          "operation": "add",
+          "value": 7,
+          "unit": "levels"
+        },
+        {
+          "id": "melee",
+          "kind": "benefit",
+          "target": "Melee damage debuffs",
+          "operation": "immune"
+        }
+      ],
+      "category": "Equipment"
+    },
+    {
+      "source": "b1-c6-p20",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Loot!",
+      "summary": "Carl earns an achievement for wearing dungeon loot.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c6-p23",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Oooh, Magic!",
+      "summary": "Carl earns the Oooh, Magic! achievement.",
+      "action": "note",
+      "acquisition": {
+        "stage": "trigger",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "reasonType": "achievement",
+        "reasonDetail": "Oooh, Magic!"
+      }
+    },
+    {
+      "source": "b1-c6-p25",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bronze Adventurer Box",
+      "summary": "Carl receives a Bronze Adventurer Box for Oooh, Magic!.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Reward box",
+      "state": "unopened",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c6-p23-carl-story-oooh-magic"
+        ],
+        "boxId": "carl-first-magic-equipment",
+        "boxKind": "Adventurer",
+        "boxTier": "Bronze",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c6-p26",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bronze Adventurer Box",
+      "summary": "Carl opens a Bronze Adventurer Box.",
+      "action": "remove",
+      "quantity": 1,
+      "state": "opened",
+      "category": "Reward box",
+      "acquisition": {
+        "stage": "opened",
+        "sourceType": "reward_box",
+        "parentEventIds": [
+          "b1-first-half-01-08-b1-c6-p25-carl-item-bronze-adventurer-box"
+        ],
+        "boxId": "carl-first-magic-equipment",
+        "boxKind": "Adventurer",
+        "boxTier": "Bronze",
+        "quantity": 1
+      }
+    },
+    {
+      "source": "b1-c6-p28",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Enchanted Toe Ring of the Splatter Skunk",
+      "summary": "The ring adds three Strength and three Powerful Strike ranks.",
+      "action": "note",
+      "effects": [
+        {
+          "id": "str",
+          "kind": "stat",
+          "target": "STR",
+          "operation": "add",
+          "value": 3,
+          "unit": "points"
+        },
+        {
+          "id": "strike",
+          "kind": "skill",
+          "target": "Powerful Strike",
+          "operation": "add",
+          "value": 3,
+          "unit": "levels"
+        }
+      ],
+      "category": "Equipment",
+      "statBoosts": [
+        {
+          "stat": "STR",
+          "value": 3,
+          "unit": "points",
+          "source": "b1-c6-p28"
+        }
+      ]
+    },
+    {
+      "source": "b1-c6-p32",
+      "subject": "Carl",
+      "type": "story",
+      "name": "First jewelry equipped",
+      "summary": "Carl receives an achievement for putting on jewelry.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c6-p42",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Speech",
+      "summary": "Carl hears Donut speak for the first time.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c7-p10",
+      "subject": "Princess Donut",
+      "type": "stat",
+      "name": "Character stats",
+      "summary": "The stat menu shows Princess Donut has 11 INT.",
+      "action": "merge",
+      "stats": {
+        "INT": 11
+      },
+      "statScopes": {
+        "INT": "base"
+      }
+    },
+    {
+      "source": "b1-c7-p11",
+      "subject": "Princess Donut",
+      "type": "stat",
+      "name": "Character stats",
+      "summary": "The stat menu shows Princess Donut has 2 CON.",
+      "action": "merge",
+      "stats": {
+        "CON": 2
+      },
+      "statScopes": {
+        "CON": "base"
+      }
+    },
+    {
+      "source": "b1-c7-p12",
+      "subject": "Princess Donut",
+      "type": "stat",
+      "name": "Character stats",
+      "summary": "The stat menu shows Princess Donut has 8 DEX.",
+      "action": "merge",
+      "stats": {
+        "DEX": 8
+      },
+      "statScopes": {
+        "DEX": "base"
+      }
+    },
+    {
+      "source": "b1-c7-p13",
+      "subject": "Princess Donut",
+      "type": "stat",
+      "name": "Character stats",
+      "summary": "The stat menu shows Princess Donut has 25 CHA.",
+      "action": "merge",
+      "stats": {
+        "CHA": 25
+      },
+      "statScopes": {
+        "CHA": "base"
+      }
+    },
+    {
+      "source": "b1-c7-p15",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Stats before the biscuit",
+      "summary": "Mordecai recalls Donut’s earlier base stats as 1 Strength, 1 Intelligence, 1 Constitution, 8 Dexterity, and 5 Charisma.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c7-p23",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Crawler classification",
+      "summary": "Mordecai confirms that Donut now qualifies as a regular crawler.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c7-p37",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Tome of Magic Missile",
+      "summary": "Donut uses the tome to learn Magic Missile permanently.",
+      "action": "remove",
+      "quantity": 1,
+      "category": "Inventory",
+      "state": "consumed"
+    },
+    {
+      "source": "b1-c7-p41",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Equipment controls",
+      "summary": "Quadruped menu controls let Donut equip items directly.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c7-p49",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Blood Sultanate succession",
+      "summary": "Wearing the crown permanently enters Donut into the ninth-floor royal succession.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c7-p53",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Additional magical gear rewards",
+      "summary": "Learning a spell and equipping the crown earn Donut additional boxes containing low-tier potions and torches.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c7-p54",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Fleeting crown",
+      "summary": "Mordecai explains that removing the crown destroys this copy.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c7-p59",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Royal Bodyguard",
+      "summary": "Donut gives Carl the party title Royal Bodyguard.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c7-p60",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Grand Champion Best in Dungeon",
+      "summary": "Donut chooses Grand Champion Best in Dungeon as her party title.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c7-p62",
+      "subject": "Princess Donut",
+      "type": "party",
+      "name": "Party leadership",
+      "summary": "Mordecai confirms that Donut leads because she has the highest combined stats.",
+      "action": "note",
+      "leader": "Princess Donut",
+      "membersAfter": [
+        "Carl",
+        "Princess Donut"
+      ]
+    },
+    {
+      "source": "b1-c8-p70",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Regeneration heals hand injury",
+      "summary": "Carl’s regeneration heals his broken left hand and abrasions in about a minute.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c8-p80",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Bronze Adventurer Box",
+      "summary": "Looting a corpse and sharing experience earn two Bronze Adventurer Boxes.",
+      "action": "add",
+      "quantity": 2,
+      "category": "Reward box",
+      "state": "unopened",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxKind": "Adventurer",
+        "boxTier": "Bronze",
+        "quantity": 2,
+        "reasonDetail": "Looting and shared experience"
+      }
+    },
+    {
+      "source": "b1-c8-p80",
+      "subject": "Princess Donut",
+      "type": "item",
+      "name": "Bronze Adventurer Box",
+      "summary": "Looting a corpse and sharing experience earn two Bronze Adventurer Boxes.",
+      "action": "add",
+      "quantity": 2,
+      "category": "Reward box",
+      "state": "unopened",
+      "acquisition": {
+        "stage": "awarded",
+        "sourceType": "achievement",
+        "parentEventIds": [],
+        "boxKind": "Adventurer",
+        "boxTier": "Bronze",
+        "quantity": 2,
+        "reasonDetail": "Looting and shared experience"
+      }
+    },
+    {
+      "source": "b1-c8-p90",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Fatigued",
+      "summary": "The health menu lists fatigue, which persists despite Regeneration.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c8-p91",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Poison canceled",
+      "summary": "Carl’s cloak cancels a rat-inflicted poison condition.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c8-p96",
+      "subject": "Carl",
+      "type": "item",
+      "name": "Scatterer Carapace",
+      "summary": "A Scatterer drops a carapace that appears in Carl’s crafting inventory.",
+      "action": "add",
+      "quantity": 1,
+      "category": "Crafting",
+      "state": "carried"
+    },
+    {
+      "source": "b1-c8-p96",
+      "subject": "Carl",
+      "type": "story",
+      "name": "Rat pelts",
+      "summary": "The party collects multiple rat pelts. The individual holder and count are unspecified.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c8-p97",
+      "subject": "Princess Donut",
+      "type": "story",
+      "name": "Mana pool",
+      "summary": "Donut has 17 mana points, regenerates roughly one per minute, and spends five per Magic Missile.",
+      "action": "note"
+    },
+    {
+      "source": "b1-c8-p98",
+      "subject": "Carl",
+      "type": "skill",
+      "name": "Smush",
+      "summary": "Carl learns Smush after the skirmishes.",
+      "action": "set",
+      "level": null
+    }
+  ],
+  "corrections": [
+    {
+      "id": "floor-audit-b1-c2-p24-princess-donut-story-floor-observation",
+      "set": {
+        "source": "b1-c2-p21"
+      }
+    },
+    {
+      "id": "floor-audit-b1-c2-p33-carl-story-floor-observation",
+      "set": {
+        "source": "b1-c2-p21"
+      }
+    },
+    {
+      "id": "series-1-2-mordecai-roster-registered-game-guide",
+      "set": {
+        "summary": "Mordecai confirms that he is the registered guide for Carl and Donut.",
+        "source": "b1-c8-p4"
+      }
+    },
+    {
+      "id": "carl-initial-stats-stats",
+      "set": {
+        "summary": "The stat menu shows Carl has 6 STR.",
+        "stats": {
+          "STR": 6
+        },
+        "statScopes": {
+          "STR": "base"
+        },
+        "source": "b1-c4-p37"
+      }
+    },
+    {
+      "id": "donut-first-stat-display-stats",
+      "set": {
+        "summary": "The stat menu shows Princess Donut has 11 STR.",
+        "stats": {
+          "STR": 11
+        },
+        "statScopes": {
+          "STR": "base"
+        },
+        "source": "b1-c7-p9"
+      }
+    },
+    {
+      "id": "carl-heal-acquired-ability",
+      "set": {
+        "summary": "Carl’s healing spell is identified as level 1.",
+        "source": "b1-c4-p90",
+        "detail": "The healing spell is level 1 and restores about a fifth of Carl’s health."
+      }
+    },
+    {
+      "id": "carl-pugilism-4-ability",
+      "set": {
+        "source": "b1-c5-p48"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-3",
+      "set": {
+        "summary": "Carl opens the first bronze adventurer box in the sequence.",
+        "acquisition": {
+          "stage": "opened",
+          "sourceType": "reward_box",
+          "parentEventIds": [],
+          "boxKind": "Adventurer",
+          "boxTier": "Bronze",
+          "quantity": 1
+        },
+        "source": "b1-c5-p69"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-opened-box-5",
+      "set": {
+        "summary": "Carl opens the first bronze weapon box in the sequence.",
+        "acquisition": {
+          "stage": "opened",
+          "sourceType": "reward_box",
+          "parentEventIds": [],
+          "boxKind": "Weapon",
+          "boxTier": "Bronze",
+          "quantity": 1
+        },
+        "source": "b1-c5-p73"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-1-0",
+      "set": {
+        "summary": "Carl receives Pet Biscuit from the box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "inv-004-first-ten-boxes-opened-opened-box-0"
+          ],
+          "outcomeType": "item",
+          "quantity": 10
+        },
+        "quantity": 10,
+        "source": "b1-c5-p67"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-3-0",
+      "set": {
+        "summary": "Carl receives Potion of Healing from the box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "inv-004-first-ten-boxes-opened-opened-box-3"
+          ],
+          "outcomeType": "item",
+          "quantity": 2
+        },
+        "quantity": 2,
+        "source": "b1-c5-p70"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-4-0",
+      "set": {
+        "summary": "Carl receives Common Fingerless Gloves from the box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "inv-004-first-ten-boxes-opened-opened-box-3"
+          ],
+          "outcomeType": "item"
+        },
+        "source": "b1-c5-p71"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-5-0",
+      "set": {
+        "summary": "Carl receives Toad Cudgel from the box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "inv-004-first-ten-boxes-opened-opened-box-5"
+          ],
+          "outcomeType": "item"
+        },
+        "source": "b1-c5-p74"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-6-0",
+      "set": {
+        "summary": "Carl receives Poker from the box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-first-half-01-08-b1-c5-p76-carl-item-bronze-weapon-box"
+          ],
+          "outcomeType": "item"
+        },
+        "source": "b1-c5-p77"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-7-0",
+      "set": {
+        "summary": "Carl receives Potion of Mana from the box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-first-half-01-08-b1-c5-p79-carl-item-bronze-adventurer-box"
+          ],
+          "outcomeType": "item"
+        },
+        "source": "b1-c5-p81"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-11-0",
+      "set": {
+        "summary": "Carl receives Dynamite from the box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-first-half-01-08-b1-c5-p88-carl-item-silver-goblin-box"
+          ],
+          "outcomeType": "item"
+        },
+        "source": "b1-c5-p89"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-12-0",
+      "set": {
+        "summary": "The Goblin Pass binds to Carl’s forearm and shows through his jacket.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-first-half-01-08-b1-c5-p88-carl-item-silver-goblin-box"
+          ],
+          "outcomeType": "item"
+        },
+        "source": "b1-c5-p92"
+      }
+    },
+    {
+      "id": "inv-004-first-ten-boxes-opened-item-15-0",
+      "set": {
+        "summary": "Carl receives Enchanted Toe Ring of the Splatter Skunk from the box.",
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-first-half-01-08-b1-c5-p98-carl-item-gold-shoe-box"
+          ],
+          "outcomeType": "item"
+        },
+        "source": "b1-c5-p99"
+      }
+    },
+    {
+      "id": "inv-005-enhanced-biscuit-consumed-summary",
+      "set": {
+        "summary": "Donut takes the enhanced biscuit from Carl’s hand and eats it.",
+        "source": "b1-c5-p118"
+      }
+    },
+    {
+      "id": "inv-005-enhanced-biscuit-consumed-item-0-0",
+      "set": {
+        "subject": "Carl",
+        "summary": "Donut eats the enhanced biscuit from Carl’s hand, consuming his one biscuit.",
+        "source": "b1-c5-p118"
+      }
+    },
+    {
+      "id": "inv-006-carl-equips-first-kit-item-0-0",
+      "set": {
+        "summary": "Carl puts on the fingerless gloves.",
+        "source": "b1-c6-p2"
+      }
+    },
+    {
+      "id": "inv-006-carl-equips-first-kit-item-1-0",
+      "set": {
+        "summary": "Carl puts on the trollskin shirt.",
+        "source": "b1-c6-p19"
+      }
+    },
+    {
+      "id": "inv-006-carl-equips-first-kit-item-2-0",
+      "set": {
+        "summary": "Carl puts on the leather jacket.",
+        "source": "b1-c6-p19"
+      }
+    },
+    {
+      "id": "inv-006-carl-equips-first-kit-item-3-0",
+      "set": {
+        "summary": "Carl puts on the nightgaunt cloak.",
+        "source": "b1-c6-p19"
+      }
+    },
+    {
+      "id": "inv-006-carl-equips-first-kit-item-4-0",
+      "set": {
+        "summary": "Carl puts on the toe ring.",
+        "source": "b1-c6-p30"
+      }
+    },
+    {
+      "id": "carl-regeneration-equipment-7-ability",
+      "set": {
+        "source": "b1-c6-p19",
+        "skillScope": "equipment"
+      }
+    },
+    {
+      "id": "carl-powerful-strike-equipment-3-ability",
+      "set": {
+        "source": "b1-c6-p30",
+        "skillScope": "equipment"
+      }
+    },
+    {
+      "id": "carl-strength-9-stat",
+      "set": {
+        "source": "b1-c6-p30"
+      }
+    },
+    {
+      "id": "inv-006-carl-equips-first-kit-summary",
+      "set": {
+        "source": "b1-c6-p30"
+      }
+    },
+    {
+      "id": "carl-frogger-8-ability",
+      "set": {
+        "source": "b1-c6-p37"
+      }
+    },
+    {
+      "id": "inv-006b-first-magic-gear-box-item-0-0",
+      "set": {
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-first-half-01-08-b1-c6-p26-carl-item-bronze-adventurer-box"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-006b-first-magic-gear-box-item-1-0",
+      "set": {
+        "acquisition": {
+          "stage": "received",
+          "sourceType": "reward_box",
+          "parentEventIds": [
+            "b1-first-half-01-08-b1-c6-p26-carl-item-bronze-adventurer-box"
+          ],
+          "outcomeType": "item"
+        }
+      }
+    },
+    {
+      "id": "inv-007-donut-opens-first-boxes-summary",
+      "set": {
+        "summary": "Five boxes appear. The bronze boxes contain supplies and a Silver Adventurer Box opens next.",
+        "source": "b1-c7-p28"
+      }
+    },
+    {
+      "id": "inv-007-donut-opens-first-boxes-item-0-0",
+      "set": {
+        "summary": "Donut receives healing potions in her first box opening.",
+        "source": "b1-c7-p28"
+      }
+    },
+    {
+      "id": "inv-007-donut-opens-first-boxes-item-1-0",
+      "set": {
+        "summary": "Donut receives torches in her first box opening.",
+        "source": "b1-c7-p28"
+      }
+    },
+    {
+      "id": "inv-007-donut-opens-first-boxes-item-2-0",
+      "set": {
+        "summary": "Donut receives pet biscuits in her first box opening.",
+        "source": "b1-c7-p28"
+      }
+    },
+    {
+      "id": "inv-007-donut-opens-first-boxes-item-3-0",
+      "set": {
+        "summary": "Donut receives tome of magic missile in her first box opening.",
+        "action": "add",
+        "state": "carried",
+        "source": "b1-c7-p29"
+      }
+    },
+    {
+      "id": "inv-007-donut-opens-first-boxes-item-4-0",
+      "set": {
+        "source": "b1-c7-p31"
+      }
+    },
+    {
+      "id": "party-02-named-rename",
+      "set": {
+        "summary": "Donut names the party The Royal Court of Princess Donut."
+      },
+      "removeFields": [
+        "leader"
+      ]
+    },
+    {
+      "id": "inv-008-llama-loot-item-0-0",
+      "set": {
+        "summary": "Donut takes the hide and one of the two steaks.",
+        "source": "b1-c8-p77"
+      }
+    },
+    {
+      "id": "inv-008-llama-loot-item-1-0",
+      "set": {
+        "summary": "Donut takes the hide and one of the two steaks.",
+        "source": "b1-c8-p77"
+      }
+    },
+    {
+      "id": "carl-level-3-foot-soldier-smush-skill-1",
+      "set": {
+        "source": "b1-c8-p102"
+      }
+    },
+    {
+      "id": "carl-level-3-foot-soldier-smush-level",
+      "set": {
+        "summary": "Carl reaches level 3 and gains Foot Soldier and Smush.",
+        "detail": "Carl reaches level 3 and gains Foot Soldier and Smush."
+      }
+    },
+    {
+      "id": "carl-level-3-foot-soldier-smush-skill-0",
+      "set": {
+        "summary": "Carl reaches level 3 and gains Foot Soldier and Smush.",
+        "detail": "Carl reaches level 3 and gains Foot Soldier and Smush."
+      }
+    },
+    {
+      "id": "donut-tiara-bonuses-skill-change-0",
+      "set": {
+        "skillScope": "equipment"
+      }
+    }
+  ]
+}

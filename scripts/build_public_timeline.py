@@ -22,6 +22,7 @@ SERIES_CORPUS = ROOT / "data/private/series-corpus.json"
 FLOOR_AUDIT = ROOT / "data/public/character-floor-audit.json"
 PARTY_LOCATION_AUDIT = ROOT / "data/public/party-location-audit.json"
 CHAPTER_COUNT = 47
+FIRST_HALF_AUDITS = ("b1-first-half-01-08", "b1-first-half-09-16", "b1-first-half-17-24")
 ITEM_ALIASES = {
     "Common Fingerless Glove": "Common Fingerless Gloves",
     "Original boxers": "Boxers",
@@ -363,7 +364,7 @@ def stat_scope(source: dict, character: str, stat: str) -> str:
 
 def skill_event(source: dict, character: str, item: dict, suffix: str) -> dict:
     name = item.get("skill") or item.get("spell") or item.get("name") or "Unnamed ability"
-    level = item.get("to_level", item.get("to", item.get("level")))
+    level = item.get("to_level", item.get("to", item.get("spell_level", item.get("level"))))
     event = base(source, suffix=suffix, kind="skill", subject=character, name=name)
     event.update({"action": "set", "level": level, "detail": source.get("summary")})
     return event
@@ -535,8 +536,35 @@ def main() -> None:
                   "allies-skills-inventory-audit", "secondary-skills-inventory-audit",
                   "companions-skills-inventory-audit", "patch-effects-audit", "chapter-sweep-2026-11-06", "chapter-sweep-2026-11-06-batch-2", "chapter-sweep-2026-11-06-batch-3", "chapter-sweep-2026-11-06-book-7"):
         events.extend(curated_audit_events(series_corpus, audit + ".json", audit))
+    corrections = []
+    audit_characters = []
+    for stem in FIRST_HALF_AUDITS:
+        filename = stem + ".json"
+        audit = json.loads((ROOT / "data/public" / filename).read_text())
+        events.extend(curated_audit_events(series_corpus, filename, stem))
+        corrections.extend(audit.get("corrections", []))
+        audit_characters.extend(audit.get("characters", []))
     from reward_provenance import apply_reward_audit
     events = apply_reward_audit(events, series_corpus)
+    by_id = {event["id"]: event for event in events}
+    anchor_locations = {p["anchor"]: (b["number"], c["number"], p["position"])
+                        for b in series_corpus["books"] for c in b["chapters"] for p in c["paragraphs"]}
+    corrected = set()
+    for correction in corrections:
+        event = by_id[correction["id"]]
+        if event["id"] in corrected:
+            raise ValueError(f"Conflicting corrections for {event['id']}")
+        corrected.add(event["id"])
+        for field in correction.get("removeFields", []):
+            event.pop(field)
+        event.update(correction["set"])
+        location = anchor_locations[event["source"]]
+        book, chapter, position = location
+        if book != 1 or not 1 <= chapter <= 24:
+            raise ValueError(f"Correction falls outside the reviewed chapters: {event['source']}")
+        if any(anchor_locations[anchor] > location for anchor in event.get("evidence", [])):
+            raise ValueError(f"Correction reveals later evidence: {event['id']}")
+        event.update(book=book, chapter=chapter, position=position)
     corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
     anchor_positions = {
         paragraph["anchor"]: paragraph["position"]
@@ -575,7 +603,7 @@ def main() -> None:
             "title": "Dungeon Crawler Carl",
             "bookCount": len(book_rows),
             "chapterCount": total_chapters,
-            "dataVersion": "2.10.0",
+            "dataVersion": "2.11.0",
             "coverageNote": "Eight-book chapter map with source-anchored progression for the core party and major recurring allies. Skills and inventory appear only when explicitly confirmed.",
         },
         "books": book_rows,
@@ -617,6 +645,11 @@ def main() -> None:
     status_audit = json.loads((ROOT / "data/public/character-status-audit.json").read_text())
     payload["characters"].extend(character for character in status_audit.get("characters", [])
                                  if character["name"] not in known_names)
+    known_names = {character["name"] for character in payload["characters"]}
+    for character in audit_characters:
+        if character["name"] not in known_names:
+            payload["characters"].append(character)
+            known_names.add(character["name"])
     encoded = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
     OUTPUT.write_text(encoded, encoding="utf-8")
     LEGACY_OUTPUT.write_text(encoded, encoding="utf-8")
