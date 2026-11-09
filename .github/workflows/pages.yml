@@ -53,7 +53,10 @@ jobs:
         run: |
           mkdir -p "${RUNNER_TEMP}/crawl-atlas-pages/data"
           cp site/dist/index.html site/dist/styles.css site/dist/about.css site/dist/static-reader.js site/dist/CNAME "${RUNNER_TEMP}/crawl-atlas-pages/"
-          cp site/dist/data/reader-board.json "${RUNNER_TEMP}/crawl-atlas-pages/data/"
+          cp site/dist/data/reader-board.json site/dist/data/spoiler-free.json "${RUNNER_TEMP}/crawl-atlas-pages/data/"
+          mkdir -p "${RUNNER_TEMP}/crawl-atlas-pages/charts/compact"
+          cp site/dist/charts/spoiler-free-*.html "${RUNNER_TEMP}/crawl-atlas-pages/charts/"
+          cp site/dist/charts/compact/spoiler-free-*.html "${RUNNER_TEMP}/crawl-atlas-pages/charts/compact/"
           cp -R site/dist/branding site/dist/boards site/dist/board-assets "${RUNNER_TEMP}/crawl-atlas-pages/"
 
       - name: Upload static site
