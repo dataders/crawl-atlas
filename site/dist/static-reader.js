@@ -24,6 +24,14 @@
     if(!demo){u.searchParams.set('character',person);u.searchParams.set('tab',tab);}
     history.replaceState(null,'',u);
   }
+  function labelLevelPoints(html) {
+    // The native shared tooltip reads its heading from the point's accessible label.
+    const pointHeader = /(aria-label="⁡)([\d.]+)(;[^"]*; Level: )/g;
+    return html.replace(pointHeader, (original, prefix, coordinate, rest) => {
+      const passage = catalog.levelLocations?.[Number(coordinate).toFixed(8)];
+      return passage ? prefix + passage + rest : original;
+    });
+  }
   async function show(){
     position();if(!entered)return;
     const token=++request, width=innerWidth<=820?'440':'1360';
@@ -59,7 +67,7 @@
       if(token!==request)return;
       const base=new URL('boards/',location.href).href;
       assignedRequest=token;
-      frame.srcdoc=html.replace('<head>',`<head><base href="${base}">`);
+      frame.srcdoc=labelLevelPoints(html).replace('<head>',`<head><base href="${base}">`);
       currentFile=checkpoint.file;
     }catch(error){if(token===request){frame.hidden=true;$('#chart-empty').hidden=false;$('#chart-empty').textContent=error.message;currentFile='';}}
   }

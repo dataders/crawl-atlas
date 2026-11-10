@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import re
 import time
+from level_locations import level_locations
 from build_single_board import build, TABS, character_order, reader_data
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -115,6 +116,8 @@ def main():
     if args.plan:return
     for directory in ('boards','board-assets','data'):(args.output/directory).mkdir(parents=True,exist_ok=True)
     manifest={'version':1,'renderer':'dbt-charts 0.11.1','complete':not args.sample,'characters':{},'books':data['books'],'series':data['series']}
+    pages_path = args.data_root / 'data/public/level-pages.json'
+    manifest['levelLocations'] = level_locations(data, json.loads(pages_path.read_text()))
     start=time.monotonic()
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         for i,(person,tab,progress,width,key) in enumerate(pool.map(export,jobs,chunksize=10),1):
@@ -122,10 +125,10 @@ def main():
             if not checkpoints or checkpoints[-1]['file'] != key:
                 checkpoints.append({'progress':progress,'file':key})
             if i%50==0:print(f'{i}/{len(jobs)} states, {time.monotonic()-start:.0f}s',flush=True)
-    source_inputs=['charts/reader.yml','scripts/build_single_board.py','scripts/export_single_board.py',
+    source_inputs=['scripts/level_locations.py','charts/reader.yml','scripts/build_single_board.py','scripts/export_single_board.py',
         'scripts/render_dossier_charts.py','scripts/render_skill_charts.py','site/dist/detail-model.js','site/dist/equipment-effects.js',
         'scripts/reader_detail_worker.cjs','scripts/build_public_timeline.py','scripts/build_database.py','scripts/reward_provenance.py','site/dist/board-details.js','site/dist/rewards.js','site/dist/static-reader.js']
-    data_inputs=['site/dist/data/floors.json', *[str(path.relative_to(args.data_root)) for path in sorted((args.data_root/'data/public').glob('book-*.jsonl'))]]
+    data_inputs=['data/public/level-pages.json','site/dist/data/floors.json', *[str(path.relative_to(args.data_root)) for path in sorted((args.data_root/'data/public').glob('book-*.jsonl'))]]
     manifest['inputs']={path:hashlib.sha256(((ROOT if path in source_inputs else args.data_root)/path).read_bytes()).hexdigest() for path in source_inputs+data_inputs}
     manifest['exports']={str(path.relative_to(args.output)):hashlib.sha256(path.read_bytes()).hexdigest() for directory in ('boards','board-assets') for path in (args.output/directory).iterdir() if path.is_file()}
     (args.output/'data/reader-board.json').write_text(json.dumps(manifest,separators=(',',':'))+'\n')
