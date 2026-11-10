@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/pages.yml"
       - "site/dist/**"
+      - "data/exports/events.parquet"
       - "scripts/build_single_board.py"
       - "scripts/export_single_board.py"
       - "scripts/check_single_board.py"
@@ -54,6 +55,7 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/crawl-atlas-pages/data"
           cp site/dist/index.html site/dist/styles.css site/dist/about.css site/dist/static-reader.js site/dist/CNAME "${RUNNER_TEMP}/crawl-atlas-pages/"
           cp site/dist/data/reader-board.json site/dist/data/spoiler-free.json "${RUNNER_TEMP}/crawl-atlas-pages/data/"
+          cp data/exports/events.parquet "${RUNNER_TEMP}/crawl-atlas-pages/data/events.parquet"
           mkdir -p "${RUNNER_TEMP}/crawl-atlas-pages/charts/compact"
           cp site/dist/charts/spoiler-free-*.html "${RUNNER_TEMP}/crawl-atlas-pages/charts/"
           cp site/dist/charts/compact/spoiler-free-*.html "${RUNNER_TEMP}/crawl-atlas-pages/charts/compact/"
