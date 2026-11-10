@@ -33,6 +33,32 @@ class RankingTests(unittest.TestCase):
         self.assertIn("dbt-variable-change",source)
         self.assertIn("DecompressionStream('gzip')",source)
 
+class CheckpointTests(unittest.TestCase):
+    def test_history_and_skill_updates_do_not_reexport_unrelated_inventory(self):
+        import json,tempfile
+        from export_single_board import catalog
+        def event(p,kind,name,**extra):
+            return dict(id=str(p),source=str(p),subject='Carl',progress=p,type=kind,name=name,**extra)
+        events=[event(.1,'item','Ring',action='equip'),event(.2,'story','First story'),
+                event(.25,'story','Later story'),event(.3,'skill','Spell'),event(.35,'skill','Spell'),
+                event(.4,'story','Box',acquisition={'stage':'award'}),
+                event(.45,'story','Second box',acquisition={'stage':'award'})]
+        series={'characters':[{'name':'Carl'}],'events':events,'books':[{'startChapter':1}],
+                'series':{'chapterCount':1}}
+        facts=[{'character':'Carl','kind':'skill','progress':p}for p in (.3,.35)]
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'site/dist/data').mkdir(parents=True);(root/'data/public').mkdir(parents=True)
+            (root/'site/dist/data/floors.json').write_text('[]')
+            (root/'data/public/reader-characters.json').write_text('["Carl"]')
+            with patch('export_single_board.reader_data',return_value=(series,facts,{'observations':[]})):
+                _,states=catalog(root)
+            self.assertIn(.25,states['Carl']['history'])
+            self.assertNotIn(.25,states['Carl']['inventory'])
+            self.assertIn(.35,states['Carl']['overview'])
+            self.assertNotIn(.35,states['Carl']['inventory'])
+            self.assertIn(.45,states['Carl']['rewards'])
+            self.assertNotIn(.45,states['Carl']['inventory'])
+
 class ReleaseBoardTests(unittest.TestCase):
     def test_level_plot_is_readable_and_has_no_duplicate_scene_marks(self):
         from build_single_board import build

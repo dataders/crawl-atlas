@@ -116,7 +116,7 @@
   $('#about-close').addEventListener('click',close);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!about.hidden)close();});
   let timer;addEventListener('resize',()=>{clearTimeout(timer);timer=setTimeout(show,180);});
   const params=new URLSearchParams(location.search);demo=params.get('demo')==='1';
-  fetch(demo?'data/spoiler-free.json?v=1':'data/reader-board.json').then(r=>{if(!r.ok)throw Error('Board catalog unavailable.');return r.json();}).then(data=>{
+  fetch(demo?'data/spoiler-free.json?v=1':'data/reader-board.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Board catalog unavailable.');return r.json();}).then(data=>{
     catalog=data;entered=params.has('progress')&&params.get('progress').trim()!==''&&Number.isFinite(Number(params.get('progress')));
     progress=entered?clamp(Number(params.get('progress'))/10000):0;
     person=params.get('character')||'Carl';tab=tabs[params.get('tab')]||'overview';
