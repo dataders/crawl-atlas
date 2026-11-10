@@ -104,3 +104,26 @@ system of record. Keep the curated public exports as raw sources, then build:
 Do not move private EPUB text or evidence sentences into the dashboard schema.
 Those belong in a separately permissioned evidence layer, if they enter a
 warehouse at all.
+
+
+## November 2026 reread
+
+The November 9–10 review read 408 numbered chapters end to end, skipping 64
+chapters covered by recent audits. The release adds 3,509 source-anchored events.
+Nine observations from embedded excerpts remain held until their reveal mapping
+is verified. This is a coverage record, not a claim that every fact was extracted.
+
+The public ledgers retain incidental characters, creatures, historical deaths,
+and uncertain reports. `data/public/reader-characters.json` keeps the reader's
+existing 57-character dossier roster explicit. The level plot shows the ten
+most-recorded characters at the reading boundary, plus the selected dossier.
+Life-status reconfirmations do not move the first death marker; historical deaths
+do not end a present-day line. A dotted extension means last recorded level.
+
+Owner-scoped item identities join alternate names without revealing later names
+early. Effects require the item and any parent garment to be equipped. Floor-limited
+possessions expire after a revealed physical floor transition. Bonuses and grants
+remain separate from absolute stat totals and trained skill ranks.
+
+Wiki links open separately and may contain spoilers. Verified destinations are
+listed in `scripts/wiki_links.py`; other names link to the wiki's search.

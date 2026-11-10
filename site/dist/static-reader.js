@@ -32,6 +32,22 @@
       return passage ? prefix + passage + rest : original;
     });
   }
+  function characterOptions() {
+    if(!catalog.characterUpdates)return null;
+    const count=name=>catalog.characterUpdates[name].filter(p=>p<=progress).length;
+    const names=Object.keys(catalog.characterUpdates).filter(name=>count(name)>0)
+      .sort((a,b)=>count(b)-count(a)||a.localeCompare(b));
+    return names;
+  }
+  function labelCharacterOptions(html) {
+    const names=characterOptions();
+    if(!names)return html;
+    const encoded=JSON.stringify(names).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+    // Supply data to the native dbt Charts dropdown before its own script mounts.
+    // Chart, table, and layout markup remains the renderer's complete export.
+    return html.replace(/(<g\b[^>]*\bdata-dbt-variable="character"[^>]*\bdata-dbt-options=")[^"]*(")/g,
+      (_,before,after)=>before+encoded+after);
+  }
   async function show(){
     position();if(!entered)return;
     const token=++request, width=innerWidth<=820?'440':'1360';
@@ -56,7 +72,8 @@
     $('#chart-empty').hidden=!!checkpoint;
     if(!checkpoint){frame.hidden=true;frame.removeAttribute('srcdoc');currentFile='';return;}
     frame.hidden=false;
-    if(currentFile===checkpoint.file){assignedRequest=token;return;}
+    const viewKey=checkpoint.file+'|'+JSON.stringify(characterOptions());
+    if(currentFile===viewKey){assignedRequest=token;return;}
     // Hide the old state immediately, including on rewind. A failed fetch must
     // never leave later-book data displayed beneath an earlier reading position.
     frame.style.visibility='hidden';frame.setAttribute('aria-busy','true');
@@ -67,8 +84,8 @@
       if(token!==request)return;
       const base=new URL('boards/',location.href).href;
       assignedRequest=token;
-      frame.srcdoc=labelLevelPoints(html).replace('<head>',`<head><base href="${base}">`);
-      currentFile=checkpoint.file;
+      frame.srcdoc=labelCharacterOptions(labelLevelPoints(html)).replace('<head>',`<head><base href="${base}">`);
+      currentFile=viewKey;
     }catch(error){if(token===request){frame.hidden=true;$('#chart-empty').hidden=false;$('#chart-empty').textContent=error.message;currentFile='';}}
   }
   frame.addEventListener('load',()=>{

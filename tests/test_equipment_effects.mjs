@@ -23,3 +23,13 @@ test('patch bonuses and grants appear only after their own reveal; no future bac
  assert.ok(after.some(e=>e.target==='DEX'&&e.value===25&&e.unit==='points'));
  assert.ok(equipmentEffectRows(data.events,'Carl').some(e=>e.effect==='Dangerous Explosives Handling +2 levels'));
 });
+test('item upgrades replace legacy bonuses and do not duplicate structured boosts',()=>{
+ const events=[e('Boxers','equip',.1,{statBoosts:[{stat:'CON',unit:'points',value:2}]}),e('Boxers','note',.2,{effects:[{id:'boxers-con',kind:'stat',target:'CON',operation:'add',value:5,unit:'points'}],statBoosts:[{stat:'CON',unit:'points',value:5}]})];
+ assert.deepEqual(equipmentEffects(events.filter(e=>e.progress<.2),'Carl').map(e=>e.value),[2]);
+ assert.deepEqual(equipmentEffects(events,'Carl').map(e=>e.value),[5]);
+});
+test('five explicit stat effects supersede an older all-stat summary',()=>{
+ const events=[e('Beanie','equip',.1,{statBoosts:[{stat:'ALL',unit:'percent',value:3}]}),e('Beanie','note',.2,{effects:['STR','INT','CON','DEX','CHA'].map(target=>({id:target,kind:'stat',target,operation:'add',value:3,unit:'percent'}))})];
+ assert.equal(equipmentEffects(events,'Carl').length,5);
+ assert.ok(equipmentEffects(events,'Carl').every(e=>e.target!=='ALL'));
+});

@@ -30,15 +30,23 @@ function characterState(character, events) {
   const profile = Object.assign({}, ...mine.map(event => event.profile ?? {}));
   // Callers supply only revealed events, in reading order. Missing death data
   // is not evidence of survival, and a presumption is not a confirmed death.
-  const lifeStatusEvent = mine.filter(event => ["dead", "presumed-dead", "alive"].includes(event.lifeStatus)).at(-1);
+  const lifeStatusEvent = mine.filter(event => !event.historyOnly && ["dead", "presumed-dead", "alive"].includes(event.lifeStatus)).at(-1);
   const lifeStatus = lifeStatusEvent?.lifeStatus ?? "unknown";
   return { character, relationship, profile, lifeStatus, lifeStatusEvent, levelEvent: levels.at(-1), level: levels.at(-1)?.level ?? null, levels, stats, baseStats, skills: [...skills.values()].sort((a, b) => (b.level ?? -Infinity) - (a.level ?? -Infinity) || a.name.localeCompare(b.name)), events: mine };
 }
 
+function inventoryKeys(events) {
+  const names = new Map(events.filter(e => e.type === 'item' && e.itemId && !e.historyOnly)
+    .map(e => [`${e.subject}|${e.name}`.toLowerCase(), `${e.subject}|id:${e.itemId}`.toLowerCase()]));
+  return event => event.itemId ? `${event.subject}|id:${event.itemId}`.toLowerCase()
+    : names.get(`${event.subject}|${event.name}`.toLowerCase()) ?? `${event.subject}|${event.name}`.toLowerCase();
+}
 function inventoryAt(events) {
   const inventory = new Map();
+  const itemKey = inventoryKeys(events);
+  const currentFloor = Math.max(0, ...events.filter(e => !e.historyOnly && e.mode === 'physical').map(e => e.floor ?? 0));
   events.filter((event) => event.type === "item" && !event.historyOnly).forEach((event) => {
-    const key = event.itemId ?? `${event.subject}|${event.name}`.toLowerCase();
+    const key = itemKey(event);
     const previous = inventory.get(key) ?? {};
     if (["remove", "consume", "destroy", "lose"].includes(event.action)) {
       const priorQuantity = typeof previous.quantity === "number" ? previous.quantity : null;
@@ -51,7 +59,7 @@ function inventoryAt(events) {
       inventory.set(key, { ...previous, ...event, quantity, acquiredProgress: previous.acquiredProgress ?? event.progress, acquiredBook: previous.acquiredBook ?? event.book, acquiredChapter: previous.acquiredChapter ?? event.chapter, state: event.action === "unequip" ? "carried" : event.action === "equip" || event.state === "equipped" ? "equipped" : event.state ?? previous.state ?? "carried" });
     }
   });
-  return [...inventory.values()].sort((a, b) => a.subject.localeCompare(b.subject) || a.name.localeCompare(b.name));
+  return [...inventory.values()].filter(e => e.expiresAfterFloor == null || currentFloor <= e.expiresAfterFloor).sort((a, b) => a.subject.localeCompare(b.subject) || a.name.localeCompare(b.name));
 }
 
 // These records are both the dbt Charts input and the keys for its rendered rows.
@@ -122,4 +130,4 @@ function storyEntries(events, facts, cutoff) {
         [fact.summary, fact.scope, fact.confidence, fact.source].filter(Boolean).join(' · ')));
     });
 }
-if (typeof module !== 'undefined') module.exports = {characterState, inventoryAt, dossierTables, inventoryRecord, itemStatBoost, storyEntries};
+if (typeof module !== 'undefined') module.exports = {characterState, inventoryAt, inventoryKeys, dossierTables, inventoryRecord, itemStatBoost, storyEntries};

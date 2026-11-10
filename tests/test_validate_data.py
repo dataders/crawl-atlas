@@ -43,6 +43,19 @@ class ValidatorTests(unittest.TestCase):
             with self.assertRaisesRegex(AssertionError, "appears before its source"):
                 MODULE.validate(data_path, corpus_path)
 
+    def test_later_chapter_reveal_can_keep_original_source_anchor(self):
+        data={"book":{"chapterCount":2},"events":[{"id":"later","chapter":2,
+              "position":0.1,"source":"b1-c1-p1","type":"skill","confidence":"verified"}]}
+        corpus={"chapters":[{"number":1,"paragraphs":[{"anchor":"b1-c1-p1","position":0.9}]},
+                            {"number":2,"paragraphs":[{"anchor":"b1-c2-p1","position":0.1}]}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            a=self.write_json(tmp,"data.json",data);b=self.write_json(tmp,"corpus.json",corpus)
+            self.assertEqual(MODULE.validate(a,b),1)
+            data['events'][0].update(chapter=1,position=.99,source='b1-c2-p1')
+            a=self.write_json(tmp,"data.json",data)
+            with self.assertRaisesRegex(AssertionError,'appears before its source'):
+                MODULE.validate(a,b)
+
     def test_accepts_event_ledger(self):
         data = {
             "book": {"chapterCount": 1},

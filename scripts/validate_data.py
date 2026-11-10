@@ -79,23 +79,27 @@ def validate(path: Path, corpus_path: Path | None = None) -> int:
         if "books" in corpus:
             assert len(corpus["books"]) == len(books)
             anchors = {}
-            for corpus_book, public_book in zip(corpus["books"], books, strict=True):
+            anchor_locations = {}
+            for book_number, (corpus_book, public_book) in enumerate(zip(corpus["books"], books, strict=True), 1):
                 chapter_numbers = [chapter["number"] for chapter in corpus_book["chapters"]]
                 assert chapter_numbers == list(range(1, public_book["chapterCount"] + 1)), "private corpus chapters must be complete and ordered"
+                anchor_locations.update({p["anchor"]: (book_number, c["number"], p["position"]) for c in corpus_book["chapters"] for p in c["paragraphs"]})
                 anchors.update({paragraph["anchor"]: paragraph for chapter in corpus_book["chapters"] for paragraph in chapter["paragraphs"]})
         else:
             chapters = corpus["chapters"]
             chapter_numbers = [chapter["number"] for chapter in chapters]
             expected = list(range(1, metadata["chapterCount"] + 1))
             assert chapter_numbers == expected, "private corpus chapters must be complete and ordered"
+            anchor_locations = {p["anchor"]: (1, c["number"], p["position"]) for c in chapters for p in c["paragraphs"]}
             anchors = {paragraph["anchor"]: paragraph for chapter in chapters for paragraph in chapter["paragraphs"]}
         for row in records:
             source = row["source"]
             assert source in anchors, f"record {row['id']} has unknown source anchor {source}"
-            source_position = anchors[source]["position"]
-            assert source_position <= row["position"], (
+            source_position = anchor_locations[source]
+            reveal_position = (row.get("book", 1), row["chapter"], row["position"])
+            assert source_position <= reveal_position, (
                 f"record {row['id']} appears before its source "
-                f"({row['position']} < {source_position})"
+                f"({reveal_position} < {source_position})"
             )
 
     return len(records)

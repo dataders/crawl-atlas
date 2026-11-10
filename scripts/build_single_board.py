@@ -14,6 +14,7 @@ from functools import lru_cache
 from copy import deepcopy
 from render_dossier_charts import observations, board_spec as stats_board
 from render_skill_charts import qualifying_rows
+from wiki_links import wiki_link, wiki_label
 
 ROOT = Path(__file__).resolve().parents[1]
 TABS = ('overview', 'inventory', 'rewards', 'history', 'equipped')
@@ -29,6 +30,7 @@ def character_order(series, facts, audit, cutoff):
     """Rank by revealed updates; multiple metrics from one event count once."""
     canonical = lambda name: 'Princess Donut' if name == 'Donut' else name
     roster = {c['name'] for c in series['characters'] if c['name'] != 'Party'}
+    roster &= set(json.loads((ROOT/'data/public/reader-characters.json').read_text()))
     updates = {}
     for event in series['events']:
         name = canonical(event.get('subject'))
@@ -59,7 +61,7 @@ def reader_data(root):
     from build_public_timeline import compile_books
     from build_database import progression_rows
     series, audit = compile_books(root / "data/public")
-    return series, progression_rows(series["events"]), audit
+    return series, progression_rows([e for e in series["events"] if not e.get("historyOnly")]), audit
 
 
 @lru_cache(maxsize=None)
@@ -133,7 +135,7 @@ options:
   {% set color = r.ink %}
   {% set ly = top + (loop.index0+0.5)*(bottom-top)/(ends|length) %}
   <path d="M {{ x(r.at) }} {{ y(r.level) }} L {{ right+6 }} {{ ly }}" fill="none" stroke="{{ color }}" stroke-width=".8" stroke-opacity=".45"/>
-  <text x="{{ right+9 }}" y="{{ ly+3 }}" fill="{{ color }}" font-size="{{ 9 if width < 600 else 11 }}"><title>{{ r.skill }}</title>{{ r.short_label }}</text>
+  <a href="{{ r.wiki_url }}" target="_blank" rel="noopener noreferrer"><text x="{{ right+9 }}" y="{{ ly+3 }}" fill="{{ color }}" font-size="{{ 9 if width < 600 else 11 }}"><title>{{ r.wiki_label }}: {{ r.skill }} (spoilers)</title>{{ r.short_label }}</text></a>
 {% endfor %}
 {% for r in rows %}
   <circle cx="{{ x(r.at) }}" cy="{{ y(r.level) }}" r="4" fill="{{ r.ink }}"><title>{{ r.detail }}</title></circle>
@@ -151,6 +153,7 @@ def skill_history(rows, counts, books, width):
         limit = 17 if width < 600 else 27
         observations.append({
             'skill': skill, 'scope': scope, 'level': row['value'],
+            'wiki_url':wiki_link(skill), 'wiki_label':wiki_label(skill),
             'ink': palette[crc32(skill.encode()) % len(palette)],
             'at': (row['book']-1)*100 + 100*(row['chapter']-1+row['position'])/counts[row['book']],
             'detail': description, 'endpoint': False, 'rank': -1,
@@ -181,14 +184,31 @@ def build(data_root, progress, character, tab, width):
     counts = {b['number']: b['chapterCount'] for b in series['books']}
     ordered_characters = character_order(series, facts, audit, progress)
     known = set(ordered_characters)
+    main_cast = set(ordered_characters[:10]) | {character}
     if character not in known and progress > 0:
         raise ValueError(f'{character} has no revealed observations at this position')
     level = [{'at': (r['book']-1)*100+100*(r['chapter']-1+r['position'])/counts[r['book']],
               'level': r['value'], 'character': r['character']} for r in visible
-             if r['kind']=='level' and r['value'] is not None and r['scope'] not in ('estimate','lower-bound')]
+             if r['kind']=='level' and r['character'] in main_cast and r['value'] is not None and r['scope'] not in ('estimate','lower-bound')]
+    level = list({(r['at'],r['character']):r for r in level}.values())
     board = deepcopy(template())
     board['width'] = width
-    board['style']['charts']['category_colors'] = {'character':{'values':{c['name']:(c.get('color','#8e9c90') if c['name'] in ('Carl','Princess Donut') else dim_color(c.get('color','#8e9c90'))) for c in series['characters'] if c['name'] in {r['character'] for r in level}}}}
+    swatches = {}
+    roster = {c['name']: c for c in series['characters']}
+    for name in sorted(set(roster) | {r['character'] for r in level}):
+        c = roster.get(name, {})
+        seed = crc32(name.encode())
+        fallback = '#' + ''.join(f'{65 + ((seed >> shift) & 63):02x}' for shift in (0,8,16))
+        color = c.get('color', fallback)
+        if name not in ('Carl', 'Princess Donut'):
+            color = dim_color(color)
+        while color in swatches.values():
+            seed = crc32(str(seed).encode())
+            color = '#' + ''.join(f'{50 + ((seed >> shift) & 63):02x}' for shift in (0,8,16))
+        swatches[name] = color
+    board['style']['charts']['category_colors'] = {'character':{'values':{
+        name:swatches.get(name, '#8e9c90') for name in {r['character'] for r in level}
+    }}}
     board['queries'] = {}
     dossier = board['rows'][1]
     board['rows'] = []
@@ -218,7 +238,37 @@ def build(data_root, progress, character, tab, width):
                               'style': {'marks': {'rect': {'fill': color, 'opacity': .13 if odd else .08},
                                                   'text': {'font': {'color': color}}}}})
             board['charts']['levels']['annotations'] = bands
-        board['rows'].append('levels')
+        # Trails are annotations, never observations or tooltip values.
+        stops = {}
+        deaths = {}
+        for e in series['events']:
+            if e['progress'] > progress or e.get('historyOnly') or not e.get('lifeStatus'):
+                continue
+            if e['lifeStatus'] in ('dead', 'presumed-dead'):
+                if deaths.get(e['subject'], {}).get('lifeStatus') == e['lifeStatus']:
+                    continue  # Reconfirmations do not move the first report.
+                deaths[e['subject']] = e
+                stops[e['subject']] = (e['book']-1)*100 + 100*(e['chapter']-1+e['position'])/counts[e['book']]
+            elif e['lifeStatus']=='alive':
+                stops.pop(e['subject'],None)
+                deaths.pop(e['subject'],None)
+        current = series['books'][books-1]
+        boundary = (books-1)*100 + 100*(progress*series['series']['chapterCount']-current['startChapter']+1)/counts[books]
+        chart = board['charts']['levels']
+        colors = board['style']['charts']['category_colors']['character']['values']
+        for who, r in {r['character']:r for r in level}.items():
+            end = min(boundary, stops.get(who,boundary))
+            if end-r['at'] > .0001:
+                chart.setdefault('annotations',[]).append({'type':'rule','x':{'from':r['at'],'to':end},'y':r['level'],
+                    'style':{'marks':{'rule':{'stroke':{'color':colors.get(who,'#8e9c90'),'width':1,'dasharray':'2 5'}}}}})
+            if who in deaths and stops[who] >= r['at']:
+                death = deaths[who]
+                confirmed = death['lifeStatus'] == 'dead'
+                chart.setdefault('annotations',[]).append({
+                    'type':'note', 'x': stops[who], 'y':r['level'], 'connector':'line',
+                    'text':'×' if confirmed else '?',
+                    'style':{'marks':{'text':{'font':{'color':colors.get(who,'#8e9c90'), 'size':18}}}}})
+        board['rows'].extend(['levels', {'text':'Most-recorded characters + selected dossier · Dotted: last recorded level · × Death reported · ? Presumed dead'}])
     else:
         board['charts'].pop('levels',None)
         board['rows'].append({'text':'No levels recorded at this reading position.'})
@@ -232,18 +282,37 @@ def build(data_root, progress, character, tab, width):
                 record['description']=record['description'].split('. ')[0]+'.'
         overview.append(nested(stats))
         overview.append({'text':'— Base · – – With modifiers · ○ Estimate / minimum'})
+    own = [r for r in visible if r['character']==character]
+    other_skills = {r['metric']:r for r in own if r['kind']=='skill' and
+                    r['metric'] not in {s['metric'] for s in skill_rows}}
+    changes = list({(r['source'],r['summary']):r for r in own if r['kind']=='stat' and r['value'] is None and r['delta'] is not None}.values())
+    notes = [e for e in series['events'] if e['progress'] <= progress and e['subject']==character and e.get('statContext')]
+    if tab == 'overview':
+        overview.extend({'text': f"B{e['book']} · Ch {e['chapter']} — {e['summary']}"} for e in notes)
+    if tab == 'overview' and changes:
+        for r in changes:
+            overview.append({'text': f"B{r['book']} · Ch {r['chapter']} — {r['summary']}"})
     if skill_rows and tab == 'overview':
         overview.append(skill_history(skill_rows, counts, books, width-40))
+    if other_skills and tab == 'overview':
+        overview.append({'queries':{'other_abilities':{'type':'values','rows':[
+            {'ability':name, 'reference':wiki_label(name), 'wiki_url':wiki_link(name)} for name in sorted(other_skills)]}},
+            'charts':{'other_abilities':{'type':'table','query':'other_abilities','title':'Other recorded abilities',
+                'style':{'pagination':{'page_rows':10},'columns':{'ability':{'link':{'url':'{{ wiki_url }}','open':'new_tab'}},'wiki_url':{'visible':False}}}}},
+            'rows':['other_abilities']})
     tables=detail_rows(data_root,progress,character)
     if tables['effects'] and tab == 'overview':
+        for row in tables['effects']: row['wiki_url']=wiki_link(row['from_item'])
         if width < 800:
-            tables['effects'] = [{'effect': r['effect'], 'source': r['from_item']+' · '+r['state']+' · '+r['observed']+((' · '+r['condition']) if r['condition']!='—' else '')} for r in tables['effects']]
+            tables['effects'] = [{'effect': r['effect'], 'source': r['from_item']+' · '+r['observed']+((' · '+r['condition']) if r['condition']!='—' else ''),'wiki_url':r['wiki_url']} for r in tables['effects']]
         overview.append({'queries':{'equipment_effects':{'type':'values','rows':tables['effects']}},
                          'charts':{'equipment_effects':{'type':'table','query':'equipment_effects',
-                                  'title':'Equipment effects','style':{'pagination':{'page_rows':8}}}},
+                                  'title':'Equipment effects','style':{'pagination':{'page_rows':8},'columns':{'source' if width<800 else 'from_item':{'link':{'url':'{{ wiki_url }}','open':'new_tab'}},'wiki_url':{'visible':False}}}}},
                          'rows':['equipment_effects']})
     if not overview:
         overview=[{'text':'No stat or skill measurements recorded at this position.'}]
+    for key in ('inventory','equipped'):
+        for row in tables[key]: row['wiki_url'] = wiki_link(row['item'])
     tabs = dossier['tabs']['items']
     tabs[0]['rows'] = overview
     gear_tabs = tabs[1]['rows'][0]['tabs']
@@ -252,20 +321,32 @@ def build(data_root, progress, character, tab, width):
         gear_tabs['items'][1]['rows'][1]['queries']['equipped_entries']['rows'] = tables['equipped']
     else:
         gear_tabs['items'] = gear_tabs['items'][:1]
+    for item in gear_tabs['items']:
+        for row in item['rows']:
+            for chart in row.get('charts',{}).values():
+                chart.setdefault('style',{}).setdefault('columns',{}).update({
+                    'item':{'link':{'url':'{{ wiki_url }}','open':'new_tab'}},'wiki_url':{'visible':False}})
     gear_tabs['default'] = 'Equipped' if tab == 'equipped' and tables['equipped'] else 'All items'
     for item, name in zip(tabs[2:], ('rewards', 'history')):
         if tables[name]:
             item['rows'][0]['queries'][name+'_entries']['rows'] = tables[name]
         else:
             item['rows'] = [{'text':'No entries recorded at this position.'}]
-    available = [item for i, item in enumerate(tabs) if (bool(points or skill_rows or tables['effects']) if i == 0 else bool(tables[TABS[i]]))]
+    available = [item for i, item in enumerate(tabs) if (bool(points or skill_rows or other_skills or changes or notes or tables['effects']) if i == 0 else bool(tables[TABS[i]]))]
     if available: dossier['tabs']['items'] = available
+    dossier.setdefault('queries',{})['wiki_reference'] = {'type':'values','rows':[
+        {'url':wiki_link(character),'label':wiki_label(character)}]}
+    dossier.setdefault('charts',{})['wiki_reference'] = {'type':'custom','query':'wiki_reference',
+        'svg':'<a href="{{ rows[0].url }}" target="_blank" rel="noopener noreferrer"><text x="0" y="16" font-size="12" fill="{{ style.font.color }}">{{ rows[0].label }} ↗</text></a><text x="100" y="16" font-size="12" fill="{{ style.font.color }}">External wiki contains spoilers.</text>',
+        'style':{'min_height':24,'max_height':24}}
     dossier['title'] = character
-    dossier['variables']['character'] = {'options':{'static':ordered_characters},'default':character,'required':True}
+    dossier['variables']['character'] = {'options':{'static':[character]},'default':character,'required':True}
     dossier['tabs']['default'] = {'overview':'Overview','inventory':'Inventory','rewards':'Boxes & rewards','history':'History','equipped':'Inventory'}[tab]
     if dossier['tabs']['default'] not in {item['title'] for item in dossier['tabs']['items']}:
         dossier['tabs']['default'] = dossier['tabs']['items'][0]['title']
     for item in dossier['tabs']['items']:
+        if item['title'] == dossier['tabs']['default']:
+            item['rows'].insert(0,'wiki_reference')
         if item['title'] != dossier['tabs']['default']:
             item['rows'] = [{'text': ' '}]
         elif item['title'] == 'Inventory':

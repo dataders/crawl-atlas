@@ -13,7 +13,7 @@ from pathlib import Path
 import re
 import time
 from level_locations import level_locations
-from build_single_board import build, TABS, character_order, reader_data
+from build_single_board import build, TABS, character_order, reader_data, detail_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,29 +22,38 @@ def catalog(data_root):
     data, facts, audit = reader_data(data_root)
     events = sorted(data['events'], key=lambda e:e['progress'])
     first = {}
-    names = {c['name'] for c in data['characters'] if c['name'] != 'Party'}
+    names = {c['name'] for c in data['characters'] if c['name'] != 'Party'} & set(json.loads((data_root/'data/public/reader-characters.json').read_text()))
     for event in events:
         if event.get('subject') in names:
             first.setdefault(event['subject'], event['progress'])
     global_points = {0, 1, *first.values()}
-    global_points.update(r['progress'] for r in facts if r['kind']=='level')
+    global_points.update(e['progress'] for e in events if e.get('subject') in names and e.get('lifeStatus') and not e.get('historyOnly'))
+    global_points.update(r['progress'] for r in facts if r['kind']=='level' and r['character'] in names)
     global_points.update((b['startChapter']-1)/data['series']['chapterCount'] for b in data['books'])
     for floor in json.loads((data_root/'site/dist/data/floors.json').read_text()):
         book = data['books'][floor['book']-1]
         global_points.add((book['startChapter']+floor['chapter']-2+floor['position'])/data['series']['chapterCount'])
     order=[]
     for point in sorted({e['progress'] for e in events}|{r['progress'] for r in audit['observations']}):
-        next_order=character_order(data,facts,audit,point)
+        next_order=sorted(character_order(data,facts,audit,point)[:10])
         if next_order!=order:global_points.add(point);order=next_order
     result={}
     for person,start in sorted(first.items()):
         own=[e for e in events if e.get('subject')==person]
-        base=global_points | {e['progress'] for e in own}
+        base=set(global_points)
+        # New native tab labels must appear at their own first reveal, but a
+        # later history-only event need not regenerate unrelated inventory.
+        first_ui={}
+        for e in own:
+            first_ui.setdefault(e['type'],e['progress'])
+            if e.get('acquisition'):first_ui.setdefault('rewards',e['progress'])
+            if e.get('action')=='equip' or e.get('state')=='equipped':first_ui.setdefault('equipped',e['progress'])
+        base.update(first_ui.values())
         result[person]={}
         for tab in TABS:
             points=set(base)
             for e in own:
-                if tab=='history' or (tab=='overview' and e['type'] in ('stat','skill')) or (tab in ('inventory','equipped') and e['type']=='item') or (tab=='rewards' and e.get('acquisition')):
+                if tab=='history' or (tab=='overview' and (e['type'] in ('stat','skill') or e.get('statContext') or e.get('effects') or e.get('statBoosts') or e.get('attachedTo') or (e['type']=='item' and (e.get('action') in ('equip','unequip','remove','consume','destroy','lose') or e.get('state')=='equipped')))) or (tab in ('inventory','equipped') and e['type']=='item') or (tab=='rewards' and e.get('acquisition')):
                     points.add(e['progress'])
             if tab=='overview':
                 points.update(r['progress'] for r in audit['observations'] if r['character']==person)
@@ -54,8 +63,7 @@ def catalog(data_root):
                 if tab in ('inventory','equipped'):return any(e['type']=='item' for e in revealed)
                 if tab=='rewards':return any(e.get('acquisition') for e in revealed)
                 if any(r['character']==person and r['progress']<=p for r in audit['observations']):return True
-                from render_skill_charts import qualifying_rows
-                return any(r['character']==person and r['kind']=='stat' and r['progress']<=p for r in facts) or bool(qualifying_rows([r for r in facts if r['character']==person and r['kind']=='skill'],p))
+                return any(r['character']==person and r['kind'] in ('stat','skill') and r['progress']<=p for r in facts) or any(e.get('statContext') for e in revealed) or (any(e.get('effects') or e.get('statBoosts') for e in revealed) and bool(detail_rows(data_root,p,person)['effects']))
             result[person][tab]=sorted(p for p in points if p>=start and available(p))
     return data,result
 
@@ -77,7 +85,7 @@ def export(job):
         result=render_dashboard(board=InMemoryBoard(serialized,path=None),project=FilesystemProject(ROOT),
             adapter_registry=SESSION.adapter_registry,result_cache=None,format='html',use_cache=False,controls=True,standalone=True)
         if result.status not in ('success','ok') or result.chart_errors or result.board_error:
-            raise RuntimeError(f'{person}/{tab}/{progress}: {result.model_dump_json(exclude_none=True)[:2500]}')
+            raise RuntimeError(f'{person}/{tab}/{progress}: {result.model_dump_json(exclude={'data'},exclude_none=True)[:4000]}')
         html=result.data
         # Share the renderer's unmodified JS/CSS payloads. Never rewrite SVG,
         # marks, rows, axes, layout, or native controls after rendering.
@@ -118,6 +126,15 @@ def main():
     manifest={'version':1,'renderer':'dbt-charts 0.11.1','complete':not args.sample,'characters':{},'books':data['books'],'series':data['series']}
     pages_path = args.data_root / 'data/public/level-pages.json'
     manifest['levelLocations'] = level_locations(data, json.loads(pages_path.read_text()))
+    updates={}
+    seen=set()
+    for event in sorted(data['events'],key=lambda e:e['progress']):
+        who=event.get('subject')
+        identity=(who,event.get('source',event['id']),event.get('type'),event.get('name'))
+        if who in states and identity not in seen:
+            seen.add(identity)
+            updates.setdefault(who,[]).append(event['progress'])
+    manifest['characterUpdates']=updates
     start=time.monotonic()
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         for i,(person,tab,progress,width,key) in enumerate(pool.map(export,jobs,chunksize=10),1):
@@ -125,10 +142,10 @@ def main():
             if not checkpoints or checkpoints[-1]['file'] != key:
                 checkpoints.append({'progress':progress,'file':key})
             if i%50==0:print(f'{i}/{len(jobs)} states, {time.monotonic()-start:.0f}s',flush=True)
-    source_inputs=['scripts/level_locations.py','charts/reader.yml','scripts/build_single_board.py','scripts/export_single_board.py',
+    source_inputs=['scripts/wiki_links.py','scripts/level_locations.py','charts/reader.yml','scripts/build_single_board.py','scripts/export_single_board.py',
         'scripts/render_dossier_charts.py','scripts/render_skill_charts.py','site/dist/detail-model.js','site/dist/equipment-effects.js',
         'scripts/reader_detail_worker.cjs','scripts/build_public_timeline.py','scripts/build_database.py','scripts/reward_provenance.py','site/dist/board-details.js','site/dist/rewards.js','site/dist/static-reader.js']
-    data_inputs=['data/public/level-pages.json','site/dist/data/floors.json', *[str(path.relative_to(args.data_root)) for path in sorted((args.data_root/'data/public').glob('book-*.jsonl'))]]
+    data_inputs=['data/public/reader-characters.json','data/public/level-pages.json','site/dist/data/floors.json', *[str(path.relative_to(args.data_root)) for path in sorted((args.data_root/'data/public').glob('book-*.jsonl'))]]
     manifest['inputs']={path:hashlib.sha256(((ROOT if path in source_inputs else args.data_root)/path).read_bytes()).hexdigest() for path in source_inputs+data_inputs}
     manifest['exports']={str(path.relative_to(args.output)):hashlib.sha256(path.read_bytes()).hexdigest() for directory in ('boards','board-assets') for path in (args.output/directory).iterdir() if path.is_file()}
     (args.output/'data/reader-board.json').write_text(json.dumps(manifest,separators=(',',':'))+'\n')

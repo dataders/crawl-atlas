@@ -33,4 +33,25 @@ class RankingTests(unittest.TestCase):
         self.assertIn("dbt-variable-change",source)
         self.assertIn("DecompressionStream('gzip')",source)
 
+class ReleaseBoardTests(unittest.TestCase):
+    def test_level_plot_is_readable_and_has_no_duplicate_scene_marks(self):
+        from build_single_board import build
+        root=Path(__file__).resolve().parents[1]
+        board=build(root,1,'Carl','overview',1360)
+        rows=board['queries']['levels']['rows']
+        self.assertLessEqual(len({r['character'] for r in rows}),11)
+        self.assertEqual(len(rows),len({(r['at'],r['character']) for r in rows}))
+        self.assertIn('Carl',{r['character'] for r in rows})
+        self.assertIn('Princess Donut',{r['character'] for r in rows})
+
+    def test_wiki_reference_is_present_in_each_selected_dossier_tab(self):
+        from build_single_board import build
+        root=Path(__file__).resolve().parents[1]
+        for tab in ('overview','inventory','rewards','history'):
+            board=build(root,1,'Carl',tab,1360)
+            dossier=board['rows'][-1]
+            selected=next(t for t in dossier['tabs']['items'] if t['title']==dossier['tabs']['default'])
+            self.assertIn('wiki_reference',selected['rows'])
+            self.assertIn('target="_blank"',dossier['charts']['wiki_reference']['svg'])
+
 if __name__=='__main__':unittest.main()

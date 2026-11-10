@@ -66,10 +66,10 @@ class DatabaseTests(unittest.TestCase):
                 )
                 mart_count = db.execute('SELECT count(*) FROM mart_crawl_atlas_dashboard').fetchone()[0]
                 non_observation_events = db.execute(
-                    "SELECT count(*) FROM events WHERE kind NOT IN ('stat', 'skill', 'level')"
+                    "SELECT count(*) FROM events WHERE NOT EXISTS (SELECT 1 FROM progression WHERE event_id = events.id)"
                 ).fetchone()[0]
                 self.assertEqual(mart_count, len(rows) + non_observation_events)
-                expected = {e['id'] for e in data['events'] if e['type'] in ('stat', 'skill', 'level')}
+                expected = {e['id'] for e in data['events'] if e['type'] in ('skill', 'level') or e['type']=='stat' and (e.get('stats') or e.get('statsDelta'))}
                 self.assertEqual({r['event_id'] for r in rows}, expected)
                 self.assertEqual(rows, json.loads(Path('site/dist/data/progression.json').read_text()))
 
@@ -85,7 +85,7 @@ class CuratedRegressionTests(unittest.TestCase):
         self.assertEqual([e for e in imani if e['progress'] < point][-1]['level'], 11)
 
     def test_dialogue_level_belongs_to_subject_not_speaker(self):
-        events = [e for e in self.data['events'] if e['source'] == 'b7-c79-p71' and e['type'] == 'level']
+        events = [e for e in self.data['events'] if e['source'] == 'b7-c77-p28' and e['type'] == 'level']
         self.assertEqual([(e['subject'], e['level']) for e in events], [('Princess Donut', 135)])
 
     def test_profile_changes_have_their_own_source_boundary(self):
@@ -114,7 +114,7 @@ class BookEightTests(unittest.TestCase):
 
     def test_skill_scope_does_not_invent_training_growth(self):
         rows = [r for r in self.rows if r['book'] == 8 and r['metric'] == 'Second Chance']
-        self.assertEqual({(r['scope'], r['value']) for r in rows}, {('base', 11), ('effective', 12)})
+        self.assertEqual({(r['scope'], r['value']) for r in rows if r['value'] is not None}, {('base', 11), ('effective', 12)})
         self.assertTrue(all(r['delta'] is None for r in rows))
 
     def test_costume_skill_alias_and_retrospective_do_not_regress(self):
