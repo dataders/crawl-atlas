@@ -108,7 +108,7 @@ options:
   books:
     type: integer
 ---#}
-{% set left = 28 %}{% set rail = 107 if width < 600 else 180 %}{% set right = width - rail %}
+{% set left = 28 %}{% set right = width - 24 %}
 {% set top = 16 %}{% set bottom = height - 34 %}
 {% set x = d3.scale_linear([0, options.books * 100], [left, right]) %}
 {% set y = d3.scale_linear([0, rows | map(attribute='level') | max], [bottom, top]).nice(5) %}
@@ -122,20 +122,23 @@ options:
 {% endfor %}
 {% for skill, readings in rows | groupby('skill') %}
   {% set color = readings[0].ink %}
-  {% for scope, series in readings | groupby('scope') %}
-    {% set path = namespace(points=[]) %}
-    {% for r in series %}{% set path.points = path.points + [[x(r.at), y(r.level)]] %}{% endfor %}
-    {% if series|length > 1 %}
-    <path d="{{ d3.line(path.points) }}" fill="none" stroke="{{ color }}" stroke-width="2" stroke-dasharray="{{ series[0].dash }}"/>
-    {% endif %}
+  {% for trajectory, series in readings | groupby('trajectory') %}
+    {% set previous = namespace(row=none) %}
+    {% for r in series %}
+      {% if previous.row is not none %}
+      <path d="M {{ x(previous.row.at) }} {{ y(previous.row.level) }} L {{ x(r.at) }} {{ y(r.level) }}" fill="none" stroke="{{ color }}" stroke-width="2" stroke-dasharray="{{ r.dash if r.scope == previous.row.scope else '2 4' }}"/>
+      {% endif %}
+      {% set previous.row = r %}
+    {% endfor %}
   {% endfor %}
 {% endfor %}
 {% set ends = rows | selectattr('endpoint') | sort(attribute='rank') | list %}
 {% for r in ends %}
   {% set color = r.ink %}
-  {% set ly = top + (loop.index0+0.5)*(bottom-top)/(ends|length) %}
-  <path d="M {{ x(r.at) }} {{ y(r.level) }} L {{ right+6 }} {{ ly }}" fill="none" stroke="{{ color }}" stroke-width=".8" stroke-opacity=".45"/>
-  <a href="{{ r.wiki_url }}" target="_blank" rel="noopener noreferrer"><text x="{{ right+9 }}" y="{{ ly+3 }}" fill="{{ color }}" font-size="{{ 9 if width < 600 else 11 }}"><title>{{ r.wiki_label }}: {{ r.skill }} (spoilers)</title>{{ r.short_label }}</text></a>
+  {% set label = r.short_label %}
+  {% set size = 9 if width < 600 else 11 %}
+  {% set label_x = [x(r.at)+8, right-text_width(label, size)] | min %}
+  <a href="{{ r.wiki_url }}" target="_blank" rel="noopener noreferrer"><text x="{{ label_x }}" y="{{ y(r.level)-9 }}" fill="{{ color }}" font-size="{{ size }}"><title>{{ r.wiki_label }}: {{ r.skill }} (spoilers)</title>{{ label }}</text></a>
 {% endfor %}
 {% for r in rows %}
   <circle cx="{{ x(r.at) }}" cy="{{ y(r.level) }}" r="4" fill="{{ r.ink }}"><title>{{ r.detail }}</title></circle>
@@ -145,6 +148,20 @@ options:
 
 def skill_history(rows, counts, books, width):
     palette = ('#89c4ff', '#f5af77', '#c9a4f0', '#78cfbb', '#ea9dc2', '#e5ca82', '#98b68b', '#aab6ed')
+    # Rank changes within a scope: equipment and base are not one trajectory.
+    histories = {}
+    for row in sorted(rows, key=lambda r: r['progress']):
+        histories.setdefault((row['metric'], row['scope']), []).append(row['value'])
+    scores = {}
+    for (skill, _), values in histories.items():
+        changes = sum(a != b for a, b in zip(values, values[1:]))
+        scores[skill] = max(scores.get(skill, 0), changes)
+    selected = sorted((name for name, changes in scores.items() if changes),
+                      key=lambda name: (-scores[name], name.casefold()))[:8]
+    if not selected:
+        return None
+    rows = [row for row in rows if row['metric'] in selected]
+    colors = {name: palette[i] for i, name in enumerate(selected)}
     observations = []
     endpoints = {}
     for row in sorted(rows, key=lambda r: r['progress']):
@@ -153,8 +170,9 @@ def skill_history(rows, counts, books, width):
         limit = 17 if width < 600 else 27
         observations.append({
             'skill': skill, 'scope': scope, 'level': row['value'],
+            'trajectory': 'modified' if scope in ('equipment','effective','granted','boon','class') else 'intrinsic',
             'wiki_url':wiki_link(skill), 'wiki_label':wiki_label(skill),
-            'ink': palette[crc32(skill.encode()) % len(palette)],
+            'ink': colors[skill],
             'at': (row['book']-1)*100 + 100*(row['chapter']-1+row['position'])/counts[row['book']],
             'detail': description, 'endpoint': False, 'rank': -1,
             'short_label': skill if len(skill) <= limit else skill[:limit-1]+'…',
@@ -163,12 +181,12 @@ def skill_history(rows, counts, books, width):
         endpoints[skill] = observations[-1]
     for rank, point in enumerate(sorted(endpoints.values(), key=lambda p: (-p['level'], p['skill']))):
         point.update(endpoint=True, rank=rank)
-    height = max(270, 64 + len(endpoints)*17)
+    height = 300 if width < 600 else 360
     return {'queries': {'skill_levels': {'type': 'values', 'rows': observations}},
             'charts': {'history': {'type': 'custom', 'query': 'skill_levels', 'title': 'Skill & spell progression',
                                   'svg': SKILL_TEMPLATE, 'options': {'books': books},
                                   'style': {'min_height': height, 'max_height': height}}},
-            'rows': [{'text':'— Base · – – Modified · · · Reported'}, 'history']}
+            'rows': ['history', {'text':'Up to eight skills with the most recorded level changes. All skills are listed below. — Base · – – Modified · · · Reported'}]}
 
 
 def nested(board):
@@ -281,25 +299,37 @@ def build(data_root, progress, character, tab, width):
             if record.get('description'):
                 record['description']=record['description'].split('. ')[0]+'.'
         overview.append(nested(stats))
-        overview.append({'text':'— Base · – – With modifiers · ○ Estimate / minimum'})
     own = [r for r in visible if r['character']==character]
     other_skills = {r['metric']:r for r in own if r['kind']=='skill' and
                     r['metric'] not in {s['metric'] for s in skill_rows}}
     changes = list({(r['source'],r['summary']):r for r in own if r['kind']=='stat' and r['value'] is None and r['delta'] is not None}.values())
     notes = [e for e in series['events'] if e['progress'] <= progress and e['subject']==character and e.get('statContext')]
-    if tab == 'overview':
-        overview.extend({'text': f"B{e['book']} · Ch {e['chapter']} — {e['summary']}"} for e in notes)
-    if tab == 'overview' and changes:
-        for r in changes:
-            overview.append({'text': f"B{r['book']} · Ch {r['chapter']} — {r['summary']}"})
     if skill_rows and tab == 'overview':
-        overview.append(skill_history(skill_rows, counts, books, width-40))
-    if other_skills and tab == 'overview':
-        overview.append({'queries':{'other_abilities':{'type':'values','rows':[
-            {'ability':name, 'reference':wiki_label(name), 'wiki_url':wiki_link(name)} for name in sorted(other_skills)]}},
-            'charts':{'other_abilities':{'type':'table','query':'other_abilities','title':'Other recorded abilities',
-                'style':{'pagination':{'page_rows':10},'columns':{'ability':{'link':{'url':'{{ wiki_url }}','open':'new_tab'}},'wiki_url':{'visible':False}}}}},
-            'rows':['other_abilities']})
+        history = skill_history(skill_rows, counts, books, width-40)
+        if history:
+            overview.append(history)
+    if tab == 'overview':
+        latest = {}
+        for row in sorted(own, key=lambda r: r['progress']):
+            if row['kind'] == 'skill':
+                previous = latest.get(row['metric'])
+                if row['value'] is not None or previous is None or previous['value'] is None:
+                    latest[row['metric']] = row
+        if latest:
+            all_skills = [
+                {'skill': name, 'level': r['value'],
+                 'scope': r['scope'], 'observed': f"B{r['book']} · Ch {r['chapter']}",
+                 'wiki_url': wiki_link(name)}
+                for name, r in sorted(latest.items(),
+                    key=lambda pair: (-(pair[1]['value'] or 0), pair[0].casefold()))]
+            if all(r['level'] is None for r in all_skills):
+                for r in all_skills:
+                    r['level'] = '—'
+            overview.append({'queries': {'all_skills': {'type': 'values', 'rows': all_skills}},
+                'charts': {'all_skills': {'type': 'table', 'query': 'all_skills',
+                    'title': 'Skills & spells', 'style': {'pagination': {'page_rows': 10},
+                    'columns': {'skill': {'link': {'url': '{{ wiki_url }}', 'open': 'new_tab'}},
+                                'wiki_url': {'visible': False}}}}}, 'rows': ['all_skills']})
     tables=detail_rows(data_root,progress,character)
     if tables['effects'] and tab == 'overview':
         for row in tables['effects']: row['wiki_url']=wiki_link(row['from_item'])

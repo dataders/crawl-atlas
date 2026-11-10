@@ -70,7 +70,7 @@ options:
     type: integer
 ---#}
 {% set left = 38 %}{% set right = width - 12 %}
-{% set top = 38 %}{% set bottom = height - 44 %}
+{% set top = 66 %}{% set bottom = height - 44 %}
 {% set x = d3.scale_linear([0, options.books * 100], [left, right]) %}
 {% set maximum = rows | map(attribute='value') | max %}
 {% set y = d3.scale_linear([0, maximum if maximum > 0 else 1], [bottom, top]).nice(4) %}
@@ -78,10 +78,16 @@ options:
 {% set measured = rows | rejectattr('kind', 'equalto', 'ribbon') | list %}
 {% set legend = measured | groupby('stat') %}
 {% for stat, values in legend %}
-  {% set lx = left + loop.index0 * (right - left) / (legend | length) %}
+  {% set lx = left + loop.index0 * (56 if width < 600 else 78) %}
   <circle cx="{{ lx + 4 }}" cy="12" r="3.5" fill="{{ color_for(stat, 'stat') }}"/>
   <text x="{{ lx + 13 }}" y="16" font-family="{{ style.font.family }}" font-size="11" fill="{{ style.font.color }}">{{ values[0].abbreviation }}</text>
 {% endfor %}
+<line x1="{{ left }}" x2="{{ left+17 }}" y1="39" y2="39" stroke="{{ style.font.color }}" stroke-width="2"/>
+<text x="{{ left+23 }}" y="43" font-size="10" fill="{{ style.font.color }}">Base</text>
+<line x1="{{ left+65 }}" x2="{{ left+82 }}" y1="39" y2="39" stroke="{{ style.font.color }}" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="{{ left+88 }}" y="43" font-size="10" fill="{{ style.font.color }}">With bonuses</text>
+<circle cx="{{ left+181 }}" cy="39" r="3.5" fill="{{ style.background }}" stroke="{{ style.font.color }}"/>
+<text x="{{ left+190 }}" y="43" font-size="10" fill="{{ style.font.color }}">Estimate / minimum</text>
 {% for tick in y.ticks(4) %}
   <line x1="{{ left }}" x2="{{ right }}" y1="{{ y(tick) }}" y2="{{ y(tick) }}" stroke="{{ ink }}" stroke-opacity="0.16"/>
   <text x="{{ left - 8 }}" y="{{ y(tick) + 4 }}" text-anchor="end" font-family="{{ style.font.family }}" font-size="11" fill="{{ ink }}">{{ tick | format('~g') }}</text>

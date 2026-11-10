@@ -70,6 +70,24 @@ class ReleaseBoardTests(unittest.TestCase):
         self.assertIn('Carl',{r['character'] for r in rows})
         self.assertIn('Princess Donut',{r['character'] for r in rows})
 
+    def test_skill_plot_is_bounded_and_complete_table_keeps_last_numeric_reading(self):
+        from build_single_board import build
+        root=Path(__file__).resolve().parents[1]
+        board=build(root,1,'Carl','overview',1360)
+        overview=board['rows'][-1]['tabs']['items'][0]['rows']
+        chart=next(r for r in overview if isinstance(r,dict) and 'skill_levels' in r.get('queries',{}))
+        skills={r['skill'] for r in chart['queries']['skill_levels']['rows']}
+        self.assertLessEqual(len(skills),8)
+        pugilism=[r for r in chart['queries']['skill_levels']['rows'] if r['skill']=='Pugilism']
+        self.assertEqual({r['trajectory'] for r in pugilism},{'intrinsic'})
+        self.assertEqual([r['level'] for r in pugilism],[4,5,6,10,15])
+        self.assertNotIn('Mind Balance', skills)  # Single observation is not a progression.
+        self.assertNotIn('L {{ right+6 }}',chart['charts']['history']['svg'])
+        table=next(r for r in overview if isinstance(r,dict) and 'all_skills' in r.get('queries',{}))
+        readings={r['skill']:r for r in table['queries']['all_skills']['rows']}
+        self.assertEqual(readings['Explosives Handling']['level'],11)
+        self.assertFalse(any('Quest victory grants' in str(r) for r in overview if isinstance(r,dict) and 'text' in r))
+
     def test_wiki_reference_is_present_in_each_selected_dossier_tab(self):
         from build_single_board import build
         root=Path(__file__).resolve().parents[1]
